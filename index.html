@@ -36,6 +36,26 @@
       line-height: 1.6;
     }
 
+    .button-link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #ffffff;
+      background-color: #000000; /* black background */
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* subtle shadow */
+    }
+
+    .button-link:hover {
+      background-color: #333333; /* lighter black/gray on hover */
+      transform: translateY(-2px); /* small lift */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* stronger shadow */
+    }
+
     footer {
       margin-top: 4rem;
       font-size: 0.9rem;
@@ -49,6 +69,9 @@
 
   <h1>Scruffy Hipster Ltd</h1>
   <p>Building clean, clever apps with personality. Proudly independent software development for Apple platforms.</p>
+
+  <!-- Apps Button -->
+  <a href="https://apps.apple.com/developer/scruffy-hipster-ltd/id2392YT52CQ" target="_blank" class="button-link">Apps</a>
 
   <footer>
     &copy; 2025 Scruffy Hipster Ltd. All rights reserved.
