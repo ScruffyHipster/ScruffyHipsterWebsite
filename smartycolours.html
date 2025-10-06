@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smarty Colours — Children's Coloring App</title>
+  <meta name="description" content="Portfolio case study: Smarty Colours — a children's coloring app with themed packs, Apple Pencil support, and a simple, kid-friendly UI." />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    /* Base */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 2rem 1.25rem 3rem;
+      text-align: center;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      max-width: 1000px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .layout {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2rem;
+    }
+
+    img { max-width: 100%; height: auto; }
+
+    .logo {
+      max-width: 200px;
+      height: auto;
+      margin: 0 auto 2rem;
+      display: block;
+    }
+
+    .back {
+      position: absolute;
+      left: 16px;
+      top: 12px;
+      text-decoration: none;
+      border: 1px solid #e5e5e5;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.95rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin: 0.5rem 0 0.75rem;
+      font-weight: 800;
+    }
+
+    .hero {
+      margin-top: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .sub {
+      color: #444;
+      font-size: 1.1rem;
+      max-width: 760px;
+      margin: 0.25rem auto 1.25rem;
+    }
+
+    .buttons {
+      margin-top: 1.5rem;
+      margin-bottom: 2.5rem;
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .button-link {
+      display: inline-block;
+      padding: 0.8rem 1.2rem;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 2px solid #000;
+      background: #000;
+      color: #fff;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+    }
+
+    .button-link:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,.15); }
+
+    .secondary-link {
+      display: inline-block;
+      padding: 0.8rem 1.2rem;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 2px solid #000;
+      background: transparent;
+      color: #000;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+    }
+
+    .secondary-link:hover { background: #000; color: #fff; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,.15); }
+
+    /* Sections */
+    section {
+      width: 100%;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .section-title { font-size: 1.8rem; margin: 0 0 .5rem; }
+    .muted { color: #555; font-size: 1rem; max-width: 760px; margin: .25rem auto 1rem; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    .card {
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: left;
+      transition: box-shadow .2s ease, transform .2s ease;
+      background: #fff;
+    }
+
+    .card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.08); transform: translateY(-2px); }
+    .card h3 { margin: 0 0 .4rem; font-size: 1.2rem; }
+    .card p { margin: 0; color: #333; }
+    .badge { display: inline-block; padding: 0.2rem 0.6rem; border: 1px solid #ddd; border-radius: 999px; font-size: .85rem; margin: .25rem 0 .5rem; }
+
+    .screenshot {
+      border-radius: 16px;
+      border: 1px solid #eee;
+      box-shadow: 0 6px 20px rgba(0,0,0,.08);
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* Media */
+    @media (min-width: 900px) {
+      .layout {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    .meta, .content {
+      max-width: 800px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <a class="back" href="index.html">← Home</a>
+
+  <main class="container">
+    <img class="logo" src="smartycoloursLogo.png" alt="Smarty Colours Logo" />
+
+    <section class="hero">
+      <div class="copy">
+        <h1 class="hero-title">Smarty Colours — Children's Coloring App</h1>
+        <p class="sub">A vibrant, kid-friendly coloring app featuring themed packs like Unicorns, Dinosaurs, Pets, Vehicles, and more. Built natively for iPad with Apple Pencil support.</p>
+        <div class="buttons">
+          <a href="#features" class="secondary-link">See features</a>
+        </div>
+      </div>
+      <div>
+        <img class="screenshot" src="/assets/wren-hero.png" alt="Wren app hero mockup placeholder" />
+      </div>
+    </section>
+
+    <section id="features">
+      <h2 class="section-title">Designed for creativity and calm</h2>
+      <p class="muted">Smarty Colours encourages focus and imagination with beautifully illustrated coloring pages, smooth Apple Pencil input, and an intuitive, safe UI for children.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Themed Coloring Packs</h3>
+          <p>Each pack includes 15 original illustrations. Themes include Unicorns, Dinosaurs, Pets, Farm Yard, Robots, Vehicles, and more.</p>
+        </div>
+        <div class="card">
+          <h3>Apple Pencil Support</h3>
+          <p>Draw and color naturally with full Apple Pencil pressure and tilt support on iPad.</p>
+        </div>
+        <div class="card">
+          <h3>Kid-Friendly Interface</h3>
+          <p>Minimal, intuitive design made for young children. Big buttons, simple navigation, and zero clutter.</p>
+        </div>
+        <div class="card">
+          <h3>Subscription Model</h3>
+          <p>Free users get limited access. A £9.99/year subscription unlocks all 16 themed packs (240+ pages) and future content.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h2 class="section-title">App Screens</h2>
+      <p class="muted">Showcasing the main UI, coloring interface, and themed pack selection screens. Drop your screenshots into /assets/ to display them here.</p>
+      <div class="grid">
+        <img class="screenshot" src="/assets/smartycolours-home.png" alt="Smarty Colours home screen" />
+        <img class="screenshot" src="/assets/smartycolours-coloring.png" alt="Smarty Colours coloring screen" />
+        <img class="screenshot" src="/assets/smartycolours-packs.png" alt="Smarty Colours pack selection screen" />
+      </div>
+    </section>
+
+    <section id="privacy">
+      <h2 class="section-title">Privacy first</h2>
+      <p class="muted">Smarty Colours collects no personal data. All drawings and preferences are stored locally on-device. No analytics, ads, or tracking of any kind.</p>
+    </section>
+
+    <footer>
+      &copy; 2025 Scruffy Hipster Ltd. Smarty Colours — Children's Coloring App.
+    </footer>
+  </main>
+</body>
+</html>

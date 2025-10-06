@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Scruffy Hipster</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services & Pricing — Scruffy Hipster</title>
+  <meta name="description" content="Scruffy Hipster offers fixed‑scope, native iOS development services: MVP sprints, SwiftUI modernisation, polish & launch, and Watch/Widget add‑ons." />
   <style>
     body {
       margin: 0;
@@ -34,6 +35,8 @@
       font-size: 1.1rem;
       max-width: 600px;
       line-height: 1.6;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .button-link {
@@ -43,17 +46,17 @@
       font-size: 1.1rem;
       font-weight: 500;
       color: #ffffff;
-      background-color: #000000; /* black background */
+      background-color: #000000;
       border-radius: 8px;
       text-decoration: none;
       transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* subtle shadow */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
 
     .button-link:hover {
-      background-color: #333333; /* lighter black/gray on hover */
-      transform: translateY(-2px); /* small lift */
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* stronger shadow */
+      background-color: #333333;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
     footer {
@@ -61,6 +64,7 @@
       font-size: 0.9rem;
       color: #666;
     }
+
     .container {
       max-width: 960px;
       width: 100%;
@@ -168,50 +172,78 @@
       font-size: 0.95rem;
       margin-top: 1rem;
     }
+    .back {
+      position: absolute;
+      left: 16px;
+      top: 12px;
+      text-decoration: none;
+      border: 1px solid #e5e5e5;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.95rem;
+    }
   </style>
 </head>
 <body>
-<div class="container">
+  <a class="back" href="index.html">← Home</a>
+  <main class="container">
+    <img src="CompanyLogoCode.jpg" alt="Scruffy Hipster Logo" />
+    <h1>Services & Pricing</h1>
+    <p class="muted">I build premium, native iOS apps with Swift and SwiftUI. Fixed‑scope packages keep delivery fast and predictable.</p>
 
-  <img src="CompanyLogoCode.jpg" alt="Scruffy Hipster Logo" />
+    <section class="section" id="offers">
+      <h2>What I offer</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>MVP Sprint — from £3,999</h3>
+          <p>3–4 weeks to a production‑ready iOS MVP using SwiftUI and SwiftData.</p>
+          <ul>
+            <li>3–5 screens, 1 core data model</li>
+            <li>Light backend or local storage</li>
+            <li>App Store submission support</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>SwiftUI Modernisation — from £1,500</h3>
+          <p>Convert legacy UIKit to SwiftUI, refresh UI, and improve performance.</p>
+          <ul>
+            <li>Target iOS 18 look & feel</li>
+            <li>Refactor navigation/state</li>
+            <li>Keep what works, clean what doesn’t</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>App Polish & Launch — from £1,200</h3>
+          <p>Last‑mile fixes to ship with confidence.</p>
+          <ul>
+            <li>Bug fixes & performance passes</li>
+            <li>Store assets & metadata</li>
+            <li>Submission and review assistance</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Watch & Widget Add‑On — from £1,200</h3>
+          <p>Add an Apple Watch companion or home/lock‑screen widgets.</p>
+          <ul>
+            <li>Workout/Health integrations optional</li>
+            <li>Clean, native interactions</li>
+            <li>Shippable in 1–2 weeks</li>
+          </ul>
+        </div>
+      </div>
+      <div class="notice">Fixed scope. 50% upfront, 50% on delivery. Async communication with weekly updates.</div>
+    </section>
 
-  <h1 class="hero">Premium native iOS apps — built the Apple way.</h1>
-  <p>I help startups and small businesses turn ideas into App Store–ready products. 100% native: Swift, SwiftUI, SwiftData, WatchOS, HealthKit. Fast, clean, and production-focused.</p>
+    <section class="section" id="contact">
+      <h2>Ready to talk?</h2>
+      <p class="muted">Tell me what you’re trying to ship and when. I’ll reply within 1 business day.</p>
+      <div class="buttons">
+        <a href="https://calendly.com/scruffyhipster/intro" target="_blank" class="button-link">Book a 15‑min call</a>
+        <a href="mailto:hello@scruffyhipster.com" class="secondary-link">Email me</a>
+      </div>
+    </section>
 
-  <div class="buttons">
-    <a href="https://calendly.com/scruffyhipster/intro" target="_blank" class="button-link">Book a 15‑min call</a>
-    <a href="/services.html" class="secondary-link">Services & Pricing</a>
-    <a href="https://apps.apple.com/developer/scruffy-hipster-ltd/id2392YT52CQ" target="_blank" class="secondary-link">See my apps</a>
-  </div>
-
-  <section class="section" id="work">
-    <h2>Recent work</h2>
-    <p class="muted">Apps I’ve built and shipped to the App Store.</p>
-    <div class="cards">
-      <a href="smartycolours.html" class="card" style="text-decoration:none; color:inherit;">
-        <h3>SmartyColours</h3>
-        <p>Children’s creativity app with smooth drawing engine and in‑app purchases.</p>
-      </a>
-      <a href="wren.html" class="card" style="text-decoration:none; color:inherit;">
-        <h3>Wren</h3>
-        <p>Workout Recovery Engine — AI‑assisted insights using Apple Watch data.</p>
-      </a>
-    </div>
-  </section>
-
-  <section class="section" id="contact">
-    <h2>Let’s build your iOS app</h2>
-    <p class="muted">Tell me what you’re trying to ship and when. I’ll respond within 1 business day.</p>
-    <div class="buttons">
-      <a href="https://calendly.com/scruffyhipster/intro" target="_blank" class="button-link">Book a 15‑min call</a>
-      <a href="mailto:hello@scruffyhipster.com" class="secondary-link">Email me</a>
-    </div>
-  </section>
-</div>
-
-  <footer>
-    &copy; 2025 Scruffy Hipster Ltd. All rights reserved.
-  </footer>
-
+    <footer>&copy; 2025 Scruffy Hipster Ltd. All rights reserved.</footer>
+  </main>
 </body>
 </html>
