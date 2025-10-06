@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Scruffy Hipster</title>
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="description" content="Scruffy Hipster is an independent iOS studio. We build premium, native Swift apps for startups and small businesses — from MVP to App Store launch." />
   <style>
     body {
       margin: 0;
@@ -70,6 +72,9 @@
       align-items: center;
       text-align: center;
     }
+    .nav { display:flex; gap:1rem; margin-bottom: 1rem; }
+    .nav a { text-decoration:none; color:#000; border:1px solid #e5e5e5; border-radius:999px; padding:6px 10px; font-size:.95rem; }
+    .nav a:hover { background:#000; color:#fff; }
 
     .hero {
       margin-top: 1rem;
@@ -174,10 +179,17 @@
 <body>
 <div class="container">
 
+  <nav class="nav">
+    <a href="/index.html">Home</a>
+    <a href="pages/services/services.html">Services</a>
+    <a href="#work">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <img src="assets/CompanyLogoCode.jpg" alt="Scruffy Hipster Logo" />
 
   <h1 class="hero">Premium iOS app development studio.</h1>
-  <p>We help startups and small businesses turn ideas into App Store ready products. 100% native & 100% Swift. Fast, scaleable, and production focused.</p>
+  <p>We help startups and small businesses turn ideas into App Store‑ready products. 100% native & 100% Swift. Fast, scalable, and production‑focused.</p>
 
   <div class="buttons">
     <a href="pages/services/services.html" class="secondary-link">Services & Pricing</a>
@@ -189,11 +201,11 @@
     <div class="cards">
       <a href="pages/portfolio/smartycolours.html" class="card" style="text-decoration:none; color:inherit;">
         <h3>SmartyColours</h3>
-        <p>Children’s educational colouring app with smooth drawing engine and in app purchases.</p>
+        <p>Children’s educational colouring app with a smooth drawing engine and in‑app purchases.</p>
       </a>
       <a href="pages/portfolio/wren.html" class="card" style="text-decoration:none; color:inherit;">
         <h3>Wren</h3>
-        <p>The Workout Recovery Engine: Martial arts workout timer. AI-assisted insights using Apple Health data.</p>
+        <p>The Workout Recovery Engine: Martial arts round timer. Health insights planned.</p>
       </a>
     </div>
   </section>
@@ -207,7 +219,7 @@
 
   <section class="section" id="contact">
     <h2>Let’s build your iOS app</h2>
-    <p class="muted">Tell me what you’re trying to ship and when. iOS, MacOS, WatchOS or VisionOS, we can get you there. I’ll respond within 2 business day.</p>
+    <p class="muted">Tell us what you’re trying to ship and when. iOS, macOS, watchOS or visionOS — we can get you there. We’ll respond within 2 business days.</p>
     <div class="buttons">
       <a href="mailto:hello@scruffyhipster.com" class="secondary-link">Email me</a>
     </div>
@@ -215,7 +227,7 @@
 </div>
 
   <footer>
-    &copy; 2025 Scruffy Hipster Ltd. All rights reserved.
+    &copy; 2025 Scruffy Hipster Ltd. Registered in England & Wales. All rights reserved.
   </footer>
 
 </body>
