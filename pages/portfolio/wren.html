@@ -138,6 +138,14 @@
       margin-top: 2rem;
     }
 
+    #gallery .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      justify-items: center;
+      align-items: start;
+    }
+
     @media (max-width: 700px) {
       .grid {
         grid-template-columns: 1fr;
@@ -167,6 +175,13 @@
       border-radius: 16px;
       border: 1px solid #eee;
       box-shadow: 0 6px 20px rgba(0,0,0,.08);
+    }
+
+    #gallery .screenshot {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      object-fit: contain;
     }
 
     footer {
@@ -236,11 +251,13 @@
 
     <section id="gallery">
       <h2 class="section-title">Screenshots</h2>
-      <p class="muted">Drop your assets into <code>/assets/</code> and keep these filenames to wire them up instantly.</p>
       <div class="grid">
-        <img class="screenshot" src="../../assets/wren-recovery.png" alt="Wren Recovery screen" />
-        <img class="screenshot" src="../../assets/wren-trends.png" alt="Wren Trends screen" />
-        <img class="screenshot" src="../../assets/wren-timer.png" alt="Wren Timer screen" />
+        <img class="screenshot" src="../../assets/wrenScreeshots/iPhone Screenshots 🇬🇧 03:10:25.001.jpeg" alt="Wren Recovery screen" />
+        <img class="screenshot" src="../../assets/wrenScreeshots/iPhone Screenshots 🇬🇧 03:10:25.002.jpeg" alt="Wren Trends screen" />
+        <img class="screenshot" src="../../assets/wrenScreeshots/iPhone Screenshots 🇬🇧 03:10:25.003.jpeg" alt="Wren Timer screen" />
+        <img class="screenshot" src="../../assets/wrenScreeshots/iPhone Screenshots 🇬🇧 03:10:25.004.jpeg" alt="Wren Timer screen" />
+        <img class="screenshot" src="../../assets/wrenScreeshots/iPhone Screenshots 🇬🇧 03:10:25.005.jpeg" alt="Wren Timer screen" />
+        <img class="screenshot" src="../../assets/wrenScreeshots/iPhone Screenshots 🇬🇧 03:10:25.006.jpeg" alt="Wren Timer screen" />
       </div>
     </section>
 
