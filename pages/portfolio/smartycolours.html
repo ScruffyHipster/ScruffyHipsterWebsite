@@ -132,23 +132,41 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
       width: 100%;
-      margin-top: 1rem;
+      margin-top: 2rem;
+      justify-items: center;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .card {
       border: 1px solid #eee;
       border-radius: 12px;
       padding: 1rem;
-      text-align: left;
+      text-align: center;
       transition: box-shadow .2s ease, transform .2s ease;
       background: #fff;
     }
 
     .card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.08); transform: translateY(-2px); }
-    .card h3 { margin: 0 0 .4rem; font-size: 1.2rem; }
+    .card h3 {
+      margin: 0 0 .4rem;
+      font-size: 1.2rem;
+      text-align: center;
+    }
     .card p { margin: 0; color: #333; }
     .badge { display: inline-block; padding: 0.2rem 0.6rem; border: 1px solid #ddd; border-radius: 999px; font-size: .85rem; margin: .25rem 0 .5rem; }
 
@@ -225,11 +243,12 @@
 
     <section id="gallery">
       <h2 class="section-title">App Screens</h2>
-      <p class="muted">Showcasing the main UI, coloring interface, and themed pack selection screens. Drop your screenshots into /assets/ to display them here.</p>
       <div class="grid">
-        <img class="screenshot" src="/assets/smartycolours-home.png" alt="Smarty Colours home screen" />
-        <img class="screenshot" src="/assets/smartycolours-coloring.png" alt="Smarty Colours coloring screen" />
-        <img class="screenshot" src="/assets/smartycolours-packs.png" alt="Smarty Colours pack selection screen" />
+        <img class="screenshot" src="../../assets/smartyColoursScreenshots/iPhone Screenshots 🇬🇧 2.001.png" alt="Smarty Colours home screen" />
+        <img class="screenshot" src="../../assets/smartyColoursScreenshots/iPhone Screenshots 🇬🇧 2.002.png" alt="Smarty Colours coloring screen" />
+        <img class="screenshot" src="../../assets/smartyColoursScreenshots/iPhone Screenshots 🇬🇧 2.003.png" alt="Smarty Colours pack selection screen" />
+        <img class="screenshot" src="../../assets/smartyColoursScreenshots/iPhone Screenshots 🇬🇧 2.004.png" alt="Smarty Colours pack selection screen" />
+        <img class="screenshot" src="../../assets/smartyColoursScreenshots/iPhone Screenshots 🇬🇧 2.005.png" alt="Smarty Colours pack selection screen" />
       </div>
     </section>
 
