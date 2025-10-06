@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wren — Workout Recovery Engine</title>
   <meta name="description" content="Portfolio case study: Wren (Workout Recovery Engine). Current MVP is a fast, configurable round timer for MMA, Boxing and Grappling. HealthKit/AI insights are planned but not live yet." />
-  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" href="../../favicon.ico" />
   <style>
     /* Base */
     * { box-sizing: border-box; }
@@ -132,23 +132,34 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
       width: 100%;
-      margin-top: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 700px) {
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
     }
 
     .card {
       border: 1px solid #eee;
       border-radius: 12px;
       padding: 1rem;
-      text-align: left;
+      text-align: center;
       transition: box-shadow .2s ease, transform .2s ease;
       background: #fff;
     }
 
     .card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.08); transform: translateY(-2px); }
-    .card h3 { margin: 0 0 .4rem; font-size: 1.2rem; }
+    .card h3 { 
+      margin: 0 0 .4rem; 
+      font-size: 1.2rem; 
+      text-align: center; 
+    }
     .card p { margin: 0; color: #333; }
     .badge { display: inline-block; padding: 0.2rem 0.6rem; border: 1px solid #ddd; border-radius: 999px; font-size: .85rem; margin: .25rem 0 .5rem; }
 
@@ -181,22 +192,23 @@
   </style>
 </head>
 <body>
-  <a class="back" href="index.html">← Home</a>
+  <a class="back" href="../../index.html">← Home</a>
 
   <main class="container">
-    <img class="logo" src="WrenLogo-iOS-Default-1024x1024@1x.png" alt="Wren Logo" />
+    <img class="logo" src="../../assets/WrenLogo-iOS-Dark-1024x1024@1x.png" alt="Wren Logo" />
 
     <section class="hero">
       <div class="copy">
-        <h1 class="hero-title">Wren — Workout Recovery Engine</h1>
-        <p class="sub">Current MVP: a fast, configurable round timer with presets for MMA, Boxing, and Grappling. Built natively with SwiftUI. HealthKit/AI insights planned.</p>
-        <div class="buttons">
+        <h1 class="hero-title">Wren: Workout Recovery Engine</h1>
+        <p class="sub">Current MVP: a fast, configurable round timer with presets for MMA, Boxing, and Grappling. Built natively with SwiftUI. HealthKit/AI insights planned and scoped.</p>
+      </div>
+    </section>
+
+    <section id="cta">
+    <div class="buttons">
+          <a href="https://apps.apple.com/gb/app/wren-boxing-mma-round-timer/id6741780168" target="_blank" rel="noopener" class="button-link">Download on the App Store</a>
           <a href="#features" class="secondary-link">See features</a>
         </div>
-      </div>
-      <div>
-        <img class="screenshot" src="/assets/wren-hero.png" alt="Wren app hero mockup placeholder" />
-      </div>
     </section>
 
     <section id="features">
@@ -226,9 +238,9 @@
       <h2 class="section-title">Screenshots</h2>
       <p class="muted">Drop your assets into <code>/assets/</code> and keep these filenames to wire them up instantly.</p>
       <div class="grid">
-        <img class="screenshot" src="/assets/wren-recovery.png" alt="Wren Recovery screen" />
-        <img class="screenshot" src="/assets/wren-trends.png" alt="Wren Trends screen" />
-        <img class="screenshot" src="/assets/wren-timer.png" alt="Wren Timer screen" />
+        <img class="screenshot" src="../../assets/wren-recovery.png" alt="Wren Recovery screen" />
+        <img class="screenshot" src="../../assets/wren-trends.png" alt="Wren Trends screen" />
+        <img class="screenshot" src="../../assets/wren-timer.png" alt="Wren Timer screen" />
       </div>
     </section>
 

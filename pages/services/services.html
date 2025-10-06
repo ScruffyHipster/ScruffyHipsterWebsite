@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services & Pricing — Scruffy Hipster</title>
-  <meta name="description" content="Scruffy Hipster offers fixed‑scope, native iOS development services: MVP sprints, SwiftUI modernisation, polish & launch, and Watch/Widget add‑ons." />
+  <meta name="description" content="Scruffy Hipster offers fixed scope, native iOS development services: MVP sprints, SwiftUI modernisation, polish & launch, and Watch/Widget add‑ons." />
   <style>
     body {
       margin: 0;
@@ -27,8 +27,10 @@
     }
 
     h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      font-weight: 800;
+      margin-bottom: 1rem;
     }
 
     p {
@@ -134,17 +136,24 @@
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
       width: 100%;
-      margin-top: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 700px) {
+      .cards {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
     }
 
     .card {
       border: 1px solid #eee;
       border-radius: 12px;
       padding: 1rem;
-      text-align: left;
+      text-align: center;
       transition: box-shadow 0.2s ease, transform 0.2s ease;
     }
 
@@ -157,6 +166,7 @@
       margin-top: 0;
       margin-bottom: 0.5rem;
       font-size: 1.2rem;
+      text-align: center;
     }
 
     .card ul {
@@ -181,62 +191,47 @@
       border-radius: 999px;
       padding: 6px 10px;
       font-size: 0.95rem;
+      color: #000000;
     }
   </style>
 </head>
 <body>
-  <a class="back" href="index.html">← Home</a>
+  <a class="back" href="../../index.html">← Home</a>
   <main class="container">
-    <img src="CompanyLogoCode.jpg" alt="Scruffy Hipster Logo" />
-    <h1>Services & Pricing</h1>
-    <p class="muted">I build premium, native iOS apps with Swift and SwiftUI. Fixed‑scope packages keep delivery fast and predictable.</p>
+    <img src="../../assets/CompanyLogoCode.jpg" alt="Scruffy Hipster Logo" />
+    <h1 class="hero-title">Services & Pricing</h1>
+    <p class="muted">We build premium, native iOS apps using Swift and SwiftUI. As a studio, we specialise in crafting fast, focused MVPs and polished production apps with predictable delivery and clear communication.</p>
 
     <section class="section" id="offers">
-      <h2>What I offer</h2>
+      <h2>What we offer</h2>
       <div class="cards">
         <div class="card">
-          <h3>MVP Sprint — from £3,999</h3>
-          <p>3–4 weeks to a production‑ready iOS MVP using SwiftUI and SwiftData.</p>
-          <ul>
-            <li>3–5 screens, 1 core data model</li>
-            <li>Light backend or local storage</li>
-            <li>App Store submission support</li>
-          </ul>
+          <h3>MVP Sprint. From £3,999</h3>
+          <p>In just 3–4 weeks, we’ll deliver a production ready iOS MVP using SwiftUI and SwiftData. Ideal for startups and founders who need to move fast.</p>
+          <p class="muted">Includes 3–5 screens, 1 core data model, light backend or local storage, and App Store submission support.</p>
         </div>
         <div class="card">
-          <h3>SwiftUI Modernisation — from £1,500</h3>
-          <p>Convert legacy UIKit to SwiftUI, refresh UI, and improve performance.</p>
-          <ul>
-            <li>Target iOS 18 look & feel</li>
-            <li>Refactor navigation/state</li>
-            <li>Keep what works, clean what doesn’t</li>
-          </ul>
+          <h3>SwiftUI Modernisation. From £2000</h3>
+          <p>We modernise legacy UIKit apps with SwiftUI, refresh UI design, and improve performance. Ready for iOS 26 and beyond.</p>
+          <p class="muted">Navigation and state refactoring, codebase cleanup while keeping what works.</p>
         </div>
         <div class="card">
-          <h3>App Polish & Launch — from £1,200</h3>
-          <p>Last‑mile fixes to ship with confidence.</p>
-          <ul>
-            <li>Bug fixes & performance passes</li>
-            <li>Store assets & metadata</li>
-            <li>Submission and review assistance</li>
-          </ul>
+          <h3>App Polish & Launch. From £1,500</h3>
+          <p>We handle final QA, polish, and App Store submission so your app ships confidently and looks great on launch day.</p>
+          <p class="muted">Includes bug fixes, performance passes, App Store assets, metadata, and full submission and review assistance.</p>
         </div>
         <div class="card">
-          <h3>Watch & Widget Add‑On — from £1,200</h3>
-          <p>Add an Apple Watch companion or home/lock‑screen widgets.</p>
-          <ul>
-            <li>Workout/Health integrations optional</li>
-            <li>Clean, native interactions</li>
-            <li>Shippable in 1–2 weeks</li>
-          </ul>
+          <h3>Watch & Widget Add‑On. From £1,500</h3>
+          <p>Extend your app with native Apple Watch companions or home/lock‑screen widgets designed to feel right at home on every device.</p>
+          <p class="muted">Optionally includes Workout/Health integrations, clean native interactions, and fast delivery within 1–2 weeks.</p>
         </div>
       </div>
-      <div class="notice">Fixed scope. 50% upfront, 50% on delivery. Async communication with weekly updates.</div>
+      <div class="notice">All projects are fixed‑scope for clarity. 50% upfront, 50% on delivery. We communicate asynchronously with weekly progress updates and demos.</div>
     </section>
 
     <section class="section" id="contact">
       <h2>Ready to talk?</h2>
-      <p class="muted">Tell me what you’re trying to ship and when. I’ll reply within 1 business day.</p>
+      <p class="muted">Tell us what you’re trying to ship and when. We’ll respond within 1-2 business day to discuss timelines, scope, and fit.</p>
       <div class="buttons">
         <a href="https://calendly.com/scruffyhipster/intro" target="_blank" class="button-link">Book a 15‑min call</a>
         <a href="mailto:hello@scruffyhipster.com" class="secondary-link">Email me</a>
