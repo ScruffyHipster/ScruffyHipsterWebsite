@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rewire — Focus, Reclaimed</title>
+  <meta name="description" content="Portfolio case study: Rewire. An iOS focus app that interrupts impulsive app opens and redirects attention back to what matters using system-level Screen Time controls." />
+  <link rel="icon" href="../../favicon.ico" />
+  <style>
+    /* Base */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 2rem 1.25rem 3rem;
+      text-align: center;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      max-width: 1000px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .layout {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2rem;
+    }
+
+    img { max-width: 100%; height: auto; }
+
+    .logo {
+      max-width: 200px;
+      height: auto;
+      margin: 0 auto 2rem;
+      display: block;
+    }
+
+    .back {
+      position: absolute;
+      left: 16px;
+      top: 12px;
+      text-decoration: none;
+      border: 1px solid #e5e5e5;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.95rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin: 0.5rem 0 0.75rem;
+      font-weight: 800;
+    }
+
+    .hero {
+      margin-top: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .sub {
+      color: #444;
+      font-size: 1.1rem;
+      max-width: 760px;
+      margin: 0.25rem auto 1.25rem;
+    }
+
+    .buttons {
+      margin-top: 1.5rem;
+      margin-bottom: 2.5rem;
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .button-link {
+      display: inline-block;
+      padding: 0.8rem 1.2rem;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 2px solid #000;
+      background: #000;
+      color: #fff;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+    }
+
+    .button-link:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,.15); }
+
+    .secondary-link {
+      display: inline-block;
+      padding: 0.8rem 1.2rem;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 2px solid #000;
+      background: transparent;
+      color: #000;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+    }
+
+    .secondary-link:hover { background: #000; color: #fff; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,.15); }
+
+    /* Sections */
+    section {
+      width: 100%;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .section-title { font-size: 1.8rem; margin: 0 0 .5rem; }
+    .muted { color: #555; font-size: 1rem; max-width: 760px; margin: .25rem auto 1rem; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      width: 100%;
+      margin-top: 2rem;
+    }
+
+    #gallery .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      justify-items: center;
+      align-items: start;
+    }
+
+    @media (max-width: 700px) {
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+    }
+
+    .card {
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      transition: box-shadow .2s ease, transform .2s ease;
+      background: #fff;
+    }
+
+    .card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.08); transform: translateY(-2px); }
+    .card h3 {
+      margin: 0 0 .4rem;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+    .card p { margin: 0; color: #333; }
+    .badge { display: inline-block; padding: 0.2rem 0.6rem; border: 1px solid #ddd; border-radius: 999px; font-size: .85rem; margin: .25rem 0 .5rem; }
+
+    .screenshot {
+      border-radius: 16px;
+      border: 1px solid #eee;
+      box-shadow: 0 6px 20px rgba(0,0,0,.08);
+    }
+
+    #gallery .screenshot {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* Media */
+    @media (min-width: 900px) {
+      .layout {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    .meta, .content {
+      max-width: 800px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <a class="back" href="../../index.html">← Home</a>
+
+  <main class="container">
+    <img class="logo" src="../../assets/RewireIcon-iOS-Dark-1024x1024@1x.png" alt="Rewire logo placeholder" />
+
+    <section class="hero">
+      <div class="copy">
+        <h1 class="hero-title">Rewire</h1>
+        <p class="sub">Rewire helps you break impulsive phone habits by interrupting distraction at the moment it happens — and redirecting your attention back to what you intended to do.</p>
+      </div>
+    </section>
+
+    <section id="cta">
+      <div class="buttons">
+        <a href="#" class="button-link">View on the App Store</a>
+        <a href="#features" class="secondary-link">See features</a>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2 class="section-title">Designed to interrupt distraction — not track it</h2>
+      <p class="muted">Rewire doesn’t rely on motivation or streaks. It uses iOS system controls to create deliberate friction at the point of distraction, helping users regain control of their attention.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Impulse Interruption</h3>
+          <p>When a blocked app is opened, Rewire intercepts the action and forces a conscious pause before continuing.</p>
+        </div>
+        <div class="card">
+          <h3>System-Level Blocking</h3>
+          <p>Built on Apple’s Screen Time APIs, Rewire enforces limits at the OS level — not via fragile timers or reminders.</p>
+        </div>
+        <div class="card">
+          <h3>Always-On Focus Sessions</h3>
+          <p>Run open-ended or time-boxed sessions that continuously protect your focus throughout the day.</p>
+        </div>
+        <div class="card">
+          <h3>Minimal by Design</h3>
+          <p>No feeds, no gamified noise, no emotional manipulation. Rewire stays out of the way and does its job.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h2 class="section-title">Screenshots</h2>
+      <div class="grid">
+        <img class="screenshot" src="../../assets/rewireScreenshots/6B10FF2E-73DB-42FE-B834-862E27356876_1_101_o.001.jpeg" alt="Rewire screen placeholder" />
+        <img class="screenshot" src="../../assets/rewireScreenshots/A6467EF2-CA9A-49FE-AA4C-B7BB9345E689_1_101_o.002.jpeg" alt="Rewire screen placeholder" />
+        <img class="screenshot" src="../../assets/rewireScreenshots/7FED24C9-11CA-428D-9E9C-EB0C3CE90C74_1_101_o.003.jpeg" alt="Rewire screen placeholder" />
+        <img class="screenshot" src="../../assets/rewireScreenshots/85904067-BAD0-4514-B44A-7B019DCBE459_1_101_o.004.jpeg" alt="Rewire screen placeholder" />
+        <img class="screenshot" src="../../assets/rewireScreenshots/B0C7FF92-D588-4969-A440-81C59F792667_1_101_o.005.jpeg" alt="Rewire screen placeholder" />
+        <img class="screenshot" src="../../assets/rewireScreenshots/BF0DBF44-BF58-40E3-AEEA-0B2124ADEDC8_1_101_o.006.jpeg" alt="Rewire screen placeholder" />
+      </div>
+    </section>
+
+    <section id="privacy">
+      <h2 class="section-title">Privacy-first by default</h2>
+      <p class="muted">Rewire does not track you across apps or collect behavioural data for advertising. All focus sessions and usage data stay on-device.</p>
+    </section>
+
+    <footer>
+      &copy; 2026 Scruffy Hipster Ltd. Rewire.
+    </footer>
+  </main>
+</body>
+</html>
