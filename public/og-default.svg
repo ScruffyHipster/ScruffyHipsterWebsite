@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Scruffy Hipster">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fff9c6"/>
+      <stop offset="45%" stop-color="#9cf2ff"/>
+      <stop offset="100%" stop-color="#ffa8d8"/>
+    </linearGradient>
+    <radialGradient id="blobA" cx="0.2" cy="0.2" r="0.7">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="180" cy="120" r="220" fill="url(#blobA)"/>
+  <circle cx="1010" cy="530" r="250" fill="#ffffff" opacity="0.2"/>
+  <rect x="76" y="72" width="1048" height="486" rx="32" fill="#ffffff" opacity="0.78"/>
+  <text x="120" y="250" fill="#121212" font-family="Verdana, sans-serif" font-size="72" font-weight="700">Scruffy Hipster</text>
+  <text x="120" y="332" fill="#2d2d2d" font-family="Verdana, sans-serif" font-size="34">Bright, native iOS apps by an independent studio.</text>
+  <text x="120" y="422" fill="#2d2d2d" font-family="Verdana, sans-serif" font-size="28">Rewire • Wren • Smarty Colours • Gro Guardian • Chat with Santa</text>
+</svg>
+
