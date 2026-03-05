@@ -103,8 +103,32 @@ export const privacyPolicies: PrivacyPolicyConfig[] = [
       description: "Read the privacy policy for Chat with Santa by Scruffy Hipster.",
       ogImage: "/og-default.svg"
     }
+  },
+  {
+    slug: "breast-feeding-tracker",
+    appName: "Breast Feeding Tracker",
+    title: "Breast Feeding Tracker Privacy Policy",
+    lastUpdated: "March 5, 2026",
+    htmlContent: `
+      <p><strong>Breast Feeding Tracker</strong> is designed to support parents with simple feeding logs while respecting privacy.</p>
+      <h2>Data Collection</h2>
+      <p>This app is intended to minimize data collection. Feeding entries and related tracking details are stored locally on your device.</p>
+      <h2>How Data Is Used</h2>
+      <p>Tracked information is used only to provide timeline history, summaries, and in-app insights for you.</p>
+      <h2>Sharing and Tracking</h2>
+      <p>Breast Feeding Tracker does not sell your data. It is not designed for advertising profiling or cross-app tracking.</p>
+      <h2>Your Choices</h2>
+      <p>You can remove your tracking data by deleting entries in the app or uninstalling the app, depending on feature availability.</p>
+      <h2>Contact</h2>
+      <p>If you have any questions, contact <a href="mailto:support@scruffyhipster.com">support@scruffyhipster.com</a>.</p>
+      <p>© 2026 Scruffy Hipster Ltd. All rights reserved.</p>
+    `,
+    seo: {
+      title: "Breast Feeding Tracker Privacy Policy | Scruffy Hipster",
+      description: "Read the privacy policy for Breast Feeding Tracker by Scruffy Hipster.",
+      ogImage: "/og-default.svg"
+    }
   }
 ];
 
 export const privacyPoliciesBySlug = new Map(privacyPolicies.map((policy) => [policy.slug, policy]));
-

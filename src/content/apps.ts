@@ -288,8 +288,61 @@ export const apps: AppConfig[] = [
       ogImage: "/og-default.svg"
     },
     accent: { from: "#ffd1a6", via: "#ff8ea0", to: "#9bb1ff" }
+  },
+  {
+    id: "breast-feeding-tracker",
+    slug: "breast-feeding-tracker",
+    name: "Breast Feeding Tracker",
+    heroTitle: "Breast Feeding Tracker",
+    tagline:
+      "A simple, supportive feeding tracker designed to help parents log sessions, spot patterns, and feel more confident day to day.",
+    shortDescription:
+      "An iOS breastfeeding tracker for quick feed logging, timeline history, and clear daily insights.",
+    longDescription:
+      "Breast Feeding Tracker is built to reduce mental load during early parenthood. It focuses on fast logging, clear history, and lightweight trend visibility so families can track feeding routines without friction.",
+    appStoreUrl: "#",
+    icon: "/assets/BreastFeedingIcon.png",
+    screenshots: [
+      { src: "/assets/breastfeedingScreenShots/1.png", alt: "Breast Feeding Tracker home screen" },
+      { src: "/assets/breastfeedingScreenShots/2.png", alt: "Breast Feeding Tracker feed logging screen" },
+      { src: "/assets/breastfeedingScreenShots/3.png", alt: "Breast Feeding Tracker timeline screen" },
+      { src: "/assets/breastfeedingScreenShots/4.png", alt: "Breast Feeding Tracker session detail screen" },
+      { src: "/assets/breastfeedingScreenShots/5.png", alt: "Breast Feeding Tracker statistics screen" }
+    ],
+    featureHeading: "Built for calm, reliable tracking",
+    featureIntro:
+      "Log feeds quickly, review your day at a glance, and keep a dependable record that supports routines and care discussions.",
+    features: [
+      {
+        title: "Quick Feed Logging",
+        body: "Capture start time, duration, and side in a few taps so entries are easy to record during busy moments."
+      },
+      {
+        title: "Clear Timeline",
+        body: "Review recent feeds in order to understand intervals and maintain confidence throughout the day."
+      },
+      {
+        title: "Simple Summaries",
+        body: "See lightweight daily totals and patterns to support routine planning and check-ins."
+      },
+      {
+        title: "Designed for Real Life",
+        body: "A focused interface avoids clutter so tracking remains fast and practical when attention is limited."
+      }
+    ],
+    privacySummary:
+      "Breast Feeding Tracker is designed with privacy in mind. A dedicated privacy policy is available for full details.",
+    privacySlug: "breast-feeding-tracker",
+    yearLabel: "2026",
+    seo: {
+      title: "Breast Feeding Tracker | iOS Feeding Log App",
+      description:
+        "Breast Feeding Tracker is an iOS app for logging feeds, viewing timelines, and keeping simple daily breastfeeding records.",
+      keywords: ["breast feeding tracker app", "breastfeeding log iPhone", "newborn feeding tracker", "parenting tracker iOS"],
+      ogImage: "/og-default.svg"
+    },
+    accent: { from: "#ffd6e7", via: "#f7b5ff", to: "#8cd9ff" }
   }
 ];
 
 export const appsBySlug = new Map(apps.map((app) => [app.slug, app]));
-

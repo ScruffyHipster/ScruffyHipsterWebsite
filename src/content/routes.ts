@@ -20,9 +20,10 @@ export const legacyRedirects: Array<{ from: string; to: string }> = [
   { from: "/pages/portfolio/smartycolours.html", to: "/apps/smarty-colours" },
   { from: "/pages/portfolio/groGuardian.html", to: "/apps/gro-guardian" },
   { from: "/pages/portfolio/chatWithSanta.html", to: "/apps/chat-with-santa" },
+  { from: "/pages/portfolio/breastFeedingTracker.html", to: "/apps/breast-feeding-tracker" },
   { from: "/pages/privacyPolicies/rewirePrivacyPolicy.html", to: "/privacy/rewire" },
   { from: "/pages/privacyPolicies/wrenPrivacyPolicy.html", to: "/privacy/wren" },
   { from: "/pages/privacyPolicies/smartyColoursPrivacyPolicy.html", to: "/privacy/smarty-colours" },
-  { from: "/pages/privacyPolicies/chatWithSantaPrivacyPolicy.html", to: "/privacy/chat-with-santa" }
+  { from: "/pages/privacyPolicies/chatWithSantaPrivacyPolicy.html", to: "/privacy/chat-with-santa" },
+  { from: "/pages/privacyPolicies/breastFeedingTrackerPrivacyPolicy.html", to: "/privacy/breast-feeding-tracker" }
 ];
-

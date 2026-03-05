@@ -52,6 +52,13 @@ export const publicRoutes = [
     ogImage: "/og-default.svg"
   },
   {
+    path: "/apps/breast-feeding-tracker",
+    title: "Breast Feeding Tracker | iOS Feeding Log App",
+    description:
+      "Breast Feeding Tracker is an iOS app for logging feeds, viewing timelines, and keeping simple daily breastfeeding records.",
+    ogImage: "/og-default.svg"
+  },
+  {
     path: "/privacy/rewire",
     title: "Rewire Privacy Policy | Scruffy Hipster",
     description: "Read the privacy policy for Rewire by Scruffy Hipster.",
@@ -74,6 +81,12 @@ export const publicRoutes = [
     title: "Chat with Santa Privacy Policy | Scruffy Hipster",
     description: "Read the privacy policy for Chat with Santa by Scruffy Hipster.",
     ogImage: "/og-default.svg"
+  },
+  {
+    path: "/privacy/breast-feeding-tracker",
+    title: "Breast Feeding Tracker Privacy Policy | Scruffy Hipster",
+    description: "Read the privacy policy for Breast Feeding Tracker by Scruffy Hipster.",
+    ogImage: "/og-default.svg"
   }
 ];
 
@@ -83,9 +96,10 @@ export const legacyRedirects = [
   ["/pages/portfolio/smartycolours.html", "/apps/smarty-colours"],
   ["/pages/portfolio/groGuardian.html", "/apps/gro-guardian"],
   ["/pages/portfolio/chatWithSanta.html", "/apps/chat-with-santa"],
+  ["/pages/portfolio/breastFeedingTracker.html", "/apps/breast-feeding-tracker"],
   ["/pages/privacyPolicies/rewirePrivacyPolicy.html", "/privacy/rewire"],
   ["/pages/privacyPolicies/wrenPrivacyPolicy.html", "/privacy/wren"],
   ["/pages/privacyPolicies/smartyColoursPrivacyPolicy.html", "/privacy/smarty-colours"],
-  ["/pages/privacyPolicies/chatWithSantaPrivacyPolicy.html", "/privacy/chat-with-santa"]
+  ["/pages/privacyPolicies/chatWithSantaPrivacyPolicy.html", "/privacy/chat-with-santa"],
+  ["/pages/privacyPolicies/breastFeedingTrackerPrivacyPolicy.html", "/privacy/breast-feeding-tracker"]
 ];
-
