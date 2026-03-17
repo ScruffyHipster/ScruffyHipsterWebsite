@@ -7,9 +7,11 @@ import { Seo } from "../components/Seo";
 import { Reveal } from "../components/Reveal";
 import { AppCard } from "../components/AppCard";
 import { organizationJsonLd, websiteJsonLd } from "../seo/jsonld";
+import { appRoutePath } from "../content/routes";
 
 export function HomePage() {
   const showcaseApps = apps.slice(0, 3);
+  const breastfeedingApp = apps.find((app) => app.slug === "breast-feeding-tracker");
   const [activeCardIndex, setActiveCardIndex] = useState(0);
 
   useEffect(() => {
@@ -98,6 +100,15 @@ export function HomePage() {
         <div className="container">
           <Reveal className="section-head">
             <h2>Apps</h2>
+            {breastfeedingApp ? (
+              <p>
+                Looking for a{" "}
+                <Link to={appRoutePath(breastfeedingApp)}>breastfeeding tracker for iPhone and Apple Watch</Link>
+                ? Explore{" "}
+                <Link to={appRoutePath(breastfeedingApp)}>Breastfeeding Tracker &amp; Timer with widgets, Live Activities, and feed history</Link>
+                .
+              </p>
+            ) : null}
           </Reveal>
           <div className="app-grid">
             {apps.map((app, index) => (
@@ -154,9 +165,15 @@ export function HomePage() {
               <h2>Browse the portfolio.</h2>
             </div>
             <div className="cta-banner-actions">
-              <Link to={`/apps/${apps[0]?.slug ?? "rewire"}`} className="btn btn-primary">
-                Open an App Page
-              </Link>
+              {breastfeedingApp ? (
+                <Link to={appRoutePath(breastfeedingApp)} className="btn btn-primary">
+                  Open the breastfeeding tracker for iPhone &amp; Apple Watch
+                </Link>
+              ) : (
+                <Link to={`/apps/${apps[0]?.slug ?? "rewire"}`} className="btn btn-primary">
+                  Open an App Page
+                </Link>
+              )}
             </div>
           </Reveal>
         </div>

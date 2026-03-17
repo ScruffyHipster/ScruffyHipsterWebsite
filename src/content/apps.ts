@@ -292,15 +292,15 @@ export const apps: AppConfig[] = [
   {
     id: "breast-feeding-tracker",
     slug: "breast-feeding-tracker",
-    name: "Breast Feeding Tracker",
-    heroTitle: "Breast Feeding Tracker",
+    name: "Breastfeeding Tracker & Timer",
+    heroTitle: "Breastfeeding Tracker & Timer",
     tagline:
-      "A simple, supportive feeding tracker designed to help parents log sessions, spot patterns, and feel more confident day to day.",
+      "A one-tap breastfeeding tracker and timer for iPhone and Apple Watch with widgets, Live Activities, and private on-device feed insights.",
     shortDescription:
-      "An iOS breastfeeding tracker for quick feed logging, timeline history, and clear daily insights.",
+      "A breastfeeding tracker for iPhone and Apple Watch with a live timer, feed history, widgets, and simple on-device insights.",
     longDescription:
-      "Breast Feeding Tracker is built to reduce mental load during early parenthood. It focuses on fast logging, clear history, and lightweight trend visibility so families can track feeding routines without friction.",
-    appStoreUrl: "#",
+      "Breastfeeding Tracker & Timer is built to help parents log feeds fast, stay in sync between iPhone and Apple Watch, and review clear feeding patterns without extra friction. It supports one-tap timing, left and right side tracking, quick save flows, glanceable Lock Screen progress, and private summaries based on recent history.",
+    appStoreUrl: "https://apps.apple.com/gb/app/breastfeeding-tracker-timer/id6754637800",
     icon: "/assets/BreastFeedingIcon.png",
     screenshots: [
       { src: "/assets/breastfeedingScreenShots/1.png", alt: "Breast Feeding Tracker home screen" },
@@ -309,36 +309,102 @@ export const apps: AppConfig[] = [
       { src: "/assets/breastfeedingScreenShots/4.png", alt: "Breast Feeding Tracker session detail screen" },
       { src: "/assets/breastfeedingScreenShots/5.png", alt: "Breast Feeding Tracker statistics screen" }
     ],
-    featureHeading: "Built for calm, reliable tracking",
+    featureHeading: "Built for fast breastfeeding tracking on iPhone and Apple Watch",
     featureIntro:
-      "Log feeds quickly, review your day at a glance, and keep a dependable record that supports routines and care discussions.",
+      "Track feeds in one tap, see live progress on your Lock Screen, and keep your breastfeeding timer synced across iPhone and Apple Watch.",
     features: [
       {
-        title: "Quick Feed Logging",
-        body: "Capture start time, duration, and side in a few taps so entries are easy to record during busy moments."
+        title: "One-Tap Breastfeeding Timer",
+        body: "Start a breastfeeding timer instantly and choose left or right at the same time, with the last-used side remembered for faster repeat logging."
       },
       {
-        title: "Clear Timeline",
-        body: "Review recent feeds in order to understand intervals and maintain confidence throughout the day."
+        title: "Live Feed Timer and Quick Save",
+        body: "Keep a live running timer visible during an active feed, then stop and save with a quick flow when you are done."
       },
       {
-        title: "Simple Summaries",
-        body: "See lightweight daily totals and patterns to support routine planning and check-ins."
+        title: "Feed History and Last Feed Summary",
+        body: "Review feed history with timestamps, duration, and side used, plus a last-feed summary on the main screen for a quick check-in."
       },
       {
-        title: "Designed for Real Life",
-        body: "A focused interface avoids clutter so tracking remains fast and practical when attention is limited."
+        title: "Apple Watch Breastfeeding Tracking",
+        body: "Start and stop feeds from Apple Watch, even when the watch is offline, then sync active sessions and completed feeds back to iPhone when it reconnects."
+      },
+      {
+        title: "Widget, Live Activity, and Dynamic Island",
+        body: "See feeds completed today, the last side used, and an active breastfeeding timer on your Home Screen, Lock Screen, and Dynamic Island."
+      },
+      {
+        title: "Private On-Device Feeding Insights",
+        body: "Get informational summaries from recent feed history, including average duration, longest session, left and right balance, day versus night activity, and time between feeds."
+      }
+    ],
+    seoApplicationSubCategory: "Breastfeeding Tracker",
+    seoFeatureList: [
+      "One-tap breastfeeding timer with left and right side tracking",
+      "Live running timer during active feeds",
+      "Apple Watch app for starting and stopping feeds",
+      "Offline Apple Watch support with sync back to iPhone",
+      "Feed history with timestamps, duration, and side used",
+      "Home Screen widget showing feeds completed today and last side used",
+      "Lock Screen Live Activity and Dynamic Island support",
+      "Private on-device feeding insights from recent history"
+    ],
+    seoContent: {
+      heading: "A breastfeeding tracker built for real-life feeding routines",
+      paragraphs: [
+        "Parents often search for a breastfeeding tracker for Apple Watch because they need to start or stop a feed without reaching for their phone. This app lets you track breastfeeding from your wrist, keeps active sessions synced with iPhone, and saves completed feeds when devices reconnect.",
+        "It also works as a breastfeeding timer for iPhone with live progress on the Lock Screen and Dynamic Island, plus a widget that shows feeds completed today and the last side used. The result is faster logging, clearer history, and less mental load during busy feeding sessions.",
+        "Recent feed data stays useful with private on-device summaries that highlight patterns like average duration, longest session, left and right balance, day versus night activity, and time between feeds. These insights are informational only and do not provide medical advice."
+      ]
+    },
+    faqHeading: "Breastfeeding tracker FAQ",
+    faqIntro:
+      "These are the kinds of questions parents often ask when comparing breastfeeding trackers, breastfeeding timers, and Apple Watch feeding apps.",
+    faqs: [
+      {
+        question: "Can I use this breastfeeding tracker on Apple Watch?",
+        answer:
+          "Yes. The app includes an Apple Watch companion app so you can start and stop feeds from your wrist, with active sessions and completed feeds syncing back to iPhone."
+      },
+      {
+        question: "Does the Apple Watch app work offline?",
+        answer:
+          "Yes. You can use the watch app when your watch is offline, and the app syncs feeds when your iPhone reconnects."
+      },
+      {
+        question: "Does it show a live breastfeeding timer on the Lock Screen?",
+        answer:
+          "Yes. The app supports Live Activities on the Lock Screen and Dynamic Island so you can keep an eye on an active feeding timer and the current side."
+      },
+      {
+        question: "Can I see my recent feed history and last side used?",
+        answer:
+          "Yes. Feed history includes timestamps, duration, and side used, and the main screen highlights the last feed summary and the last side used for faster repeat logging."
+      },
+      {
+        question: "Does the app include feeding insights?",
+        answer:
+          "Yes. The app creates private on-device summaries from recent history, including patterns like average duration, longest session, left and right balance, day versus night activity, and time between feeds."
       }
     ],
     privacySummary:
-      "Breast Feeding Tracker is designed with privacy in mind. A dedicated privacy policy is available for full details.",
+      "Breastfeeding Tracker & Timer is designed with privacy in mind. A dedicated privacy policy is available for full details.",
     privacySlug: "breast-feeding-tracker",
     yearLabel: "2026",
     seo: {
-      title: "Breast Feeding Tracker | iOS Feeding Log App",
+      title: "Breastfeeding Tracker & Timer for iPhone & Apple Watch",
       description:
-        "Breast Feeding Tracker is an iOS app for logging feeds, viewing timelines, and keeping simple daily breastfeeding records.",
-      keywords: ["breast feeding tracker app", "breastfeeding log iPhone", "newborn feeding tracker", "parenting tracker iOS"],
+        "Track feeds in one tap with a breastfeeding timer for iPhone and Apple Watch. Includes feed history, widgets, Live Activities, Dynamic Island, and private on-device feeding insights.",
+      keywords: [
+        "breastfeeding tracker",
+        "breast feeding tracker",
+        "breastfeeding timer",
+        "breastfeeding tracker apple watch",
+        "breastfeeding tracker for apple watch",
+        "baby feeding timer",
+        "nursing tracker iphone",
+        "feeding tracker widget"
+      ],
       ogImage: "/og-default.svg"
     },
     accent: { from: "#ffd6e7", via: "#f7b5ff", to: "#8cd9ff" }

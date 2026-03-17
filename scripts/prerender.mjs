@@ -25,15 +25,20 @@ export async function prerenderRoutes(distDir) {
 function injectRouteMeta(html, route) {
   const canonical = `${siteUrl}${route.path === "/" ? "/" : route.path}`;
   const image = route.ogImage?.startsWith("http") ? route.ogImage : `${siteUrl}${route.ogImage || "/og-default.svg"}`;
-  const jsonLd = JSON.stringify(
-    route.jsonLd || {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      name: route.title,
-      url: canonical,
-      description: route.description
-    }
-  );
+  const jsonLdEntries = Array.isArray(route.jsonLd)
+    ? route.jsonLd
+    : [
+        route.jsonLd || {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: route.title,
+          url: canonical,
+          description: route.description
+        }
+      ];
+  const jsonLd = jsonLdEntries
+    .map((entry, index) => `<script${index === 0 ? ' id="route-jsonld"' : ""} type="application/ld+json">${JSON.stringify(entry)}</script>`)
+    .join("");
 
   const noscriptSummary = `<noscript><main style="font-family:Arial,sans-serif;max-width:760px;margin:2rem auto;padding:0 1rem;"><h1>${escapeHtml(
     route.title
@@ -60,7 +65,7 @@ function injectRouteMeta(html, route) {
     .replace(/<meta\s+name="twitter:image"\s+content="[^"]*"\s*\/?>/i, `<meta name="twitter:image" content="${escapeAttr(image)}" />`)
     .replace(
       /<script id="route-jsonld" type="application\/ld\+json">[\s\S]*?<\/script>/i,
-      `<script id="route-jsonld" type="application/ld+json">${jsonLd}</script>`
+      jsonLd
     )
     .replace(/<body>/i, `<body>\n    ${noscriptSummary}`);
 }
@@ -79,4 +84,3 @@ function escapeHtml(value) {
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;");
 }
-

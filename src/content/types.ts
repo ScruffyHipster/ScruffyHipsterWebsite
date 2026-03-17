@@ -10,6 +10,11 @@ export type FeatureCard = {
   body: string;
 };
 
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
+
 export type Screenshot = {
   src: string;
   alt: string;
@@ -29,6 +34,15 @@ export type AppConfig = {
   featureHeading: string;
   featureIntro: string;
   features: FeatureCard[];
+  seoApplicationSubCategory?: string;
+  seoFeatureList?: string[];
+  seoContent?: {
+    heading: string;
+    paragraphs: string[];
+  };
+  faqHeading?: string;
+  faqIntro?: string;
+  faqs?: FaqItem[];
   privacySummary: string;
   privacySlug?: string;
   yearLabel: string;
@@ -59,4 +73,3 @@ export type SiteConfig = {
   tagline: string;
   description: string;
 };
-

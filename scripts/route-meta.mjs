@@ -53,10 +53,86 @@ export const publicRoutes = [
   },
   {
     path: "/apps/breast-feeding-tracker",
-    title: "Breast Feeding Tracker | iOS Feeding Log App",
+    title: "Breastfeeding Tracker & Timer for iPhone & Apple Watch",
     description:
-      "Breast Feeding Tracker is an iOS app for logging feeds, viewing timelines, and keeping simple daily breastfeeding records.",
-    ogImage: "/og-default.svg"
+      "Track feeds in one tap with a breastfeeding timer for iPhone and Apple Watch. Includes feed history, widgets, Live Activities, Dynamic Island, and private on-device feeding insights.",
+    ogImage: "/og-default.svg",
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        name: "Breastfeeding Tracker & Timer",
+        applicationCategory: "MobileApplication",
+        applicationSubCategory: "Breastfeeding Tracker",
+        operatingSystem: "iOS",
+        url: `${siteUrl}/apps/breast-feeding-tracker`,
+        image: `${siteUrl}/assets/BreastFeedingIcon.png`,
+        downloadUrl: "https://apps.apple.com/gb/app/breastfeeding-tracker-timer/id6754637800",
+        description:
+          "A breastfeeding tracker for iPhone and Apple Watch with a live timer, feed history, widgets, and simple on-device insights.",
+        featureList: [
+          "One-tap breastfeeding timer with left and right side tracking",
+          "Live running timer during active feeds",
+          "Apple Watch app for starting and stopping feeds",
+          "Offline Apple Watch support with sync back to iPhone",
+          "Feed history with timestamps, duration, and side used",
+          "Home Screen widget showing feeds completed today and last side used",
+          "Lock Screen Live Activity and Dynamic Island support",
+          "Private on-device feeding insights from recent history"
+        ],
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "Can I use this breastfeeding tracker on Apple Watch?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. The app includes an Apple Watch companion app so you can start and stop feeds from your wrist, with active sessions and completed feeds syncing back to iPhone."
+            }
+          },
+          {
+            "@type": "Question",
+            name: "Does the Apple Watch app work offline?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. You can use the watch app when your watch is offline, and the app syncs feeds when your iPhone reconnects."
+            }
+          },
+          {
+            "@type": "Question",
+            name: "Does it show a live breastfeeding timer on the Lock Screen?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. The app supports Live Activities on the Lock Screen and Dynamic Island so you can keep an eye on an active feeding timer and the current side."
+            }
+          },
+          {
+            "@type": "Question",
+            name: "Can I see my recent feed history and last side used?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. Feed history includes timestamps, duration, and side used, and the main screen highlights the last feed summary and the last side used for faster repeat logging."
+            }
+          },
+          {
+            "@type": "Question",
+            name: "Does the app include feeding insights?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. The app creates private on-device summaries from recent history, including patterns like average duration, longest session, left and right balance, day versus night activity, and time between feeds."
+            }
+          }
+        ]
+      }
+    ]
   },
   {
     path: "/privacy/rewire",

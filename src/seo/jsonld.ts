@@ -25,10 +25,13 @@ export const softwareApplicationJsonLd = (app: AppConfig, url: string) => ({
   "@type": "SoftwareApplication",
   name: app.name,
   applicationCategory: "MobileApplication",
+  ...(app.seoApplicationSubCategory ? { applicationSubCategory: app.seoApplicationSubCategory } : {}),
   operatingSystem: "iOS",
   description: app.shortDescription,
   url,
   image: new URL(app.icon, siteConfig.domain).toString(),
+  ...(app.seoFeatureList ? { featureList: app.seoFeatureList } : {}),
+  ...(app.appStoreUrl !== "#" ? { downloadUrl: app.appStoreUrl } : {}),
   offers: {
     "@type": "Offer",
     price: "0",
@@ -47,3 +50,15 @@ export const breadcrumbJsonLd = (items: Array<{ name: string; url: string }>) =>
   }))
 });
 
+export const faqPageJsonLd = (items: Array<{ question: string; answer: string }>) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: items.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer
+    }
+  }))
+});

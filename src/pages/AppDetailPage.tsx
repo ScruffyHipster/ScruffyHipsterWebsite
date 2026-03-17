@@ -5,7 +5,7 @@ import { Seo } from "../components/Seo";
 import { Reveal } from "../components/Reveal";
 import { ScreenshotGallery } from "../components/ScreenshotGallery";
 import { appRoutePath } from "../content/routes";
-import { breadcrumbJsonLd, organizationJsonLd, softwareApplicationJsonLd } from "../seo/jsonld";
+import { breadcrumbJsonLd, faqPageJsonLd, organizationJsonLd, softwareApplicationJsonLd } from "../seo/jsonld";
 import { getSiteUrl } from "../seo/metadata";
 
 export function AppDetailPage() {
@@ -29,6 +29,7 @@ export function AppDetailPage() {
         jsonLd={[
           organizationJsonLd(),
           softwareApplicationJsonLd(app, absoluteUrl),
+          ...(app.faqs?.length ? [faqPageJsonLd(app.faqs)] : []),
           breadcrumbJsonLd([
             { name: "Scruffy Hipster", url: getSiteUrl() },
             { name: "Apps", url: `${getSiteUrl()}/#apps` },
@@ -101,6 +102,48 @@ export function AppDetailPage() {
           </div>
         </div>
       </section>
+
+      {app.seoContent ? (
+        <section className="section-block section-pad">
+          <div className="container">
+            <Reveal className="section-head">
+              <p className="eyebrow">Why parents find it</p>
+              <h2>{app.seoContent.heading}</h2>
+            </Reveal>
+            <div className="about-grid">
+              <Reveal>
+                <article className="glass-panel">
+                  {app.seoContent.paragraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </article>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {app.faqs?.length ? (
+        <section className="section-block section-pad">
+          <div className="container">
+            <Reveal className="section-head">
+              <p className="eyebrow">FAQ</p>
+              <h2>{app.faqHeading ?? "Frequently asked questions"}</h2>
+              {app.faqIntro ? <p>{app.faqIntro}</p> : null}
+            </Reveal>
+            <div className="feature-grid">
+              {app.faqs.map((item, index) => (
+                <Reveal key={item.question} delayMs={Math.min(index * 65, 240)}>
+                  <article className="feature-card">
+                    <h3>{item.question}</h3>
+                    <p>{item.answer}</p>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <div className="container">
         <ScreenshotGallery screenshots={app.screenshots} title="Screenshots" />
