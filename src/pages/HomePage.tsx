@@ -1,16 +1,11 @@
-import { Link } from "react-router-dom";
 import { apps } from "../content/apps";
 import { siteConfig } from "../content/site";
 import { Seo } from "../components/Seo";
 import { Reveal } from "../components/Reveal";
 import { AppCard } from "../components/AppCard";
 import { organizationJsonLd, websiteJsonLd } from "../seo/jsonld";
-import { appRoutePath } from "../content/routes";
 
 export function HomePage() {
-  const showcaseApps = apps.slice(0, 3);
-  const breastfeedingApp = apps.find((app) => app.slug === "breast-feeding-tracker");
-
   return (
     <>
       <Seo
@@ -32,7 +27,7 @@ export function HomePage() {
       />
 
       <section className="hero-shell">
-        <div className="container hero-grid">
+        <div className="container">
           <Reveal className="hero-copy">
             <p className="eyebrow">Independent iOS Studio</p>
             <h1>Bright, native apps with personality.</h1>
@@ -46,23 +41,6 @@ export function HomePage() {
               </a>
             </div>
           </Reveal>
-
-          <Reveal className="hero-showcase" delayMs={120}>
-            <div className="hero-stack">
-              {showcaseApps.map((app) => (
-                <div
-                  key={app.id}
-                  className="hero-stack-card"
-                >
-                  <img src={app.icon} alt="" aria-hidden="true" />
-                  <div>
-                    <p>{app.name}</p>
-                    <span>{app.shortDescription}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Reveal>
         </div>
       </section>
 
@@ -70,15 +48,6 @@ export function HomePage() {
         <div className="container">
           <Reveal className="section-head">
             <h2>Apps</h2>
-            {breastfeedingApp ? (
-              <p>
-                Looking for a{" "}
-                <Link to={appRoutePath(breastfeedingApp)}>breastfeeding tracker for iPhone and Apple Watch</Link>
-                ? Explore{" "}
-                <Link to={appRoutePath(breastfeedingApp)}>Breastfeeding Tracker &amp; Timer with widgets, Live Activities, and feed history</Link>
-                .
-              </p>
-            ) : null}
           </Reveal>
           <div className="app-grid">
             {apps.map((app, index) => (
@@ -122,28 +91,6 @@ export function HomePage() {
                   Fast iteration without cutting corners: solid architecture, smooth interactions, and production-ready execution.
                 </p>
               </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="section-block section-pad">
-        <div className="container">
-          <Reveal className="cta-banner">
-            <div>
-              <p className="eyebrow">Start With the Apps</p>
-              <h2>Browse the portfolio.</h2>
-            </div>
-            <div className="cta-banner-actions">
-              {breastfeedingApp ? (
-                <Link to={appRoutePath(breastfeedingApp)} className="btn btn-primary">
-                  Open the breastfeeding tracker for iPhone &amp; Apple Watch
-                </Link>
-              ) : (
-                <Link to={`/apps/${apps[0]?.slug ?? "rewire"}`} className="btn btn-primary">
-                  Open an App Page
-                </Link>
-              )}
             </div>
           </Reveal>
         </div>
