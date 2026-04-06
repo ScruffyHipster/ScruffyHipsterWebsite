@@ -1,5 +1,3 @@
-import type { CSSProperties } from "react";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { apps } from "../content/apps";
 import { siteConfig } from "../content/site";
@@ -12,19 +10,6 @@ import { appRoutePath } from "../content/routes";
 export function HomePage() {
   const showcaseApps = apps.slice(0, 3);
   const breastfeedingApp = apps.find((app) => app.slug === "breast-feeding-tracker");
-  const [activeCardIndex, setActiveCardIndex] = useState(0);
-
-  useEffect(() => {
-    if (showcaseApps.length < 2) return;
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reducedMotion) return;
-
-    const interval = window.setInterval(() => {
-      setActiveCardIndex((current) => (current + 1) % showcaseApps.length);
-    }, 3200);
-
-    return () => window.clearInterval(interval);
-  }, [showcaseApps.length]);
 
   return (
     <>
@@ -64,24 +49,10 @@ export function HomePage() {
 
           <Reveal className="hero-showcase" delayMs={120}>
             <div className="hero-stack">
-              {showcaseApps.map((app, index) => {
-                const stackOrder = (index - activeCardIndex + showcaseApps.length) % showcaseApps.length;
-                const isTopCard = stackOrder === 0;
-                return (
+              {showcaseApps.map((app) => (
                 <div
                   key={app.id}
-                  className={`hero-stack-card${isTopCard ? " is-top-card" : ""}`}
-                  style={
-                    {
-                      "--stack-order": stackOrder,
-                      "--stack-depth-y": `${stackOrder * 26}px`,
-                      "--stack-depth-x": `${stackOrder * 10}px`,
-                      "--stack-scale": `${1 - stackOrder * 0.045}`,
-                      "--stack-opacity": `${1 - stackOrder * 0.08}`,
-                      "--stack-rotate":
-                        stackOrder === 0 ? "-2deg" : stackOrder === 1 ? "5deg" : "-6deg"
-                    } as CSSProperties
-                  }
+                  className="hero-stack-card"
                 >
                   <img src={app.icon} alt="" aria-hidden="true" />
                   <div>
@@ -89,8 +60,7 @@ export function HomePage() {
                     <span>{app.shortDescription}</span>
                   </div>
                 </div>
-                );
-              })}
+              ))}
             </div>
           </Reveal>
         </div>
