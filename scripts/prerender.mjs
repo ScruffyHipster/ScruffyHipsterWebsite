@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile, copyFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { publicRoutes, siteUrl } from "./route-meta.mjs";
 
@@ -18,13 +18,21 @@ export async function prerenderRoutes(distDir) {
     await writeFile(outputPath, injectRouteMeta(baseHtml, route), "utf8");
   }
 
-  // GitHub Pages SPA fallback for unknown paths.
-  await copyFile(baseHtmlPath, join(distDir, "404.html"));
+  // GitHub Pages SPA fallback for unknown paths with explicit noindex.
+  const notFoundHtml = injectRouteMeta(baseHtml, {
+    path: "/404",
+    title: "Page Not Found | Scruffy Hipster",
+    description: "The page you were looking for could not be found on Scruffy Hipster.",
+    ogImage: "/og-default.svg",
+    robots: "noindex,follow"
+  });
+  await writeFile(join(distDir, "404.html"), notFoundHtml, "utf8");
 }
 
 function injectRouteMeta(html, route) {
-  const canonical = `${siteUrl}${route.path === "/" ? "/" : route.path}`;
+  const canonical = canonicalUrl(route.path);
   const image = route.ogImage?.startsWith("http") ? route.ogImage : `${siteUrl}${route.ogImage || "/og-default.svg"}`;
+  const robots = route.robots || "index,follow";
   const jsonLdEntries = Array.isArray(route.jsonLd)
     ? route.jsonLd
     : [
@@ -49,12 +57,13 @@ function injectRouteMeta(html, route) {
   return html
     .replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(route.title)}</title>`)
     .replace(
-      /<meta\s+name="description"\s+content="[^"]*"\s*\/?>/i,
-      `<meta name="description" content="${escapeAttr(route.description)}" />`
-    )
-    .replace(
       /<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i,
       `<link rel="canonical" href="${escapeAttr(canonical)}" />`
+    )
+    .replace(/<meta\s+name="robots"\s+content="[^"]*"\s*\/?>/i, "")
+    .replace(
+      /<meta\s+name="description"\s+content="[^"]*"\s*\/?>/i,
+      `<meta name="description" content="${escapeAttr(route.description)}" />\n    <meta name="robots" content="${escapeAttr(robots)}" />`
     )
     .replace(/<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:title" content="${escapeAttr(route.title)}" />`)
     .replace(/<meta\s+property="og:description"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:description" content="${escapeAttr(route.description)}" />`)
@@ -68,6 +77,10 @@ function injectRouteMeta(html, route) {
       jsonLd
     )
     .replace(/<body>/i, `<body>\n    ${noscriptSummary}`);
+}
+
+function canonicalUrl(path) {
+  return `${siteUrl}${path === "/" ? "" : path}`;
 }
 
 function escapeAttr(value) {

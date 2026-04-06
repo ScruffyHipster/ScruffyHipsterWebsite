@@ -5,7 +5,7 @@ import { publicRoutes, siteUrl } from "./route-meta.mjs";
 export async function generateSitemap(distDir) {
   const urls = publicRoutes
     .map((route) => {
-      const loc = `${siteUrl}${route.path === "/" ? "/" : route.path}`;
+      const loc = canonicalUrl(route.path);
       return `<url><loc>${escapeXml(loc)}</loc></url>`;
     })
     .join("");
@@ -26,6 +26,10 @@ Sitemap: ${siteUrl}/sitemap.xml
   await writeFile(join(distDir, "robots.txt"), robots, "utf8");
 }
 
+function canonicalUrl(path) {
+  return `${siteUrl}${path === "/" ? "" : path}`;
+}
+
 function escapeXml(value) {
   return value
     .replaceAll("&", "&amp;")
@@ -34,4 +38,3 @@ function escapeXml(value) {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&apos;");
 }
-

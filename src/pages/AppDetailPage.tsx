@@ -57,15 +57,15 @@ export function AppDetailPage() {
                 <h1>{app.heroTitle}</h1>
                 <p className="lead">{app.tagline}</p>
                 <div className="hero-actions">
-                  <a
-                    className={`btn ${storeLinkMissing ? "btn-disabled" : "btn-primary"}`}
-                    href={app.appStoreUrl}
-                    target={storeLinkMissing ? undefined : "_blank"}
-                    rel={storeLinkMissing ? undefined : "noopener noreferrer"}
-                    aria-disabled={storeLinkMissing}
-                  >
-                    {storeLinkMissing ? "App Store link coming soon" : "View on the App Store"}
-                  </a>
+                  {storeLinkMissing ? (
+                    <button className="btn btn-disabled" type="button" disabled aria-disabled="true">
+                      App Store link coming soon
+                    </button>
+                  ) : (
+                    <a className="btn btn-primary" href={app.appStoreUrl} target="_blank" rel="noopener noreferrer">
+                      View on the App Store
+                    </a>
+                  )}
                   <a className="btn btn-secondary" href="#features">
                     See features
                   </a>

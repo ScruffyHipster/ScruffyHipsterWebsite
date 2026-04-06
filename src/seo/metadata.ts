@@ -7,6 +7,7 @@ export type ResolvedMeta = {
   canonicalUrl: string;
   imageUrl: string;
   keywords?: string;
+  robots: string;
 };
 
 export const getSiteUrl = () =>
@@ -19,9 +20,13 @@ export const resolveMeta = (meta: SeoMeta, path: string): ResolvedMeta => {
   return {
     title: meta.title,
     description: meta.description,
-    canonicalUrl: `${siteUrl}${path === "/" ? "" : path}`,
+    canonicalUrl: canonicalUrl(path, siteUrl),
     imageUrl,
-    keywords: meta.keywords?.join(", ")
+    keywords: meta.keywords?.join(", "),
+    robots: meta.robots || "index,follow"
   };
 };
 
+function canonicalUrl(path: string, siteUrl: string) {
+  return `${siteUrl}${path === "/" ? "" : path}`;
+}

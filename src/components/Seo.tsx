@@ -19,6 +19,7 @@ export function Seo({ meta, path, jsonLd }: SeoProps) {
       <html lang="en" />
       <title>{resolved.title}</title>
       <meta name="description" content={resolved.description} />
+      <meta name="robots" content={resolved.robots} />
       {resolved.keywords ? <meta name="keywords" content={resolved.keywords} /> : null}
       <link rel="canonical" href={resolved.canonicalUrl} />
       <meta property="og:type" content="website" />
@@ -38,4 +39,3 @@ export function Seo({ meta, path, jsonLd }: SeoProps) {
     </Helmet>
   );
 }
-

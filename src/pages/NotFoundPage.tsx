@@ -8,7 +8,8 @@ export function NotFoundPage() {
         path="/404"
         meta={{
           title: "Page Not Found | Scruffy Hipster",
-          description: "The page you were looking for could not be found on Scruffy Hipster."
+          description: "The page you were looking for could not be found on Scruffy Hipster.",
+          robots: "noindex,follow"
         }}
       />
       <section className="section-block section-pad">
@@ -31,4 +32,3 @@ export function NotFoundPage() {
     </>
   );
 }
-

@@ -26,6 +26,7 @@ function redirectHtml(absoluteTarget, relativeTarget) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Redirecting…</title>
+    <meta name="robots" content="noindex,follow" />
     <meta http-equiv="refresh" content="0; url=${absoluteTarget}" />
     <link rel="canonical" href="${absoluteTarget}" />
     <script>location.replace(${JSON.stringify(absoluteTarget)});</script>
@@ -36,4 +37,3 @@ function redirectHtml(absoluteTarget, relativeTarget) {
 </html>
 `;
 }
-

@@ -3,6 +3,7 @@ export type SeoMeta = {
   description: string;
   keywords?: string[];
   ogImage?: string;
+  robots?: string;
 };
 
 export type FeatureCard = {

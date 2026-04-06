@@ -1,4 +1,11 @@
 export const siteUrl = process.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://scruffyhipster.com";
+const legacyPrivacyRedirects = [
+  ["rewirePrivacyPolicy.html", "/privacy/rewire"],
+  ["wrenPrivacyPolicy.html", "/privacy/wren"],
+  ["smartyColoursPrivacyPolicy.html", "/privacy/smarty-colours"],
+  ["chatWithSantaPrivacyPolicy.html", "/privacy/chat-with-santa"],
+  ["breastFeedingTrackerPrivacyPolicy.html", "/privacy/breast-feeding-tracker"]
+];
 
 export const publicRoutes = [
   {
@@ -177,5 +184,8 @@ export const legacyRedirects = [
   ["/pages/privacyPolicies/wrenPrivacyPolicy.html", "/privacy/wren"],
   ["/pages/privacyPolicies/smartyColoursPrivacyPolicy.html", "/privacy/smarty-colours"],
   ["/pages/privacyPolicies/chatWithSantaPrivacyPolicy.html", "/privacy/chat-with-santa"],
-  ["/pages/privacyPolicies/breastFeedingTrackerPrivacyPolicy.html", "/privacy/breast-feeding-tracker"]
+  ["/pages/privacyPolicies/breastFeedingTrackerPrivacyPolicy.html", "/privacy/breast-feeding-tracker"],
+  ...legacyPrivacyRedirects.map(([file, to]) => [`/pages/privacypolicy/${file}`, to]),
+  ...legacyPrivacyRedirects.map(([file, to]) => [`/pages/privacyPolicy/${file}`, to]),
+  ...legacyPrivacyRedirects.map(([file, to]) => [`/pages/privacypolicies/${file}`, to])
 ];

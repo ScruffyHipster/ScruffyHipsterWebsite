@@ -4,6 +4,13 @@ import type { AppConfig, PrivacyPolicyConfig } from "./types";
 
 export const APP_BASE_PATH = "/apps";
 export const PRIVACY_BASE_PATH = "/privacy";
+const legacyPrivacyRedirects: Array<{ file: string; to: string }> = [
+  { file: "rewirePrivacyPolicy.html", to: "/privacy/rewire" },
+  { file: "wrenPrivacyPolicy.html", to: "/privacy/wren" },
+  { file: "smartyColoursPrivacyPolicy.html", to: "/privacy/smarty-colours" },
+  { file: "chatWithSantaPrivacyPolicy.html", to: "/privacy/chat-with-santa" },
+  { file: "breastFeedingTrackerPrivacyPolicy.html", to: "/privacy/breast-feeding-tracker" }
+];
 
 export const appRoutePath = (app: AppConfig) => `${APP_BASE_PATH}/${app.slug}`;
 export const privacyRoutePath = (policy: PrivacyPolicyConfig) => `${PRIVACY_BASE_PATH}/${policy.slug}`;
@@ -25,5 +32,8 @@ export const legacyRedirects: Array<{ from: string; to: string }> = [
   { from: "/pages/privacyPolicies/wrenPrivacyPolicy.html", to: "/privacy/wren" },
   { from: "/pages/privacyPolicies/smartyColoursPrivacyPolicy.html", to: "/privacy/smarty-colours" },
   { from: "/pages/privacyPolicies/chatWithSantaPrivacyPolicy.html", to: "/privacy/chat-with-santa" },
-  { from: "/pages/privacyPolicies/breastFeedingTrackerPrivacyPolicy.html", to: "/privacy/breast-feeding-tracker" }
+  { from: "/pages/privacyPolicies/breastFeedingTrackerPrivacyPolicy.html", to: "/privacy/breast-feeding-tracker" },
+  ...legacyPrivacyRedirects.map(({ file, to }) => ({ from: `/pages/privacypolicy/${file}`, to })),
+  ...legacyPrivacyRedirects.map(({ file, to }) => ({ from: `/pages/privacyPolicy/${file}`, to })),
+  ...legacyPrivacyRedirects.map(({ file, to }) => ({ from: `/pages/privacypolicies/${file}`, to }))
 ];
