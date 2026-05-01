@@ -10,9 +10,9 @@ const legacyPrivacyRedirects = [
 export const publicRoutes = [
   {
     path: "/",
-    title: "Scruffy Hipster | Bright Native iOS Apps",
+    title: "Scruffy Hipster | Bright Native Apple Platform Apps",
     description:
-      "Explore Rewire, Wren, Smarty Colours, Gro Guardian and Chat with Santa from Scruffy Hipster, an independent iOS studio.",
+      "Explore native iPhone, iPad, Apple Watch, and Mac apps from Scruffy Hipster, an independent Apple platform studio.",
     ogImage: "/og-default.svg",
     jsonLd: {
       "@context": "https://schema.org",
@@ -20,7 +20,7 @@ export const publicRoutes = [
       name: "Scruffy Hipster",
       url: siteUrl,
       description:
-        "Independent iOS studio creating premium native apps with clean UX, thoughtful engineering, and playful product design."
+        "Independent Apple platform studio creating premium native apps with clean UX, thoughtful engineering, and playful product design."
     }
   },
   {
@@ -57,6 +57,38 @@ export const publicRoutes = [
     description:
       "Chat with Santa is a festive, privacy-first holiday chat app for families with magical Santa conversations and joyful design.",
     ogImage: "/og-default.svg"
+  },
+  {
+    path: "/apps/standing-desk-timer",
+    title: "Standing Desk Timer for macOS | Scruffy Hipster",
+    description:
+      "Standing Desk Timer is a macOS menu bar app for sit, stand, and movement reminders with configurable intervals, posture prompts, and local daily totals.",
+    ogImage: "/og-default.svg",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      name: "Standing Desk Timer",
+      applicationCategory: "DesktopApplication",
+      applicationSubCategory: "Standing Desk Timer",
+      operatingSystem: "macOS",
+      url: `${siteUrl}/apps/standing-desk-timer`,
+      image: `${siteUrl}/assets/StandingDeskIcon-iOS-Dark-1024x1024@1x.png`,
+      description:
+        "A macOS menu bar app for sit, stand, and movement reminders with configurable intervals, posture prompts, and daily totals.",
+      featureList: [
+        "macOS menu bar sit and stand timer",
+        "Configurable sit, stand, and movement intervals",
+        "Standing desk posture reminders",
+        "Regular notifications or full-screen reminder overlay",
+        "Optional launch at login",
+        "Local daily sitting, standing, and movement totals"
+      ],
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD"
+      }
+    }
   },
   {
     path: "/apps/breast-feeding-tracker",
@@ -163,6 +195,12 @@ export const publicRoutes = [
     path: "/privacy/chat-with-santa",
     title: "Chat with Santa Privacy Policy | Scruffy Hipster",
     description: "Read the privacy policy for Chat with Santa by Scruffy Hipster.",
+    ogImage: "/og-default.svg"
+  },
+  {
+    path: "/privacy/standing-desk-timer",
+    title: "Standing Desk Timer Privacy Policy | Scruffy Hipster",
+    description: "Read the privacy policy for Standing Desk Timer by Scruffy Hipster.",
     ogImage: "/og-default.svg"
   },
   {

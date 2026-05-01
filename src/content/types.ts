@@ -25,6 +25,9 @@ export type AppConfig = {
   id: string;
   slug: string;
   name: string;
+  platformLabel?: string;
+  operatingSystem?: string;
+  applicationCategory?: string;
   heroTitle: string;
   tagline: string;
   shortDescription: string;

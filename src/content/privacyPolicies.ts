@@ -105,6 +105,37 @@ export const privacyPolicies: PrivacyPolicyConfig[] = [
     }
   },
   {
+    slug: "standing-desk-timer",
+    appName: "Standing Desk Timer",
+    title: "Standing Desk Timer Privacy Policy",
+    lastUpdated: "May 1, 2026",
+    htmlContent: `
+      <p><strong>Standing Desk Timer</strong> is a macOS menu bar app designed to help you build healthier sit, stand, and movement habits while respecting your privacy.</p>
+      <h2>Data We Collect</h2>
+      <p>Standing Desk Timer does not require an account and does not collect personal information such as your name, email address, location, contacts, device name, local file paths, or free-form text.</p>
+      <p>The app stores timer settings, reminder preferences, onboarding state, current session state, and local daily totals on your Mac using local app storage. This information is used only to run the timer and restore your preferences.</p>
+      <h2>Analytics</h2>
+      <p>Standing Desk Timer uses TelemetryDeck for limited anonymous product analytics. TelemetryDeck uses an anonymous per-install identifier. We do not add custom user identifiers.</p>
+      <p>Analytics may include bounded app behavior such as timer starts and ends, pause and resume actions, reminder responses, selected interval values, reminder style changes, launch-at-login changes, and bucketed session summaries.</p>
+      <p>Analytics does not include names, email addresses, account IDs, device names, local file paths, exact wall-clock schedule choices, free-form user text, or raw system error messages.</p>
+      <h2>Notifications and Launch at Login</h2>
+      <p>The app may request macOS notification permission so it can show posture reminders, movement prompts, and session transition alerts. You can manage notification permission in macOS System Settings.</p>
+      <p>Launch at login is optional. If enabled, macOS starts Standing Desk Timer when you sign in so the menu bar timer is available automatically.</p>
+      <h2>Sharing and Tracking</h2>
+      <p>Standing Desk Timer does not use advertising technologies, does not sell personal data, and does not track you across apps or websites.</p>
+      <h2>Your Choices</h2>
+      <p>You can change timer settings, reminder style, notification permissions, and launch-at-login preferences at any time. Deleting the app removes the app from your Mac; locally stored app data can also be removed through standard macOS app data cleanup.</p>
+      <h2>Contact</h2>
+      <p>If you have any questions, contact <a href="mailto:support@scruffyhipster.com">support@scruffyhipster.com</a>.</p>
+      <p>© 2026 Scruffy Hipster Ltd. All rights reserved.</p>
+    `,
+    seo: {
+      title: "Standing Desk Timer Privacy Policy | Scruffy Hipster",
+      description: "Read the privacy policy for Standing Desk Timer by Scruffy Hipster.",
+      ogImage: "/og-default.svg"
+    }
+  },
+  {
     slug: "breast-feeding-tracker",
     appName: "Breast Feeding Tracker",
     title: "Breast Feeding Tracker Privacy Policy",

@@ -53,7 +53,7 @@ export function AppDetailPage() {
             >
               <img className="app-hero-icon" src={app.icon} alt={`${app.name} icon`} />
               <div>
-                <p className="eyebrow">iOS App</p>
+                <p className="eyebrow">{app.platformLabel ?? "iOS App"}</p>
                 <h1>{app.heroTitle}</h1>
                 <p className="lead">{app.tagline}</p>
                 <div className="hero-actions">

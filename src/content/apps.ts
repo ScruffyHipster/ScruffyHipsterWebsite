@@ -290,6 +290,77 @@ export const apps: AppConfig[] = [
     accent: { from: "#ffd1a6", via: "#ff8ea0", to: "#9bb1ff" }
   },
   {
+    id: "standing-desk-timer",
+    slug: "standing-desk-timer",
+    name: "Standing Desk Timer",
+    platformLabel: "macOS App",
+    operatingSystem: "macOS",
+    applicationCategory: "DesktopApplication",
+    heroTitle: "Standing Desk Timer",
+    tagline:
+      "A focused macOS menu bar timer for building healthier sit, stand, and movement habits through the workday.",
+    shortDescription:
+      "A macOS menu bar app for sit, stand, and movement reminders with configurable intervals, posture prompts, and daily totals.",
+    longDescription:
+      "Standing Desk Timer is designed for people who use a sit-stand desk but need lightweight prompts to actually change posture. It keeps the current timer in the menu bar, supports configurable sit and stand intervals, optional movement reminders, and clear prompts when it is time to switch.",
+    appStoreUrl: "#",
+    icon: "/assets/StandingDeskIcon-iOS-Dark-1024x1024@1x.png",
+    screenshots: [
+      { src: "/assets/standingDeskTimer/menu-bar-panel.png", alt: "Standing Desk Timer menu bar panel" },
+      { src: "/assets/standingDeskTimer/onboarding-rhythm.png", alt: "Standing Desk Timer onboarding rhythm screen" },
+      { src: "/assets/standingDeskTimer/onboarding-reminders.png", alt: "Standing Desk Timer reminders onboarding screen" },
+      { src: "/assets/standingDeskTimer/reminder-overlay.png", alt: "Standing Desk Timer reminder overlay preview" }
+    ],
+    featureHeading: "Built for healthier desk rhythms on Mac",
+    featureIntro:
+      "Start a posture cycle from the menu bar, get timely reminders, and keep simple daily totals without turning your workflow into another dashboard.",
+    features: [
+      {
+        title: "Menu Bar Timer",
+        body: "Start, pause, resume, reset, and switch posture from a compact macOS menu bar panel."
+      },
+      {
+        title: "Configurable Intervals",
+        body: "Choose presets like Balanced, 20-8-2, Back care, and Gentle start, or set custom sit, stand, and movement durations."
+      },
+      {
+        title: "Posture Reminders",
+        body: "Use regular macOS notifications or an on-screen overlay when it is time to stand, sit, move, snooze, or wrap up a session."
+      },
+      {
+        title: "Daily Totals",
+        body: "Track today's sitting, standing, and movement time locally so you can see how your desk routine is going."
+      }
+    ],
+    seoApplicationSubCategory: "Standing Desk Timer",
+    seoFeatureList: [
+      "macOS menu bar sit and stand timer",
+      "Configurable sit, stand, and movement intervals",
+      "Standing desk posture reminders",
+      "Regular notifications or full-screen reminder overlay",
+      "Optional launch at login",
+      "Local daily sitting, standing, and movement totals"
+    ],
+    privacySummary:
+      "Standing Desk Timer stores timer settings locally and uses limited anonymous TelemetryDeck analytics. No ads or cross-app tracking are used.",
+    privacySlug: "standing-desk-timer",
+    yearLabel: "2026",
+    seo: {
+      title: "Standing Desk Timer for macOS | Scruffy Hipster",
+      description:
+        "Standing Desk Timer is a macOS menu bar app for sit, stand, and movement reminders with configurable intervals, posture prompts, and local daily totals.",
+      keywords: [
+        "standing desk timer",
+        "macOS standing desk app",
+        "sit stand timer Mac",
+        "posture reminder macOS",
+        "menu bar timer"
+      ],
+      ogImage: "/og-default.svg"
+    },
+    accent: { from: "#7bdff2", via: "#75f0b2", to: "#f7d774" }
+  },
+  {
     id: "breast-feeding-tracker",
     slug: "breast-feeding-tracker",
     name: "Breastfeeding Tracker & Timer",

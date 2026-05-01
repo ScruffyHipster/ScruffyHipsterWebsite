@@ -31,7 +31,7 @@ export function AppShell() {
           <div>
             <p className="footer-heading">Scruffy Hipster</p>
             <p className="footer-copy">
-              Independent iOS studio creating bright, native apps with a focus on quality and thoughtful product design.
+              Independent Apple platform studio creating bright, native apps with a focus on quality and thoughtful product design.
             </p>
           </div>
           <div>

@@ -11,12 +11,12 @@ export function HomePage() {
       <Seo
         path="/"
         meta={{
-          title: "Scruffy Hipster | Bright Native iOS Apps",
+          title: "Scruffy Hipster | Bright Native Apple Platform Apps",
           description:
-            "Explore Rewire, Wren, Smarty Colours, Gro Guardian and Chat with Santa from Scruffy Hipster, an independent iOS studio.",
+            "Explore native iPhone, iPad, Apple Watch, and Mac apps from Scruffy Hipster, an independent Apple platform studio.",
           keywords: [
             "Scruffy Hipster",
-            "iOS apps",
+            "Apple platform apps",
             "indie app studio",
             "Swift apps",
             "App Store apps"
@@ -29,7 +29,7 @@ export function HomePage() {
       <section className="hero-shell">
         <div className="container">
           <Reveal className="hero-copy">
-            <p className="eyebrow">Independent iOS Studio</p>
+            <p className="eyebrow">Independent Apple Platform Studio</p>
             <h1>Bright, native apps with personality.</h1>
             <p className="lead">{siteConfig.description}</p>
             <div className="hero-actions">
@@ -64,12 +64,12 @@ export function HomePage() {
           <Reveal>
             <div className="glass-panel">
               <p className="eyebrow">Why Scruffy Hipster</p>
-              <h2>Product-minded iOS craftsmanship</h2>
+              <h2>Product-minded Apple platform craftsmanship</h2>
               <p>
-                Scruffy Hipster builds focused iOS apps that feel polished, playful, and genuinely useful. From productivity tools to family apps, every product is designed to be fast, intuitive, and App Store-ready.
+                Scruffy Hipster builds focused Apple platform apps that feel polished, playful, and genuinely useful. From productivity tools to family apps, every product is designed to be fast, intuitive, and App Store-ready.
               </p>
               <ul className="feature-list">
-                <li>Native iPhone and iPad apps built with Swift and SwiftUI</li>
+                <li>Native iPhone, iPad, Apple Watch, and Mac apps built with Swift and SwiftUI</li>
                 <li>Clean product pages for App Store links, metadata, and sharing</li>
                 <li>Practical engineering with attention to polish and performance</li>
               </ul>
@@ -79,9 +79,9 @@ export function HomePage() {
             <div className="trust-grid">
               <div className="trust-card">
                 <p className="trust-label">Platform</p>
-                <h3>iOS Native</h3>
+                <h3>Apple Native</h3>
                 <p>
-                  Built specifically for Apple platforms using native frameworks, with interfaces that feel at home on iPhone and iPad.
+                  Built specifically for Apple platforms using native frameworks, with interfaces that feel at home across iPhone, iPad, Apple Watch, and Mac.
                 </p>
               </div>
               <div className="trust-card">
