@@ -22,7 +22,7 @@ export function AboutPage() {
           <Reveal>
             <div className="glass-panel">
               <p className="eyebrow">Point of view</p>
-              <h1>Less noise. More agency.</h1>
+              <h1 className="about-title">Less noise. More agency.</h1>
               <p>
                 Scruffyhipster is an independent software studio building native apps for people who want their devices to behave a little better. The work is practical, opinionated, and deliberately small.
               </p>
@@ -53,6 +53,42 @@ export function AboutPage() {
                 </p>
               </div>
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section id="contact" className="section-block section-pad">
+        <div className="container contact-grid">
+          <Reveal className="section-head">
+            <p className="eyebrow">Contact</p>
+            <h2>Send a note.</h2>
+            <p>
+              For app support, product questions, or small software conversations. Short messages are welcome.
+            </p>
+          </Reveal>
+          <Reveal delayMs={100}>
+            <form
+              className="contact-form"
+              action="mailto:hello@scruffyhipster.com"
+              method="post"
+              encType="text/plain"
+            >
+              <label>
+                <span>Name</span>
+                <input name="name" type="text" autoComplete="name" required />
+              </label>
+              <label>
+                <span>Email</span>
+                <input name="email" type="email" autoComplete="email" required />
+              </label>
+              <label>
+                <span>Message</span>
+                <textarea name="message" rows={6} required />
+              </label>
+              <button className="btn btn-primary" type="submit">
+                email hello@scruffyhipster.com
+              </button>
+            </form>
           </Reveal>
         </div>
       </section>

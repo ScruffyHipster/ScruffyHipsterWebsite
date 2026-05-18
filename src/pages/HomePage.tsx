@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { siteConfig } from "../content/site";
 import { Seo } from "../components/Seo";
 import { Reveal } from "../components/Reveal";
@@ -34,6 +35,11 @@ export function HomePage() {
             <p className="lead">
               Most software fights for attention. Mine tries to give some back. Scruffyhipster makes quiet tools for small interruptions, better decisions, and calmer days with your devices.
             </p>
+            <div className="hero-actions">
+              <Link className="btn btn-primary" to="/about#contact">
+                contact
+              </Link>
+            </div>
           </Reveal>
         </div>
       </section>
