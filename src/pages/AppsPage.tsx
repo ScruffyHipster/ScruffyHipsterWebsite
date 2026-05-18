@@ -33,7 +33,7 @@ export function AppsPage() {
           description:
             "Practical Apple platform apps from Scruffyhipster for focus, recovery, habits, and everyday systems.",
           keywords: ["Scruffyhipster apps", "Apple productivity apps", "focus apps", "behavioural tools"],
-          ogImage: "/og-default.svg"
+          ogImage: "/og-default.png"
         }}
         jsonLd={[organizationJsonLd(), websiteJsonLd()]}
       />

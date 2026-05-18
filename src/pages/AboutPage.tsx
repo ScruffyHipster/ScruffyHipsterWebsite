@@ -12,7 +12,7 @@ export function AboutPage() {
           description:
             "Scruffyhipster is an independent Apple software studio building quiet tools for focus, recovery, habits, and everyday systems.",
           keywords: ["Scruffyhipster", "indie Apple software studio", "intentional computing", "calm computing"],
-          ogImage: "/og-default.svg"
+          ogImage: "/og-default.png"
         }}
         jsonLd={[organizationJsonLd(), websiteJsonLd()]}
       />

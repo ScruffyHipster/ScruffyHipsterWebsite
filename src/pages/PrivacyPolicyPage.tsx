@@ -23,7 +23,7 @@ export function PrivacyPolicyPage() {
         jsonLd={[
           organizationJsonLd(),
           breadcrumbJsonLd([
-            { name: "Scruffy Hipster", url: getSiteUrl() },
+            { name: "Scruffyhipster", url: getSiteUrl() },
             { name: "Privacy", url: `${getSiteUrl()}${path}` },
             { name: policy.appName, url: `${getSiteUrl()}${path}` }
           ])
@@ -49,4 +49,3 @@ export function PrivacyPolicyPage() {
     </>
   );
 }
-

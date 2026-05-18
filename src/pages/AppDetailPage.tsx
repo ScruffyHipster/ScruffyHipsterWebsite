@@ -31,8 +31,8 @@ export function AppDetailPage() {
           softwareApplicationJsonLd(app, absoluteUrl),
           ...(app.faqs?.length ? [faqPageJsonLd(app.faqs)] : []),
           breadcrumbJsonLd([
-            { name: "Scruffy Hipster", url: getSiteUrl() },
-            { name: "Apps", url: `${getSiteUrl()}/#apps` },
+            { name: "Scruffyhipster", url: getSiteUrl() },
+            { name: "Apps", url: `${getSiteUrl()}/apps` },
             { name: app.name, url: absoluteUrl }
           ])
         ]}

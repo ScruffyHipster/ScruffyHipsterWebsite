@@ -66,11 +66,11 @@ export const apps: AppConfig[] = [
     privacySlug: "rewire",
     yearLabel: "2026",
     seo: {
-      title: "Rewire | Focus, Reclaimed | Scruffy Hipster",
+      title: "Rewire | iOS Focus App",
       description:
         "Rewire is an iOS focus app that adds deliberate friction before impulsive app opens.",
       keywords: ["Rewire app", "focus app iPhone", "screen time blocking", "productivity iOS"],
-      ogImage: "/og-default.svg"
+      ogImage: "/og-default.png"
     },
     accent: { from: "#7fd8ff", via: "#7d99ff", to: "#b39bff" }
   },
@@ -125,7 +125,7 @@ export const apps: AppConfig[] = [
       description:
         "Wren is a native iOS round timer for MMA, boxing, and grappling with clear presets and reliable audio cues.",
       keywords: ["MMA timer app", "boxing round timer", "grappling timer iPhone", "Wren app"],
-      ogImage: "/og-default.svg"
+      ogImage: "/og-default.png"
     },
     accent: { from: "#9cf28d", via: "#67d4b6", to: "#7fd1ff" }
   },
@@ -179,7 +179,7 @@ export const apps: AppConfig[] = [
       description:
         "Smarty Colours is a calm children's colouring app for iPad with themed packs, Apple Pencil support, and a simple interface.",
       keywords: ["kids colouring app", "iPad coloring app", "Apple Pencil children app", "Smarty Colours"],
-      ogImage: "/og-default.svg"
+      ogImage: "/og-default.png"
     },
     accent: { from: "#ffd87a", via: "#ff9bcf", to: "#95c5ff" }
   },
@@ -231,7 +231,7 @@ export const apps: AppConfig[] = [
       description:
         "Gro Guardian is a simple iPhone plant care app with watering reminders, a live light meter, and scheduled tasks.",
       keywords: ["plant care app", "watering reminders", "light meter app plants", "Gro Guardian"],
-      ogImage: "/og-default.svg"
+      ogImage: "/og-default.png"
     },
     accent: { from: "#aef1a2", via: "#55dd9a", to: "#7cc8ff" }
   },
@@ -285,7 +285,7 @@ export const apps: AppConfig[] = [
       description:
         "Chat with Santa is a simple seasonal holiday chat app for families with friendly Santa conversations.",
       keywords: ["Chat with Santa app", "holiday app for kids", "Santa AI chat", "Christmas chat app"],
-      ogImage: "/og-default.svg"
+      ogImage: "/og-default.png"
     },
     accent: { from: "#ffd1a6", via: "#ff8ea0", to: "#9bb1ff" }
   },
@@ -346,7 +346,7 @@ export const apps: AppConfig[] = [
     privacySlug: "standing-desk-timer",
     yearLabel: "2026",
     seo: {
-      title: "Standing Desk Timer for macOS | Scruffy Hipster",
+      title: "Standing Desk Timer for macOS | Scruffyhipster",
       description:
         "Standing Desk Timer is a quiet macOS menu bar app for sit, stand, and movement reminders with local daily totals.",
       keywords: [
@@ -356,7 +356,7 @@ export const apps: AppConfig[] = [
         "posture reminder macOS",
         "menu bar timer"
       ],
-      ogImage: "/og-default.svg"
+      ogImage: "/og-default.png"
     },
     accent: { from: "#7bdff2", via: "#75f0b2", to: "#f7d774" }
   },
@@ -476,7 +476,7 @@ export const apps: AppConfig[] = [
         "nursing tracker iphone",
         "feeding tracker widget"
       ],
-      ogImage: "/og-default.svg"
+      ogImage: "/og-default.png"
     },
     accent: { from: "#ffd6e7", via: "#f7b5ff", to: "#8cd9ff" }
   }

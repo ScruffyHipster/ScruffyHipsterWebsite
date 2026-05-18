@@ -21,7 +21,7 @@ export function HomePage() {
             "focus apps",
             "behavioural tools"
           ],
-          ogImage: "/og-default.svg"
+          ogImage: "/og-default.png"
         }}
         jsonLd={[organizationJsonLd(), websiteJsonLd()]}
       />
