@@ -33,6 +33,11 @@ export type AppConfig = {
   shortDescription: string;
   longDescription: string;
   appStoreUrl: string;
+  pressKit?: {
+    url: string;
+    label: string;
+    description: string;
+  };
   icon: string;
   screenshots: Screenshot[];
   featureHeading: string;
@@ -41,6 +46,7 @@ export type AppConfig = {
   seoApplicationSubCategory?: string;
   seoFeatureList?: string[];
   seoContent?: {
+    eyebrow?: string;
     heading: string;
     paragraphs: string[];
   };

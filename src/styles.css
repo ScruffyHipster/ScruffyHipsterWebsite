@@ -638,6 +638,12 @@ img {
   border-radius: 10px;
 }
 
+.phone-shot.press-shot img {
+  aspect-ratio: 1;
+  object-fit: contain;
+  background: var(--surface-muted);
+}
+
 .related-panel {
   padding: 1rem;
 }

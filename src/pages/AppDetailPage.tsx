@@ -69,7 +69,13 @@ export function AppDetailPage() {
                   <a className="btn btn-secondary" href="#features">
                     See features
                   </a>
+                  {app.pressKit ? (
+                    <a className="btn btn-secondary" href={app.pressKit.url} download>
+                      {app.pressKit.label}
+                    </a>
+                  ) : null}
                 </div>
+                {app.pressKit ? <p className="inline-note">{app.pressKit.description}</p> : null}
                 {app.privacySlug ? (
                   <p className="inline-link-row">
                     <Link to={`/privacy/${app.privacySlug}`}>Read privacy policy</Link>
@@ -107,7 +113,7 @@ export function AppDetailPage() {
         <section className="section-block section-pad">
           <div className="container">
             <Reveal className="section-head">
-              <p className="eyebrow">Why parents find it</p>
+              <p className="eyebrow">{app.seoContent.eyebrow ?? "More detail"}</p>
               <h2>{app.seoContent.heading}</h2>
             </Reveal>
             <div className="about-grid">

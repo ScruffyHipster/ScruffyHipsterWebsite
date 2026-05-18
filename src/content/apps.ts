@@ -5,72 +5,97 @@ export const apps: AppConfig[] = [
     id: "rewire",
     slug: "rewire",
     name: "Rewire",
-    heroTitle: "Rewire",
+    heroTitle: "App & Website Blocker: Rewire",
     tagline:
-      "Rewire adds a small pause before distraction becomes automatic.",
+      "Interrupt distractions. Build focus.",
     shortDescription:
-      "An iOS focus app that interrupts impulsive app opens with deliberate friction.",
+      "A structured iOS focus tool that helps reduce impulsive app use by adding friction where it matters.",
     longDescription:
-      "Rewire is built for the moment your hand moves faster than your intention. It uses Apple's Screen Time APIs to interrupt impulsive app opens and give you a brief chance to choose again.",
-    appStoreUrl: "#",
-    icon: "/assets/RewireIcon-iOS-Dark-1024x1024@1x.png",
+      "Rewire is a structured focus tool that helps you reduce impulsive app use by adding friction where it matters. Instead of relying on willpower, Rewire uses iOS Screen Time controls to pause access and give you space to reset.",
+    appStoreUrl: "https://apps.apple.com/app/id6757722922",
+    pressKit: {
+      url: "/assets/press/rewire/rewire-press-kit.zip",
+      label: "Download press kit",
+      description: "Includes the Rewire press release, app icon, App Store QR code, and product notes."
+    },
+    icon: "/assets/press/rewire/rewire-icon.png",
     screenshots: [
       {
-        src: "/assets/rewireScreenshots/6B10FF2E-73DB-42FE-B834-862E27356876_1_101_o.001.jpeg",
-        alt: "Rewire focus interruption screen"
+        src: "/assets/press/rewire/images/1.png",
+        alt: "Rewire App Store screenshot 1"
       },
       {
-        src: "/assets/rewireScreenshots/A6467EF2-CA9A-49FE-AA4C-B7BB9345E689_1_101_o.002.jpeg",
-        alt: "Rewire session setup screen"
+        src: "/assets/press/rewire/images/2.png",
+        alt: "Rewire App Store screenshot 2"
       },
       {
-        src: "/assets/rewireScreenshots/7FED24C9-11CA-428D-9E9C-EB0C3CE90C74_1_101_o.003.jpeg",
-        alt: "Rewire app blocking screen"
+        src: "/assets/press/rewire/images/3.png",
+        alt: "Rewire App Store screenshot 3"
       },
       {
-        src: "/assets/rewireScreenshots/85904067-BAD0-4514-B44A-7B019DCBE459_1_101_o.004.jpeg",
-        alt: "Rewire settings screen"
+        src: "/assets/press/rewire/images/4.png",
+        alt: "Rewire App Store screenshot 4"
       },
       {
-        src: "/assets/rewireScreenshots/B0C7FF92-D588-4969-A440-81C59F792667_1_101_o.005.jpeg",
-        alt: "Rewire focus state screen"
-      },
-      {
-        src: "/assets/rewireScreenshots/BF0DBF44-BF58-40E3-AEEA-0B2124ADEDC8_1_101_o.006.jpeg",
-        alt: "Rewire focus completion screen"
+        src: "/assets/press/rewire/images/5.png",
+        alt: "Rewire App Store screenshot 5"
       }
     ],
-    featureHeading: "A pause at the point of distraction",
+    featureHeading: "How Rewire works",
     featureIntro:
-      "Rewire does not ask for motivation. It adds a small piece of structure where habits usually run on their own.",
+      "No feeds. No ads. No tracking. Just a tool that adds structure where distraction usually runs on autopilot.",
     features: [
       {
-        title: "Impulse Interruption",
-        body: "When a blocked app is opened, Rewire creates a short pause before the next action."
+        title: "Create a focus session",
+        body: "Choose the apps you want to block and start a session in seconds."
       },
       {
-        title: "System-Level Blocking",
-        body: "Built on Apple’s Screen Time APIs, so the limit lives closer to the behaviour."
+        title: "Intentional pauses, not permanent blocks",
+        body: "When a blocked app is opened, Rewire interrupts the loop and prompts you to pause and decide."
       },
       {
-        title: "Always-On Focus Sessions",
-        body: "Run open-ended or time-boxed sessions when you want a quieter phone."
+        title: "Visualise your behaviour",
+        body: "Simple charts show how often you hit blocks and when distractions happen."
       },
       {
-        title: "Minimal by Design",
-        body: "No feeds. No streak pressure. Just a tool that gets out of the way."
+        title: "Always-on or timed sessions",
+        body: "Run Rewire in the background or set defined focus windows that fit your day."
       }
     ],
+    seoFeatureList: [
+      "Create focus sessions by choosing apps to block",
+      "Intentional pauses when blocked apps are opened",
+      "Simple charts for block and distraction patterns",
+      "Always-on or timed focus sessions",
+      "Uses Apple Screen Time and Family Controls APIs",
+      "No accounts, no ads, and no personal data collection"
+    ],
+    seoContent: {
+      eyebrow: "Who it is for",
+      heading: "Structure, not motivation quotes",
+      paragraphs: [
+        "Rewire is for people who open apps on autopilot: developers, students, knowledge workers, and anyone who wants a little more structure around their phone.",
+        "It is not a social app. It is not a habit tracker pretending to be therapy. It is not another reminder to just be disciplined.",
+        "It is a tool. Use it when you need it."
+      ]
+    },
     privacySummary:
-      "Rewire is privacy-first and avoids advertising tracking. Focus sessions and app blocking decisions stay on-device.",
+      "Rewire has no user accounts, no personal data collection, no ads, and anonymous usage analytics only. It uses Apple Screen Time and Family Controls APIs, works offline, and does not bypass iOS safeguards.",
     privacySlug: "rewire",
     yearLabel: "2026",
     seo: {
-      title: "Rewire | iOS Focus App",
+      title: "App & Website Blocker: Rewire | iOS Focus App",
       description:
-        "Rewire is an iOS focus app that adds deliberate friction before impulsive app opens.",
-      keywords: ["Rewire app", "focus app iPhone", "screen time blocking", "productivity iOS"],
-      ogImage: "/og-default.png"
+        "Rewire is a structured iOS focus tool that reduces impulsive app use with Screen Time controls, intentional pauses, and simple behaviour charts.",
+      keywords: [
+        "Rewire app",
+        "app and website blocker",
+        "focus app iPhone",
+        "screen time blocker",
+        "productivity iOS",
+        "impulsive app use"
+      ],
+      ogImage: "/assets/press/rewire/rewire-icon.png"
     },
     accent: { from: "#7fd8ff", via: "#7d99ff", to: "#b39bff" }
   },

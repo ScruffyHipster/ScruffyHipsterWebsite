@@ -99,20 +99,24 @@ export const publicRoutes = [
   },
   {
     path: "/apps/rewire",
-    title: "Rewire | iOS Focus App",
+    title: "App & Website Blocker: Rewire | iOS Focus App",
     description:
-      "Rewire is an iOS focus app that adds deliberate friction before impulsive app opens.",
+      "Rewire is a structured iOS focus tool that reduces impulsive app use with Screen Time controls, intentional pauses, and simple behaviour charts.",
     ogImage: "/og-default.png",
     jsonLd: softwareApplicationJsonLd({
       path: "/apps/rewire",
       name: "Rewire",
-      description: "An iOS focus app that interrupts impulsive app opens with deliberate friction.",
-      image: "/assets/RewireIcon-iOS-Dark-1024x1024@1x.png",
+      description:
+        "A structured iOS focus tool that helps reduce impulsive app use by adding friction where it matters.",
+      image: "/assets/press/rewire/rewire-icon.png",
+      downloadUrl: "https://apps.apple.com/app/id6757722922",
       featureList: [
-        "Impulse interruption before blocked app opens",
-        "System-level blocking with Apple Screen Time APIs",
-        "Open-ended or time-boxed focus sessions",
-        "Minimal focus tooling without feeds or streak pressure"
+        "Create focus sessions by choosing apps to block",
+        "Intentional pauses when blocked apps are opened",
+        "Simple charts for block and distraction patterns",
+        "Always-on or timed focus sessions",
+        "Uses Apple Screen Time and Family Controls APIs",
+        "No accounts, no ads, and no personal data collection"
       ]
     })
   },
