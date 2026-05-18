@@ -21,9 +21,9 @@ export async function prerenderRoutes(distDir) {
   // GitHub Pages SPA fallback for unknown paths with explicit noindex.
   const notFoundHtml = injectRouteMeta(baseHtml, {
     path: "/404",
-    title: "Page Not Found | Scruffy Hipster",
-    description: "The page you were looking for could not be found on Scruffy Hipster.",
-    ogImage: "/og-default.svg",
+    title: "Page Not Found | Scruffyhipster",
+    description: "The page you were looking for could not be found on Scruffyhipster.",
+    ogImage: "/og-default.png",
     robots: "noindex,follow"
   });
   await writeFile(join(distDir, "404.html"), notFoundHtml, "utf8");
@@ -31,7 +31,7 @@ export async function prerenderRoutes(distDir) {
 
 function injectRouteMeta(html, route) {
   const canonical = canonicalUrl(route.path);
-  const image = route.ogImage?.startsWith("http") ? route.ogImage : `${siteUrl}${route.ogImage || "/og-default.svg"}`;
+  const image = route.ogImage?.startsWith("http") ? route.ogImage : `${siteUrl}${route.ogImage || "/og-default.png"}`;
   const robots = route.robots || "index,follow";
   const jsonLdEntries = Array.isArray(route.jsonLd)
     ? route.jsonLd

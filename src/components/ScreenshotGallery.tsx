@@ -15,7 +15,7 @@ export function ScreenshotGallery({ screenshots, title = "Screenshots" }: Screen
       <div className="screenshot-grid">
         {screenshots.map((shot, index) => (
           <Reveal key={shot.src} delayMs={Math.min(index * 60, 300)}>
-            <figure className="phone-shot">
+            <figure className={`phone-shot ${shot.src.includes("/press/") ? "press-shot" : ""}`.trim()}>
               <img src={shot.src} alt={shot.alt} loading="lazy" decoding="async" />
             </figure>
           </Reveal>
@@ -24,4 +24,3 @@ export function ScreenshotGallery({ screenshots, title = "Screenshots" }: Screen
     </section>
   );
 }
-

@@ -7,8 +7,8 @@ export function NotFoundPage() {
       <Seo
         path="/404"
         meta={{
-          title: "Page Not Found | Scruffy Hipster",
-          description: "The page you were looking for could not be found on Scruffy Hipster.",
+          title: "Page Not Found | Scruffyhipster",
+          description: "The page you were looking for could not be found on Scruffyhipster.",
           robots: "noindex,follow"
         }}
       />
@@ -22,9 +22,9 @@ export function NotFoundPage() {
               <Link className="btn btn-primary" to="/">
                 Go home
               </Link>
-              <a className="btn btn-secondary" href="/#apps">
-                Explore apps
-              </a>
+          <a className="btn btn-secondary" href="/apps">
+            Explore apps
+          </a>
             </div>
           </article>
         </div>

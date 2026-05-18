@@ -31,8 +31,8 @@ export function AppDetailPage() {
           softwareApplicationJsonLd(app, absoluteUrl),
           ...(app.faqs?.length ? [faqPageJsonLd(app.faqs)] : []),
           breadcrumbJsonLd([
-            { name: "Scruffy Hipster", url: getSiteUrl() },
-            { name: "Apps", url: `${getSiteUrl()}/#apps` },
+            { name: "Scruffyhipster", url: getSiteUrl() },
+            { name: "Apps", url: `${getSiteUrl()}/apps` },
             { name: app.name, url: absoluteUrl }
           ])
         ]}
@@ -69,7 +69,13 @@ export function AppDetailPage() {
                   <a className="btn btn-secondary" href="#features">
                     See features
                   </a>
+                  {app.pressKit ? (
+                    <a className="btn btn-secondary" href={app.pressKit.url} download>
+                      {app.pressKit.label}
+                    </a>
+                  ) : null}
                 </div>
+                {app.pressKit ? <p className="inline-note">{app.pressKit.description}</p> : null}
                 {app.privacySlug ? (
                   <p className="inline-link-row">
                     <Link to={`/privacy/${app.privacySlug}`}>Read privacy policy</Link>
@@ -86,7 +92,7 @@ export function AppDetailPage() {
       <section id="features" className="section-block section-pad">
         <div className="container">
           <Reveal className="section-head">
-            <p className="eyebrow">Features</p>
+            <p className="eyebrow">What it does</p>
             <h2>{app.featureHeading}</h2>
             <p>{app.featureIntro}</p>
           </Reveal>
@@ -107,7 +113,7 @@ export function AppDetailPage() {
         <section className="section-block section-pad">
           <div className="container">
             <Reveal className="section-head">
-              <p className="eyebrow">Why parents find it</p>
+              <p className="eyebrow">{app.seoContent.eyebrow ?? "More detail"}</p>
               <h2>{app.seoContent.heading}</h2>
             </Reveal>
             <div className="about-grid">
@@ -153,16 +159,16 @@ export function AppDetailPage() {
         <div className="container about-grid">
           <Reveal>
             <article className="glass-panel">
-              <p className="eyebrow">Product Story</p>
-              <h2>Why this app exists</h2>
+              <p className="eyebrow">Why it exists</p>
+              <h2>Built around the moment it is needed</h2>
               <p>{app.longDescription}</p>
               <p>{app.privacySummary}</p>
             </article>
           </Reveal>
           <Reveal delayMs={90}>
             <aside className="related-panel">
-              <p className="eyebrow">More Apps</p>
-              <h2>Explore other Scruffy Hipster products</h2>
+              <p className="eyebrow">More apps</p>
+              <h2>Other quiet tools from Scruffyhipster</h2>
               <ul className="related-list">
                 {relatedApps.map((related) => (
                   <li key={related.id}>

@@ -23,9 +23,9 @@ export const privacyPolicies: PrivacyPolicyConfig[] = [
       <p>© 2026 Scruffy Hipster Ltd. All rights reserved.</p>
     `,
     seo: {
-      title: "Rewire Privacy Policy | Scruffy Hipster",
-      description: "Read the privacy policy for Rewire by Scruffy Hipster.",
-      ogImage: "/og-default.svg"
+      title: "Rewire Privacy Policy | Scruffyhipster",
+      description: "Read the privacy policy for Rewire by Scruffyhipster.",
+      ogImage: "/og-default.png"
     }
   },
   {
@@ -53,9 +53,9 @@ export const privacyPolicies: PrivacyPolicyConfig[] = [
       <p>© 2026 Scruffy Hipster Ltd. All rights reserved.</p>
     `,
     seo: {
-      title: "Wren Privacy Policy | Scruffy Hipster",
-      description: "Read the privacy policy for Wren by Scruffy Hipster.",
-      ogImage: "/og-default.svg"
+      title: "Wren Privacy Policy | Scruffyhipster",
+      description: "Read the privacy policy for Wren by Scruffyhipster.",
+      ogImage: "/og-default.png"
     }
   },
   {
@@ -76,9 +76,9 @@ export const privacyPolicies: PrivacyPolicyConfig[] = [
       <p>© 2026 Scruffy Hipster Ltd. All rights reserved.</p>
     `,
     seo: {
-      title: "Smarty Colours Privacy Policy | Scruffy Hipster",
-      description: "Read the privacy policy for Smarty Colours by Scruffy Hipster.",
-      ogImage: "/og-default.svg"
+      title: "Smarty Colours Privacy Policy | Scruffyhipster",
+      description: "Read the privacy policy for Smarty Colours by Scruffyhipster.",
+      ogImage: "/og-default.png"
     }
   },
   {
@@ -99,9 +99,9 @@ export const privacyPolicies: PrivacyPolicyConfig[] = [
       <p>© 2025 Scruffy Hipster Ltd. All rights reserved.</p>
     `,
     seo: {
-      title: "Chat with Santa Privacy Policy | Scruffy Hipster",
-      description: "Read the privacy policy for Chat with Santa by Scruffy Hipster.",
-      ogImage: "/og-default.svg"
+      title: "Chat with Santa Privacy Policy | Scruffyhipster",
+      description: "Read the privacy policy for Chat with Santa by Scruffyhipster.",
+      ogImage: "/og-default.png"
     }
   },
   {
@@ -130,9 +130,9 @@ export const privacyPolicies: PrivacyPolicyConfig[] = [
       <p>© 2026 Scruffy Hipster Ltd. All rights reserved.</p>
     `,
     seo: {
-      title: "Standing Desk Timer Privacy Policy | Scruffy Hipster",
-      description: "Read the privacy policy for Standing Desk Timer by Scruffy Hipster.",
-      ogImage: "/og-default.svg"
+      title: "Standing Desk Timer Privacy Policy | Scruffyhipster",
+      description: "Read the privacy policy for Standing Desk Timer by Scruffyhipster.",
+      ogImage: "/og-default.png"
     }
   },
   {
@@ -155,9 +155,9 @@ export const privacyPolicies: PrivacyPolicyConfig[] = [
       <p>© 2026 Scruffy Hipster Ltd. All rights reserved.</p>
     `,
     seo: {
-      title: "Breast Feeding Tracker Privacy Policy | Scruffy Hipster",
-      description: "Read the privacy policy for Breast Feeding Tracker by Scruffy Hipster.",
-      ogImage: "/og-default.svg"
+      title: "Breast Feeding Tracker Privacy Policy | Scruffyhipster",
+      description: "Read the privacy policy for Breast Feeding Tracker by Scruffyhipster.",
+      ogImage: "/og-default.png"
     }
   }
 ];
