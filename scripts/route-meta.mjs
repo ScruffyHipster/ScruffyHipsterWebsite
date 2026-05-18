@@ -10,9 +10,9 @@ const legacyPrivacyRedirects = [
 export const publicRoutes = [
   {
     path: "/",
-    title: "Scruffy Hipster | Bright Native Apple Platform Apps",
+    title: "Scruffyhipster | Software for Intentional Computing",
     description:
-      "Explore native iPhone, iPad, Apple Watch, and Mac apps from Scruffy Hipster, an independent Apple platform studio.",
+      "Scruffyhipster is an independent Apple software studio building quiet tools for focus, recovery, habits, and everyday systems.",
     ogImage: "/og-default.svg",
     jsonLd: {
       "@context": "https://schema.org",
@@ -20,8 +20,22 @@ export const publicRoutes = [
       name: "Scruffy Hipster",
       url: siteUrl,
       description:
-        "Independent Apple platform studio creating premium native apps with clean UX, thoughtful engineering, and playful product design."
+        "Independent Apple software studio building quiet tools for focus, recovery, habits, and everyday systems."
     }
+  },
+  {
+    path: "/apps",
+    title: "Apps | Scruffyhipster",
+    description:
+      "Practical Apple platform apps from Scruffyhipster for focus, recovery, habits, and everyday systems.",
+    ogImage: "/og-default.svg"
+  },
+  {
+    path: "/about",
+    title: "About | Scruffyhipster",
+    description:
+      "Scruffyhipster is an independent Apple software studio building quiet tools for focus, recovery, habits, and everyday systems.",
+    ogImage: "/og-default.svg"
   },
   {
     path: "/apps/rewire",

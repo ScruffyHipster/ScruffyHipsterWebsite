@@ -7,9 +7,9 @@ export const siteConfig: SiteConfig = {
   supportEmail: "support@scruffyhipster.com",
   helloEmail: "hello@scruffyhipster.com",
   defaultOgImage: "/og-default.svg",
-  tagline: "Bright, native Apple platform apps built with care.",
+  tagline: "Software for intentional computing.",
   description:
-    "Scruffy Hipster is an independent Apple platform studio creating premium native apps with clean UX, thoughtful engineering, and playful product design."
+    "Scruffyhipster is an independent Apple software studio building quiet tools for focus, recovery, habits, and everyday systems."
 };
 
 export const socialLinks = [];

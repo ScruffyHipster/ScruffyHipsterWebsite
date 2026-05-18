@@ -1,8 +1,6 @@
-import { apps } from "../content/apps";
 import { siteConfig } from "../content/site";
 import { Seo } from "../components/Seo";
 import { Reveal } from "../components/Reveal";
-import { AppCard } from "../components/AppCard";
 import { organizationJsonLd, websiteJsonLd } from "../seo/jsonld";
 
 export function HomePage() {
@@ -11,15 +9,16 @@ export function HomePage() {
       <Seo
         path="/"
         meta={{
-          title: "Scruffy Hipster | Bright Native Apple Platform Apps",
+          title: "Scruffyhipster | Software for Intentional Computing",
           description:
-            "Explore native iPhone, iPad, Apple Watch, and Mac apps from Scruffy Hipster, an independent Apple platform studio.",
+            "Scruffyhipster is an independent Apple software studio building quiet productivity, focus, recovery, and behavioural tooling apps.",
           keywords: [
-            "Scruffy Hipster",
-            "Apple platform apps",
+            "Scruffyhipster",
+            "intentional computing",
             "indie app studio",
-            "Swift apps",
-            "App Store apps"
+            "Apple productivity apps",
+            "focus apps",
+            "behavioural tools"
           ],
           ogImage: "/og-default.svg"
         }}
@@ -29,69 +28,12 @@ export function HomePage() {
       <section className="hero-shell">
         <div className="container">
           <Reveal className="hero-copy">
-            <p className="eyebrow">Independent Apple Platform Studio</p>
-            <h1>Bright, native apps with personality.</h1>
-            <p className="lead">{siteConfig.description}</p>
-            <div className="hero-actions">
-              <a className="btn btn-primary" href="#apps">
-                Explore Apps
-              </a>
-              <a className="btn btn-secondary" href="#about">
-                About Scruffy Hipster
-              </a>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section id="apps" className="section-block section-pad">
-        <div className="container">
-          <Reveal className="section-head">
-            <h2>Apps</h2>
-          </Reveal>
-          <div className="app-grid">
-            {apps.map((app, index) => (
-              <Reveal key={app.id} delayMs={Math.min(index * 70, 300)}>
-                <AppCard app={app} />
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="about" className="section-block section-pad">
-        <div className="container about-grid">
-          <Reveal>
-            <div className="glass-panel">
-              <p className="eyebrow">Why Scruffy Hipster</p>
-              <h2>Product-minded Apple platform craftsmanship</h2>
-              <p>
-                Scruffy Hipster builds focused Apple platform apps that feel polished, playful, and genuinely useful. From productivity tools to family apps, every product is designed to be fast, intuitive, and App Store-ready.
-              </p>
-              <ul className="feature-list">
-                <li>Native iPhone, iPad, Apple Watch, and Mac apps built with Swift and SwiftUI</li>
-                <li>Clean product pages for App Store links, metadata, and sharing</li>
-                <li>Practical engineering with attention to polish and performance</li>
-              </ul>
-            </div>
-          </Reveal>
-          <Reveal delayMs={100}>
-            <div className="trust-grid">
-              <div className="trust-card">
-                <p className="trust-label">Platform</p>
-                <h3>Apple Native</h3>
-                <p>
-                  Built specifically for Apple platforms using native frameworks, with interfaces that feel at home across iPhone, iPad, Apple Watch, and Mac.
-                </p>
-              </div>
-              <div className="trust-card">
-                <p className="trust-label">Build Focus</p>
-                <h3>Quality + Speed</h3>
-                <p>
-                  Fast iteration without cutting corners: solid architecture, smooth interactions, and production-ready execution.
-                </p>
-              </div>
-            </div>
+            <img className="hero-logo" src="/assets/companyLogoBlob.png" alt="scruffyhipster software studio" />
+            <p className="eyebrow">Independent Apple Software Studio</p>
+            <h1>{siteConfig.tagline}</h1>
+            <p className="lead">
+              Most software fights for attention. Mine tries to give some back. Scruffyhipster makes quiet tools for small interruptions, better decisions, and calmer days with your devices.
+            </p>
           </Reveal>
         </div>
       </section>

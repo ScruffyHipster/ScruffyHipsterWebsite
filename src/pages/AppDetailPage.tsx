@@ -86,7 +86,7 @@ export function AppDetailPage() {
       <section id="features" className="section-block section-pad">
         <div className="container">
           <Reveal className="section-head">
-            <p className="eyebrow">Features</p>
+            <p className="eyebrow">What it does</p>
             <h2>{app.featureHeading}</h2>
             <p>{app.featureIntro}</p>
           </Reveal>
@@ -153,16 +153,16 @@ export function AppDetailPage() {
         <div className="container about-grid">
           <Reveal>
             <article className="glass-panel">
-              <p className="eyebrow">Product Story</p>
-              <h2>Why this app exists</h2>
+              <p className="eyebrow">Why it exists</p>
+              <h2>Built around the moment it is needed</h2>
               <p>{app.longDescription}</p>
               <p>{app.privacySummary}</p>
             </article>
           </Reveal>
           <Reveal delayMs={90}>
             <aside className="related-panel">
-              <p className="eyebrow">More Apps</p>
-              <h2>Explore other Scruffy Hipster products</h2>
+              <p className="eyebrow">More apps</p>
+              <h2>Other quiet tools from Scruffyhipster</h2>
               <ul className="related-list">
                 {relatedApps.map((related) => (
                   <li key={related.id}>

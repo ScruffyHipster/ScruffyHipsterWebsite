@@ -17,6 +17,8 @@ export const privacyRoutePath = (policy: PrivacyPolicyConfig) => `${PRIVACY_BASE
 
 export const publicRoutePaths = [
   "/",
+  APP_BASE_PATH,
+  "/about",
   ...apps.map(appRoutePath),
   ...privacyPolicies.map(privacyRoutePath)
 ];

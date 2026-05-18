@@ -7,11 +7,11 @@ export const apps: AppConfig[] = [
     name: "Rewire",
     heroTitle: "Rewire",
     tagline:
-      "Rewire helps you break impulsive phone habits by interrupting distraction at the moment it happens and redirecting attention back to what matters.",
+      "Rewire adds a small pause before distraction becomes automatic.",
     shortDescription:
-      "An iOS focus app that uses system-level controls to interrupt impulsive app opens and support deliberate attention.",
+      "An iOS focus app that interrupts impulsive app opens with deliberate friction.",
     longDescription:
-      "Rewire is designed to create deliberate friction at the point of distraction. Instead of relying on reminders or streaks, it uses Apple's Screen Time APIs to interrupt impulsive app opens and guide users back to their intended task.",
+      "Rewire is built for the moment your hand moves faster than your intention. It uses Apple's Screen Time APIs to interrupt impulsive app opens and give you a brief chance to choose again.",
     appStoreUrl: "#",
     icon: "/assets/RewireIcon-iOS-Dark-1024x1024@1x.png",
     screenshots: [
@@ -40,25 +40,25 @@ export const apps: AppConfig[] = [
         alt: "Rewire focus completion screen"
       }
     ],
-    featureHeading: "Designed to interrupt distraction, not just track it",
+    featureHeading: "A pause at the point of distraction",
     featureIntro:
-      "Rewire does not rely on motivation or streaks. It uses iOS system controls to create deliberate friction at the point of distraction.",
+      "Rewire does not ask for motivation. It adds a small piece of structure where habits usually run on their own.",
     features: [
       {
         title: "Impulse Interruption",
-        body: "When a blocked app is opened, Rewire intercepts the action and forces a conscious pause before continuing."
+        body: "When a blocked app is opened, Rewire creates a short pause before the next action."
       },
       {
         title: "System-Level Blocking",
-        body: "Built on Apple’s Screen Time APIs, Rewire enforces limits at the OS level rather than fragile timers."
+        body: "Built on Apple’s Screen Time APIs, so the limit lives closer to the behaviour."
       },
       {
         title: "Always-On Focus Sessions",
-        body: "Run open-ended or time-boxed sessions that continuously protect your attention throughout the day."
+        body: "Run open-ended or time-boxed sessions when you want a quieter phone."
       },
       {
         title: "Minimal by Design",
-        body: "No feeds, no gamified noise, and no emotional manipulation. Rewire stays out of the way and does its job."
+        body: "No feeds. No streak pressure. Just a tool that gets out of the way."
       }
     ],
     privacySummary:
@@ -68,7 +68,7 @@ export const apps: AppConfig[] = [
     seo: {
       title: "Rewire | Focus, Reclaimed | Scruffy Hipster",
       description:
-        "Rewire is an iOS focus app that interrupts distraction using system-level Screen Time controls so you can regain control of your attention.",
+        "Rewire is an iOS focus app that adds deliberate friction before impulsive app opens.",
       keywords: ["Rewire app", "focus app iPhone", "screen time blocking", "productivity iOS"],
       ogImage: "/og-default.svg"
     },
@@ -80,11 +80,11 @@ export const apps: AppConfig[] = [
     name: "Wren",
     heroTitle: "Wren: Workout Recovery Engine",
     tagline:
-      "Current MVP: a fast, configurable round timer with presets for MMA, Boxing, and Grappling, built natively with SwiftUI.",
+      "A clear round timer for training days that need rhythm, not clutter.",
     shortDescription:
-      "A native iOS round timer for combat sports training with discipline presets and reliable gym-friendly audio cues.",
+      "A native iOS round timer for boxing, MMA, and grappling, with clear presets and audio cues.",
     longDescription:
-      "Wren focuses on training flow: warm-up, rounds, rest, and cooldown with a clean, glanceable interface. The current MVP is a dependable round timer with future HealthKit and AI recovery insights scoped for later versions.",
+      "Wren focuses on training flow: warm-up, rounds, rest, and cooldown. It is a dependable round timer first, with recovery features planned carefully rather than rushed in.",
     appStoreUrl: "https://apps.apple.com/gb/app/wren-boxing-mma-round-timer/id6741780168",
     icon: "/assets/WrenLogo-iOS-Dark-1024x1024@1x.png",
     screenshots: [
@@ -95,25 +95,25 @@ export const apps: AppConfig[] = [
       { src: "/assets/wrenScreeshots/iPhone Screenshots 🇬🇧 03:10:25.005.jpeg", alt: "Wren round timer screen 5" },
       { src: "/assets/wrenScreeshots/iPhone Screenshots 🇬🇧 03:10:25.006.jpeg", alt: "Wren round timer screen 6" }
     ],
-    featureHeading: "Built for better training days",
+    featureHeading: "Training rhythm without extra noise",
     featureIntro:
-      "Set rounds, rest, and warnings quickly, then run reliable sessions with discipline-specific presets and clear audio cues.",
+      "Set the shape of the session, put the phone down, and let the timer do its job.",
     features: [
       {
         title: "Round Timer",
-        body: "Warm-up, rounds, rests, and cooldown with a large, glanceable countdown UI designed for gyms."
+        body: "Warm-up, rounds, rest, and cooldown with a large countdown made for quick glances."
       },
       {
         title: "Discipline Presets",
-        body: "One-tap profiles for MMA, Boxing, and Grappling with configurable rounds, rest, and warnings."
+        body: "Profiles for MMA, boxing, and grappling with configurable rounds, rest, and warnings."
       },
       {
         title: "Audio Cues",
-        body: "Distinct start, end, and warning sounds with configurable volume for noisy training environments."
+        body: "Start, end, and warning sounds that are easy to understand mid-session."
       },
       {
         title: "Session Logs",
-        body: "Optional lightweight logging with SwiftData to support future trends and recovery insight features."
+        body: "Optional local logs for people who want a simple record of training."
       }
     ],
     privacySummary:
@@ -123,7 +123,7 @@ export const apps: AppConfig[] = [
     seo: {
       title: "Wren Workout Recovery Engine | MMA & Boxing Round Timer",
       description:
-        "Wren is a fast, configurable round timer for MMA, boxing, and grappling with native iOS performance and discipline presets.",
+        "Wren is a native iOS round timer for MMA, boxing, and grappling with clear presets and reliable audio cues.",
       keywords: ["MMA timer app", "boxing round timer", "grappling timer iPhone", "Wren app"],
       ogImage: "/og-default.svg"
     },
@@ -133,13 +133,13 @@ export const apps: AppConfig[] = [
     id: "smarty-colours",
     slug: "smarty-colours",
     name: "Smarty Colours",
-    heroTitle: "Smarty Colours: Children's Colouring App",
+    heroTitle: "Smarty Colours",
     tagline:
-      "A vibrant, kid-friendly colouring app featuring themed packs like Unicorns, Dinosaurs, Pets, and Vehicles, built natively for iPad with Apple Pencil support.",
+      "A calm colouring app for iPad, made for focused creative play.",
     shortDescription:
-      "A bright kids colouring app for iPad with Apple Pencil support, themed packs, and a calm, clutter-free interface.",
+      "A kids colouring app for iPad with Apple Pencil support, themed packs, and a simple interface.",
     longDescription:
-      "Smarty Colours encourages focus and imagination with beautifully illustrated pages, smooth Apple Pencil drawing, and an intuitive UI designed for children. The app balances creative play with a safe and minimal experience.",
+      "Smarty Colours gives children a simple place to draw, colour, and settle into a page. The interface stays clear, the tools are easy to find, and Apple Pencil support keeps the experience feeling natural on iPad.",
     appStoreUrl: "https://apps.apple.com/gb/app/smartycolours-colouring-pages/id6749013158",
     icon: "/assets/smartycoloursLogo.png",
     screenshots: [
@@ -149,25 +149,25 @@ export const apps: AppConfig[] = [
       { src: "/assets/smartyColoursScreenshots/iPhone Screenshots 🇬🇧 2.004.png", alt: "Smarty Colours pack selection screen 2" },
       { src: "/assets/smartyColoursScreenshots/iPhone Screenshots 🇬🇧 2.005.png", alt: "Smarty Colours pack selection screen 3" }
     ],
-    featureHeading: "Designed for creativity and calm",
+    featureHeading: "Creative play with fewer distractions",
     featureIntro:
-      "Smarty Colours supports imagination and focus with smooth Apple Pencil input and an intuitive, safe UI for kids.",
+      "The app keeps the tools obvious and the page central, so children can spend more time colouring.",
     features: [
       {
         title: "Themed Coloring Packs",
-        body: "Original illustration packs including Unicorns, Dinosaurs, Pets, Farm Yard, Robots, Vehicles, and more."
+        body: "Original illustration packs with familiar subjects like animals, vehicles, robots, and dinosaurs."
       },
       {
         title: "Apple Pencil Support",
-        body: "Natural drawing and coloring on iPad with Apple Pencil support for smooth creative play."
+        body: "Natural drawing and colouring on iPad with Apple Pencil support."
       },
       {
         title: "Kid-Friendly Interface",
-        body: "Big buttons, simple navigation, and minimal clutter designed for young children."
+        body: "Big buttons, simple navigation, and little visual clutter."
       },
       {
         title: "Subscription Content",
-        body: "Free access is limited; a yearly subscription unlocks all themed packs and future content."
+        body: "A simple subscription provides the full set of packs and future additions."
       }
     ],
     privacySummary:
@@ -177,7 +177,7 @@ export const apps: AppConfig[] = [
     seo: {
       title: "Smarty Colours | Kids Colouring App for iPad",
       description:
-        "Smarty Colours is a children's colouring app for iPad with themed packs, Apple Pencil support, and a calm kid-friendly interface.",
+        "Smarty Colours is a calm children's colouring app for iPad with themed packs, Apple Pencil support, and a simple interface.",
       keywords: ["kids colouring app", "iPad coloring app", "Apple Pencil children app", "Smarty Colours"],
       ogImage: "/og-default.svg"
     },
@@ -189,11 +189,11 @@ export const apps: AppConfig[] = [
     name: "Gro Guardian",
     heroTitle: "Gro Guardian",
     tagline:
-      "Smarter plant care with watering reminders, live light meter guidance, and scheduled tasks to keep every plant thriving.",
+      "A small plant care companion for watering, light, and regular attention.",
     shortDescription:
-      "A plant care companion for iPhone with reminders, scheduled tasks, and a camera-based light meter for placement guidance.",
+      "An iPhone plant care app with reminders, scheduled tasks, and a camera-based light meter.",
     longDescription:
-      "Gro Guardian streamlines plant care with simple workflows for watering, rotating, and feeding. It also uses camera access for a live light meter to help place plants in the right environment.",
+      "Gro Guardian keeps plant care practical: water, rotate, feed, and check light. It is for people who like plants but do not want another complicated tracking system.",
     appStoreUrl: "#",
     icon: "/assets/groGuardianLogo.png",
     screenshots: [
@@ -202,34 +202,34 @@ export const apps: AppConfig[] = [
       { src: "/assets/groGuardianScreenshots/GroGuardianimages.003.jpeg", alt: "Gro Guardian light meter screen" },
       { src: "/assets/groGuardianScreenshots/GroGuardianimages.004.jpeg", alt: "Gro Guardian task scheduling screen" }
     ],
-    featureHeading: "Built for better plant care",
+    featureHeading: "Plant care as a quiet routine",
     featureIntro:
-      "A simple workflow to track plants, get timely reminders, and use your camera as a light meter to find the best spot.",
+      "Keep the next care task visible, use light as a guide, and let the routine stay small.",
     features: [
       {
         title: "Simple Plant Dashboard",
-        body: "See all plants at a glance with next actions like watering, rotating, or feeding."
+        body: "See each plant with its next useful action: water, rotate, feed, or check in."
       },
       {
         title: "Watering Reminders",
-        body: "Smart schedules and helpful notifications so you do not miss key care tasks."
+        body: "Simple schedules and reminders for care that is easy to forget."
       },
       {
         title: "Live Light Meter",
-        body: "Use the camera to estimate light and guide plant placement in your home."
+        body: "Use the camera to estimate light and make better placement decisions."
       },
       {
         title: "Scheduled Tasks",
-        body: "Plan weekly care, log completions, and stay on track with lightweight routines."
+        body: "Plan care, log completions, and keep the routine light."
       }
     ],
     privacySummary:
       "Gro Guardian uses camera access for the light meter and notifications for reminders. No ads or tracking are used.",
     yearLabel: "2025",
     seo: {
-      title: "Gro Guardian | Smarter Plant Care App",
+      title: "Gro Guardian | Simple Plant Care App",
       description:
-        "Gro Guardian helps you manage plant care with watering reminders, a live light meter, and scheduled tasks.",
+        "Gro Guardian is a simple iPhone plant care app with watering reminders, a live light meter, and scheduled tasks.",
       keywords: ["plant care app", "watering reminders", "light meter app plants", "Gro Guardian"],
       ogImage: "/og-default.svg"
     },
@@ -239,13 +239,13 @@ export const apps: AppConfig[] = [
     id: "chat-with-santa",
     slug: "chat-with-santa",
     name: "Chat with Santa",
-    heroTitle: "Chat with Santa: AI Magic",
+    heroTitle: "Chat with Santa",
     tagline:
-      "A magical way for children and families to message and chat with Santa during the holiday season.",
+      "A small seasonal chat app for families during the holidays.",
     shortDescription:
-      "A festive chat app with a child-friendly Santa experience, joyful design, and privacy-first on-device processing.",
+      "A seasonal chat app with a child-friendly Santa experience and a simple family-first design.",
     longDescription:
-      "Chat with Santa is a playful seasonal app designed for delightful conversations with Santa. It focuses on a simple, warm experience with festive visuals and privacy-conscious behavior.",
+      "Chat with Santa is a seasonal experiment built around a simple idea: a friendly holiday conversation, without turning the experience into a noisy feed or game.",
     appStoreUrl: "#",
     icon: "/assets/chatWithSantaLogo.png",
     screenshots: [
@@ -255,25 +255,25 @@ export const apps: AppConfig[] = [
       { src: "/assets/chatWithSantaScreenshots/ChatWithSantaAppStoreScreenShots.004.jpeg", alt: "Chat with Santa chat screen 4" },
       { src: "/assets/chatWithSantaScreenshots/ChatWithSantaAppStoreScreenShots.005.jpeg", alt: "Chat with Santa chat screen 5" }
     ],
-    featureHeading: "Built for magical conversations",
+    featureHeading: "A lighter seasonal app",
     featureIntro:
-      "A simple and joyful festive chat experience with delightful design and Santa-themed replies.",
+      "A focused holiday chat experience with warm replies and a simple interface.",
     features: [
       {
         title: "Festive Chat Interface",
-        body: "A clean, seasonal UI with playful visual details that support a magical holiday feel."
+        body: "A clean seasonal UI with a little personality and not much else in the way."
       },
       {
         title: "AI Santa Replies",
-        body: "Friendly responses designed to feel warm and age-appropriate for holiday conversations."
+        body: "Friendly responses written for warm, age-aware holiday conversations."
       },
       {
         title: "Voice and Text Input",
-        body: "Type or speak messages to Santa for a more accessible, hands-free experience."
+        body: "Type or speak messages for a simple hands-free option."
       },
       {
         title: "Private and Secure",
-        body: "No advertising or tracking tools. Privacy and family trust are part of the product design."
+        body: "No advertising or tracking tools. Family trust is part of the design."
       }
     ],
     privacySummary:
@@ -281,9 +281,9 @@ export const apps: AppConfig[] = [
     privacySlug: "chat-with-santa",
     yearLabel: "2025",
     seo: {
-      title: "Chat with Santa | AI Magic Holiday App",
+      title: "Chat with Santa | Seasonal Holiday App",
       description:
-        "Chat with Santa is a festive, privacy-first holiday chat app for families with magical Santa conversations and joyful design.",
+        "Chat with Santa is a simple seasonal holiday chat app for families with friendly Santa conversations.",
       keywords: ["Chat with Santa app", "holiday app for kids", "Santa AI chat", "Christmas chat app"],
       ogImage: "/og-default.svg"
     },
@@ -298,11 +298,11 @@ export const apps: AppConfig[] = [
     applicationCategory: "DesktopApplication",
     heroTitle: "Standing Desk Timer",
     tagline:
-      "A focused macOS menu bar timer for building healthier sit, stand, and movement habits through the workday.",
+      "A quiet Mac menu bar timer for sit, stand, and movement habits.",
     shortDescription:
-      "A macOS menu bar app for sit, stand, and movement reminders with configurable intervals, posture prompts, and daily totals.",
+      "A macOS menu bar app for sit, stand, and movement reminders through the workday.",
     longDescription:
-      "Standing Desk Timer is designed for people who use a sit-stand desk but need lightweight prompts to actually change posture. It keeps the current timer in the menu bar, supports configurable sit and stand intervals, optional movement reminders, and clear prompts when it is time to switch.",
+      "Standing Desk Timer is for people who own a sit-stand desk and still forget to use it. It keeps the current rhythm in the menu bar and gives clear prompts when it is time to switch.",
     appStoreUrl: "#",
     icon: "/assets/StandingDeskIcon-iOS-Dark-1024x1024@1x.png",
     screenshots: [
@@ -311,25 +311,25 @@ export const apps: AppConfig[] = [
       { src: "/assets/standingDeskTimer/onboarding-reminders.png", alt: "Standing Desk Timer reminders onboarding screen" },
       { src: "/assets/standingDeskTimer/reminder-overlay.png", alt: "Standing Desk Timer reminder overlay preview" }
     ],
-    featureHeading: "Built for healthier desk rhythms on Mac",
+    featureHeading: "A small rhythm for long workdays",
     featureIntro:
-      "Start a posture cycle from the menu bar, get timely reminders, and keep simple daily totals without turning your workflow into another dashboard.",
+      "Start a posture cycle from the menu bar, get a prompt at the right time, and keep moving without adding another dashboard.",
     features: [
       {
         title: "Menu Bar Timer",
-        body: "Start, pause, resume, reset, and switch posture from a compact macOS menu bar panel."
+        body: "Start, pause, resume, reset, and switch posture from a compact menu bar panel."
       },
       {
         title: "Configurable Intervals",
-        body: "Choose presets like Balanced, 20-8-2, Back care, and Gentle start, or set custom sit, stand, and movement durations."
+        body: "Choose a preset rhythm or set your own sit, stand, and movement durations."
       },
       {
         title: "Posture Reminders",
-        body: "Use regular macOS notifications or an on-screen overlay when it is time to stand, sit, move, snooze, or wrap up a session."
+        body: "Use regular macOS notifications or an overlay when it is time to stand, sit, move, snooze, or wrap up."
       },
       {
         title: "Daily Totals",
-        body: "Track today's sitting, standing, and movement time locally so you can see how your desk routine is going."
+        body: "Track today’s sitting, standing, and movement time locally."
       }
     ],
     seoApplicationSubCategory: "Standing Desk Timer",
@@ -348,7 +348,7 @@ export const apps: AppConfig[] = [
     seo: {
       title: "Standing Desk Timer for macOS | Scruffy Hipster",
       description:
-        "Standing Desk Timer is a macOS menu bar app for sit, stand, and movement reminders with configurable intervals, posture prompts, and local daily totals.",
+        "Standing Desk Timer is a quiet macOS menu bar app for sit, stand, and movement reminders with local daily totals.",
       keywords: [
         "standing desk timer",
         "macOS standing desk app",
@@ -366,11 +366,11 @@ export const apps: AppConfig[] = [
     name: "Breastfeeding Tracker & Timer",
     heroTitle: "Breastfeeding Tracker & Timer",
     tagline:
-      "A one-tap breastfeeding tracker and timer for iPhone and Apple Watch with widgets, Live Activities, and private on-device feed insights.",
+      "A fast feeding timer for iPhone and Apple Watch, built for tired hands and interrupted days.",
     shortDescription:
-      "A breastfeeding tracker for iPhone and Apple Watch with a live timer, feed history, widgets, and simple on-device insights.",
+      "A breastfeeding tracker for iPhone and Apple Watch with a live timer, feed history, widgets, and private summaries.",
     longDescription:
-      "Breastfeeding Tracker & Timer is built to help parents log feeds fast, stay in sync between iPhone and Apple Watch, and review clear feeding patterns without extra friction. It supports one-tap timing, left and right side tracking, quick save flows, glanceable Lock Screen progress, and private summaries based on recent history.",
+      "Breastfeeding Tracker & Timer is built for the practical reality of feeding: one hand free, very little time, and no patience for fiddly logging. It keeps timing, side tracking, history, widgets, and private summaries close to hand.",
     appStoreUrl: "https://apps.apple.com/gb/app/breastfeeding-tracker-timer/id6754637800",
     icon: "/assets/BreastFeedingIcon.png",
     screenshots: [
@@ -380,33 +380,33 @@ export const apps: AppConfig[] = [
       { src: "/assets/breastfeedingScreenShots/4.png", alt: "Breast Feeding Tracker session detail screen" },
       { src: "/assets/breastfeedingScreenShots/5.png", alt: "Breast Feeding Tracker statistics screen" }
     ],
-    featureHeading: "Built for fast breastfeeding tracking on iPhone and Apple Watch",
+    featureHeading: "Fast logging when the moment is already busy",
     featureIntro:
-      "Track feeds in one tap, see live progress on your Lock Screen, and keep your breastfeeding timer synced across iPhone and Apple Watch.",
+      "Start quickly, save cleanly, and keep the useful details without turning feeding into admin.",
     features: [
       {
         title: "One-Tap Breastfeeding Timer",
-        body: "Start a breastfeeding timer instantly and choose left or right at the same time, with the last-used side remembered for faster repeat logging."
+        body: "Start a timer and choose left or right without digging through screens."
       },
       {
         title: "Live Feed Timer and Quick Save",
-        body: "Keep a live running timer visible during an active feed, then stop and save with a quick flow when you are done."
+        body: "Keep the active feed visible, then stop and save without ceremony."
       },
       {
         title: "Feed History and Last Feed Summary",
-        body: "Review feed history with timestamps, duration, and side used, plus a last-feed summary on the main screen for a quick check-in."
+        body: "Review timestamps, duration, side used, and the last feed at a glance."
       },
       {
         title: "Apple Watch Breastfeeding Tracking",
-        body: "Start and stop feeds from Apple Watch, even when the watch is offline, then sync active sessions and completed feeds back to iPhone when it reconnects."
+        body: "Start and stop feeds from Apple Watch, with offline use and sync when devices reconnect."
       },
       {
         title: "Widget, Live Activity, and Dynamic Island",
-        body: "See feeds completed today, the last side used, and an active breastfeeding timer on your Home Screen, Lock Screen, and Dynamic Island."
+        body: "See the current timer and recent feeding context from the places you already check."
       },
       {
         title: "Private On-Device Feeding Insights",
-        body: "Get informational summaries from recent feed history, including average duration, longest session, left and right balance, day versus night activity, and time between feeds."
+        body: "See simple on-device summaries from recent feed history. Informational only, never medical advice."
       }
     ],
     seoApplicationSubCategory: "Breastfeeding Tracker",
@@ -465,7 +465,7 @@ export const apps: AppConfig[] = [
     seo: {
       title: "Breastfeeding Tracker & Timer for iPhone & Apple Watch",
       description:
-        "Track feeds in one tap with a breastfeeding timer for iPhone and Apple Watch. Includes feed history, widgets, Live Activities, Dynamic Island, and private on-device feeding insights.",
+        "A breastfeeding tracker and timer for iPhone and Apple Watch with feed history, widgets, Live Activities, and private on-device summaries.",
       keywords: [
         "breastfeeding tracker",
         "breast feeding tracker",
