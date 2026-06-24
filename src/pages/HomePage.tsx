@@ -33,7 +33,13 @@ export function HomePage() {
             <p className="eyebrow">Independent Apple Software Studio</p>
             <h1>{siteConfig.tagline}</h1>
             <p className="lead">
-              Most software fights for attention. Mine tries to give some back. Scruffyhipster makes quiet tools for small interruptions, better decisions, and calmer days with your devices.
+              Most apps are designed to keep you engaged.
+            </p>
+            <p className="lead">
+              We’re building software designed to help you focus, recover, create, and get back to what matters.
+            </p>
+            <p className="lead">
+              No feeds. No dark patterns. No attention traps.
             </p>
             <div className="hero-actions">
               <Link className="btn btn-primary" to="/about#contact">
