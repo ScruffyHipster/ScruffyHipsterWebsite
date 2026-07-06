@@ -159,6 +159,45 @@ export const privacyPolicies: PrivacyPolicyConfig[] = [
       description: "Read the privacy policy for Breast Feeding Tracker by Scruffyhipster.",
       ogImage: "/og-default.png"
     }
+  },
+  {
+    slug: "surge-tracker",
+    appName: "Surge Tracker",
+    title: "Surge Tracker Privacy Policy",
+    lastUpdated: "July 6, 2026",
+    htmlContent: `
+      <p><strong>Surge Tracker</strong> is a factual timer for labour and practice surges. This policy explains what information the app stores, what limited information is processed by service providers, and the choices available to you.</p>
+      <h2>Surge Data and Settings</h2>
+      <p>Surge Tracker stores Labour and Practice sessions, surge start and end times, durations, session details, optional sensation ratings, and the custom pattern settings you choose.</p>
+      <p>This information is used only to run the timer, calculate recent factual averages, evaluate your user-chosen surge pattern, display history, and prepare reports. Surge Tracker does not use this information to diagnose labour, recommend timings, or provide medical advice.</p>
+      <h2>Local Storage and Private iCloud Sync</h2>
+      <p>Your surge records and settings are stored locally on your device using SwiftData. When iCloud is available, the app also uses a private CloudKit database associated with your Apple Account to synchronize records across your devices.</p>
+      <p>Scruffy Hipster Ltd. does not receive your Apple Account details or a copy of your private surge history. Apple processes iCloud data under the <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a>.</p>
+      <h2>Anonymous Usage Analytics</h2>
+      <p>Surge Tracker uses TelemetryDeck for limited, privacy-focused usage analytics. TelemetryDeck receives an anonymized identifier for the app installation, app and device metadata, hour-rounded timestamps, interaction events, and coarse value buckets such as broad duration or surge-count ranges.</p>
+      <p>Analytics does not include exact surge timestamps, exact intervals, complete session durations, full surge history, session or surge identifiers, names, email addresses, Apple Account details, or free-form content. IP addresses are not stored by TelemetryDeck.</p>
+      <p>Learn more in <a href="https://telemetrydeck.com/docs/guides/privacy-faq/">TelemetryDeck’s privacy explanation</a>.</p>
+      <h2>Purchases and Entitlements</h2>
+      <p>Surge Tracker uses RevenueCat to offer and restore the optional lifetime unlock for archived history and PDF export. RevenueCat may process an anonymous app-user identifier, device and technical information, App Store receipts, transaction information, and entitlement status.</p>
+      <p>RevenueCat does not receive your surge records, sensation ratings, pattern settings, or generated reports. Learn more in the <a href="https://www.revenuecat.com/privacy-policy">RevenueCat Privacy Policy</a>.</p>
+      <h2>PDF Reports and Sharing</h2>
+      <p>PDF reports are generated locally from the session you select. A report leaves your device only when you explicitly use a system share or save action. Once shared, the destination you choose processes that copy under its own privacy terms.</p>
+      <h2>Advertising and Tracking</h2>
+      <p>Surge Tracker does not show advertising, sell personal data, or track you across other companies’ apps or websites for advertising purposes.</p>
+      <h2>Your Choices and Data Removal</h2>
+      <p>The app allows you to reset the current session and to edit or delete its latest completed surge. Archived sessions cannot currently be deleted individually inside the app.</p>
+      <p>You can manage Surge Tracker’s synchronized data using Apple’s iCloud storage controls. Removing the app deletes its local data from that device, but it may not remove data already stored in iCloud. Purchase and transaction records are managed separately by Apple and RevenueCat.</p>
+      <h2>Changes to This Policy</h2>
+      <p>This policy may be updated when the app or its service providers change. The latest revision date appears at the top of this page.</p>
+      <h2>Contact</h2>
+      <p>If you have questions about this policy, contact <a href="mailto:support@scruffyhipster.com">support@scruffyhipster.com</a>.</p>
+      <p>© 2026 Scruffy Hipster Ltd. All rights reserved.</p>
+    `,
+    seo: {
+      title: "Surge Tracker Privacy Policy | Scruffyhipster",
+      description: "Read the privacy policy for Surge Tracker by Scruffyhipster.",
+      ogImage: "/assets/surgeTracker/icon.png"
+    }
   }
 ];
 

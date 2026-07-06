@@ -15,7 +15,7 @@ const appGroups = [
   },
   {
     label: "Care and everyday systems",
-    appIds: ["breast-feeding-tracker", "gro-guardian"]
+    appIds: ["surge-tracker", "breast-feeding-tracker", "gro-guardian"]
   },
   {
     label: "Seasonal experiments",

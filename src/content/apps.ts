@@ -504,6 +504,148 @@ export const apps: AppConfig[] = [
       ogImage: "/og-default.png"
     },
     accent: { from: "#ffd6e7", via: "#f7b5ff", to: "#8cd9ff" }
+  },
+  {
+    id: "surge-tracker",
+    slug: "surge-tracker",
+    name: "Surge Tracker",
+    applicationCategory: "HealthApplication",
+    heroTitle: "Surge Tracker",
+    tagline: "A calm, factual timer for labour and practice surges.",
+    shortDescription:
+      "A calm iPhone timer for labour and practice surges, with recent averages, custom pattern reminders, private iCloud history, and PDF export.",
+    longDescription:
+      "Surge Tracker keeps timing clear when attention needs to stay elsewhere. Record labour or practice surges, see recent duration and start-to-start averages, and keep a factual history without turning the app into a source of medical advice.",
+    appStoreUrl: "#",
+    icon: "/assets/surgeTracker/icon.png",
+    screenshots: [
+      {
+        src: "/assets/surgeTracker/main-timer.png",
+        alt: "Surge Tracker labour timer showing recent surge durations, start-to-start gaps, and sensation zones"
+      },
+      {
+        src: "/assets/surgeTracker/pattern-reminder.png",
+        alt: "Surge Tracker reminder that recent surges match the user-chosen pattern"
+      },
+      {
+        src: "/assets/surgeTracker/settings.png",
+        alt: "Surge Tracker settings for a user-chosen surge pattern and optional sensation recording"
+      },
+      {
+        src: "/assets/surgeTracker/sensation-zones.png",
+        alt: "Surge Tracker calm-zone choices for recording sensation intensity after a surge"
+      },
+      {
+        src: "/assets/surgeTracker/history.png",
+        alt: "Surge Tracker history with current and archived labour and practice sessions"
+      },
+      {
+        src: "/assets/surgeTracker/pdf-preview.png",
+        alt: "Surge Tracker PDF preview containing factual surge timing data"
+      }
+    ],
+    featureHeading: "Clear timing, without medical claims",
+    featureIntro:
+      "Record what happened, see the recent pattern, and keep the information ready if you choose to share it.",
+    features: [
+      {
+        title: "Tap or Hold to Time",
+        body: "Choose the recording style that feels natural, then start and end each surge from one clear control."
+      },
+      {
+        title: "Recent Factual Averages",
+        body: "See recent duration and start-to-start averages calculated from up to the latest three completed surges."
+      },
+      {
+        title: "Your Surge Pattern",
+        body: "Enter timings agreed with your care provider and receive a reminder when recorded surges match them. Surge Tracker does not recommend thresholds or provide medical guidance."
+      },
+      {
+        title: "Optional Sensation Notes",
+        body: "Record how a surge felt using calm zones or a numeric scale, or skip the prompt whenever it is not useful."
+      },
+      {
+        title: "Labour and Practice History",
+        body: "Keep Labour and Practice sessions separate, with local-first storage and private iCloud sync across your devices."
+      },
+      {
+        title: "PDF Reports",
+        body: "Create a factual report from a selected session to preview, save, or share. Archived history and PDF export are available with an optional lifetime unlock."
+      }
+    ],
+    seoApplicationSubCategory: "Labour Contraction Timer",
+    seoFeatureList: [
+      "Tap or hold surge timing",
+      "Recent surge duration and start-to-start averages",
+      "User-chosen surge pattern reminders",
+      "Optional sensation intensity recording",
+      "Separate Labour and Practice session history",
+      "Private iCloud sync",
+      "Selected-session PDF reports and sharing"
+    ],
+    seoContent: {
+      eyebrow: "Calm, factual support",
+      heading: "A surge timer built for labour and practice",
+      paragraphs: [
+        "If you are looking for a contraction timer but prefer hypnobirthing language, Surge Tracker records each event as a surge. Start and stop from one clear control, then see recent duration and start-to-start averages without extra noise.",
+        "The optional Surge Pattern feature checks the timings you chose yourself. The app does not supply a preset, diagnose labour, recommend when to seek care, or tell you when to contact your midwife, doctor, maternity unit, or birth team.",
+        "Core timing, Practice mode, custom patterns, and private iCloud sync remain free. An optional lifetime unlock adds archived session history and selected-session PDF reports for saving or sharing."
+      ]
+    },
+    faqHeading: "Surge Tracker FAQ",
+    faqIntro:
+      "Straight answers about timing, reminders, privacy, and what the app does not attempt to decide for you.",
+    faqs: [
+      {
+        question: "Is Surge Tracker a contraction timer?",
+        answer:
+          "Yes. Surge Tracker times the same start, end, duration, and start-to-start information commonly associated with a contraction timer, while using the word surge throughout the app."
+      },
+      {
+        question: "Does Surge Tracker tell me when to contact my care team?",
+        answer:
+          "No. Surge Tracker records timing data and can remind you when recent surges match values you entered. It does not recommend timings, diagnose labour, or tell you when to seek care. Contact your care team whenever you are concerned."
+      },
+      {
+        question: "Can I record practice surges separately?",
+        answer:
+          "Yes. Practice sessions are kept separate from Labour sessions and are excluded from labour pattern evaluation."
+      },
+      {
+        question: "How does the Surge Pattern reminder work?",
+        answer:
+          "You enter the maximum start-to-start time, minimum surge duration, and how long the pattern should be sustained. Surge Tracker checks completed surges against those user-chosen values and shows a factual reminder when they match."
+      },
+      {
+        question: "Does my history sync between devices?",
+        answer:
+          "Yes. Surge Tracker stores records locally first and uses your private iCloud database to keep them synchronized across devices signed in to your Apple Account."
+      },
+      {
+        question: "What is included in the optional lifetime unlock?",
+        answer:
+          "The timer, current session, Practice mode, custom patterns, and iCloud sync remain free. The lifetime unlock adds archived session history and selected-session PDF export."
+      }
+    ],
+    privacySummary:
+      "Surge records are stored locally and in your private iCloud database. Limited anonymous analytics and anonymous purchase processing do not include exact surge history.",
+    privacySlug: "surge-tracker",
+    yearLabel: "2026",
+    seo: {
+      title: "Surge Tracker | Labour Contraction Timer for iPhone",
+      description:
+        "Surge Tracker is a calm iPhone timer for labour and practice surges, with recent averages, custom pattern reminders, iCloud history, and PDF export.",
+      keywords: [
+        "Surge Tracker",
+        "labour surge timer",
+        "hypnobirthing timer",
+        "birth timer iPhone",
+        "surge pattern reminder",
+        "labour timing app"
+      ],
+      ogImage: "/assets/surgeTracker/icon.png"
+    },
+    accent: { from: "#f8ecee", via: "#dda8b2", to: "#bd3c64" }
   }
 ];
 

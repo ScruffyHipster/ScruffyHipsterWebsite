@@ -50,6 +50,60 @@ const softwareApplicationJsonLd = ({
     priceCurrency: "USD"
   }
 });
+const breadcrumbJsonLd = (items) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: items.map((item, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: item.name,
+    item: item.url
+  }))
+});
+const faqPageJsonLd = (items) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: items.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer
+    }
+  }))
+});
+const surgeTrackerFaqs = [
+  {
+    question: "Is Surge Tracker a contraction timer?",
+    answer:
+      "Yes. Surge Tracker times the same start, end, duration, and start-to-start information commonly associated with a contraction timer, while using the word surge throughout the app."
+  },
+  {
+    question: "Does Surge Tracker tell me when to contact my care team?",
+    answer:
+      "No. Surge Tracker records timing data and can remind you when recent surges match values you entered. It does not recommend timings, diagnose labour, or tell you when to seek care. Contact your care team whenever you are concerned."
+  },
+  {
+    question: "Can I record practice surges separately?",
+    answer:
+      "Yes. Practice sessions are kept separate from Labour sessions and are excluded from labour pattern evaluation."
+  },
+  {
+    question: "How does the Surge Pattern reminder work?",
+    answer:
+      "You enter the maximum start-to-start time, minimum surge duration, and how long the pattern should be sustained. Surge Tracker checks completed surges against those user-chosen values and shows a factual reminder when they match."
+  },
+  {
+    question: "Does my history sync between devices?",
+    answer:
+      "Yes. Surge Tracker stores records locally first and uses your private iCloud database to keep them synchronized across devices signed in to your Apple Account."
+  },
+  {
+    question: "What is included in the optional lifetime unlock?",
+    answer:
+      "The timer, current session, Practice mode, custom patterns, and iCloud sync remain free. The lifetime unlock adds archived session history and selected-session PDF export."
+  }
+];
 const legacyPrivacyRedirects = [
   ["rewirePrivacyPolicy.html", "/privacy/rewire"],
   ["wrenPrivacyPolicy.html", "/privacy/wren"],
@@ -321,6 +375,40 @@ export const publicRoutes = [
     ]
   },
   {
+    path: "/apps/surge-tracker",
+    title: "Surge Tracker | Labour Contraction Timer for iPhone",
+    description:
+      "Surge Tracker is a calm iPhone timer for labour and practice surges, with recent averages, custom pattern reminders, iCloud history, and PDF export.",
+    ogImage: "/assets/surgeTracker/icon.png",
+    jsonLd: [
+      organizationJsonLd,
+      softwareApplicationJsonLd({
+        path: "/apps/surge-tracker",
+        name: "Surge Tracker",
+        description:
+          "A calm iPhone timer for labour and practice surges, with recent averages, custom pattern reminders, private iCloud history, and PDF export.",
+        image: "/assets/surgeTracker/icon.png",
+        applicationCategory: "HealthApplication",
+        applicationSubCategory: "Labour Contraction Timer",
+        featureList: [
+          "Tap or hold surge timing",
+          "Recent surge duration and start-to-start averages",
+          "User-chosen surge pattern reminders",
+          "Optional sensation intensity recording",
+          "Separate Labour and Practice session history",
+          "Private iCloud sync",
+          "Selected-session PDF reports and sharing"
+        ]
+      }),
+      faqPageJsonLd(surgeTrackerFaqs),
+      breadcrumbJsonLd([
+        { name: "Scruffyhipster", url: siteUrl },
+        { name: "Apps", url: `${siteUrl}/apps` },
+        { name: "Surge Tracker", url: `${siteUrl}/apps/surge-tracker` }
+      ])
+    ]
+  },
+  {
     path: "/privacy/rewire",
     title: "Rewire Privacy Policy | Scruffyhipster",
     description: "Read the privacy policy for Rewire by Scruffyhipster.",
@@ -355,6 +443,20 @@ export const publicRoutes = [
     title: "Breast Feeding Tracker Privacy Policy | Scruffyhipster",
     description: "Read the privacy policy for Breast Feeding Tracker by Scruffyhipster.",
     ogImage: "/og-default.png"
+  },
+  {
+    path: "/privacy/surge-tracker",
+    title: "Surge Tracker Privacy Policy | Scruffyhipster",
+    description: "Read the privacy policy for Surge Tracker by Scruffyhipster.",
+    ogImage: "/assets/surgeTracker/icon.png",
+    jsonLd: [
+      organizationJsonLd,
+      breadcrumbJsonLd([
+        { name: "Scruffyhipster", url: siteUrl },
+        { name: "Privacy", url: `${siteUrl}/privacy/surge-tracker` },
+        { name: "Surge Tracker", url: `${siteUrl}/privacy/surge-tracker` }
+      ])
+    ]
   }
 ];
 
