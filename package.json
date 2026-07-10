@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build && node scripts/postbuild.mjs",
+    "dev": "node scripts/generate-rewire-content.mjs && vite",
+    "build": "node scripts/generate-rewire-content.mjs && vite build && node scripts/postbuild.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

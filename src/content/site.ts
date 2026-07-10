@@ -7,7 +7,7 @@ export const siteConfig: SiteConfig = {
   supportEmail: "support@scruffyhipster.com",
   helloEmail: "hello@scruffyhipster.com",
   defaultOgImage: "/og-default.png",
-  tagline: "Software with intention.",
+  tagline: "Software crafted with intention.",
   description:
     "Scruffyhipster is an independent Apple software studio building quiet tools for focus, recovery, habits, and everyday systems."
 };

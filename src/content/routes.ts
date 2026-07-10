@@ -4,6 +4,8 @@ import type { AppConfig, PrivacyPolicyConfig } from "./types";
 
 export const APP_BASE_PATH = "/apps";
 export const PRIVACY_BASE_PATH = "/privacy";
+export const REWIRE_BASE_PATH = "/rewire";
+export const REWIRE_BLOG_BASE_PATH = `${REWIRE_BASE_PATH}/blog`;
 const legacyPrivacyRedirects: Array<{ file: string; to: string }> = [
   { file: "rewirePrivacyPolicy.html", to: "/privacy/rewire" },
   { file: "wrenPrivacyPolicy.html", to: "/privacy/wren" },
@@ -17,6 +19,8 @@ export const privacyRoutePath = (policy: PrivacyPolicyConfig) => `${PRIVACY_BASE
 
 export const publicRoutePaths = [
   "/",
+  REWIRE_BASE_PATH,
+  REWIRE_BLOG_BASE_PATH,
   APP_BASE_PATH,
   "/about",
   ...apps.map(appRoutePath),

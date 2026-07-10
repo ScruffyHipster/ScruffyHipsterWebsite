@@ -21,6 +21,7 @@ export function AppShell() {
             <span>scruffyhipster</span>
           </Link>
           <nav className="pill-nav" aria-label="Primary">
+            <Link to="/rewire">Rewire</Link>
             <Link to="/apps">Apps</Link>
             <Link to="/about">About</Link>
           </nav>
@@ -41,6 +42,9 @@ export function AppShell() {
             <div>
               <p className="footer-heading">Apps</p>
               <ul className="footer-list">
+                <li>
+                  <Link to="/rewire">Rewire showcase</Link>
+                </li>
                 {apps.map((app) => (
                   <li key={app.id}>
                     <Link to={`/apps/${app.slug}`}>{app.name}</Link>

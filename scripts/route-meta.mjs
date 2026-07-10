@@ -1,4 +1,14 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
 export const siteUrl = process.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://scruffyhipster.com";
+const rootDir = new URL("../", import.meta.url).pathname;
+const rewireBlog = readGeneratedJson("rewire-blog.json", { posts: [] });
+const rewireRating = readGeneratedJson("rewire-app-store-rating.json", {
+  rating: 5,
+  ratingCount: 1,
+  storeUrl: "https://apps.apple.com/us/app/app-blocker-focus-rewire/id6757722922"
+});
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -44,11 +54,32 @@ const softwareApplicationJsonLd = ({
   image: `${siteUrl}${image}`,
   ...(downloadUrl ? { downloadUrl } : {}),
   ...(featureList ? { featureList } : {}),
+  ...(typeof rewireRating.rating === "number" && name === "Rewire"
+    ? {
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: rewireRating.rating,
+          ratingCount: rewireRating.ratingCount || 1,
+          bestRating: 5,
+          worstRating: 1
+        }
+      }
+    : {}),
   offers: {
     "@type": "Offer",
     price: "0",
     priceCurrency: "USD"
   }
+});
+const blogPostingJsonLd = (post) => ({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.title,
+  description: post.description,
+  datePublished: post.publishedAt,
+  ...(post.updatedAt ? { dateModified: post.updatedAt } : {}),
+  image: `${siteUrl}${post.ogImage || "/assets/rewire/app-store/rewire-icon.jpg"}`,
+  url: `${siteUrl}/rewire/blog/${post.slug}`
 });
 const breadcrumbJsonLd = (items) => ({
   "@context": "https://schema.org",
@@ -72,6 +103,38 @@ const faqPageJsonLd = (items) => ({
     }
   }))
 });
+const rewireLandingFaqs = [
+  {
+    question: "How do I block apps on iPhone?",
+    answer:
+      "You can block apps with Apple's Screen Time settings or use a Screen Time based blocker like Rewire to choose apps, start a session, and add an interruption before access."
+  },
+  {
+    question: "Can I block websites on iPhone too?",
+    answer:
+      "Yes. iPhone supports website restrictions through Screen Time, and Rewire can include distracting websites in focus sessions alongside apps."
+  },
+  {
+    question: "Can an app blocker help stop doomscrolling?",
+    answer:
+      "An app blocker can help by putting friction in front of the feed before a reflex turns into a long scroll. It should support the choice, not shame it."
+  },
+  {
+    question: "What makes a good iPhone app blocker?",
+    answer:
+      "Look for clear app and website blocking, fast setup, privacy-first design, Apple Screen Time integration, and friction that happens at the moment distraction starts."
+  },
+  {
+    question: "Does Rewire track personal data?",
+    answer:
+      "Rewire has no accounts, no ads, no personal data collection, and anonymous analytics only. It does not need cloud sync to block distractions."
+  },
+  {
+    question: "Is Rewire free?",
+    answer:
+      "The US App Store listing shows Rewire as free with in-app purchases. The App Store is the final source for availability and pricing."
+  }
+];
 const surgeTrackerFaqs = [
   {
     question: "Is Surge Tracker a contraction timer?",
@@ -137,6 +200,76 @@ export const publicRoutes = [
     ]
   },
   {
+    path: "/rewire",
+    title: "Rewire | App Blocker for iPhone",
+    description:
+      "Rewire is an iPhone app and website blocker for reducing screen time, stopping doomscrolling, and interrupting distracting app opens.",
+    ogImage: "/assets/rewire/app-store/rewire-icon.jpg",
+    jsonLd: [
+      organizationJsonLd,
+      softwareApplicationJsonLd({
+        path: "/rewire",
+        name: "Rewire",
+        description:
+          "An iPhone app and website blocker that uses Apple Screen Time controls to interrupt distracting app and website opens.",
+        image: "/assets/rewire/app-store/rewire-icon.jpg",
+        applicationCategory: "ProductivityApplication",
+        applicationSubCategory: "App Blocker",
+        operatingSystem: "iOS 26.1 or later",
+        downloadUrl: rewireRating.storeUrl || "https://apps.apple.com/us/app/app-blocker-focus-rewire/id6757722922",
+        featureList: [
+          "Block distracting apps and websites",
+          "Interrupt impulsive app opens with a conscious pause",
+          "Timed and always-on focus sessions",
+          "Simple trends for blocked attempts and focus sessions",
+          "Uses Apple Screen Time and Family Controls APIs",
+          "No accounts, no ads, and no personal data collection"
+        ]
+      }),
+      faqPageJsonLd(rewireLandingFaqs),
+      breadcrumbJsonLd([
+        { name: "Scruffyhipster", url: siteUrl },
+        { name: "Rewire", url: `${siteUrl}/rewire` }
+      ])
+    ]
+  },
+  {
+    path: "/rewire/blog",
+    title: "Rewire Blog | Scruffyhipster",
+    description:
+      "Notes from Rewire about focus, app blocking, intentional friction, Screen Time, and building calmer phone habits.",
+    ogImage: "/assets/rewire/app-store/rewire-icon.jpg",
+    jsonLd: [
+      organizationJsonLd,
+      webPageJsonLd(
+        "/rewire/blog",
+        "Rewire Blog | Scruffyhipster",
+        "Notes from Rewire about focus, app blocking, intentional friction, Screen Time, and building calmer phone habits."
+      ),
+      breadcrumbJsonLd([
+        { name: "Scruffyhipster", url: siteUrl },
+        { name: "Rewire", url: `${siteUrl}/rewire` },
+        { name: "Blog", url: `${siteUrl}/rewire/blog` }
+      ])
+    ]
+  },
+  ...rewireBlog.posts.map((post) => ({
+    path: `/rewire/blog/${post.slug}`,
+    title: `${post.title} | Rewire Blog`,
+    description: post.description,
+    ogImage: post.ogImage || "/assets/rewire/app-store/rewire-icon.jpg",
+    jsonLd: [
+      organizationJsonLd,
+      blogPostingJsonLd(post),
+      breadcrumbJsonLd([
+        { name: "Scruffyhipster", url: siteUrl },
+        { name: "Rewire", url: `${siteUrl}/rewire` },
+        { name: "Blog", url: `${siteUrl}/rewire/blog` },
+        { name: post.title, url: `${siteUrl}/rewire/blog/${post.slug}` }
+      ])
+    ]
+  })),
+  {
     path: "/about",
     title: "About | Scruffyhipster",
     description:
@@ -155,17 +288,17 @@ export const publicRoutes = [
     path: "/apps/rewire",
     title: "App & Website Blocker: Rewire | iOS Focus App",
     description:
-      "Rewire is a structured iOS focus tool that reduces impulsive app use with Screen Time controls, intentional pauses, and simple behaviour charts.",
-    ogImage: "/og-default.png",
+      "Rewire is an iPhone app and website blocker that uses Screen Time controls, intentional pauses, and simple focus trends.",
+    ogImage: "/assets/rewire/app-store/rewire-icon.jpg",
     jsonLd: softwareApplicationJsonLd({
       path: "/apps/rewire",
       name: "Rewire",
       description:
-        "A structured iOS focus tool that helps reduce impulsive app use by adding friction where it matters.",
-      image: "/assets/press/rewire/rewire-icon.png",
-      downloadUrl: "https://apps.apple.com/app/id6757722922",
+        "An iPhone app and website blocker that helps reduce impulsive app and website use by adding friction where distraction starts.",
+      image: "/assets/rewire/app-store/rewire-icon.jpg",
+      downloadUrl: "https://apps.apple.com/us/app/app-blocker-focus-rewire/id6757722922",
       featureList: [
-        "Create focus sessions by choosing apps to block",
+        "Create focus sessions by choosing apps and websites to block",
         "Intentional pauses when blocked apps are opened",
         "Simple charts for block and distraction patterns",
         "Always-on or timed focus sessions",
@@ -459,6 +592,14 @@ export const publicRoutes = [
     ]
   }
 ];
+
+function readGeneratedJson(fileName, fallback) {
+  try {
+    return JSON.parse(readFileSync(join(rootDir, "src", "generated", fileName), "utf8"));
+  } catch {
+    return fallback;
+  }
+}
 
 export const legacyRedirects = [
   ["/pages/portfolio/rewire.html", "/apps/rewire"],

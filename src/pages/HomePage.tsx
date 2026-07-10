@@ -36,7 +36,7 @@ export function HomePage() {
               Most apps are designed to keep you engaged.
             </p>
             <p className="lead">
-              We’re building software designed to help you focus, recover, create, and get back to what matters.
+              I’m building software designed to help you focus, recover, create, and get back to what matters.
             </p>
             <p className="lead">
               No feeds. No dark patterns. No attention traps.
