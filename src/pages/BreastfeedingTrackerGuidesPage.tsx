@@ -19,7 +19,7 @@ export function BreastfeedingTrackerGuidesPage() {
     "@type": "CollectionPage",
     name: "Breastfeeding Tracker Guides",
     description:
-      "Practical, product-led guides for using Breastfeeding Tracker & Timer on iPhone and Apple Watch.",
+      "Practical guides to timing, correcting, reviewing, and exporting newborn breastfeeding history without schedules or medical advice.",
     url: `${siteUrl}${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}`,
     hasPart: breastfeedingTrackerGuides.map((guide) => ({
       "@type": "Article",
@@ -33,13 +33,14 @@ export function BreastfeedingTrackerGuidesPage() {
       <Seo
         path={BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}
         meta={{
-          title: "Breastfeeding Tracker Guides for iPhone & Apple Watch",
+          title: "Newborn Breastfeeding Timer Guides for iPhone & Apple Watch",
           description:
-            "Practical guides for timing feeds, tracking left and right sides, using Apple Watch, correcting history, protecting privacy, and exporting a PDF.",
+            "Practical help for timing newborn feeds, remembering the last side, correcting missed entries, using Apple Watch, and exporting a PDF.",
           keywords: [
             "breastfeeding tracker guides",
             "breastfeeding timer help",
-            "Apple Watch feeding tracker"
+            "Apple Watch feeding tracker",
+            "newborn breastfeeding tracker"
           ],
           ogImage: breastfeedingTrackerOgImage
         }}
@@ -66,10 +67,11 @@ export function BreastfeedingTrackerGuidesPage() {
             <Link className="feeding-text-link" to={BREASTFEEDING_TRACKER_BASE_PATH}>
               Back to Breastfeeding Tracker
             </Link>
-            <p className="eyebrow">breastfeeding tracker guides</p>
-            <h1>Practical help for the timer, history, Watch, and export.</h1>
+            <p className="eyebrow">help for your newborn’s first feeds</p>
+            <h1>Practical help for timing, correcting, reviewing, and sharing.</h1>
             <p className="lead">
-              Product-led guidance without feeding schedules, adequacy scoring, or medical advice.
+              Use the useful parts of the tracker during the first weeks—without feeding schedules,
+              adequacy scoring, or medical advice.
             </p>
           </Reveal>
         </div>

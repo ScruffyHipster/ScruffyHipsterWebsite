@@ -160,6 +160,11 @@ const rewireLandingFaqs = [
 ];
 const breastfeedingTrackerFaqs = [
   {
+    question: "Is the app designed for a newborn’s first feeds?",
+    answer:
+      "Yes. Its quick left and right timer, recent history, widgets, and Apple Watch controls are designed to reduce the memory load of the first few weeks. You can keep using it for as long as it remains helpful."
+  },
+  {
     question: "Can I track breastfeeding from Apple Watch?",
     answer:
       "Yes. The companion Apple Watch app can start and stop feeds from your wrist and sync completed sessions back to iPhone."
@@ -175,9 +180,9 @@ const breastfeedingTrackerFaqs = [
       "Yes. Feed history supports adding, editing, and deleting entries. You can also adjust a running timer when the feed began before you started it."
   },
   {
-    question: "Can I export my breastfeeding history?",
+    question: "Can I share feed history with a midwife?",
     answer:
-      "Yes. The history view can create a PDF from the feed information you recorded so you can save or share a portable copy."
+      "Yes. You can create a PDF from selected feed history and choose where to save or share it. The PDF only reflects what you recorded and is not a clinical report or a substitute for professional care."
   },
   {
     question: "Does the app require an account or subscription?",
@@ -326,9 +331,9 @@ export const publicRoutes = [
   })),
   {
     path: "/breastfeeding-tracker",
-    title: "Breastfeeding Tracker for iPhone & Apple Watch",
+    title: "Newborn Breastfeeding Timer for iPhone & Apple Watch",
     description:
-      "Track breastfeeding with a one-handed timer, left and right side history, Live Activities and Apple Watch. Private, simple and built for 3am feeds.",
+      "A simple breastfeeding timer for your newborn's first weeks. Track left and right, check widgets or Apple Watch, correct missed feeds, and export a PDF.",
     ogImage: "/assets/breastfeeding-tracker-og.png",
     jsonLd: [
       organizationJsonLd,
@@ -336,7 +341,7 @@ export const publicRoutes = [
         path: "/breastfeeding-tracker",
         name: "Breastfeeding Tracker & Timer",
         description:
-          "A simple, private breastfeeding timer for iPhone and Apple Watch with left and right side tracking, editable history, Live Activities, and PDF export.",
+          "A simple breastfeeding timer for a newborn's first feeds, with one-handed left and right tracking, widgets, Apple Watch controls, editable history, and PDF export.",
         image: "/assets/BreastFeedingIcon.png",
         operatingSystem: "iOS 26.0 or later; watchOS 26.0 or later",
         applicationCategory: "MedicalApplication",
@@ -345,10 +350,10 @@ export const publicRoutes = [
         featureList: [
           "One-handed breastfeeding timer with left and right side tracking",
           "Apple Watch companion app with offline tracking and later sync",
-          "Live Activities and Dynamic Island",
-          "Editable feed history and timer adjustment",
-          "PDF export from feed history",
-          "Private on-device summaries",
+          "Home Screen widget, Live Activities, and Dynamic Island",
+          "Late-start adjustment and manual feed entry",
+          "PDF export from selected feed history",
+          "Private, informational on-device summaries",
           "No account or subscription required"
         ]
       }),
@@ -364,9 +369,9 @@ export const publicRoutes = [
   },
   {
     path: "/breastfeeding-tracker/guides",
-    title: "Breastfeeding Tracker Guides for iPhone & Apple Watch",
+    title: "Newborn Breastfeeding Timer Guides for iPhone & Apple Watch",
     description:
-      "Practical guides for timing feeds, tracking left and right sides, using Apple Watch, correcting history, protecting privacy, and exporting a PDF.",
+      "Practical help for timing newborn feeds, remembering the last side, correcting missed entries, using Apple Watch, and exporting a PDF.",
     ogImage: "/assets/breastfeeding-tracker-og.png",
     jsonLd: [
       organizationJsonLd,
@@ -375,7 +380,7 @@ export const publicRoutes = [
         "@type": "CollectionPage",
         name: "Breastfeeding Tracker Guides",
         description:
-          "Practical, product-led guides for using Breastfeeding Tracker & Timer on iPhone and Apple Watch.",
+          "Practical guides to timing, correcting, reviewing, and exporting newborn breastfeeding history without schedules or medical advice.",
         url: `${siteUrl}/breastfeeding-tracker/guides`,
         hasPart: breastfeedingTrackerGuides.posts.map((guide) => ({
           "@type": "Article",

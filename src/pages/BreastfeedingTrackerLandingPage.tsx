@@ -27,17 +27,17 @@ const softwareApplicationJsonLd = {
   applicationSubCategory: "Breastfeeding Tracker",
   operatingSystem: "iOS 26.0 or later; watchOS 26.0 or later",
   description:
-    "A simple, private breastfeeding timer for iPhone and Apple Watch with left and right side tracking, editable history, Live Activities, and PDF export.",
+    "A simple breastfeeding timer for a newborn's first feeds, with one-handed left and right tracking, widgets, Apple Watch controls, editable history, and PDF export.",
   url: `${siteUrl}${BREASTFEEDING_TRACKER_BASE_PATH}`,
   image: `${siteUrl}${breastfeedingTrackerApp.icon}`,
   downloadUrl: breastfeedingTrackerAppStoreUrl,
   featureList: [
     "One-handed breastfeeding timer with left and right side tracking",
     "Apple Watch companion app with offline tracking and later sync",
-    "Live Activities and Dynamic Island",
-    "Editable feed history and timer adjustment",
-    "PDF export from feed history",
-    "Private on-device summaries",
+    "Home Screen widget, Live Activities, and Dynamic Island",
+    "Late-start adjustment and manual feed entry",
+    "PDF export from selected feed history",
+    "Private, informational on-device summaries",
     "No account or subscription required"
   ],
   offers: {
@@ -51,18 +51,18 @@ const softwareApplicationJsonLd = {
 const howItWorks = [
   {
     step: "01",
-    title: "Choose a side",
-    body: "Tap left or right on iPhone or Apple Watch. The timer starts without a form or setup flow."
+    title: "Start with one tap",
+    body: "Choose left or right on iPhone or Apple Watch. The timer starts without a form or setup flow."
   },
   {
     step: "02",
-    title: "Keep the timer close",
-    body: "See the active feed in the app, on Apple Watch, on the Lock Screen, or in Dynamic Island."
+    title: "Check without reopening",
+    body: "See the current or last feed in the app, on Apple Watch, in a widget, on the Lock Screen, or in Dynamic Island."
   },
   {
     step: "03",
-    title: "Review, correct, export",
-    body: "Check history, adjust a late start, add a missed feed, or create a PDF from what you recorded."
+    title: "Correct it later",
+    body: "Adjust a late start or add a missed feed after the moment has passed. Useful history does not need perfect timing."
   }
 ];
 
@@ -72,9 +72,9 @@ export function BreastfeedingTrackerLandingPage() {
       <Seo
         path={BREASTFEEDING_TRACKER_BASE_PATH}
         meta={{
-          title: "Breastfeeding Tracker for iPhone & Apple Watch",
+          title: "Newborn Breastfeeding Timer for iPhone & Apple Watch",
           description:
-            "Track breastfeeding with a one-handed timer, left and right side history, Live Activities and Apple Watch. Private, simple and built for 3am feeds.",
+            "A simple breastfeeding timer for your newborn's first weeks. Track left and right, check widgets or Apple Watch, correct missed feeds, and export a PDF.",
           keywords: breastfeedingTrackerKeywords,
           ogImage: breastfeedingTrackerOgImage
         }}
@@ -100,11 +100,11 @@ export function BreastfeedingTrackerLandingPage() {
               src={breastfeedingTrackerApp.icon}
               alt="Breastfeeding Tracker & Timer app icon"
             />
-            <p className="eyebrow">breastfeeding tracker for iphone + apple watch</p>
-            <h1>A simple breastfeeding tracker for iPhone and Apple Watch.</h1>
+            <p className="eyebrow">newborn breastfeeding timer for iphone + apple watch</p>
+            <h1>A simple timer for your newborn’s first feeds.</h1>
             <p className="lead">
-              Start with one hand. See the last side. Keep the timer on your wrist. Correct the
-              history later when the moment is quieter.
+              In the first few weeks, feeds can blur together. Start with one hand, see which side
+              you used last, and fix anything you forgot when you have a quieter moment.
             </p>
             <div className="hero-actions">
               <BreastfeedingTrackerAppStoreLink className="btn feeding-btn-primary" placement="hero">
@@ -121,26 +121,26 @@ export function BreastfeedingTrackerLandingPage() {
             <div className="feeding-device-halo" aria-hidden="true" />
             <img
               className="feeding-hero-phone"
-              src="/assets/breastfeedingScreenShots/1.png"
+              src={breastfeedingTrackerApp.screenshots[0].src}
               alt="Breastfeeding timer running on iPhone and Apple Watch"
             />
           </Reveal>
         </div>
       </section>
 
-      <section className="feeding-proof" aria-label="Product principles">
+      <section className="feeding-proof" aria-label="Newborn feed tracking benefits">
         <div className="container feeding-proof-row">
           <p>
-            <strong>No accounts.</strong>
-            <span>Open the app and start.</span>
+            <strong>Start in one tap.</strong>
+            <span>Choose left or right and begin.</span>
           </p>
           <p>
-            <strong>No subscriptions.</strong>
-            <span>Optional lifetime unlock only.</span>
+            <strong>Fix it later.</strong>
+            <span>Adjust a late start or add a feed.</span>
           </p>
           <p>
-            <strong>Data Not Collected.</strong>
-            <span>As declared on the App Store.</span>
+            <strong>Ready to review.</strong>
+            <span>See history, patterns, or export a PDF.</span>
           </p>
         </div>
       </section>
@@ -148,8 +148,8 @@ export function BreastfeedingTrackerLandingPage() {
       <section id="how-it-works" className="feeding-section">
         <div className="container">
           <Reveal className="feeding-section-heading">
-            <p className="eyebrow">how it works</p>
-            <h2>Less admin between you and the feed.</h2>
+            <p className="eyebrow">made for the first weeks</p>
+            <h2>Less to remember when feeds blur together.</h2>
           </Reveal>
           <div className="feeding-steps">
             {howItWorks.map((item, index) => (
@@ -166,15 +166,16 @@ export function BreastfeedingTrackerLandingPage() {
       <section className="feeding-feature-band">
         <div className="container feeding-feature-layout">
           <Reveal className="feeding-feature-copy">
-            <p className="eyebrow">iphone + apple watch</p>
-            <h2>The timer is on the device already in reach.</h2>
+            <p className="eyebrow">the feed stays within reach</p>
+            <h2>Check the timer where you already look.</h2>
             <p>
               Start and stop on Apple Watch when your phone is elsewhere. The watch works offline
               and sends completed feeds back when your devices reconnect.
             </p>
             <p>
-              On iPhone, Live Activities and Dynamic Island keep the active side and duration
-              visible without repeatedly reopening the app.
+              On iPhone, the Home Screen widget shows feeds completed today and the last side used.
+              Live Activities and Dynamic Island keep an active feed visible without repeatedly
+              reopening the app.
             </p>
             <Link
               className="feeding-text-link"
@@ -185,11 +186,11 @@ export function BreastfeedingTrackerLandingPage() {
           </Reveal>
           <Reveal className="feeding-feature-images" delayMs={100}>
             <img
-              src="/assets/breastfeedingScreenShots/2.png"
+              src={breastfeedingTrackerApp.screenshots[1].src}
               alt="Breastfeeding Tracker controls on iPhone"
             />
             <img
-              src="/assets/breastfeedingScreenShots/3.png"
+              src={breastfeedingTrackerApp.screenshots[2].src}
               alt="Breastfeeding Tracker feed history"
             />
           </Reveal>
@@ -200,24 +201,25 @@ export function BreastfeedingTrackerLandingPage() {
         <div className="container feeding-history-layout">
           <Reveal className="feeding-history-images">
             <img
-              src="/assets/breastfeedingScreenShots/4.png"
+              src={breastfeedingTrackerApp.screenshots[3].src}
               alt="Breastfeeding Tracker session details"
             />
             <img
-              src="/assets/breastfeedingScreenShots/5.png"
+              src={breastfeedingTrackerApp.screenshots[4].src}
               alt="Private summaries created from recent feed history"
             />
           </Reveal>
           <Reveal className="feeding-feature-copy" delayMs={90}>
-            <p className="eyebrow">history that can handle real life</p>
-            <h2>Forgot the timer? Correct it later.</h2>
+            <p className="eyebrow">for the feeds you forgot to time</p>
+            <h2>Forgot to start? Fix it later.</h2>
             <p>
-              Add, edit, or delete feeds from history. If a feed began before the timer, adjust the
-              start instead of losing the session.
+              If your baby latched before you remembered the timer, move the start time back. If
+              the feed has already finished, add it from history. Exact seconds do not matter.
             </p>
             <p>
-              When you want a portable record, export selected history as a PDF. The app records
-              what you enter; it does not judge the feed or provide medical advice.
+              Review recent history and private on-device summaries for visible patterns, then
+              export selected feeds as a PDF for a midwife or feeding-support conversation. The
+              summaries do not assess feeding, and the PDF only reflects what you recorded.
             </p>
             <BreastfeedingTrackerAppStoreLink
               className="feeding-text-link"
@@ -233,11 +235,11 @@ export function BreastfeedingTrackerLandingPage() {
         <div className="narrow-container">
           <Reveal>
             <p className="eyebrow">private by design</p>
-            <h2>Your feeding history is not an advertising profile.</h2>
+            <h2>Private, simple, and no pressure to track perfectly.</h2>
             <p>
-              No account is required, and the App Store privacy label says Data Not Collected.
-              Recent-history summaries are created on the device and remain informational—not a
-              diagnosis or assessment.
+              No account is required, there is no advertising profile, and the App Store privacy
+              label says Data Not Collected. Use the tracker while it takes something off your
+              mind, and leave it behind when you no longer need it.
             </p>
             <div className="feeding-inline-links">
               <Link to="/privacy/breast-feeding-tracker">Read the privacy policy</Link>
@@ -254,9 +256,9 @@ export function BreastfeedingTrackerLandingPage() {
       <section className="feeding-section feeding-guides">
         <div className="container">
           <Reveal className="feeding-section-heading">
-            <p className="eyebrow">practical guides</p>
-            <h2>Use the features without turning feeding into homework.</h2>
-            <p>Focused product guides. No feeding schedules, adequacy scoring, or medical advice.</p>
+            <p className="eyebrow">help for the first weeks</p>
+            <h2>Use the useful parts without turning feeding into homework.</h2>
+            <p>Practical product guides without schedules, adequacy scoring, or medical advice.</p>
           </Reveal>
           <div className="feeding-guide-list">
             {breastfeedingTrackerGuides.map((guide, index) => (
@@ -284,7 +286,7 @@ export function BreastfeedingTrackerLandingPage() {
         <div className="container feeding-faq-layout">
           <Reveal className="feeding-section-heading">
             <p className="eyebrow">frequently asked questions</p>
-            <h2>The practical details.</h2>
+            <h2>Useful details without more mental load.</h2>
           </Reveal>
           <div className="feeding-faq-list">
             {breastfeedingTrackerFaqs.map((item) => (
@@ -303,8 +305,8 @@ export function BreastfeedingTrackerLandingPage() {
         <div className="container">
           <Reveal>
             <img src={breastfeedingTrackerApp.icon} alt="" aria-hidden="true" />
-            <p className="eyebrow">ready when the next feed starts</p>
-            <h2>A tracker that stays out of the way.</h2>
+            <p className="eyebrow">ready for the first feeds</p>
+            <h2>Start in one tap. Fix it later if you need to.</h2>
             <BreastfeedingTrackerAppStoreLink className="btn feeding-btn-primary" placement="footer">
               Download on the App Store
             </BreastfeedingTrackerAppStoreLink>

@@ -20,12 +20,11 @@ drawRoundedRect(812, -55, 350, 725, 50, [23, 25, 28, 255]);
 drawScaledImage(screenshot, 830, -35, 314, 680, 34);
 drawRoundedRect(776, 474, 330, 84, 42, [255, 70, 80, 255]);
 
-drawText("A SIMPLE", 74, 192, 9, [23, 25, 28, 255]);
-drawText("BREASTFEEDING", 74, 283, 8, [23, 25, 28, 255]);
-drawText("TRACKER.", 74, 366, 9, [23, 25, 28, 255]);
+drawText("A NEWBORN", 74, 238, 9, [23, 25, 28, 255]);
+drawText("FEED TIMER.", 74, 329, 9, [23, 25, 28, 255]);
 drawText("IPHONE + APPLE WATCH", 78, 492, 4, [50, 73, 82, 255]);
-drawText("PRIVATE. BUILT FOR 3AM.", 78, 536, 4, [50, 73, 82, 255]);
-drawText("START WITH ONE TAP", 784, 505, 3, [23, 25, 28, 255]);
+drawText("BUILT FOR THE FIRST WEEKS.", 78, 536, 4, [50, 73, 82, 255]);
+drawText("ONE TAP TO START", 798, 505, 3, [23, 25, 28, 255]);
 
 const outputPath = join(assetsDir, "breastfeeding-tracker-og.png");
 await writeFile(outputPath, encodePng(width, height, pixels));

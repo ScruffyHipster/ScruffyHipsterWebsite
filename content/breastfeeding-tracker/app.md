@@ -34,7 +34,11 @@ Region-neutral download URL: https://apps.apple.com/app/id6754637800
 
 ## Positioning
 
-Primary promise: simple, private breastfeeding tracking for tired, one-handed moments.
+Primary promise: a simple, forgiving breastfeeding timer for a newborn's first feeds and first few weeks.
+
+Primary use moment: when feeds blur together, one hand is occupied, and a parent mainly needs to remember when the last feed happened and which side they used.
+
+Position the app as temporary, practical support that parents can keep using for as long as it remains helpful—not as a required routine or a complete baby-tracking system.
 
 Primary conversion: click through to the App Store.
 
@@ -42,6 +46,9 @@ Primary search themes:
 
 - breastfeeding tracker
 - breastfeeding timer
+- newborn breastfeeding tracker
+- newborn feeding timer
+- first weeks breastfeeding log
 - breastfeeding tracker Apple Watch
 - breastfeeding timer iPhone
 - nursing tracker
@@ -56,6 +63,8 @@ Primary search themes:
 - Do not assess milk supply, feeding adequacy, weight gain, or health.
 - Do not imply that recorded patterns diagnose a problem or replace professional care.
 - Clearly label app summaries as informational rather than medical advice.
+- Describe PDF export as a user-controlled record for a midwife or feeding-support conversation, not as a clinical report.
+- Normalize missed or approximate timing; do not imply that a useful record must be exact to the second.
 - Do not claim that a tracker is necessary for every parent.
 - Use both UK and US search language naturally without creating duplicate regional pages.
 

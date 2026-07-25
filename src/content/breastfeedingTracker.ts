@@ -26,6 +26,11 @@ export const breastfeedingTrackerGuidesBySlug = new Map(
 
 export const breastfeedingTrackerFaqs = [
   {
+    question: "Is the app designed for a newborn’s first feeds?",
+    answer:
+      "Yes. Its quick left and right timer, recent history, widgets, and Apple Watch controls are designed to reduce the memory load of the first few weeks. You can keep using it for as long as it remains helpful."
+  },
+  {
     question: "Can I track breastfeeding from Apple Watch?",
     answer:
       "Yes. The companion Apple Watch app can start and stop feeds from your wrist and sync completed sessions back to iPhone."
@@ -41,9 +46,9 @@ export const breastfeedingTrackerFaqs = [
       "Yes. Feed history supports adding, editing, and deleting entries. You can also adjust a running timer when the feed began before you started it."
   },
   {
-    question: "Can I export my breastfeeding history?",
+    question: "Can I share feed history with a midwife?",
     answer:
-      "Yes. The history view can create a PDF from the feed information you recorded so you can save or share a portable copy."
+      "Yes. You can create a PDF from selected feed history and choose where to save or share it. The PDF only reflects what you recorded and is not a clinical report or a substitute for professional care."
   },
   {
     question: "Does the app require an account or subscription?",
@@ -61,6 +66,9 @@ export const breastfeedingTrackerKeywords = [
   "breastfeeding tracker",
   "breast feeding tracker",
   "breastfeeding timer",
+  "newborn breastfeeding tracker",
+  "newborn feeding timer",
+  "first weeks breastfeeding log",
   "breastfeeding tracker Apple Watch",
   "breastfeeding timer iPhone",
   "nursing tracker",

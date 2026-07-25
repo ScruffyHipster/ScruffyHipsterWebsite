@@ -26,7 +26,10 @@ for (const route of trackerRoutes) {
 
   assert(html.includes(`<link rel="canonical" href="${canonical}"`), `${route.path} has the wrong canonical.`);
   assert(html.includes('<meta name="robots" content="index,follow"'), `${route.path} is not indexable.`);
-  assert(html.includes('<div id="root"><div class="site-shell">'), `${route.path} is missing server-rendered body HTML.`);
+  assert(
+    /<div id="root"><div class="site-shell(?:\s[^"]*)?">/.test(html),
+    `${route.path} is missing server-rendered body HTML.`
+  );
   assert(/<h1[\s>]/.test(html), `${route.path} is missing an initial HTML h1.`);
   assert(html.includes("BreadcrumbList"), `${route.path} is missing breadcrumb structured data.`);
   assert(sitemap.includes(`<loc>${canonical}</loc>`), `${route.path} is missing from the sitemap.`);
@@ -88,7 +91,10 @@ assert(
 );
 
 const rewireHtml = await readFile(routeOutputPath("/rewire"), "utf8");
-assert(rewireHtml.includes('<div id="root"><div class="site-shell">'), "Rewire lost server-rendered body HTML.");
+assert(
+  /<div id="root"><div class="site-shell(?:\s[^"]*)?">/.test(rewireHtml),
+  "Rewire lost server-rendered body HTML."
+);
 assert(rewireHtml.includes("<h1>"), "Rewire lost its initial h1.");
 
 await access(join(distDir, "assets", "breastfeeding-tracker-og.png"));

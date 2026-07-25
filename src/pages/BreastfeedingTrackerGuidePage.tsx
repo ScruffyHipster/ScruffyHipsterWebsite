@@ -92,8 +92,8 @@ export function BreastfeedingTrackerGuidePage() {
             />
           </Reveal>
           <Reveal className="feeding-article-cta">
-            <p className="eyebrow">simple tracking on iphone + apple watch</p>
-            <h2>Use the timer when you need it. Correct the record when you have time.</h2>
+            <p className="eyebrow">simple help for the first feeds</p>
+            <h2>Start the next feed in one tap. Correct it later if you need to.</h2>
             <BreastfeedingTrackerAppStoreLink className="btn feeding-btn-primary" placement="guide">
               Download on the App Store
             </BreastfeedingTrackerAppStoreLink>
