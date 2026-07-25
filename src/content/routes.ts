@@ -1,6 +1,7 @@
 import { apps } from "./apps";
 import { privacyPolicies } from "./privacyPolicies";
 import type { AppConfig, PrivacyPolicyConfig } from "./types";
+import { canonicalPath } from "../seo/canonical";
 
 export const APP_BASE_PATH = "/apps";
 export const PRIVACY_BASE_PATH = "/privacy";
@@ -18,18 +19,21 @@ const legacyPrivacyRedirects: Array<{ file: string; to: string }> = [
 ];
 
 export const appRoutePath = (app: AppConfig) =>
-  app.slug === "breast-feeding-tracker"
-    ? BREASTFEEDING_TRACKER_BASE_PATH
-    : `${APP_BASE_PATH}/${app.slug}`;
-export const privacyRoutePath = (policy: PrivacyPolicyConfig) => `${PRIVACY_BASE_PATH}/${policy.slug}`;
+  canonicalPath(
+    app.slug === "breast-feeding-tracker"
+      ? BREASTFEEDING_TRACKER_BASE_PATH
+      : `${APP_BASE_PATH}/${app.slug}`
+  );
+export const privacyRoutePath = (policy: PrivacyPolicyConfig) =>
+  canonicalPath(`${PRIVACY_BASE_PATH}/${policy.slug}`);
 
 export const publicRoutePaths = [
   "/",
-  REWIRE_BASE_PATH,
-  REWIRE_BLOG_BASE_PATH,
-  BREASTFEEDING_TRACKER_GUIDES_BASE_PATH,
-  APP_BASE_PATH,
-  "/about",
+  canonicalPath(REWIRE_BASE_PATH),
+  canonicalPath(REWIRE_BLOG_BASE_PATH),
+  canonicalPath(BREASTFEEDING_TRACKER_GUIDES_BASE_PATH),
+  canonicalPath(APP_BASE_PATH),
+  canonicalPath("/about"),
   ...apps.map(appRoutePath),
   ...privacyPolicies.map(privacyRoutePath)
 ];

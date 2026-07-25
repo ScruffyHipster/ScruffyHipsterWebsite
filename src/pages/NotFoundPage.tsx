@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Seo } from "../components/Seo";
+import { canonicalPath } from "../seo/canonical";
 
 export function NotFoundPage() {
   return (
@@ -22,7 +23,7 @@ export function NotFoundPage() {
               <Link className="btn btn-primary" to="/">
                 Go home
               </Link>
-          <a className="btn btn-secondary" href="/apps">
+          <a className="btn btn-secondary" href={canonicalPath("/apps")}>
             Explore apps
           </a>
             </div>

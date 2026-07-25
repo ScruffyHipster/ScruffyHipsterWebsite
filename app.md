@@ -27,7 +27,7 @@ Lookup source: https://itunes.apple.com/lookup?id=6757722922&country=us
 - Minimum iOS requirement: iOS 26.1 or later
 - Website: https://scruffyhipster.com
 - Privacy policy on listing: https://scruffyhipster.com/pages/privacyPolicies/rewirePrivacyPolicy.html
-- Current site privacy policy: https://scruffyhipster.com/privacy/rewire
+- Current site privacy policy: https://scruffyhipster.com/privacy/rewire/
 - EULA: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 
 ## App Store Description

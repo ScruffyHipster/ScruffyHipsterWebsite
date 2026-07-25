@@ -3,6 +3,7 @@ import { Reveal } from "../components/Reveal";
 import { Seo } from "../components/Seo";
 import { breadcrumbJsonLd, faqPageJsonLd, organizationJsonLd } from "../seo/jsonld";
 import { getSiteUrl } from "../seo/metadata";
+import { canonicalPath, canonicalUrl } from "../seo/canonical";
 import {
   rewireApp,
   rewireAppStoreFacts,
@@ -29,7 +30,7 @@ const rewireSoftwareJsonLd = {
   operatingSystem: rewireAppStoreFacts.minimumOsVersion,
   description:
     "Rewire is an iPhone app and website blocker that uses Apple Screen Time controls to interrupt distracting app and website opens.",
-  url: `${siteUrl}${path}`,
+  url: canonicalUrl(path, siteUrl),
   image: `${siteUrl}${rewireApp.icon}`,
   downloadUrl: appStoreUrl,
   softwareVersion: rewireAppStoreFacts.version,
@@ -73,7 +74,7 @@ export function RewireLandingPage() {
           faqPageJsonLd(landingFaqs),
           breadcrumbJsonLd([
             { name: "Scruffyhipster", url: siteUrl },
-            { name: "Rewire", url: `${siteUrl}${path}` }
+            { name: "Rewire", url: canonicalUrl(path, siteUrl) }
           ])
         ]}
       />
@@ -208,7 +209,10 @@ export function RewireLandingPage() {
           <div className="rewire-guide-grid">
             {rewireGuidePages.map((guide, index) => (
               <Reveal key={guide.slug} delayMs={Math.min(index * 35, 160)}>
-                <Link className="rewire-guide-card" to={`/rewire/blog/${guide.slug}`}>
+                <Link
+                  className="rewire-guide-card"
+                  to={canonicalPath(`/rewire/blog/${guide.slug}`)}
+                >
                   <span>{guide.keyword}</span>
                   <strong>{guide.title}</strong>
                   <small>{guide.description}</small>
@@ -231,7 +235,7 @@ export function RewireLandingPage() {
                 <article className="rewire-faq-item">
                   <h3>{item.question}</h3>
                   <p>{item.answer}</p>
-                  <Link to={`/rewire/blog/${item.guideSlug}`}>learn more</Link>
+                  <Link to={canonicalPath(`/rewire/blog/${item.guideSlug}`)}>learn more</Link>
                 </article>
               </Reveal>
             ))}
@@ -249,7 +253,7 @@ export function RewireLandingPage() {
               <a className="btn btn-primary" href={appStoreUrl} target="_blank" rel="noopener noreferrer">
                 download on the app store
               </a>
-              <Link className="btn btn-secondary" to="/privacy/rewire">
+              <Link className="btn btn-secondary" to={canonicalPath("/privacy/rewire")}>
                 privacy policy
               </Link>
             </div>
@@ -264,11 +268,11 @@ export function RewireLandingPage() {
             <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
               App Store
             </a>
-            <Link to="/rewire/blog">Guides</Link>
+            <Link to={canonicalPath("/rewire/blog")}>Guides</Link>
           </div>
           <div>
             <p className="footer-heading">policies</p>
-            <Link to="/privacy/rewire">Privacy</Link>
+            <Link to={canonicalPath("/privacy/rewire")}>Privacy</Link>
             <a href={rewireAppStoreFacts.eulaUrl} target="_blank" rel="noopener noreferrer">
               Terms
             </a>
@@ -276,7 +280,7 @@ export function RewireLandingPage() {
           <div>
             <p className="footer-heading">studio</p>
             <Link to="/">Scruffyhipster</Link>
-            <Link to="/apps">Apps</Link>
+            <Link to={canonicalPath("/apps")}>Apps</Link>
           </div>
         </div>
       </section>

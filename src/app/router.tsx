@@ -17,6 +17,7 @@ import {
   BREASTFEEDING_TRACKER_GUIDES_BASE_PATH,
   LEGACY_BREASTFEEDING_TRACKER_PATH
 } from "../content/routes";
+import { canonicalPath } from "../seo/canonical";
 
 export function AppRouter() {
   return (
@@ -50,7 +51,7 @@ export function AppRoutes() {
         />
         <Route
           path={LEGACY_BREASTFEEDING_TRACKER_PATH}
-          element={<Navigate to={BREASTFEEDING_TRACKER_BASE_PATH} replace />}
+          element={<Navigate to={canonicalPath(BREASTFEEDING_TRACKER_BASE_PATH)} replace />}
         />
         <Route path="apps/:slug" element={<AppDetailPage />} />
         <Route path="privacy/:slug" element={<PrivacyPolicyPage />} />

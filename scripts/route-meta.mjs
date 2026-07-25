@@ -2,6 +2,10 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
 export const siteUrl = process.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://scruffyhipster.com";
+const absoluteRouteUrl = (path) => {
+  const canonicalPath = path === "/" ? "" : `${path.replace(/\/+$/, "")}/`;
+  return `${siteUrl}${canonicalPath}`;
+};
 const rootDir = new URL("../", import.meta.url).pathname;
 const rewireBlog = readGeneratedJson("rewire-blog.json", { posts: [] });
 const breastfeedingTrackerGuides = readGeneratedJson("breastfeeding-tracker-guides.json", {
@@ -32,7 +36,7 @@ const webPageJsonLd = (path, title, description) => ({
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: title,
-  url: `${siteUrl}${path}`,
+  url: absoluteRouteUrl(path),
   description
 });
 const softwareApplicationJsonLd = ({
@@ -53,7 +57,7 @@ const softwareApplicationJsonLd = ({
   ...(applicationSubCategory ? { applicationSubCategory } : {}),
   operatingSystem,
   description,
-  url: `${siteUrl}${path}`,
+  url: absoluteRouteUrl(path),
   image: `${siteUrl}${image}`,
   ...(downloadUrl ? { downloadUrl } : {}),
   ...(featureList ? { featureList } : {}),
@@ -82,7 +86,7 @@ const blogPostingJsonLd = (post) => ({
   datePublished: post.publishedAt,
   ...(post.updatedAt ? { dateModified: post.updatedAt } : {}),
   image: `${siteUrl}${post.ogImage || "/assets/rewire/app-store/rewire-icon.jpg"}`,
-  url: `${siteUrl}/rewire/blog/${post.slug}`
+  url: absoluteRouteUrl(`/rewire/blog/${post.slug}`)
 });
 const articleJsonLd = (article, path) => ({
   "@context": "https://schema.org",
@@ -92,7 +96,7 @@ const articleJsonLd = (article, path) => ({
   datePublished: article.publishedAt,
   ...(article.updatedAt ? { dateModified: article.updatedAt } : {}),
   image: `${siteUrl}${article.ogImage || "/assets/breastfeeding-tracker-og.png"}`,
-  url: `${siteUrl}${path}`,
+  url: absoluteRouteUrl(path),
   author: {
     "@type": "Organization",
     name: "Scruffyhipster",
@@ -101,7 +105,7 @@ const articleJsonLd = (article, path) => ({
   about: {
     "@type": "SoftwareApplication",
     name: "Breastfeeding Tracker & Timer",
-    url: `${siteUrl}/breastfeeding-tracker`
+    url: absoluteRouteUrl("/breastfeeding-tracker")
   }
 });
 const breadcrumbJsonLd = (items) => ({
@@ -289,7 +293,7 @@ export const publicRoutes = [
       faqPageJsonLd(rewireLandingFaqs),
       breadcrumbJsonLd([
         { name: "Scruffyhipster", url: siteUrl },
-        { name: "Rewire", url: `${siteUrl}/rewire` }
+        { name: "Rewire", url: absoluteRouteUrl("/rewire") }
       ])
     ]
   },
@@ -308,8 +312,8 @@ export const publicRoutes = [
       ),
       breadcrumbJsonLd([
         { name: "Scruffyhipster", url: siteUrl },
-        { name: "Rewire", url: `${siteUrl}/rewire` },
-        { name: "Blog", url: `${siteUrl}/rewire/blog` }
+        { name: "Rewire", url: absoluteRouteUrl("/rewire") },
+        { name: "Blog", url: absoluteRouteUrl("/rewire/blog") }
       ])
     ]
   },
@@ -323,9 +327,9 @@ export const publicRoutes = [
       blogPostingJsonLd(post),
       breadcrumbJsonLd([
         { name: "Scruffyhipster", url: siteUrl },
-        { name: "Rewire", url: `${siteUrl}/rewire` },
-        { name: "Blog", url: `${siteUrl}/rewire/blog` },
-        { name: post.title, url: `${siteUrl}/rewire/blog/${post.slug}` }
+        { name: "Rewire", url: absoluteRouteUrl("/rewire") },
+        { name: "Blog", url: absoluteRouteUrl("/rewire/blog") },
+        { name: post.title, url: absoluteRouteUrl(`/rewire/blog/${post.slug}`) }
       ])
     ]
   })),
@@ -362,7 +366,7 @@ export const publicRoutes = [
         { name: "Scruffyhipster", url: siteUrl },
         {
           name: "Breastfeeding Tracker",
-          url: `${siteUrl}/breastfeeding-tracker`
+          url: absoluteRouteUrl("/breastfeeding-tracker")
         }
       ])
     ]
@@ -381,22 +385,22 @@ export const publicRoutes = [
         name: "Breastfeeding Tracker Guides",
         description:
           "Practical guides to timing, correcting, reviewing, and exporting newborn breastfeeding history without schedules or medical advice.",
-        url: `${siteUrl}/breastfeeding-tracker/guides`,
+        url: absoluteRouteUrl("/breastfeeding-tracker/guides"),
         hasPart: breastfeedingTrackerGuides.posts.map((guide) => ({
           "@type": "Article",
           headline: guide.title,
-          url: `${siteUrl}/breastfeeding-tracker/guides/${guide.slug}`
+          url: absoluteRouteUrl(`/breastfeeding-tracker/guides/${guide.slug}`)
         }))
       },
       breadcrumbJsonLd([
         { name: "Scruffyhipster", url: siteUrl },
         {
           name: "Breastfeeding Tracker",
-          url: `${siteUrl}/breastfeeding-tracker`
+          url: absoluteRouteUrl("/breastfeeding-tracker")
         },
         {
           name: "Guides",
-          url: `${siteUrl}/breastfeeding-tracker/guides`
+          url: absoluteRouteUrl("/breastfeeding-tracker/guides")
         }
       ])
     ]
@@ -415,13 +419,13 @@ export const publicRoutes = [
           { name: "Scruffyhipster", url: siteUrl },
           {
             name: "Breastfeeding Tracker",
-            url: `${siteUrl}/breastfeeding-tracker`
+            url: absoluteRouteUrl("/breastfeeding-tracker")
           },
           {
             name: "Guides",
-            url: `${siteUrl}/breastfeeding-tracker/guides`
+            url: absoluteRouteUrl("/breastfeeding-tracker/guides")
           },
-          { name: guide.title, url: `${siteUrl}${path}` }
+          { name: guide.title, url: absoluteRouteUrl(path) }
         ])
       ]
     };
@@ -562,7 +566,7 @@ export const publicRoutes = [
       applicationCategory: "DesktopApplication",
       applicationSubCategory: "Standing Desk Timer",
       operatingSystem: "macOS",
-      url: `${siteUrl}/apps/standing-desk-timer`,
+      url: absoluteRouteUrl("/apps/standing-desk-timer"),
       image: `${siteUrl}/assets/StandingDeskIcon-iOS-Dark-1024x1024@1x.png`,
       description:
         "A macOS menu bar app for sit, stand, and movement reminders through the workday.",
@@ -610,8 +614,8 @@ export const publicRoutes = [
       faqPageJsonLd(surgeTrackerFaqs),
       breadcrumbJsonLd([
         { name: "Scruffyhipster", url: siteUrl },
-        { name: "Apps", url: `${siteUrl}/apps` },
-        { name: "Surge Tracker", url: `${siteUrl}/apps/surge-tracker` }
+        { name: "Apps", url: absoluteRouteUrl("/apps") },
+        { name: "Surge Tracker", url: absoluteRouteUrl("/apps/surge-tracker") }
       ])
     ]
   },
@@ -660,8 +664,8 @@ export const publicRoutes = [
       organizationJsonLd,
       breadcrumbJsonLd([
         { name: "Scruffyhipster", url: siteUrl },
-        { name: "Privacy", url: `${siteUrl}/privacy/surge-tracker` },
-        { name: "Surge Tracker", url: `${siteUrl}/privacy/surge-tracker` }
+        { name: "Privacy", url: absoluteRouteUrl("/privacy/surge-tracker") },
+        { name: "Surge Tracker", url: absoluteRouteUrl("/privacy/surge-tracker") }
       ])
     ]
   }

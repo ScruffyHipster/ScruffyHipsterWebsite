@@ -35,4 +35,4 @@ If someone has asked you for particular feeding information, confirm what they a
 
 The iPhone history remains the working record. Use it to correct entries and create a fresh PDF whenever you need an updated snapshot.
 
-[Learn how to correct missed feeds](/breastfeeding-tracker/guides/edit-missed-feeding-logs) or [read about the app's privacy approach](/breastfeeding-tracker/guides/private-breastfeeding-tracker).
+[Learn how to correct missed feeds](/breastfeeding-tracker/guides/edit-missed-feeding-logs/) or [read about the app's privacy approach](/breastfeeding-tracker/guides/private-breastfeeding-tracker/).

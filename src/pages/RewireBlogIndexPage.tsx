@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Reveal } from "../components/Reveal";
 import { Seo } from "../components/Seo";
+import { canonicalPath, canonicalUrl } from "../seo/canonical";
 import { breadcrumbJsonLd, organizationJsonLd } from "../seo/jsonld";
 import { getSiteUrl } from "../seo/metadata";
 import { formatPostDate, rewireBlogPosts } from "../content/rewireBlog";
@@ -21,8 +22,8 @@ export function RewireBlogIndexPage() {
           organizationJsonLd(),
           breadcrumbJsonLd([
             { name: "Scruffyhipster", url: getSiteUrl() },
-            { name: "Rewire", url: `${getSiteUrl()}/rewire` },
-            { name: "Blog", url: `${getSiteUrl()}/rewire/blog` }
+            { name: "Rewire", url: canonicalUrl("/rewire", getSiteUrl()) },
+            { name: "Blog", url: canonicalUrl("/rewire/blog", getSiteUrl()) }
           ])
         ]}
       />
@@ -45,7 +46,10 @@ export function RewireBlogIndexPage() {
             <div className="rewire-post-list rewire-post-list-large">
               {rewireBlogPosts.map((post) => (
                 <Reveal key={post.slug}>
-                  <Link className="rewire-post-row" to={`/rewire/blog/${post.slug}`}>
+                  <Link
+                    className="rewire-post-row"
+                    to={canonicalPath(`/rewire/blog/${post.slug}`)}
+                  >
                     <span>{formatPostDate(post.publishedAt)}</span>
                     <strong>{post.title}</strong>
                     <small>{post.excerpt}</small>

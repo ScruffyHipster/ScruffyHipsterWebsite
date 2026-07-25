@@ -4,6 +4,7 @@ import { Seo } from "../components/Seo";
 import { Reveal } from "../components/Reveal";
 import { breadcrumbJsonLd, organizationJsonLd } from "../seo/jsonld";
 import { getSiteUrl } from "../seo/metadata";
+import { canonicalUrl } from "../seo/canonical";
 
 export function PrivacyPolicyPage() {
   const params = useParams<{ slug: string }>();
@@ -24,8 +25,8 @@ export function PrivacyPolicyPage() {
           organizationJsonLd(),
           breadcrumbJsonLd([
             { name: "Scruffyhipster", url: getSiteUrl() },
-            { name: "Privacy", url: `${getSiteUrl()}${path}` },
-            { name: policy.appName, url: `${getSiteUrl()}${path}` }
+            { name: "Privacy", url: canonicalUrl(path, getSiteUrl()) },
+            { name: policy.appName, url: canonicalUrl(path, getSiteUrl()) }
           ])
         ]}
       />

@@ -16,6 +16,7 @@ import {
 } from "../content/routes";
 import { breadcrumbJsonLd, faqPageJsonLd, organizationJsonLd } from "../seo/jsonld";
 import { getSiteUrl } from "../seo/metadata";
+import { canonicalPath, canonicalUrl } from "../seo/canonical";
 
 const siteUrl = getSiteUrl();
 
@@ -28,7 +29,7 @@ const softwareApplicationJsonLd = {
   operatingSystem: "iOS 26.0 or later; watchOS 26.0 or later",
   description:
     "A simple breastfeeding timer for a newborn's first feeds, with one-handed left and right tracking, widgets, Apple Watch controls, editable history, and PDF export.",
-  url: `${siteUrl}${BREASTFEEDING_TRACKER_BASE_PATH}`,
+  url: canonicalUrl(BREASTFEEDING_TRACKER_BASE_PATH, siteUrl),
   image: `${siteUrl}${breastfeedingTrackerApp.icon}`,
   downloadUrl: breastfeedingTrackerAppStoreUrl,
   featureList: [
@@ -86,7 +87,7 @@ export function BreastfeedingTrackerLandingPage() {
             { name: "Scruffyhipster", url: siteUrl },
             {
               name: "Breastfeeding Tracker",
-              url: `${siteUrl}${BREASTFEEDING_TRACKER_BASE_PATH}`
+              url: canonicalUrl(BREASTFEEDING_TRACKER_BASE_PATH, siteUrl)
             }
           ])
         ]}
@@ -179,7 +180,9 @@ export function BreastfeedingTrackerLandingPage() {
             </p>
             <Link
               className="feeding-text-link"
-              to={`${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}/breastfeeding-tracker-apple-watch`}
+              to={canonicalPath(
+                `${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}/breastfeeding-tracker-apple-watch`
+              )}
             >
               Read the Apple Watch guide
             </Link>
@@ -242,9 +245,11 @@ export function BreastfeedingTrackerLandingPage() {
               mind, and leave it behind when you no longer need it.
             </p>
             <div className="feeding-inline-links">
-              <Link to="/privacy/breast-feeding-tracker">Read the privacy policy</Link>
+              <Link to={canonicalPath("/privacy/breast-feeding-tracker")}>Read the privacy policy</Link>
               <Link
-                to={`${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}/private-breastfeeding-tracker`}
+                to={canonicalPath(
+                  `${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}/private-breastfeeding-tracker`
+                )}
               >
                 Read the privacy guide
               </Link>
@@ -265,7 +270,7 @@ export function BreastfeedingTrackerLandingPage() {
               <Reveal key={guide.slug} delayMs={Math.min(index * 55, 220)}>
                 <Link
                   className="feeding-guide-row"
-                  to={`${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}/${guide.slug}`}
+                  to={canonicalPath(`${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}/${guide.slug}`)}
                 >
                   <span>{String(index + 1).padStart(2, "0")}</span>
                   <strong>{guide.title}</strong>
@@ -275,7 +280,10 @@ export function BreastfeedingTrackerLandingPage() {
             ))}
           </div>
           <Reveal>
-            <Link className="feeding-text-link" to={BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}>
+            <Link
+              className="feeding-text-link"
+              to={canonicalPath(BREASTFEEDING_TRACKER_GUIDES_BASE_PATH)}
+            >
               Browse all guides
             </Link>
           </Reveal>

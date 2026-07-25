@@ -35,4 +35,4 @@ You remain in control of editing and deleting entries in the app. Uninstalling t
 
 The product is designed around a timer, history, and quick device controls. It does not need community features or an account system to perform those jobs.
 
-[Read how PDF export works](/breastfeeding-tracker/guides/export-breastfeeding-log-pdf) or [see the Apple Watch workflow](/breastfeeding-tracker/guides/breastfeeding-tracker-apple-watch).
+[Read how PDF export works](/breastfeeding-tracker/guides/export-breastfeeding-log-pdf/) or [see the Apple Watch workflow](/breastfeeding-tracker/guides/breastfeeding-tracker-apple-watch/).

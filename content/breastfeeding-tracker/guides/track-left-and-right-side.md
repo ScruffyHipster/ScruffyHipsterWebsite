@@ -40,4 +40,4 @@ The iPhone app is the main place for reviewing and correcting history, while the
 
 The app records the side you chose. It does not assess feeding adequacy, recommend a side, or provide medical advice. If you have questions about feeding or your baby's health, use guidance from an appropriate healthcare professional rather than an app history.
 
-[Explore the iPhone timer](/breastfeeding-tracker/guides/breastfeeding-timer-iphone) or [read about private tracking without an account](/breastfeeding-tracker/guides/private-breastfeeding-tracker).
+[Explore the iPhone timer](/breastfeeding-tracker/guides/breastfeeding-timer-iphone/) or [read about private tracking without an account](/breastfeeding-tracker/guides/private-breastfeeding-tracker/).

@@ -25,7 +25,7 @@ The app should support studying. It should not become another place to manage st
 
 ## where rewire fits
 
-[Rewire](/rewire) is useful for study sessions because it focuses on blocking and interruption. You choose apps and websites, start a timed focus window, and get a deliberate pause if you open something distracting.
+[Rewire](/rewire/) is useful for study sessions because it focuses on blocking and interruption. You choose apps and websites, start a timed focus window, and get a deliberate pause if you open something distracting.
 
 The point is not to guarantee perfect concentration. The point is to make the automatic choice visible soon enough that you can return to the work.
 
@@ -33,4 +33,4 @@ The point is not to guarantee perfect concentration. The point is to make the au
 
 For studying, start shorter than you think. A 25 or 45 minute block with the right apps blocked is often more realistic than a full-day restriction you immediately resent. If a specific site or app keeps showing up, add it to the next session.
 
-Related reading: [how to block apps on iPhone](/rewire/blog/how-to-block-apps-on-iphone), [how to block websites on iPhone](/rewire/blog/how-to-block-websites-on-iphone), and the [Rewire FAQ](/rewire#faq).
+Related reading: [how to block apps on iPhone](/rewire/blog/how-to-block-apps-on-iphone/), [how to block websites on iPhone](/rewire/blog/how-to-block-websites-on-iphone/), and the [Rewire FAQ](/rewire/#faq).

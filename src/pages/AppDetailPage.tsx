@@ -5,6 +5,7 @@ import { Seo } from "../components/Seo";
 import { Reveal } from "../components/Reveal";
 import { ScreenshotGallery } from "../components/ScreenshotGallery";
 import { appRoutePath } from "../content/routes";
+import { canonicalPath, canonicalUrl } from "../seo/canonical";
 import { breadcrumbJsonLd, faqPageJsonLd, organizationJsonLd, softwareApplicationJsonLd } from "../seo/jsonld";
 import { getSiteUrl } from "../seo/metadata";
 
@@ -32,7 +33,7 @@ export function AppDetailPage() {
           ...(app.faqs?.length ? [faqPageJsonLd(app.faqs)] : []),
           breadcrumbJsonLd([
             { name: "Scruffyhipster", url: getSiteUrl() },
-            { name: "Apps", url: `${getSiteUrl()}/apps` },
+            { name: "Apps", url: canonicalUrl("/apps", getSiteUrl()) },
             { name: app.name, url: absoluteUrl }
           ])
         ]}
@@ -78,7 +79,7 @@ export function AppDetailPage() {
                 {app.pressKit ? <p className="inline-note">{app.pressKit.description}</p> : null}
                 {app.privacySlug ? (
                   <p className="inline-link-row">
-                    <Link to={`/privacy/${app.privacySlug}`}>Read privacy policy</Link>
+                    <Link to={canonicalPath(`/privacy/${app.privacySlug}`)}>Read privacy policy</Link>
                   </p>
                 ) : (
                   <p className="inline-note">Privacy policy page coming soon.</p>

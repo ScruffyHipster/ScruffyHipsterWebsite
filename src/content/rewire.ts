@@ -25,7 +25,7 @@ export const rewireAppStoreFacts = {
   ratingCount: 1,
   minimumOsVersion: "iOS 26.1 or later",
   contentRating: "4+",
-  privacyPolicyUrl: "https://scruffyhipster.com/privacy/rewire",
+  privacyPolicyUrl: "https://scruffyhipster.com/privacy/rewire/",
   appStorePrivacyPolicyUrl: "https://scruffyhipster.com/pages/privacyPolicies/rewirePrivacyPolicy.html",
   eulaUrl: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
   releaseNotes: "Multiple improvements and bug fixes",

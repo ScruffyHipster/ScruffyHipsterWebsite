@@ -1,6 +1,7 @@
 import { Link, Navigate, useParams } from "react-router-dom";
 import { Reveal } from "../components/Reveal";
 import { Seo } from "../components/Seo";
+import { canonicalPath, canonicalUrl } from "../seo/canonical";
 import { breadcrumbJsonLd, organizationJsonLd } from "../seo/jsonld";
 import { getSiteUrl } from "../seo/metadata";
 import { formatPostDate, rewireBlogPostsBySlug } from "../content/rewireBlog";
@@ -10,7 +11,7 @@ export function RewireBlogPostPage() {
   const post = params.slug ? rewireBlogPostsBySlug.get(params.slug) : undefined;
 
   if (!post) {
-    return <Navigate to="/rewire/blog" replace />;
+    return <Navigate to={canonicalPath("/rewire/blog")} replace />;
   }
 
   const path = `/rewire/blog/${post.slug}`;
@@ -35,13 +36,13 @@ export function RewireBlogPostPage() {
             datePublished: post.publishedAt,
             ...(post.updatedAt ? { dateModified: post.updatedAt } : {}),
             image: `${getSiteUrl()}${post.ogImage}`,
-            url: `${getSiteUrl()}${path}`
+            url: canonicalUrl(path, getSiteUrl())
           },
           breadcrumbJsonLd([
             { name: "Scruffyhipster", url: getSiteUrl() },
-            { name: "Rewire", url: `${getSiteUrl()}/rewire` },
-            { name: "Blog", url: `${getSiteUrl()}/rewire/blog` },
-            { name: post.title, url: `${getSiteUrl()}${path}` }
+            { name: "Rewire", url: canonicalUrl("/rewire", getSiteUrl()) },
+            { name: "Blog", url: canonicalUrl("/rewire/blog", getSiteUrl()) },
+            { name: post.title, url: canonicalUrl(path, getSiteUrl()) }
           ])
         ]}
       />
@@ -49,7 +50,7 @@ export function RewireBlogPostPage() {
       <article className="section-block rewire-article">
         <div className="narrow-container">
           <Reveal>
-            <Link className="rewire-text-link" to="/rewire/blog">
+            <Link className="rewire-text-link" to={canonicalPath("/rewire/blog")}>
               back to rewire blog
             </Link>
             <p className="eyebrow">{formatPostDate(post.publishedAt)}</p>

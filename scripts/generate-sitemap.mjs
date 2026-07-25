@@ -27,7 +27,8 @@ Sitemap: ${siteUrl}/sitemap.xml
 }
 
 function canonicalUrl(path) {
-  return `${siteUrl}${path === "/" ? "" : path}`;
+  const canonicalPath = path === "/" ? "" : `${path.replace(/\/+$/, "")}/`;
+  return `${siteUrl}${canonicalPath}`;
 }
 
 function escapeXml(value) {

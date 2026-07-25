@@ -16,13 +16,46 @@ assert(
 );
 
 const sitemap = await readFile(join(distDir, "sitemap.xml"), "utf8");
+const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
+assert(
+  sitemapUrls.length === publicRoutes.length,
+  `Expected ${publicRoutes.length} sitemap URLs, found ${sitemapUrls.length}.`
+);
+
+for (const route of publicRoutes) {
+  const html = await readFile(routeOutputPath(route.path), "utf8");
+  const canonical = canonicalUrl(route.path);
+
+  assert(html.includes(`<link rel="canonical" href="${canonical}"`), `${route.path} has the wrong canonical.`);
+  assert(html.includes('<meta name="robots" content="index,follow"'), `${route.path} is not indexable.`);
+  assert(
+    /<div id="root"><div class="site-shell(?:\s[^"]*)?">/.test(html),
+    `${route.path} is missing server-rendered body HTML.`
+  );
+  assert(/<h1[\s>]/.test(html), `${route.path} is missing an initial HTML h1.`);
+  assert(sitemapUrls.includes(canonical), `${route.path} is missing from the sitemap.`);
+
+  for (const candidate of publicRoutes) {
+    if (candidate.path === "/") {
+      continue;
+    }
+    const nonCanonicalLink = new RegExp(
+      `href="${escapeRegExp(candidate.path)}(?=["#?])`
+    );
+    assert(
+      !nonCanonicalLink.test(html),
+      `${route.path} links to non-canonical path ${candidate.path}.`
+    );
+  }
+}
+
 const seenTitles = new Set();
 const seenDescriptions = new Set();
 
 for (const route of trackerRoutes) {
   const outputPath = routeOutputPath(route.path);
   const html = await readFile(outputPath, "utf8");
-  const canonical = `${siteUrl}${route.path}`;
+  const canonical = canonicalUrl(route.path);
 
   assert(html.includes(`<link rel="canonical" href="${canonical}"`), `${route.path} has the wrong canonical.`);
   assert(html.includes('<meta name="robots" content="index,follow"'), `${route.path} is not indexable.`);
@@ -86,7 +119,7 @@ const legacyHtml = await readFile(routeOutputPath(legacyPath), "utf8");
 assert(!sitemap.includes(`${siteUrl}${legacyPath}`), "Legacy tracker URL is still in the sitemap.");
 assert(legacyHtml.includes('content="noindex,follow"'), "Legacy tracker redirect is missing noindex.");
 assert(
-  legacyHtml.includes(`<link rel="canonical" href="${siteUrl}${trackerBasePath}"`),
+  legacyHtml.includes(`<link rel="canonical" href="${canonicalUrl(trackerBasePath)}"`),
   "Legacy tracker redirect has the wrong canonical."
 );
 
@@ -100,7 +133,7 @@ assert(rewireHtml.includes("<h1>"), "Rewire lost its initial h1.");
 await access(join(distDir, "assets", "breastfeeding-tracker-og.png"));
 
 console.log(
-  `SEO checks passed for ${trackerRoutes.length} tracker routes, the legacy redirect, and Rewire prerendering.`
+  `SEO checks passed for all ${publicRoutes.length} public routes, ${trackerRoutes.length} tracker routes, the legacy redirect, and Rewire prerendering.`
 );
 
 function routeOutputPath(path) {
@@ -108,6 +141,15 @@ function routeOutputPath(path) {
     return join(distDir, "index.html");
   }
   return join(distDir, path.replace(/^\//, ""), "index.html");
+}
+
+function canonicalUrl(path) {
+  const canonicalPath = path === "/" ? "" : `${path.replace(/\/+$/, "")}/`;
+  return `${siteUrl}${canonicalPath}`;
+}
+
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 function matchContent(value, pattern, label) {

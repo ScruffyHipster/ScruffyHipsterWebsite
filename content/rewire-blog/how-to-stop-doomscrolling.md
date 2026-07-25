@@ -24,7 +24,7 @@ The review step matters. If doomscrolling shows up at the same time every day, t
 
 ## where rewire fits
 
-[Rewire](/rewire) is built around the pause before the scroll. It blocks selected apps and websites with Apple's Screen Time controls, then interrupts the habit loop when you try to open them.
+[Rewire](/rewire/) is built around the pause before the scroll. It blocks selected apps and websites with Apple's Screen Time controls, then interrupts the habit loop when you try to open them.
 
 That friction gives you a moment to ask whether you meant to be there. Sometimes the answer will still be yes. The useful part is that the choice becomes visible.
 
@@ -32,4 +32,4 @@ That friction gives you a moment to ask whether you meant to be there. Sometimes
 
 If one app is blocked but the same content is still available through a website, block both. If evenings are the problem, do not start with a full-day system. Start with the evening.
 
-Related reading: [social media blocker for iPhone](/rewire/blog/social-media-blocker-iphone), [how to block websites on iPhone](/rewire/blog/how-to-block-websites-on-iphone), and the [Rewire FAQ](/rewire#faq).
+Related reading: [social media blocker for iPhone](/rewire/blog/social-media-blocker-iphone/), [how to block websites on iPhone](/rewire/blog/how-to-block-websites-on-iphone/), and the [Rewire FAQ](/rewire/#faq).

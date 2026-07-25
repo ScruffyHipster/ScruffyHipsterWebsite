@@ -33,4 +33,4 @@ Make corrections before creating a PDF so the exported document reflects the his
 
 The purpose of editing is to make your own record more useful, not to create a medically complete account of every feed. The app does not validate whether a time or duration is appropriate and does not provide clinical guidance.
 
-[See how the iPhone timer works](/breastfeeding-tracker/guides/breastfeeding-timer-iphone) or [learn about exporting history as a PDF](/breastfeeding-tracker/guides/export-breastfeeding-log-pdf).
+[See how the iPhone timer works](/breastfeeding-tracker/guides/breastfeeding-timer-iphone/) or [learn about exporting history as a PDF](/breastfeeding-tracker/guides/export-breastfeeding-log-pdf/).

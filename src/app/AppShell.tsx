@@ -6,16 +6,19 @@ import { ScrollToTop } from "./ScrollToTop";
 import {
   appRoutePath,
   BREASTFEEDING_TRACKER_BASE_PATH,
-  BREASTFEEDING_TRACKER_GUIDES_BASE_PATH
+  BREASTFEEDING_TRACKER_GUIDES_BASE_PATH,
+  privacyRoutePath
 } from "../content/routes";
+import { canonicalPath } from "../seo/canonical";
 
 export function AppShell() {
   const location = useLocation();
   const showFooter = location.pathname !== "/";
+  const normalizedPathname = location.pathname.replace(/\/+$/, "") || "/";
   const isBreastfeedingTrackerRoute =
-    location.pathname === BREASTFEEDING_TRACKER_BASE_PATH ||
-    location.pathname.startsWith(`${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}/`) ||
-    location.pathname === BREASTFEEDING_TRACKER_GUIDES_BASE_PATH;
+    normalizedPathname === BREASTFEEDING_TRACKER_BASE_PATH ||
+    normalizedPathname.startsWith(`${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}/`) ||
+    normalizedPathname === BREASTFEEDING_TRACKER_GUIDES_BASE_PATH;
 
   return (
     <div className={`site-shell${isBreastfeedingTrackerRoute ? " feeding-site-shell" : ""}`}>
@@ -30,9 +33,9 @@ export function AppShell() {
             <span>scruffyhipster</span>
           </Link>
           <nav className="pill-nav" aria-label="Primary">
-            <Link to="/rewire">Rewire</Link>
-            <Link to="/apps">Apps</Link>
-            <Link to="/about">About</Link>
+            <Link to={canonicalPath("/rewire")}>Rewire</Link>
+            <Link to={canonicalPath("/apps")}>Apps</Link>
+            <Link to={canonicalPath("/about")}>About</Link>
           </nav>
         </div>
       </header>
@@ -52,7 +55,7 @@ export function AppShell() {
               <p className="footer-heading">Apps</p>
               <ul className="footer-list">
                 <li>
-                  <Link to="/rewire">Rewire showcase</Link>
+                  <Link to={canonicalPath("/rewire")}>Rewire showcase</Link>
                 </li>
                 {apps.map((app) => (
                   <li key={app.id}>
@@ -66,7 +69,7 @@ export function AppShell() {
               <ul className="footer-list">
                 {privacyPolicies.map((policy) => (
                   <li key={policy.slug}>
-                    <Link to={`/privacy/${policy.slug}`}>{policy.appName}</Link>
+                    <Link to={privacyRoutePath(policy)}>{policy.appName}</Link>
                   </li>
                 ))}
               </ul>

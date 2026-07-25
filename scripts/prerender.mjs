@@ -88,7 +88,8 @@ function injectRenderedApp(html, renderedApp) {
 }
 
 function canonicalUrl(path) {
-  return `${siteUrl}${path === "/" ? "" : path}`;
+  const canonicalPath = path === "/" ? "" : `${path.replace(/\/+$/, "")}/`;
+  return `${siteUrl}${canonicalPath}`;
 }
 
 function escapeAttr(value) {

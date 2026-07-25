@@ -25,7 +25,7 @@ If any answer feels vague, treat that as a reason to slow down.
 
 ## where rewire fits
 
-[Rewire](/rewire) is designed around a smaller privacy promise: no accounts, no ads, no personal data collection, and anonymous analytics only. The app uses Apple's Screen Time controls to block apps and websites without trying to turn your phone habits into a social profile or coaching feed.
+[Rewire](/rewire/) is designed around a smaller privacy promise: no accounts, no ads, no personal data collection, and anonymous analytics only. The app uses Apple's Screen Time controls to block apps and websites without trying to turn your phone habits into a social profile or coaching feed.
 
 That does not mean you should skip Apple's own App Store privacy information. Use it as the source of truth for the current listing, then compare it with the developer's privacy policy.
 
@@ -33,4 +33,4 @@ That does not mean you should skip Apple's own App Store privacy information. Us
 
 Privacy-first blocking can still be useful. What matters is whether the blocker adds friction at the right moment. For Rewire, that moment is the app or website open: the reflex before a quick check becomes a long scroll.
 
-Related reading: [best app blocker for iPhone](/rewire/blog/best-app-blocker-for-iphone), [Screen Time app blocker](/rewire/blog/screen-time-app-blocker), and the [Rewire FAQ](/rewire#faq).
+Related reading: [best app blocker for iPhone](/rewire/blog/best-app-blocker-for-iphone/), [Screen Time app blocker](/rewire/blog/screen-time-app-blocker/), and the [Rewire FAQ](/rewire/#faq).

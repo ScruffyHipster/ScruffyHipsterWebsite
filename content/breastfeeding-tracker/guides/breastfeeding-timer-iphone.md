@@ -35,4 +35,4 @@ You can edit or delete entries later, and export selected history as a PDF when 
 
 The iPhone timer also works with the companion Apple Watch app. Start and stop on your wrist when the phone is elsewhere, then review the completed entry on iPhone after it syncs.
 
-[Learn about Apple Watch tracking](/breastfeeding-tracker/guides/breastfeeding-tracker-apple-watch) or [see how left and right side history works](/breastfeeding-tracker/guides/track-left-and-right-side).
+[Learn about Apple Watch tracking](/breastfeeding-tracker/guides/breastfeeding-tracker-apple-watch/) or [see how left and right side history works](/breastfeeding-tracker/guides/track-left-and-right-side/).

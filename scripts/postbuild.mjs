@@ -20,9 +20,14 @@ async function generateLegacyRedirects(rootDir) {
     const filePath = extname(relativePath)
       ? join(rootDir, relativePath)
       : join(rootDir, relativePath, "index.html");
+    const targetPath = canonicalPath(to);
     await mkdir(dirname(filePath), { recursive: true });
-    await writeFile(filePath, redirectHtml(`${siteUrl}${to}`, to), "utf8");
+    await writeFile(filePath, redirectHtml(`${siteUrl}${targetPath}`, targetPath), "utf8");
   }
+}
+
+function canonicalPath(path) {
+  return path === "/" ? "/" : `${path.replace(/\/+$/, "")}/`;
 }
 
 function redirectHtml(absoluteTarget, relativeTarget) {

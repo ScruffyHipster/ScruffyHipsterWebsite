@@ -25,7 +25,7 @@ Small reliable rules usually beat dramatic rules you disable immediately.
 
 ## where rewire fits
 
-[Rewire](/rewire) can act as a social media blocker for iPhone because it lets you choose distracting apps and websites for focus sessions. When a blocked app opens, Rewire adds a pause before the loop continues.
+[Rewire](/rewire/) can act as a social media blocker for iPhone because it lets you choose distracting apps and websites for focus sessions. When a blocked app opens, Rewire adds a pause before the loop continues.
 
 That pause is the core idea. Social media often wins because it is fast, familiar, and automatic. Rewire slows that moment down.
 
@@ -33,4 +33,4 @@ That pause is the core idea. Social media often wins because it is fast, familia
 
 Blocking does not mean you can never use social media. It means you decide when it belongs in the day. Put a focus window around the times where it tends to take over, then leave intentional time outside that window if you want it.
 
-Related reading: [how to stop doomscrolling](/rewire/blog/how-to-stop-doomscrolling), [how to block websites on iPhone](/rewire/blog/how-to-block-websites-on-iphone), and the [Rewire FAQ](/rewire#faq).
+Related reading: [how to stop doomscrolling](/rewire/blog/how-to-stop-doomscrolling/), [how to block websites on iPhone](/rewire/blog/how-to-block-websites-on-iphone/), and the [Rewire FAQ](/rewire/#faq).

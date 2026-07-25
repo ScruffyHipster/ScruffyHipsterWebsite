@@ -26,7 +26,7 @@ If a blocker promises complete control over iOS without mentioning Screen Time o
 
 ## where rewire fits
 
-[Rewire](/rewire) is built for people who want a focused app and website blocker, not another productivity dashboard. You choose distractions, start a focus session, and let the app add a pause when you try to open something blocked.
+[Rewire](/rewire/) is built for people who want a focused app and website blocker, not another productivity dashboard. You choose distractions, start a focus session, and let the app add a pause when you try to open something blocked.
 
 Rewire is a good fit when you want intentional friction, simple trends, no account, no ads, and no personal data collection. It may not be the best fit if you want cross-platform desktop blocking, team management, or a heavy coaching system.
 
@@ -34,4 +34,4 @@ Rewire is a good fit when you want intentional friction, simple trends, no accou
 
 Pick the blocker around the moment you need help. If the problem is opening social media without thinking, choose a tool that interrupts opening social media. If the problem is late-night websites, make sure website blocking is part of the setup.
 
-Related reading: [how to block apps on iPhone](/rewire/blog/how-to-block-apps-on-iphone), [social media blocker for iPhone](/rewire/blog/social-media-blocker-iphone), and [app blocker without tracking](/rewire/blog/app-blocker-without-tracking).
+Related reading: [how to block apps on iPhone](/rewire/blog/how-to-block-apps-on-iphone/), [social media blocker for iPhone](/rewire/blog/social-media-blocker-iphone/), and [app blocker without tracking](/rewire/blog/app-blocker-without-tracking/).

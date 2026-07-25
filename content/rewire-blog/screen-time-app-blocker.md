@@ -25,7 +25,7 @@ The exact behavior depends on the app and the current version of iOS.
 
 ## where rewire fits
 
-[Rewire](/rewire) is a Screen Time based app and website blocker for iPhone. It is designed for the moment you open something distracting without thinking. Instead of turning focus into a dashboard, it adds a deliberate interruption where the habit normally starts.
+[Rewire](/rewire/) is a Screen Time based app and website blocker for iPhone. It is designed for the moment you open something distracting without thinking. Instead of turning focus into a dashboard, it adds a deliberate interruption where the habit normally starts.
 
 Rewire's App Store listing states that it uses Apple's Screen Time and Family Controls APIs, works offline after setup, and does not bypass Apple protections.
 
@@ -33,4 +33,4 @@ Rewire's App Store listing states that it uses Apple's Screen Time and Family Co
 
 If an app blocker is honest about iOS limits, you can trust the product framing more. Look for specific language around Screen Time, privacy, and what the app does when you open something blocked.
 
-Related reading: [how to block apps on iPhone](/rewire/blog/how-to-block-apps-on-iphone), [best app blocker for iPhone](/rewire/blog/best-app-blocker-for-iphone), and [app blocker without tracking](/rewire/blog/app-blocker-without-tracking).
+Related reading: [how to block apps on iPhone](/rewire/blog/how-to-block-apps-on-iphone/), [best app blocker for iPhone](/rewire/blog/best-app-blocker-for-iphone/), and [app blocker without tracking](/rewire/blog/app-blocker-without-tracking/).

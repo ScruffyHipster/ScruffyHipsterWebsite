@@ -39,4 +39,4 @@ If you normally start feeds from your phone, Live Activities and Dynamic Island 
 
 There are no account forms to complete before using the timer. Open the app, choose a side, and start. The App Store privacy label states that the developer does not collect data from the app.
 
-[See every Breastfeeding Tracker feature](/breastfeeding-tracker) or [learn how the iPhone timer works](/breastfeeding-tracker/guides/breastfeeding-timer-iphone).
+[See every Breastfeeding Tracker feature](/breastfeeding-tracker/) or [learn how the iPhone timer works](/breastfeeding-tracker/guides/breastfeeding-timer-iphone/).

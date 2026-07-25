@@ -11,6 +11,7 @@ import {
 } from "../content/routes";
 import { breadcrumbJsonLd, organizationJsonLd } from "../seo/jsonld";
 import { getSiteUrl } from "../seo/metadata";
+import { canonicalPath, canonicalUrl } from "../seo/canonical";
 
 export function BreastfeedingTrackerGuidesPage() {
   const siteUrl = getSiteUrl();
@@ -20,11 +21,11 @@ export function BreastfeedingTrackerGuidesPage() {
     name: "Breastfeeding Tracker Guides",
     description:
       "Practical guides to timing, correcting, reviewing, and exporting newborn breastfeeding history without schedules or medical advice.",
-    url: `${siteUrl}${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}`,
+    url: canonicalUrl(BREASTFEEDING_TRACKER_GUIDES_BASE_PATH, siteUrl),
     hasPart: breastfeedingTrackerGuides.map((guide) => ({
       "@type": "Article",
       headline: guide.title,
-      url: `${siteUrl}${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}/${guide.slug}`
+      url: canonicalUrl(`${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}/${guide.slug}`, siteUrl)
     }))
   };
 
@@ -51,11 +52,11 @@ export function BreastfeedingTrackerGuidesPage() {
             { name: "Scruffyhipster", url: siteUrl },
             {
               name: "Breastfeeding Tracker",
-              url: `${siteUrl}${BREASTFEEDING_TRACKER_BASE_PATH}`
+              url: canonicalUrl(BREASTFEEDING_TRACKER_BASE_PATH, siteUrl)
             },
             {
               name: "Guides",
-              url: `${siteUrl}${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}`
+              url: canonicalUrl(BREASTFEEDING_TRACKER_GUIDES_BASE_PATH, siteUrl)
             }
           ])
         ]}
@@ -64,7 +65,10 @@ export function BreastfeedingTrackerGuidesPage() {
       <section className="feeding-guide-hero">
         <div className="container">
           <Reveal>
-            <Link className="feeding-text-link" to={BREASTFEEDING_TRACKER_BASE_PATH}>
+            <Link
+              className="feeding-text-link"
+              to={canonicalPath(BREASTFEEDING_TRACKER_BASE_PATH)}
+            >
               Back to Breastfeeding Tracker
             </Link>
             <p className="eyebrow">help for your newborn’s first feeds</p>
@@ -83,7 +87,7 @@ export function BreastfeedingTrackerGuidesPage() {
             <Reveal key={guide.slug}>
               <Link
                 className="feeding-guide-row"
-                to={`${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}/${guide.slug}`}
+                to={canonicalPath(`${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}/${guide.slug}`)}
               >
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <strong>{guide.title}</strong>

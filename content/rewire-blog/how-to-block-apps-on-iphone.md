@@ -21,7 +21,7 @@ That matters because many distracting opens are not planned. You pick up the pho
 
 ## where rewire fits
 
-[Rewire](/rewire) is an iPhone app blocker built around that moment. You choose apps and websites, start a timed or always-on focus session, and Rewire uses Apple's Screen Time controls to add friction when you try to open something blocked.
+[Rewire](/rewire/) is an iPhone app blocker built around that moment. You choose apps and websites, start a timed or always-on focus session, and Rewire uses Apple's Screen Time controls to add friction when you try to open something blocked.
 
 Rewire does not bypass Apple's protections. It works with them. That keeps the promise realistic: useful friction, not impossible control over the operating system.
 
@@ -34,4 +34,4 @@ Rewire does not bypass Apple's protections. It works with them. That keeps the p
 
 Start small. A blocker works best when it matches the real habit rather than a perfect version of your day.
 
-Related reading: [Screen Time app blocker](/rewire/blog/screen-time-app-blocker), [best app blocker for iPhone](/rewire/blog/best-app-blocker-for-iphone), and the [Rewire FAQ](/rewire#faq).
+Related reading: [Screen Time app blocker](/rewire/blog/screen-time-app-blocker/), [best app blocker for iPhone](/rewire/blog/best-app-blocker-for-iphone/), and the [Rewire FAQ](/rewire/#faq).

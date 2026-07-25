@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { siteConfig } from "../content/site";
 import { Seo } from "../components/Seo";
+import { canonicalPath } from "../seo/canonical";
 import { Reveal } from "../components/Reveal";
 import { organizationJsonLd, websiteJsonLd } from "../seo/jsonld";
 
@@ -42,7 +43,7 @@ export function HomePage() {
               No feeds. No dark patterns. No attention traps.
             </p>
             <div className="hero-actions">
-              <Link className="btn btn-primary" to="/about#contact">
+              <Link className="btn btn-primary" to={`${canonicalPath("/about")}#contact`}>
                 contact
               </Link>
             </div>

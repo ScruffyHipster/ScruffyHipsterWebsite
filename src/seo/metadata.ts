@@ -1,5 +1,6 @@
 import { siteConfig } from "../content/site";
 import type { SeoMeta } from "../content/types";
+import { canonicalUrl } from "./canonical";
 
 export type ResolvedMeta = {
   title: string;
@@ -26,7 +27,3 @@ export const resolveMeta = (meta: SeoMeta, path: string): ResolvedMeta => {
     robots: meta.robots || "index,follow"
   };
 };
-
-function canonicalUrl(path: string, siteUrl: string) {
-  return `${siteUrl}${path === "/" ? "" : path}`;
-}

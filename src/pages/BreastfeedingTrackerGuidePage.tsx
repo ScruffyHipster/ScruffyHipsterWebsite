@@ -13,13 +13,14 @@ import {
 } from "../content/routes";
 import { breadcrumbJsonLd, organizationJsonLd } from "../seo/jsonld";
 import { getSiteUrl } from "../seo/metadata";
+import { canonicalPath, canonicalUrl } from "../seo/canonical";
 
 export function BreastfeedingTrackerGuidePage() {
   const params = useParams<{ slug: string }>();
   const guide = params.slug ? breastfeedingTrackerGuidesBySlug.get(params.slug) : undefined;
 
   if (!guide) {
-    return <Navigate to={BREASTFEEDING_TRACKER_GUIDES_BASE_PATH} replace />;
+    return <Navigate to={canonicalPath(BREASTFEEDING_TRACKER_GUIDES_BASE_PATH)} replace />;
   }
 
   const siteUrl = getSiteUrl();
@@ -48,7 +49,7 @@ export function BreastfeedingTrackerGuidePage() {
             datePublished: guide.publishedAt,
             ...(guide.updatedAt ? { dateModified: guide.updatedAt } : {}),
             image: `${siteUrl}${guide.ogImage || breastfeedingTrackerOgImage}`,
-            url: `${siteUrl}${path}`,
+            url: canonicalUrl(path, siteUrl),
             author: {
               "@type": "Organization",
               name: "Scruffyhipster",
@@ -57,20 +58,20 @@ export function BreastfeedingTrackerGuidePage() {
             about: {
               "@type": "SoftwareApplication",
               name: "Breastfeeding Tracker & Timer",
-              url: `${siteUrl}${BREASTFEEDING_TRACKER_BASE_PATH}`
+              url: canonicalUrl(BREASTFEEDING_TRACKER_BASE_PATH, siteUrl)
             }
           },
           breadcrumbJsonLd([
             { name: "Scruffyhipster", url: siteUrl },
             {
               name: "Breastfeeding Tracker",
-              url: `${siteUrl}${BREASTFEEDING_TRACKER_BASE_PATH}`
+              url: canonicalUrl(BREASTFEEDING_TRACKER_BASE_PATH, siteUrl)
             },
             {
               name: "Guides",
-              url: `${siteUrl}${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}`
+              url: canonicalUrl(BREASTFEEDING_TRACKER_GUIDES_BASE_PATH, siteUrl)
             },
-            { name: guide.title, url: `${siteUrl}${path}` }
+            { name: guide.title, url: canonicalUrl(path, siteUrl) }
           ])
         ]}
       />
@@ -78,7 +79,10 @@ export function BreastfeedingTrackerGuidePage() {
       <article className="feeding-article">
         <div className="narrow-container">
           <Reveal>
-            <Link className="feeding-text-link" to={BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}>
+            <Link
+              className="feeding-text-link"
+              to={canonicalPath(BREASTFEEDING_TRACKER_GUIDES_BASE_PATH)}
+            >
               Back to all guides
             </Link>
             <p className="eyebrow">breastfeeding tracker guide</p>
@@ -103,7 +107,7 @@ export function BreastfeedingTrackerGuidePage() {
             {relatedGuides.map((related) => (
               <Link
                 key={related.slug}
-                to={`${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}/${related.slug}`}
+                to={canonicalPath(`${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}/${related.slug}`)}
               >
                 {related.title}
               </Link>
