@@ -3,13 +3,22 @@ import { apps } from "../content/apps";
 import { privacyPolicies } from "../content/privacyPolicies";
 import { RouteAnalytics } from "../analytics/RouteAnalytics";
 import { ScrollToTop } from "./ScrollToTop";
+import {
+  appRoutePath,
+  BREASTFEEDING_TRACKER_BASE_PATH,
+  BREASTFEEDING_TRACKER_GUIDES_BASE_PATH
+} from "../content/routes";
 
 export function AppShell() {
   const location = useLocation();
   const showFooter = location.pathname !== "/";
+  const isBreastfeedingTrackerRoute =
+    location.pathname === BREASTFEEDING_TRACKER_BASE_PATH ||
+    location.pathname.startsWith(`${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}/`) ||
+    location.pathname === BREASTFEEDING_TRACKER_GUIDES_BASE_PATH;
 
   return (
-    <div className="site-shell">
+    <div className={`site-shell${isBreastfeedingTrackerRoute ? " feeding-site-shell" : ""}`}>
       <RouteAnalytics />
       <ScrollToTop />
       <div className="bg-orb bg-orb-a" aria-hidden="true" />
@@ -47,7 +56,7 @@ export function AppShell() {
                 </li>
                 {apps.map((app) => (
                   <li key={app.id}>
-                    <Link to={`/apps/${app.slug}`}>{app.name}</Link>
+                    <Link to={appRoutePath(app)}>{app.name}</Link>
                   </li>
                 ))}
               </ul>

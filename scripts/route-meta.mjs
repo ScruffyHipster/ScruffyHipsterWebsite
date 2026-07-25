@@ -4,6 +4,9 @@ import { join } from "node:path";
 export const siteUrl = process.env.VITE_SITE_URL?.replace(/\/$/, "") || "https://scruffyhipster.com";
 const rootDir = new URL("../", import.meta.url).pathname;
 const rewireBlog = readGeneratedJson("rewire-blog.json", { posts: [] });
+const breastfeedingTrackerGuides = readGeneratedJson("breastfeeding-tracker-guides.json", {
+  posts: []
+});
 const rewireRating = readGeneratedJson("rewire-app-store-rating.json", {
   rating: 5,
   ratingCount: 1,
@@ -81,6 +84,26 @@ const blogPostingJsonLd = (post) => ({
   image: `${siteUrl}${post.ogImage || "/assets/rewire/app-store/rewire-icon.jpg"}`,
   url: `${siteUrl}/rewire/blog/${post.slug}`
 });
+const articleJsonLd = (article, path) => ({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: article.title,
+  description: article.description,
+  datePublished: article.publishedAt,
+  ...(article.updatedAt ? { dateModified: article.updatedAt } : {}),
+  image: `${siteUrl}${article.ogImage || "/assets/breastfeeding-tracker-og.png"}`,
+  url: `${siteUrl}${path}`,
+  author: {
+    "@type": "Organization",
+    name: "Scruffyhipster",
+    url: siteUrl
+  },
+  about: {
+    "@type": "SoftwareApplication",
+    name: "Breastfeeding Tracker & Timer",
+    url: `${siteUrl}/breastfeeding-tracker`
+  }
+});
 const breadcrumbJsonLd = (items) => ({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -133,6 +156,43 @@ const rewireLandingFaqs = [
     question: "Is Rewire free?",
     answer:
       "The US App Store listing shows Rewire as free with in-app purchases. The App Store is the final source for availability and pricing."
+  }
+];
+const breastfeedingTrackerFaqs = [
+  {
+    question: "Is the app designed for a newborn’s first feeds?",
+    answer:
+      "Yes. Its quick left and right timer, recent history, widgets, and Apple Watch controls are designed to reduce the memory load of the first few weeks. You can keep using it for as long as it remains helpful."
+  },
+  {
+    question: "Can I track breastfeeding from Apple Watch?",
+    answer:
+      "Yes. The companion Apple Watch app can start and stop feeds from your wrist and sync completed sessions back to iPhone."
+  },
+  {
+    question: "Does the Apple Watch app work when my iPhone is unavailable?",
+    answer:
+      "Yes. The watch can keep recording while it is offline and send completed feeds back when the devices reconnect."
+  },
+  {
+    question: "Can I add or correct a feed after it happened?",
+    answer:
+      "Yes. Feed history supports adding, editing, and deleting entries. You can also adjust a running timer when the feed began before you started it."
+  },
+  {
+    question: "Can I share feed history with a midwife?",
+    answer:
+      "Yes. You can create a PDF from selected feed history and choose where to save or share it. The PDF only reflects what you recorded and is not a clinical report or a substitute for professional care."
+  },
+  {
+    question: "Does the app require an account or subscription?",
+    answer:
+      "No account or subscription is required. The App Store lists the app as free with an optional lifetime in-app purchase."
+  },
+  {
+    question: "Does the tracker provide medical advice?",
+    answer:
+      "No. It records the timing, duration, and side you enter. Its private on-device summaries are informational and do not assess feeding or replace professional care."
   }
 ];
 const surgeTrackerFaqs = [
@@ -269,6 +329,103 @@ export const publicRoutes = [
       ])
     ]
   })),
+  {
+    path: "/breastfeeding-tracker",
+    title: "Newborn Breastfeeding Timer for iPhone & Apple Watch",
+    description:
+      "A simple breastfeeding timer for your newborn's first weeks. Track left and right, check widgets or Apple Watch, correct missed feeds, and export a PDF.",
+    ogImage: "/assets/breastfeeding-tracker-og.png",
+    jsonLd: [
+      organizationJsonLd,
+      softwareApplicationJsonLd({
+        path: "/breastfeeding-tracker",
+        name: "Breastfeeding Tracker & Timer",
+        description:
+          "A simple breastfeeding timer for a newborn's first feeds, with one-handed left and right tracking, widgets, Apple Watch controls, editable history, and PDF export.",
+        image: "/assets/BreastFeedingIcon.png",
+        operatingSystem: "iOS 26.0 or later; watchOS 26.0 or later",
+        applicationCategory: "MedicalApplication",
+        applicationSubCategory: "Breastfeeding Tracker",
+        downloadUrl: "https://apps.apple.com/app/id6754637800",
+        featureList: [
+          "One-handed breastfeeding timer with left and right side tracking",
+          "Apple Watch companion app with offline tracking and later sync",
+          "Home Screen widget, Live Activities, and Dynamic Island",
+          "Late-start adjustment and manual feed entry",
+          "PDF export from selected feed history",
+          "Private, informational on-device summaries",
+          "No account or subscription required"
+        ]
+      }),
+      faqPageJsonLd(breastfeedingTrackerFaqs),
+      breadcrumbJsonLd([
+        { name: "Scruffyhipster", url: siteUrl },
+        {
+          name: "Breastfeeding Tracker",
+          url: `${siteUrl}/breastfeeding-tracker`
+        }
+      ])
+    ]
+  },
+  {
+    path: "/breastfeeding-tracker/guides",
+    title: "Newborn Breastfeeding Timer Guides for iPhone & Apple Watch",
+    description:
+      "Practical help for timing newborn feeds, remembering the last side, correcting missed entries, using Apple Watch, and exporting a PDF.",
+    ogImage: "/assets/breastfeeding-tracker-og.png",
+    jsonLd: [
+      organizationJsonLd,
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "Breastfeeding Tracker Guides",
+        description:
+          "Practical guides to timing, correcting, reviewing, and exporting newborn breastfeeding history without schedules or medical advice.",
+        url: `${siteUrl}/breastfeeding-tracker/guides`,
+        hasPart: breastfeedingTrackerGuides.posts.map((guide) => ({
+          "@type": "Article",
+          headline: guide.title,
+          url: `${siteUrl}/breastfeeding-tracker/guides/${guide.slug}`
+        }))
+      },
+      breadcrumbJsonLd([
+        { name: "Scruffyhipster", url: siteUrl },
+        {
+          name: "Breastfeeding Tracker",
+          url: `${siteUrl}/breastfeeding-tracker`
+        },
+        {
+          name: "Guides",
+          url: `${siteUrl}/breastfeeding-tracker/guides`
+        }
+      ])
+    ]
+  },
+  ...breastfeedingTrackerGuides.posts.map((guide) => {
+    const path = `/breastfeeding-tracker/guides/${guide.slug}`;
+    return {
+      path,
+      title: guide.title,
+      description: guide.description,
+      ogImage: guide.ogImage || "/assets/breastfeeding-tracker-og.png",
+      jsonLd: [
+        organizationJsonLd,
+        articleJsonLd(guide, path),
+        breadcrumbJsonLd([
+          { name: "Scruffyhipster", url: siteUrl },
+          {
+            name: "Breastfeeding Tracker",
+            url: `${siteUrl}/breastfeeding-tracker`
+          },
+          {
+            name: "Guides",
+            url: `${siteUrl}/breastfeeding-tracker/guides`
+          },
+          { name: guide.title, url: `${siteUrl}${path}` }
+        ])
+      ]
+    };
+  }),
   {
     path: "/about",
     title: "About | Scruffyhipster",
@@ -425,89 +582,6 @@ export const publicRoutes = [
     }
   },
   {
-    path: "/apps/breast-feeding-tracker",
-    title: "Breastfeeding Tracker & Timer for iPhone & Apple Watch",
-    description:
-      "A breastfeeding tracker and timer for iPhone and Apple Watch with feed history, widgets, Live Activities, and private on-device summaries.",
-    ogImage: "/og-default.png",
-    jsonLd: [
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        name: "Breastfeeding Tracker & Timer",
-        applicationCategory: "MobileApplication",
-        applicationSubCategory: "Breastfeeding Tracker",
-        operatingSystem: "iOS",
-        url: `${siteUrl}/apps/breast-feeding-tracker`,
-        image: `${siteUrl}/assets/BreastFeedingIcon.png`,
-        downloadUrl: "https://apps.apple.com/gb/app/breastfeeding-tracker-timer/id6754637800",
-        description:
-          "A breastfeeding tracker for iPhone and Apple Watch with a live timer, feed history, widgets, and private summaries.",
-        featureList: [
-          "One-tap breastfeeding timer with left and right side tracking",
-          "Live running timer during active feeds",
-          "Apple Watch app for starting and stopping feeds",
-          "Offline Apple Watch support with sync back to iPhone",
-          "Feed history with timestamps, duration, and side used",
-          "Home Screen widget showing feeds completed today and last side used",
-          "Lock Screen Live Activity and Dynamic Island support",
-          "Private on-device feeding insights from recent history"
-        ],
-        offers: {
-          "@type": "Offer",
-          price: "0",
-          priceCurrency: "USD"
-        }
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: "Can I use this breastfeeding tracker on Apple Watch?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes. The app includes an Apple Watch companion app so you can start and stop feeds from your wrist, with active sessions and completed feeds syncing back to iPhone."
-            }
-          },
-          {
-            "@type": "Question",
-            name: "Does the Apple Watch app work offline?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes. You can use the watch app when your watch is offline, and the app syncs feeds when your iPhone reconnects."
-            }
-          },
-          {
-            "@type": "Question",
-            name: "Does it show a live breastfeeding timer on the Lock Screen?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes. The app supports Live Activities on the Lock Screen and Dynamic Island so you can keep an eye on an active feeding timer and the current side."
-            }
-          },
-          {
-            "@type": "Question",
-            name: "Can I see my recent feed history and last side used?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes. Feed history includes timestamps, duration, and side used, and the main screen highlights the last feed summary and the last side used for faster repeat logging."
-            }
-          },
-          {
-            "@type": "Question",
-            name: "Does the app include feeding insights?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes. The app creates private on-device summaries from recent history, including patterns like average duration, longest session, left and right balance, day versus night activity, and time between feeds."
-            }
-          }
-        ]
-      }
-    ]
-  },
-  {
     path: "/apps/surge-tracker",
     title: "Surge Tracker | Labour Contraction Timer for iPhone",
     description:
@@ -602,12 +676,13 @@ function readGeneratedJson(fileName, fallback) {
 }
 
 export const legacyRedirects = [
+  ["/apps/breast-feeding-tracker", "/breastfeeding-tracker"],
   ["/pages/portfolio/rewire.html", "/apps/rewire"],
   ["/pages/portfolio/wren.html", "/apps/wren"],
   ["/pages/portfolio/smartycolours.html", "/apps/smarty-colours"],
   ["/pages/portfolio/groGuardian.html", "/apps/gro-guardian"],
   ["/pages/portfolio/chatWithSanta.html", "/apps/chat-with-santa"],
-  ["/pages/portfolio/breastFeedingTracker.html", "/apps/breast-feeding-tracker"],
+  ["/pages/portfolio/breastFeedingTracker.html", "/breastfeeding-tracker"],
   ["/pages/privacyPolicies/rewirePrivacyPolicy.html", "/privacy/rewire"],
   ["/pages/privacyPolicies/wrenPrivacyPolicy.html", "/privacy/wren"],
   ["/pages/privacyPolicies/smartyColoursPrivacyPolicy.html", "/privacy/smarty-colours"],

@@ -3,25 +3,38 @@ import { existsSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 
 const rootDir = new URL("../", import.meta.url).pathname;
-const postsDir = join(rootDir, "content", "rewire-blog");
 const generatedDir = join(rootDir, "src", "generated");
 const ratingFallbackPath = join(rootDir, "src", "content", "rewireAppStoreRatingFallback.json");
 const rewireAppId = "6757722922";
 const storeCountry = process.env.APP_STORE_COUNTRY || "us";
+const contentCollections = [
+  {
+    sourceDir: join(rootDir, "content", "rewire-blog"),
+    outputFile: "rewire-blog.json",
+    defaultOgImage: "/assets/rewire/app-store/rewire-icon.jpg"
+  },
+  {
+    sourceDir: join(rootDir, "content", "breastfeeding-tracker", "guides"),
+    outputFile: "breastfeeding-tracker-guides.json",
+    defaultOgImage: "/assets/breastfeeding-tracker-og.png"
+  }
+];
 
 await mkdir(generatedDir, { recursive: true });
-await generateBlog();
+for (const collection of contentCollections) {
+  await generateContentCollection(collection);
+}
 await generateRating();
 
-async function generateBlog() {
-  const files = existsSync(postsDir)
-    ? (await readdir(postsDir)).filter((file) => file.endsWith(".md")).sort()
+async function generateContentCollection({ sourceDir, outputFile, defaultOgImage }) {
+  const files = existsSync(sourceDir)
+    ? (await readdir(sourceDir)).filter((file) => file.endsWith(".md")).sort()
     : [];
 
   const posts = [];
   for (const file of files) {
     const slug = basename(file, ".md");
-    const source = await readFile(join(postsDir, file), "utf8");
+    const source = await readFile(join(sourceDir, file), "utf8");
     const { frontmatter, body } = parseFrontmatter(source);
     const draft = parseBoolean(frontmatter.draft);
 
@@ -38,7 +51,7 @@ async function generateBlog() {
       excerpt: frontmatter.excerpt || frontmatter.description,
       tags: parseTags(frontmatter.tags),
       draft,
-      ogImage: frontmatter.ogImage || "/assets/rewire/app-store/rewire-icon.jpg",
+      ogImage: frontmatter.ogImage || defaultOgImage,
       html: renderMarkdown(body)
     });
   }
@@ -47,7 +60,7 @@ async function generateBlog() {
     .filter((post) => !post.draft)
     .sort((a, b) => compareDatesDescending(a.publishedAt, b.publishedAt));
 
-  await writeJson(join(generatedDir, "rewire-blog.json"), {
+  await writeJson(join(generatedDir, outputFile), {
     generatedAt: new Date().toISOString(),
     posts: publishedPosts
   });

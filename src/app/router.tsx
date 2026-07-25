@@ -9,24 +9,54 @@ import { NotFoundPage } from "../pages/NotFoundPage";
 import { RewireLandingPage } from "../pages/RewireLandingPage";
 import { RewireBlogIndexPage } from "../pages/RewireBlogIndexPage";
 import { RewireBlogPostPage } from "../pages/RewireBlogPostPage";
+import { BreastfeedingTrackerLandingPage } from "../pages/BreastfeedingTrackerLandingPage";
+import { BreastfeedingTrackerGuidesPage } from "../pages/BreastfeedingTrackerGuidesPage";
+import { BreastfeedingTrackerGuidePage } from "../pages/BreastfeedingTrackerGuidePage";
+import {
+  BREASTFEEDING_TRACKER_BASE_PATH,
+  BREASTFEEDING_TRACKER_GUIDES_BASE_PATH,
+  LEGACY_BREASTFEEDING_TRACKER_PATH
+} from "../content/routes";
 
 export function AppRouter() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<AppShell />}>
-          <Route index element={<HomePage />} />
-          <Route path="apps" element={<AppsPage />} />
-          <Route path="about" element={<AboutPage />} />
-          <Route path="rewire" element={<RewireLandingPage />} />
-          <Route path="rewire/blog" element={<RewireBlogIndexPage />} />
-          <Route path="rewire/blog/:slug" element={<RewireBlogPostPage />} />
-          <Route path="apps/:slug" element={<AppDetailPage />} />
-          <Route path="privacy/:slug" element={<PrivacyPolicyPage />} />
-          <Route path="index.html" element={<Navigate to="/" replace />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
+      <AppRoutes />
     </BrowserRouter>
+  );
+}
+
+export function AppRoutes() {
+  return (
+    <Routes>
+      <Route path="/" element={<AppShell />}>
+        <Route index element={<HomePage />} />
+        <Route path="apps" element={<AppsPage />} />
+        <Route path="about" element={<AboutPage />} />
+        <Route path="rewire" element={<RewireLandingPage />} />
+        <Route path="rewire/blog" element={<RewireBlogIndexPage />} />
+        <Route path="rewire/blog/:slug" element={<RewireBlogPostPage />} />
+        <Route
+          path={BREASTFEEDING_TRACKER_BASE_PATH}
+          element={<BreastfeedingTrackerLandingPage />}
+        />
+        <Route
+          path={BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}
+          element={<BreastfeedingTrackerGuidesPage />}
+        />
+        <Route
+          path={`${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}/:slug`}
+          element={<BreastfeedingTrackerGuidePage />}
+        />
+        <Route
+          path={LEGACY_BREASTFEEDING_TRACKER_PATH}
+          element={<Navigate to={BREASTFEEDING_TRACKER_BASE_PATH} replace />}
+        />
+        <Route path="apps/:slug" element={<AppDetailPage />} />
+        <Route path="privacy/:slug" element={<PrivacyPolicyPage />} />
+        <Route path="index.html" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
   );
 }

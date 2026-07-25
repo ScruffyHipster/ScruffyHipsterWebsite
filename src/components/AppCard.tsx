@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import type { AppConfig } from "../content/types";
+import { appRoutePath } from "../content/routes";
 
 type AppCardProps = {
   app: AppConfig;
@@ -9,7 +10,7 @@ type AppCardProps = {
 export function AppCard({ app }: AppCardProps) {
   return (
     <Link
-      to={`/apps/${app.slug}`}
+      to={appRoutePath(app)}
       className="app-card"
       style={
         {

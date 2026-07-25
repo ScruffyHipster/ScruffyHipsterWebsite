@@ -1,19 +1,25 @@
 import { mkdir, writeFile } from "node:fs/promises";
-import { dirname, join } from "node:path";
+import { dirname, extname, join } from "node:path";
+import { pathToFileURL } from "node:url";
 import { legacyRedirects, siteUrl } from "./route-meta.mjs";
 import { prerenderRoutes } from "./prerender.mjs";
 import { generateSitemap } from "./generate-sitemap.mjs";
 
 const distDir = new URL("../dist/", import.meta.url).pathname;
+const serverEntryPath = new URL("../.ssr-dist/entry-server.js", import.meta.url).pathname;
+const { render } = await import(pathToFileURL(serverEntryPath).href);
 
-await prerenderRoutes(distDir);
+await prerenderRoutes(distDir, render);
 await generateSitemap(distDir);
 await generateLegacyRedirects(distDir);
 await writeFile(join(distDir, ".nojekyll"), "", "utf8");
 
 async function generateLegacyRedirects(rootDir) {
   for (const [from, to] of legacyRedirects) {
-    const filePath = join(rootDir, from.replace(/^\//, ""));
+    const relativePath = from.replace(/^\//, "");
+    const filePath = extname(relativePath)
+      ? join(rootDir, relativePath)
+      : join(rootDir, relativePath, "index.html");
     await mkdir(dirname(filePath), { recursive: true });
     await writeFile(filePath, redirectHtml(`${siteUrl}${to}`, to), "utf8");
   }
