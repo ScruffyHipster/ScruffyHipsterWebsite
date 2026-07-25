@@ -3,6 +3,7 @@ import { apps } from "../content/apps";
 import { privacyPolicies } from "../content/privacyPolicies";
 import { RouteAnalytics } from "../analytics/RouteAnalytics";
 import { ScrollToTop } from "./ScrollToTop";
+import { appRoutePath } from "../content/routes";
 
 export function AppShell() {
   const location = useLocation();
@@ -47,7 +48,7 @@ export function AppShell() {
                 </li>
                 {apps.map((app) => (
                   <li key={app.id}>
-                    <Link to={`/apps/${app.slug}`}>{app.name}</Link>
+                    <Link to={appRoutePath(app)}>{app.name}</Link>
                   </li>
                 ))}
               </ul>

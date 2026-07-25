@@ -172,7 +172,7 @@ export function AppDetailPage() {
               <ul className="related-list">
                 {relatedApps.map((related) => (
                   <li key={related.id}>
-                    <Link to={`/apps/${related.slug}`}>
+                    <Link to={appRoutePath(related)}>
                       <img src={related.icon} alt="" aria-hidden="true" />
                       <span>
                         <strong>{related.name}</strong>

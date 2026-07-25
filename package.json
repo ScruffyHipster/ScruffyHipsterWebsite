@@ -4,8 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node scripts/generate-rewire-content.mjs && vite",
-    "build": "node scripts/generate-rewire-content.mjs && vite build && node scripts/postbuild.mjs",
+    "dev": "node scripts/generate-app-content.mjs && vite",
+    "generate:og": "node scripts/generate-breastfeeding-og.mjs",
+    "build:client": "vite build",
+    "build:server": "vite build --ssr src/entry-server.tsx --outDir .ssr-dist",
+    "build": "node scripts/generate-breastfeeding-og.mjs && node scripts/generate-app-content.mjs && npm run build:client && npm run build:server && node scripts/postbuild.mjs",
+    "check:seo": "node scripts/check-seo.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

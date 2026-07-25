@@ -1405,7 +1405,7 @@ img {
   }
 }
 
-.reveal {
+.js .reveal {
   opacity: 0;
   transform: translateY(8px);
   transition:
@@ -1413,7 +1413,7 @@ img {
     transform 260ms ease var(--reveal-delay, 0ms);
 }
 
-.reveal[data-revealed="true"] {
+.js .reveal[data-revealed="true"] {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1645,7 +1645,7 @@ img {
     transition-duration: 0.001ms !important;
   }
 
-  .reveal {
+  .js .reveal {
     opacity: 1;
     transform: none;
   }
@@ -1655,5 +1655,604 @@ img {
     width: auto;
     overflow-x: auto;
     padding-inline: 0.7rem;
+  }
+}
+
+/* Breastfeeding Tracker microsite */
+.feeding-hero,
+.feeding-feature-band,
+.feeding-privacy,
+.feeding-guide-hero,
+.feeding-final-cta {
+  --feeding-blue: #c9e8f4;
+  --feeding-blue-deep: #a9d6e8;
+  --feeding-ink: #17191c;
+  --feeding-red: #ff4650;
+  --feeding-paper: #f8fcfd;
+}
+
+.feeding-hero {
+  overflow: hidden;
+  padding: clamp(3rem, 7vw, 6.8rem) 0 clamp(3.4rem, 7vw, 6rem);
+  background:
+    radial-gradient(circle at 78% 30%, rgba(255, 255, 255, 0.72), transparent 27rem),
+    linear-gradient(135deg, var(--feeding-blue) 0%, #dff4fa 72%, #f7fcfd 100%);
+  color: var(--feeding-ink);
+}
+
+.feeding-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.8fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.feeding-hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.feeding-app-icon {
+  width: 78px;
+  height: 78px;
+  margin-bottom: 1.6rem;
+  border-radius: 18px;
+  box-shadow: 0 18px 42px rgba(28, 70, 87, 0.18);
+}
+
+.feeding-hero h1,
+.feeding-guide-hero h1 {
+  max-width: 10ch;
+  margin: 0.5rem 0 1.2rem;
+  font-size: clamp(3.2rem, 7.2vw, 7.3rem);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 0.9;
+}
+
+.feeding-hero .lead {
+  max-width: 35rem;
+  color: #33434a;
+  font-size: clamp(1.08rem, 1.8vw, 1.3rem);
+}
+
+.feeding-hero .hero-actions {
+  margin-top: 1.6rem;
+}
+
+.feeding-btn-primary {
+  border-color: var(--feeding-ink, #17191c);
+  background: var(--feeding-ink, #17191c);
+  color: white;
+}
+
+.feeding-btn-primary:hover {
+  border-color: var(--feeding-red, #ff4650);
+  background: var(--feeding-red, #ff4650);
+  color: #101010;
+}
+
+.feeding-btn-secondary {
+  border-color: rgba(23, 25, 28, 0.45);
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.feeding-store-note {
+  margin-top: 0.8rem;
+  color: #4b6068;
+  font-size: 0.87rem;
+}
+
+.feeding-hero-visual {
+  position: relative;
+  min-height: min(760px, 76vw);
+  display: grid;
+  place-items: center;
+}
+
+.feeding-device-halo {
+  position: absolute;
+  inset: 10% -8% 4%;
+  border: 1px solid rgba(24, 78, 99, 0.15);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.28);
+  filter: blur(1px);
+  transform: rotate(-7deg);
+}
+
+.feeding-hero-phone {
+  position: relative;
+  z-index: 1;
+  width: min(430px, 88%);
+  border-radius: 32px;
+  box-shadow: 0 38px 80px rgba(24, 65, 81, 0.24);
+  animation: feedingFloat 7s ease-in-out infinite;
+}
+
+.feeding-proof {
+  border-top: 1px solid #a9cfdd;
+  border-bottom: 1px solid #a9cfdd;
+  background: #e9f7fb;
+}
+
+.feeding-proof-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.feeding-proof p {
+  min-height: 7.4rem;
+  margin: 0;
+  padding: 1.6rem clamp(1rem, 3vw, 2.2rem);
+  display: grid;
+  align-content: center;
+  border-left: 1px solid #a9cfdd;
+}
+
+.feeding-proof p:last-child {
+  border-right: 1px solid #a9cfdd;
+}
+
+.feeding-proof strong {
+  font-size: 1.08rem;
+}
+
+.feeding-proof span {
+  color: #50656d;
+  font-size: 0.92rem;
+}
+
+.feeding-section {
+  padding: clamp(4rem, 8vw, 7.5rem) 0;
+}
+
+.feeding-section-heading {
+  max-width: 49rem;
+  margin-bottom: 2.5rem;
+}
+
+.feeding-section-heading h2,
+.feeding-feature-copy h2,
+.feeding-privacy h2,
+.feeding-final-cta h2 {
+  max-width: 13ch;
+  margin: 0.45rem 0 1rem;
+  font-size: clamp(2.25rem, 5vw, 5rem);
+  font-weight: 650;
+  letter-spacing: -0.045em;
+  line-height: 0.96;
+}
+
+.feeding-section-heading > p:last-child,
+.feeding-feature-copy > p,
+.feeding-privacy p {
+  max-width: 42rem;
+  color: #4b5458;
+  font-size: 1.04rem;
+}
+
+.feeding-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line-strong);
+}
+
+.feeding-step {
+  min-height: 17rem;
+  padding: 1.5rem 1.6rem 2rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.feeding-step + .feeding-step {
+  padding-left: 1.6rem;
+  border-left: 1px solid var(--line);
+}
+
+.feeding-step span {
+  color: #708188;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+}
+
+.feeding-step h3 {
+  margin: 3.5rem 0 0.5rem;
+  font-size: clamp(1.4rem, 3vw, 2.3rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+
+.feeding-step p {
+  color: var(--muted);
+}
+
+.feeding-feature-band {
+  overflow: hidden;
+  padding: clamp(4rem, 8vw, 7.5rem) 0;
+  background: var(--feeding-blue);
+}
+
+.feeding-feature-layout,
+.feeding-history-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(400px, 1.1fr);
+  gap: clamp(2.5rem, 7vw, 7rem);
+  align-items: center;
+}
+
+.feeding-feature-images,
+.feeding-history-images {
+  position: relative;
+  min-height: 40rem;
+}
+
+.feeding-feature-images img,
+.feeding-history-images img {
+  position: absolute;
+  width: min(280px, 56%);
+  border-radius: 28px;
+  box-shadow: 0 26px 60px rgba(26, 63, 78, 0.2);
+}
+
+.feeding-feature-images img:first-child,
+.feeding-history-images img:first-child {
+  top: 0;
+  left: 4%;
+  transform: rotate(-4deg);
+}
+
+.feeding-feature-images img:last-child,
+.feeding-history-images img:last-child {
+  right: 4%;
+  bottom: 0;
+  transform: rotate(5deg);
+}
+
+.feeding-history-layout {
+  grid-template-columns: minmax(400px, 1.1fr) minmax(0, 0.82fr);
+}
+
+.feeding-text-link {
+  display: inline-flex;
+  margin-top: 0.8rem;
+  color: #263e47;
+  font-weight: 650;
+  text-decoration-thickness: 1px;
+}
+
+.feeding-text-link::after {
+  content: " ↗";
+  margin-left: 0.3rem;
+}
+
+.feeding-privacy {
+  padding: clamp(4rem, 9vw, 8rem) 0;
+  background: var(--feeding-ink);
+  color: white;
+  text-align: center;
+}
+
+.feeding-privacy h2 {
+  max-width: 15ch;
+  margin-inline: auto;
+}
+
+.feeding-privacy p {
+  margin-inline: auto;
+  color: #b9c7cc;
+}
+
+.feeding-inline-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem 1.6rem;
+  margin-top: 1.7rem;
+}
+
+.feeding-inline-links a {
+  color: white;
+}
+
+.feeding-guides {
+  background: #f8fcfd;
+}
+
+.feeding-guide-list {
+  margin-bottom: 1.5rem;
+  border-top: 1px solid #93a9b1;
+}
+
+.feeding-guide-list-large {
+  margin-bottom: 0;
+}
+
+.feeding-guide-row {
+  display: grid;
+  grid-template-columns: 3rem minmax(15rem, 0.8fr) minmax(0, 1fr);
+  gap: 1.4rem;
+  align-items: start;
+  padding: 1.35rem 0;
+  border-bottom: 1px solid #c5d2d7;
+  text-decoration: none;
+}
+
+.feeding-guide-row:hover strong {
+  text-decoration: underline;
+}
+
+.feeding-guide-row span {
+  color: #71848b;
+  font-size: 0.82rem;
+}
+
+.feeding-guide-row strong {
+  font-size: 1.08rem;
+  line-height: 1.25;
+}
+
+.feeding-guide-row small {
+  color: #526167;
+  font-size: 0.95rem;
+}
+
+.feeding-faq-layout {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: clamp(2rem, 7vw, 6rem);
+  align-items: start;
+}
+
+.feeding-faq-list {
+  border-top: 1px solid var(--line-strong);
+}
+
+.feeding-faq details {
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.feeding-faq summary {
+  cursor: pointer;
+  font-size: 1.08rem;
+  font-weight: 600;
+}
+
+.feeding-faq details p {
+  max-width: 42rem;
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+}
+
+.feeding-final-cta {
+  padding: clamp(4.5rem, 9vw, 8rem) 0;
+  background: var(--feeding-blue);
+  text-align: center;
+}
+
+.feeding-final-cta .reveal {
+  display: grid;
+  justify-items: center;
+}
+
+.feeding-final-cta img {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 1.5rem;
+  border-radius: 17px;
+}
+
+.feeding-final-cta h2 {
+  margin-inline: auto;
+}
+
+.feeding-guide-hero {
+  padding: clamp(3.5rem, 8vw, 7rem) 0 clamp(3rem, 6vw, 5rem);
+  background: linear-gradient(135deg, var(--feeding-blue), var(--feeding-paper));
+}
+
+.feeding-guide-hero .feeding-text-link {
+  margin: 0 0 2.5rem;
+}
+
+.feeding-guide-hero h1 {
+  max-width: 11ch;
+  font-size: clamp(3rem, 6.5vw, 6.4rem);
+}
+
+.feeding-guide-hero .lead {
+  max-width: 42rem;
+  color: #43545a;
+}
+
+.feeding-article {
+  padding: clamp(3rem, 7vw, 6rem) 0;
+}
+
+.feeding-article h1 {
+  margin: 0.55rem 0 1rem;
+  font-size: clamp(2.6rem, 6vw, 5.7rem);
+  font-weight: 680;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+}
+
+.feeding-article .eyebrow {
+  margin-top: 1.8rem;
+}
+
+.feeding-article-body {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line-strong);
+}
+
+.feeding-article-body h2,
+.feeding-article-body h3 {
+  margin: 2.2rem 0 0.65rem;
+  font-weight: 620;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+
+.feeding-article-body h2 {
+  font-size: clamp(1.65rem, 3.4vw, 2.5rem);
+}
+
+.feeding-article-body p,
+.feeding-article-body li {
+  color: #313b3f;
+  font-size: 1.04rem;
+}
+
+.feeding-article-body ul,
+.feeding-article-body ol {
+  padding-left: 1.25rem;
+}
+
+.feeding-article-body a {
+  color: #28596b;
+}
+
+.feeding-article-cta {
+  margin-top: 3.5rem;
+  padding: clamp(2rem, 5vw, 3.6rem);
+  background: #d9f0f8;
+}
+
+.feeding-article-cta h2 {
+  max-width: 18ch;
+  margin: 0.45rem 0 1.4rem;
+  font-size: clamp(1.8rem, 4vw, 3.1rem);
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+.feeding-related-guides {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.feeding-related-guides h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.25rem;
+}
+
+@keyframes feedingFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(1.5deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(-1deg);
+  }
+}
+
+@media (max-width: 980px) {
+  .feeding-hero-grid,
+  .feeding-feature-layout,
+  .feeding-history-layout,
+  .feeding-faq-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .feeding-hero-visual {
+    min-height: 42rem;
+  }
+
+  .feeding-feature-images,
+  .feeding-history-images {
+    min-height: 36rem;
+  }
+
+  .feeding-feature-copy {
+    order: -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .feeding-hero {
+    padding-top: 2.6rem;
+  }
+
+  .feeding-app-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 15px;
+  }
+
+  .feeding-hero h1,
+  .feeding-guide-hero h1 {
+    font-size: clamp(2.8rem, 16vw, 4.8rem);
+  }
+
+  .feeding-hero-visual {
+    min-height: 32rem;
+  }
+
+  .feeding-hero-phone {
+    width: min(330px, 92%);
+    border-radius: 24px;
+  }
+
+  .feeding-proof-row,
+  .feeding-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .feeding-proof p,
+  .feeding-proof p:last-child {
+    min-height: auto;
+    padding: 1.1rem 0.8rem;
+    border-right: 1px solid #a9cfdd;
+    border-bottom: 1px solid #a9cfdd;
+  }
+
+  .feeding-step,
+  .feeding-step + .feeding-step {
+    min-height: auto;
+    padding: 1.4rem 0;
+    border-left: 0;
+  }
+
+  .feeding-step h3 {
+    margin-top: 1.5rem;
+  }
+
+  .feeding-feature-images,
+  .feeding-history-images {
+    min-height: 28rem;
+  }
+
+  .feeding-feature-images img,
+  .feeding-history-images img {
+    width: min(210px, 61%);
+    border-radius: 22px;
+  }
+
+  .feeding-guide-row {
+    grid-template-columns: 2.2rem 1fr;
+    gap: 0.7rem;
+  }
+
+  .feeding-guide-row small {
+    grid-column: 2;
+  }
+
+  .feeding-inline-links {
+    display: grid;
+  }
+
+  .feeding-article h1 {
+    font-size: clamp(2.5rem, 14vw, 4.2rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feeding-hero-phone {
+    animation: none;
   }
 }

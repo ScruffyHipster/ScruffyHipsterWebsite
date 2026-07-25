@@ -2,24 +2,27 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { publicRoutes, siteUrl } from "./route-meta.mjs";
 
-export async function prerenderRoutes(distDir) {
+export async function prerenderRoutes(distDir, render) {
   const baseHtmlPath = join(distDir, "index.html");
   const baseHtml = await readFile(baseHtmlPath, "utf8");
 
   for (const route of publicRoutes) {
+    const renderedApp = render(route.path);
+    const renderedHtml = injectRenderedApp(baseHtml, renderedApp);
+
     if (route.path === "/") {
-      const updated = injectRouteMeta(baseHtml, route);
+      const updated = injectRouteMeta(renderedHtml, route);
       await writeFile(baseHtmlPath, updated, "utf8");
       continue;
     }
 
     const outputPath = join(distDir, route.path.replace(/^\//, ""), "index.html");
     await mkdir(dirname(outputPath), { recursive: true });
-    await writeFile(outputPath, injectRouteMeta(baseHtml, route), "utf8");
+    await writeFile(outputPath, injectRouteMeta(renderedHtml, route), "utf8");
   }
 
   // GitHub Pages SPA fallback for unknown paths with explicit noindex.
-  const notFoundHtml = injectRouteMeta(baseHtml, {
+  const notFoundHtml = injectRouteMeta(injectRenderedApp(baseHtml, render("/404")), {
     path: "/404",
     title: "Page Not Found | Scruffyhipster",
     description: "The page you were looking for could not be found on Scruffyhipster.",
@@ -45,38 +48,43 @@ function injectRouteMeta(html, route) {
         }
       ];
   const jsonLd = jsonLdEntries
-    .map((entry, index) => `<script${index === 0 ? ' id="route-jsonld"' : ""} type="application/ld+json">${JSON.stringify(entry)}</script>`)
+    .map(
+      (entry, index) =>
+        `<script${index === 0 ? ' id="route-jsonld"' : ""} type="application/ld+json" data-rh="true">${JSON.stringify(entry)}</script>`
+    )
     .join("");
 
-  const noscriptSummary = `<noscript><main style="font-family:Arial,sans-serif;max-width:760px;margin:2rem auto;padding:0 1rem;"><h1>${escapeHtml(
-    route.title
-  )}</h1><p>${escapeHtml(route.description)}</p><p><a href="${canonical}">${escapeHtml(
-    canonical
-  )}</a></p></main></noscript>`;
-
   return html
-    .replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(route.title)}</title>`)
+    .replace(
+      /<title>[\s\S]*?<\/title>/i,
+      `<title data-rh="true">${escapeHtml(route.title)}</title>`
+    )
     .replace(
       /<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i,
-      `<link rel="canonical" href="${escapeAttr(canonical)}" />`
+      `<link rel="canonical" href="${escapeAttr(canonical)}" data-rh="true" />`
     )
     .replace(/<meta\s+name="robots"\s+content="[^"]*"\s*\/?>/i, "")
     .replace(
       /<meta\s+name="description"\s+content="[^"]*"\s*\/?>/i,
-      `<meta name="description" content="${escapeAttr(route.description)}" />\n    <meta name="robots" content="${escapeAttr(robots)}" />`
+      `<meta name="description" content="${escapeAttr(route.description)}" data-rh="true" />\n    <meta name="robots" content="${escapeAttr(robots)}" data-rh="true" />`
     )
-    .replace(/<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:title" content="${escapeAttr(route.title)}" />`)
-    .replace(/<meta\s+property="og:description"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:description" content="${escapeAttr(route.description)}" />`)
-    .replace(/<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:url" content="${escapeAttr(canonical)}" />`)
-    .replace(/<meta\s+property="og:image"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:image" content="${escapeAttr(image)}" />`)
-    .replace(/<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/?>/i, `<meta name="twitter:title" content="${escapeAttr(route.title)}" />`)
-    .replace(/<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/?>/i, `<meta name="twitter:description" content="${escapeAttr(route.description)}" />`)
-    .replace(/<meta\s+name="twitter:image"\s+content="[^"]*"\s*\/?>/i, `<meta name="twitter:image" content="${escapeAttr(image)}" />`)
+    .replace(/<meta\s+property="og:type"\s+content="[^"]*"\s*\/?>/i, '<meta property="og:type" content="website" data-rh="true" />')
+    .replace(/<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:title" content="${escapeAttr(route.title)}" data-rh="true" />`)
+    .replace(/<meta\s+property="og:description"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:description" content="${escapeAttr(route.description)}" data-rh="true" />`)
+    .replace(/<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:url" content="${escapeAttr(canonical)}" data-rh="true" />`)
+    .replace(/<meta\s+property="og:image"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:image" content="${escapeAttr(image)}" data-rh="true" />`)
+    .replace(/<meta\s+name="twitter:card"\s+content="[^"]*"\s*\/?>/i, '<meta name="twitter:card" content="summary_large_image" data-rh="true" />')
+    .replace(/<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/?>/i, `<meta name="twitter:title" content="${escapeAttr(route.title)}" data-rh="true" />`)
+    .replace(/<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/?>/i, `<meta name="twitter:description" content="${escapeAttr(route.description)}" data-rh="true" />`)
+    .replace(/<meta\s+name="twitter:image"\s+content="[^"]*"\s*\/?>/i, `<meta name="twitter:image" content="${escapeAttr(image)}" data-rh="true" />`)
     .replace(
       /<script id="route-jsonld" type="application\/ld\+json">[\s\S]*?<\/script>/i,
       jsonLd
-    )
-    .replace(/<body>/i, `<body>\n    ${noscriptSummary}`);
+    );
+}
+
+function injectRenderedApp(html, renderedApp) {
+  return html.replace('<div id="root"></div>', `<div id="root">${renderedApp}</div>`);
 }
 
 function canonicalUrl(path) {
