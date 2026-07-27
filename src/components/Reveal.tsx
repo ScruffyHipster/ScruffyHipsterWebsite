@@ -4,9 +4,15 @@ import { useEffect, useRef } from "react";
 type RevealProps = PropsWithChildren<{
   className?: string;
   delayMs?: number;
+  threshold?: number;
 }>;
 
-export function Reveal({ className = "", delayMs = 0, children }: RevealProps) {
+export function Reveal({
+  className = "",
+  delayMs = 0,
+  threshold = 0.15,
+  children
+}: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -30,12 +36,12 @@ export function Reveal({ className = "", delayMs = 0, children }: RevealProps) {
           }
         }
       },
-      { threshold: 0.15 }
+      { threshold }
     );
 
     observer.observe(node);
     return () => observer.disconnect();
-  }, [delayMs]);
+  }, [delayMs, threshold]);
 
   return (
     <div ref={ref} className={`reveal ${className}`.trim()}>
@@ -43,4 +49,3 @@ export function Reveal({ className = "", delayMs = 0, children }: RevealProps) {
     </div>
   );
 }
-

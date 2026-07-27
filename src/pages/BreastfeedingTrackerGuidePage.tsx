@@ -34,10 +34,11 @@ export function BreastfeedingTrackerGuidePage() {
       <Seo
         path={path}
         meta={{
-          title: guide.title,
+          title: guide.metaTitle || guide.title,
           description: guide.description,
           keywords: guide.tags,
-          ogImage: guide.ogImage || breastfeedingTrackerOgImage
+          ogImage: guide.ogImage || breastfeedingTrackerOgImage,
+          ...(guide.ogImageAlt ? { ogImageAlt: guide.ogImageAlt } : {})
         }}
         jsonLd={[
           organizationJsonLd(),
@@ -61,6 +62,22 @@ export function BreastfeedingTrackerGuidePage() {
               url: canonicalUrl(BREASTFEEDING_TRACKER_BASE_PATH, siteUrl)
             }
           },
+          ...(guide.faqItems.length
+            ? [
+                {
+                  "@context": "https://schema.org",
+                  "@type": "FAQPage",
+                  mainEntity: guide.faqItems.map((item) => ({
+                    "@type": "Question",
+                    name: item.question,
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: item.answer
+                    }
+                  }))
+                }
+              ]
+            : []),
           breadcrumbJsonLd([
             { name: "Scruffyhipster", url: siteUrl },
             {
@@ -89,19 +106,21 @@ export function BreastfeedingTrackerGuidePage() {
             <h1>{guide.title}</h1>
             <p className="lead">{guide.description}</p>
           </Reveal>
-          <Reveal delayMs={70}>
+          <Reveal delayMs={70} threshold={0.01}>
             <div
               className="feeding-article-body"
               dangerouslySetInnerHTML={{ __html: guide.html }}
             />
           </Reveal>
-          <Reveal className="feeding-article-cta">
-            <p className="eyebrow">simple help for the first feeds</p>
-            <h2>Start the next feed in one tap. Correct it later if you need to.</h2>
-            <BreastfeedingTrackerAppStoreLink className="btn feeding-btn-primary" placement="guide">
-              Download on the App Store
-            </BreastfeedingTrackerAppStoreLink>
-          </Reveal>
+          {guide.showDefaultCta ? (
+            <Reveal className="feeding-article-cta">
+              <p className="eyebrow">simple help for the first feeds</p>
+              <h2>Start the next feed in one tap. Correct it later if you need to.</h2>
+              <BreastfeedingTrackerAppStoreLink className="btn feeding-btn-primary" placement="guide">
+                Download on the App Store
+              </BreastfeedingTrackerAppStoreLink>
+            </Reveal>
+          ) : null}
           <Reveal className="feeding-related-guides">
             <h2>Related guides</h2>
             {relatedGuides.map((related) => (

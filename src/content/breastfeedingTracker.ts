@@ -9,6 +9,7 @@ export const breastfeedingTrackerOgImage = "/assets/breastfeeding-tracker-og.png
 export type BreastfeedingTrackerGuide = {
   slug: string;
   title: string;
+  metaTitle: string | null;
   description: string;
   publishedAt: string;
   updatedAt: string | null;
@@ -16,6 +17,9 @@ export type BreastfeedingTrackerGuide = {
   tags: string[];
   draft: boolean;
   ogImage: string;
+  ogImageAlt: string | null;
+  faqItems: Array<{ question: string; answer: string }>;
+  showDefaultCta: boolean;
   html: string;
 };
 

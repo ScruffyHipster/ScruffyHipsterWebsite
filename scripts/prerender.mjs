@@ -36,6 +36,7 @@ function injectRouteMeta(html, route) {
   const canonical = canonicalUrl(route.path);
   const image = route.ogImage?.startsWith("http") ? route.ogImage : `${siteUrl}${route.ogImage || "/og-default.png"}`;
   const robots = route.robots || "index,follow";
+  const imageAlt = route.ogImageAlt;
   const jsonLdEntries = Array.isArray(route.jsonLd)
     ? route.jsonLd
     : [
@@ -54,7 +55,7 @@ function injectRouteMeta(html, route) {
     )
     .join("");
 
-  return html
+  let updatedHtml = html
     .replace(
       /<title>[\s\S]*?<\/title>/i,
       `<title data-rh="true">${escapeHtml(route.title)}</title>`
@@ -81,6 +82,19 @@ function injectRouteMeta(html, route) {
       /<script id="route-jsonld" type="application\/ld\+json">[\s\S]*?<\/script>/i,
       jsonLd
     );
+
+  if (imageAlt) {
+    updatedHtml = updatedHtml
+      .replace(
+        /(<meta\s+property="og:image"\s+content="[^"]*"[^>]*>)/i,
+        `$1\n    <meta property="og:image:alt" content="${escapeAttr(imageAlt)}" data-rh="true" />`
+      )
+      .replace(
+        /(<meta\s+name="twitter:image"\s+content="[^"]*"[^>]*>)/i,
+        `$1\n    <meta name="twitter:image:alt" content="${escapeAttr(imageAlt)}" data-rh="true" />`
+      );
+  }
+  return updatedHtml;
 }
 
 function injectRenderedApp(html, renderedApp) {

@@ -42,9 +42,11 @@ async function generateContentCollection({ sourceDir, outputFile, defaultOgImage
       throw new Error(`${file} must include title, description, and publishedAt frontmatter.`);
     }
 
+    const faqItems = extractFaqItems(body);
     posts.push({
       slug,
       title: frontmatter.title,
+      metaTitle: frontmatter.metaTitle || null,
       description: frontmatter.description,
       publishedAt: frontmatter.publishedAt,
       updatedAt: frontmatter.updatedAt || null,
@@ -52,6 +54,12 @@ async function generateContentCollection({ sourceDir, outputFile, defaultOgImage
       tags: parseTags(frontmatter.tags),
       draft,
       ogImage: frontmatter.ogImage || defaultOgImage,
+      ogImageAlt: frontmatter.ogImageAlt || null,
+      faqItems,
+      showDefaultCta:
+        frontmatter.showDefaultCta === undefined
+          ? true
+          : parseBoolean(frontmatter.showDefaultCta),
       html: renderMarkdown(body)
     });
   }
@@ -173,6 +181,18 @@ function renderMarkdown(source) {
       continue;
     }
 
+    if (isTableStart(lines, index)) {
+      const headers = splitTableRow(lines[index]);
+      const rows = [];
+      index += 2;
+      while (index < lines.length && isTableRow(lines[index])) {
+        rows.push(splitTableRow(lines[index]));
+        index += 1;
+      }
+      blocks.push(renderTable(headers, rows));
+      continue;
+    }
+
     if (/^[-*]\s+/.test(line)) {
       const items = [];
       while (index < lines.length && /^[-*]\s+/.test(lines[index])) {
@@ -200,6 +220,7 @@ function renderMarkdown(source) {
       !lines[index].startsWith("```") &&
       !/^(#{1,3})\s+/.test(lines[index]) &&
       !lines[index].startsWith("> ") &&
+      !isTableStart(lines, index) &&
       !/^[-*]\s+/.test(lines[index]) &&
       !/^\d+\.\s+/.test(lines[index])
     ) {
@@ -210,6 +231,92 @@ function renderMarkdown(source) {
   }
 
   return blocks.join("\n");
+}
+
+function isTableStart(lines, index) {
+  if (index + 1 >= lines.length || !isTableRow(lines[index])) {
+    return false;
+  }
+  const separatorCells = splitTableRow(lines[index + 1]);
+  return separatorCells.length > 0 && separatorCells.every((cell) => /^:?-{3,}:?$/.test(cell));
+}
+
+function isTableRow(line) {
+  return line.trim().includes("|");
+}
+
+function splitTableRow(line) {
+  return line
+    .trim()
+    .replace(/^\|/, "")
+    .replace(/\|$/, "")
+    .split("|")
+    .map((cell) => cell.trim());
+}
+
+function renderTable(headers, rows) {
+  const headerHtml = headers
+    .map((header) => `<th scope="col">${renderInline(header)}</th>`)
+    .join("");
+  const bodyHtml = rows
+    .map((row) => {
+      const cells = headers.map((_, index) => `<td>${renderInline(row[index] || "")}</td>`);
+      return `<tr>${cells.join("")}</tr>`;
+    })
+    .join("");
+  return `<div class="feeding-table-scroll" tabindex="0" role="region" aria-label="Scrollable comparison table"><table><thead><tr>${headerHtml}</tr></thead><tbody>${bodyHtml}</tbody></table></div>`;
+}
+
+function extractFaqItems(source) {
+  const lines = source.replace(/\r\n/g, "\n").split("\n");
+  const faqHeadingIndex = lines.findIndex((line) => /^#{1,3}\s+FAQs\s*$/i.test(line.trim()));
+  if (faqHeadingIndex === -1) {
+    return [];
+  }
+
+  const sectionLevel = lines[faqHeadingIndex].match(/^#+/)?.[0].length || 1;
+  const items = [];
+  let currentQuestion = null;
+  let answerLines = [];
+
+  const commitItem = () => {
+    if (!currentQuestion) {
+      return;
+    }
+    const answer = stripMarkdownFormatting(answerLines.join(" "));
+    if (!answer) {
+      throw new Error(`FAQ question "${currentQuestion}" has no visible answer.`);
+    }
+    items.push({ question: currentQuestion, answer });
+  };
+
+  for (let index = faqHeadingIndex + 1; index < lines.length; index += 1) {
+    const heading = lines[index].match(/^(#{1,3})\s+(.+)$/);
+    if (heading && heading[1].length <= sectionLevel) {
+      break;
+    }
+    if (heading) {
+      commitItem();
+      currentQuestion = stripMarkdownFormatting(heading[2]);
+      answerLines = [];
+      continue;
+    }
+    if (currentQuestion && lines[index].trim()) {
+      answerLines.push(lines[index].trim());
+    }
+  }
+  commitItem();
+  return items;
+}
+
+function stripMarkdownFormatting(value) {
+  return String(value)
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, "$1")
+    .replace(/[*_~`>#]/g, "")
+    .replace(/^\s*(?:[-*]|\d+\.)\s+/gm, "")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function renderInline(value) {

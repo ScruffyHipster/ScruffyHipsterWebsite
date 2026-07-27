@@ -27,10 +27,12 @@ export function Seo({ meta, path, jsonLd }: SeoProps) {
       <meta property="og:description" content={resolved.description} />
       <meta property="og:url" content={resolved.canonicalUrl} />
       <meta property="og:image" content={resolved.imageUrl} />
+      {resolved.imageAlt ? <meta property="og:image:alt" content={resolved.imageAlt} /> : null}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={resolved.title} />
       <meta name="twitter:description" content={resolved.description} />
       <meta name="twitter:image" content={resolved.imageUrl} />
+      {resolved.imageAlt ? <meta name="twitter:image:alt" content={resolved.imageAlt} /> : null}
       {jsonLdValue.map((entry, index) => (
         <script key={index} type="application/ld+json">
           {stringifyJsonLd(entry)}

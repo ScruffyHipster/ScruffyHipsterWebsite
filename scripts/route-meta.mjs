@@ -409,12 +409,14 @@ export const publicRoutes = [
     const path = `/breastfeeding-tracker/guides/${guide.slug}`;
     return {
       path,
-      title: guide.title,
+      title: guide.metaTitle || guide.title,
       description: guide.description,
       ogImage: guide.ogImage || "/assets/breastfeeding-tracker-og.png",
+      ...(guide.ogImageAlt ? { ogImageAlt: guide.ogImageAlt } : {}),
       jsonLd: [
         organizationJsonLd,
         articleJsonLd(guide, path),
+        ...(guide.faqItems?.length ? [faqPageJsonLd(guide.faqItems)] : []),
         breadcrumbJsonLd([
           { name: "Scruffyhipster", url: siteUrl },
           {

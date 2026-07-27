@@ -1,6 +1,7 @@
 import { access, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { publicRoutes, siteUrl } from "./route-meta.mjs";
+import generatedGuides from "../src/generated/breastfeeding-tracker-guides.json" with { type: "json" };
 
 const rootDir = new URL("../", import.meta.url).pathname;
 const distDir = join(rootDir, "dist");
@@ -8,7 +9,7 @@ const trackerBasePath = "/breastfeeding-tracker";
 const trackerRoutes = publicRoutes.filter(
   (route) => route.path === trackerBasePath || route.path.startsWith(`${trackerBasePath}/`)
 );
-const expectedTrackerRouteCount = 8;
+const expectedTrackerRouteCount = generatedGuides.posts.length + 2;
 
 assert(
   trackerRoutes.length === expectedTrackerRouteCount,
@@ -131,6 +132,109 @@ assert(
 assert(rewireHtml.includes("<h1>"), "Rewire lost its initial h1.");
 
 await access(join(distDir, "assets", "breastfeeding-tracker-og.png"));
+
+const comparisonPath = `${trackerBasePath}/guides/best-breastfeeding-apps`;
+const comparisonHtml = await readFile(routeOutputPath(comparisonPath), "utf8");
+const comparisonTitle = matchContent(
+  comparisonHtml,
+  /<title(?:\s+[^>]*)?>([\s\S]*?)<\/title>/i,
+  "comparison title"
+);
+const comparisonDescription = matchContent(
+  comparisonHtml,
+  /<meta name="description" content="([^"]+)"/i,
+  "comparison description"
+);
+const comparisonJsonLd = [
+  ...comparisonHtml.matchAll(
+    /<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi
+  )
+].map((match) => JSON.parse(match[1]));
+const comparisonFaq = comparisonJsonLd.find((entry) => entry["@type"] === "FAQPage");
+const comparisonArticle = comparisonJsonLd.find((entry) => entry["@type"] === "Article");
+const expectedComparisonAlt =
+  "Huckleberry, Nara Baby and Breastfeeding Tracker & Timer compared by best use, features and cost.";
+const expectedComparisonAltHtml = expectedComparisonAlt.replace("&", "&amp;");
+const requiredComparisonSources = [
+  "https://apps.apple.com/us/app/huckleberry-baby-tracker/id1169136078",
+  "https://huckleberrycare.com/product/free",
+  "https://apps.apple.com/us/app/nara-baby-pregnancy-tracker/id1444639029",
+  "https://nara.com/pages/nara-baby-tracker-faq",
+  "https://apps.apple.com/gb/app/breastfeeding-tracker-timer/id6754637800",
+  "https://www.nhs.uk/baby/breastfeeding-and-bottle-feeding/breastfeeding/the-first-few-days/",
+  "https://www.nhs.uk/baby/breastfeeding-and-bottle-feeding/breastfeeding-problems/enough-milk/",
+  "https://www.unicef.org.uk/babyfriendly/baby-friendly-resources/%20relationship-building-resources/responsive-feeding-infosheet/"
+];
+
+assert(
+  comparisonHtml.includes(
+    "<h1>Best Breastfeeding &amp; Baby Feeding Apps (2026): Which App Is Right for You?</h1>"
+  ),
+  "Comparison guide has the wrong h1."
+);
+assert(
+  (comparisonHtml.match(/<h1[\s>]/g) || []).length === 1,
+  "Comparison guide must have exactly one h1."
+);
+assert(comparisonTitle.length < 60, "Comparison meta title must be under 60 characters.");
+assert(
+  comparisonDescription.length >= 150 && comparisonDescription.length <= 160,
+  "Comparison meta description must be 150–160 characters."
+);
+assert(
+  (comparisonHtml.match(/<div class="feeding-table-scroll"[^>]*tabindex="0"[^>]*>/g) || [])
+    .length === 2,
+  "Comparison guide must render two keyboard-scrollable table containers."
+);
+assert(
+  (comparisonHtml.match(/<table><thead><tr>/g) || []).length === 2 &&
+    (comparisonHtml.match(/<tbody>/g) || []).length === 2 &&
+    comparisonHtml.includes('<th scope="col">'),
+  "Comparison guide tables are not semantic."
+);
+assert(comparisonArticle, "Comparison guide is missing Article structured data.");
+assert(
+  comparisonArticle.url === canonicalUrl(comparisonPath),
+  "Comparison Article data has the wrong canonical URL."
+);
+assert(
+  comparisonArticle.datePublished === "2026-07-27",
+  "Comparison Article data has the wrong publication date."
+);
+assert(comparisonFaq, "Comparison guide is missing FAQPage structured data.");
+assert(
+  comparisonFaq.mainEntity?.length === 6,
+  "Comparison FAQPage data must contain six questions."
+);
+assert(
+  !comparisonHtml.includes('class="feeding-article-cta"'),
+  "Comparison guide should suppress the default promotional CTA."
+);
+assert(
+  comparisonHtml.includes(
+    'href="https://apps.apple.com/gb/app/breastfeeding-tracker-timer/id6754637800"'
+  ),
+  "Comparison guide is missing its calm inline App Store link."
+);
+for (const source of requiredComparisonSources) {
+  assert(comparisonHtml.includes(`href="${source}"`), `Comparison guide is missing source ${source}.`);
+}
+assert(
+  comparisonHtml.includes(
+    '<meta property="og:image" content="https://scruffyhipster.com/assets/breastfeeding-apps-comparison-2026.png"'
+  ) &&
+    comparisonHtml.includes(`<meta property="og:image:alt" content="${expectedComparisonAltHtml}"`) &&
+    comparisonHtml.includes(`<meta name="twitter:image:alt" content="${expectedComparisonAltHtml}"`),
+  "Comparison guide is missing dedicated social image metadata."
+);
+
+const comparisonImage = await readFile(
+  join(distDir, "assets", "breastfeeding-apps-comparison-2026.png")
+);
+assert(
+  comparisonImage.readUInt32BE(16) === 1200 && comparisonImage.readUInt32BE(20) === 630,
+  "Comparison social image must be 1200×630."
+);
 
 console.log(
   `SEO checks passed for all ${publicRoutes.length} public routes, ${trackerRoutes.length} tracker routes, the legacy redirect, and Rewire prerendering.`

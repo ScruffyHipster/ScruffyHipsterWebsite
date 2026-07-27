@@ -7,6 +7,7 @@ export type ResolvedMeta = {
   description: string;
   canonicalUrl: string;
   imageUrl: string;
+  imageAlt?: string;
   keywords?: string;
   robots: string;
 };
@@ -23,6 +24,7 @@ export const resolveMeta = (meta: SeoMeta, path: string): ResolvedMeta => {
     description: meta.description,
     canonicalUrl: canonicalUrl(path, siteUrl),
     imageUrl,
+    imageAlt: meta.ogImageAlt,
     keywords: meta.keywords?.join(", "),
     robots: meta.robots || "index,follow"
   };

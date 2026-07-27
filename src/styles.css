@@ -2180,6 +2180,49 @@ img {
   color: var(--feeding-rose-deep);
 }
 
+.feeding-table-scroll {
+  max-width: 100%;
+  margin: 1.5rem 0 2rem;
+  overflow-x: auto;
+  border: 1px solid var(--feeding-line);
+  border-radius: 14px;
+  background: #fffdfc;
+  outline-offset: 3px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.feeding-table-scroll table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.feeding-table-scroll th,
+.feeding-table-scroll td {
+  min-width: 150px;
+  padding: 0.85rem 1rem;
+  border-right: 1px solid var(--feeding-line);
+  border-bottom: 1px solid var(--feeding-line);
+  color: #4f464a;
+  text-align: left;
+  vertical-align: top;
+}
+
+.feeding-table-scroll th {
+  background: var(--feeding-blush);
+  color: #2d282a;
+  font-weight: 650;
+}
+
+.feeding-table-scroll th:last-child,
+.feeding-table-scroll td:last-child {
+  border-right: 0;
+}
+
+.feeding-table-scroll tbody tr:last-child td {
+  border-bottom: 0;
+}
+
 .feeding-article-cta {
   margin-top: 3.5rem;
   padding: clamp(2rem, 5vw, 3.6rem);
