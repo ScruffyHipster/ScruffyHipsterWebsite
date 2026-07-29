@@ -1,0 +1,14 @@
+{
+  "slug": "smarty-colours",
+  "order": 2,
+  "published": true,
+  "appName": "Smarty Colours",
+  "title": "Smarty Colours Privacy Policy",
+  "lastUpdated": "January 30, 2026",
+  "htmlContent": "\n      <p><strong>Smarty Colours</strong> is a kids colouring book app. We value your privacy and do not collect, store, or transmit any personal data.</p>\n      <h2>Data Collection</h2>\n      <p>Smarty Colours does not collect any personal information. The app has no accounts, logins, analytics, tracking, or advertising.</p>\n      <h2>Data Sharing</h2>\n      <p>We do not share any data with third parties because we do not collect any.</p>\n      <h2>Children’s Privacy</h2>\n      <p>Smarty Colours is designed for children. Since no data is collected, there is no personal information to share or sell.</p>\n      <h2>Contact</h2>\n      <p>If you have any questions, contact <a href=\"mailto:support@scruffyhipster.com\">support@scruffyhipster.com</a>.</p>\n      <p>© 2026 Scruffy Hipster Ltd. All rights reserved.</p>\n    ",
+  "seo": {
+    "title": "Smarty Colours Privacy Policy | Scruffyhipster",
+    "description": "Read the privacy policy for Smarty Colours by Scruffyhipster.",
+    "ogImage": "/og-default.png"
+  }
+}

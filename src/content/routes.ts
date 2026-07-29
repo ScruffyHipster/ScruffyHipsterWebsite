@@ -1,6 +1,7 @@
 import { apps } from "./apps";
 import { privacyPolicies } from "./privacyPolicies";
 import type { AppConfig, PrivacyPolicyConfig } from "./types";
+import { standardPages } from "./standardPages";
 import { canonicalPath } from "../seo/canonical";
 
 export const APP_BASE_PATH = "/apps";
@@ -35,7 +36,8 @@ export const publicRoutePaths = [
   canonicalPath(APP_BASE_PATH),
   canonicalPath("/about"),
   ...apps.map(appRoutePath),
-  ...privacyPolicies.map(privacyRoutePath)
+  ...privacyPolicies.map(privacyRoutePath),
+  ...standardPages.map((page) => canonicalPath(`/${page.slug}`))
 ];
 
 export const legacyRedirects: Array<{ from: string; to: string }> = [

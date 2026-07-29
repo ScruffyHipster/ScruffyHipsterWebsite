@@ -5,6 +5,8 @@ import { canonicalPath, canonicalUrl } from "../seo/canonical";
 import { breadcrumbJsonLd, organizationJsonLd } from "../seo/jsonld";
 import { getSiteUrl } from "../seo/metadata";
 import { formatPostDate, rewireBlogPostsBySlug } from "../content/rewireBlog";
+import { rewireBlogPageContent } from "../content/pages";
+import { siteConfig } from "../content/site";
 
 export function RewireBlogPostPage() {
   const params = useParams<{ slug: string }>();
@@ -15,13 +17,14 @@ export function RewireBlogPostPage() {
   }
 
   const path = `/rewire/blog/${post.slug}`;
+  const labels = siteConfig.shared.rewireArticle;
 
   return (
     <>
       <Seo
         path={path}
         meta={{
-          title: `${post.title} | Rewire Blog`,
+          title: `${post.title} | ${labels.titleSuffix}`,
           description: post.description,
           keywords: post.tags,
           ogImage: post.ogImage
@@ -39,9 +42,15 @@ export function RewireBlogPostPage() {
             url: canonicalUrl(path, getSiteUrl())
           },
           breadcrumbJsonLd([
-            { name: "Scruffyhipster", url: getSiteUrl() },
-            { name: "Rewire", url: canonicalUrl("/rewire", getSiteUrl()) },
-            { name: "Blog", url: canonicalUrl("/rewire/blog", getSiteUrl()) },
+            { name: siteConfig.companyName, url: getSiteUrl() },
+            {
+              name: rewireBlogPageContent.breadcrumbs.rewire,
+              url: canonicalUrl("/rewire", getSiteUrl())
+            },
+            {
+              name: rewireBlogPageContent.breadcrumbs.blog,
+              url: canonicalUrl("/rewire/blog", getSiteUrl())
+            },
             { name: post.title, url: canonicalUrl(path, getSiteUrl()) }
           ])
         ]}
@@ -51,7 +60,7 @@ export function RewireBlogPostPage() {
         <div className="narrow-container">
           <Reveal>
             <Link className="rewire-text-link" to={canonicalPath("/rewire/blog")}>
-              back to rewire blog
+              {labels.backLabel}
             </Link>
             <p className="eyebrow">{formatPostDate(post.publishedAt)}</p>
             <h1>{post.title}</h1>

@@ -1,0 +1,84 @@
+{
+  "id": "standing-desk-timer",
+  "order": 5,
+  "slug": "standing-desk-timer",
+  "published": true,
+  "name": "Standing Desk Timer",
+  "platformLabel": "macOS App",
+  "operatingSystem": "macOS",
+  "applicationCategory": "DesktopApplication",
+  "heroTitle": "Standing Desk Timer",
+  "tagline": "A quiet Mac menu bar timer for sit, stand, and movement habits.",
+  "shortDescription": "A macOS menu bar app for sit, stand, and movement reminders through the workday.",
+  "longDescription": "Standing Desk Timer is for people who own a sit-stand desk and still forget to use it. It keeps the current rhythm in the menu bar and gives clear prompts when it is time to switch.",
+  "appStoreUrl": "#",
+  "icon": "/assets/StandingDeskIcon-iOS-Dark-1024x1024@1x.png",
+  "iconAlt": "Standing Desk Timer icon",
+  "screenshots": [
+    {
+      "src": "/assets/standingDeskTimer/menu-bar-panel.png",
+      "alt": "Standing Desk Timer menu bar panel"
+    },
+    {
+      "src": "/assets/standingDeskTimer/onboarding-rhythm.png",
+      "alt": "Standing Desk Timer onboarding rhythm screen"
+    },
+    {
+      "src": "/assets/standingDeskTimer/onboarding-reminders.png",
+      "alt": "Standing Desk Timer reminders onboarding screen"
+    },
+    {
+      "src": "/assets/standingDeskTimer/reminder-overlay.png",
+      "alt": "Standing Desk Timer reminder overlay preview"
+    }
+  ],
+  "featureHeading": "A small rhythm for long workdays",
+  "featureIntro": "Start a posture cycle from the menu bar, get a prompt at the right time, and keep moving without adding another dashboard.",
+  "features": [
+    {
+      "title": "Menu Bar Timer",
+      "body": "Start, pause, resume, reset, and switch posture from a compact menu bar panel."
+    },
+    {
+      "title": "Configurable Intervals",
+      "body": "Choose a preset rhythm or set your own sit, stand, and movement durations."
+    },
+    {
+      "title": "Posture Reminders",
+      "body": "Use regular macOS notifications or an overlay when it is time to stand, sit, move, snooze, or wrap up."
+    },
+    {
+      "title": "Daily Totals",
+      "body": "Track today’s sitting, standing, and movement time locally."
+    }
+  ],
+  "seoApplicationSubCategory": "Standing Desk Timer",
+  "seoFeatureList": [
+    "macOS menu bar sit and stand timer",
+    "Configurable sit, stand, and movement intervals",
+    "Standing desk posture reminders",
+    "Regular notifications or full-screen reminder overlay",
+    "Optional launch at login",
+    "Local daily sitting, standing, and movement totals"
+  ],
+  "privacySummary": "Standing Desk Timer stores timer settings locally and uses limited anonymous TelemetryDeck analytics. No ads or cross-app tracking are used.",
+  "privacySlug": "standing-desk-timer",
+  "yearLabel": "2026",
+  "seo": {
+    "title": "Standing Desk Timer for macOS | Scruffyhipster",
+    "description": "Standing Desk Timer is a quiet macOS menu bar app for sit, stand, and movement reminders with local daily totals.",
+    "keywords": [
+      "standing desk timer",
+      "macOS standing desk app",
+      "sit stand timer Mac",
+      "posture reminder macOS",
+      "menu bar timer"
+    ],
+    "ogImage": "/og-default.png"
+  },
+  "accent": {
+    "from": "#7bdff2",
+    "via": "#75f0b2",
+    "to": "#f7d774"
+  }
+}

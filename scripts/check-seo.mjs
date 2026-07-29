@@ -1,15 +1,30 @@
-import { access, readFile } from "node:fs/promises";
-import { join } from "node:path";
-import { publicRoutes, siteUrl } from "./route-meta.mjs";
-import generatedGuides from "../src/generated/breastfeeding-tracker-guides.json" with { type: "json" };
+import { access, readFile, readdir } from "node:fs/promises";
+import { extname, join } from "node:path";
 
 const rootDir = new URL("../", import.meta.url).pathname;
+await import("./generate-app-content.mjs");
+const { legacyRedirects, publicRoutes, siteUrl } = await import("./route-meta.mjs");
+const cmsContent = JSON.parse(
+  await readFile(join(rootDir, "src", "generated", "cms-content.json"), "utf8")
+);
 const distDir = join(rootDir, "dist");
 const trackerBasePath = "/breastfeeding-tracker";
 const trackerRoutes = publicRoutes.filter(
   (route) => route.path === trackerBasePath || route.path.startsWith(`${trackerBasePath}/`)
 );
-const expectedTrackerRouteCount = generatedGuides.posts.length + 2;
+const expectedTrackerRouteCount = cmsContent.breastfeedingGuides.length + 2;
+const expectedPublishedRouteCount =
+  7 +
+  cmsContent.rewireArticles.length +
+  cmsContent.breastfeedingGuides.length +
+  cmsContent.apps.filter((app) => app.slug !== "breast-feeding-tracker").length +
+  cmsContent.privacyPolicies.length +
+  cmsContent.standardPages.length;
+
+assert(
+  publicRoutes.length === expectedPublishedRouteCount,
+  `Expected ${expectedPublishedRouteCount} published CMS routes, found ${publicRoutes.length}.`
+);
 
 assert(
   trackerRoutes.length === expectedTrackerRouteCount,
@@ -35,6 +50,35 @@ for (const route of publicRoutes) {
   );
   assert(/<h1[\s>]/.test(html), `${route.path} is missing an initial HTML h1.`);
   assert(sitemapUrls.includes(canonical), `${route.path} is missing from the sitemap.`);
+  if (route.ogImage) {
+    await access(join(distDir, route.ogImage.replace(/^\//, "")));
+  }
+
+  const jsonLdScripts = [
+    ...html.matchAll(
+      /<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi
+    )
+  ];
+  assert(jsonLdScripts.length > 0, `${route.path} has no structured data.`);
+  for (const [, value] of jsonLdScripts) {
+    JSON.parse(value);
+  }
+
+  const internalLinks = [...html.matchAll(/href="(\/[^"]*)"/g)].map(
+    (match) => match[1]
+  );
+  for (const href of internalLinks) {
+    const [path] = href.split(/[?#]/);
+    if (path.startsWith("/assets/")) {
+      await access(join(distDir, path.replace(/^\//, "")));
+      continue;
+    }
+    assert(
+      path === "/" || path.endsWith("/"),
+      `${route.path} links to non-canonical internal path ${href}.`
+    );
+    await access(routeOutputPath(path));
+  }
 
   for (const candidate of publicRoutes) {
     if (candidate.path === "/") {
@@ -48,6 +92,32 @@ for (const route of publicRoutes) {
       `${route.path} links to non-canonical path ${candidate.path}.`
     );
   }
+}
+
+assert(
+  legacyRedirects.length === 27,
+  `Expected 27 legacy redirects, found ${legacyRedirects.length}.`
+);
+const publicPathSet = new Set(publicRoutes.map((route) => canonicalPath(route.path)));
+for (const [from, to] of legacyRedirects) {
+  const redirectHtml = await readFile(routeOutputPath(from), "utf8");
+  const canonicalTarget = canonicalPath(to);
+  assert(
+    publicPathSet.has(canonicalTarget),
+    `Legacy redirect ${from} targets unpublished route ${to}.`
+  );
+  assert(
+    redirectHtml.includes('content="noindex,follow"'),
+    `Legacy redirect ${from} is missing noindex.`
+  );
+  assert(
+    redirectHtml.includes(`<link rel="canonical" href="${siteUrl}${canonicalTarget}"`),
+    `Legacy redirect ${from} has the wrong canonical target.`
+  );
+  assert(
+    !sitemap.includes(`${siteUrl}${canonicalPath(from)}`),
+    `Legacy redirect ${from} must not appear in the sitemap.`
+  );
 }
 
 const seenTitles = new Set();
@@ -130,6 +200,26 @@ assert(
   "Rewire lost server-rendered body HTML."
 );
 assert(rewireHtml.includes("<h1>"), "Rewire lost its initial h1.");
+
+const notFoundHtml = await readFile(join(distDir, "404.html"), "utf8");
+assert(
+  notFoundHtml.includes('content="noindex,follow"'),
+  "The 404 page is missing noindex."
+);
+assert(/<h1[\s>]/.test(notFoundHtml), "The 404 page is missing its initial h1.");
+
+const builtCssFiles = (await readdir(join(distDir, "assets"))).filter((file) =>
+  file.endsWith(".css")
+);
+const builtCss = (
+  await Promise.all(
+    builtCssFiles.map((file) => readFile(join(distDir, "assets", file), "utf8"))
+  )
+).join("\n");
+assert(
+  builtCss.includes("@media (prefers-reduced-motion: reduce)"),
+  "The production CSS is missing reduced-motion handling."
+);
 
 await access(join(distDir, "assets", "breastfeeding-tracker-og.png"));
 
@@ -262,19 +352,26 @@ assert(
 );
 
 console.log(
-  `SEO checks passed for all ${publicRoutes.length} public routes, ${trackerRoutes.length} tracker routes, the legacy redirect, and Rewire prerendering.`
+  `SEO and CMS checks passed for ${publicRoutes.length} public routes, ${trackerRoutes.length} tracker routes, ${legacyRedirects.length} legacy redirects, assets, links, and structured data.`
 );
 
 function routeOutputPath(path) {
   if (path === "/") {
     return join(distDir, "index.html");
   }
-  return join(distDir, path.replace(/^\//, ""), "index.html");
+  const relativePath = path.replace(/^\//, "");
+  return extname(relativePath)
+    ? join(distDir, relativePath)
+    : join(distDir, relativePath, "index.html");
 }
 
 function canonicalUrl(path) {
   const canonicalPath = path === "/" ? "" : `${path.replace(/\/+$/, "")}/`;
   return `${siteUrl}${canonicalPath}`;
+}
+
+function canonicalPath(path) {
+  return path === "/" ? "/" : `${path.replace(/\/+$/, "")}/`;
 }
 
 function escapeRegExp(value) {

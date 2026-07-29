@@ -1,0 +1,88 @@
+{
+  "id": "wren",
+  "order": 1,
+  "slug": "wren",
+  "published": true,
+  "name": "Wren",
+  "heroTitle": "Wren: Workout Recovery Engine",
+  "tagline": "A clear round timer for training days that need rhythm, not clutter.",
+  "shortDescription": "A native iOS round timer for boxing, MMA, and grappling, with clear presets and audio cues.",
+  "longDescription": "Wren focuses on training flow: warm-up, rounds, rest, and cooldown. It is a dependable round timer first, with recovery features planned carefully rather than rushed in.",
+  "appStoreUrl": "https://apps.apple.com/gb/app/wren-boxing-mma-round-timer/id6741780168",
+  "icon": "/assets/WrenLogo-iOS-Dark-1024x1024@1x.png",
+  "iconAlt": "Wren icon",
+  "screenshots": [
+    {
+      "src": "/assets/wrenScreeshots/iPhone Screenshots 🇬🇧 03:10:25.001.jpeg",
+      "alt": "Wren round timer screen 1"
+    },
+    {
+      "src": "/assets/wrenScreeshots/iPhone Screenshots 🇬🇧 03:10:25.002.jpeg",
+      "alt": "Wren round timer screen 2"
+    },
+    {
+      "src": "/assets/wrenScreeshots/iPhone Screenshots 🇬🇧 03:10:25.003.jpeg",
+      "alt": "Wren round timer screen 3"
+    },
+    {
+      "src": "/assets/wrenScreeshots/iPhone Screenshots 🇬🇧 03:10:25.004.jpeg",
+      "alt": "Wren round timer screen 4"
+    },
+    {
+      "src": "/assets/wrenScreeshots/iPhone Screenshots 🇬🇧 03:10:25.005.jpeg",
+      "alt": "Wren round timer screen 5"
+    },
+    {
+      "src": "/assets/wrenScreeshots/iPhone Screenshots 🇬🇧 03:10:25.006.jpeg",
+      "alt": "Wren round timer screen 6"
+    }
+  ],
+  "featureHeading": "Training rhythm without extra noise",
+  "featureIntro": "Set the shape of the session, put the phone down, and let the timer do its job.",
+  "features": [
+    {
+      "title": "Round Timer",
+      "body": "Warm-up, rounds, rest, and cooldown with a large countdown made for quick glances."
+    },
+    {
+      "title": "Discipline Presets",
+      "body": "Profiles for MMA, boxing, and grappling with configurable rounds, rest, and warnings."
+    },
+    {
+      "title": "Audio Cues",
+      "body": "Start, end, and warning sounds that are easy to understand mid-session."
+    },
+    {
+      "title": "Session Logs",
+      "body": "Optional local logs for people who want a simple record of training."
+    }
+  ],
+  "structuredData": {
+    "description": "A native iOS round timer for boxing, MMA, and grappling, with clear presets and audio cues.",
+    "featureList": [
+      "Round timer for warm-up, rounds, rest, and cooldown",
+      "MMA, boxing, and grappling presets",
+      "Clear training audio cues",
+      "Optional local session logs"
+    ]
+  },
+  "privacySummary": "Wren's MVP stores optional session logs locally. Future HealthKit features will require explicit permission.",
+  "privacySlug": "wren",
+  "yearLabel": "2026",
+  "seo": {
+    "title": "Wren Workout Recovery Engine | MMA & Boxing Round Timer",
+    "description": "Wren is a native iOS round timer for MMA, boxing, and grappling with clear presets and reliable audio cues.",
+    "keywords": [
+      "MMA timer app",
+      "boxing round timer",
+      "grappling timer iPhone",
+      "Wren app"
+    ],
+    "ogImage": "/og-default.png"
+  },
+  "accent": {
+    "from": "#9cf28d",
+    "via": "#67d4b6",
+    "to": "#7fd1ff"
+  }
+}

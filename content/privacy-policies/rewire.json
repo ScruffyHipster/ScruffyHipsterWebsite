@@ -1,0 +1,14 @@
+{
+  "slug": "rewire",
+  "order": 0,
+  "published": true,
+  "appName": "Rewire",
+  "title": "Rewire Privacy Policy",
+  "lastUpdated": "January 2026",
+  "htmlContent": "\n      <p><strong>Rewire</strong> is designed with privacy as a core principle. This policy explains what data is (and is not) collected when you use the app.</p>\n      <h2>Data Processing</h2>\n      <p>Rewire does not require an account and does not collect personal information such as your name, email address, location, contacts, or identifiers.</p>\n      <p>All focus sessions, app blocking rules, and usage decisions are processed on-device using Apple’s Screen Time APIs. This data is not transmitted to external servers.</p>\n      <h2>Analytics and Tracking</h2>\n      <p>Rewire collects limited, anonymous usage analytics to understand how the app is used and to improve reliability and performance.</p>\n      <p>This data may include high-level information such as feature usage counts, session starts or ends, and app version. No data is used for advertising, profiling, or cross-app tracking.</p>\n      <p>Rewire does not track users across apps or websites and does not use advertising identifiers.</p>\n      <h2>Children’s Privacy</h2>\n      <p>Rewire is not directed at children under the age of 13. The app does not knowingly collect personal information from children.</p>\n      <p>If you believe that personal data has been provided by a child in error, please contact us and we will take appropriate steps to remove it.</p>\n      <h2>Contact</h2>\n      <p>If you have any questions, contact <a href=\"mailto:support@scruffyhipster.com\">support@scruffyhipster.com</a>.</p>\n      <p>© 2026 Scruffy Hipster Ltd. All rights reserved.</p>\n    ",
+  "seo": {
+    "title": "Rewire Privacy Policy | Scruffyhipster",
+    "description": "Read the privacy policy for Rewire by Scruffyhipster.",
+    "ogImage": "/og-default.png"
+  }
+}

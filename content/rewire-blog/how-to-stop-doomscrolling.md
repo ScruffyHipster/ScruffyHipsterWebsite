@@ -5,7 +5,7 @@ publishedAt: "2026-07-10"
 updatedAt: ""
 excerpt: "A practical way to reduce doomscrolling by interrupting the habit before the feed opens."
 tags: "doomscrolling, reduce screen time, app blocker"
-draft: false
+published: true
 ogImage: "/assets/rewire/app-store/rewire-icon.jpg"
 ---
 

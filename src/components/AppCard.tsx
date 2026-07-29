@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import type { AppConfig } from "../content/types";
 import { appRoutePath } from "../content/routes";
+import { siteConfig } from "../content/site";
 
 type AppCardProps = {
   app: AppConfig;
@@ -21,13 +22,13 @@ export function AppCard({ app }: AppCardProps) {
       }
     >
       <div className="app-card-icon-wrap">
-        <img className="app-card-icon" src={app.icon} alt={`${app.name} icon`} loading="lazy" />
+        <img className="app-card-icon" src={app.icon} alt={app.iconAlt} loading="lazy" />
       </div>
       <div>
         <h3>{app.name}</h3>
         <p>{app.shortDescription}</p>
       </div>
-      <span className="app-card-link">View app page</span>
+      <span className="app-card-link">{siteConfig.shared.appCardCta}</span>
     </Link>
   );
 }

@@ -1,0 +1,14 @@
+{
+  "slug": "wren",
+  "order": 1,
+  "published": true,
+  "appName": "Wren",
+  "title": "Wren Privacy Policy",
+  "lastUpdated": "January 27, 2026",
+  "htmlContent": "\n      <p><strong>Wren</strong> is designed with privacy as a core principle. This policy explains what data is (and is not) collected when you use the app.</p>\n      <h2>Data We Collect</h2>\n      <p>Wren’s current MVP does not collect HealthKit data. Optional session logs (date, type, duration) are stored locally on your device if you enable them.</p>\n      <h2>How We Use Data</h2>\n      <p>Local session logs are used to display your own history and trends. We do not use your data for advertising or sell it to third parties.</p>\n      <h2>Advertising</h2>\n      <p>Wren displays ads via Google AdMob. Ad services may collect device identifiers, approximate location, and ad interaction data to deliver and measure ads. We do not receive or store this data directly.</p>\n      <p>Learn more about Google’s advertising policies and controls at <a href=\"https://policies.google.com/technologies/ads\" target=\"_blank\" rel=\"noopener noreferrer\">policies.google.com/technologies/ads</a>.</p>\n      <h2>Sharing and Storage</h2>\n      <p>We do not transmit personal data from the MVP to our servers. Data stays on-device unless you choose to share it.</p>\n      <h2>Future HealthKit Features</h2>\n      <p>If HealthKit features are introduced, Wren will ask for explicit permission, explain the purpose, and aim to keep processing on-device.</p>\n      <h2>Your Choices</h2>\n      <p>You can disable optional logging at any time in the app. Deleting the app removes locally stored data.</p>\n      <h2>Contact</h2>\n      <p>If you have any questions, contact <a href=\"mailto:hello@scruffyhipster.com\">hello@scruffyhipster.com</a>.</p>\n      <p>© 2026 Scruffy Hipster Ltd. All rights reserved.</p>\n    ",
+  "seo": {
+    "title": "Wren Privacy Policy | Scruffyhipster",
+    "description": "Read the privacy policy for Wren by Scruffyhipster.",
+    "ogImage": "/og-default.png"
+  }
+}

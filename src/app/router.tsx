@@ -12,6 +12,7 @@ import { RewireBlogPostPage } from "../pages/RewireBlogPostPage";
 import { BreastfeedingTrackerLandingPage } from "../pages/BreastfeedingTrackerLandingPage";
 import { BreastfeedingTrackerGuidesPage } from "../pages/BreastfeedingTrackerGuidesPage";
 import { BreastfeedingTrackerGuidePage } from "../pages/BreastfeedingTrackerGuidePage";
+import { StandardPage } from "../pages/StandardPage";
 import {
   BREASTFEEDING_TRACKER_BASE_PATH,
   BREASTFEEDING_TRACKER_GUIDES_BASE_PATH,
@@ -56,6 +57,7 @@ export function AppRoutes() {
         <Route path="apps/:slug" element={<AppDetailPage />} />
         <Route path="privacy/:slug" element={<PrivacyPolicyPage />} />
         <Route path="index.html" element={<Navigate to="/" replace />} />
+        <Route path=":slug" element={<StandardPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

@@ -1,0 +1,1592 @@
+media:
+  - name: assets
+    label: Existing assets
+    input: public/assets
+    output: /assets
+    rename: false
+    categories: [image, document, compressed]
+  - name: uploads
+    label: New uploads
+    input: public/assets/uploads
+    output: /assets/uploads
+    rename: safe
+    categories: [image, document]
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: user
+    templates:
+      create: "content: create {path}"
+      update: "content: update {path}"
+      delete: "content: delete {path}"
+      rename: "content: rename {oldPath} to {newPath}"
+
+components:
+  seo:
+    type: object
+    label: SEO and social sharing
+    fields:
+      - name: title
+        label: Page title
+        type: string
+        required: true
+      - name: description
+        label: Meta description
+        type: text
+        required: true
+      - name: keywords
+        label: Keywords
+        type: string
+        list: true
+      - name: ogImage
+        label: Social image
+        type: image
+        options:
+          media: uploads
+      - name: ogImageAlt
+        label: Social image alt text
+        type: string
+      - name: robots
+        label: Robots directive
+        type: string
+
+  cta:
+    type: object
+    label: Button
+    fields:
+      - name: label
+        type: string
+        required: true
+      - name: url
+        type: string
+        required: true
+        description: Use a trailing slash for internal links.
+
+  link:
+    type: object
+    label: Link
+    fields:
+      - name: label
+        type: string
+        required: true
+      - name: url
+        type: string
+        required: true
+        description: Use a trailing slash for internal links.
+      - name: style
+        type: select
+        options:
+          values:
+            - name: primary
+              label: Primary button
+            - name: secondary
+              label: Secondary button
+
+  image:
+    type: object
+    label: Image
+    fields:
+      - name: src
+        label: Image
+        type: image
+        required: true
+        options:
+          media: uploads
+      - name: alt
+        label: Alt text
+        type: string
+        required: true
+      - name: caption
+        type: text
+
+  screenshot:
+    type: object
+    label: Screenshot
+    fields:
+      - name: src
+        label: Image
+        type: image
+        required: true
+        options:
+          media: assets
+      - name: alt
+        label: Alt text
+        type: string
+        required: true
+
+  feature:
+    type: object
+    label: Feature
+    fields:
+      - name: title
+        type: string
+        required: true
+      - name: body
+        type: text
+        required: true
+
+  faq:
+    type: object
+    label: FAQ
+    fields:
+      - name: question
+        type: string
+        required: true
+      - name: answer
+        type: text
+        required: true
+
+  standard_hero:
+    type: object
+    label: Hero
+    fields:
+      - name: eyebrow
+        type: string
+      - name: heading
+        type: string
+        required: true
+      - name: body
+        type: text
+      - name: links
+        component: link
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+
+  standard_rich_text:
+    type: object
+    label: Rich text
+    fields:
+      - name: heading
+        type: string
+      - name: body
+        type: rich-text
+        required: true
+        options:
+          format: html
+          media: uploads
+
+  standard_gallery:
+    type: object
+    label: Gallery
+    fields:
+      - name: heading
+        type: string
+      - name: images
+        component: image
+        list:
+          min: 1
+          collapsible:
+            collapsed: true
+            summary: "{alt}"
+
+  standard_features:
+    type: object
+    label: Feature list
+    fields:
+      - name: eyebrow
+        type: string
+      - name: heading
+        type: string
+      - name: body
+        type: text
+      - name: features
+        component: feature
+        list:
+          min: 1
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+
+  standard_cta:
+    type: object
+    label: Call to action
+    fields:
+      - name: eyebrow
+        type: string
+      - name: heading
+        type: string
+        required: true
+      - name: body
+        type: text
+      - name: links
+        component: link
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+
+  standard_faq:
+    type: object
+    label: FAQ list
+    fields:
+      - name: eyebrow
+        type: string
+      - name: heading
+        type: string
+      - name: items
+        component: faq
+        list:
+          min: 1
+          collapsible:
+            collapsed: true
+            summary: "{question}"
+
+content:
+  - name: global
+    label: Global
+    type: group
+    items:
+      - name: site
+        label: Branding, navigation and footer
+        type: file
+        path: content/cms/site.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: companyName
+            type: string
+            required: true
+          - name: legalName
+            type: string
+            required: true
+          - name: domain
+            type: string
+            required: true
+            readonly: true
+          - name: supportEmail
+            type: string
+            required: true
+          - name: helloEmail
+            type: string
+            required: true
+          - name: defaultOgImage
+            type: image
+            required: true
+            options:
+              media: assets
+          - name: tagline
+            type: string
+            required: true
+          - name: description
+            type: text
+            required: true
+          - name: websiteDescription
+            type: text
+            required: true
+          - name: branding
+            type: object
+            fields:
+              - name: name
+                type: string
+                required: true
+              - name: logo
+                type: image
+                required: true
+                options:
+                  media: assets
+              - name: logoAlt
+                type: string
+                required: true
+          - name: navigation
+            type: object
+            fields:
+              - name: ariaLabel
+                type: string
+                required: true
+              - name: items
+                type: object
+                list:
+                  min: 1
+                  collapsible:
+                    collapsed: true
+                    summary: "{label}"
+                fields:
+                  - name: label
+                    type: string
+                    required: true
+                  - name: path
+                    type: string
+                    required: true
+                    description: Base route; the site adds the canonical trailing slash.
+          - name: footer
+            type: object
+            fields:
+              - name: studioHeading
+                type: string
+                required: true
+              - name: studioDescription
+                type: text
+                required: true
+              - name: appsHeading
+                type: string
+                required: true
+              - name: showcaseLabel
+                type: string
+                required: true
+              - name: privacyHeading
+                type: string
+                required: true
+          - name: shared
+            type: object
+            fields:
+              - name: appCardCta
+                type: string
+                required: true
+              - name: screenshotHeading
+                type: string
+                required: true
+              - name: appDetail
+                type: object
+                fields:
+                  - name: defaultPlatformLabel
+                    type: string
+                    required: true
+                  - name: storeComingSoon
+                    type: string
+                    required: true
+                  - name: viewOnStore
+                    type: string
+                    required: true
+                  - name: seeFeatures
+                    type: string
+                    required: true
+                  - name: readPrivacy
+                    type: string
+                    required: true
+                  - name: privacyComingSoon
+                    type: string
+                    required: true
+                  - name: featuresEyebrow
+                    type: string
+                    required: true
+                  - name: detailEyebrow
+                    type: string
+                    required: true
+                  - name: faqEyebrow
+                    type: string
+                    required: true
+                  - name: faqHeading
+                    type: string
+                    required: true
+                  - name: whyEyebrow
+                    type: string
+                    required: true
+                  - name: whyHeading
+                    type: string
+                    required: true
+                  - name: moreAppsEyebrow
+                    type: string
+                    required: true
+                  - name: moreAppsHeading
+                    type: string
+                    required: true
+              - name: privacyPolicy
+                type: object
+                fields:
+                  - name: eyebrow
+                    type: string
+                    required: true
+                  - name: breadcrumbLabel
+                    type: string
+                    required: true
+                  - name: lastUpdatedLabel
+                    type: string
+                    required: true
+              - name: rewireArticle
+                type: object
+                fields:
+                  - name: backLabel
+                    type: string
+                    required: true
+                  - name: titleSuffix
+                    type: string
+                    required: true
+              - name: markdown
+                type: object
+                fields:
+                  - name: scrollableTableAriaLabel
+                    type: string
+                    required: true
+          - name: defaultSeo
+            component: seo
+          - name: socialLinks
+            component: link
+            list: true
+
+  - name: fixed_pages
+    label: Fixed pages
+    type: group
+    items:
+      - name: home
+        label: Homepage
+        type: file
+        path: content/pages/home.json
+        format: json
+        operations: &fixed_operations
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: published
+            type: boolean
+            readonly: true
+          - name: route
+            type: string
+            readonly: true
+          - name: seo
+            component: seo
+          - name: hero
+            type: object
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: paragraphs
+                type: text
+                list:
+                  min: 1
+              - name: cta
+                component: cta
+
+      - name: apps_page
+        label: Apps index
+        type: file
+        path: content/pages/apps.json
+        format: json
+        operations: *fixed_operations
+        fields:
+          - name: published
+            type: boolean
+            readonly: true
+          - name: route
+            type: string
+            readonly: true
+          - name: seo
+            component: seo
+          - name: hero
+            type: object
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+              - name: body
+                type: text
+                required: true
+          - name: groups
+            type: object
+            list:
+              min: 1
+              collapsible:
+                collapsed: true
+                summary: "{label}"
+            fields:
+              - name: label
+                type: string
+                required: true
+              - name: appIds
+                type: string
+                list:
+                  min: 1
+
+      - name: about
+        label: About
+        type: file
+        path: content/pages/about.json
+        format: json
+        operations: *fixed_operations
+        fields:
+          - name: published
+            type: boolean
+            readonly: true
+          - name: route
+            type: string
+            readonly: true
+          - name: seo
+            component: seo
+          - name: intro
+            type: object
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+              - name: paragraphs
+                type: text
+                list:
+                  min: 1
+              - name: features
+                type: string
+                list:
+                  min: 1
+          - name: principles
+            type: object
+            list:
+              min: 1
+              collapsible:
+                collapsed: true
+                summary: "{heading}"
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+              - name: body
+                type: text
+                required: true
+          - name: contact
+            type: object
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+              - name: body
+                type: text
+                required: true
+              - name: nameLabel
+                type: string
+                required: true
+              - name: emailLabel
+                type: string
+                required: true
+              - name: messageLabel
+                type: string
+                required: true
+              - name: buttonLabel
+                type: string
+                required: true
+
+      - name: not_found
+        label: 404 page
+        type: file
+        path: content/pages/not-found.json
+        format: json
+        operations: *fixed_operations
+        fields:
+          - name: published
+            type: boolean
+            readonly: true
+          - name: route
+            type: string
+            readonly: true
+          - name: seo
+            component: seo
+          - name: eyebrow
+            type: string
+            required: true
+          - name: heading
+            type: string
+            required: true
+          - name: body
+            type: text
+            required: true
+          - name: primaryCta
+            component: cta
+          - name: secondaryCta
+            component: cta
+
+      - name: rewire_blog_index
+        label: Rewire blog index
+        type: file
+        path: content/pages/rewire-blog.json
+        format: json
+        operations: *fixed_operations
+        fields:
+          - name: published
+            type: boolean
+            readonly: true
+          - name: route
+            type: string
+            readonly: true
+          - name: seo
+            component: seo
+          - name: hero
+            type: object
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+              - name: body
+                type: text
+                required: true
+          - name: breadcrumbs
+            type: object
+            fields:
+              - name: rewire
+                type: string
+                required: true
+              - name: blog
+                type: string
+                required: true
+          - name: emptyLabel
+            type: string
+            required: true
+
+      - name: breastfeeding_guides_index
+        label: Breastfeeding guide index
+        type: file
+        path: content/pages/breastfeeding-guides.json
+        format: json
+        operations: *fixed_operations
+        fields:
+          - name: published
+            type: boolean
+            readonly: true
+          - name: route
+            type: string
+            readonly: true
+          - name: seo
+            component: seo
+          - name: collection
+            type: object
+            fields:
+              - name: name
+                type: string
+                required: true
+              - name: description
+                type: text
+                required: true
+          - name: breadcrumbs
+            type: object
+            fields:
+              - name: tracker
+                type: string
+                required: true
+              - name: guides
+                type: string
+                required: true
+          - name: hero
+            type: object
+            fields:
+              - name: backLabel
+                type: string
+                required: true
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+              - name: body
+                type: text
+                required: true
+
+  - name: apps
+    label: Apps
+    type: collection
+    path: content/apps
+    format: json
+    filename:
+      template: "{fields.slug}.json"
+      field: false
+    operations:
+      create: false
+      rename: false
+      delete: false
+    view:
+      fields: [name, published, slug]
+      primary: name
+      sort: [order, name]
+    fields:
+      - name: id
+        type: string
+        required: true
+        readonly: true
+      - name: order
+        type: number
+        required: true
+      - name: slug
+        type: string
+        required: true
+        readonly: true
+      - name: published
+        type: boolean
+        required: true
+      - name: name
+        type: string
+        required: true
+      - name: platformLabel
+        type: string
+      - name: operatingSystem
+        type: string
+      - name: applicationCategory
+        type: string
+      - name: heroTitle
+        type: string
+        required: true
+      - name: tagline
+        type: text
+        required: true
+      - name: shortDescription
+        type: text
+        required: true
+      - name: longDescription
+        type: text
+        required: true
+      - name: appStoreUrl
+        type: string
+        required: true
+      - name: pressKit
+        type: object
+        fields:
+          - name: url
+            type: file
+            options:
+              media: assets
+          - name: label
+            type: string
+          - name: description
+            type: text
+      - name: icon
+        type: image
+        required: true
+        options:
+          media: assets
+      - name: iconAlt
+        type: string
+        required: true
+      - name: screenshots
+        component: screenshot
+        list:
+          min: 1
+          collapsible:
+            collapsed: true
+            summary: "{alt}"
+      - name: featureHeading
+        type: string
+        required: true
+      - name: featureIntro
+        type: text
+        required: true
+      - name: features
+        component: feature
+        list:
+          min: 1
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+      - name: seoApplicationSubCategory
+        type: string
+      - name: seoFeatureList
+        type: string
+        list: true
+      - name: structuredData
+        type: object
+        fields:
+          - name: description
+            type: text
+            required: true
+          - name: applicationSubCategory
+            type: string
+          - name: featureList
+            type: string
+            list: true
+      - name: seoContent
+        type: object
+        fields:
+          - name: eyebrow
+            type: string
+          - name: heading
+            type: string
+            required: true
+          - name: paragraphs
+            type: text
+            list: true
+      - name: faqHeading
+        type: string
+      - name: faqIntro
+        type: text
+      - name: faqs
+        component: faq
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{question}"
+      - name: privacySummary
+        type: text
+        required: true
+      - name: privacySlug
+        type: string
+      - name: yearLabel
+        type: string
+        required: true
+      - name: seo
+        component: seo
+      - name: accent
+        type: object
+        fields:
+          - name: from
+            type: string
+            required: true
+          - name: via
+            type: string
+            required: true
+          - name: to
+            type: string
+            required: true
+
+  - name: privacy_policies
+    label: Privacy policies
+    type: collection
+    path: content/privacy-policies
+    format: json
+    filename:
+      template: "{fields.slug}.json"
+      field: false
+    operations:
+      create: false
+      rename: false
+      delete: false
+    view:
+      fields: [appName, published, lastUpdated]
+      primary: appName
+      sort: [order, appName]
+    fields:
+      - name: slug
+        type: string
+        required: true
+        readonly: true
+      - name: order
+        type: number
+        required: true
+      - name: published
+        type: boolean
+        required: true
+      - name: appName
+        type: string
+        required: true
+      - name: title
+        type: string
+        required: true
+      - name: lastUpdated
+        type: string
+        required: true
+      - name: htmlContent
+        label: Policy body
+        type: rich-text
+        required: true
+        options:
+          format: html
+          media: uploads
+      - name: seo
+        component: seo
+
+  - name: rewire
+    label: Rewire
+    type: group
+    items:
+      - name: rewire_landing
+        label: Landing page
+        type: file
+        path: content/rewire/landing.json
+        format: json
+        operations: *fixed_operations
+        fields:
+          - name: published
+            type: boolean
+            readonly: true
+          - name: route
+            type: string
+            readonly: true
+          - name: seo
+            component: seo
+          - name: softwareApplication
+            type: object
+            fields:
+              - name: name
+                type: string
+                required: true
+              - name: applicationCategory
+                type: string
+                required: true
+              - name: applicationSubCategory
+                type: string
+                required: true
+              - name: description
+                type: text
+                required: true
+              - name: featureList
+                type: string
+                list:
+                  min: 1
+              - name: offer
+                type: object
+                fields:
+                  - name: price
+                    type: string
+                    required: true
+                  - name: priceCurrency
+                    type: string
+                    required: true
+          - name: ratingLabels
+            type: object
+            fields:
+              - name: ariaPrefix
+                type: string
+                required: true
+              - name: fromLabel
+                type: string
+                required: true
+              - name: unavailableRating
+                type: string
+                required: true
+              - name: ratingSuffix
+                type: string
+                required: true
+              - name: unavailableCount
+                type: string
+                required: true
+              - name: singularCount
+                type: string
+                required: true
+              - name: pluralCount
+                type: string
+                required: true
+          - name: hero
+            type: object
+            fields:
+              - name: iconAlt
+                type: string
+                required: true
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+              - name: body
+                type: text
+                required: true
+              - name: primaryCta
+                type: string
+                required: true
+              - name: secondaryCta
+                type: string
+                required: true
+              - name: screenshotsAriaLabel
+                type: string
+                required: true
+          - name: download
+            type: object
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+              - name: purchaseSuffix
+                type: string
+                required: true
+              - name: requiresLabel
+                type: string
+                required: true
+              - name: listedInLabel
+                type: string
+                required: true
+              - name: categoryJoiner
+                type: string
+                required: true
+              - name: body
+                type: text
+                required: true
+              - name: cta
+                type: string
+                required: true
+          - name: screenshotsSection
+            type: object
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+              - name: body
+                type: text
+                required: true
+          - name: howItWorks
+            type: object
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+          - name: proof
+            type: object
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+              - name: items
+                type: string
+                list:
+                  min: 1
+          - name: guidesSection
+            type: object
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+          - name: faqSection
+            type: object
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+              - name: linkLabel
+                type: string
+                required: true
+          - name: finalCta
+            type: object
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+              - name: primaryLabel
+                type: string
+                required: true
+              - name: secondaryLabel
+                type: string
+                required: true
+          - name: linkFooter
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{heading}"
+            fields:
+              - name: heading
+                type: string
+                required: true
+              - name: links
+                component: cta
+                list:
+                  min: 1
+                  collapsible:
+                    collapsed: true
+                    summary: "{label}"
+          - name: appStoreFacts
+            type: object
+            fields:
+              - name: appStoreUrl
+                type: string
+                required: true
+              - name: appId
+                type: string
+                required: true
+              - name: bundleId
+                type: string
+                required: true
+              - name: title
+                type: string
+                required: true
+              - name: subtitle
+                type: string
+              - name: developer
+                type: string
+              - name: categories
+                type: string
+                list: true
+              - name: price
+                type: string
+                required: true
+              - name: hasInAppPurchases
+                type: boolean
+              - name: version
+                type: string
+              - name: releaseDate
+                type: date
+              - name: currentVersionReleaseDate
+                type: date
+              - name: rating
+                type: number
+              - name: ratingCount
+                type: number
+              - name: minimumOsVersion
+                type: string
+                required: true
+              - name: contentRating
+                type: string
+              - name: privacyPolicyUrl
+                type: string
+              - name: appStorePrivacyPolicyUrl
+                type: string
+              - name: eulaUrl
+                type: string
+                required: true
+              - name: releaseNotes
+                type: text
+              - name: assetBasePath
+                type: string
+          - name: screenshots
+            component: screenshot
+            list:
+              min: 1
+              collapsible:
+                collapsed: true
+                summary: "{alt}"
+          - name: showcaseSections
+            type: object
+            list:
+              min: 1
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: title
+                type: string
+                required: true
+              - name: body
+                type: text
+                required: true
+              - name: image
+                component: screenshot
+          - name: guidePages
+            type: object
+            list:
+              min: 1
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            fields:
+              - name: slug
+                type: string
+                required: true
+              - name: title
+                type: string
+                required: true
+              - name: description
+                type: text
+                required: true
+              - name: keyword
+                type: string
+                required: true
+          - name: faqs
+            type: object
+            list:
+              min: 1
+              collapsible:
+                collapsed: true
+                summary: "{question}"
+            fields:
+              - name: question
+                type: string
+                required: true
+              - name: answer
+                type: text
+                required: true
+              - name: guideSlug
+                type: string
+                required: true
+
+      - name: rewire_articles
+        label: Articles
+        type: collection
+        path: content/rewire-blog
+        format: yaml-frontmatter
+        filename: &article_filename
+          template: "{primary}.md"
+          field: create
+        operations: &article_operations
+          create: true
+          rename: false
+          delete: false
+        view:
+          fields: [title, published, publishedAt]
+          primary: title
+          sort: [publishedAt, title]
+          search: [title, description, tags]
+          default:
+            sort: publishedAt
+            order: desc
+        fields: &article_fields
+          - name: title
+            type: string
+            required: true
+          - name: metaTitle
+            type: string
+          - name: description
+            type: text
+            required: true
+          - name: publishedAt
+            type: date
+            required: true
+          - name: updatedAt
+            type: date
+          - name: excerpt
+            type: text
+          - name: tags
+            type: string
+            description: Comma-separated keywords.
+          - name: published
+            type: boolean
+            required: true
+          - name: ogImage
+            type: image
+            required: true
+            options:
+              media: uploads
+          - name: ogImageAlt
+            type: string
+          - name: showDefaultCta
+            type: boolean
+          - name: body
+            type: rich-text
+            required: true
+            options:
+              format: markdown
+              media: uploads
+
+  - name: breastfeeding
+    label: Breastfeeding Tracker
+    type: group
+    items:
+      - name: breastfeeding_landing
+        label: Landing page
+        type: file
+        path: content/breastfeeding-tracker/landing.json
+        format: json
+        operations: *fixed_operations
+        fields:
+          - name: published
+            type: boolean
+            readonly: true
+          - name: route
+            type: string
+            readonly: true
+          - name: seo
+            component: seo
+          - name: softwareApplication
+            type: object
+            fields:
+              - name: name
+                type: string
+                required: true
+              - name: applicationCategory
+                type: string
+                required: true
+              - name: applicationSubCategory
+                type: string
+                required: true
+              - name: operatingSystem
+                type: string
+                required: true
+              - name: description
+                type: text
+                required: true
+              - name: featureList
+                type: string
+                list:
+                  min: 1
+              - name: offer
+                type: object
+                fields:
+                  - name: price
+                    type: string
+                    required: true
+                  - name: priceCurrency
+                    type: string
+                    required: true
+          - name: hero
+            type: object
+            fields:
+              - name: iconAlt
+                type: string
+                required: true
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+              - name: body
+                type: text
+                required: true
+              - name: primaryCta
+                type: string
+                required: true
+              - name: secondaryCta
+                type: string
+                required: true
+              - name: storeNote
+                type: string
+                required: true
+              - name: imageAlt
+                type: string
+                required: true
+          - name: proof
+            type: object
+            fields:
+              - name: ariaLabel
+                type: string
+                required: true
+              - name: items
+                type: object
+                list:
+                  min: 1
+                  collapsible:
+                    collapsed: true
+                    summary: "{heading}"
+                fields:
+                  - name: heading
+                    type: string
+                    required: true
+                  - name: body
+                    type: text
+                    required: true
+          - name: howItWorks
+            type: object
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+              - name: steps
+                type: object
+                list:
+                  min: 1
+                  collapsible:
+                    collapsed: true
+                    summary: "{step} {title}"
+                fields:
+                  - name: step
+                    type: string
+                    required: true
+                  - name: title
+                    type: string
+                    required: true
+                  - name: body
+                    type: text
+                    required: true
+          - name: watchFeature
+            type: object
+            fields: &tracker_feature_fields
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+              - name: paragraphs
+                type: text
+                list:
+                  min: 1
+              - name: link
+                component: cta
+              - name: cta
+                type: string
+              - name: imageAlts
+                type: string
+                list:
+                  min: 1
+          - name: historyFeature
+            type: object
+            fields: *tracker_feature_fields
+          - name: privacy
+            type: object
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+              - name: body
+                type: text
+                required: true
+              - name: links
+                component: cta
+                list:
+                  min: 1
+                  collapsible:
+                    collapsed: true
+                    summary: "{label}"
+          - name: guidesSection
+            type: object
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+              - name: body
+                type: text
+                required: true
+              - name: browseLabel
+                type: string
+                required: true
+          - name: faqSection
+            type: object
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+          - name: finalCta
+            type: object
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+              - name: label
+                type: string
+                required: true
+          - name: guideTemplate
+            type: object
+            fields:
+              - name: backLabel
+                type: string
+                required: true
+              - name: eyebrow
+                type: string
+                required: true
+              - name: defaultCta
+                type: object
+                fields:
+                  - name: eyebrow
+                    type: string
+                    required: true
+                  - name: heading
+                    type: string
+                    required: true
+                  - name: label
+                    type: string
+                    required: true
+              - name: relatedHeading
+                type: string
+                required: true
+          - name: appStoreUrl
+            type: string
+            required: true
+          - name: ogImage
+            type: image
+            required: true
+            options:
+              media: assets
+          - name: faqs
+            component: faq
+            list:
+              min: 1
+              collapsible:
+                collapsed: true
+                summary: "{question}"
+
+      - name: breastfeeding_guides
+        label: Guides
+        type: collection
+        path: content/breastfeeding-tracker/guides
+        format: yaml-frontmatter
+        filename: *article_filename
+        operations: *article_operations
+        view:
+          fields: [title, published, publishedAt]
+          primary: title
+          sort: [publishedAt, title]
+          search: [title, description, tags]
+          default:
+            sort: publishedAt
+            order: desc
+        fields: *article_fields
+
+  - name: standard_pages
+    label: Standard pages
+    type: collection
+    path: content/standard-pages
+    format: json
+    exclude: [README.md]
+    filename:
+      template: "{fields.slug}.json"
+      field: false
+    operations:
+      create: true
+      rename: false
+      delete: false
+    view:
+      fields: [title, slug, published]
+      primary: title
+      sort: [title]
+      search: [title, slug]
+    fields:
+      - name: slug
+        type: string
+        required: true
+        pattern:
+          regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          message: Use lowercase letters, numbers, and hyphens only.
+        description: Must match the filename. It cannot change after creation.
+      - name: published
+        type: boolean
+        required: true
+      - name: title
+        type: string
+        required: true
+      - name: seo
+        component: seo
+      - name: sections
+        type: block
+        list:
+          min: 1
+          collapsible:
+            collapsed: true
+            summary: "{type}"
+        blockKey: type
+        blocks:
+          - name: hero
+            component: standard_hero
+          - name: richText
+            component: standard_rich_text
+          - name: image
+            component: image
+          - name: gallery
+            component: standard_gallery
+          - name: featureList
+            component: standard_features
+          - name: cta
+            component: standard_cta
+          - name: faq
+            component: standard_faq

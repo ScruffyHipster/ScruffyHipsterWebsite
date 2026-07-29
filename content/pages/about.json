@@ -1,0 +1,49 @@
+{
+  "published": true,
+  "route": "/about",
+  "seo": {
+    "title": "About | Scruffyhipster",
+    "description": "Scruffyhipster is an independent Apple software studio building quiet tools for focus, recovery, habits, and everyday systems.",
+    "keywords": [
+      "Scruffyhipster",
+      "indie Apple software studio",
+      "intentional computing",
+      "calm computing"
+    ],
+    "ogImage": "/og-default.png"
+  },
+  "intro": {
+    "eyebrow": "Point of view",
+    "heading": "Less noise. More agency.",
+    "paragraphs": [
+      "Scruffyhipster is an independent software studio building native apps for people who want their devices to behave a little better. The work is practical, opinionated, and deliberately small.",
+      "The goal is not to make you more productive every second. It is to make useful moments easier to protect."
+    ],
+    "features": [
+      "Native Apple apps built with Swift, SwiftUI, and system APIs where they matter.",
+      "Behaviour-first design: prompts, pauses, timers, routines, and small decisions.",
+      "No noisy growth loops, fake urgency, or attention tricks."
+    ]
+  },
+  "principles": [
+    {
+      "eyebrow": "Platform",
+      "heading": "Native where it matters",
+      "body": "The apps are built for iPhone, iPad, Apple Watch, and Mac using Apple platform conventions instead of web-shaped compromises."
+    },
+    {
+      "eyebrow": "Design",
+      "heading": "Friction on purpose",
+      "body": "Some tools should slow you down for half a second. A good pause can be more useful than another notification."
+    }
+  ],
+  "contact": {
+    "eyebrow": "Contact",
+    "heading": "Send a note.",
+    "body": "For app support, product questions, or small software conversations. Short messages are welcome.",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "buttonLabel": "email hello@scruffyhipster.com"
+  }
+}

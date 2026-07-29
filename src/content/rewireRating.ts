@@ -1,4 +1,5 @@
 import generatedRating from "../generated/rewire-app-store-rating.json";
+import { rewireContent } from "./rewire";
 
 export type RewireAppStoreRating = {
   rating: number | null;
@@ -12,14 +13,18 @@ export const rewireAppStoreRating = generatedRating as RewireAppStoreRating;
 
 export function formatRating(rating: number | null) {
   if (typeof rating !== "number") {
-    return "rated on the app store";
+    return rewireContent.ratingLabels.unavailableRating;
   }
-  return `${rating.toFixed(1)} out of 5`;
+  return `${rating.toFixed(1)} ${rewireContent.ratingLabels.ratingSuffix}`;
 }
 
 export function formatRatingCount(count: number | null) {
   if (typeof count !== "number") {
-    return "app store reviews";
+    return rewireContent.ratingLabels.unavailableCount;
   }
-  return `${new Intl.NumberFormat("en-GB").format(count)} ${count === 1 ? "rating" : "ratings"}`;
+  return `${new Intl.NumberFormat("en-GB").format(count)} ${
+    count === 1
+      ? rewireContent.ratingLabels.singularCount
+      : rewireContent.ratingLabels.pluralCount
+  }`;
 }

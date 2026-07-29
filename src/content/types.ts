@@ -24,7 +24,9 @@ export type Screenshot = {
 
 export type AppConfig = {
   id: string;
+  order: number;
   slug: string;
+  published: boolean;
   name: string;
   platformLabel?: string;
   operatingSystem?: string;
@@ -40,12 +42,18 @@ export type AppConfig = {
     description: string;
   };
   icon: string;
+  iconAlt: string;
   screenshots: Screenshot[];
   featureHeading: string;
   featureIntro: string;
   features: FeatureCard[];
   seoApplicationSubCategory?: string;
   seoFeatureList?: string[];
+  structuredData?: {
+    description: string;
+    applicationSubCategory?: string;
+    featureList: string[];
+  };
   seoContent?: {
     eyebrow?: string;
     heading: string;
@@ -67,6 +75,8 @@ export type AppConfig = {
 
 export type PrivacyPolicyConfig = {
   slug: string;
+  order: number;
+  published: boolean;
   appName: string;
   title: string;
   lastUpdated: string;

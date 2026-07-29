@@ -2,6 +2,7 @@
 title: "How to Track the Left and Right Side While Breastfeeding"
 description: "Record the left or right side with a simple breastfeeding timer and check the most recently logged side without relying on memory."
 publishedAt: "2026-07-24"
+published: true
 excerpt: "Use a clear left/right history when you want a record of the side selected for previous feeds."
 tags: "left right breastfeeding tracker, last side breastfeeding, nursing side tracker"
 ogImage: "/assets/breastfeeding-tracker-og.png"

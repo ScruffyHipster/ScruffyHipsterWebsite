@@ -1,0 +1,50 @@
+{
+  "published": true,
+  "route": "/apps",
+  "seo": {
+    "title": "Apps | Scruffyhipster",
+    "description": "Practical Apple platform apps from Scruffyhipster for focus, recovery, habits, and everyday systems.",
+    "keywords": [
+      "Scruffyhipster apps",
+      "Apple productivity apps",
+      "focus apps",
+      "behavioural tools"
+    ],
+    "ogImage": "/og-default.png"
+  },
+  "hero": {
+    "eyebrow": "Apps",
+    "heading": "Practical apps for focus, recovery, and everyday systems.",
+    "body": "Small tools with clear jobs. Built for Apple platforms. Designed to reduce noise, add useful friction, and support habits without turning life into a dashboard."
+  },
+  "groups": [
+    {
+      "label": "Focus and attention",
+      "appIds": [
+        "rewire"
+      ]
+    },
+    {
+      "label": "Recovery and rhythm",
+      "appIds": [
+        "wren",
+        "standing-desk-timer"
+      ]
+    },
+    {
+      "label": "Care and everyday systems",
+      "appIds": [
+        "surge-tracker",
+        "breast-feeding-tracker",
+        "gro-guardian"
+      ]
+    },
+    {
+      "label": "Seasonal experiments",
+      "appIds": [
+        "smarty-colours",
+        "chat-with-santa"
+      ]
+    }
+  ]
+}

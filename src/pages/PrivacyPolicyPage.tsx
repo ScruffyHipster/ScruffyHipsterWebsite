@@ -5,6 +5,7 @@ import { Reveal } from "../components/Reveal";
 import { breadcrumbJsonLd, organizationJsonLd } from "../seo/jsonld";
 import { getSiteUrl } from "../seo/metadata";
 import { canonicalUrl } from "../seo/canonical";
+import { siteConfig } from "../content/site";
 
 export function PrivacyPolicyPage() {
   const params = useParams<{ slug: string }>();
@@ -15,6 +16,7 @@ export function PrivacyPolicyPage() {
   }
 
   const path = `/privacy/${policy.slug}`;
+  const labels = siteConfig.shared.privacyPolicy;
 
   return (
     <>
@@ -24,8 +26,8 @@ export function PrivacyPolicyPage() {
         jsonLd={[
           organizationJsonLd(),
           breadcrumbJsonLd([
-            { name: "Scruffyhipster", url: getSiteUrl() },
-            { name: "Privacy", url: canonicalUrl(path, getSiteUrl()) },
+            { name: siteConfig.companyName, url: getSiteUrl() },
+            { name: labels.breadcrumbLabel, url: canonicalUrl(path, getSiteUrl()) },
             { name: policy.appName, url: canonicalUrl(path, getSiteUrl()) }
           ])
         ]}
@@ -34,10 +36,10 @@ export function PrivacyPolicyPage() {
         <div className="container narrow-container">
           <Reveal>
             <article className="policy-article">
-              <p className="eyebrow">Privacy Policy</p>
+              <p className="eyebrow">{labels.eyebrow}</p>
               <h1>{policy.appName}</h1>
               <p className="policy-updated">
-                <strong>Last updated:</strong> {policy.lastUpdated}
+                <strong>{labels.lastUpdatedLabel}</strong> {policy.lastUpdated}
               </p>
               <div
                 className="policy-content"

@@ -17,7 +17,7 @@ export const websiteJsonLd = () => ({
   "@type": "WebSite",
   name: siteConfig.companyName,
   url: siteConfig.domain,
-  description: siteConfig.description
+  description: siteConfig.websiteDescription
 });
 
 export const softwareApplicationJsonLd = (app: AppConfig, url: string) => ({

@@ -5,25 +5,27 @@ import { canonicalPath, canonicalUrl } from "../seo/canonical";
 import { breadcrumbJsonLd, organizationJsonLd } from "../seo/jsonld";
 import { getSiteUrl } from "../seo/metadata";
 import { formatPostDate, rewireBlogPosts } from "../content/rewireBlog";
+import { rewireBlogPageContent } from "../content/pages";
+import { siteConfig } from "../content/site";
 
 export function RewireBlogIndexPage() {
   return (
     <>
       <Seo
-        path="/rewire/blog"
-        meta={{
-          title: "Rewire Blog | Scruffyhipster",
-          description:
-            "Notes from Rewire about focus, app blocking, intentional friction, Screen Time, and building calmer phone habits.",
-          keywords: ["Rewire blog", "focus blog", "app blocker", "screen time", "intentional phone use"],
-          ogImage: "/assets/rewire/app-store/rewire-icon.jpg"
-        }}
+        path={rewireBlogPageContent.route}
+        meta={rewireBlogPageContent.seo}
         jsonLd={[
           organizationJsonLd(),
           breadcrumbJsonLd([
-            { name: "Scruffyhipster", url: getSiteUrl() },
-            { name: "Rewire", url: canonicalUrl("/rewire", getSiteUrl()) },
-            { name: "Blog", url: canonicalUrl("/rewire/blog", getSiteUrl()) }
+            { name: siteConfig.companyName, url: getSiteUrl() },
+            {
+              name: rewireBlogPageContent.breadcrumbs.rewire,
+              url: canonicalUrl("/rewire", getSiteUrl())
+            },
+            {
+              name: rewireBlogPageContent.breadcrumbs.blog,
+              url: canonicalUrl(rewireBlogPageContent.route, getSiteUrl())
+            }
           ])
         ]}
       />
@@ -31,11 +33,9 @@ export function RewireBlogIndexPage() {
       <section className="section-block page-hero rewire-blog-hero">
         <div className="container">
           <Reveal className="section-head">
-            <p className="eyebrow">rewire blog</p>
-            <h1>notes on focus, friction, and using your phone with intention.</h1>
-            <p>
-              Product notes, practical writing, and the thinking behind Rewire.
-            </p>
+            <p className="eyebrow">{rewireBlogPageContent.hero.eyebrow}</p>
+            <h1>{rewireBlogPageContent.hero.heading}</h1>
+            <p>{rewireBlogPageContent.hero.body}</p>
           </Reveal>
         </div>
       </section>
@@ -59,7 +59,7 @@ export function RewireBlogIndexPage() {
               ))}
             </div>
           ) : (
-            <p className="lead">No posts published yet.</p>
+            <p className="lead">{rewireBlogPageContent.emptyLabel}</p>
           )}
         </div>
       </section>

@@ -1,0 +1,20 @@
+{
+  "published": true,
+  "route": "/404",
+  "seo": {
+    "title": "Page Not Found | Scruffyhipster",
+    "description": "The page you were looking for could not be found on Scruffyhipster.",
+    "robots": "noindex,follow"
+  },
+  "eyebrow": "404",
+  "heading": "Page not found",
+  "body": "The link may have changed. Try the homepage or browse the app pages.",
+  "primaryCta": {
+    "label": "Go home",
+    "url": "/"
+  },
+  "secondaryCta": {
+    "label": "Explore apps",
+    "url": "/apps/"
+  }
+}

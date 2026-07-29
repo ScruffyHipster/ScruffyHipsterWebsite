@@ -5,7 +5,7 @@ publishedAt: "2026-07-10"
 updatedAt: ""
 excerpt: "The direct way to block apps on iPhone, plus when a dedicated app blocker is useful."
 tags: "block apps, iphone, app blocker"
-draft: false
+published: true
 ogImage: "/assets/rewire/app-store/rewire-icon.jpg"
 ---
 

@@ -3,6 +3,7 @@ title: "Best Breastfeeding & Baby Feeding Apps (2026): Which App Is Right for Yo
 metaTitle: "Best Breastfeeding Apps 2026: Huckleberry vs Nara"
 description: "Compare Huckleberry, Nara Baby and Breastfeeding Tracker & Timer to find the best newborn feeding app for sleep, feeds, simplicity, features and value."
 publishedAt: "2026-07-27"
+published: true
 excerpt: "A transparent comparison of Huckleberry, Nara Baby and Breastfeeding Tracker & Timer for different newborn feeding needs."
 tags: "best breastfeeding apps 2026, Huckleberry vs Nara Baby, newborn feeding app, baby tracker comparison"
 ogImage: "/assets/breastfeeding-apps-comparison-2026.png"
