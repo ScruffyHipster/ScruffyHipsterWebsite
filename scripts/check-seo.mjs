@@ -192,6 +192,31 @@ assert(
     comparisonHtml.includes('<th scope="col">'),
   "Comparison guide tables are not semantic."
 );
+const huckleberryHeadingIndex = comparisonHtml.indexOf("Best Overall: Huckleberry");
+const trackerHeadingIndex = comparisonHtml.indexOf("Best for Newborn Breastfeeding");
+const naraHeadingIndex = comparisonHtml.indexOf("Best Free App: Nara Baby");
+assert(
+  huckleberryHeadingIndex !== -1 &&
+    trackerHeadingIndex > huckleberryHeadingIndex &&
+    naraHeadingIndex > trackerHeadingIndex,
+  "Comparison product sections must order Huckleberry, Breastfeeding Tracker, then Nara Baby."
+);
+assert(
+  (comparisonHtml.match(/<h2 class="feeding-product-heading">/g) || []).length === 3 &&
+    (comparisonHtml.match(/class="feeding-inline-image"/g) || []).length === 3,
+  "Comparison product sections must render three skimmable icon headings."
+);
+for (const iconPath of [
+  "/assets/breastfeeding-app-comparison/huckleberry-icon.png",
+  "/assets/BreastFeedingIcon.png",
+  "/assets/breastfeeding-app-comparison/nara-baby-icon.png"
+]) {
+  assert(
+    comparisonHtml.includes(`src="${iconPath}"`),
+    `Comparison guide is missing product icon ${iconPath}.`
+  );
+  await access(join(distDir, iconPath.replace(/^\//, "")));
+}
 assert(comparisonArticle, "Comparison guide is missing Article structured data.");
 assert(
   comparisonArticle.url === canonicalUrl(comparisonPath),

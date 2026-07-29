@@ -166,7 +166,11 @@ function renderMarkdown(source) {
     const heading = line.match(/^(#{1,3})\s+(.+)$/);
     if (heading) {
       const level = heading[1].length + 1;
-      blocks.push(`<h${level}>${renderInline(heading[2])}</h${level}>`);
+      const content = renderInline(heading[2]);
+      const className = content.includes('class="feeding-inline-image"')
+        ? ' class="feeding-product-heading"'
+        : "";
+      blocks.push(`<h${level}${className}>${content}</h${level}>`);
       index += 1;
       continue;
     }
@@ -324,6 +328,10 @@ function renderInline(value) {
   output = output.replace(/`([^`]+)`/g, "<code>$1</code>");
   output = output.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
   output = output.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+  output = output.replace(
+    /!\[([^\]]*)\]\((\/[^)\s]+)\)/g,
+    '<img class="feeding-inline-image" src="$2" alt="$1" loading="lazy" width="96" height="96" />'
+  );
   output = output.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
   output = output.replace(/\[([^\]]+)\]\((\/[^)\s]+)\)/g, '<a href="$2">$1</a>');
   return output;
