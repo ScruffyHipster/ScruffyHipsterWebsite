@@ -70,21 +70,21 @@
     "items": [
       {
         "heading": "Start in one tap.",
-        "body": "Choose left or right and begin."
+        "body": "Choose left or right, whether its a feed or pump and begin."
       },
       {
         "heading": "Fix it later.",
-        "body": "Adjust a late start or add a feed."
+        "body": "Adjust a late start in feed or add it in laters. Whatever works for you."
       },
       {
         "heading": "Ready to review.",
-        "body": "See history, patterns, or export a PDF."
+        "body": "See you and your babies feed history, observe your babies feeding patterns, or export a PDF."
       }
     ]
   },
   "howItWorks": {
     "eyebrow": "made for the first weeks",
-    "heading": "Less to remember when feeds blur together.",
+    "heading": "We want to make it easier to remember when feeds blur together.",
     "steps": [
       {
         "step": "01",
@@ -121,10 +121,10 @@
   },
   "historyFeature": {
     "eyebrow": "for the feeds you forgot to time",
-    "heading": "Forgot to start? Fix it later.",
+    "heading": "Forgot to start, forgot to track it? Fix it later.",
     "paragraphs": [
-      "If your baby latched before you remembered the timer, move the start time back. If the feed has already finished, add it from history. Exact seconds do not matter.",
-      "Review recent history and private on-device summaries for visible patterns, then export selected feeds as a PDF for a midwife or feeding-support conversation. The summaries do not assess feeding, and the PDF only reflects what you recorded."
+      "If your baby latched before you remembered the timer, move the start time back. If the feed has already finished, add it in easily when you've got a change later on."
+      "Review recent history and private on-device summaries for visible patterns using on device AI. tYou can then export selected feeds as a PDF for a midwife or feeding-support conversation. The summaries do not assess feeding, and the PDF only reflects what you recorded."
     ],
     "cta": "Try the tracker on the App Store",
     "imageAlts": [
@@ -149,17 +149,17 @@
   },
   "guidesSection": {
     "eyebrow": "help for the first weeks",
-    "heading": "Use the useful parts without turning feeding into homework.",
-    "body": "Practical product guides without schedules, adequacy scoring, or medical advice.",
+    "heading": "A few of our thoughts",
+    "body": "Here you'll find practical product guides, tips & tricks to help you on your baby feeding journey.",
     "browseLabel": "Browse all guides"
   },
   "faqSection": {
     "eyebrow": "frequently asked questions",
-    "heading": "Useful details without more mental load."
+    "heading": "A few useful details"
   },
   "finalCta": {
-    "eyebrow": "ready for the first feeds",
-    "heading": "Start in one tap. Fix it later if you need to.",
+    "eyebrow": "ready to start recording your feeds?",
+    "heading": "Try today for free",
     "label": "Download on the App Store"
   },
   "guideTemplate": {
