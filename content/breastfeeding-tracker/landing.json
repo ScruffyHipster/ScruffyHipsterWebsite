@@ -3,18 +3,31 @@
   "route": "/breastfeeding-tracker",
   "seo": {
     "title": "Newborn Breastfeeding Timer for iPhone & Apple Watch",
-    "description": "A simple breastfeeding timer for your newborn's first weeks. Track left and right, check widgets or Apple Watch, correct missed feeds, and export a PDF.",
+    "description": "A simple breastfeeding timer for your newborn's first weeks. Track breastfeeds, bottle feeds & pumping, use widgets or Apple Watch, manually add missed feeds, and export a PDF.",
     "keywords": [
       "breastfeeding tracker",
+      "combifeeding tracker",
+      "bottlefeeding tracker",
+      "pumping tracker",
+      "bottle feeding tracker",
+      "combi feeding tracker",
       "breast feeding tracker",
       "breastfeeding timer",
+      "bottlefeeding timer",
+      "pumping timer",
+      "bottle feeding timer",
+      "combi feeding timer"
       "newborn breastfeeding tracker",
+      "baby feeding tracker",
       "newborn feeding timer",
+      "baby feeding timer",
       "first weeks breastfeeding log",
       "breastfeeding tracker Apple Watch",
       "breastfeeding timer iPhone",
-      "nursing tracker",
-      "left and right breastfeeding tracker",
+      "free breastfeeding tracker",
+      "free bottlefeeding tracker",
+      "free pumping tracker",
+      "free combifeeding tracker",
       "private breastfeeding tracker"
     ],
     "ogImage": "/assets/breastfeeding-tracker-og.png"
@@ -27,6 +40,9 @@
     "description": "A simple breastfeeding timer for a newborn's first feeds, with one-handed left and right tracking, widgets, Apple Watch controls, editable history, and PDF export.",
     "featureList": [
       "One-handed breastfeeding timer with left and right side tracking",
+      "pump tracking",
+      "bottlefeeding tracking",
+      "combi feeding tracking"
       "Apple Watch companion app with offline tracking and later sync",
       "Home Screen widget, Live Activities, and Dynamic Island",
       "Late-start adjustment and manual feed entry",
