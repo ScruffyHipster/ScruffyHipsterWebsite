@@ -8,6 +8,7 @@ import { appRoutePath } from "../content/routes";
 import { canonicalPath, canonicalUrl } from "../seo/canonical";
 import { breadcrumbJsonLd, faqPageJsonLd, organizationJsonLd, softwareApplicationJsonLd } from "../seo/jsonld";
 import { getSiteUrl } from "../seo/metadata";
+import { siteConfig } from "../content/site";
 
 export function AppDetailPage() {
   const params = useParams<{ slug: string }>();
@@ -21,6 +22,10 @@ export function AppDetailPage() {
   const absoluteUrl = `${getSiteUrl()}${path}`;
   const relatedApps = apps.filter((candidate) => candidate.slug !== app.slug).slice(0, 3);
   const storeLinkMissing = app.appStoreUrl === "#";
+  const labels = siteConfig.shared.appDetail;
+  const appsLabel =
+    siteConfig.navigation.items.find((item) => item.path === "/apps")?.label ??
+    siteConfig.footer.appsHeading;
 
   return (
     <>
@@ -32,8 +37,8 @@ export function AppDetailPage() {
           softwareApplicationJsonLd(app, absoluteUrl),
           ...(app.faqs?.length ? [faqPageJsonLd(app.faqs)] : []),
           breadcrumbJsonLd([
-            { name: "Scruffyhipster", url: getSiteUrl() },
-            { name: "Apps", url: canonicalUrl("/apps", getSiteUrl()) },
+            { name: siteConfig.companyName, url: getSiteUrl() },
+            { name: appsLabel, url: canonicalUrl("/apps", getSiteUrl()) },
             { name: app.name, url: absoluteUrl }
           ])
         ]}
@@ -52,23 +57,23 @@ export function AppDetailPage() {
                 } as CSSProperties
               }
             >
-              <img className="app-hero-icon" src={app.icon} alt={`${app.name} icon`} />
+              <img className="app-hero-icon" src={app.icon} alt={app.iconAlt} />
               <div>
-                <p className="eyebrow">{app.platformLabel ?? "iOS App"}</p>
+                <p className="eyebrow">{app.platformLabel ?? labels.defaultPlatformLabel}</p>
                 <h1>{app.heroTitle}</h1>
                 <p className="lead">{app.tagline}</p>
                 <div className="hero-actions">
                   {storeLinkMissing ? (
                     <button className="btn btn-disabled" type="button" disabled aria-disabled="true">
-                      App Store link coming soon
+                      {labels.storeComingSoon}
                     </button>
                   ) : (
                     <a className="btn btn-primary" href={app.appStoreUrl} target="_blank" rel="noopener noreferrer">
-                      View on the App Store
+                      {labels.viewOnStore}
                     </a>
                   )}
                   <a className="btn btn-secondary" href="#features">
-                    See features
+                    {labels.seeFeatures}
                   </a>
                   {app.pressKit ? (
                     <a className="btn btn-secondary" href={app.pressKit.url} download>
@@ -79,10 +84,12 @@ export function AppDetailPage() {
                 {app.pressKit ? <p className="inline-note">{app.pressKit.description}</p> : null}
                 {app.privacySlug ? (
                   <p className="inline-link-row">
-                    <Link to={canonicalPath(`/privacy/${app.privacySlug}`)}>Read privacy policy</Link>
+                    <Link to={canonicalPath(`/privacy/${app.privacySlug}`)}>
+                      {labels.readPrivacy}
+                    </Link>
                   </p>
                 ) : (
-                  <p className="inline-note">Privacy policy page coming soon.</p>
+                  <p className="inline-note">{labels.privacyComingSoon}</p>
                 )}
               </div>
             </div>
@@ -93,7 +100,7 @@ export function AppDetailPage() {
       <section id="features" className="section-block section-pad">
         <div className="container">
           <Reveal className="section-head">
-            <p className="eyebrow">What it does</p>
+            <p className="eyebrow">{labels.featuresEyebrow}</p>
             <h2>{app.featureHeading}</h2>
             <p>{app.featureIntro}</p>
           </Reveal>
@@ -114,7 +121,7 @@ export function AppDetailPage() {
         <section className="section-block section-pad">
           <div className="container">
             <Reveal className="section-head">
-              <p className="eyebrow">{app.seoContent.eyebrow ?? "More detail"}</p>
+              <p className="eyebrow">{app.seoContent.eyebrow ?? labels.detailEyebrow}</p>
               <h2>{app.seoContent.heading}</h2>
             </Reveal>
             <div className="about-grid">
@@ -134,8 +141,8 @@ export function AppDetailPage() {
         <section className="section-block section-pad">
           <div className="container">
             <Reveal className="section-head">
-              <p className="eyebrow">FAQ</p>
-              <h2>{app.faqHeading ?? "Frequently asked questions"}</h2>
+              <p className="eyebrow">{labels.faqEyebrow}</p>
+              <h2>{app.faqHeading ?? labels.faqHeading}</h2>
               {app.faqIntro ? <p>{app.faqIntro}</p> : null}
             </Reveal>
             <div className="feature-grid">
@@ -153,23 +160,23 @@ export function AppDetailPage() {
       ) : null}
 
       <div className="container">
-        <ScreenshotGallery screenshots={app.screenshots} title="Screenshots" />
+        <ScreenshotGallery screenshots={app.screenshots} title={siteConfig.shared.screenshotHeading} />
       </div>
 
       <section className="section-block section-pad">
         <div className="container about-grid">
           <Reveal>
             <article className="glass-panel">
-              <p className="eyebrow">Why it exists</p>
-              <h2>Built around the moment it is needed</h2>
+              <p className="eyebrow">{labels.whyEyebrow}</p>
+              <h2>{labels.whyHeading}</h2>
               <p>{app.longDescription}</p>
               <p>{app.privacySummary}</p>
             </article>
           </Reveal>
           <Reveal delayMs={90}>
             <aside className="related-panel">
-              <p className="eyebrow">More apps</p>
-              <h2>Other quiet tools from Scruffyhipster</h2>
+              <p className="eyebrow">{labels.moreAppsEyebrow}</p>
+              <h2>{labels.moreAppsHeading}</h2>
               <ul className="related-list">
                 {relatedApps.map((related) => (
                   <li key={related.id}>

@@ -1,0 +1,315 @@
+{
+  "published": true,
+  "route": "/rewire",
+  "seo": {
+    "title": "Rewire | App Blocker for iPhone",
+    "description": "Rewire is an iPhone app and website blocker for reducing screen time, stopping doomscrolling, and interrupting distracting app opens.",
+    "keywords": [
+      "Rewire",
+      "app blocker",
+      "app blocker iPhone",
+      "website blocker iPhone",
+      "block apps on iPhone",
+      "screen time blocker",
+      "reduce screen time",
+      "stop doomscrolling",
+      "focus app iPhone"
+    ],
+    "ogImage": "/assets/rewire/app-store/rewire-icon.jpg"
+  },
+  "softwareApplication": {
+    "name": "Rewire",
+    "applicationCategory": "ProductivityApplication",
+    "applicationSubCategory": "App Blocker",
+    "description": "An iPhone app and website blocker that uses Apple Screen Time controls to interrupt distracting app and website opens.",
+    "featureList": [
+      "Block distracting apps and websites",
+      "Interrupt impulsive app opens with a conscious pause",
+      "Timed and always-on focus sessions",
+      "Simple trends for blocked attempts and focus sessions",
+      "Uses Apple Screen Time and Family Controls APIs",
+      "No accounts, no ads, and no personal data collection"
+    ],
+    "offer": {
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  },
+  "ratingLabels": {
+    "ariaPrefix": "App Store rating:",
+    "fromLabel": "from",
+    "unavailableRating": "rated on the app store",
+    "ratingSuffix": "out of 5",
+    "unavailableCount": "app store reviews",
+    "singularCount": "rating",
+    "pluralCount": "ratings"
+  },
+  "hero": {
+    "iconAlt": "Rewire app icon",
+    "eyebrow": "app blocker for iphone",
+    "heading": "block apps and websites before the scroll starts.",
+    "body": "Rewire uses Apple Screen Time controls to block distracting apps and websites, add a deliberate pause, and help you choose what happens next.",
+    "primaryCta": "download on the app store",
+    "secondaryCta": "see how it works",
+    "screenshotsAriaLabel": "Rewire app screenshots"
+  },
+  "download": {
+    "eyebrow": "download",
+    "heading": "free on the app store, built for iphone.",
+    "purchaseSuffix": " with in-app purchases",
+    "requiresLabel": "Requires",
+    "listedInLabel": "Listed in",
+    "categoryJoiner": "and",
+    "body": "No accounts, no ads, no personal data collection. Rewire works with Apple's Screen Time and Family Controls safeguards.",
+    "cta": "open app store listing"
+  },
+  "screenshotsSection": {
+    "eyebrow": "screenshots",
+    "heading": "current app store screens.",
+    "body": "These images are downloaded from the current US App Store listing for Rewire."
+  },
+  "howItWorks": {
+    "eyebrow": "how it works",
+    "heading": "four steps from reflex to choice."
+  },
+  "proof": {
+    "eyebrow": "privacy first",
+    "heading": "no accounts. no ads. no personal data collection.",
+    "items": [
+      "uses Apple Screen Time and Family Controls APIs",
+      "blocks apps and distracting websites",
+      "supports timed and always-on focus sessions",
+      "works offline after setup",
+      "anonymous analytics only",
+      "does not bypass Apple protections"
+    ]
+  },
+  "guidesSection": {
+    "eyebrow": "guides",
+    "heading": "practical answers for app blocking, screen time, and focus."
+  },
+  "faqSection": {
+    "eyebrow": "faq",
+    "heading": "common questions about blocking apps on iphone.",
+    "linkLabel": "learn more"
+  },
+  "finalCta": {
+    "eyebrow": "rewire",
+    "heading": "download the iphone app blocker built around the moment distraction starts.",
+    "primaryLabel": "download on the app store",
+    "secondaryLabel": "privacy policy"
+  },
+  "linkFooter": [
+    {
+      "heading": "app links",
+      "links": [
+        {
+          "label": "App Store",
+          "url": "app-store"
+        },
+        {
+          "label": "Guides",
+          "url": "/rewire/blog/"
+        }
+      ]
+    },
+    {
+      "heading": "policies",
+      "links": [
+        {
+          "label": "Privacy",
+          "url": "/privacy/rewire/"
+        },
+        {
+          "label": "Terms",
+          "url": "terms"
+        }
+      ]
+    },
+    {
+      "heading": "studio",
+      "links": [
+        {
+          "label": "Scruffyhipster",
+          "url": "/"
+        },
+        {
+          "label": "Apps",
+          "url": "/apps/"
+        }
+      ]
+    }
+  ],
+  "appStoreFacts": {
+    "appStoreUrl": "https://apps.apple.com/us/app/app-blocker-focus-rewire/id6757722922",
+    "appId": "6757722922",
+    "bundleId": "com.scruffyhipster.rewireInterrupt",
+    "title": "App Blocker & Focus: Rewire",
+    "subtitle": "Interrupt Distractions",
+    "developer": "Scruffy Hipster Ltd",
+    "categories": [
+      "Productivity",
+      "Utilities"
+    ],
+    "price": "Free",
+    "hasInAppPurchases": true,
+    "version": "1.6.4",
+    "releaseDate": "2026-02-04",
+    "currentVersionReleaseDate": "2026-07-07",
+    "rating": 5,
+    "ratingCount": 1,
+    "minimumOsVersion": "iOS 26.1 or later",
+    "contentRating": "4+",
+    "privacyPolicyUrl": "https://scruffyhipster.com/privacy/rewire/",
+    "appStorePrivacyPolicyUrl": "https://scruffyhipster.com/pages/privacyPolicies/rewirePrivacyPolicy.html",
+    "eulaUrl": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+    "releaseNotes": "Multiple improvements and bug fixes",
+    "assetBasePath": "/assets/rewire/app-store"
+  },
+  "screenshots": [
+    {
+      "src": "/assets/rewire/app-store/screenshot-1.jpg",
+      "alt": "Rewire screenshot showing app and website blocking setup"
+    },
+    {
+      "src": "/assets/rewire/app-store/screenshot-2.jpg",
+      "alt": "Rewire screenshot showing a focused Screen Time blocking flow"
+    },
+    {
+      "src": "/assets/rewire/app-store/screenshot-3.jpg",
+      "alt": "Rewire screenshot showing an interruption before a distracting app opens"
+    },
+    {
+      "src": "/assets/rewire/app-store/screenshot-4.jpg",
+      "alt": "Rewire screenshot showing focus session controls"
+    },
+    {
+      "src": "/assets/rewire/app-store/screenshot-5.jpg",
+      "alt": "Rewire screenshot showing distraction and focus patterns"
+    },
+    {
+      "src": "/assets/rewire/app-store/screenshot-6.jpg",
+      "alt": "Rewire screenshot showing privacy-first focus settings"
+    }
+  ],
+  "showcaseSections": [
+    {
+      "eyebrow": "choose what to block",
+      "title": "pick the apps and websites that pull you away.",
+      "body": "Create focus sessions around the feeds, sites, games, and loops that usually cost you time. Rewire works with Apple's Screen Time controls, so blocking stays inside the safeguards iOS provides.",
+      "image": {
+        "src": "/assets/rewire/app-store/screenshot-1.jpg",
+        "alt": "Rewire screenshot showing app and website blocking setup"
+      }
+    },
+    {
+      "eyebrow": "timed or always-on",
+      "title": "start a focus window that fits the moment.",
+      "body": "Use Rewire for a study block, a work session, a social media break, or a stricter always-on setup. The goal is useful friction where distraction usually runs on autopilot.",
+      "image": {
+        "src": "/assets/rewire/app-store/screenshot-2.jpg",
+        "alt": "Rewire screenshot showing a focused Screen Time blocking flow"
+      }
+    },
+    {
+      "eyebrow": "the interruption",
+      "title": "pause before a quick check becomes lost time.",
+      "body": "When you open something blocked, Rewire interrupts the habit loop and gives you a moment to decide what you actually want to do next.",
+      "image": {
+        "src": "/assets/rewire/app-store/screenshot-3.jpg",
+        "alt": "Rewire screenshot showing an interruption before a distracting app opens"
+      }
+    },
+    {
+      "eyebrow": "patterns",
+      "title": "review the moments your attention drifted.",
+      "body": "Simple trends show blocked attempts, interruptions, and sessions without pretending to know the full story behind every moment.",
+      "image": {
+        "src": "/assets/rewire/app-store/screenshot-5.jpg",
+        "alt": "Rewire screenshot showing distraction and focus patterns"
+      }
+    }
+  ],
+  "guidePages": [
+    {
+      "slug": "how-to-block-apps-on-iphone",
+      "title": "How to Block Apps on iPhone",
+      "description": "Use Apple Screen Time or a blocker like Rewire to choose distracting apps, set a focus window, and add friction before opening them.",
+      "keyword": "how to block apps on iPhone"
+    },
+    {
+      "slug": "how-to-block-websites-on-iphone",
+      "title": "How to Block Websites on iPhone",
+      "description": "Block distracting websites on iPhone with Screen Time content restrictions or a focus tool that includes website blocking.",
+      "keyword": "how to block websites on iPhone"
+    },
+    {
+      "slug": "how-to-stop-doomscrolling",
+      "title": "How to Stop Doomscrolling",
+      "description": "Reduce doomscrolling by blocking repeat triggers, adding a pause before opening feeds, and reviewing when the habit shows up.",
+      "keyword": "how to stop doomscrolling"
+    },
+    {
+      "slug": "best-app-blocker-for-iphone",
+      "title": "Best App Blocker for iPhone",
+      "description": "Compare iPhone app blockers by privacy, Screen Time integration, strictness, setup speed, and how clearly they interrupt distractions.",
+      "keyword": "best app blocker for iPhone"
+    },
+    {
+      "slug": "screen-time-app-blocker",
+      "title": "Screen Time App Blocker",
+      "description": "Understand how Screen Time app blockers work on iPhone and why Apple safeguards matter for reliable, honest blocking.",
+      "keyword": "screen time app blocker"
+    },
+    {
+      "slug": "social-media-blocker-iphone",
+      "title": "Social Media Blocker for iPhone",
+      "description": "Block social media on iPhone with app and website rules that reduce quick checks without turning the whole phone off.",
+      "keyword": "social media blocker iPhone"
+    },
+    {
+      "slug": "focus-app-for-studying",
+      "title": "Focus App for Studying",
+      "description": "Choose a study focus app that blocks the right distractions, starts quickly, and keeps privacy and friction simple.",
+      "keyword": "focus app for studying"
+    },
+    {
+      "slug": "app-blocker-without-tracking",
+      "title": "App Blocker Without Tracking",
+      "description": "Look for an app blocker with no accounts, no ads, no personal data collection, and clear privacy promises.",
+      "keyword": "app blocker without tracking"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I block apps on iPhone?",
+      "answer": "You can block apps with Apple's Screen Time settings or use a Screen Time based blocker like Rewire to choose apps, start a session, and add an interruption before access.",
+      "guideSlug": "how-to-block-apps-on-iphone"
+    },
+    {
+      "question": "Can I block websites on iPhone too?",
+      "answer": "Yes. iPhone supports website restrictions through Screen Time, and Rewire can include distracting websites in focus sessions alongside apps.",
+      "guideSlug": "how-to-block-websites-on-iphone"
+    },
+    {
+      "question": "Can an app blocker help stop doomscrolling?",
+      "answer": "An app blocker can help by putting friction in front of the feed before a reflex turns into a long scroll. It should support the choice, not shame it.",
+      "guideSlug": "how-to-stop-doomscrolling"
+    },
+    {
+      "question": "What makes a good iPhone app blocker?",
+      "answer": "Look for clear app and website blocking, fast setup, privacy-first design, Apple Screen Time integration, and friction that happens at the moment distraction starts.",
+      "guideSlug": "best-app-blocker-for-iphone"
+    },
+    {
+      "question": "Does Rewire track personal data?",
+      "answer": "Rewire has no accounts, no ads, no personal data collection, and anonymous analytics only. It does not need cloud sync to block distractions.",
+      "guideSlug": "app-blocker-without-tracking"
+    },
+    {
+      "question": "Is Rewire free?",
+      "answer": "The US App Store listing shows Rewire as free with in-app purchases. The App Store is the final source for availability and pricing.",
+      "guideSlug": "screen-time-app-blocker"
+    }
+  ]
+}

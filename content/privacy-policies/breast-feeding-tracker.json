@@ -1,0 +1,14 @@
+{
+  "slug": "breast-feeding-tracker",
+  "order": 5,
+  "published": true,
+  "appName": "Breast Feeding Tracker",
+  "title": "Breast Feeding Tracker Privacy Policy",
+  "lastUpdated": "March 5, 2026",
+  "htmlContent": "\n      <p><strong>Breast Feeding Tracker</strong> is designed to support parents with simple feeding logs while respecting privacy.</p>\n      <h2>Data Collection</h2>\n      <p>This app is intended to minimize data collection. Feeding entries and related tracking details are stored locally on your device.</p>\n      <h2>How Data Is Used</h2>\n      <p>Tracked information is used only to provide timeline history, summaries, and in-app insights for you.</p>\n      <h2>Sharing and Tracking</h2>\n      <p>Breast Feeding Tracker does not sell your data. It is not designed for advertising profiling or cross-app tracking.</p>\n      <h2>Your Choices</h2>\n      <p>You can remove your tracking data by deleting entries in the app or uninstalling the app, depending on feature availability.</p>\n      <h2>Contact</h2>\n      <p>If you have any questions, contact <a href=\"mailto:support@scruffyhipster.com\">support@scruffyhipster.com</a>.</p>\n      <p>© 2026 Scruffy Hipster Ltd. All rights reserved.</p>\n    ",
+  "seo": {
+    "title": "Breast Feeding Tracker Privacy Policy | Scruffyhipster",
+    "description": "Read the privacy policy for Breast Feeding Tracker by Scruffyhipster.",
+    "ogImage": "/og-default.png"
+  }
+}

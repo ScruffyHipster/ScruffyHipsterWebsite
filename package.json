@@ -5,11 +5,17 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/generate-app-content.mjs && vite",
+    "generate:content": "node scripts/generate-app-content.mjs",
     "generate:og": "node scripts/generate-breastfeeding-og.mjs",
     "build:client": "vite build",
     "build:server": "vite build --ssr src/entry-server.tsx --outDir .ssr-dist",
     "build": "node scripts/generate-breastfeeding-og.mjs && node scripts/generate-app-content.mjs && npm run build:client && npm run build:server && node scripts/postbuild.mjs",
     "check:seo": "node scripts/check-seo.mjs",
+    "check:content-ownership": "node scripts/check-content-ownership.mjs",
+    "compare:cms": "node scripts/compare-cms-build.mjs",
+    "typecheck": "tsc --noEmit",
+    "validate": "npm run typecheck && npm run check:seo && npm run check:content-ownership",
+    "check": "npm run build && npm run validate",
     "preview": "vite preview"
   },
   "dependencies": {

@@ -1,6 +1,7 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { apps } from "../content/apps";
 import { privacyPolicies } from "../content/privacyPolicies";
+import { siteConfig } from "../content/site";
 import { RouteAnalytics } from "../analytics/RouteAnalytics";
 import { ScrollToTop } from "./ScrollToTop";
 import {
@@ -29,13 +30,15 @@ export function AppShell() {
       <header className="site-header">
         <div className="container header-inner">
           <Link className="brand" to="/">
-            <img className="brand-mark" src="/assets/companyLogoBlob.png" alt="" aria-hidden="true" />
-            <span>scruffyhipster</span>
+            <img className="brand-mark" src={siteConfig.branding.logo} alt="" aria-hidden="true" />
+            <span>{siteConfig.branding.name}</span>
           </Link>
-          <nav className="pill-nav" aria-label="Primary">
-            <Link to={canonicalPath("/rewire")}>Rewire</Link>
-            <Link to={canonicalPath("/apps")}>Apps</Link>
-            <Link to={canonicalPath("/about")}>About</Link>
+          <nav className="pill-nav" aria-label={siteConfig.navigation.ariaLabel}>
+            {siteConfig.navigation.items.map((item) => (
+              <Link key={item.path} to={canonicalPath(item.path)}>
+                {item.label}
+              </Link>
+            ))}
           </nav>
         </div>
       </header>
@@ -46,16 +49,14 @@ export function AppShell() {
         <footer className="site-footer">
           <div className="container footer-grid">
             <div>
-              <p className="footer-heading">scruffyhipster</p>
-              <p className="footer-copy">
-                Independent Apple software studio building quiet tools for focus, recovery, habits, and everyday systems.
-              </p>
+              <p className="footer-heading">{siteConfig.footer.studioHeading}</p>
+              <p className="footer-copy">{siteConfig.footer.studioDescription}</p>
             </div>
             <div>
-              <p className="footer-heading">Apps</p>
+              <p className="footer-heading">{siteConfig.footer.appsHeading}</p>
               <ul className="footer-list">
                 <li>
-                  <Link to={canonicalPath("/rewire")}>Rewire showcase</Link>
+                  <Link to={canonicalPath("/rewire")}>{siteConfig.footer.showcaseLabel}</Link>
                 </li>
                 {apps.map((app) => (
                   <li key={app.id}>
@@ -65,7 +66,7 @@ export function AppShell() {
               </ul>
             </div>
             <div>
-              <p className="footer-heading">Privacy Policies</p>
+              <p className="footer-heading">{siteConfig.footer.privacyHeading}</p>
               <ul className="footer-list">
                 {privacyPolicies.map((policy) => (
                   <li key={policy.slug}>

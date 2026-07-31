@@ -1,0 +1,29 @@
+{
+  "published": true,
+  "route": "/breastfeeding-tracker/guides",
+  "seo": {
+    "title": "Newborn Breastfeeding Timer Guides for iPhone & Apple Watch",
+    "description": "Practical help for timing newborn feeds, remembering the last side, correcting missed entries, using Apple Watch, and exporting a PDF.",
+    "keywords": [
+      "breastfeeding tracker guides",
+      "breastfeeding timer help",
+      "Apple Watch feeding tracker",
+      "newborn breastfeeding tracker"
+    ],
+    "ogImage": "/assets/breastfeeding-tracker-og.png"
+  },
+  "collection": {
+    "name": "Breastfeeding Tracker Guides",
+    "description": "Practical guides to timing, correcting, reviewing, and exporting newborn breastfeeding history without schedules or medical advice."
+  },
+  "breadcrumbs": {
+    "tracker": "Breastfeeding Tracker",
+    "guides": "Guides"
+  },
+  "hero": {
+    "backLabel": "Back to Breastfeeding Tracker",
+    "eyebrow": "help for your newborn’s first feeds",
+    "heading": "Practical help for timing, correcting, reviewing, and sharing.",
+    "body": "Use the useful parts of the tracker during the first weeks—without feeding schedules, adequacy scoring, or medical advice."
+  }
+}

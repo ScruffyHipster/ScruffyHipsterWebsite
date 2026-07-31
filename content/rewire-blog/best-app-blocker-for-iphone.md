@@ -5,7 +5,7 @@ publishedAt: "2026-07-10"
 updatedAt: ""
 excerpt: "A practical checklist for choosing an iPhone app blocker without getting lost in feature noise."
 tags: "app blocker, iphone, screen time"
-draft: false
+published: true
 ogImage: "/assets/rewire/app-store/rewire-icon.jpg"
 ---
 

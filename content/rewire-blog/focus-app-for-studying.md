@@ -5,7 +5,7 @@ publishedAt: "2026-07-10"
 updatedAt: ""
 excerpt: "What to look for in a study focus app when your phone is the thing pulling you out of the work."
 tags: "focus app, studying, app blocker"
-draft: false
+published: true
 ogImage: "/assets/rewire/app-store/rewire-icon.jpg"
 ---
 

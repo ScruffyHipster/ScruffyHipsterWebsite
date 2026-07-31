@@ -1,0 +1,86 @@
+{
+  "companyName": "Scruffyhipster",
+  "legalName": "Scruffy Hipster Ltd.",
+  "domain": "https://scruffyhipster.com",
+  "supportEmail": "support@scruffyhipster.com",
+  "helloEmail": "hello@scruffyhipster.com",
+  "defaultOgImage": "/og-default.png",
+  "tagline": "Software crafted with intention.",
+  "description": "Scruffyhipster is an independent Apple software studio building quiet tools for focus, recovery, habits, and everyday systems.",
+  "websiteDescription": "Independent Apple software studio building quiet tools for focus, recovery, habits, and everyday systems.",
+  "branding": {
+    "name": "scruffyhipster",
+    "logo": "/assets/companyLogoBlob.png",
+    "logoAlt": "scruffyhipster software studio"
+  },
+  "navigation": {
+    "ariaLabel": "Primary",
+    "items": [
+      {
+        "label": "Rewire",
+        "path": "/rewire"
+      },
+      {
+        "label": "Apps",
+        "path": "/apps"
+      },
+      {
+        "label": "About",
+        "path": "/about"
+      }
+    ]
+  },
+  "footer": {
+    "studioHeading": "scruffyhipster",
+    "studioDescription": "Independent Apple software studio building quiet tools for focus, recovery, habits, and everyday systems.",
+    "appsHeading": "Apps",
+    "showcaseLabel": "Rewire showcase",
+    "privacyHeading": "Privacy Policies"
+  },
+  "shared": {
+    "appCardCta": "View app page",
+    "screenshotHeading": "Screenshots",
+    "appDetail": {
+      "defaultPlatformLabel": "iOS App",
+      "storeComingSoon": "App Store link coming soon",
+      "viewOnStore": "View on the App Store",
+      "seeFeatures": "See features",
+      "readPrivacy": "Read privacy policy",
+      "privacyComingSoon": "Privacy policy page coming soon.",
+      "featuresEyebrow": "What it does",
+      "detailEyebrow": "More detail",
+      "faqEyebrow": "FAQ",
+      "faqHeading": "Frequently asked questions",
+      "whyEyebrow": "Why it exists",
+      "whyHeading": "Built around the moment it is needed",
+      "moreAppsEyebrow": "More apps",
+      "moreAppsHeading": "Other quiet tools from Scruffyhipster"
+    },
+    "privacyPolicy": {
+      "eyebrow": "Privacy Policy",
+      "breadcrumbLabel": "Privacy",
+      "lastUpdatedLabel": "Last updated:"
+    },
+      "rewireArticle": {
+        "backLabel": "back to rewire blog",
+        "titleSuffix": "Rewire Blog"
+      },
+      "markdown": {
+        "scrollableTableAriaLabel": "Scrollable comparison table"
+      }
+  },
+  "defaultSeo": {
+    "title": "Scruffyhipster | Software for Intentional Computing",
+    "description": "Scruffyhipster is an independent Apple software studio building quiet tools for focus, recovery, habits, and everyday systems.",
+    "keywords": [
+      "Scruffyhipster",
+      "intentional computing",
+      "indie app studio",
+      "Apple productivity apps",
+      "focus apps",
+      "behavioural tools"
+    ],
+    "ogImage": "/og-default.png"
+  },
+  "socialLinks": []
+}

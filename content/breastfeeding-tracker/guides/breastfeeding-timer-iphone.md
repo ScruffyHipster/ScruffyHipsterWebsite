@@ -2,6 +2,7 @@
 title: "A Simple Breastfeeding Timer for iPhone"
 description: "Use a one-handed breastfeeding timer on iPhone, see the active feed through Live Activities, and keep a clear history without extra forms."
 publishedAt: "2026-07-24"
+published: true
 excerpt: "A focused iPhone timer for recording the side, start time, and duration of a feed."
 tags: "breastfeeding timer iPhone, nursing timer, baby feeding timer"
 ogImage: "/assets/breastfeeding-tracker-og.png"

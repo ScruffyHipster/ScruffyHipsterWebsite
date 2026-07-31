@@ -1,0 +1,14 @@
+{
+  "slug": "chat-with-santa",
+  "order": 3,
+  "published": true,
+  "appName": "Chat with Santa",
+  "title": "Chat with Santa Privacy Policy",
+  "lastUpdated": "October 2025",
+  "htmlContent": "\n      <p><strong>Chat with Santa</strong> values your privacy. The app does not collect, store, or transmit any personal data.</p>\n      <h2>Data Processing</h2>\n      <p>All conversations with Santa are processed entirely on your device using Apple’s Foundation Model or an on-device Llama model. No chat data ever leaves your device, and no information is shared with any external servers or third parties.</p>\n      <h2>Analytics and Tracking</h2>\n      <p>Chat with Santa does not use analytics, tracking tools, or advertising technologies.</p>\n      <h2>Children’s Privacy</h2>\n      <p>This app is suitable for all ages. Since no data is collected, it fully complies with child privacy standards, including COPPA and GDPR-K.</p>\n      <h2>Contact</h2>\n      <p>If you have any questions, contact <a href=\"mailto:support@scruffyhipster.com\">support@scruffyhipster.com</a>.</p>\n      <p>© 2025 Scruffy Hipster Ltd. All rights reserved.</p>\n    ",
+  "seo": {
+    "title": "Chat with Santa Privacy Policy | Scruffyhipster",
+    "description": "Read the privacy policy for Chat with Santa by Scruffyhipster.",
+    "ogImage": "/og-default.png"
+  }
+}

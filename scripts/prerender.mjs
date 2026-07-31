@@ -1,6 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
-import { publicRoutes, siteUrl } from "./route-meta.mjs";
+import { notFoundRoute, publicRoutes, siteUrl } from "./route-meta.mjs";
 
 export async function prerenderRoutes(distDir, render) {
   const baseHtmlPath = join(distDir, "index.html");
@@ -22,13 +22,10 @@ export async function prerenderRoutes(distDir, render) {
   }
 
   // GitHub Pages SPA fallback for unknown paths with explicit noindex.
-  const notFoundHtml = injectRouteMeta(injectRenderedApp(baseHtml, render("/404")), {
-    path: "/404",
-    title: "Page Not Found | Scruffyhipster",
-    description: "The page you were looking for could not be found on Scruffyhipster.",
-    ogImage: "/og-default.png",
-    robots: "noindex,follow"
-  });
+  const notFoundHtml = injectRouteMeta(
+    injectRenderedApp(baseHtml, render(notFoundRoute.path)),
+    notFoundRoute
+  );
   await writeFile(join(distDir, "404.html"), notFoundHtml, "utf8");
 }
 

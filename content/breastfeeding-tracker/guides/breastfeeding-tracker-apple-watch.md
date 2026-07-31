@@ -2,6 +2,7 @@
 title: "Breastfeeding Tracker for Apple Watch"
 description: "Start and stop breastfeeding sessions from Apple Watch, keep tracking when your iPhone is out of reach, and sync completed feeds later."
 publishedAt: "2026-07-24"
+published: true
 excerpt: "How wrist-based feed tracking works when your hands—and often your phone—are already occupied."
 tags: "breastfeeding tracker Apple Watch, nursing tracker Apple Watch, feeding timer"
 ogImage: "/assets/breastfeeding-tracker-og.png"

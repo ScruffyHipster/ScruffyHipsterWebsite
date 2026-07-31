@@ -2302,6 +2302,46 @@ img {
   color: var(--feeding-rose);
 }
 
+.standard-rich-text {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.standard-rich-text > :first-child {
+  margin-top: 0;
+}
+
+.standard-rich-text > :last-child {
+  margin-bottom: 0;
+}
+
+.standard-rich-text h2,
+.standard-rich-text h3 {
+  color: var(--text);
+}
+
+.standard-media {
+  margin: 0;
+}
+
+.standard-media img {
+  display: block;
+  width: 100%;
+  border-radius: 1.5rem;
+}
+
+.standard-media figcaption {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.standard-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: 1.25rem;
+}
+
 @keyframes feedingFloat {
   0%,
   100% {

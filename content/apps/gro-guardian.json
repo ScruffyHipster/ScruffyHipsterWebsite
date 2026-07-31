@@ -1,0 +1,80 @@
+{
+  "id": "gro-guardian",
+  "order": 3,
+  "slug": "gro-guardian",
+  "published": true,
+  "name": "Gro Guardian",
+  "heroTitle": "Gro Guardian",
+  "tagline": "A small plant care companion for watering, light, and regular attention.",
+  "shortDescription": "An iPhone plant care app with reminders, scheduled tasks, and a camera-based light meter.",
+  "longDescription": "Gro Guardian keeps plant care practical: water, rotate, feed, and check light. It is for people who like plants but do not want another complicated tracking system.",
+  "appStoreUrl": "#",
+  "icon": "/assets/groGuardianLogo.png",
+  "iconAlt": "Gro Guardian icon",
+  "screenshots": [
+    {
+      "src": "/assets/groGuardianScreenshots/GroGuardianimages.001.jpeg",
+      "alt": "Gro Guardian plant dashboard"
+    },
+    {
+      "src": "/assets/groGuardianScreenshots/GroGuardianimages.002.jpeg",
+      "alt": "Gro Guardian reminders screen"
+    },
+    {
+      "src": "/assets/groGuardianScreenshots/GroGuardianimages.003.jpeg",
+      "alt": "Gro Guardian light meter screen"
+    },
+    {
+      "src": "/assets/groGuardianScreenshots/GroGuardianimages.004.jpeg",
+      "alt": "Gro Guardian task scheduling screen"
+    }
+  ],
+  "featureHeading": "Plant care as a quiet routine",
+  "featureIntro": "Keep the next care task visible, use light as a guide, and let the routine stay small.",
+  "features": [
+    {
+      "title": "Simple Plant Dashboard",
+      "body": "See each plant with its next useful action: water, rotate, feed, or check in."
+    },
+    {
+      "title": "Watering Reminders",
+      "body": "Simple schedules and reminders for care that is easy to forget."
+    },
+    {
+      "title": "Live Light Meter",
+      "body": "Use the camera to estimate light and make better placement decisions."
+    },
+    {
+      "title": "Scheduled Tasks",
+      "body": "Plan care, log completions, and keep the routine light."
+    }
+  ],
+  "structuredData": {
+    "description": "An iPhone plant care app with reminders, scheduled tasks, and a camera-based light meter.",
+    "applicationSubCategory": "Plant Care App",
+    "featureList": [
+      "Plant care dashboard",
+      "Watering reminders",
+      "Camera-based light meter",
+      "Scheduled plant care tasks"
+    ]
+  },
+  "privacySummary": "Gro Guardian uses camera access for the light meter and notifications for reminders. No ads or tracking are used.",
+  "yearLabel": "2025",
+  "seo": {
+    "title": "Gro Guardian | Simple Plant Care App",
+    "description": "Gro Guardian is a simple iPhone plant care app with watering reminders, a live light meter, and scheduled tasks.",
+    "keywords": [
+      "plant care app",
+      "watering reminders",
+      "light meter app plants",
+      "Gro Guardian"
+    ],
+    "ogImage": "/og-default.png"
+  },
+  "accent": {
+    "from": "#aef1a2",
+    "via": "#55dd9a",
+    "to": "#7cc8ff"
+  }
+}

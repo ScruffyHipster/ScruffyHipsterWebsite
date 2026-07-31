@@ -2,6 +2,7 @@
 title: "A Private Breastfeeding Tracker Without an Account"
 description: "Track feeds without creating an account, advertising profile, or cloud login, with private history and on-device summaries."
 publishedAt: "2026-07-24"
+published: true
 excerpt: "What privacy-first feed tracking means in Breastfeeding Tracker & Timer."
 tags: "private breastfeeding tracker, breastfeeding tracker without account, private nursing app"
 ogImage: "/assets/breastfeeding-tracker-og.png"

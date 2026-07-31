@@ -2,6 +2,7 @@
 title: "How to Export a Breastfeeding Log as a PDF"
 description: "Create a portable PDF from selected breastfeeding history after reviewing and correcting the feed entries saved on your iPhone."
 publishedAt: "2026-07-24"
+published: true
 excerpt: "Turn the feed history you recorded into a portable document you control."
 tags: "breastfeeding log PDF, export feeding history, nursing log export"
 ogImage: "/assets/breastfeeding-tracker-og.png"

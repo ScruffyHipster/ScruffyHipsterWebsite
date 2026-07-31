@@ -5,7 +5,7 @@ publishedAt: "2026-07-10"
 updatedAt: ""
 excerpt: "What a Screen Time app blocker can and cannot honestly promise on iPhone."
 tags: "screen time, app blocker, iphone"
-draft: false
+published: true
 ogImage: "/assets/rewire/app-store/rewire-icon.jpg"
 ---
 

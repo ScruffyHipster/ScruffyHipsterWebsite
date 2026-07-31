@@ -1,0 +1,85 @@
+{
+  "id": "smarty-colours",
+  "order": 2,
+  "slug": "smarty-colours",
+  "published": true,
+  "name": "Smarty Colours",
+  "heroTitle": "Smarty Colours",
+  "tagline": "A calm colouring app for iPad, made for focused creative play.",
+  "shortDescription": "A kids colouring app for iPad with Apple Pencil support, themed packs, and a simple interface.",
+  "longDescription": "Smarty Colours gives children a simple place to draw, colour, and settle into a page. The interface stays clear, the tools are easy to find, and Apple Pencil support keeps the experience feeling natural on iPad.",
+  "appStoreUrl": "https://apps.apple.com/gb/app/smartycolours-colouring-pages/id6749013158",
+  "icon": "/assets/smartycoloursLogo.png",
+  "iconAlt": "Smarty Colours icon",
+  "screenshots": [
+    {
+      "src": "/assets/smartyColoursScreenshots/iPhone Screenshots 🇬🇧 2.001.png",
+      "alt": "Smarty Colours home screen"
+    },
+    {
+      "src": "/assets/smartyColoursScreenshots/iPhone Screenshots 🇬🇧 2.002.png",
+      "alt": "Smarty Colours colouring screen"
+    },
+    {
+      "src": "/assets/smartyColoursScreenshots/iPhone Screenshots 🇬🇧 2.003.png",
+      "alt": "Smarty Colours pack selection screen 1"
+    },
+    {
+      "src": "/assets/smartyColoursScreenshots/iPhone Screenshots 🇬🇧 2.004.png",
+      "alt": "Smarty Colours pack selection screen 2"
+    },
+    {
+      "src": "/assets/smartyColoursScreenshots/iPhone Screenshots 🇬🇧 2.005.png",
+      "alt": "Smarty Colours pack selection screen 3"
+    }
+  ],
+  "featureHeading": "Creative play with fewer distractions",
+  "featureIntro": "The app keeps the tools obvious and the page central, so children can spend more time colouring.",
+  "features": [
+    {
+      "title": "Themed Coloring Packs",
+      "body": "Original illustration packs with familiar subjects like animals, vehicles, robots, and dinosaurs."
+    },
+    {
+      "title": "Apple Pencil Support",
+      "body": "Natural drawing and colouring on iPad with Apple Pencil support."
+    },
+    {
+      "title": "Kid-Friendly Interface",
+      "body": "Big buttons, simple navigation, and little visual clutter."
+    },
+    {
+      "title": "Subscription Content",
+      "body": "A simple subscription provides the full set of packs and future additions."
+    }
+  ],
+  "structuredData": {
+    "description": "A kids colouring app for iPad with Apple Pencil support, themed packs, and a simple interface.",
+    "applicationSubCategory": "Kids Colouring App",
+    "featureList": [
+      "Themed colouring packs",
+      "Apple Pencil support",
+      "Simple child-friendly interface",
+      "Subscription content packs"
+    ]
+  },
+  "privacySummary": "Smarty Colours collects no personal data and uses no analytics, ads, or tracking tools.",
+  "privacySlug": "smarty-colours",
+  "yearLabel": "2026",
+  "seo": {
+    "title": "Smarty Colours | Kids Colouring App for iPad",
+    "description": "Smarty Colours is a children's colouring app for iPad with themed packs, Apple Pencil support, and a calm kid-friendly interface.",
+    "keywords": [
+      "kids colouring app",
+      "iPad coloring app",
+      "Apple Pencil children app",
+      "Smarty Colours"
+    ],
+    "ogImage": "/og-default.png"
+  },
+  "accent": {
+    "from": "#ffd87a",
+    "via": "#ff9bcf",
+    "to": "#95c5ff"
+  }
+}

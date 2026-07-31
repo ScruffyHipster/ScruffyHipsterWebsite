@@ -5,7 +5,7 @@ publishedAt: "2026-07-10"
 updatedAt: ""
 excerpt: "How website blocking works on iPhone and why app blockers should cover browser distractions too."
 tags: "website blocker, iphone, screen time"
-draft: false
+published: true
 ogImage: "/assets/rewire/app-store/rewire-icon.jpg"
 ---
 

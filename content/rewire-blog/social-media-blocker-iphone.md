@@ -5,7 +5,7 @@ publishedAt: "2026-07-10"
 updatedAt: ""
 excerpt: "How to block social media apps and websites on iPhone when quick checks keep expanding."
 tags: "social media blocker, iphone, app blocker"
-draft: false
+published: true
 ogImage: "/assets/rewire/app-store/rewire-icon.jpg"
 ---
 

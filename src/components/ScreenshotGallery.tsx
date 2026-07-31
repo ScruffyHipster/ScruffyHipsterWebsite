@@ -3,10 +3,10 @@ import { Reveal } from "./Reveal";
 
 type ScreenshotGalleryProps = {
   screenshots: Screenshot[];
-  title?: string;
+  title: string;
 };
 
-export function ScreenshotGallery({ screenshots, title = "Screenshots" }: ScreenshotGalleryProps) {
+export function ScreenshotGallery({ screenshots, title }: ScreenshotGalleryProps) {
   return (
     <section className="section-block">
       <div className="section-head">

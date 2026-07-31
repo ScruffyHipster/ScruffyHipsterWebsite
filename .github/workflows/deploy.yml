@@ -44,6 +44,9 @@ jobs:
           VITE_TELEMETRYDECK_APP_ID: ${{ secrets.VITE_TELEMETRYDECK_APP_ID }}
         run: npm run build
 
+      - name: Validate content, routes, and types
+        run: npm run validate
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -52,4 +55,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-

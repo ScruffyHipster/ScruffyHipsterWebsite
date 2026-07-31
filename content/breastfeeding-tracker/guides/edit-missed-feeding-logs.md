@@ -2,6 +2,7 @@
 title: "How to Add or Edit a Missed Breastfeeding Log"
 description: "Add a feed manually, correct an existing entry, or adjust a breastfeeding timer that was started after the feed began."
 publishedAt: "2026-07-24"
+published: true
 excerpt: "Correct a late timer or missed session without losing the rest of your feed history."
 tags: "edit breastfeeding log, add missed feeding, adjust breastfeeding timer"
 ogImage: "/assets/breastfeeding-tracker-og.png"

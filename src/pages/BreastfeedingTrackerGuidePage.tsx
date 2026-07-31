@@ -5,6 +5,7 @@ import { Seo } from "../components/Seo";
 import {
   breastfeedingTrackerGuides,
   breastfeedingTrackerGuidesBySlug,
+  breastfeedingTrackerContent,
   breastfeedingTrackerOgImage
 } from "../content/breastfeedingTracker";
 import {
@@ -14,6 +15,8 @@ import {
 import { breadcrumbJsonLd, organizationJsonLd } from "../seo/jsonld";
 import { getSiteUrl } from "../seo/metadata";
 import { canonicalPath, canonicalUrl } from "../seo/canonical";
+import { breastfeedingGuidesPageContent } from "../content/pages";
+import { siteConfig } from "../content/site";
 
 export function BreastfeedingTrackerGuidePage() {
   const params = useParams<{ slug: string }>();
@@ -28,6 +31,7 @@ export function BreastfeedingTrackerGuidePage() {
   const relatedGuides = breastfeedingTrackerGuides
     .filter((candidate) => candidate.slug !== guide.slug)
     .slice(0, 2);
+  const template = breastfeedingTrackerContent.guideTemplate;
 
   return (
     <>
@@ -53,12 +57,12 @@ export function BreastfeedingTrackerGuidePage() {
             url: canonicalUrl(path, siteUrl),
             author: {
               "@type": "Organization",
-              name: "Scruffyhipster",
+              name: siteConfig.companyName,
               url: siteUrl
             },
             about: {
               "@type": "SoftwareApplication",
-              name: "Breastfeeding Tracker & Timer",
+              name: breastfeedingTrackerContent.softwareApplication.name,
               url: canonicalUrl(BREASTFEEDING_TRACKER_BASE_PATH, siteUrl)
             }
           },
@@ -79,13 +83,13 @@ export function BreastfeedingTrackerGuidePage() {
               ]
             : []),
           breadcrumbJsonLd([
-            { name: "Scruffyhipster", url: siteUrl },
+            { name: siteConfig.companyName, url: siteUrl },
             {
-              name: "Breastfeeding Tracker",
+              name: breastfeedingGuidesPageContent.breadcrumbs.tracker,
               url: canonicalUrl(BREASTFEEDING_TRACKER_BASE_PATH, siteUrl)
             },
             {
-              name: "Guides",
+              name: breastfeedingGuidesPageContent.breadcrumbs.guides,
               url: canonicalUrl(BREASTFEEDING_TRACKER_GUIDES_BASE_PATH, siteUrl)
             },
             { name: guide.title, url: canonicalUrl(path, siteUrl) }
@@ -100,9 +104,9 @@ export function BreastfeedingTrackerGuidePage() {
               className="feeding-text-link"
               to={canonicalPath(BREASTFEEDING_TRACKER_GUIDES_BASE_PATH)}
             >
-              Back to all guides
+              {template.backLabel}
             </Link>
-            <p className="eyebrow">breastfeeding tracker guide</p>
+            <p className="eyebrow">{template.eyebrow}</p>
             <h1>{guide.title}</h1>
             <p className="lead">{guide.description}</p>
           </Reveal>
@@ -114,15 +118,15 @@ export function BreastfeedingTrackerGuidePage() {
           </Reveal>
           {guide.showDefaultCta ? (
             <Reveal className="feeding-article-cta">
-              <p className="eyebrow">simple help for the first feeds</p>
-              <h2>Start the next feed in one tap. Correct it later if you need to.</h2>
+              <p className="eyebrow">{template.defaultCta.eyebrow}</p>
+              <h2>{template.defaultCta.heading}</h2>
               <BreastfeedingTrackerAppStoreLink className="btn feeding-btn-primary" placement="guide">
-                Download on the App Store
+                {template.defaultCta.label}
               </BreastfeedingTrackerAppStoreLink>
             </Reveal>
           ) : null}
           <Reveal className="feeding-related-guides">
-            <h2>Related guides</h2>
+            <h2>{template.relatedHeading}</h2>
             {relatedGuides.map((related) => (
               <Link
                 key={related.slug}

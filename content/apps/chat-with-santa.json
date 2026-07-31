@@ -1,0 +1,85 @@
+{
+  "id": "chat-with-santa",
+  "order": 4,
+  "slug": "chat-with-santa",
+  "published": true,
+  "name": "Chat with Santa",
+  "heroTitle": "Chat with Santa",
+  "tagline": "A small seasonal chat app for families during the holidays.",
+  "shortDescription": "A seasonal chat app with a child-friendly Santa experience and a simple family-first design.",
+  "longDescription": "Chat with Santa is a seasonal experiment built around a simple idea: a friendly holiday conversation, without turning the experience into a noisy feed or game.",
+  "appStoreUrl": "#",
+  "icon": "/assets/chatWithSantaLogo.png",
+  "iconAlt": "Chat with Santa icon",
+  "screenshots": [
+    {
+      "src": "/assets/chatWithSantaScreenshots/ChatWithSantaAppStoreScreenShots.001.jpeg",
+      "alt": "Chat with Santa chat screen 1"
+    },
+    {
+      "src": "/assets/chatWithSantaScreenshots/ChatWithSantaAppStoreScreenShots.002.jpeg",
+      "alt": "Chat with Santa chat screen 2"
+    },
+    {
+      "src": "/assets/chatWithSantaScreenshots/ChatWithSantaAppStoreScreenShots.003.jpeg",
+      "alt": "Chat with Santa chat screen 3"
+    },
+    {
+      "src": "/assets/chatWithSantaScreenshots/ChatWithSantaAppStoreScreenShots.004.jpeg",
+      "alt": "Chat with Santa chat screen 4"
+    },
+    {
+      "src": "/assets/chatWithSantaScreenshots/ChatWithSantaAppStoreScreenShots.005.jpeg",
+      "alt": "Chat with Santa chat screen 5"
+    }
+  ],
+  "featureHeading": "A lighter seasonal app",
+  "featureIntro": "A focused holiday chat experience with warm replies and a simple interface.",
+  "features": [
+    {
+      "title": "Festive Chat Interface",
+      "body": "A clean seasonal UI with a little personality and not much else in the way."
+    },
+    {
+      "title": "AI Santa Replies",
+      "body": "Friendly responses written for warm, age-aware holiday conversations."
+    },
+    {
+      "title": "Voice and Text Input",
+      "body": "Type or speak messages for a simple hands-free option."
+    },
+    {
+      "title": "Private and Secure",
+      "body": "No advertising or tracking tools. Family trust is part of the design."
+    }
+  ],
+  "structuredData": {
+    "description": "A seasonal chat app with a child-friendly Santa experience and a simple family-first design.",
+    "applicationSubCategory": "Holiday App",
+    "featureList": [
+      "Seasonal family chat interface",
+      "Friendly Santa replies",
+      "Voice and text input",
+      "No advertising or tracking tools"
+    ]
+  },
+  "privacySummary": "Chat with Santa is designed to avoid analytics and advertising tracking, with conversations processed on-device.",
+  "privacySlug": "chat-with-santa",
+  "yearLabel": "2025",
+  "seo": {
+    "title": "Chat with Santa | Seasonal Holiday App",
+    "description": "Chat with Santa is a simple seasonal holiday chat app for families with friendly Santa conversations.",
+    "keywords": [
+      "Chat with Santa app",
+      "holiday app for kids",
+      "Santa AI chat",
+      "Christmas chat app"
+    ],
+    "ogImage": "/og-default.png"
+  },
+  "accent": {
+    "from": "#ffd1a6",
+    "via": "#ff8ea0",
+    "to": "#9bb1ff"
+  }
+}

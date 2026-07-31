@@ -1,31 +1,27 @@
 import { Link } from "react-router-dom";
 import { Seo } from "../components/Seo";
-import { canonicalPath } from "../seo/canonical";
+import { notFoundPageContent } from "../content/pages";
 
 export function NotFoundPage() {
   return (
     <>
       <Seo
-        path="/404"
-        meta={{
-          title: "Page Not Found | Scruffyhipster",
-          description: "The page you were looking for could not be found on Scruffyhipster.",
-          robots: "noindex,follow"
-        }}
+        path={notFoundPageContent.route}
+        meta={notFoundPageContent.seo}
       />
       <section className="section-block section-pad">
         <div className="container narrow-container">
           <article className="glass-panel">
-            <p className="eyebrow">404</p>
-            <h1>Page not found</h1>
-            <p>The link may have changed. Try the homepage or browse the app pages.</p>
+            <p className="eyebrow">{notFoundPageContent.eyebrow}</p>
+            <h1>{notFoundPageContent.heading}</h1>
+            <p>{notFoundPageContent.body}</p>
             <div className="hero-actions">
-              <Link className="btn btn-primary" to="/">
-                Go home
+              <Link className="btn btn-primary" to={notFoundPageContent.primaryCta.url}>
+                {notFoundPageContent.primaryCta.label}
               </Link>
-          <a className="btn btn-secondary" href={canonicalPath("/apps")}>
-            Explore apps
-          </a>
+              <a className="btn btn-secondary" href={notFoundPageContent.secondaryCta.url}>
+                {notFoundPageContent.secondaryCta.label}
+              </a>
             </div>
           </article>
         </div>

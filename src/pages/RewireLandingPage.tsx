@@ -7,13 +7,14 @@ import { canonicalPath, canonicalUrl } from "../seo/canonical";
 import {
   rewireApp,
   rewireAppStoreFacts,
+  rewireContent,
   rewireFaqs,
   rewireGuidePages,
   rewireScreenshots,
-  rewireSeoTargets,
   rewireShowcaseSections
 } from "../content/rewire";
 import { formatRating, formatRatingCount, rewireAppStoreRating } from "../content/rewireRating";
+import { siteConfig } from "../content/site";
 
 const path = "/rewire";
 const siteUrl = getSiteUrl();
@@ -24,24 +25,18 @@ const landingFaqs = rewireFaqs.map(({ question, answer }) => ({ question, answer
 const rewireSoftwareJsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: rewireAppStoreFacts.title,
-  applicationCategory: "ProductivityApplication",
-  applicationSubCategory: "App Blocker",
+  name: rewireContent.softwareApplication.name,
+  applicationCategory: rewireContent.softwareApplication.applicationCategory,
+  applicationSubCategory: rewireContent.softwareApplication.applicationSubCategory,
   operatingSystem: rewireAppStoreFacts.minimumOsVersion,
-  description:
-    "Rewire is an iPhone app and website blocker that uses Apple Screen Time controls to interrupt distracting app and website opens.",
+  description: rewireContent.softwareApplication.description,
   url: canonicalUrl(path, siteUrl),
   image: `${siteUrl}${rewireApp.icon}`,
   downloadUrl: appStoreUrl,
-  softwareVersion: rewireAppStoreFacts.version,
-  datePublished: rewireAppStoreFacts.releaseDate,
-  releaseNotes: rewireAppStoreFacts.releaseNotes,
-  featureList: rewireApp.seoFeatureList,
+  featureList: rewireContent.softwareApplication.featureList,
   offers: {
     "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-    category: "free"
+    ...rewireContent.softwareApplication.offer
   },
   ...(typeof rewireAppStoreRating.rating === "number"
     ? {
@@ -61,20 +56,14 @@ export function RewireLandingPage() {
     <>
       <Seo
         path={path}
-        meta={{
-          title: "Rewire | App Blocker for iPhone",
-          description:
-            "Rewire is an iPhone app and website blocker for reducing screen time, stopping doomscrolling, and interrupting distracting app opens.",
-          keywords: ["Rewire", ...rewireSeoTargets],
-          ogImage: rewireApp.icon
-        }}
+        meta={rewireContent.seo}
         jsonLd={[
           organizationJsonLd(),
           rewireSoftwareJsonLd,
           faqPageJsonLd(landingFaqs),
           breadcrumbJsonLd([
-            { name: "Scruffyhipster", url: siteUrl },
-            { name: "Rewire", url: canonicalUrl(path, siteUrl) }
+            { name: siteConfig.companyName, url: siteUrl },
+            { name: rewireApp.name, url: canonicalUrl(path, siteUrl) }
           ])
         ]}
       />
@@ -82,15 +71,17 @@ export function RewireLandingPage() {
       <section className="rewire-hero">
         <div className="container rewire-hero-layout">
           <Reveal className="rewire-hero-copy">
-            <img className="rewire-hero-icon" src={rewireApp.icon} alt="Rewire app icon" />
-            <p className="eyebrow">app blocker for iphone</p>
-            <h1>block apps and websites before the scroll starts.</h1>
-            <p className="lead">
-              Rewire uses Apple Screen Time controls to block distracting apps and websites, add a deliberate pause, and help you choose what happens next.
-            </p>
+            <img
+              className="rewire-hero-icon"
+              src={rewireApp.icon}
+              alt={rewireContent.hero.iconAlt}
+            />
+            <p className="eyebrow">{rewireContent.hero.eyebrow}</p>
+            <h1>{rewireContent.hero.heading}</h1>
+            <p className="lead">{rewireContent.hero.body}</p>
             <div
               className="rewire-rating-line"
-              aria-label={`App Store rating: ${formatRating(rewireAppStoreRating.rating)} from ${formatRatingCount(rewireAppStoreRating.ratingCount)}`}
+              aria-label={`${rewireContent.ratingLabels.ariaPrefix} ${formatRating(rewireAppStoreRating.rating)} ${rewireContent.ratingLabels.fromLabel} ${formatRatingCount(rewireAppStoreRating.ratingCount)}`}
             >
               <span>{formatRating(rewireAppStoreRating.rating)}</span>
               <span>{formatRatingCount(rewireAppStoreRating.ratingCount)}</span>
@@ -98,16 +89,19 @@ export function RewireLandingPage() {
             </div>
             <div className="hero-actions">
               <a className="btn btn-primary" href={appStoreUrl} target="_blank" rel="noopener noreferrer">
-                download on the app store
+                {rewireContent.hero.primaryCta}
               </a>
               <a className="btn btn-secondary" href="#how-it-works">
-                see how it works
+                {rewireContent.hero.secondaryCta}
               </a>
             </div>
           </Reveal>
 
           <Reveal className="rewire-hero-media" delayMs={120}>
-            <div className="rewire-device-cluster" aria-label="Rewire app screenshots">
+            <div
+              className="rewire-device-cluster"
+              aria-label={rewireContent.hero.screenshotsAriaLabel}
+            >
               <img className="rewire-device-main" src={rewireScreenshots[0].src} alt={rewireScreenshots[0].alt} loading="eager" decoding="async" />
               <img className="rewire-device-secondary rewire-device-secondary-a" src={rewireScreenshots[2].src} alt={rewireScreenshots[2].alt} loading="lazy" decoding="async" />
               <img className="rewire-device-secondary rewire-device-secondary-b" src={rewireScreenshots[4].src} alt={rewireScreenshots[4].alt} loading="lazy" decoding="async" />
@@ -119,8 +113,8 @@ export function RewireLandingPage() {
       <section className="section-block section-pad">
         <div className="container rewire-download-grid">
           <Reveal>
-            <p className="eyebrow">download</p>
-            <h2>free on the app store, built for iphone.</h2>
+            <p className="eyebrow">{rewireContent.download.eyebrow}</p>
+            <h2>{rewireContent.download.heading}</h2>
           </Reveal>
           <Reveal className="rewire-download-card" delayMs={80}>
             <img src={rewireApp.icon} alt="" aria-hidden="true" />
@@ -128,13 +122,18 @@ export function RewireLandingPage() {
               <h3>{rewireAppStoreFacts.title}</h3>
               <p>
                 {rewireAppStoreFacts.price}
-                {rewireAppStoreFacts.hasInAppPurchases ? " with in-app purchases" : ""}. Requires {rewireAppStoreFacts.minimumOsVersion}. Listed in {rewireAppStoreFacts.categories.join(" and ")}.
+                {rewireAppStoreFacts.hasInAppPurchases
+                  ? rewireContent.download.purchaseSuffix
+                  : ""}
+                . {rewireContent.download.requiresLabel} {rewireAppStoreFacts.minimumOsVersion}.{" "}
+                {rewireContent.download.listedInLabel}{" "}
+                {rewireAppStoreFacts.categories.join(
+                  ` ${rewireContent.download.categoryJoiner} `
+                )}.
               </p>
-              <p>
-                No accounts, no ads, no personal data collection. Rewire works with Apple's Screen Time and Family Controls safeguards.
-              </p>
+              <p>{rewireContent.download.body}</p>
               <a className="btn btn-primary" href={appStoreUrl} target="_blank" rel="noopener noreferrer">
-                open app store listing
+                {rewireContent.download.cta}
               </a>
             </div>
           </Reveal>
@@ -144,9 +143,9 @@ export function RewireLandingPage() {
       <section id="screenshots" className="section-block section-pad">
         <div className="container">
           <Reveal className="section-head">
-            <p className="eyebrow">screenshots</p>
-            <h2>current app store screens.</h2>
-            <p>These images are downloaded from the current US App Store listing for Rewire.</p>
+            <p className="eyebrow">{rewireContent.screenshotsSection.eyebrow}</p>
+            <h2>{rewireContent.screenshotsSection.heading}</h2>
+            <p>{rewireContent.screenshotsSection.body}</p>
           </Reveal>
           <div className="rewire-screenshot-grid">
             {rewireScreenshots.map((shot, index) => (
@@ -163,8 +162,8 @@ export function RewireLandingPage() {
       <section id="how-it-works" className="section-block">
         <div className="container rewire-feature-flow">
           <Reveal className="rewire-section-intro">
-            <p className="eyebrow">how it works</p>
-            <h2>four steps from reflex to choice.</h2>
+            <p className="eyebrow">{rewireContent.howItWorks.eyebrow}</p>
+            <h2>{rewireContent.howItWorks.heading}</h2>
           </Reveal>
           {rewireShowcaseSections.map((section, index) => (
             <Reveal key={section.title} className="rewire-feature-row" delayMs={Math.min(index * 70, 180)}>
@@ -184,17 +183,14 @@ export function RewireLandingPage() {
       <section className="section-block section-pad">
         <div className="container rewire-proof-strip">
           <Reveal>
-            <p className="eyebrow">privacy first</p>
-            <h2>no accounts. no ads. no personal data collection.</h2>
+            <p className="eyebrow">{rewireContent.proof.eyebrow}</p>
+            <h2>{rewireContent.proof.heading}</h2>
           </Reveal>
           <Reveal delayMs={80}>
             <ul>
-              <li>uses Apple Screen Time and Family Controls APIs</li>
-              <li>blocks apps and distracting websites</li>
-              <li>supports timed and always-on focus sessions</li>
-              <li>works offline after setup</li>
-              <li>anonymous analytics only</li>
-              <li>does not bypass Apple protections</li>
+              {rewireContent.proof.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
             </ul>
           </Reveal>
         </div>
@@ -203,8 +199,8 @@ export function RewireLandingPage() {
       <section className="section-block section-pad">
         <div className="container rewire-guides">
           <Reveal className="section-head">
-            <p className="eyebrow">guides</p>
-            <h2>practical answers for app blocking, screen time, and focus.</h2>
+            <p className="eyebrow">{rewireContent.guidesSection.eyebrow}</p>
+            <h2>{rewireContent.guidesSection.heading}</h2>
           </Reveal>
           <div className="rewire-guide-grid">
             {rewireGuidePages.map((guide, index) => (
@@ -226,8 +222,8 @@ export function RewireLandingPage() {
       <section id="faq" className="section-block section-pad">
         <div className="container rewire-faq-layout">
           <Reveal>
-            <p className="eyebrow">faq</p>
-            <h2>common questions about blocking apps on iphone.</h2>
+            <p className="eyebrow">{rewireContent.faqSection.eyebrow}</p>
+            <h2>{rewireContent.faqSection.heading}</h2>
           </Reveal>
           <div className="rewire-faq-list">
             {rewireFaqs.map((item, index) => (
@@ -235,7 +231,9 @@ export function RewireLandingPage() {
                 <article className="rewire-faq-item">
                   <h3>{item.question}</h3>
                   <p>{item.answer}</p>
-                  <Link to={canonicalPath(`/rewire/blog/${item.guideSlug}`)}>learn more</Link>
+                  <Link to={canonicalPath(`/rewire/blog/${item.guideSlug}`)}>
+                    {rewireContent.faqSection.linkLabel}
+                  </Link>
                 </article>
               </Reveal>
             ))}
@@ -247,14 +245,14 @@ export function RewireLandingPage() {
         <div className="container rewire-final-cta">
           <Reveal>
             <img src={rewireApp.icon} alt="" aria-hidden="true" />
-            <p className="eyebrow">rewire</p>
-            <h2>download the iphone app blocker built around the moment distraction starts.</h2>
+            <p className="eyebrow">{rewireContent.finalCta.eyebrow}</p>
+            <h2>{rewireContent.finalCta.heading}</h2>
             <div className="hero-actions">
               <a className="btn btn-primary" href={appStoreUrl} target="_blank" rel="noopener noreferrer">
-                download on the app store
+                {rewireContent.finalCta.primaryLabel}
               </a>
               <Link className="btn btn-secondary" to={canonicalPath("/privacy/rewire")}>
-                privacy policy
+                {rewireContent.finalCta.secondaryLabel}
               </Link>
             </div>
           </Reveal>
@@ -263,25 +261,33 @@ export function RewireLandingPage() {
 
       <section className="section-block section-pad rewire-link-footer">
         <div className="container rewire-link-grid">
-          <div>
-            <p className="footer-heading">app links</p>
-            <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
-              App Store
-            </a>
-            <Link to={canonicalPath("/rewire/blog")}>Guides</Link>
-          </div>
-          <div>
-            <p className="footer-heading">policies</p>
-            <Link to={canonicalPath("/privacy/rewire")}>Privacy</Link>
-            <a href={rewireAppStoreFacts.eulaUrl} target="_blank" rel="noopener noreferrer">
-              Terms
-            </a>
-          </div>
-          <div>
-            <p className="footer-heading">studio</p>
-            <Link to="/">Scruffyhipster</Link>
-            <Link to={canonicalPath("/apps")}>Apps</Link>
-          </div>
+          {rewireContent.linkFooter.map((group) => (
+            <div key={group.heading}>
+              <p className="footer-heading">{group.heading}</p>
+              {group.links.map((link) => {
+                const url =
+                  link.url === "app-store"
+                    ? appStoreUrl
+                    : link.url === "terms"
+                      ? rewireAppStoreFacts.eulaUrl
+                      : link.url;
+                return url.startsWith("/") ? (
+                  <Link key={link.label} to={url}>
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.label}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
+            </div>
+          ))}
         </div>
       </section>
     </>
