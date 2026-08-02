@@ -6,7 +6,9 @@ const font = makeFont();
 const rootDir = new URL("../", import.meta.url).pathname;
 const assetsDir = join(rootDir, "public", "assets");
 const screenshot = decodePng(
-  await readFile(join(assetsDir, "breastfeedingScreenShots", "1.png"))
+  await readFile(
+    join(assetsDir, "breastfeedingScreenShots", "01-home-dark-iphone-6.9.png")
+  )
 );
 const width = 1200;
 const height = 630;

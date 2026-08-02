@@ -13,24 +13,24 @@
   "iconAlt": "Breast Feeding Tracker & Timer icon",
   "screenshots": [
     {
-      "src": "/assets/breastfeedingScreenShots/1.png",
-      "alt": "Breast Feeding Tracker home screen"
+      "src": "/assets/breastfeedingScreenShots/01-home-dark-iphone-6.9.png",
+      "alt": "Breastfeeding Tracker home screen with left and right start controls and a pumping toggle"
     },
     {
-      "src": "/assets/breastfeedingScreenShots/2.png",
-      "alt": "Breast Feeding Tracker feed logging screen"
+      "src": "/assets/breastfeedingScreenShots/03-history-dark-iphone-6.9.png",
+      "alt": "Breastfeeding Tracker history showing breastfeeding, bottle, pumping, and combined-feed entries"
     },
     {
-      "src": "/assets/breastfeedingScreenShots/3.png",
-      "alt": "Breast Feeding Tracker timeline screen"
+      "src": "/assets/breastfeedingScreenShots/04-milk-dark-iphone-6.9.png",
+      "alt": "Breastfeeding Tracker milk ledger showing expressed milk added and used"
     },
     {
-      "src": "/assets/breastfeedingScreenShots/4.png",
-      "alt": "Breast Feeding Tracker session detail screen"
+      "src": "/assets/breastfeedingScreenShots/02-active-timer-dark-iphone-6.9.png",
+      "alt": "Breastfeeding Tracker active feeding timer with start-time adjustment controls"
     },
     {
-      "src": "/assets/breastfeedingScreenShots/5.png",
-      "alt": "Breast Feeding Tracker statistics screen"
+      "src": "/assets/breastfeedingScreenShots/05-insights-dark-iphone-6.9.png",
+      "alt": "Breastfeeding Tracker seven-day informational feeding insight"
     }
   ],
   "featureHeading": "Simple help for the feeds that blur together",

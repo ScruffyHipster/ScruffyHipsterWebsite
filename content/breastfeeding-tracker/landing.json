@@ -63,7 +63,7 @@
     "primaryCta": "Download on the App Store",
     "secondaryCta": "See how it works",
     "storeNote": "Free to download, with an optional one-off lifetime unlock.",
-    "imageAlt": "Breastfeeding timer running on iPhone and Apple Watch"
+    "imageAlt": "Breastfeeding Tracker home screen with left and right start controls and a pumping toggle"
   },
   "proof": {
     "ariaLabel": "Newborn feed tracking benefits",
@@ -103,20 +103,17 @@
       }
     ]
   },
-  "watchFeature": {
-    "eyebrow": "when your phone is out of reach",
-    "heading": "Your timer follows you from phone to wrist.",
+  "careMethodsFeature": {
+    "eyebrow": "breast, bottle, pump, or combine",
+    "heading": "Keep every kind of feed in one clear history.",
     "paragraphs": [
-      "Start and stop a timer on Apple Watch when your iPhone is elsewhere. The watch works offline and syncs completed feeds when your devices reconnect.",
-      "On iPhone, the Home Screen widget shows feeds completed today and the last side used. Live Activities and Dynamic Island keep an active feed visible without repeatedly reopening the app."
+      "Track breastfeeding, bottle feeds, pumping, and combined feeds in the same history, so you can see what was recorded without switching between separate logs.",
+      "When you record expressed milk, pumping adds to the on-device balance and expressed bottle feeds subtract from it. Leave volume blank when you did not record it."
     ],
-    "link": {
-      "label": "Explore Apple Watch tracking",
-      "url": "/breastfeeding-tracker/guides/breastfeeding-tracker-apple-watch/"
-    },
+    "cta": "Download on the App Store",
     "imageAlts": [
-      "Breastfeeding Tracker controls on iPhone",
-      "Breastfeeding Tracker feed history"
+      "Breastfeeding Tracker history showing breastfeeding, bottle, pumping, and combined-feed entries",
+      "Breastfeeding Tracker milk ledger showing expressed milk added and used"
     ]
   },
   "historyFeature": {
@@ -128,8 +125,8 @@
     ],
     "cta": "Download on the App Store",
     "imageAlts": [
-      "Breastfeeding Tracker session details",
-      "Private summaries created from recent feed history"
+      "Breastfeeding Tracker active feeding timer with start-time adjustment controls",
+      "Breastfeeding Tracker seven-day informational feeding insight"
     ]
   },
   "privacy": {

@@ -124,26 +124,26 @@ export function BreastfeedingTrackerLandingPage() {
       <section className="feeding-feature-band">
         <div className="container feeding-feature-layout">
           <Reveal className="feeding-feature-copy">
-            <p className="eyebrow">{breastfeedingTrackerContent.watchFeature.eyebrow}</p>
-            <h2>{breastfeedingTrackerContent.watchFeature.heading}</h2>
-            {breastfeedingTrackerContent.watchFeature.paragraphs.map((paragraph) => (
+            <p className="eyebrow">{breastfeedingTrackerContent.careMethodsFeature.eyebrow}</p>
+            <h2>{breastfeedingTrackerContent.careMethodsFeature.heading}</h2>
+            {breastfeedingTrackerContent.careMethodsFeature.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-            <Link
+            <BreastfeedingTrackerAppStoreLink
               className="feeding-text-link"
-              to={breastfeedingTrackerContent.watchFeature.link.url}
+              placement="feature"
             >
-              {breastfeedingTrackerContent.watchFeature.link.label}
-            </Link>
+              {breastfeedingTrackerContent.careMethodsFeature.cta}
+            </BreastfeedingTrackerAppStoreLink>
           </Reveal>
           <Reveal className="feeding-feature-images" delayMs={100}>
             <img
               src={breastfeedingTrackerApp.screenshots[1].src}
-              alt={breastfeedingTrackerContent.watchFeature.imageAlts[0]}
+              alt={breastfeedingTrackerContent.careMethodsFeature.imageAlts[0]}
             />
             <img
               src={breastfeedingTrackerApp.screenshots[2].src}
-              alt={breastfeedingTrackerContent.watchFeature.imageAlts[1]}
+              alt={breastfeedingTrackerContent.careMethodsFeature.imageAlts[1]}
             />
           </Reveal>
         </div>
