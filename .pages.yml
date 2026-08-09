@@ -330,6 +330,18 @@ content:
               - name: showcaseLabel
                 type: string
                 required: true
+              - name: resourcesHeading
+                type: string
+                required: true
+              - name: breastfeedingBlogLabel
+                type: string
+                required: true
+              - name: breastfeedingSupportLabel
+                type: string
+                required: true
+              - name: editorialDisclosureLabel
+                type: string
+                required: true
               - name: privacyHeading
                 type: string
                 required: true
@@ -641,10 +653,10 @@ content:
             type: string
             required: true
 
-      - name: breastfeeding_guides_index
-        label: Breastfeeding guide index
+      - name: breastfeeding_support_index
+        label: Breastfeeding Help & Support
         type: file
-        path: content/pages/breastfeeding-guides.json
+        path: content/pages/breastfeeding-support.json
         format: json
         operations: *fixed_operations
         fields:
@@ -671,7 +683,7 @@ content:
               - name: tracker
                 type: string
                 required: true
-              - name: guides
+              - name: support
                 type: string
                 required: true
           - name: hero
@@ -689,6 +701,55 @@ content:
               - name: body
                 type: text
                 required: true
+
+      - name: breastfeeding_blog_index
+        label: Breastfeeding blog index
+        type: file
+        path: content/pages/breastfeeding-blog.json
+        format: json
+        operations: *fixed_operations
+        fields:
+          - name: published
+            type: boolean
+            readonly: true
+          - name: route
+            type: string
+            readonly: true
+          - name: seo
+            component: seo
+          - name: hero
+            type: object
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+              - name: body
+                type: text
+                required: true
+
+      - name: breastfeeding_blog_disclosure
+        label: Blog editorial disclosure
+        type: file
+        path: content/pages/breastfeeding-blog-disclosure.json
+        format: json
+        operations: *fixed_operations
+        fields:
+          - name: published
+            type: boolean
+            readonly: true
+          - name: route
+            type: string
+            readonly: true
+          - name: seo
+            component: seo
+          - name: hero
+            type: object
+          - name: sections
+            type: object
+            list: true
 
   - name: apps
     label: Apps
@@ -1255,6 +1316,9 @@ content:
           - name: tags
             type: string
             description: Comma-separated keywords.
+          - name: category
+            type: string
+            description: One short editorial category used for blog filtering.
           - name: published
             type: boolean
             required: true
@@ -1440,7 +1504,22 @@ content:
                   collapsible:
                     collapsed: true
                     summary: "{label}"
-          - name: guidesSection
+          - name: supportSection
+            type: object
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: string
+                required: true
+              - name: body
+                type: text
+                required: true
+              - name: browseLabel
+                type: string
+                required: true
+          - name: blogSection
             type: object
             fields:
               - name: eyebrow
@@ -1476,7 +1555,7 @@ content:
               - name: label
                 type: string
                 required: true
-          - name: guideTemplate
+          - name: supportTemplate
             type: object
             fields:
               - name: backLabel
@@ -1516,8 +1595,8 @@ content:
                 collapsed: true
                 summary: "{question}"
 
-      - name: breastfeeding_guides
-        label: Guides
+      - name: breastfeeding_support_articles
+        label: Help & Support articles
         type: collection
         path: content/breastfeeding-tracker/guides
         format: yaml-frontmatter
@@ -1528,6 +1607,23 @@ content:
           primary: title
           sort: [publishedAt, title]
           search: [title, description, tags]
+          default:
+            sort: publishedAt
+            order: desc
+        fields: *article_fields
+
+      - name: breastfeeding_blog_articles
+        label: Blog articles
+        type: collection
+        path: content/breastfeeding-tracker/blog
+        format: yaml-frontmatter
+        filename: *article_filename
+        operations: *article_operations
+        view:
+          fields: [title, category, published, publishedAt]
+          primary: title
+          sort: [publishedAt, title]
+          search: [title, description, category, tags]
           default:
             sort: publishedAt
             order: desc

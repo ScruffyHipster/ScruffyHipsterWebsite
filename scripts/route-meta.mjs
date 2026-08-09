@@ -13,7 +13,8 @@ const {
   rewire,
   breastfeedingTracker,
   rewireArticles,
-  breastfeedingGuides
+  breastfeedingGuides,
+  breastfeedingBlogPosts
 } = cms;
 
 export const siteUrl =
@@ -88,7 +89,7 @@ const softwareApplicationJsonLd = (app, path) => {
   };
 };
 
-const blogPostingJsonLd = (post) => ({
+const blogPostingJsonLd = (post, path) => ({
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   headline: post.title,
@@ -96,7 +97,7 @@ const blogPostingJsonLd = (post) => ({
   datePublished: post.publishedAt,
   ...(post.updatedAt ? { dateModified: post.updatedAt } : {}),
   image: `${siteUrl}${post.ogImage}`,
-  url: absoluteRouteUrl(`/rewire/blog/${post.slug}`)
+  url: absoluteRouteUrl(path)
 });
 
 const articleJsonLd = (article, path) => ({
@@ -251,7 +252,7 @@ const routes = [
       ...(post.ogImageAlt ? { ogImageAlt: post.ogImageAlt } : {}),
       jsonLd: [
         organizationJsonLd,
-        blogPostingJsonLd(post),
+        blogPostingJsonLd(post, path),
         breadcrumbJsonLd([
           { name: site.companyName, url: siteUrl },
           {
@@ -284,39 +285,39 @@ const routes = [
     ]
   },
   {
-    path: pages["breastfeeding-guides"].route,
-    ...pages["breastfeeding-guides"].seo,
+    path: pages["breastfeeding-support"].route,
+    ...pages["breastfeeding-support"].seo,
     jsonLd: [
       organizationJsonLd,
       {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        name: pages["breastfeeding-guides"].collection.name,
-        description: pages["breastfeeding-guides"].collection.description,
-        url: absoluteRouteUrl(pages["breastfeeding-guides"].route),
+        name: pages["breastfeeding-support"].collection.name,
+        description: pages["breastfeeding-support"].collection.description,
+        url: absoluteRouteUrl(pages["breastfeeding-support"].route),
         hasPart: breastfeedingGuides.map((guide) => ({
           "@type": "Article",
           headline: guide.title,
           url: absoluteRouteUrl(
-            `${pages["breastfeeding-guides"].route}/${guide.slug}`
+            `${pages["breastfeeding-support"].route}/${guide.slug}`
           )
         }))
       },
       breadcrumbJsonLd([
         { name: site.companyName, url: siteUrl },
         {
-          name: pages["breastfeeding-guides"].breadcrumbs.tracker,
+          name: pages["breastfeeding-support"].breadcrumbs.tracker,
           url: absoluteRouteUrl(breastfeedingTracker.route)
         },
         {
-          name: pages["breastfeeding-guides"].breadcrumbs.guides,
-          url: absoluteRouteUrl(pages["breastfeeding-guides"].route)
+          name: pages["breastfeeding-support"].breadcrumbs.support,
+          url: absoluteRouteUrl(pages["breastfeeding-support"].route)
         }
       ])
     ]
   },
   ...breastfeedingGuides.map((guide) => {
-    const path = `${pages["breastfeeding-guides"].route}/${guide.slug}`;
+    const path = `${pages["breastfeeding-support"].route}/${guide.slug}`;
     return {
       path,
       title: guide.metaTitle || guide.title,
@@ -330,18 +331,101 @@ const routes = [
         breadcrumbJsonLd([
           { name: site.companyName, url: siteUrl },
           {
-            name: pages["breastfeeding-guides"].breadcrumbs.tracker,
+            name: pages["breastfeeding-support"].breadcrumbs.tracker,
             url: absoluteRouteUrl(breastfeedingTracker.route)
           },
           {
-            name: pages["breastfeeding-guides"].breadcrumbs.guides,
-            url: absoluteRouteUrl(pages["breastfeeding-guides"].route)
+            name: pages["breastfeeding-support"].breadcrumbs.support,
+            url: absoluteRouteUrl(pages["breastfeeding-support"].route)
           },
           { name: guide.title, url: absoluteRouteUrl(path) }
         ])
       ]
     };
   }),
+  {
+    path: pages["breastfeeding-blog"].route,
+    ...pages["breastfeeding-blog"].seo,
+    jsonLd: [
+      organizationJsonLd,
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: pages["breastfeeding-blog"].collection.name,
+        description: pages["breastfeeding-blog"].collection.description,
+        url: absoluteRouteUrl(pages["breastfeeding-blog"].route),
+        hasPart: breastfeedingBlogPosts.map((post) => ({
+          "@type": "BlogPosting",
+          headline: post.title,
+          url: absoluteRouteUrl(`${pages["breastfeeding-blog"].route}/${post.slug}`)
+        }))
+      },
+      breadcrumbJsonLd([
+        { name: site.companyName, url: siteUrl },
+        {
+          name: pages["breastfeeding-blog"].breadcrumbs.tracker,
+          url: absoluteRouteUrl(breastfeedingTracker.route)
+        },
+        {
+          name: pages["breastfeeding-blog"].breadcrumbs.blog,
+          url: absoluteRouteUrl(pages["breastfeeding-blog"].route)
+        }
+      ])
+    ]
+  },
+  ...breastfeedingBlogPosts.map((post) => {
+    const path = `${pages["breastfeeding-blog"].route}/${post.slug}`;
+    return {
+      path,
+      title: post.metaTitle || post.title,
+      description: post.description,
+      ogImage: post.ogImage,
+      ...(post.ogImageAlt ? { ogImageAlt: post.ogImageAlt } : {}),
+      jsonLd: [
+        organizationJsonLd,
+        blogPostingJsonLd(post, path),
+        ...(post.faqItems.length ? [faqPageJsonLd(post.faqItems)] : []),
+        breadcrumbJsonLd([
+          { name: site.companyName, url: siteUrl },
+          {
+            name: pages["breastfeeding-blog"].breadcrumbs.tracker,
+            url: absoluteRouteUrl(breastfeedingTracker.route)
+          },
+          {
+            name: pages["breastfeeding-blog"].breadcrumbs.blog,
+            url: absoluteRouteUrl(pages["breastfeeding-blog"].route)
+          },
+          { name: post.title, url: absoluteRouteUrl(path) }
+        ])
+      ]
+    };
+  }),
+  {
+    path: pages["breastfeeding-blog-disclosure"].route,
+    ...pages["breastfeeding-blog-disclosure"].seo,
+    jsonLd: [
+      organizationJsonLd,
+      webPageJsonLd(
+        pages["breastfeeding-blog-disclosure"].route,
+        pages["breastfeeding-blog-disclosure"].seo
+      ),
+      breadcrumbJsonLd([
+        { name: site.companyName, url: siteUrl },
+        {
+          name: pages["breastfeeding-blog-disclosure"].breadcrumbs.tracker,
+          url: absoluteRouteUrl(breastfeedingTracker.route)
+        },
+        {
+          name: pages["breastfeeding-blog-disclosure"].breadcrumbs.blog,
+          url: absoluteRouteUrl(pages["breastfeeding-blog"].route)
+        },
+        {
+          name: pages["breastfeeding-blog-disclosure"].breadcrumbs.disclosure,
+          url: absoluteRouteUrl(pages["breastfeeding-blog-disclosure"].route)
+        }
+      ])
+    ]
+  },
   {
     path: pages.about.route,
     ...pages.about.seo,
@@ -444,6 +528,26 @@ const legacyPrivacyRedirects = [
 
 export const legacyRedirects = [
   ["/apps/breast-feeding-tracker", "/breastfeeding-tracker"],
+  ["/breastfeeding-tracker/guides", "/breastfeeding-tracker/support"],
+  ...[
+    "breastfeeding-timer-iphone",
+    "breastfeeding-tracker-apple-watch",
+    "edit-missed-feeding-logs",
+    "export-breastfeeding-log-pdf",
+    "private-breastfeeding-tracker",
+    "track-left-and-right-side"
+  ].map((slug) => [
+    `/breastfeeding-tracker/guides/${slug}`,
+    `/breastfeeding-tracker/support/${slug}`
+  ]),
+  ...[
+    "best-breastfeeding-apps",
+    "breastfeeding-didnt-go-to-plan",
+    "moving-from-breastfeeding-to-combi-feeding"
+  ].map((slug) => [
+    `/breastfeeding-tracker/guides/${slug}`,
+    `/breastfeeding-tracker/blog/${slug}`
+  ]),
   ["/pages/portfolio/rewire.html", "/apps/rewire"],
   ["/pages/portfolio/wren.html", "/apps/wren"],
   ["/pages/portfolio/smartycolours.html", "/apps/smarty-colours"],

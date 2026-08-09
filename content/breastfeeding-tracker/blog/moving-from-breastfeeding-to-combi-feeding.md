@@ -4,6 +4,7 @@ metaTitle: "Moving from Breastfeeding to Combi Feeding"
 description: "Our personal experience of expressing breast milk, sharing bottle feeds and moving gradually from exclusive breastfeeding to combi feeding."
 publishedAt: "2026-08-04"
 published: true
+category: "Personal stories"
 excerpt: "Expressing gave us another way to feed our daughter without ending breastfeeding. This is how combi feeding began to work for our family."
 tags: "moving from breastfeeding to combi feeding, expressing breast milk, mixed feeding, combination feeding, expressed milk, sharing night feeds"
 ogImage: "/assets/breastfeeding-tracker-og.png"
@@ -118,4 +119,4 @@ It was the one that helped all four of us move forward.
 
 # Continue reading
 
-Read more about why we changed course in [Breastfeeding Didn’t Go the Way We Planned. And That’s Okay.](/breastfeeding-tracker/guides/breastfeeding-didnt-go-to-plan/)
+Read more about why we changed course in [Breastfeeding Didn’t Go the Way We Planned. And That’s Okay.](/breastfeeding-tracker/blog/breastfeeding-didnt-go-to-plan/)

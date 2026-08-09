@@ -18,6 +18,11 @@ const contentCollections = [
     sourceDir: join(rootDir, "content", "breastfeeding-tracker", "guides"),
     outputFile: "breastfeeding-tracker-guides.json",
     defaultOgImage: "/assets/breastfeeding-tracker-og.png"
+  },
+  {
+    sourceDir: join(rootDir, "content", "breastfeeding-tracker", "blog"),
+    outputFile: "breastfeeding-tracker-blog.json",
+    defaultOgImage: "/assets/breastfeeding-tracker-og.png"
   }
 ];
 const siteSource = await readJson(join(rootDir, "content", "cms", "site.json"));
@@ -31,7 +36,8 @@ for (const collection of contentCollections) {
 await generateRating();
 await generateCmsContent({
   rewireArticles: generatedCollections.get("rewire-blog.json"),
-  breastfeedingGuides: generatedCollections.get("breastfeeding-tracker-guides.json")
+  breastfeedingGuides: generatedCollections.get("breastfeeding-tracker-guides.json"),
+  breastfeedingBlogPosts: generatedCollections.get("breastfeeding-tracker-blog.json")
 });
 
 async function generateContentCollection({ sourceDir, outputFile, defaultOgImage }) {
@@ -65,6 +71,9 @@ async function generateContentCollection({ sourceDir, outputFile, defaultOgImage
       updatedAt: frontmatter.updatedAt || null,
       excerpt: frontmatter.excerpt || frontmatter.description,
       tags: parseTags(frontmatter.tags),
+      category: frontmatter.category || null,
+      readingMinutes: Math.max(1, Math.ceil(stripMarkdownFormatting(body).split(/\s+/).length / 220)),
+      tableOfContents: extractTableOfContents(body),
       published,
       draft: !published,
       ogImage: frontmatter.ogImage || defaultOgImage,
@@ -90,7 +99,7 @@ async function generateContentCollection({ sourceDir, outputFile, defaultOgImage
   return output;
 }
 
-async function generateCmsContent({ rewireArticles, breastfeedingGuides }) {
+async function generateCmsContent({ rewireArticles, breastfeedingGuides, breastfeedingBlogPosts }) {
   const site = await readJson(join(rootDir, "content", "cms", "site.json"));
   const pageRecords = await readJsonDirectory(join(rootDir, "content", "pages"));
   const appRecords = await readJsonDirectory(join(rootDir, "content", "apps"));
@@ -134,7 +143,8 @@ async function generateCmsContent({ rewireArticles, breastfeedingGuides }) {
     rewire,
     breastfeedingTracker,
     rewireArticles,
-    breastfeedingGuides
+    breastfeedingGuides,
+    breastfeedingBlogPosts
   });
 
   await writeJson(join(generatedDir, "cms-content.json"), {
@@ -147,7 +157,8 @@ async function generateCmsContent({ rewireArticles, breastfeedingGuides }) {
     rewire,
     breastfeedingTracker,
     rewireArticles: rewireArticles.posts,
-    breastfeedingGuides: breastfeedingGuides.posts
+    breastfeedingGuides: breastfeedingGuides.posts,
+    breastfeedingBlogPosts: breastfeedingBlogPosts.posts
   });
 }
 
@@ -161,7 +172,8 @@ function validateCmsContent(content) {
     rewire,
     breastfeedingTracker,
     rewireArticles,
-    breastfeedingGuides
+    breastfeedingGuides,
+    breastfeedingBlogPosts
   } = content;
   const expectedPages = [
     "home",
@@ -169,7 +181,9 @@ function validateCmsContent(content) {
     "about",
     "not-found",
     "rewire-blog",
-    "breastfeeding-guides"
+    "breastfeeding-support",
+    "breastfeeding-blog",
+    "breastfeeding-blog-disclosure"
   ];
 
   for (const pageName of expectedPages) {
@@ -269,6 +283,9 @@ function validateCmsContent(content) {
   const breastfeedingGuideSlugs = new Set(
     breastfeedingGuides.posts.map((guide) => guide.slug)
   );
+  const breastfeedingBlogSlugs = new Set(
+    breastfeedingBlogPosts.posts.map((post) => post.slug)
+  );
   for (const guide of rewire.guidePages || []) {
     assert(
       rewireArticleSlugs.has(guide.slug),
@@ -325,7 +342,10 @@ function validateCmsContent(content) {
       .map((policy) => canonicalRoute(`/privacy/${policy.slug}`)),
     ...rewireArticles.posts.map((post) => canonicalRoute(`/rewire/blog/${post.slug}`)),
     ...breastfeedingGuides.posts.map((guide) =>
-      canonicalRoute(`/breastfeeding-tracker/guides/${guide.slug}`)
+      canonicalRoute(`/breastfeeding-tracker/support/${guide.slug}`)
+    ),
+    ...breastfeedingBlogPosts.posts.map((post) =>
+      canonicalRoute(`/breastfeeding-tracker/blog/${post.slug}`)
     ),
     ...standardPages
       .filter((page) => page.published)
@@ -336,6 +356,13 @@ function validateCmsContent(content) {
     breastfeedingGuideSlugs.size === breastfeedingGuides.posts.length,
     "Breastfeeding guide slugs must be unique."
   );
+  assert(
+    breastfeedingBlogSlugs.size === breastfeedingBlogPosts.posts.length,
+    "Breastfeeding blog slugs must be unique."
+  );
+  for (const slug of breastfeedingBlogSlugs) {
+    assert(!breastfeedingGuideSlugs.has(slug), `Breastfeeding content slug "${slug}" is duplicated.`);
+  }
   assert(
     rewireArticleSlugs.size === rewireArticles.posts.length,
     "Rewire article slugs must be unique."
@@ -650,6 +677,7 @@ function parseFrontmatter(source) {
 function renderMarkdown(source) {
   const blocks = [];
   const lines = source.replace(/\r\n/g, "\n").split("\n");
+  const headingIds = new Map();
   let index = 0;
 
   while (index < lines.length) {
@@ -677,10 +705,11 @@ function renderMarkdown(source) {
     if (heading) {
       const level = heading[1].length + 1;
       const content = renderInline(heading[2]);
+      const headingId = uniqueHeadingId(stripHeadingFormatting(heading[2]), headingIds);
       const className = content.includes('class="feeding-inline-image"')
         ? ' class="feeding-product-heading"'
         : "";
-      blocks.push(`<h${level}${className}>${content}</h${level}>`);
+      blocks.push(`<h${level} id="${headingId}"${className}>${content}</h${level}>`);
       index += 1;
       continue;
     }
@@ -745,6 +774,36 @@ function renderMarkdown(source) {
   }
 
   return blocks.join("\n");
+}
+
+function extractTableOfContents(source) {
+  const headingIds = new Map();
+  return source
+    .replace(/\r\n/g, "\n")
+    .split("\n")
+    .map((line) => line.match(/^(#{1,3})\s+(.+)$/))
+    .filter(Boolean)
+    .map((heading) => {
+      const label = stripHeadingFormatting(heading[2]);
+      return {
+        level: heading[1].length + 1,
+        label,
+        id: uniqueHeadingId(label, headingIds)
+      };
+    })
+    .filter((heading) => heading.level === 2);
+}
+
+function uniqueHeadingId(value, seen) {
+  const base = String(value)
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "") || "section";
+  const count = seen.get(base) || 0;
+  seen.set(base, count + 1);
+  return count ? `${base}-${count + 1}` : base;
 }
 
 function isTableStart(lines, index) {
@@ -825,12 +884,16 @@ function extractFaqItems(source) {
 
 function stripMarkdownFormatting(value) {
   return String(value)
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
     .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, "$1")
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
     .replace(/[*_~`>#]/g, "")
     .replace(/^\s*(?:[-*]|\d+\.)\s+/gm, "")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function stripHeadingFormatting(value) {
+  return stripMarkdownFormatting(String(value).replace(/!\[[^\]]*\]\([^)]+\)/g, ""));
 }
 
 function renderInline(value) {

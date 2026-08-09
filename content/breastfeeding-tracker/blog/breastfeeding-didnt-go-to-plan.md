@@ -3,6 +3,8 @@ title: "Breastfeeding Didn’t Go the Way We Planned. And That’s Okay."
 metaTitle: "When Breastfeeding Doesn’t Go to Plan"
 description: "A personal story about tongue tie, painful feeds, mixed feeding, expressing and adapting when breastfeeding did not go the way we planned."
 publishedAt: "2026-07-31"
+published: true
+category: "Personal stories"
 excerpt: "Our feeding journey changed within days. This is how we let go of the original plan and found a way of feeding that worked for our family."
 tags: "breastfeeding didn't go to plan, mixed feeding, tongue tie breastfeeding, expressing breast milk, newborn feeding journey"
 ogImage: "/assets/breastfeeding-tracker-og.png"
@@ -83,4 +85,4 @@ And that’s always been the goal.
 
 # Continue reading
 
-If you’re deciding what kind of support would suit your family, read our honest comparison of the [best breastfeeding and baby feeding apps](/breastfeeding-tracker/guides/best-breastfeeding-apps/).
+Read how expressing and shared bottle feeds helped us take the next step in [How Expressing Helped Us Move from Breastfeeding to Combi Feeding](/breastfeeding-tracker/blog/moving-from-breastfeeding-to-combi-feeding/).
