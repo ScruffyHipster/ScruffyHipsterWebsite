@@ -12,11 +12,13 @@ const trackerBasePath = "/breastfeeding-tracker";
 const trackerRoutes = publicRoutes.filter(
   (route) => route.path === trackerBasePath || route.path.startsWith(`${trackerBasePath}/`)
 );
-const expectedTrackerRouteCount = cmsContent.breastfeedingGuides.length + 2;
+const expectedTrackerRouteCount =
+  cmsContent.breastfeedingGuides.length + cmsContent.breastfeedingBlogPosts.length + 4;
 const expectedPublishedRouteCount =
-  7 +
+  9 +
   cmsContent.rewireArticles.length +
   cmsContent.breastfeedingGuides.length +
+  cmsContent.breastfeedingBlogPosts.length +
   cmsContent.apps.filter((app) => app.slug !== "breast-feeding-tracker").length +
   cmsContent.privacyPolicies.length +
   cmsContent.standardPages.length;
@@ -95,8 +97,8 @@ for (const route of publicRoutes) {
 }
 
 assert(
-  legacyRedirects.length === 27,
-  `Expected 27 legacy redirects, found ${legacyRedirects.length}.`
+  legacyRedirects.length === 37,
+  `Expected 37 legacy redirects, found ${legacyRedirects.length}.`
 );
 const publicPathSet = new Set(publicRoutes.map((route) => canonicalPath(route.path)));
 for (const [from, to] of legacyRedirects) {
@@ -173,12 +175,25 @@ for (const route of trackerRoutes) {
   if (route.path === trackerBasePath) {
     assert(html.includes('"@type":"SoftwareApplication"'), "Tracker landing page is missing SoftwareApplication data.");
     assert(html.includes('"@type":"FAQPage"'), "Tracker landing page is missing FAQPage data.");
-  } else if (route.path === `${trackerBasePath}/guides`) {
-    assert(html.includes('"@type":"CollectionPage"'), "Guide index is missing CollectionPage data.");
+  } else if (
+    route.path === `${trackerBasePath}/support` ||
+    route.path === `${trackerBasePath}/blog`
+  ) {
+    assert(html.includes('"@type":"CollectionPage"'), `${route.path} is missing CollectionPage data.`);
+  } else if (route.path === `${trackerBasePath}/blog/editorial-disclosure`) {
+    assert(html.includes('class="feeding-disclosure-page"'), "Blog disclosure is missing rendered content.");
+    assert(html.includes('"@type":"WebPage"'), "Blog disclosure is missing WebPage data.");
+  } else if (route.path.startsWith(`${trackerBasePath}/blog/`)) {
+    assert(html.includes("feeding-blog-article-body"), `${route.path} is missing rendered blog content.`);
+    assert(
+      /class="feeding-article-body feeding-blog-article-body"><h2[^>]*>/.test(html),
+      `${route.path} does not begin its article body with an h2.`
+    );
+    assert(html.includes('"@type":"BlogPosting"'), `${route.path} is missing BlogPosting data.`);
   } else {
     assert(html.includes('class="feeding-article-body"'), `${route.path} is missing rendered guide content.`);
     assert(
-      /class="feeding-article-body"><h2>/.test(html),
+      /class="feeding-article-body"><h2[^>]*>/.test(html),
       `${route.path} does not begin its article body with an h2.`
     );
     assert(html.includes('"@type":"Article"'), `${route.path} is missing Article data.`);
@@ -223,7 +238,7 @@ assert(
 
 await access(join(distDir, "assets", "breastfeeding-tracker-og.png"));
 
-const comparisonPath = `${trackerBasePath}/guides/best-breastfeeding-apps`;
+const comparisonPath = `${trackerBasePath}/blog/best-breastfeeding-apps`;
 const comparisonHtml = await readFile(routeOutputPath(comparisonPath), "utf8");
 const comparisonTitle = matchContent(
   comparisonHtml,
@@ -241,7 +256,7 @@ const comparisonJsonLd = [
   )
 ].map((match) => JSON.parse(match[1]));
 const comparisonFaq = comparisonJsonLd.find((entry) => entry["@type"] === "FAQPage");
-const comparisonArticle = comparisonJsonLd.find((entry) => entry["@type"] === "Article");
+const comparisonArticle = comparisonJsonLd.find((entry) => entry["@type"] === "BlogPosting");
 const expectedComparisonAlt =
   "Huckleberry, Nara Baby and Breastfeeding Tracker & Timer compared by best use, features and cost.";
 const expectedComparisonAltHtml = expectedComparisonAlt.replace("&", "&amp;");
@@ -253,7 +268,7 @@ const requiredComparisonSources = [
   "https://apps.apple.com/gb/app/breastfeeding-tracker-timer/id6754637800",
   "https://www.nhs.uk/baby/breastfeeding-and-bottle-feeding/breastfeeding/the-first-few-days/",
   "https://www.nhs.uk/baby/breastfeeding-and-bottle-feeding/breastfeeding-problems/enough-milk/",
-  "https://www.unicef.org.uk/babyfriendly/baby-friendly-resources/%20relationship-building-resources/responsive-feeding-infosheet/"
+  "https://www.unicef.org.uk/babyfriendly/baby-friendly-resources/relationship-building-resources/responsive-feeding-infosheet/"
 ];
 
 assert(
@@ -292,7 +307,7 @@ assert(
   "Comparison product sections must order Huckleberry, Breastfeeding Tracker, then Nara Baby."
 );
 assert(
-  (comparisonHtml.match(/<h2 class="feeding-product-heading">/g) || []).length === 3 &&
+  (comparisonHtml.match(/<h2[^>]*class="feeding-product-heading">/g) || []).length === 3 &&
     (comparisonHtml.match(/class="feeding-inline-image"/g) || []).length === 3,
   "Comparison product sections must render three skimmable icon headings."
 );
@@ -307,14 +322,14 @@ for (const iconPath of [
   );
   await access(join(distDir, iconPath.replace(/^\//, "")));
 }
-assert(comparisonArticle, "Comparison guide is missing Article structured data.");
+assert(comparisonArticle, "Comparison post is missing BlogPosting structured data.");
 assert(
   comparisonArticle.url === canonicalUrl(comparisonPath),
-  "Comparison Article data has the wrong canonical URL."
+  "Comparison BlogPosting data has the wrong canonical URL."
 );
 assert(
   comparisonArticle.datePublished === "2026-07-27",
-  "Comparison Article data has the wrong publication date."
+  "Comparison BlogPosting data has the wrong publication date."
 );
 assert(comparisonFaq, "Comparison guide is missing FAQPage structured data.");
 assert(

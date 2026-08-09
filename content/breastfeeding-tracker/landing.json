@@ -140,15 +140,21 @@
       },
       {
         "label": "How private tracking works",
-        "url": "/breastfeeding-tracker/guides/private-breastfeeding-tracker/"
+        "url": "/breastfeeding-tracker/support/private-breastfeeding-tracker/"
       }
     ]
   },
-  "guidesSection": {
+  "supportSection": {
     "eyebrow": "help when you need it",
-    "heading": "Practical guides for getting started",
-    "body": "Browse practical guides and tips for feeding, tracking, and getting more from the app.",
-    "browseLabel": "Browse all guides"
+    "heading": "Help & Support",
+    "body": "Straightforward help with recording feeds, correcting your history and using the app across iPhone and Apple Watch.",
+    "browseLabel": "Visit Help & Support"
+  },
+  "blogSection": {
+    "eyebrow": "from the blog",
+    "heading": "Honest stories about feeding and adapting",
+    "body": "Personal experiences, practical lessons and carefully sourced information for when feeding does not follow the original plan.",
+    "browseLabel": "Read the blog"
   },
   "faqSection": {
     "eyebrow": "frequently asked questions",
@@ -159,15 +165,15 @@
     "heading": "Try the tracker for free",
     "label": "Download on the App Store"
   },
-  "guideTemplate": {
-    "backLabel": "Back to all guides",
-    "eyebrow": "breastfeeding tracker guide",
+  "supportTemplate": {
+    "backLabel": "Back to Help & Support",
+    "eyebrow": "help article",
     "defaultCta": {
       "eyebrow": "practical help for everyday feeds",
       "heading": "Ready when the next feed begins.",
       "label": "Download on the App Store"
     },
-    "relatedHeading": "Related guides"
+    "relatedHeading": "Related help"
   },
   "appStoreUrl": "https://apps.apple.com/app/id6754637800",
   "ogImage": "/assets/breastfeeding-tracker-og.png",

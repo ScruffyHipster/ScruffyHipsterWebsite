@@ -6,8 +6,10 @@ import { RouteAnalytics } from "../analytics/RouteAnalytics";
 import { ScrollToTop } from "./ScrollToTop";
 import {
   appRoutePath,
+  BREASTFEEDING_TRACKER_BLOG_BASE_PATH,
+  BREASTFEEDING_TRACKER_BLOG_DISCLOSURE_PATH,
   BREASTFEEDING_TRACKER_BASE_PATH,
-  BREASTFEEDING_TRACKER_GUIDES_BASE_PATH,
+  BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH,
   privacyRoutePath
 } from "../content/routes";
 import { canonicalPath } from "../seo/canonical";
@@ -18,8 +20,7 @@ export function AppShell() {
   const normalizedPathname = location.pathname.replace(/\/+$/, "") || "/";
   const isBreastfeedingTrackerRoute =
     normalizedPathname === BREASTFEEDING_TRACKER_BASE_PATH ||
-    normalizedPathname.startsWith(`${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}/`) ||
-    normalizedPathname === BREASTFEEDING_TRACKER_GUIDES_BASE_PATH;
+    normalizedPathname.startsWith(`${BREASTFEEDING_TRACKER_BASE_PATH}/`);
 
   return (
     <div className={`site-shell${isBreastfeedingTrackerRoute ? " feeding-site-shell" : ""}`}>
@@ -63,6 +64,26 @@ export function AppShell() {
                     <Link to={appRoutePath(app)}>{app.name}</Link>
                   </li>
                 ))}
+              </ul>
+            </div>
+            <div>
+              <p className="footer-heading">{siteConfig.footer.resourcesHeading}</p>
+              <ul className="footer-list">
+                <li>
+                  <Link to={canonicalPath(BREASTFEEDING_TRACKER_BLOG_BASE_PATH)}>
+                    {siteConfig.footer.breastfeedingBlogLabel}
+                  </Link>
+                </li>
+                <li>
+                  <Link to={canonicalPath(BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH)}>
+                    {siteConfig.footer.breastfeedingSupportLabel}
+                  </Link>
+                </li>
+                <li>
+                  <Link to={canonicalPath(BREASTFEEDING_TRACKER_BLOG_DISCLOSURE_PATH)}>
+                    {siteConfig.footer.editorialDisclosureLabel}
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>

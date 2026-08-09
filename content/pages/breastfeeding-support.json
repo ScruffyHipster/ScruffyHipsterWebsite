@@ -1,0 +1,61 @@
+{
+  "published": true,
+  "route": "/breastfeeding-tracker/support",
+  "seo": {
+    "title": "Breastfeeding Tracker Help & Support",
+    "description": "Help using Breastfeeding Tracker on iPhone and Apple Watch, including timers, missed feeds, privacy, history and PDF export.",
+    "keywords": [
+      "breastfeeding tracker help",
+      "breastfeeding tracker support",
+      "Apple Watch feeding tracker",
+      "newborn breastfeeding tracker"
+    ],
+    "ogImage": "/assets/breastfeeding-tracker-og.png"
+  },
+  "collection": {
+    "name": "Breastfeeding Tracker Help & Support",
+    "description": "Straightforward help for timing, correcting, reviewing, and exporting feeding history without schedules or medical advice."
+  },
+  "breadcrumbs": {
+    "tracker": "Breastfeeding Tracker",
+    "support": "Help & Support"
+  },
+  "hero": {
+    "backLabel": "Back to Breastfeeding Tracker",
+    "eyebrow": "help & support",
+    "heading": "How can we help?",
+    "body": "Straightforward help with recording feeds, correcting your history and using the app across iPhone and Apple Watch. If you cannot find what you need, email us and a real person will reply."
+  },
+  "topicsHeading": "Start with what you need",
+  "topicIcon": "↗",
+  "topicLinkLabel": "Read the help article →",
+  "topics": [
+    {
+      "label": "Getting started",
+      "body": "Start a breastfeeding timer, record the side and find the latest feed without filling in a form.",
+      "slug": "breastfeeding-timer-iphone"
+    },
+    {
+      "label": "Apple Watch",
+      "body": "Start and stop from your wrist, keep tracking offline and sync completed feeds back to iPhone.",
+      "slug": "breastfeeding-tracker-apple-watch"
+    },
+    {
+      "label": "History & corrections",
+      "body": "Fix a late timer, add a missed feed and keep the record useful when the day gets interrupted.",
+      "slug": "edit-missed-feeding-logs"
+    },
+    {
+      "label": "Privacy & exports",
+      "body": "Understand what stays private and create a PDF copy of selected feeding history.",
+      "slug": "private-breastfeeding-tracker"
+    }
+  ],
+  "articlesHeading": "All help articles",
+  "contact": {
+    "eyebrow": "still stuck?",
+    "heading": "Talk to a human.",
+    "body": "Tell us what is happening, which device you are using and what you expected to see. We read every support email.",
+    "label": "Email support"
+  }
+}

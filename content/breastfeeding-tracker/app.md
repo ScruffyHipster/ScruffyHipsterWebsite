@@ -71,12 +71,13 @@ Primary search themes:
 ## Canonical routes
 
 - Landing page: `/breastfeeding-tracker`
-- Guide index: `/breastfeeding-tracker/guides`
-- Apple Watch guide: `/breastfeeding-tracker/guides/breastfeeding-tracker-apple-watch`
-- iPhone timer guide: `/breastfeeding-tracker/guides/breastfeeding-timer-iphone`
-- Side-tracking guide: `/breastfeeding-tracker/guides/track-left-and-right-side`
-- Privacy guide: `/breastfeeding-tracker/guides/private-breastfeeding-tracker`
-- Editing guide: `/breastfeeding-tracker/guides/edit-missed-feeding-logs`
-- PDF guide: `/breastfeeding-tracker/guides/export-breastfeeding-log-pdf`
+- Help & Support index: `/breastfeeding-tracker/support`
+- Apple Watch help: `/breastfeeding-tracker/support/breastfeeding-tracker-apple-watch`
+- iPhone timer help: `/breastfeeding-tracker/support/breastfeeding-timer-iphone`
+- Side-tracking help: `/breastfeeding-tracker/support/track-left-and-right-side`
+- Privacy help: `/breastfeeding-tracker/support/private-breastfeeding-tracker`
+- Editing help: `/breastfeeding-tracker/support/edit-missed-feeding-logs`
+- PDF help: `/breastfeeding-tracker/support/export-breastfeeding-log-pdf`
+- Blog index: `/breastfeeding-tracker/blog`
 
 The former `/apps/breast-feeding-tracker` route redirects to the landing page and is not canonical.

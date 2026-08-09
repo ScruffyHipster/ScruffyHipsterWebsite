@@ -1,0 +1,72 @@
+{
+  "published": true,
+  "route": "/breastfeeding-tracker/blog/editorial-disclosure",
+  "seo": {
+    "title": "Breastfeeding Blog Editorial & Affiliate Disclosure",
+    "description": "How Scruffy Hipster researches breastfeeding articles, separates lived experience from guidance, handles affiliate links and corrects mistakes.",
+    "keywords": [
+      "breastfeeding blog disclosure",
+      "editorial policy",
+      "affiliate disclosure"
+    ],
+    "ogImage": "/assets/breastfeeding-tracker-og.png"
+  },
+  "breadcrumbs": {
+    "tracker": "Breastfeeding Tracker",
+    "blog": "Blog",
+    "disclosure": "Editorial & affiliate disclosure"
+  },
+  "hero": {
+    "backLabel": "Back to the blog",
+    "eyebrow": "the blog",
+    "heading": "Honest about how the blog works.",
+    "body": "What we write, how we research it, how the app fits in and what you can expect from us."
+  },
+  "sections": [
+    {
+      "heading": "The short version",
+      "paragraphs": [
+        "The blog combines one family’s lived experience with carefully attributed information from sources such as the NHS. Personal stories are not universal advice, and health-related articles do not replace support from someone who knows you and your baby.",
+        "Scruffy Hipster makes Breastfeeding Tracker & Timer. We say so whenever an article compares or recommends feeding apps."
+      ]
+    },
+    {
+      "heading": "Editorial independence",
+      "paragraphs": [
+        "No outside brand has a say over what we publish. Comparisons are written to answer the reader’s question first, including recommending another product when it is a better fit.",
+        "Our own app does not receive a higher ranking simply because we make it. Product claims are checked against current first-party documentation and dated when they may change."
+      ]
+    },
+    {
+      "heading": "Affiliate links",
+      "paragraphs": [
+        "The blog does not currently use affiliate links. If that changes, an article containing them will say so near the top, and this page will explain the programme and how commissions work.",
+        "Affiliate income would never change what we recommend, and paid placements would be labelled clearly rather than presented as independent editorial coverage."
+      ]
+    },
+    {
+      "heading": "How articles are researched",
+      "paragraphs": [
+        "Health and feeding information is attributed and linked to a current authoritative source wherever practical. We prefer live guidance pages over copying volatile figures into an article.",
+        "The articles are not formally reviewed by a medical professional. If feeding is painful, milk supply or weight is a concern, or you are worried about your baby’s wellbeing, contact an appropriate healthcare or feeding-support professional."
+      ]
+    },
+    {
+      "heading": "Personal stories",
+      "paragraphs": [
+        "First-person articles describe what happened in our family. They are clearly written as personal experience, not a template for how another family should feed.",
+        "We preserve the uncertainty and trade-offs in those stories rather than turning one outcome into a rule."
+      ]
+    },
+    {
+      "heading": "Corrections and updates",
+      "paragraphs": [
+        "Recommendations, products and guidance change. Material updates receive an updated date, and significant corrections are stated plainly.",
+        "If something looks wrong or outdated, email us. We will check it against the source and correct it when needed."
+      ]
+    }
+  ],
+  "contactHeading": "Questions or corrections?",
+  "contactBody": "Editorial questions and factual corrections are welcome.",
+  "contactLabel": "Email Scruffy Hipster"
+}

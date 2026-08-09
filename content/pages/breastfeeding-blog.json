@@ -1,0 +1,48 @@
+{
+  "published": true,
+  "route": "/breastfeeding-tracker/blog",
+  "seo": {
+    "title": "Breastfeeding, Expressing & Combi Feeding Blog",
+    "description": "Honest personal stories, practical lessons and carefully sourced writing about breastfeeding, expressing, combi feeding and newborn feeding apps.",
+    "keywords": [
+      "breastfeeding blog",
+      "combi feeding story",
+      "expressing breast milk",
+      "newborn feeding apps"
+    ],
+    "ogImage": "/assets/breastfeeding-tracker-og.png"
+  },
+  "collection": {
+    "name": "Breastfeeding Tracker Blog",
+    "description": "Personal stories, practical lessons and carefully sourced writing for when feeding does not follow the original plan."
+  },
+  "breadcrumbs": {
+    "tracker": "Breastfeeding Tracker",
+    "blog": "Blog"
+  },
+  "hero": {
+    "backLabel": "Back to Breastfeeding Tracker",
+    "eyebrow": "the breastfeeding tracker blog",
+    "heading": "Honest writing for feeding days that do not follow the plan.",
+    "body": "Breastfeeding, expressing, bottles and combi feeding—written from our own experience, grounded in trusted guidance and free from pressure."
+  },
+  "disclosureLabel": "Read our editorial & affiliate disclosure",
+  "disclosurePrefix": "Scruffy Hipster makes Breastfeeding Tracker & Timer. Articles distinguish personal experience, sourced guidance and product comparisons. Some posts may contain commercial links.",
+  "allFilterLabel": "All",
+  "filterAriaLabel": "Filter blog articles by category",
+  "recentHeading": "Recent articles",
+  "metaSeparator": "·",
+  "readingTimeSuffix": "min read",
+  "readLabel": "Read →",
+  "articleTemplate": {
+    "backLabel": "Back to the blog",
+    "tocHeading": "On this page",
+    "relatedHeading": "Keep reading",
+    "updatedLabel": "Updated",
+    "aboutEyebrow": "About the author",
+    "authorName": "Tom Murray",
+    "authorDescription": "Written from lived experience and checked against the sources linked in each article.",
+    "disclaimerPrefix": "This is general information and personal experience, not medical advice. Read our",
+    "disclosureLinkLabel": "editorial & affiliate disclosure"
+  }
+}

@@ -10,13 +10,20 @@ import { RewireLandingPage } from "../pages/RewireLandingPage";
 import { RewireBlogIndexPage } from "../pages/RewireBlogIndexPage";
 import { RewireBlogPostPage } from "../pages/RewireBlogPostPage";
 import { BreastfeedingTrackerLandingPage } from "../pages/BreastfeedingTrackerLandingPage";
-import { BreastfeedingTrackerGuidesPage } from "../pages/BreastfeedingTrackerGuidesPage";
-import { BreastfeedingTrackerGuidePage } from "../pages/BreastfeedingTrackerGuidePage";
+import { BreastfeedingTrackerSupportPage } from "../pages/BreastfeedingTrackerSupportPage";
+import { BreastfeedingTrackerSupportArticlePage } from "../pages/BreastfeedingTrackerSupportArticlePage";
+import { BreastfeedingTrackerBlogPage } from "../pages/BreastfeedingTrackerBlogPage";
+import { BreastfeedingTrackerBlogPostPage } from "../pages/BreastfeedingTrackerBlogPostPage";
+import { BreastfeedingTrackerBlogDisclosurePage } from "../pages/BreastfeedingTrackerBlogDisclosurePage";
 import { StandardPage } from "../pages/StandardPage";
 import {
   BREASTFEEDING_TRACKER_BASE_PATH,
-  BREASTFEEDING_TRACKER_GUIDES_BASE_PATH,
-  LEGACY_BREASTFEEDING_TRACKER_PATH
+  BREASTFEEDING_TRACKER_BLOG_BASE_PATH,
+  BREASTFEEDING_TRACKER_BLOG_DISCLOSURE_PATH,
+  BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH,
+  LEGACY_BREASTFEEDING_TRACKER_GUIDES_BASE_PATH,
+  LEGACY_BREASTFEEDING_TRACKER_PATH,
+  legacyRedirects
 } from "../content/routes";
 import { canonicalPath } from "../seo/canonical";
 
@@ -43,13 +50,30 @@ export function AppRoutes() {
           element={<BreastfeedingTrackerLandingPage />}
         />
         <Route
-          path={BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}
-          element={<BreastfeedingTrackerGuidesPage />}
+          path={BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH}
+          element={<BreastfeedingTrackerSupportPage />}
         />
         <Route
-          path={`${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}/:slug`}
-          element={<BreastfeedingTrackerGuidePage />}
+          path={`${BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH}/:slug`}
+          element={<BreastfeedingTrackerSupportArticlePage />}
         />
+        <Route
+          path={BREASTFEEDING_TRACKER_BLOG_BASE_PATH}
+          element={<BreastfeedingTrackerBlogPage />}
+        />
+        <Route
+          path={BREASTFEEDING_TRACKER_BLOG_DISCLOSURE_PATH}
+          element={<BreastfeedingTrackerBlogDisclosurePage />}
+        />
+        <Route
+          path={`${BREASTFEEDING_TRACKER_BLOG_BASE_PATH}/:slug`}
+          element={<BreastfeedingTrackerBlogPostPage />}
+        />
+        {legacyRedirects
+          .filter(({ from }) => from.startsWith(LEGACY_BREASTFEEDING_TRACKER_GUIDES_BASE_PATH))
+          .map(({ from, to }) => (
+            <Route key={from} path={from} element={<Navigate to={canonicalPath(to)} replace />} />
+          ))}
         <Route
           path={LEGACY_BREASTFEEDING_TRACKER_PATH}
           element={<Navigate to={canonicalPath(BREASTFEEDING_TRACKER_BASE_PATH)} replace />}

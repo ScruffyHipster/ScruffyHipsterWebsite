@@ -9,7 +9,10 @@ export const PRIVACY_BASE_PATH = "/privacy";
 export const REWIRE_BASE_PATH = "/rewire";
 export const REWIRE_BLOG_BASE_PATH = `${REWIRE_BASE_PATH}/blog`;
 export const BREASTFEEDING_TRACKER_BASE_PATH = "/breastfeeding-tracker";
-export const BREASTFEEDING_TRACKER_GUIDES_BASE_PATH = `${BREASTFEEDING_TRACKER_BASE_PATH}/guides`;
+export const BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH = `${BREASTFEEDING_TRACKER_BASE_PATH}/support`;
+export const BREASTFEEDING_TRACKER_BLOG_BASE_PATH = `${BREASTFEEDING_TRACKER_BASE_PATH}/blog`;
+export const BREASTFEEDING_TRACKER_BLOG_DISCLOSURE_PATH = `${BREASTFEEDING_TRACKER_BLOG_BASE_PATH}/editorial-disclosure`;
+export const LEGACY_BREASTFEEDING_TRACKER_GUIDES_BASE_PATH = `${BREASTFEEDING_TRACKER_BASE_PATH}/guides`;
 export const LEGACY_BREASTFEEDING_TRACKER_PATH = "/apps/breast-feeding-tracker";
 const legacyPrivacyRedirects: Array<{ file: string; to: string }> = [
   { file: "rewirePrivacyPolicy.html", to: "/privacy/rewire" },
@@ -32,7 +35,9 @@ export const publicRoutePaths = [
   "/",
   canonicalPath(REWIRE_BASE_PATH),
   canonicalPath(REWIRE_BLOG_BASE_PATH),
-  canonicalPath(BREASTFEEDING_TRACKER_GUIDES_BASE_PATH),
+  canonicalPath(BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH),
+  canonicalPath(BREASTFEEDING_TRACKER_BLOG_BASE_PATH),
+  canonicalPath(BREASTFEEDING_TRACKER_BLOG_DISCLOSURE_PATH),
   canonicalPath(APP_BASE_PATH),
   canonicalPath("/about"),
   ...apps.map(appRoutePath),
@@ -42,6 +47,29 @@ export const publicRoutePaths = [
 
 export const legacyRedirects: Array<{ from: string; to: string }> = [
   { from: LEGACY_BREASTFEEDING_TRACKER_PATH, to: BREASTFEEDING_TRACKER_BASE_PATH },
+  {
+    from: LEGACY_BREASTFEEDING_TRACKER_GUIDES_BASE_PATH,
+    to: BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH
+  },
+  ...[
+    "breastfeeding-timer-iphone",
+    "breastfeeding-tracker-apple-watch",
+    "edit-missed-feeding-logs",
+    "export-breastfeeding-log-pdf",
+    "private-breastfeeding-tracker",
+    "track-left-and-right-side"
+  ].map((slug) => ({
+    from: `${LEGACY_BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}/${slug}`,
+    to: `${BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH}/${slug}`
+  })),
+  ...[
+    "best-breastfeeding-apps",
+    "breastfeeding-didnt-go-to-plan",
+    "moving-from-breastfeeding-to-combi-feeding"
+  ].map((slug) => ({
+    from: `${LEGACY_BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}/${slug}`,
+    to: `${BREASTFEEDING_TRACKER_BLOG_BASE_PATH}/${slug}`
+  })),
   { from: "/pages/portfolio/rewire.html", to: "/apps/rewire" },
   { from: "/pages/portfolio/wren.html", to: "/apps/wren" },
   { from: "/pages/portfolio/smartycolours.html", to: "/apps/smarty-colours" },

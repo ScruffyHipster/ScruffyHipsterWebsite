@@ -7,11 +7,13 @@ import {
   breastfeedingTrackerAppStoreUrl,
   breastfeedingTrackerContent,
   breastfeedingTrackerFaqs,
-  breastfeedingTrackerGuides
+  breastfeedingTrackerGuides,
+  breastfeedingTrackerBlogPosts
 } from "../content/breastfeedingTracker";
 import {
   BREASTFEEDING_TRACKER_BASE_PATH,
-  BREASTFEEDING_TRACKER_GUIDES_BASE_PATH
+  BREASTFEEDING_TRACKER_BLOG_BASE_PATH,
+  BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH
 } from "../content/routes";
 import { breadcrumbJsonLd, faqPageJsonLd, organizationJsonLd } from "../seo/jsonld";
 import { getSiteUrl } from "../seo/metadata";
@@ -197,16 +199,16 @@ export function BreastfeedingTrackerLandingPage() {
       <section className="feeding-section feeding-guides">
         <div className="container">
           <Reveal className="feeding-section-heading">
-            <p className="eyebrow">{breastfeedingTrackerContent.guidesSection.eyebrow}</p>
-            <h2>{breastfeedingTrackerContent.guidesSection.heading}</h2>
-            <p>{breastfeedingTrackerContent.guidesSection.body}</p>
+            <p className="eyebrow">{breastfeedingTrackerContent.supportSection.eyebrow}</p>
+            <h2>{breastfeedingTrackerContent.supportSection.heading}</h2>
+            <p>{breastfeedingTrackerContent.supportSection.body}</p>
           </Reveal>
           <div className="feeding-guide-list">
-            {breastfeedingTrackerGuides.map((guide, index) => (
+            {breastfeedingTrackerGuides.slice(0, 3).map((guide, index) => (
               <Reveal key={guide.slug} delayMs={Math.min(index * 55, 220)}>
                 <Link
                   className="feeding-guide-row"
-                  to={canonicalPath(`${BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}/${guide.slug}`)}
+                  to={canonicalPath(`${BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH}/${guide.slug}`)}
                 >
                   <span>{String(index + 1).padStart(2, "0")}</span>
                   <strong>{guide.title}</strong>
@@ -218,9 +220,38 @@ export function BreastfeedingTrackerLandingPage() {
           <Reveal>
             <Link
               className="feeding-text-link"
-              to={canonicalPath(BREASTFEEDING_TRACKER_GUIDES_BASE_PATH)}
+              to={canonicalPath(BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH)}
             >
-              {breastfeedingTrackerContent.guidesSection.browseLabel}
+              {breastfeedingTrackerContent.supportSection.browseLabel}
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="feeding-section feeding-blog-preview">
+        <div className="container">
+          <Reveal className="feeding-section-heading">
+            <p className="eyebrow">{breastfeedingTrackerContent.blogSection.eyebrow}</p>
+            <h2>{breastfeedingTrackerContent.blogSection.heading}</h2>
+            <p>{breastfeedingTrackerContent.blogSection.body}</p>
+          </Reveal>
+          <div className="feeding-guide-list">
+            {breastfeedingTrackerBlogPosts.slice(0, 3).map((post, index) => (
+              <Reveal key={post.slug} delayMs={Math.min(index * 55, 220)}>
+                <Link
+                  className="feeding-guide-row"
+                  to={canonicalPath(`${BREASTFEEDING_TRACKER_BLOG_BASE_PATH}/${post.slug}`)}
+                >
+                  <span>{post.category}</span>
+                  <strong>{post.title}</strong>
+                  <small>{post.excerpt}</small>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal>
+            <Link className="feeding-text-link" to={canonicalPath(BREASTFEEDING_TRACKER_BLOG_BASE_PATH)}>
+              {breastfeedingTrackerContent.blogSection.browseLabel}
             </Link>
           </Reveal>
         </div>
