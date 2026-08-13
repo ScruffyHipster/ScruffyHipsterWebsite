@@ -51,6 +51,14 @@ for (const route of publicRoutes) {
     `${route.path} is missing server-rendered body HTML.`
   );
   assert(/<h1[\s>]/.test(html), `${route.path} is missing an initial HTML h1.`);
+  assert(
+    (html.match(/<h1[\s>]/g) || []).length === 1,
+    `${route.path} must render exactly one h1.`
+  );
+  assert(
+    !/<meta\s+name="keywords"/i.test(html),
+    `${route.path} still renders a meta keywords tag.`
+  );
   assert(sitemapUrls.includes(canonical), `${route.path} is missing from the sitemap.`);
   if (route.ogImage) {
     await access(join(distDir, route.ogImage.replace(/^\//, "")));
@@ -186,14 +194,14 @@ for (const route of trackerRoutes) {
   } else if (route.path.startsWith(`${trackerBasePath}/blog/`)) {
     assert(html.includes("feeding-blog-article-body"), `${route.path} is missing rendered blog content.`);
     assert(
-      /class="feeding-article-body feeding-blog-article-body"><h2[^>]*>/.test(html),
+      /class="feeding-article-body feeding-blog-article-body"[^>]*><h2[^>]*>/.test(html),
       `${route.path} does not begin its article body with an h2.`
     );
     assert(html.includes('"@type":"BlogPosting"'), `${route.path} is missing BlogPosting data.`);
   } else {
     assert(html.includes('class="feeding-article-body"'), `${route.path} is missing rendered guide content.`);
     assert(
-      /class="feeding-article-body"><h2[^>]*>/.test(html),
+      /class="feeding-article-body"[^>]*><h2[^>]*>/.test(html),
       `${route.path} does not begin its article body with an h2.`
     );
     assert(html.includes('"@type":"Article"'), `${route.path} is missing Article data.`);
@@ -364,6 +372,67 @@ const comparisonImage = await readFile(
 assert(
   comparisonImage.readUInt32BE(16) === 1200 && comparisonImage.readUInt32BE(20) === 630,
   "Comparison social image must be 1200×630."
+);
+
+const multiMethodPath = `${trackerBasePath}/support/breastfeeding-bottle-pumping-tracker`;
+const multiMethodHtml = await readFile(routeOutputPath(multiMethodPath), "utf8");
+const multiMethodJsonLd = [
+  ...multiMethodHtml.matchAll(
+    /<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi
+  )
+].map((match) => JSON.parse(match[1]));
+assert(
+  multiMethodHtml.includes(
+    "<h1>Track Breastfeeding, Bottles and Pumping in One App</h1>"
+  ),
+  "Multi-method support article has the wrong h1."
+);
+assert(
+  multiMethodHtml.includes('class="feeding-article-screenshot"') &&
+    multiMethodHtml.includes(
+      'src="/assets/breastfeedingScreenShots/03-history-dark-iphone-6.9.png"'
+    ) &&
+    multiMethodHtml.includes(
+      'src="/assets/breastfeedingScreenShots/04-milk-dark-iphone-6.9.png"'
+    ),
+  "Multi-method support article is missing its product screenshots."
+);
+assert(
+  multiMethodJsonLd.some((entry) => entry["@type"] === "Article") &&
+    multiMethodJsonLd.some((entry) => entry["@type"] === "BreadcrumbList"),
+  "Multi-method support article is missing Article or Breadcrumb structured data."
+);
+assert(
+  multiMethodJsonLd.find((entry) => entry["@type"] === "FAQPage")?.mainEntity?.length === 6,
+  "Multi-method support article must expose six FAQ questions."
+);
+assert(
+  multiMethodHtml.includes('data-app-store-placement="guide"'),
+  "Multi-method support article is missing tracked App Store attribution."
+);
+
+const landingHtml = await readFile(routeOutputPath(trackerBasePath), "utf8");
+const supportHtml = await readFile(routeOutputPath(`${trackerBasePath}/support`), "utf8");
+const combiHtml = await readFile(
+  routeOutputPath(`${trackerBasePath}/blog/moving-from-breastfeeding-to-combi-feeding`),
+  "utf8"
+);
+for (const [label, html] of [
+  ["landing", landingHtml],
+  ["support index", supportHtml],
+  ["comparison", comparisonHtml],
+  ["combi-feeding story", combiHtml]
+]) {
+  assert(
+    html.includes(
+      'href="/breastfeeding-tracker/support/breastfeeding-bottle-pumping-tracker/"'
+    ),
+    `${label} is missing its link to the multi-method support article.`
+  );
+}
+assert(
+  comparisonHtml.includes('data-app-store-placement="blog"'),
+  "Comparison App Store links are missing blog attribution."
 );
 
 console.log(

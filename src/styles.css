@@ -1983,6 +1983,12 @@ img {
   margin-left: 0.3rem;
 }
 
+.feeding-feature-links {
+  display: grid;
+  justify-items: start;
+  gap: 0.25rem;
+}
+
 .feeding-privacy {
   padding: clamp(4rem, 9vw, 8rem) 0;
   background:
@@ -2210,6 +2216,20 @@ img {
 
 .feeding-article-body a {
   color: var(--feeding-rose-deep);
+}
+
+.feeding-article-screenshot {
+  display: grid;
+  justify-items: center;
+  margin: 2rem 0 2.5rem;
+}
+
+.feeding-article-screenshot img {
+  width: min(100%, 24rem);
+  height: auto;
+  border: 1px solid var(--feeding-line);
+  border-radius: clamp(1rem, 3vw, 1.8rem);
+  box-shadow: 0 22px 52px rgba(47, 37, 41, 0.14);
 }
 
 .feeding-table-scroll {

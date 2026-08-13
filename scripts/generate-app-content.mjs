@@ -770,7 +770,15 @@ function renderMarkdown(source) {
       paragraphLines.push(lines[index]);
       index += 1;
     }
-    blocks.push(`<p>${renderInline(paragraphLines.join(" "))}</p>`);
+    const paragraph = paragraphLines.join(" ");
+    const standaloneImage = paragraph.match(/^!\[([^\]]+)\]\((\/[^)\s]+)\)$/);
+    if (standaloneImage) {
+      blocks.push(
+        `<figure class="feeding-article-screenshot"><img src="${escapeAttr(standaloneImage[2])}" alt="${escapeAttr(standaloneImage[1])}" loading="lazy" /></figure>`
+      );
+    } else {
+      blocks.push(`<p>${renderInline(paragraph)}</p>`);
+    }
   }
 
   return blocks.join("\n");

@@ -20,7 +20,6 @@ export function Seo({ meta, path, jsonLd }: SeoProps) {
       <title>{resolved.title}</title>
       <meta name="description" content={resolved.description} />
       <meta name="robots" content={resolved.robots} />
-      {resolved.keywords ? <meta name="keywords" content={resolved.keywords} /> : null}
       <link rel="canonical" href={resolved.canonicalUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={resolved.title} />

@@ -73,6 +73,8 @@ Storage times depend on the temperature and where the milk is kept, so check the
 
 We found that the goal was not to build a perfect freezer supply. It was simply to make the next feed a little easier when we could.
 
+When several kinds of feed began to blur together, a [single record for breastfeeding, bottles and pumping](/breastfeeding-tracker/support/breastfeeding-bottle-pumping-tracker/) could take a little of that remembering away. It did not need to become a perfect account of every feed.
+
 # Combi feeding let breastfeeding continue
 
 The phrase “combi feeding” can mean different things to different families. The NHS uses “mixed” or “combination feeding” for combining breastfeeding with bottles of expressed breast milk, infant formula, or both.

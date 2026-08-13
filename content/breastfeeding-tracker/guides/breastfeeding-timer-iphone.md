@@ -30,7 +30,7 @@ Those corrections keep the record useful without pretending that logging will al
 
 History shows when a feed happened, how long it lasted, and which side was selected. The latest entry and last side are easy to find when you want a quick reminder.
 
-You can edit or delete entries later, and export selected history as a PDF when you want a portable copy of the information you recorded.
+You can edit or delete entries later, and export selected history as a PDF when you want a portable copy of the information you recorded. If your feeding changes over time, you can also [keep breastfeeding, bottles, pumping and combined feeds in one history](/breastfeeding-tracker/support/breastfeeding-bottle-pumping-tracker/).
 
 # Use the device that is already in reach
 

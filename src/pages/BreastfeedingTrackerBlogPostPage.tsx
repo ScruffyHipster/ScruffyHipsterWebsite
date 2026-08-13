@@ -1,6 +1,7 @@
 import { Link, Navigate, useParams } from "react-router-dom";
 import { Reveal } from "../components/Reveal";
 import { Seo } from "../components/Seo";
+import { TrackedMarkdownContent } from "../components/TrackedMarkdownContent";
 import {
   breastfeedingTrackerBlogPosts,
   breastfeedingTrackerBlogPostsBySlug,
@@ -137,9 +138,10 @@ export function BreastfeedingTrackerBlogPostPage() {
             ) : null}
             <div>
               <Reveal delayMs={70} threshold={0.01}>
-                <div
+                <TrackedMarkdownContent
                   className="feeding-article-body feeding-blog-article-body"
-                  dangerouslySetInnerHTML={{ __html: post.html }}
+                  html={post.html}
+                  placement="blog"
                 />
               </Reveal>
               <Reveal className="feeding-blog-author-box">

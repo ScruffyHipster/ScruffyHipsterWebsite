@@ -131,12 +131,20 @@ export function BreastfeedingTrackerLandingPage() {
             {breastfeedingTrackerContent.careMethodsFeature.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-            <BreastfeedingTrackerAppStoreLink
-              className="feeding-text-link"
-              placement="feature"
-            >
-              {breastfeedingTrackerContent.careMethodsFeature.cta}
-            </BreastfeedingTrackerAppStoreLink>
+            <div className="feeding-feature-links">
+              <Link
+                className="feeding-text-link"
+                to={breastfeedingTrackerContent.careMethodsFeature.link.url}
+              >
+                {breastfeedingTrackerContent.careMethodsFeature.link.label}
+              </Link>
+              <BreastfeedingTrackerAppStoreLink
+                className="feeding-text-link"
+                placement="feature"
+              >
+                {breastfeedingTrackerContent.careMethodsFeature.cta}
+              </BreastfeedingTrackerAppStoreLink>
+            </div>
           </Reveal>
           <Reveal className="feeding-feature-images" delayMs={100}>
             <img

@@ -10,15 +10,15 @@ ogImage: "/assets/breastfeeding-tracker-og.png"
 
 # Track a feed without reaching for your phone
 
-A breastfeeding tracker on Apple Watch is useful for a very practical reason: your phone is not always where the feed is happening. The Breastfeeding Tracker & Timer companion app lets you start a session from your wrist, choose the left or right side, and stop the timer when the feed ends.
+A breastfeeding tracker on Apple Watch is useful for a very practical reason: your phone is not always where the feed is happening. The Breastfeeding Tracker & Timer companion app lets you start a breastfeeding or pumping session from your wrist, choose the left or right side for a breastfeed, and stop the timer when the feed ends.
 
 The watch keeps the essential controls large and direct. It is designed for the moment itself rather than for reviewing a detailed history on a small screen.
 
 # What you can do from Apple Watch
 
-- Start a new feed and choose the side.
-- See the active side and running duration.
-- Stop a feed from your wrist.
+- Start a breastfeeding or pumping timer.
+- See the active feeding method, side where relevant, and running duration.
+- Stop the timer from your wrist.
 - Send completed sessions back to the iPhone app.
 - Keep tracking when the watch is temporarily offline.
 
@@ -32,7 +32,7 @@ Offline support is about reliable logging, not health monitoring. The app record
 
 # iPhone and Watch together
 
-The iPhone app remains the best place to review history, correct a missed start time, add a session manually, or create a PDF export. Apple Watch provides the quick controls; iPhone provides the fuller record.
+The iPhone app remains the best place to record bottles and combined feeds, review the complete breast, bottle and pumping history, correct a missed start time, add a session manually, or create a PDF export. Apple Watch provides quick breastfeeding and pumping controls; iPhone provides the fuller record.
 
 If you normally start feeds from your phone, Live Activities and Dynamic Island can keep the active timer visible without repeatedly reopening the app.
 
@@ -40,4 +40,4 @@ If you normally start feeds from your phone, Live Activities and Dynamic Island 
 
 There are no account forms to complete before using the timer. Open the app, choose a side, and start. The App Store privacy label states that the developer does not collect data from the app.
 
-[See every Breastfeeding Tracker feature](/breastfeeding-tracker/) or [learn how the iPhone timer works](/breastfeeding-tracker/support/breastfeeding-timer-iphone/).
+[See how breast, bottle and pumping records work together](/breastfeeding-tracker/support/breastfeeding-bottle-pumping-tracker/) or [learn how the iPhone timer works](/breastfeeding-tracker/support/breastfeeding-timer-iphone/).

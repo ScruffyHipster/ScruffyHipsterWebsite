@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { BreastfeedingTrackerAppStoreLink } from "../components/AppStoreLink";
 import { Reveal } from "../components/Reveal";
 import { Seo } from "../components/Seo";
+import { TrackedMarkdownContent } from "../components/TrackedMarkdownContent";
 import {
   breastfeedingTrackerGuides,
   breastfeedingTrackerGuidesBySlug,
@@ -111,9 +112,10 @@ export function BreastfeedingTrackerSupportArticlePage() {
             <p className="lead">{guide.description}</p>
           </Reveal>
           <Reveal delayMs={70} threshold={0.01}>
-            <div
+            <TrackedMarkdownContent
               className="feeding-article-body"
-              dangerouslySetInnerHTML={{ __html: guide.html }}
+              html={guide.html}
+              placement="guide"
             />
           </Reveal>
           {guide.showDefaultCta ? (

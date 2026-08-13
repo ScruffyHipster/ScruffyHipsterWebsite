@@ -2,8 +2,8 @@
   "published": true,
   "route": "/breastfeeding-tracker",
   "seo": {
-    "title": "Newborn Breastfeeding Timer for iPhone & Apple Watch",
-    "description": "A one-handed breastfeeding timer for your newborn's first weeks. Track breastfeeding, bottles, and pumping from iPhone or Apple Watch, add missed feeds later, and export a PDF when you need one.",
+    "title": "Breastfeeding, Bottle & Pumping Tracker for iPhone",
+    "description": "Track breastfeeding, bottles, pumping and combined feeds in one calm iPhone app, with Apple Watch timers, editable history and an expressed-milk balance.",
     "keywords": [
       "breastfeeding tracker",
       "combifeeding tracker",
@@ -57,9 +57,9 @@
   },
   "hero": {
     "iconAlt": "Breastfeeding Tracker & Timer app icon",
-    "eyebrow": "newborn breastfeeding timer for iphone + apple watch",
-    "heading": "A simple timer for your newborn’s first feeds.",
-    "body": "In the first few weeks with a newborn, feeds can blur together. Time breastfeeding or pumping with one hand, check in from iPhone or Apple Watch, and keep a clear record without stopping to fill in forms.",
+    "eyebrow": "baby feeding tracker for iphone + apple watch",
+    "heading": "A simple tracker for breast, bottle, pumping and combined feeds.",
+    "body": "In the first few weeks with a newborn, feeds can blur together. Record the kind of feed that works for your family, time breastfeeding or pumping with one hand, and keep a clear history without stopping to fill in forms.",
     "primaryCta": "Download on the App Store",
     "secondaryCta": "See how it works",
     "storeNote": "Free to download, with an optional one-off lifetime unlock.",
@@ -110,6 +110,10 @@
       "Track breastfeeding, bottle feeds, pumping, and combined feeds in the same history, so you can see what was recorded without switching between separate logs.",
       "When you record expressed milk, pumping adds to the on-device balance and expressed bottle feeds subtract from it. Leave volume blank when you did not record it."
     ],
+    "link": {
+      "label": "See how breast, bottle and pumping work together",
+      "url": "/breastfeeding-tracker/support/breastfeeding-bottle-pumping-tracker/"
+    },
     "cta": "Download on the App Store",
     "imageAlts": [
       "Breastfeeding Tracker history showing breastfeeding, bottle, pumping, and combined-feed entries",

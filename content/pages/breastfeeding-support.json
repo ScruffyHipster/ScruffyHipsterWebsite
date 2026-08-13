@@ -31,6 +31,11 @@
   "topicLinkLabel": "Read the help article →",
   "topics": [
     {
+      "label": "Breast, bottle & pumping",
+      "body": "Keep breastfeeding, bottles, pumping and combined feeds together, including an expressed-milk balance.",
+      "slug": "breastfeeding-bottle-pumping-tracker"
+    },
+    {
       "label": "Getting started",
       "body": "Start a breastfeeding timer, record the side and find the latest feed without filling in a form.",
       "slug": "breastfeeding-timer-iphone"
