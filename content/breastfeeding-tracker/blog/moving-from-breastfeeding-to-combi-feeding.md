@@ -7,7 +7,8 @@ published: true
 category: "Personal stories"
 excerpt: "Expressing gave us another way to feed our daughter without ending breastfeeding. This is how combi feeding began to work for our family."
 tags: "moving from breastfeeding to combi feeding, expressing breast milk, mixed feeding, combination feeding, expressed milk, sharing night feeds"
-ogImage: "/assets/breastfeeding-tracker-og.png"
+ogImage: "/assets/breastfeeding-blog/expressing-and-combi-feeding.jpg"
+ogImageAlt: "One parent bottle-feeding their newborn while the other rests nearby, with expressing equipment on a side table."
 showDefaultCta: "false"
 ---
 

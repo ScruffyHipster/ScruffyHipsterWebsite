@@ -2589,6 +2589,10 @@ img {
   text-decoration: underline;
 }
 
+.feeding-blog-article-body :is(h2, h3, h4) {
+  scroll-margin-top: 7rem;
+}
+
 .feeding-blog-article-body {
   margin-top: 0;
 }

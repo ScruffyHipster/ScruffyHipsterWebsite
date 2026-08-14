@@ -7,7 +7,8 @@ published: true
 category: "Personal stories"
 excerpt: "Our feeding journey changed within days. This is how we let go of the original plan and found a way of feeding that worked for our family."
 tags: "breastfeeding didn't go to plan, mixed feeding, tongue tie breastfeeding, expressing breast milk, newborn feeding journey"
-ogImage: "/assets/breastfeeding-tracker-og.png"
+ogImage: "/assets/breastfeeding-blog/feeding-didnt-go-to-plan.jpg"
+ogImageAlt: "Two parents supporting each other while caring for and feeding their newborn."
 showDefaultCta: "false"
 ---
 
