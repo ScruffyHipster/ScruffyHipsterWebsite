@@ -7,6 +7,8 @@ published: true
 category: "Formula feeding"
 excerpt: "A higher price does not mean better nutrition. Every first infant formula sold in the UK has to meet strict legal standards."
 tags: "is expensive baby formula better, cheap baby formula UK, Aldi Mamia formula, first infant formula, stage 1 formula UK"
+ogImage: "/assets/breastfeeding-blog/first-infant-formula-cheaper-brands.jpg"
+ogImageAlt: "An unbranded formula tin, scoop, prepared baby bottle and espresso cup on a kitchen worktop in early morning light."
 showDefaultCta: "false"
 ---
 
