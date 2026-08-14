@@ -4,6 +4,8 @@ import { appsBySlug } from "./apps";
 export const breastfeedingTrackerApp = appsBySlug.get("breast-feeding-tracker")!;
 export const breastfeedingTrackerContent = cmsContent.breastfeedingTracker;
 export const breastfeedingTrackerAppStoreUrl = breastfeedingTrackerContent.appStoreUrl;
+export const breastfeedingTrackerArticleAppStoreUrl =
+  breastfeedingTrackerContent.articleAppStoreUrl;
 export const breastfeedingTrackerOgImage = breastfeedingTrackerContent.ogImage;
 
 export type BreastfeedingTrackerArticle = {

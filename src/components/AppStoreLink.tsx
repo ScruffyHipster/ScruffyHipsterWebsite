@@ -4,7 +4,10 @@ import {
   trackBreastfeedingTrackerAppStoreClick,
   type AppStorePlacement
 } from "../analytics/appStoreClick";
-import { breastfeedingTrackerAppStoreUrl } from "../content/breastfeedingTracker";
+import {
+  breastfeedingTrackerAppStoreUrl,
+  breastfeedingTrackerArticleAppStoreUrl
+} from "../content/breastfeedingTracker";
 
 type AppStoreLinkProps = PropsWithChildren<
   Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & {
@@ -19,11 +22,15 @@ export function BreastfeedingTrackerAppStoreLink({
   ...props
 }: AppStoreLinkProps) {
   const location = useLocation();
+  const href =
+    placement === "guide" || placement === "blog"
+      ? breastfeedingTrackerArticleAppStoreUrl
+      : breastfeedingTrackerAppStoreUrl;
 
   return (
     <a
       {...props}
-      href={breastfeedingTrackerAppStoreUrl}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       data-app-store-placement={placement}

@@ -1582,6 +1582,9 @@ content:
           - name: appStoreUrl
             type: string
             required: true
+          - name: articleAppStoreUrl
+            type: string
+            required: true
           - name: ogImage
             type: image
             required: true

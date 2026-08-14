@@ -9,6 +9,11 @@ const cmsContent = JSON.parse(
 );
 const distDir = join(rootDir, "dist");
 const trackerBasePath = "/breastfeeding-tracker";
+const trackerArticleAppStoreUrl =
+  "https://apps.apple.com/app/apple-store/id6754637800?pt=120062009&ct=seo_breast_bottle_pumping&mt=8";
+const trackerLandingAppStoreUrl =
+  "https://apps.apple.com/app/apple-store/id6754637800?pt=120062009&ct=seo_tracker_landing&mt=8";
+const htmlAttributeUrl = (url) => url.replaceAll("&", "&amp;");
 const trackerRoutes = publicRoutes.filter(
   (route) => route.path === trackerBasePath || route.path.startsWith(`${trackerBasePath}/`)
 );
@@ -273,7 +278,7 @@ const requiredComparisonSources = [
   "https://huckleberrycare.com/product/free",
   "https://apps.apple.com/us/app/nara-baby-pregnancy-tracker/id1444639029",
   "https://nara.com/pages/nara-baby-tracker-faq",
-  "https://apps.apple.com/gb/app/breastfeeding-tracker-timer/id6754637800",
+  trackerArticleAppStoreUrl,
   "https://www.nhs.uk/baby/breastfeeding-and-bottle-feeding/breastfeeding/the-first-few-days/",
   "https://www.nhs.uk/baby/breastfeeding-and-bottle-feeding/breastfeeding-problems/enough-milk/",
   "https://www.unicef.org.uk/babyfriendly/baby-friendly-resources/relationship-building-resources/responsive-feeding-infosheet/"
@@ -350,12 +355,15 @@ assert(
 );
 assert(
   comparisonHtml.includes(
-    'href="https://apps.apple.com/gb/app/breastfeeding-tracker-timer/id6754637800"'
+    `href="${htmlAttributeUrl(trackerArticleAppStoreUrl)}"`
   ),
   "Comparison guide is missing its calm inline App Store link."
 );
 for (const source of requiredComparisonSources) {
-  assert(comparisonHtml.includes(`href="${source}"`), `Comparison guide is missing source ${source}.`);
+  assert(
+    comparisonHtml.includes(`href="${htmlAttributeUrl(source)}"`),
+    `Comparison guide is missing source ${source}.`
+  );
 }
 assert(
   comparisonHtml.includes(
@@ -410,8 +418,16 @@ assert(
   multiMethodHtml.includes('data-app-store-placement="guide"'),
   "Multi-method support article is missing tracked App Store attribution."
 );
+assert(
+  multiMethodHtml.includes(`href="${htmlAttributeUrl(trackerArticleAppStoreUrl)}"`),
+  "Multi-method support article has the wrong attributed App Store URL."
+);
 
 const landingHtml = await readFile(routeOutputPath(trackerBasePath), "utf8");
+assert(
+  landingHtml.includes(`href="${htmlAttributeUrl(trackerLandingAppStoreUrl)}"`),
+  "Tracker landing page has the wrong attributed App Store URL."
+);
 const supportHtml = await readFile(routeOutputPath(`${trackerBasePath}/support`), "utf8");
 const combiHtml = await readFile(
   routeOutputPath(`${trackerBasePath}/blog/moving-from-breastfeeding-to-combi-feeding`),

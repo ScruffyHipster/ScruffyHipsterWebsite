@@ -63,7 +63,7 @@ The trade-off is recurring cost and a busier product. Widgets, Live Activities, 
 - you value detailed summaries and a broad long-term record;
 - a Plus or Premium subscription is reasonable for the features you will use.
 
-# ![Breastfeeding Tracker & Timer app icon](/assets/BreastFeedingIcon.png) [Best for Newborn Breastfeeding: Breastfeeding Tracker & Timer](https://apps.apple.com/gb/app/breastfeeding-tracker-timer/id6754637800)
+# ![Breastfeeding Tracker & Timer app icon](/assets/BreastFeedingIcon.png) [Best for Newborn Breastfeeding: Breastfeeding Tracker & Timer](https://apps.apple.com/app/apple-store/id6754637800?pt=120062009&ct=seo_breast_bottle_pumping&mt=8)
 
 Breastfeeding Tracker & Timer is the best fit when the job is keeping a focused record of feeding during the first weeks. The main screen centres on starting a left or right breastfeeding timer, while the same history can also hold bottles, pumping sessions and combined feeds. It is free to use, has no subscription, and offers an optional lifetime unlock.
 
@@ -135,7 +135,7 @@ For the strongest all-in-one system and paid sleep guidance, choose Huckleberry.
 
 There is no need to optimise every category. Choose the smallest tool that calmly covers the information your household actually needs.
 
-If a focused feeding tracker matches your needs, [Breastfeeding Tracker & Timer](https://apps.apple.com/gb/app/breastfeeding-tracker-timer/id6754637800) is available on the App Store; use it only for as long as it makes feeding feel easier to remember.
+If a focused feeding tracker matches your needs, [Breastfeeding Tracker & Timer](https://apps.apple.com/app/apple-store/id6754637800?pt=120062009&ct=seo_breast_bottle_pumping&mt=8) is available on the App Store; use it only for as long as it makes feeding feel easier to remember.
 
 # FAQs
 
@@ -165,6 +165,6 @@ No. Tracking is optional, and records do not need to be perfect. Feed responsive
 
 # Sources and methodology
 
-Last checked **9 August 2026**. Product capabilities and payment models were compared using the official [Huckleberry App Store listing](https://apps.apple.com/us/app/huckleberry-baby-tracker/id1169136078), [Huckleberry feature documentation](https://huckleberrycare.com/product/free), [Nara Baby App Store listing](https://apps.apple.com/us/app/nara-baby-pregnancy-tracker/id1444639029), [Nara Baby FAQ](https://nara.com/pages/nara-baby-tracker-faq), and [Breastfeeding Tracker & Timer App Store listing](https://apps.apple.com/gb/app/breastfeeding-tracker-timer/id6754637800). Health context was checked against the NHS and UNICEF guidance linked above.
+Last checked **9 August 2026**. Product capabilities and payment models were compared using the official [Huckleberry App Store listing](https://apps.apple.com/us/app/huckleberry-baby-tracker/id1169136078), [Huckleberry feature documentation](https://huckleberrycare.com/product/free), [Nara Baby App Store listing](https://apps.apple.com/us/app/nara-baby-pregnancy-tracker/id1444639029), [Nara Baby FAQ](https://nara.com/pages/nara-baby-tracker-faq), and [Breastfeeding Tracker & Timer App Store listing](https://apps.apple.com/app/apple-store/id6754637800?pt=120062009&ct=seo_breast_bottle_pumping&mt=8). Health context was checked against the NHS and UNICEF guidance linked above.
 
 We compared declared features, access requirements, export formats, tracking scope, caregiver support, and payment approach. We did not assign scores, reproduce competitor screenshots, claim first-hand testing, compare temporary offers, or use locale-specific subscription prices. Features can change after the checking date.
