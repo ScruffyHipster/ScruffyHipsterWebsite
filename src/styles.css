@@ -2571,6 +2571,20 @@ img {
   border-top: 1px solid var(--feeding-line);
 }
 
+.feeding-blog-toc-marker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  min-height: 1.25rem;
+  border-radius: 999px;
+  background: var(--feeding-rose-deep);
+  transition:
+    transform 260ms ease,
+    height 260ms ease;
+  pointer-events: none;
+}
+
 .feeding-blog-toc ol {
   display: grid;
   gap: 0.65rem;
@@ -2578,14 +2592,24 @@ img {
   list-style: none;
 }
 
+.feeding-blog-toc li {
+  padding-left: 0.85rem;
+}
+
 .feeding-blog-toc a {
+  display: block;
   color: #76696e;
   font-size: 0.9rem;
   text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.feeding-blog-toc a:hover,
+.feeding-blog-toc li.is-active a {
+  color: var(--feeding-rose-deep);
 }
 
 .feeding-blog-toc a:hover {
-  color: var(--feeding-rose-deep);
   text-decoration: underline;
 }
 
@@ -2790,6 +2814,10 @@ img {
     position: static;
     max-width: 44rem;
     margin-inline: auto;
+  }
+
+  .feeding-blog-toc-marker {
+    display: none;
   }
 }
 

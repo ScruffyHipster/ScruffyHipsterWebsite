@@ -1,4 +1,5 @@
 import { Link, Navigate, useParams } from "react-router-dom";
+import { BlogTableOfContents } from "../components/BlogTableOfContents";
 import { Reveal } from "../components/Reveal";
 import { Seo } from "../components/Seo";
 import { TrackedMarkdownContent } from "../components/TrackedMarkdownContent";
@@ -125,16 +126,7 @@ export function BreastfeedingTrackerBlogPostPage() {
           </Reveal>
           <div className="feeding-blog-article-layout">
             {post.tableOfContents.length > 1 ? (
-              <aside className="feeding-blog-toc" aria-label={template.tocHeading}>
-                <strong>{template.tocHeading}</strong>
-                <ol>
-                  {post.tableOfContents.map((heading) => (
-                    <li key={heading.id}>
-                      <a href={`#${heading.id}`}>{heading.label}</a>
-                    </li>
-                  ))}
-                </ol>
-              </aside>
+              <BlogTableOfContents headings={post.tableOfContents} label={template.tocHeading} />
             ) : null}
             <div>
               <Reveal delayMs={70} threshold={0.01}>
