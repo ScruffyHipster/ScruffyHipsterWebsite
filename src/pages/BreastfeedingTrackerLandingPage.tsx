@@ -32,15 +32,15 @@ const softwareApplicationJsonLd = {
   offers: { "@type": "Offer", ...content.softwareApplication.offer }
 };
 
-function Phone({ screen, alt, className = "", priority = false }: {
-  screen: string; alt: string; className?: string; priority?: boolean;
+function Phone({ screen, alt, className = "", priority = false, sizes = "(max-width: 600px) 44vw, 260px" }: {
+  screen: string; alt: string; className?: string; priority?: boolean; sizes?: string;
 }) {
   const priorityAttributes = priority ? { fetchpriority: "high" } : {};
   return (
     <div className={`bft-device ${className}`}>
       <img {...priorityAttributes} src={`${assetPath}/${screen}-660.webp`}
         srcSet={`${assetPath}/${screen}-360.webp 360w, ${assetPath}/${screen}-660.webp 660w`}
-        sizes="(max-width: 600px) 44vw, 260px" alt={alt} width="1320" height="2868"
+        sizes={sizes} alt={alt} width="1320" height="2868"
         loading={priority ? "eager" : "lazy"} decoding="async" />
     </div>
   );
@@ -143,7 +143,12 @@ export function BreastfeedingTrackerLandingPage() {
 
       <section className="bft-editorial-section" aria-labelledby="insights-heading">
         <div className="bft-container bft-editorial-split bft-insights-editorial">
-          <div className="bft-timeline-product"><Phone screen="timeline-light" alt={content.historyFeature.imageAlts[0]} /></div>
+          <div className="bft-insights-products">
+            <Phone screen="timeline-light" alt={content.historyFeature.imageAlts[0]}
+              sizes="(max-width: 520px) 218px, (max-width: 1100px) 237px, 20vw" />
+            <Phone screen="insights-light" alt={content.historyFeature.imageAlts[1]}
+              sizes="(max-width: 520px) 218px, (max-width: 1100px) 237px, 20vw" />
+          </div>
           <div className="bft-editorial-copy">
             <p className="bft-eyebrow">{content.historyFeature.eyebrow}</p>
             <h2 id="insights-heading">{content.historyFeature.heading}</h2>
