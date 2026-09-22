@@ -19,6 +19,7 @@ import { TrackerIcon as Icon } from "../components/TrackerIcon";
 
 const siteUrl = getSiteUrl();
 const editorial = content.editorial;
+const appearanceModes = ["light", "dark"] as const;
 const assetPath = "/assets/breastfeeding-editorial";
 const softwareApplicationJsonLd = {
   "@context": "https://schema.org",
@@ -51,7 +52,7 @@ function AppearancePreview({ device, appearance }: {
   const isPhone = device === "phone";
   return (
     <div className={`${isPhone ? "bft-device" : "bft-tablet"} bft-appearance-preview`}>
-      {(["light", "dark"] as const).map((mode) => {
+      {appearanceModes.map((mode) => {
         const screen = `${isPhone ? "home" : "ipad-history"}-${mode}`;
         const label = mode === "light" ? editorial.screens.lightLabel : editorial.screens.darkLabel;
         return (

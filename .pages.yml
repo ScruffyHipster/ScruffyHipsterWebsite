@@ -411,6 +411,9 @@ content:
                   - name: lastUpdatedLabel
                     type: string
                     required: true
+                  - name: languageLabel
+                    type: string
+                    required: true
               - name: rewireArticle
                 type: object
                 fields:

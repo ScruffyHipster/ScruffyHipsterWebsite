@@ -9,6 +9,7 @@ import {
 } from "../content/trackerLocales";
 import { canonicalPath } from "../seo/canonical";
 import { trackEvent } from "../analytics/telemetrydeck";
+import { siteConfig } from "../content/site";
 
 type TrackerLanguageSelectorProps = {
   kind: TrackerContentKind;
@@ -31,7 +32,7 @@ export function TrackerLanguageSelector({
   }
 
   return (
-    <nav className="tracker-language-selector" aria-label="Language">
+    <nav className="tracker-language-selector" aria-label={siteConfig.shared.privacyPolicy.languageLabel}>
       {availableLocales.map((locale) => {
         const path = trackerLocalePath(locale, kind, translationKey);
         if (!path) return null;

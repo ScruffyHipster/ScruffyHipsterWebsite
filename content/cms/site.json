@@ -63,7 +63,8 @@
     "privacyPolicy": {
       "eyebrow": "Privacy Policy",
       "breadcrumbLabel": "Privacy",
-      "lastUpdatedLabel": "Last updated:"
+      "lastUpdatedLabel": "Last updated:",
+      "languageLabel": "Language"
     },
       "rewireArticle": {
         "backLabel": "back to rewire blog",

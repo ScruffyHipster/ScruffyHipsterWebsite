@@ -8,6 +8,7 @@ import { canonicalUrl } from "../seo/canonical";
 import { siteConfig } from "../content/site";
 import { TrackerLanguageSelector } from "../components/TrackerLanguageSelector";
 import { trackerHreflangAlternates } from "../content/trackerLocales";
+import { BREASTFEEDING_TRACKER_PRIVACY_SLUG } from "../content/routes";
 
 export function PrivacyPolicyPage() {
   const params = useParams<{ slug: string }>();
@@ -26,7 +27,7 @@ export function PrivacyPolicyPage() {
         path={path}
         meta={policy.seo}
         alternates={
-          policy.slug === "breast-feeding-tracker"
+          policy.slug === BREASTFEEDING_TRACKER_PRIVACY_SLUG
             ? trackerHreflangAlternates("privacy", getSiteUrl())
             : undefined
         }
@@ -43,7 +44,7 @@ export function PrivacyPolicyPage() {
         <div className="container narrow-container">
           <Reveal>
             <article className="policy-article">
-              {policy.slug === "breast-feeding-tracker" ? (
+              {policy.slug === BREASTFEEDING_TRACKER_PRIVACY_SLUG ? (
                 <TrackerLanguageSelector kind="privacy" />
               ) : null}
               <p className="eyebrow">{labels.eyebrow}</p>
