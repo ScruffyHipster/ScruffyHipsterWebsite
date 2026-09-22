@@ -1,123 +1,105 @@
 ---
 title: "Best Breastfeeding & Baby Feeding Apps (2026): Which App Is Right for You?"
-metaTitle: "Best Breastfeeding Apps 2026: Huckleberry vs Nara"
-description: "Compare Huckleberry, Nara Baby and Breastfeeding Tracker & Timer to find the best newborn feeding app for sleep, feeds, simplicity, features and value."
+metaTitle: "Best Breastfeeding Apps 2026 Compared"
+description: "Compare Breastfeeding Tracker & Timer, Huckleberry and Nara Baby for breastfeeding, bottles, milk storage, insights, sleep support and everyday value."
 publishedAt: "2026-07-27"
 published: true
 category: "App comparisons"
-updatedAt: "2026-08-09"
-excerpt: "A transparent comparison of Huckleberry, Nara Baby and Breastfeeding Tracker & Timer for different newborn feeding needs."
-tags: "best breastfeeding apps 2026, Huckleberry vs Nara Baby, newborn feeding app, baby tracker comparison"
+updatedAt: "2026-09-22"
+excerpt: "Discover Breastfeeding Tracker & Timer’s new milk storage, feeding insights and detailed history, alongside Huckleberry and Nara Baby."
+tags: "best breastfeeding apps 2026, breastfeeding tracker and timer, milk stash app, Huckleberry vs Nara Baby, baby feeding app comparison"
 ogImage: "/assets/breastfeeding-apps-comparison-2026.png"
-ogImageAlt: "Huckleberry, Nara Baby and Breastfeeding Tracker & Timer compared by best use, features and cost."
+ogImageAlt: "Best Breastfeeding Apps 2026: Huckleberry, Nara Baby and Breastfeeding Tracker & Timer."
 showDefaultCta: "false"
 ---
 
 # The short answer
 
-Newborn feeding can create a surprising amount of mental admin. You may be trying to remember which side came next, when a feed began, whether a bottle was finished, when the baby last slept, and what another caregiver recorded—all while short on sleep. A good app should take some of that remembering away. It should not become another demanding job.
+**Breastfeeding Tracker & Timer is our pick for parents who want feeding, expressed-milk storage and a clearer understanding of their feeding routine in one easy-to-use app.** It brings breastfeeding, bottles, pumping and combined feeds together, with quick timers on iPhone and Apple Watch. The latest releases add fridge and freezer milk storage, richer feeding insights, detailed history, new themes and more languages. Core tracking and milk storage are free, with an optional one-time Lifetime Unlock and no subscription.
 
-There is no universally best breastfeeding app. **Huckleberry** is the strongest all-in-one choice when sleep guidance and broad baby tracking matter. **Breastfeeding Tracker & Timer** is the best focused option when the main need is recording breast, bottle, pumping and combined feeds without a complete baby-care dashboard. **Nara Baby** is the best free all-rounder for households that want a shared, streamlined record without advertisements or paid upgrades.
+Huckleberry is a strong choice when paid sleep predictions are your priority. Nara Baby suits families looking for a shared record of feeding and wider baby care. Each serves a different need; the best fit depends on what you want help remembering.
 
-Here is the quick comparison:
+**Disclosure:** Scruffy Hipster makes Breastfeeding Tracker & Timer. This is our perspective as its developer, with competitor information checked against official sources. Our recommendation reflects the app’s strengths for feeding; it is not an independent test or a claim that one app suits every family. Read our [editorial and affiliate disclosure](/breastfeeding-tracker/blog/editorial-disclosure/).
 
-| App | Best for | Cost model | Main strength | Main trade-off |
-| --- | --- | --- | --- | --- |
-| Huckleberry | Best all-in-one | Useful free tracker; Plus and Premium subscriptions | Sleep guidance and breadth of tracking | Advanced features add cost and complexity |
-| Breastfeeding Tracker & Timer | Best focused newborn feeding tracker | Free with an optional lifetime unlock; no subscription | Low-friction breast, bottle, pumping and combined-feed tracking | Deliberately excludes sleep, nappies and broader baby-care tracking |
-| Nara Baby | Best free all-rounder | Completely free, with no ads or in-app purchases | Free, caregiver-friendly tracking across daily care | No Huckleberry-style personalised predictive sleep plans |
+| App | Our recommended fit | Standout strengths | Payment approach |
+| --- | --- | --- | --- |
+| Breastfeeding Tracker & Timer | Breastfeeding, mixed feeding and milk storage | Combined feeds, fridge/freezer portions, feeding insights, Apple Watch timers | Free tracking and milk storage; optional Lifetime Unlock; no subscription |
+| Huckleberry | Sleep predictions alongside baby tracking | SweetSpot sleep timing and broad care logs | Free tracker; Plus and Premium subscriptions |
+| Nara Baby | Shared everyday care | Caregiver logging, sleep and feeding records | Trial, then monthly or lifetime plan according to its current FAQ |
 
-**Disclosure:** Scruffy Hipster makes Breastfeeding Tracker & Timer. Competitor features in this comparison were checked against official App Store listings and product documentation. We recommend Huckleberry and Nara Baby where they are stronger, and describe our own app’s focused scope plainly. Read our [editorial and affiliate disclosure](/breastfeeding-tracker/blog/editorial-disclosure/) for how comparisons are researched and funded.
+# What’s new in Breastfeeding Tracker & Timer?
 
-# How to choose without adding more mental load
+The app has grown with the practical needs of a changing feeding journey. Version 2.0 added a much fuller picture of feeding and expressed milk; version 2.1 added German, French and Polish alongside English. These additions make it useful through breastfeeding, pumping and mixed feeding, while keeping everyday logging straightforward.
 
-Start with the decision you actually need the app to support. If feeding is only one part of a larger picture involving sleep, nappies, growth, medicines and several caregivers, an all-round tracker will usually be more useful. If sleep timing is the central challenge and you want paid predictive guidance, Huckleberry is the clearest fit. If you want broad tracking and collaboration without paying, Nara Baby is hard to beat.
+- **Fridge and freezer milk storage:** keep track of individual portions and the amount available in each location, with expression times and optional labels.
+- **Feeding insights:** look back over 7, 14 or 30 days to understand the patterns in your recorded feeds, with Lifetime Unlock.
+- **A weekly care timeline:** see when recorded activities happened across the week, alongside more detailed history and filters with Lifetime Unlock.
+- **More personalisation:** choose from the full collection of themes with Lifetime Unlock.
+- **More languages:** use the app in English, German, French or Polish.
 
-If your main problem is much smaller—“Which side did I use, and how long ago was the last breastfeed?”—an all-in-one dashboard can be unnecessary. A focused timer may be faster to open at 3am and easier to stop using when you no longer need it.
+The quick breastfeeding and pumping timers, combined feeds, editable logs, Live Activities, Dynamic Island and Apple Watch companion remain central to the experience. The result is a feeding companion with useful depth as your routine changes.
 
-Before comparing features, decide:
+# ![Breastfeeding Tracker & Timer app icon](/assets/BreastFeedingIcon.png) [Our Pick for Feeding & Milk Storage: Breastfeeding Tracker & Timer](https://apps.apple.com/app/apple-store/id6754637800?pt=120062009&ct=seo_breast_bottle_pumping&mt=8)
 
-- whether you need feeding records or a complete baby-care record;
-- whether personalised sleep guidance matters;
-- how many caregivers need to enter and view information;
-- whether a recurring subscription is acceptable;
-- whether you want a phone-only workflow or widgets, Live Activities, and Apple Watch access;
-- whether you may need a shareable export.
+## Built around the way you actually feed
 
-Feature availability below was checked on 27 July 2026. App plans and features can change, and availability can vary by platform or region, so confirm anything essential on the current store listing before choosing.
+Some days involve breastfeeding alone. Others include a bottle top-up, expressed milk or a pumping session. Breastfeeding Tracker & Timer keeps those activities in one clear history. A Combined Feed links a breastfeed and its bottle top-up in a single entry; bottles can contain expressed milk, formula or a mixture of both. Our guide explains how to [record breastfeeding, bottles and pumping together](/breastfeeding-tracker/support/breastfeeding-bottle-pumping-tracker/).
 
-# ![Huckleberry app icon](/assets/breastfeeding-app-comparison/huckleberry-icon.png) [Best Overall: Huckleberry](https://apps.apple.com/us/app/huckleberry-baby-tracker/id1169136078)
+Large, one-handed controls make it easy to start a timer while holding your baby. Last-side tracking helps you pick up where you left off, and Apple Watch timers let you record a breastfeed or pumping session when your phone is out of reach. Live Activities keep an active timer visible on the Lock Screen and Dynamic Island. You can also add missed activities and correct details later, so a useful record does not depend on remembering every tap.
 
-Huckleberry is the best overall choice for parents who want one app to cover feeds, sleep, nappies, pumping, growth, routines, and other parts of baby care. Its free tier provides a useful tracker, while Plus and Premium add the features for which Huckleberry is best known: SweetSpot sleep timing and more advanced sleep guidance.
+## A practical home for your milk stash
 
-Feed records can sit beside bottles, pumping sessions, sleep, solid food, medicine, growth, and nappy changes. For a family trying to understand a whole day rather than one feeding task, keeping those events together is convenient. Huckleberry also describes multi-child tracking, caregiver synchronisation, summaries, and CSV export.
+Milk storage now goes beyond the earlier expressed-milk balance. You can organise individual portions in the fridge or freezer and see what remains. Recorded pumping amounts and expressed-milk bottle use connect to that inventory, helping you keep feeding and storage records together. Formula does not reduce your expressed-milk stock.
 
-Sleep is the clearest difference. Huckleberry’s paid plans use recorded sleep and age information to suggest the next likely sleep time through SweetSpot. Premium goes further with personalised sleep plans and guidance. Those tools do not guarantee sleep, and an app cannot know every reason a baby is unsettled, but parents actively looking for structured sleep support will find more here than in the other two apps.
+This is a particularly useful combination if you regularly express milk or move between breast and bottle. Milk storage is included in the free app and managed on iPhone. It gives you a practical record of the milk you have entered, with no separate milk-storage subscription.
 
-The trade-off is recurring cost and a busier product. Widgets, Live Activities, and Apple Watch access are Plus or Premium features rather than part of the free tracker. Families who only want to time a breastfeed may face more choices than they need.
+## Understand the pattern behind the feeds
 
-**Choose Huckleberry if:**
+Lifetime Unlock adds the broader Insights Overview, with 7-, 14- and 30-day ranges, activity detail and a weekly care timeline. You can look back at when feeds tend to happen and how your recorded routine changes over time, while keeping breastfeeding duration, bottle amounts and pumping output distinct.
 
-- you want feeds, sleep, pumping, nappies, growth, and routines together;
-- paid predictive wake-window guidance is a priority;
-- you value detailed summaries and a broad long-term record;
-- a Plus or Premium subscription is reasonable for the features you will use.
-
-# ![Breastfeeding Tracker & Timer app icon](/assets/BreastFeedingIcon.png) [Best for Newborn Breastfeeding: Breastfeeding Tracker & Timer](https://apps.apple.com/app/apple-store/id6754637800?pt=120062009&ct=seo_breast_bottle_pumping&mt=8)
-
-Breastfeeding Tracker & Timer is the best fit when the job is keeping a focused record of feeding during the first weeks. The main screen centres on starting a left or right breastfeeding timer, while the same history can also hold bottles, pumping sessions and combined feeds. It is free to use, has no subscription, and offers an optional lifetime unlock.
-
-The advantage is low friction. You can start a breastfeeding or pumping timer on iPhone or Apple Watch, and keep an active timer visible through Live Activities and Dynamic Island. Bottles and combined feeds sit in the same history. Pumping can add expressed milk to the on-device balance, while an expressed-milk bottle subtracts the recorded amount. Missed feeds can be added manually, existing history can be corrected, and selected records can be exported as a PDF.
-
-The focused scope is intentional, but it is also the largest limitation. The app records feeding rather than sleep, nappies, growth, solids, medicine or a complete shared baby routine. It is not trying to replace Huckleberry or Nara for an all-round household record. A family coordinating several kinds of care—or several caregivers—may still need a broader system.
-
-For practical help with its focused workflow, see how to [track breastfeeding, bottles and pumping together](/breastfeeding-tracker/support/breastfeeding-bottle-pumping-tracker/), [time a breastfeed on iPhone](/breastfeeding-tracker/support/breastfeeding-timer-iphone/), [use the Apple Watch app](/breastfeeding-tracker/support/breastfeeding-tracker-apple-watch/), [edit a missed feeding log](/breastfeeding-tracker/support/edit-missed-feeding-logs/), [export selected history as a PDF](/breastfeeding-tracker/support/export-breastfeeding-log-pdf/), and understand the [private breastfeeding tracker approach](/breastfeeding-tracker/support/private-breastfeeding-tracker/).
+Full history, filters and PDF export make it easier to revisit the details or share selected records. All themes and an ad-free experience are also included in the one-time unlock. Insights describe what you recorded; they do not assess milk supply or tell you how your baby should feed.
 
 **Choose Breastfeeding Tracker & Timer if:**
 
-- your main need is a focused newborn feeding record;
-- you track breastfeeding, bottles, pumping or combined feeds without needing a complete baby dashboard;
-- widgets, Live Activities, Apple Watch, and PDF export matter;
-- you want free core use, no subscription, and an optional lifetime unlock.
+- you want breastfeeding, bottles, pumping and combined feeds in one place;
+- keeping track of expressed milk in the fridge and freezer matters;
+- you want easy daily logging plus a deeper view of your feeding patterns;
+- iPhone and Apple Watch access fit your day;
+- you prefer free core features and an optional one-time upgrade.
 
-# ![Nara Baby app icon](/assets/breastfeeding-app-comparison/nara-baby-icon.png) [Best Free App: Nara Baby](https://apps.apple.com/us/app/nara-baby-pregnancy-tracker/id1444639029)
+Its focus remains feeding and milk storage. If you also need sleep, nappies, growth or a shared caregiver dashboard, consider the broader care tools below. For parents whose priority is feeding, that clear focus is part of the appeal.
 
-Nara Baby is the best free all-rounder in this comparison. Its official listing says the app is free with no advertisements or in-app purchases, yet it covers breastfeeding, bottles, pumping, sleep, nappies, routines, growth, health, milestones, and more. That makes it unusually capable for families who want a broad record without deciding which features justify a subscription.
+[Explore Breastfeeding Tracker & Timer](https://apps.apple.com/app/apple-store/id6754637800?pt=120062009&ct=seo_breast_bottle_pumping&mt=8), or read how to [use the Apple Watch app](/breastfeeding-tracker/support/breastfeeding-tracker-apple-watch/), [correct a missed feeding log](/breastfeeding-tracker/support/edit-missed-feeding-logs/) and [export selected history as a PDF](/breastfeeding-tracker/support/export-breastfeeding-log-pdf/).
 
-Nara supports multiple children and caregivers, so a partner or other caregiver can contribute to the same daily picture instead of reconstructing the night from messages. Widgets, Live Activities, and Apple Watch support also make common actions easier to reach.
+# ![Huckleberry app icon](/assets/breastfeeding-app-comparison/huckleberry-icon.png) [Best for Paid Sleep Predictions: Huckleberry](https://apps.apple.com/us/app/huckleberry-baby-tracker/id1169136078)
 
-Nara includes sleep logging and wake-window routines, but it should not be treated as equivalent to Huckleberry’s paid personalised prediction. You can record sleep, see patterns, and build routines around wake windows; Nara does not offer the same Huckleberry-style SweetSpot prediction or personalised sleep-plan service. That distinction matters if sleep forecasting, rather than general tracking, is the deciding feature.
+Huckleberry brings feeding, sleep, nappies, pumping and growth into a broad baby-care record. Its free tier includes everyday logging and caregiver synchronisation. Plus adds SweetSpot sleep predictions, while Premium includes personalised sleep plans and further guidance. [See Huckleberry’s plans](https://huckleberrycare.com/product/plus).
 
-Nara is a better fit when feeding needs to sit beside sleep, nappies, health information and a shared caregiver record. Mixed feeding can be recorded in that wider picture, and the care record can be exported as CSV. It still requires more interface and setup than a deliberately focused feeding tracker.
+**Choose Huckleberry if** sleep timing is the main reason you want an app and a subscription suits you. Its paid sleep tools are a clear point of difference. Parents primarily interested in feeding and milk storage may find Breastfeeding Tracker & Timer’s focused workflow and lifetime option a better match.
 
-**Choose Nara Baby if:**
+# ![Nara Baby app icon](/assets/breastfeeding-app-comparison/nara-baby-icon.png) [Best for a Shared Care Record: Nara Baby](https://apps.apple.com/us/app/nara-baby-pregnancy-tracker/id1444639029)
 
-- you want a genuinely free all-round baby tracker without ads or in-app purchases;
-- more than one caregiver needs a shared record;
-- you track bottles, pumping, sleep, nappies, or health as well as breastfeeding;
-- you want widgets, Live Activities, or Apple Watch support without a paid plan.
+Nara Baby brings feeding, pumping, sleep and nappy logs together for multiple caregivers. Its current FAQ lists a trial followed by monthly or lifetime membership, with one plan covering the caregiver group. It is ad-free. The earlier description of Nara as completely free is therefore no longer a reliable basis for choosing it. [Check Nara’s current plans and FAQ](https://nara.com/pages/nara-baby-app-faqs).
+
+**Choose Nara Baby if** coordinating everyday care across several people is your priority. Check the terms shown in your app before signing up.
 
 # Detailed feature comparison
 
-The table distinguishes recorded routines from prediction and free access from paid access. Platform and plan requirements can change.
+This table focuses on the differences most relevant to feeding. “Not confirmed” means the sources checked did not establish an equivalent feature; it does not mean the app cannot offer it. Plans and availability can vary by region and platform.
 
-| Feature | Huckleberry | Breastfeeding Tracker & Timer | Nara Baby |
+| Feature | Breastfeeding Tracker & Timer | Huckleberry | Nara Baby |
 | --- | --- | --- | --- |
-| Breastfeeding | Yes | Yes | Yes |
-| Bottle tracking | Yes | Yes | Yes |
-| Pumping | Yes | Yes | Yes |
-| Sleep tracking | Yes | No | Yes |
-| Predictive wake windows | Paid SweetSpot features | No | Wake-window routines, without equivalent personalised prediction |
-| Nappies and broader care | Yes | No | Yes |
-| Multiple caregivers | Yes | No shared-care account | Yes |
-| Widgets | Plus or Premium | Yes | Yes |
-| Live Activities | Plus or Premium | Yes | Yes |
-| Apple Watch | Plus or Premium | Yes | Yes |
-| Export | CSV | PDF | CSV |
-| Simplicity | Comprehensive | Focused on feeding | Streamlined all-round |
-| Payment approach | Free tracker; Plus and Premium subscriptions | Free; optional lifetime unlock; no subscription | Free, without ads or in-app purchases |
+| Breastfeeding, bottles and pumping | Yes | Yes | Yes |
+| Linked breastfeed and bottle top-up | Combined Feed in one entry | Equivalent linked entry not confirmed | Equivalent linked entry not confirmed |
+| Individual fridge/freezer milk portions | Yes; included free | Equivalent portion inventory not confirmed | Equivalent portion inventory not confirmed |
+| Feeding patterns | Recent summary; broader Insights and weekly timeline with Lifetime Unlock | Reports; enhanced features on paid plans | History and trends in its plan |
+| Sleep and nappy logs | Focused on feeding and milk storage | Yes | Yes |
+| Predictive sleep guidance | Not offered | Paid SweetSpot features | Age-based guides; equivalent prediction not confirmed |
+| Live Activities and Apple Watch | Yes | Plus or Premium | Included in its plan |
+| Shareable records | PDF export with Lifetime Unlock | CSV export | CSV export |
+| Payment approach | Free core use; one-time upgrade | Free tier; paid subscriptions | Trial; monthly or lifetime plan |
 
-“Best value” depends on which rows matter. Nara offers the widest feature set without payment. Huckleberry justifies its cost when paid sleep intelligence matters. Breastfeeding Tracker & Timer offers focused value when you want breast, bottle and pumping records but most all-in-one features would go unused.
+For feeding and milk storage without a recurring payment, **Breastfeeding Tracker & Timer is our recommendation**. Its free tools cover daily recording and your milk stash; Lifetime Unlock adds a more complete view of the feeding journey. Huckleberry is worth considering for sleep predictions, and Nara for shared care.
 
 # What a feeding app can—and cannot—tell you
 
@@ -129,42 +111,36 @@ If you are worried about intake, use clinical signs and professional support rat
 
 The healthiest relationship with a tracker may be temporary. Use it while it reduces mental load. Simplify the record, take a break, or stop when logging begins to create more anxiety than clarity.
 
-# Which app wins each category?
-
-For the strongest all-in-one system and paid sleep guidance, choose Huckleberry. For a focused newborn feeding record across breast, bottle and pumping, choose Breastfeeding Tracker & Timer. For the broadest completely free experience, choose Nara Baby.
-
-There is no need to optimise every category. Choose the smallest tool that calmly covers the information your household actually needs.
-
-If a focused feeding tracker matches your needs, [Breastfeeding Tracker & Timer](https://apps.apple.com/app/apple-store/id6754637800?pt=120062009&ct=seo_breast_bottle_pumping&mt=8) is available on the App Store; use it only for as long as it makes feeding feel easier to remember.
-
 # FAQs
 
 ## What is the best breastfeeding app in 2026?
 
-Huckleberry is best for all-in-one tracking and paid sleep guidance, Nara Baby is best for a completely free all-round tracker, and Breastfeeding Tracker & Timer is best for focused newborn feeding records. The right choice depends on the job you need the app to do.
+Our pick for feeding and milk storage is Breastfeeding Tracker & Timer. It combines breastfeeding, bottles, pumping, combined feeds and fridge/freezer inventory, with an optional lifetime upgrade for deeper insights and full history. Huckleberry suits paid sleep guidance; Nara Baby suits shared daily care.
 
-## Is Huckleberry or Nara Baby better?
+## What has changed in Breastfeeding Tracker & Timer?
 
-Choose Huckleberry if personalised predictive sleep features are worth a subscription. Choose Nara Baby if you want broad feeding, sleep, health, and caregiver tracking without ads, in-app purchases, or a subscription.
+Version 2.0 added fridge and freezer milk storage, richer feeding insights, detailed feeding logs and new themes. Version 2.1 added German, French and Polish. These features build on breastfeeding and pumping timers, bottle tracking, combined feeds and Apple Watch support.
 
-## Is there a completely free baby feeding app?
+## Is Breastfeeding Tracker & Timer free?
 
-Yes. Nara Baby’s official listing says it is completely free, with no ads or in-app purchases. It supports breastfeeding, bottles, pumping, sleep, nappies, and shared caregiver tracking.
+Core feeding tracking and milk storage are free. An optional one-time Lifetime Unlock adds full history, filters, broader insights, the weekly care timeline, PDF export, all themes and an ad-free experience. There is no subscription.
 
-## Which app is simplest for tracking newborn breastfeeds?
+## Can I track breastfeeding and bottle top-ups together?
 
-Breastfeeding Tracker & Timer is the most focused option here. It records breastfeeding, bottles, pumping and combined feeds while deliberately leaving out sleep, nappies and other all-in-one baby-care tracking.
+Yes. A Combined Feed keeps the breastfeed and bottle top-up together as one activity. Bottles can contain expressed milk, formula or both.
 
-## Can a breastfeeding tracker tell whether my baby gets enough milk?
+## Can I keep track of milk in the fridge and freezer?
 
-No. Timing and frequency alone cannot determine milk intake or milk transfer. Look at recognised feeding and nappy signs, weight assessment, and your baby’s wellbeing, and contact a qualified healthcare professional whenever you are concerned.
+Yes. Breastfeeding Tracker & Timer supports individual milk portions, fridge and freezer locations, and remaining amounts. Pumping and expressed-milk bottle records connect to the inventory, so you can keep milk storage alongside your feeding log.
 
-## Do I need to track every newborn feed?
+## Does an app replace feeding advice?
 
-No. Tracking is optional, and records do not need to be perfect. Feed responsively, use a tracker only if it reduces mental load, and pause or stop if logging increases anxiety.
+No. A feeding record can help you remember details and describe your routine, but timing alone cannot measure milk transfer or show whether a baby is getting enough milk. Speak with a qualified healthcare professional if you have concerns. Tracking is optional; use it for as long as it helps you.
 
 # Sources and methodology
 
-Last checked **9 August 2026**. Product capabilities and payment models were compared using the official [Huckleberry App Store listing](https://apps.apple.com/us/app/huckleberry-baby-tracker/id1169136078), [Huckleberry feature documentation](https://huckleberrycare.com/product/free), [Nara Baby App Store listing](https://apps.apple.com/us/app/nara-baby-pregnancy-tracker/id1444639029), [Nara Baby FAQ](https://nara.com/pages/nara-baby-tracker-faq), and [Breastfeeding Tracker & Timer App Store listing](https://apps.apple.com/app/apple-store/id6754637800?pt=120062009&ct=seo_breast_bottle_pumping&mt=8). Health context was checked against the NHS and UNICEF guidance linked above.
+Product comparison updated **22 September 2026**, including Breastfeeding Tracker & Timer **2.1.0** and the features introduced in **2.0.0**. We checked our [current UK App Store listing and version history](https://apps.apple.com/gb/app/breastfeeding-tracker-timer/id6754637800), alongside our product documentation for milk storage, Insights and Lifetime Unlock.
 
-We compared declared features, access requirements, export formats, tracking scope, caregiver support, and payment approach. We did not assign scores, reproduce competitor screenshots, claim first-hand testing, compare temporary offers, or use locale-specific subscription prices. Features can change after the checking date.
+Competitor sources: [Huckleberry’s free features](https://huckleberrycare.com/product/free), [Huckleberry Plus](https://huckleberrycare.com/product/plus), [Huckleberry’s App Store listing](https://apps.apple.com/us/app/huckleberry-baby-tracker/id1169136078), and [Nara Baby’s current FAQ](https://nara.com/pages/nara-baby-app-faqs). Nara’s payment description follows its current FAQ rather than older free-app descriptions. Health references are linked in the section above.
+
+Recommendations are our editorial judgement based on declared capabilities and access requirements. We have not conducted comparative hands-on testing or assigned performance scores. We avoid temporary offers and regional prices; confirm essential features and purchase terms in the current app before choosing.

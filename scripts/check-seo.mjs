@@ -271,13 +271,13 @@ const comparisonJsonLd = [
 const comparisonFaq = comparisonJsonLd.find((entry) => entry["@type"] === "FAQPage");
 const comparisonArticle = comparisonJsonLd.find((entry) => entry["@type"] === "BlogPosting");
 const expectedComparisonAlt =
-  "Huckleberry, Nara Baby and Breastfeeding Tracker & Timer compared by best use, features and cost.";
+  "Best Breastfeeding Apps 2026: Huckleberry, Nara Baby and Breastfeeding Tracker & Timer.";
 const expectedComparisonAltHtml = expectedComparisonAlt.replace("&", "&amp;");
 const requiredComparisonSources = [
   "https://apps.apple.com/us/app/huckleberry-baby-tracker/id1169136078",
   "https://huckleberrycare.com/product/free",
   "https://apps.apple.com/us/app/nara-baby-pregnancy-tracker/id1444639029",
-  "https://nara.com/pages/nara-baby-tracker-faq",
+  "https://nara.com/pages/nara-baby-app-faqs",
   trackerArticleAppStoreUrl,
   "https://www.nhs.uk/baby/breastfeeding-and-bottle-feeding/breastfeeding/the-first-few-days/",
   "https://www.nhs.uk/baby/breastfeeding-and-bottle-feeding/breastfeeding-problems/enough-milk/",
@@ -310,14 +310,14 @@ assert(
     comparisonHtml.includes('<th scope="col">'),
   "Comparison guide tables are not semantic."
 );
-const huckleberryHeadingIndex = comparisonHtml.indexOf("Best Overall: Huckleberry");
-const trackerHeadingIndex = comparisonHtml.indexOf("Best for Newborn Breastfeeding");
-const naraHeadingIndex = comparisonHtml.indexOf("Best Free App: Nara Baby");
+const huckleberryHeadingIndex = comparisonHtml.indexOf("Best for Paid Sleep Predictions: Huckleberry");
+const trackerHeadingIndex = comparisonHtml.indexOf("Our Pick for Feeding &amp; Milk Storage");
+const naraHeadingIndex = comparisonHtml.indexOf("Best for a Shared Care Record: Nara Baby");
 assert(
-  huckleberryHeadingIndex !== -1 &&
-    trackerHeadingIndex > huckleberryHeadingIndex &&
-    naraHeadingIndex > trackerHeadingIndex,
-  "Comparison product sections must order Huckleberry, Breastfeeding Tracker, then Nara Baby."
+  trackerHeadingIndex !== -1 &&
+    huckleberryHeadingIndex > trackerHeadingIndex &&
+    naraHeadingIndex > huckleberryHeadingIndex,
+  "Comparison product sections must order Breastfeeding Tracker, Huckleberry, then Nara Baby."
 );
 assert(
   (comparisonHtml.match(/<h2[^>]*class="feeding-product-heading">/g) || []).length === 3 &&
