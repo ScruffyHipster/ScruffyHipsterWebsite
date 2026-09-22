@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Reveal } from "../components/Reveal";
 import { Seo } from "../components/Seo";
+import { TrackerLanguageSelector } from "../components/TrackerLanguageSelector";
 import {
   breastfeedingTrackerBlogCategories,
   breastfeedingTrackerBlogPosts,
@@ -17,6 +18,7 @@ import { breadcrumbJsonLd, organizationJsonLd } from "../seo/jsonld";
 import { canonicalPath, canonicalUrl } from "../seo/canonical";
 import { getSiteUrl } from "../seo/metadata";
 import { siteConfig } from "../content/site";
+import { trackerHreflangAlternates } from "../content/trackerLocales";
 
 export function BreastfeedingTrackerBlogPage() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
@@ -30,6 +32,7 @@ export function BreastfeedingTrackerBlogPage() {
       <Seo
         path={breastfeedingBlogPageContent.route}
         meta={breastfeedingBlogPageContent.seo}
+        alternates={trackerHreflangAlternates("blog", siteUrl)}
         jsonLd={[
           organizationJsonLd(),
           {
@@ -61,6 +64,7 @@ export function BreastfeedingTrackerBlogPage() {
       <section className="feeding-resource-hero feeding-blog-hero">
         <div className="container">
           <Reveal>
+            <TrackerLanguageSelector kind="blog" />
             <Link className="feeding-text-link" to={canonicalPath(BREASTFEEDING_TRACKER_BASE_PATH)}>
               {breastfeedingBlogPageContent.hero.backLabel}
             </Link>
@@ -76,12 +80,14 @@ export function BreastfeedingTrackerBlogPage() {
             </p>
             <div
               className="feeding-blog-filters"
+              role="group"
               aria-label={breastfeedingBlogPageContent.filterAriaLabel}
             >
               <button
                 type="button"
                 className={!activeCategory ? "is-active" : undefined}
                 aria-pressed={!activeCategory}
+                aria-controls="blog-stories"
                 onClick={() => setActiveCategory(null)}
               >
                 {breastfeedingBlogPageContent.allFilterLabel}
@@ -97,6 +103,7 @@ export function BreastfeedingTrackerBlogPage() {
                     type="button"
                     className={activeCategory === category ? "is-active" : undefined}
                     aria-pressed={activeCategory === category}
+                    aria-controls="blog-stories"
                     onClick={() => setActiveCategory(category)}
                   >
                     {category}
@@ -114,14 +121,14 @@ export function BreastfeedingTrackerBlogPage() {
           <Reveal className="feeding-section-heading">
             <h2>{breastfeedingBlogPageContent.recentHeading}</h2>
           </Reveal>
-          <div className="feeding-blog-list" aria-live="polite">
+          <div id="blog-stories" className="feeding-blog-list" aria-live="polite">
             {posts.map((post, index) => (
-              <Reveal key={post.slug}>
+              <Reveal key={post.slug} className={index === 0 ? "bft-featured-story" : undefined}>
                 <Link
                   className={`feeding-blog-card${index === 0 ? " feeding-blog-card-featured" : ""}`}
                   to={canonicalPath(`${BREASTFEEDING_TRACKER_BLOG_BASE_PATH}/${post.slug}`)}
                 >
-                  <img src={post.ogImage} alt={post.ogImageAlt || ""} />
+                  <img src={post.ogImage} alt={post.ogImageAlt || ""} width="1600" height="1000" loading={index === 0 ? "eager" : "lazy"} decoding="async" />
                   <div>
                     <p className="feeding-blog-meta">
                       <span>{post.category}</span>

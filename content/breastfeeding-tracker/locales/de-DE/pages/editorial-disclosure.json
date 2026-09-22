@@ -1,0 +1,13 @@
+{
+  "locale": "de-DE",
+  "translationKey": "editorialDisclosure",
+  "seo": {
+    "title": "Redaktionelle Hinweise und Offenlegung",
+    "description": "Wie Scruffy Hipster Inhalte zum Stillen recherchiert, persönliche Erfahrungen einordnet und über eigene Produkte spricht."
+  },
+  "heading": "Offen darüber, wie dieser Blog arbeitet.",
+  "sections": [
+    "Der Blog verbindet persönliche Erfahrungen einer Familie mit nachvollziehbar verlinkten Informationen. Er ersetzt keine medizinische Beratung und wird nicht ärztlich geprüft.",
+    "Scruffy Hipster entwickelt Breastfeeding Tracker & Timer. Das wird bei Vergleichen und Empfehlungen klar benannt. Produktinformationen, Preise und Verfügbarkeit können sich ändern und werden vor Veröffentlichung lokal geprüft."
+  ]
+}

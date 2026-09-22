@@ -1,0 +1,38 @@
+{
+  "locale": "de-DE",
+  "languageTag": "de-DE",
+  "ogLocale": "de_DE",
+  "prefix": "/de/still-tracker",
+  "appStoreCountry": "de",
+  "currency": "EUR",
+  "release": {
+    "translationSourcesComplete": true,
+    "nativeEditorialReview": false,
+    "sourceFactReview": false,
+    "appStoreLocalizationLive": false
+  },
+  "routes": {
+    "landing": "",
+    "blog": "blog",
+    "editorialDisclosure": "blog/redaktionelle-offenlegung",
+    "support": "hilfe",
+    "privacy": "datenschutz",
+    "blogPosts": {
+      "baby-spit-up-vs-reflux": "baby-spuckt-oder-reflux",
+      "best-breastfeeding-apps": "beste-still-apps",
+      "breastfeeding-didnt-go-to-plan": "stillen-lief-anders-als-geplant",
+      "first-infant-formula-cheaper-brands": "anfangsmilch-guenstige-marken",
+      "moving-from-breastfeeding-to-combi-feeding": "von-stillen-zu-kombifuetterung",
+      "three-signs-of-potential-tongue-tie": "zungenband-beim-baby-anzeichen"
+    },
+    "guides": {
+      "breastfeeding-bottle-pumping-tracker": "stillen-flasche-abpumpen-tracker",
+      "breastfeeding-timer-iphone": "still-timer-iphone",
+      "breastfeeding-tracker-apple-watch": "still-tracker-apple-watch",
+      "edit-missed-feeding-logs": "fehlende-mahlzeiten-nachtragen",
+      "export-breastfeeding-log-pdf": "stillprotokoll-pdf-exportieren",
+      "private-breastfeeding-tracker": "privater-still-tracker",
+      "track-left-and-right-side": "linke-rechte-brust-tracking"
+    }
+  }
+}

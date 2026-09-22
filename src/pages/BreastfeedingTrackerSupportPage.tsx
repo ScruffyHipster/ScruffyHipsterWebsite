@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Reveal } from "../components/Reveal";
 import { Seo } from "../components/Seo";
+import { TrackerLanguageSelector } from "../components/TrackerLanguageSelector";
 import { breastfeedingTrackerGuides } from "../content/breastfeedingTracker";
 import {
   BREASTFEEDING_TRACKER_BASE_PATH,
@@ -11,6 +12,7 @@ import { getSiteUrl } from "../seo/metadata";
 import { canonicalPath, canonicalUrl } from "../seo/canonical";
 import { breastfeedingSupportPageContent } from "../content/pages";
 import { siteConfig } from "../content/site";
+import { trackerHreflangAlternates } from "../content/trackerLocales";
 
 export function BreastfeedingTrackerSupportPage() {
   const siteUrl = getSiteUrl();
@@ -32,6 +34,7 @@ export function BreastfeedingTrackerSupportPage() {
       <Seo
         path={breastfeedingSupportPageContent.route}
         meta={breastfeedingSupportPageContent.seo}
+        alternates={trackerHreflangAlternates("support", siteUrl)}
         jsonLd={[
           organizationJsonLd(),
           collectionJsonLd,
@@ -49,9 +52,10 @@ export function BreastfeedingTrackerSupportPage() {
         ]}
       />
 
-      <section className="feeding-resource-hero feeding-resource-hero-centered">
+      <section className="feeding-resource-hero feeding-resource-hero-centered bft-support-hero">
         <div className="container">
           <Reveal>
+            <TrackerLanguageSelector kind="support" />
             <Link className="feeding-text-link" to={canonicalPath(BREASTFEEDING_TRACKER_BASE_PATH)}>
               {breastfeedingSupportPageContent.hero.backLabel}
             </Link>
@@ -114,7 +118,7 @@ export function BreastfeedingTrackerSupportPage() {
             <h2>{breastfeedingSupportPageContent.contact.heading}</h2>
             <p>{breastfeedingSupportPageContent.contact.body}</p>
             <a
-              className="btn feeding-btn-primary"
+              className="bft-button"
               href={`mailto:${siteConfig.supportEmail}?subject=Breastfeeding%20Tracker%20support`}
             >
               {breastfeedingSupportPageContent.contact.label}

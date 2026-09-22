@@ -1,299 +1,196 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { BreastfeedingTrackerAppStoreLink } from "../components/AppStoreLink";
-import { Reveal } from "../components/Reveal";
 import { Seo } from "../components/Seo";
+import { TrackerLanguageSelector } from "../components/TrackerLanguageSelector";
 import {
-  breastfeedingTrackerApp,
+  breastfeedingTrackerApp as app,
   breastfeedingTrackerAppStoreUrl,
-  breastfeedingTrackerContent,
-  breastfeedingTrackerFaqs,
-  breastfeedingTrackerGuides,
-  breastfeedingTrackerBlogPosts
+  breastfeedingTrackerContent as content,
+  breastfeedingTrackerFaqs
 } from "../content/breastfeedingTracker";
-import {
-  BREASTFEEDING_TRACKER_BASE_PATH,
-  BREASTFEEDING_TRACKER_BLOG_BASE_PATH,
-  BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH
-} from "../content/routes";
+import { BREASTFEEDING_TRACKER_BASE_PATH } from "../content/routes";
 import { breadcrumbJsonLd, faqPageJsonLd, organizationJsonLd } from "../seo/jsonld";
 import { getSiteUrl } from "../seo/metadata";
-import { canonicalPath, canonicalUrl } from "../seo/canonical";
+import { canonicalUrl } from "../seo/canonical";
 import { siteConfig } from "../content/site";
+import { trackerHreflangAlternates } from "../content/trackerLocales";
+import { TrackerIcon as Icon } from "../components/TrackerIcon";
 
 const siteUrl = getSiteUrl();
-
+const editorial = content.editorial;
+const assetPath = "/assets/breastfeeding-editorial";
 const softwareApplicationJsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: breastfeedingTrackerContent.softwareApplication.name,
-  applicationCategory: breastfeedingTrackerContent.softwareApplication.applicationCategory,
-  applicationSubCategory:
-    breastfeedingTrackerContent.softwareApplication.applicationSubCategory,
-  operatingSystem: breastfeedingTrackerContent.softwareApplication.operatingSystem,
-  description: breastfeedingTrackerContent.softwareApplication.description,
+  ...content.softwareApplication,
+  offer: undefined,
   url: canonicalUrl(BREASTFEEDING_TRACKER_BASE_PATH, siteUrl),
-  image: `${siteUrl}${breastfeedingTrackerApp.icon}`,
+  image: `${siteUrl}${app.icon}`,
   downloadUrl: breastfeedingTrackerAppStoreUrl,
-  featureList: breastfeedingTrackerContent.softwareApplication.featureList,
-  offers: {
-    "@type": "Offer",
-    ...breastfeedingTrackerContent.softwareApplication.offer
-  }
+  offers: { "@type": "Offer", ...content.softwareApplication.offer }
 };
 
+function Phone({ screen, alt, className = "", priority = false }: {
+  screen: string; alt: string; className?: string; priority?: boolean;
+}) {
+  const priorityAttributes = priority ? { fetchpriority: "high" } : {};
+  return (
+    <div className={`bft-device ${className}`}>
+      <img {...priorityAttributes} src={`${assetPath}/${screen}-660.webp`}
+        srcSet={`${assetPath}/${screen}-360.webp 360w, ${assetPath}/${screen}-660.webp 660w`}
+        sizes="(max-width: 600px) 44vw, 260px" alt={alt} width="1320" height="2868"
+        loading={priority ? "eager" : "lazy"} decoding="async" />
+    </div>
+  );
+}
+
+function AppearancePreview({ device, appearance }: {
+  device: "phone" | "tablet"; appearance: "light" | "dark";
+}) {
+  const isPhone = device === "phone";
+  return (
+    <div className={`${isPhone ? "bft-device" : "bft-tablet"} bft-appearance-preview`}>
+      {(["light", "dark"] as const).map((mode) => {
+        const screen = `${isPhone ? "home" : "ipad-history"}-${mode}`;
+        const label = mode === "light" ? editorial.screens.lightLabel : editorial.screens.darkLabel;
+        return (
+          <img key={mode} className="bft-appearance-screen" data-mode={mode}
+            src={`${assetPath}/${screen}-${isPhone ? "660" : "1000"}.webp`}
+            srcSet={isPhone ? `${assetPath}/${screen}-360.webp 360w, ${assetPath}/${screen}-660.webp 660w` : undefined}
+            sizes={isPhone ? "(max-width: 760px) 31vw, 236px" : undefined}
+            alt={appearance === mode ? `${isPhone ? editorial.screens.phoneAlt : editorial.screens.tabletAlt} — ${label}` : ""}
+            aria-hidden={appearance !== mode}
+            width={isPhone ? 1320 : 2064} height={isPhone ? 2868 : 2752}
+            loading="lazy" decoding="async" />
+        );
+      })}
+    </div>
+  );
+}
+
 export function BreastfeedingTrackerLandingPage() {
+  const [appearance, setAppearance] = useState<"light" | "dark">("light");
   return (
     <>
-      <Seo
-        path={BREASTFEEDING_TRACKER_BASE_PATH}
-        meta={breastfeedingTrackerContent.seo}
-        jsonLd={[
-          organizationJsonLd(),
-          softwareApplicationJsonLd,
-          faqPageJsonLd(breastfeedingTrackerFaqs),
-          breadcrumbJsonLd([
-            { name: siteConfig.companyName, url: siteUrl },
-            {
-              name: breastfeedingTrackerContent.softwareApplication.applicationSubCategory,
-              url: canonicalUrl(BREASTFEEDING_TRACKER_BASE_PATH, siteUrl)
-            }
-          ])
-        ]}
+      <Seo path={BREASTFEEDING_TRACKER_BASE_PATH} meta={content.seo}
+        alternates={trackerHreflangAlternates("landing", siteUrl)}
+        jsonLd={[organizationJsonLd(), softwareApplicationJsonLd, faqPageJsonLd(breastfeedingTrackerFaqs),
+          breadcrumbJsonLd([{ name: siteConfig.companyName, url: siteUrl }, { name: content.softwareApplication.name, url: canonicalUrl(BREASTFEEDING_TRACKER_BASE_PATH, siteUrl) }])]}
       />
-
-      <section className="feeding-hero">
-        <div className="container feeding-hero-grid">
-          <Reveal className="feeding-hero-copy">
-            <img
-              className="feeding-app-icon"
-              src={breastfeedingTrackerApp.icon}
-              alt={breastfeedingTrackerContent.hero.iconAlt}
-            />
-            <p className="eyebrow">{breastfeedingTrackerContent.hero.eyebrow}</p>
-            <h1>{breastfeedingTrackerContent.hero.heading}</h1>
-            <p className="lead">{breastfeedingTrackerContent.hero.body}</p>
-            <div className="hero-actions">
-              <BreastfeedingTrackerAppStoreLink className="btn feeding-btn-primary" placement="hero">
-                {breastfeedingTrackerContent.hero.primaryCta}
-              </BreastfeedingTrackerAppStoreLink>
-              <a className="btn feeding-btn-secondary" href="#how-it-works">
-                {breastfeedingTrackerContent.hero.secondaryCta}
-              </a>
-            </div>
-            <p className="feeding-store-note">{breastfeedingTrackerContent.hero.storeNote}</p>
-          </Reveal>
-
-          <Reveal className="feeding-hero-visual" delayMs={90}>
-            <div className="feeding-device-halo" aria-hidden="true" />
-            <img
-              className="feeding-hero-phone"
-              src={breastfeedingTrackerApp.screenshots[0].src}
-              alt={breastfeedingTrackerContent.hero.imageAlt}
-            />
-          </Reveal>
+      <section className="bft-editorial-hero" aria-labelledby="hero-heading">
+        <div className="bft-container bft-editorial-hero-grid">
+          <div className="bft-editorial-hero-copy">
+            <TrackerLanguageSelector kind="landing" />
+            <p className="bft-eyebrow">{content.hero.eyebrow}</p>
+            <h1 id="hero-heading">{content.hero.heading}<em>{content.hero.headingEmphasis}</em></h1>
+            <p className="bft-lead">{content.hero.body}</p>
+            <BreastfeedingTrackerAppStoreLink className="bft-button" placement="hero">
+              {content.hero.primaryCta}<Icon kind="arrow" />
+            </BreastfeedingTrackerAppStoreLink>
+            <p className="bft-store-note">{content.hero.storeNote}</p>
+            <a className="bft-text-link bft-discover" href="#how-it-works">{content.hero.secondaryCta}<Icon kind="arrow" /></a>
+          </div>
+          <figure className="bft-editorial-scene">
+            <img className="bft-lifestyle-photo" src={editorial.image.src}
+              srcSet={`${editorial.image.smallSrc} 720w, ${editorial.image.src} 1200w`}
+              sizes="(max-width: 760px) 94vw, 48vw" alt={editorial.image.alt}
+              width="1200" height="1500" decoding="async" {...{ fetchpriority: "high" }} />
+            <Phone screen="home-light" alt={content.hero.imageAlt} className="bft-scene-phone" priority />
+          </figure>
+        </div>
+        <div className="bft-container bft-editorial-signoff">
+          <p>{content.hero.caption}</p><span>{editorial.platforms}</span>
         </div>
       </section>
 
-      <section className="feeding-proof" aria-label={breastfeedingTrackerContent.proof.ariaLabel}>
-        <div className="container feeding-proof-row">
-          {breastfeedingTrackerContent.proof.items.map((item) => (
-            <p key={item.heading}>
-              <strong>{item.heading}</strong>
-              <span>{item.body}</span>
-            </p>
-          ))}
-        </div>
-      </section>
-
-      <section id="how-it-works" className="feeding-section">
-        <div className="container">
-          <Reveal className="feeding-section-heading">
-            <p className="eyebrow">{breastfeedingTrackerContent.howItWorks.eyebrow}</p>
-            <h2>{breastfeedingTrackerContent.howItWorks.heading}</h2>
-          </Reveal>
-          <div className="feeding-steps">
-            {breastfeedingTrackerContent.howItWorks.steps.map((item, index) => (
-              <Reveal className="feeding-step" key={item.step} delayMs={index * 70}>
-                <span>{item.step}</span>
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
-              </Reveal>
-            ))}
+      <section className="bft-editorial-section" id="how-it-works" aria-labelledby="benefit-heading">
+        <div className="bft-container bft-editorial-split">
+          <div className="bft-editorial-copy">
+            <p className="bft-eyebrow">{content.howItWorks.eyebrow}</p>
+            <h2 id="benefit-heading">{content.howItWorks.heading}</h2>
+            <p>{content.howItWorks.body}</p>
+            <p className="bft-detail-note">{editorial.benefitNote}</p>
+            <Link className="bft-text-link" to={content.careMethodsFeature.link.url}>{content.careMethodsFeature.link.label}<Icon kind="arrow" /></Link>
+          </div>
+          <div className="bft-editorial-duo">
+            <Phone screen="home-light" alt={content.hero.imageAlt} />
+            <Phone screen="history-light" alt={editorial.historyAlt} />
           </div>
         </div>
       </section>
 
-      <section className="feeding-feature-band">
-        <div className="container feeding-feature-layout">
-          <Reveal className="feeding-feature-copy">
-            <p className="eyebrow">{breastfeedingTrackerContent.careMethodsFeature.eyebrow}</p>
-            <h2>{breastfeedingTrackerContent.careMethodsFeature.heading}</h2>
-            {breastfeedingTrackerContent.careMethodsFeature.paragraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-            <div className="feeding-feature-links">
-              <Link
-                className="feeding-text-link"
-                to={breastfeedingTrackerContent.careMethodsFeature.link.url}
-              >
-                {breastfeedingTrackerContent.careMethodsFeature.link.label}
-              </Link>
-              <BreastfeedingTrackerAppStoreLink
-                className="feeding-text-link"
-                placement="feature"
-              >
-                {breastfeedingTrackerContent.careMethodsFeature.cta}
-              </BreastfeedingTrackerAppStoreLink>
-            </div>
-          </Reveal>
-          <Reveal className="feeding-feature-images" delayMs={100}>
-            <img
-              src={breastfeedingTrackerApp.screenshots[1].src}
-              alt={breastfeedingTrackerContent.careMethodsFeature.imageAlts[0]}
-            />
-            <img
-              src={breastfeedingTrackerApp.screenshots[2].src}
-              alt={breastfeedingTrackerContent.careMethodsFeature.imageAlts[1]}
-            />
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="feeding-section">
-        <div className="container feeding-history-layout">
-          <Reveal className="feeding-history-images">
-            <img
-              src={breastfeedingTrackerApp.screenshots[3].src}
-              alt={breastfeedingTrackerContent.historyFeature.imageAlts[0]}
-            />
-            <img
-              src={breastfeedingTrackerApp.screenshots[4].src}
-              alt={breastfeedingTrackerContent.historyFeature.imageAlts[1]}
-            />
-          </Reveal>
-          <Reveal className="feeding-feature-copy" delayMs={90}>
-            <p className="eyebrow">{breastfeedingTrackerContent.historyFeature.eyebrow}</p>
-            <h2>{breastfeedingTrackerContent.historyFeature.heading}</h2>
-            {breastfeedingTrackerContent.historyFeature.paragraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-            <BreastfeedingTrackerAppStoreLink
-              className="feeding-text-link"
-              placement="feature"
-            >
-              {breastfeedingTrackerContent.historyFeature.cta}
-            </BreastfeedingTrackerAppStoreLink>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="feeding-privacy">
-        <div className="narrow-container">
-          <Reveal>
-            <p className="eyebrow">{breastfeedingTrackerContent.privacy.eyebrow}</p>
-            <h2>{breastfeedingTrackerContent.privacy.heading}</h2>
-            <p>{breastfeedingTrackerContent.privacy.body}</p>
-            <div className="feeding-inline-links">
-              {breastfeedingTrackerContent.privacy.links.map((link) => (
-                <Link key={link.url} to={link.url}>
-                  {link.label}
-                </Link>
+      <section className="bft-editorial-section bft-night" aria-labelledby="everyday-heading">
+        <div className="bft-container">
+          <div className="bft-editorial-section-intro">
+            <div><p className="bft-eyebrow">{content.everyday.eyebrow}</p><h2 id="everyday-heading">{content.everyday.heading}</h2></div>
+            <p>{content.everyday.body}</p>
+          </div>
+          <div className="bft-night-grid">
+            <div className="bft-night-product"><Phone screen="timer-dark" alt={editorial.timerAlt} /></div>
+            <div className="bft-editorial-details">
+              {content.everyday.items.map((item) => (
+                <article key={item.title}>
+                  <Icon kind={item.icon} />
+                  <div><h3>{item.title}</h3><p>{item.body}</p></div>
+                </article>
               ))}
             </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="feeding-section feeding-guides">
-        <div className="container">
-          <Reveal className="feeding-section-heading">
-            <p className="eyebrow">{breastfeedingTrackerContent.supportSection.eyebrow}</p>
-            <h2>{breastfeedingTrackerContent.supportSection.heading}</h2>
-            <p>{breastfeedingTrackerContent.supportSection.body}</p>
-          </Reveal>
-          <div className="feeding-guide-list">
-            {breastfeedingTrackerGuides.slice(0, 3).map((guide, index) => (
-              <Reveal key={guide.slug} delayMs={Math.min(index * 55, 220)}>
-                <Link
-                  className="feeding-guide-row"
-                  to={canonicalPath(`${BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH}/${guide.slug}`)}
-                >
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <strong>{guide.title}</strong>
-                  <small>{guide.excerpt}</small>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-          <Reveal>
-            <Link
-              className="feeding-text-link"
-              to={canonicalPath(BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH)}
-            >
-              {breastfeedingTrackerContent.supportSection.browseLabel}
-            </Link>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="feeding-section feeding-blog-preview">
-        <div className="container">
-          <Reveal className="feeding-section-heading">
-            <p className="eyebrow">{breastfeedingTrackerContent.blogSection.eyebrow}</p>
-            <h2>{breastfeedingTrackerContent.blogSection.heading}</h2>
-            <p>{breastfeedingTrackerContent.blogSection.body}</p>
-          </Reveal>
-          <div className="feeding-guide-list">
-            {breastfeedingTrackerBlogPosts.slice(0, 3).map((post, index) => (
-              <Reveal key={post.slug} delayMs={Math.min(index * 55, 220)}>
-                <Link
-                  className="feeding-guide-row"
-                  to={canonicalPath(`${BREASTFEEDING_TRACKER_BLOG_BASE_PATH}/${post.slug}`)}
-                >
-                  <span>{post.category}</span>
-                  <strong>{post.title}</strong>
-                  <small>{post.excerpt}</small>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-          <Reveal>
-            <Link className="feeding-text-link" to={canonicalPath(BREASTFEEDING_TRACKER_BLOG_BASE_PATH)}>
-              {breastfeedingTrackerContent.blogSection.browseLabel}
-            </Link>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="feeding-section feeding-faq">
-        <div className="container feeding-faq-layout">
-          <Reveal className="feeding-section-heading">
-            <p className="eyebrow">{breastfeedingTrackerContent.faqSection.eyebrow}</p>
-            <h2>{breastfeedingTrackerContent.faqSection.heading}</h2>
-          </Reveal>
-          <div className="feeding-faq-list">
-            {breastfeedingTrackerFaqs.map((item) => (
-              <Reveal key={item.question}>
-                <details>
-                  <summary>{item.question}</summary>
-                  <p>{item.answer}</p>
-                </details>
-              </Reveal>
-            ))}
           </div>
         </div>
       </section>
 
-      <section className="feeding-final-cta">
-        <div className="container">
-          <Reveal>
-            <img src={breastfeedingTrackerApp.icon} alt="" aria-hidden="true" />
-            <p className="eyebrow">{breastfeedingTrackerContent.finalCta.eyebrow}</p>
-            <h2>{breastfeedingTrackerContent.finalCta.heading}</h2>
-            <BreastfeedingTrackerAppStoreLink className="btn feeding-btn-primary" placement="footer">
-              {breastfeedingTrackerContent.finalCta.label}
-            </BreastfeedingTrackerAppStoreLink>
-          </Reveal>
+      <section className="bft-editorial-section" aria-labelledby="insights-heading">
+        <div className="bft-container bft-editorial-split bft-insights-editorial">
+          <div className="bft-timeline-product"><Phone screen="timeline-light" alt={content.historyFeature.imageAlts[0]} /></div>
+          <div className="bft-editorial-copy">
+            <p className="bft-eyebrow">{content.historyFeature.eyebrow}</p>
+            <h2 id="insights-heading">{content.historyFeature.heading}</h2>
+            {content.historyFeature.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            <a className="bft-text-link" href={content.historyFeature.url}>{content.historyFeature.cta}<Icon kind="arrow" /></a>
+            <p className="bft-detail-note">{editorial.insightsNote}</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bft-editorial-section bft-appearance" aria-labelledby="screens-heading">
+        <div className="bft-container">
+          <div className="bft-editorial-section-intro">
+            <div><p className="bft-eyebrow">{editorial.screens.eyebrow}</p><h2 id="screens-heading">{editorial.screens.heading}</h2></div>
+            <div><p>{editorial.screens.body}</p>
+              <div className="bft-appearance-switch" role="group" aria-label={editorial.screens.switcherLabel}>
+                <button type="button" aria-pressed={appearance === "light"} onClick={() => setAppearance("light")}>{editorial.screens.lightLabel}</button>
+                <button type="button" aria-pressed={appearance === "dark"} onClick={() => setAppearance("dark")}>{editorial.screens.darkLabel}</button>
+              </div>
+            </div>
+          </div>
+          <div className="bft-device-collection" data-appearance={appearance}>
+            <figure>
+              <AppearancePreview device="phone" appearance={appearance} />
+              <figcaption>{editorial.screens.phoneCaption}</figcaption>
+            </figure>
+            <figure>
+              <AppearancePreview device="tablet" appearance={appearance} />
+              <figcaption>{editorial.screens.tabletCaption}</figcaption>
+            </figure>
+          </div>
+          <p className="bft-detail-note bft-appearance-note">{editorial.screens.note}</p>
+        </div>
+      </section>
+
+      <section className="bft-editorial-section bft-founder" aria-labelledby="founder-heading">
+        <div className="bft-container bft-editorial-split">
+          <div><p className="bft-eyebrow">{editorial.founder.eyebrow}</p><h2 id="founder-heading">{editorial.founder.heading}</h2></div>
+          <div className="bft-editorial-copy"><p>{editorial.founder.body}</p><p>{editorial.founder.closing}</p>
+            <Link className="bft-text-link" to={editorial.founder.linkUrl}>{editorial.founder.linkLabel}<Icon kind="arrow" /></Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="bft-section bft-faq-section" id="questions" aria-labelledby="faq-heading">
+        <div className="bft-container bft-faq-grid">
+          <div className="bft-section-heading"><p className="bft-eyebrow">{content.faqSection.eyebrow}</p><h2 id="faq-heading">{content.faqSection.heading}</h2><p>{content.faqSection.body}</p></div>
+          <div className="bft-faq-list">{breastfeedingTrackerFaqs.map((item) => <details key={item.question}><summary>{item.question}<Icon kind="chevron" /></summary><p>{item.answer}</p></details>)}</div>
         </div>
       </section>
     </>

@@ -7,8 +7,7 @@ export async function prerenderRoutes(distDir, render) {
   const baseHtml = await readFile(baseHtmlPath, "utf8");
 
   for (const route of publicRoutes) {
-    const renderedApp = render(route.path);
-    const renderedHtml = injectRenderedApp(baseHtml, renderedApp);
+    const renderedHtml = renderPage(baseHtml, route.path, render);
 
     if (route.path === "/") {
       const updated = injectRouteMeta(renderedHtml, route);
@@ -23,7 +22,7 @@ export async function prerenderRoutes(distDir, render) {
 
   // GitHub Pages SPA fallback for unknown paths with explicit noindex.
   const notFoundHtml = injectRouteMeta(
-    injectRenderedApp(baseHtml, render(notFoundRoute.path)),
+    renderPage(baseHtml, notFoundRoute.path, render),
     notFoundRoute
   );
   await writeFile(join(distDir, "404.html"), notFoundHtml, "utf8");
@@ -92,6 +91,18 @@ function injectRouteMeta(html, route) {
       );
   }
   return updatedHtml;
+}
+
+function renderPage(baseHtml, path, render) {
+  const helmetContext = {};
+  const renderedApp = render(path, helmetContext);
+  const html = injectRenderedApp(baseHtml, renderedApp);
+  // Safari needs the banner in the initial head; Helmet owns it after navigation.
+  // Other SEO tags are supplied by injectRouteMeta to retain the CMS pipeline.
+  const banner = helmetContext.helmet?.meta.toString().match(
+    /<meta\b[^>]*\bname="apple-itunes-app"[^>]*>/i
+  )?.[0];
+  return banner ? html.replace("</head>", `    ${banner}\n  </head>`) : html;
 }
 
 function injectRenderedApp(html, renderedApp) {

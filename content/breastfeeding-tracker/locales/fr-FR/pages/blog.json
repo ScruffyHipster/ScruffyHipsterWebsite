@@ -1,0 +1,11 @@
+{
+  "locale": "fr-FR",
+  "translationKey": "blog",
+  "seo": {
+    "title": "Blog allaitement, tire-lait et alimentation mixte",
+    "description": "Récits personnels et informations mises en contexte avec soin sur l’allaitement, le tire-lait, les biberons et les premiers mois avec bébé."
+  },
+  "heading": "Des textes honnêtes pour les journées d’alimentation qui ne suivent pas le scénario prévu.",
+  "intro": "Des expériences vécues, des repères pratiques et des informations clairement identifiées comme telles, sans pression sur la façon dont une famille nourrit son bébé.",
+  "labels": { "all": "Tous", "read": "Lire", "minutes": "min de lecture" }
+}

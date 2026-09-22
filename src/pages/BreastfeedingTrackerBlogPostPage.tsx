@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { BlogTableOfContents } from "../components/BlogTableOfContents";
 import { Reveal } from "../components/Reveal";
 import { Seo } from "../components/Seo";
+import { TrackerLanguageSelector } from "../components/TrackerLanguageSelector";
 import { TrackedMarkdownContent } from "../components/TrackedMarkdownContent";
 import {
   breastfeedingTrackerBlogPosts,
@@ -19,6 +20,7 @@ import { breadcrumbJsonLd, organizationJsonLd } from "../seo/jsonld";
 import { canonicalPath, canonicalUrl } from "../seo/canonical";
 import { getSiteUrl } from "../seo/metadata";
 import { siteConfig } from "../content/site";
+import { trackerHreflangAlternates } from "../content/trackerLocales";
 
 export function BreastfeedingTrackerBlogPostPage() {
   const params = useParams<{ slug: string }>();
@@ -47,6 +49,7 @@ export function BreastfeedingTrackerBlogPostPage() {
           ogImage: post.ogImage || breastfeedingTrackerOgImage,
           ...(post.ogImageAlt ? { ogImageAlt: post.ogImageAlt } : {})
         }}
+        alternates={trackerHreflangAlternates("blogPost", siteUrl, post.slug)}
         jsonLd={[
           organizationJsonLd(),
           {
@@ -104,6 +107,7 @@ export function BreastfeedingTrackerBlogPostPage() {
       <article className="feeding-blog-article">
         <div className="container">
           <Reveal className="feeding-blog-article-header">
+            <TrackerLanguageSelector kind="blogPost" translationKey={post.slug} />
             <Link className="feeding-text-link" to={canonicalPath(BREASTFEEDING_TRACKER_BLOG_BASE_PATH)}>
               {template.backLabel}
             </Link>
@@ -122,9 +126,12 @@ export function BreastfeedingTrackerBlogPostPage() {
               className="feeding-blog-hero-image"
               src={post.ogImage || breastfeedingTrackerOgImage}
               alt={post.ogImageAlt || ""}
+              width="1600"
+              height="900"
+              decoding="async"
             />
           </Reveal>
-          <div className="feeding-blog-article-layout">
+          <div className={`feeding-blog-article-layout${post.tableOfContents.length > 1 ? "" : " bft-article-without-toc"}`}>
             {post.tableOfContents.length > 1 ? (
               <BlogTableOfContents headings={post.tableOfContents} label={template.tocHeading} />
             ) : null}

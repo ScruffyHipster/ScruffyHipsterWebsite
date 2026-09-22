@@ -1696,6 +1696,33 @@ img {
   color: var(--feeding-rose-deep);
 }
 
+.tracker-language-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0 0 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 650;
+}
+
+.tracker-language-selector a,
+.tracker-language-selector span {
+  border: 1px solid var(--feeding-line);
+  border-radius: 999px;
+  padding: 0.3rem 0.58rem;
+}
+
+.tracker-language-selector span {
+  background: var(--feeding-blush);
+  color: var(--feeding-ink);
+}
+
+.feeding-hero .tracker-language-selector span {
+  border-color: rgba(251, 248, 247, 0.36);
+  background: rgba(251, 248, 247, 0.12);
+  color: var(--feeding-paper);
+}
+
 .feeding-hero {
   overflow: hidden;
   padding: clamp(3rem, 7vw, 6.8rem) 0 clamp(3.4rem, 7vw, 6rem);

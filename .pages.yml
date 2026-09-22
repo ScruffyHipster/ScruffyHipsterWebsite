@@ -1400,6 +1400,9 @@ content:
               - name: heading
                 type: string
                 required: true
+              - name: headingEmphasis
+                type: string
+                required: true
               - name: body
                 type: text
                 required: true
@@ -1413,6 +1416,27 @@ content:
                 type: string
                 required: true
               - name: imageAlt
+                type: string
+                required: true
+              - name: noteTop
+                type: object
+                fields:
+                  - name: label
+                    type: string
+                    required: true
+                  - name: value
+                    type: string
+                    required: true
+              - name: noteBottom
+                type: object
+                fields:
+                  - name: label
+                    type: string
+                    required: true
+                  - name: value
+                    type: string
+                    required: true
+              - name: caption
                 type: string
                 required: true
           - name: proof
@@ -1444,6 +1468,9 @@ content:
               - name: heading
                 type: string
                 required: true
+              - name: body
+                type: text
+                required: true
               - name: steps
                 type: object
                 list:
@@ -1463,7 +1490,7 @@ content:
                     required: true
           - name: careMethodsFeature
             type: object
-            fields: &tracker_feature_fields
+            fields:
               - name: eyebrow
                 type: string
                 required: true
@@ -1482,9 +1509,36 @@ content:
                 type: string
                 list:
                   min: 1
+              - name: imageLabel
+                type: string
+                required: true
+              - name: imageCaption
+                type: string
+                required: true
           - name: historyFeature
             type: object
-            fields: *tracker_feature_fields
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: text
+                required: true
+              - name: paragraphs
+                type: text
+                list:
+                  min: 1
+              - name: cta
+                type: string
+                required: true
+              - name: url
+                type: string
+                required: true
+                description: Use a section anchor or a trailing slash for internal links.
+              - name: imageAlts
+                type: string
+                list:
+                  min: 1
           - name: privacy
             type: object
             fields:
@@ -1492,7 +1546,7 @@ content:
                 type: string
                 required: true
               - name: heading
-                type: string
+                type: text
                 required: true
               - name: body
                 type: text
@@ -1519,6 +1573,9 @@ content:
               - name: browseLabel
                 type: string
                 required: true
+              - name: helpText
+                type: string
+                required: true
           - name: blogSection
             type: object
             fields:
@@ -1534,6 +1591,14 @@ content:
               - name: browseLabel
                 type: string
                 required: true
+              - name: readLabel
+                type: string
+                required: true
+              - name: featuredSlugs
+                type: string
+                description: Published blog slugs, in the order shown on the landing page.
+                list:
+                  min: 1
           - name: faqSection
             type: object
             fields:
@@ -1541,7 +1606,10 @@ content:
                 type: string
                 required: true
               - name: heading
-                type: string
+                type: text
+                required: true
+              - name: body
+                type: text
                 required: true
           - name: finalCta
             type: object
@@ -1550,11 +1618,203 @@ content:
                 type: string
                 required: true
               - name: heading
-                type: string
+                type: text
+                required: true
+              - name: body
+                type: text
                 required: true
               - name: label
                 type: string
                 required: true
+              - name: note
+                type: string
+                required: true
+          - name: navigation
+            type: object
+            fields:
+              - name: brand
+                type: string
+                required: true
+              - name: ariaLabel
+                type: string
+                required: true
+              - name: skipLabel
+                type: string
+                required: true
+              - name: downloadLabel
+                type: string
+                required: true
+              - name: items
+                component: cta
+                list:
+                  min: 1
+                  collapsible:
+                    collapsed: true
+                    summary: "{label}"
+          - name: everyday
+            type: object
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: text
+                required: true
+              - name: body
+                type: text
+                required: true
+              - name: items
+                type: object
+                list:
+                  min: 1
+                  collapsible:
+                    collapsed: true
+                    summary: "{title}"
+                fields:
+                  - name: title
+                    type: string
+                    required: true
+                  - name: body
+                    type: text
+                    required: true
+                  - name: icon
+                    type: select
+                    required: true
+                    options:
+                      values:
+                        - name: timer
+                          label: Timer
+                        - name: watch
+                          label: Apple Watch
+                        - name: glance
+                          label: At a glance
+          - name: editorial
+            type: object
+            fields:
+              - name: image
+                type: object
+                fields:
+                  - name: src
+                    type: string
+                    required: true
+                  - name: smallSrc
+                    type: string
+                    required: true
+                  - name: alt
+                    type: string
+                    required: true
+              - name: platforms
+                type: string
+                required: true
+              - name: benefitNote
+                type: string
+                required: true
+              - name: timerAlt
+                type: string
+                required: true
+              - name: historyAlt
+                type: string
+                required: true
+              - name: insightsNote
+                type: text
+                required: true
+              - name: screens
+                type: object
+                fields:
+                  - name: eyebrow
+                    type: string
+                    required: true
+                  - name: heading
+                    type: text
+                    required: true
+                  - name: body
+                    type: text
+                    required: true
+                  - name: switcherLabel
+                    type: string
+                    required: true
+                  - name: lightLabel
+                    type: string
+                    required: true
+                  - name: darkLabel
+                    type: string
+                    required: true
+                  - name: phoneCaption
+                    type: string
+                    required: true
+                  - name: tabletCaption
+                    type: string
+                    required: true
+                  - name: phoneAlt
+                    type: string
+                    required: true
+                  - name: tabletAlt
+                    type: string
+                    required: true
+                  - name: note
+                    type: text
+                    required: true
+              - name: founder
+                type: object
+                fields:
+                  - name: eyebrow
+                    type: string
+                    required: true
+                  - name: heading
+                    type: text
+                    required: true
+                  - name: body
+                    type: text
+                    required: true
+                  - name: closing
+                    type: text
+                    required: true
+                  - name: linkLabel
+                    type: string
+                    required: true
+                  - name: linkUrl
+                    type: string
+                    required: true
+              - name: finalCta
+                type: object
+                fields:
+                  - name: eyebrow
+                    type: string
+                    required: true
+                  - name: heading
+                    type: text
+                    required: true
+                  - name: body
+                    type: text
+                    required: true
+                  - name: label
+                    type: string
+                    required: true
+                  - name: note
+                    type: text
+                    required: true
+          - name: footer
+            type: object
+            fields:
+              - name: body
+                type: text
+                required: true
+              - name: studioLabel
+                type: string
+                required: true
+              - name: navigationLabel
+                type: string
+                required: true
+              - name: copyright
+                type: string
+                required: true
+              - name: links
+                component: cta
+                list:
+                  min: 1
+                  collapsible:
+                    collapsed: true
+                    summary: "{label}"
           - name: supportTemplate
             type: object
             fields:

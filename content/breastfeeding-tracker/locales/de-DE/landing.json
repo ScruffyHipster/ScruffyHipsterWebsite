@@ -1,0 +1,30 @@
+{
+  "locale": "de-DE",
+  "translationKey": "landing",
+  "seo": {
+    "title": "Still-, Flaschen- und Pumptracker für iPhone",
+    "description": "Erfasse Stillen, Fläschchen, Abpumpen und Kombifütterung in einer ruhigen iPhone-App mit Apple-Watch-Timern und bearbeitbarem Verlauf."
+  },
+  "hero": {
+    "eyebrow": "Stilltracker für iPhone und Apple Watch",
+    "heading": "Ein einfacher Tracker für Stillen, Fläschchen, Abpumpen und Kombifütterung.",
+    "body": "Die ersten Wochen mit einem Baby können ineinander verschwimmen. Der Tracker soll dir etwas abnehmen, nicht noch eine Aufgabe hinzufügen.",
+    "primaryCta": "Im App Store laden",
+    "secondaryCta": "So funktioniert es"
+  },
+  "sections": [
+    {
+      "heading": "Alles an einem Ort",
+      "body": "Halte Stillmahlzeiten, Fläschchen, Abpumpen und Kombimahlzeiten in einem übersichtlichen Verlauf fest. Fehlende Einträge kannst du nachtragen, wenn gerade Zeit ist."
+    },
+    {
+      "heading": "Privat und ohne Konto",
+      "body": "Du kannst ohne Konto beginnen. Die App ist für praktische, von dir eingegebene Aufzeichnungen gedacht und ersetzt keine medizinische Einschätzung."
+    }
+  ],
+  "appStore": {
+    "country": "de",
+    "campaign": "site_de_tracker_landing",
+    "currency": "EUR"
+  }
+}

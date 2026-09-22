@@ -6,6 +6,8 @@ import { breadcrumbJsonLd, organizationJsonLd } from "../seo/jsonld";
 import { getSiteUrl } from "../seo/metadata";
 import { canonicalUrl } from "../seo/canonical";
 import { siteConfig } from "../content/site";
+import { TrackerLanguageSelector } from "../components/TrackerLanguageSelector";
+import { trackerHreflangAlternates } from "../content/trackerLocales";
 
 export function PrivacyPolicyPage() {
   const params = useParams<{ slug: string }>();
@@ -23,6 +25,11 @@ export function PrivacyPolicyPage() {
       <Seo
         path={path}
         meta={policy.seo}
+        alternates={
+          policy.slug === "breast-feeding-tracker"
+            ? trackerHreflangAlternates("privacy", getSiteUrl())
+            : undefined
+        }
         jsonLd={[
           organizationJsonLd(),
           breadcrumbJsonLd([
@@ -36,6 +43,9 @@ export function PrivacyPolicyPage() {
         <div className="container narrow-container">
           <Reveal>
             <article className="policy-article">
+              {policy.slug === "breast-feeding-tracker" ? (
+                <TrackerLanguageSelector kind="privacy" />
+              ) : null}
               <p className="eyebrow">{labels.eyebrow}</p>
               <h1>{policy.appName}</h1>
               <p className="policy-updated">

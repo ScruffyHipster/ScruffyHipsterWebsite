@@ -27,6 +27,7 @@ const contentCollections = [
 ];
 const siteSource = await readJson(join(rootDir, "content", "cms", "site.json"));
 const markdownTableAriaLabel = siteSource.shared.markdown.scrollableTableAriaLabel;
+const trackerLocaleManifest = await generateTrackerLocaleManifest();
 
 await mkdir(generatedDir, { recursive: true });
 const generatedCollections = new Map();
@@ -37,8 +38,171 @@ await generateRating();
 await generateCmsContent({
   rewireArticles: generatedCollections.get("rewire-blog.json"),
   breastfeedingGuides: generatedCollections.get("breastfeeding-tracker-guides.json"),
-  breastfeedingBlogPosts: generatedCollections.get("breastfeeding-tracker-blog.json")
+  breastfeedingBlogPosts: generatedCollections.get("breastfeeding-tracker-blog.json"),
+  trackerLocaleManifest
 });
+
+async function generateTrackerLocaleManifest() {
+  const localesDir = join(rootDir, "content", "breastfeeding-tracker", "locales");
+  const expectedLocales = ["de-DE", "fr-FR"];
+  const expectedBlogKeys = [
+    "baby-spit-up-vs-reflux",
+    "best-breastfeeding-apps",
+    "breastfeeding-didnt-go-to-plan",
+    "first-infant-formula-cheaper-brands",
+    "moving-from-breastfeeding-to-combi-feeding",
+    "three-signs-of-potential-tongue-tie"
+  ];
+  const expectedGuideKeys = [
+    "breastfeeding-bottle-pumping-tracker",
+    "breastfeeding-timer-iphone",
+    "breastfeeding-tracker-apple-watch",
+    "edit-missed-feeding-logs",
+    "export-breastfeeding-log-pdf",
+    "private-breastfeeding-tracker",
+    "track-left-and-right-side"
+  ];
+  const locales = [];
+
+  for (const locale of expectedLocales) {
+    const manifestPath = join(localesDir, locale, "manifest.json");
+    assert(existsSync(manifestPath), `Missing locale manifest ${manifestPath}.`);
+    const manifest = await readJson(manifestPath);
+    assert(manifest.locale === locale, `${locale} manifest has the wrong locale.`);
+    assert(/^[a-z]{2}-[A-Z]{2}$/.test(manifest.languageTag), `${locale} has an invalid language tag.`);
+    assert(
+      /^\/[a-z0-9]+(?:-[a-z0-9]+)*(?:\/[a-z0-9]+(?:-[a-z0-9]+)*)*$/.test(manifest.prefix),
+      `${locale} has an invalid localized route prefix.`
+    );
+    assert(/^[a-z]{2}$/.test(manifest.appStoreCountry), `${locale} needs an App Store country.`);
+    assert(manifest.currency === "EUR", `${locale} must use EUR offer data.`);
+    assert(manifest.routes && typeof manifest.routes === "object", `${locale} is missing routes.`);
+    assert(manifest.release && typeof manifest.release === "object", `${locale} is missing release gates.`);
+    for (const gate of [
+      "translationSourcesComplete",
+      "nativeEditorialReview",
+      "sourceFactReview",
+      "appStoreLocalizationLive"
+    ]) {
+      assert(typeof manifest.release[gate] === "boolean", `${locale}.${gate} must be boolean.`);
+    }
+    validateLocaleSlugMap(manifest.routes.blogPosts, expectedBlogKeys, `${locale} blog`);
+    validateLocaleSlugMap(manifest.routes.guides, expectedGuideKeys, `${locale} guides`);
+    if (manifest.release.translationSourcesComplete) {
+      await validateCompleteLocaleSources({
+        locale,
+        localesDir,
+        expectedBlogKeys,
+        expectedGuideKeys
+      });
+    }
+
+    const fixedPaths = [
+      manifest.routes.landing,
+      manifest.routes.blog,
+      manifest.routes.editorialDisclosure,
+      manifest.routes.support,
+      manifest.routes.privacy
+    ];
+    const localePaths = [
+      ...fixedPaths,
+      ...Object.values(manifest.routes.blogPosts).map((slug) => `${manifest.routes.blog}/${slug}`),
+      ...Object.values(manifest.routes.guides).map((slug) => `${manifest.routes.support}/${slug}`)
+    ];
+    const uniquePaths = new Set(localePaths);
+    assert(uniquePaths.size === localePaths.length, `${locale} has colliding localized routes.`);
+
+    const sourceContent = await readLocaleSourceContent({
+      locale,
+      localesDir,
+      expectedBlogKeys,
+      expectedGuideKeys
+    });
+    locales.push({
+      ...manifest,
+      enabled: Object.values(manifest.release).every(Boolean),
+      routeCount: localePaths.length
+      ,sourceContent
+    });
+  }
+
+  const prefixes = new Set(locales.map((locale) => locale.prefix));
+  assert(prefixes.size === locales.length, "Localized route prefixes must be unique.");
+  const output = { generatedAt: new Date().toISOString(), locales };
+  await writeJson(join(generatedDir, "breastfeeding-tracker-locales.json"), output);
+  return output;
+}
+
+async function readLocaleSourceContent({ locale, localesDir, expectedBlogKeys, expectedGuideKeys }) {
+  const localeDir = join(localesDir, locale);
+  const fixed = Object.fromEntries(
+    await Promise.all(
+      [["landing", "landing.json"], ["blog", "pages/blog.json"], ["support", "pages/support.json"], ["editorialDisclosure", "pages/editorial-disclosure.json"], ["privacy", "privacy/privacy.json"]].map(
+        async ([key, file]) => [key, await readJson(join(localeDir, file))]
+      )
+    )
+  );
+  const readArticles = async (collection, keys) =>
+    Object.fromEntries(
+      await Promise.all(
+        keys.map(async (key) => {
+          const { frontmatter, body } = parseFrontmatter(await readFile(join(localeDir, collection, `${key}.md`), "utf8"));
+          return [key, { ...frontmatter, html: renderMarkdown(body) }];
+        })
+      )
+    );
+  return { fixed, blog: await readArticles("blog", expectedBlogKeys), guides: await readArticles("guides", expectedGuideKeys) };
+}
+
+function validateLocaleSlugMap(map, expectedKeys, label) {
+  assert(map && typeof map === "object", `${label} slug map is missing.`);
+  assert(
+    Object.keys(map).length === expectedKeys.length && expectedKeys.every((key) => typeof map[key] === "string"),
+    `${label} must have one localized slug for every English translation key.`
+  );
+  const slugs = Object.values(map);
+  assert(slugs.every((slug) => slugPattern.test(slug)), `${label} has an invalid localized slug.`);
+  assert(new Set(slugs).size === slugs.length, `${label} has duplicate localized slugs.`);
+}
+
+async function validateCompleteLocaleSources({ locale, localesDir, expectedBlogKeys, expectedGuideKeys }) {
+  const localeDir = join(localesDir, locale);
+  const fixedSources = [
+    ["landing.json", "landing"],
+    ["pages/blog.json", "blog"],
+    ["pages/support.json", "support"],
+    ["pages/editorial-disclosure.json", "editorialDisclosure"],
+    ["privacy/privacy.json", "privacy"]
+  ];
+  for (const [relativePath, translationKey] of fixedSources) {
+    const sourcePath = join(localeDir, relativePath);
+    assert(existsSync(sourcePath), `${locale} is marked complete but is missing ${relativePath}.`);
+    const source = await readJson(sourcePath);
+    assert(source.locale === locale, `${relativePath} has the wrong locale.`);
+    assert(source.translationKey === translationKey, `${relativePath} has the wrong translation key.`);
+  }
+
+  await validateLocaleMarkdownSources(localeDir, locale, "blog", expectedBlogKeys);
+  await validateLocaleMarkdownSources(localeDir, locale, "guides", expectedGuideKeys);
+}
+
+async function validateLocaleMarkdownSources(localeDir, locale, collection, expectedKeys) {
+  for (const translationKey of expectedKeys) {
+    const sourcePath = join(localeDir, collection, `${translationKey}.md`);
+    assert(
+      existsSync(sourcePath),
+      `${locale} is marked complete but is missing ${collection}/${translationKey}.md.`
+    );
+    const source = await readFile(sourcePath, "utf8");
+    const { frontmatter, body } = parseFrontmatter(source);
+    assert(frontmatter.locale === locale, `${sourcePath} has the wrong locale.`);
+    assert(
+      frontmatter.translationKey === translationKey,
+      `${sourcePath} has the wrong translation key.`
+    );
+    assert(stripMarkdownFormatting(body).length > 120, `${sourcePath} has no substantive localized body.`);
+  }
+}
 
 async function generateContentCollection({ sourceDir, outputFile, defaultOgImage }) {
   const files = existsSync(sourceDir)
@@ -99,7 +263,12 @@ async function generateContentCollection({ sourceDir, outputFile, defaultOgImage
   return output;
 }
 
-async function generateCmsContent({ rewireArticles, breastfeedingGuides, breastfeedingBlogPosts }) {
+async function generateCmsContent({
+  rewireArticles,
+  breastfeedingGuides,
+  breastfeedingBlogPosts,
+  trackerLocaleManifest
+}) {
   const site = await readJson(join(rootDir, "content", "cms", "site.json"));
   const pageRecords = await readJsonDirectory(join(rootDir, "content", "pages"));
   const appRecords = await readJsonDirectory(join(rootDir, "content", "apps"));
@@ -158,7 +327,8 @@ async function generateCmsContent({ rewireArticles, breastfeedingGuides, breastf
     breastfeedingTracker,
     rewireArticles: rewireArticles.posts,
     breastfeedingGuides: breastfeedingGuides.posts,
-    breastfeedingBlogPosts: breastfeedingBlogPosts.posts
+    breastfeedingBlogPosts: breastfeedingBlogPosts.posts,
+    breastfeedingTrackerLocales: trackerLocaleManifest.locales
   });
 }
 

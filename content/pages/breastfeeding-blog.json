@@ -22,9 +22,9 @@
   },
   "hero": {
     "backLabel": "Back to Breastfeeding Tracker",
-    "eyebrow": "the breastfeeding tracker blog",
-    "heading": "Honest writing for feeding days that do not follow the plan.",
-    "body": "Breastfeeding, expressing, bottles and combi feeding—written from our own experience, grounded in trusted guidance and free from pressure."
+    "eyebrow": "From one parent to another",
+    "heading": "Finding your feet, together.",
+    "body": "Honest stories, practical lessons and carefully sourced reading for the feeding days that don’t follow the plan."
   },
   "disclosureLabel": "Read our editorial & affiliate disclosure",
   "disclosurePrefix": "Scruffy Hipster makes Breastfeeding Tracker & Timer. Articles distinguish personal experience, sourced guidance and product comparisons. Some posts may contain commercial links.",
@@ -33,7 +33,7 @@
   "recentHeading": "Recent articles",
   "metaSeparator": "·",
   "readingTimeSuffix": "min read",
-  "readLabel": "Read →",
+  "readLabel": "Read the story →",
   "articleTemplate": {
     "backLabel": "Back to the blog",
     "tocHeading": "On this page",

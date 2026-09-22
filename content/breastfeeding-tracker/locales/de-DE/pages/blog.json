@@ -1,0 +1,11 @@
+{
+  "locale": "de-DE",
+  "translationKey": "blog",
+  "seo": {
+    "title": "Stillen, Abpumpen und Kombifütterung: Blog",
+    "description": "Persönliche Geschichten und sorgfältig eingeordnete Informationen über Stillen, Abpumpen, Fläschchen und die ersten Monate mit Baby."
+  },
+  "heading": "Ehrliche Texte für Füttertage, die anders laufen als geplant.",
+  "intro": "Erfahrungen aus einer Familie, praktische Gedanken und klar als solche gekennzeichnete Hintergrundinformationen – ohne Druck, wie eine Familie füttern sollte.",
+  "labels": { "all": "Alle", "read": "Lesen", "minutes": "Min. Lesezeit" }
+}

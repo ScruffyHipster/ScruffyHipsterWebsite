@@ -8,20 +8,34 @@ type SeoProps = PropsWithChildren<{
   meta: SeoMeta;
   path: string;
   jsonLd?: object | object[];
+  locale?: string;
+  ogLocale?: string;
+  alternates?: Array<{ locale: string; href: string }>;
 }>;
 
-export function Seo({ meta, path, jsonLd }: SeoProps) {
+export function Seo({
+  meta,
+  path,
+  jsonLd,
+  locale = "en-GB",
+  ogLocale = "en_GB",
+  alternates = []
+}: SeoProps) {
   const resolved = resolveMeta(meta, path);
   const jsonLdValue = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
 
   return (
     <Helmet prioritizeSeoTags>
-      <html lang="en" />
+      <html lang={locale} />
       <title>{resolved.title}</title>
       <meta name="description" content={resolved.description} />
       <meta name="robots" content={resolved.robots} />
       <link rel="canonical" href={resolved.canonicalUrl} />
+      {alternates.map((alternate) => (
+        <link key={alternate.locale} rel="alternate" hrefLang={alternate.locale} href={alternate.href} />
+      ))}
       <meta property="og:type" content="website" />
+      <meta property="og:locale" content={ogLocale} />
       <meta property="og:title" content={resolved.title} />
       <meta property="og:description" content={resolved.description} />
       <meta property="og:url" content={resolved.canonicalUrl} />

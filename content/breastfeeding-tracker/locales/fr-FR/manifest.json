@@ -1,0 +1,38 @@
+{
+  "locale": "fr-FR",
+  "languageTag": "fr-FR",
+  "ogLocale": "fr_FR",
+  "prefix": "/fr/suivi-allaitement",
+  "appStoreCountry": "fr",
+  "currency": "EUR",
+  "release": {
+    "translationSourcesComplete": true,
+    "nativeEditorialReview": false,
+    "sourceFactReview": false,
+    "appStoreLocalizationLive": false
+  },
+  "routes": {
+    "landing": "",
+    "blog": "blog",
+    "editorialDisclosure": "blog/mentions-editoriales",
+    "support": "aide",
+    "privacy": "confidentialite",
+    "blogPosts": {
+      "baby-spit-up-vs-reflux": "regurgitations-ou-reflux-bebe",
+      "best-breastfeeding-apps": "meilleures-applications-allaitement",
+      "breastfeeding-didnt-go-to-plan": "allaitement-ne-sest-pas-passe-comme-prevu",
+      "first-infant-formula-cheaper-brands": "lait-infantile-marques-moins-cheres",
+      "moving-from-breastfeeding-to-combi-feeding": "passer-allaitement-au-sein-allaitement-mixte",
+      "three-signs-of-potential-tongue-tie": "frein-de-langue-bebe-signes"
+    },
+    "guides": {
+      "breastfeeding-bottle-pumping-tracker": "suivi-allaitement-biberons-tire-lait",
+      "breastfeeding-timer-iphone": "minuteur-allaitement-iphone",
+      "breastfeeding-tracker-apple-watch": "suivi-allaitement-apple-watch",
+      "edit-missed-feeding-logs": "ajouter-tetee-ou-biberon-oublie",
+      "export-breastfeeding-log-pdf": "exporter-journal-allaitement-pdf",
+      "private-breastfeeding-tracker": "suivi-allaitement-prive",
+      "track-left-and-right-side": "suivre-sein-gauche-droit"
+    }
+  }
+}

@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { BreastfeedingTrackerAppStoreLink } from "../components/AppStoreLink";
 import { Reveal } from "../components/Reveal";
 import { Seo } from "../components/Seo";
+import { TrackerLanguageSelector } from "../components/TrackerLanguageSelector";
 import { TrackedMarkdownContent } from "../components/TrackedMarkdownContent";
 import {
   breastfeedingTrackerGuides,
@@ -18,6 +19,7 @@ import { getSiteUrl } from "../seo/metadata";
 import { canonicalPath, canonicalUrl } from "../seo/canonical";
 import { breastfeedingSupportPageContent } from "../content/pages";
 import { siteConfig } from "../content/site";
+import { trackerHreflangAlternates } from "../content/trackerLocales";
 
 export function BreastfeedingTrackerSupportArticlePage() {
   const params = useParams<{ slug: string }>();
@@ -45,6 +47,7 @@ export function BreastfeedingTrackerSupportArticlePage() {
           ogImage: guide.ogImage || breastfeedingTrackerOgImage,
           ...(guide.ogImageAlt ? { ogImageAlt: guide.ogImageAlt } : {})
         }}
+        alternates={trackerHreflangAlternates("guide", siteUrl, guide.slug)}
         jsonLd={[
           organizationJsonLd(),
           {
@@ -98,9 +101,10 @@ export function BreastfeedingTrackerSupportArticlePage() {
         ]}
       />
 
-      <article className="feeding-article">
+      <article className="feeding-article bft-help-article">
         <div className="narrow-container">
           <Reveal>
+            <TrackerLanguageSelector kind="guide" translationKey={guide.slug} />
             <Link
               className="feeding-text-link"
               to={canonicalPath(BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH)}
@@ -122,7 +126,7 @@ export function BreastfeedingTrackerSupportArticlePage() {
             <Reveal className="feeding-article-cta">
               <p className="eyebrow">{template.defaultCta.eyebrow}</p>
               <h2>{template.defaultCta.heading}</h2>
-              <BreastfeedingTrackerAppStoreLink className="btn feeding-btn-primary" placement="guide">
+              <BreastfeedingTrackerAppStoreLink className="bft-button" placement="guide">
                 {template.defaultCta.label}
               </BreastfeedingTrackerAppStoreLink>
             </Reveal>

@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { ensureLandingAttribution, readLandingAttribution } from "./landingAttribution";
 import { trackEvent } from "./telemetrydeck";
+import { localeForPath } from "../content/trackerLocales";
 
 export function RouteAnalytics() {
   const location = useLocation();
@@ -11,8 +12,9 @@ export function RouteAnalytics() {
     if (typeof window === "undefined") return;
 
     const landing = ensureLandingAttribution();
+    const locale = localeForPath(location.pathname);
     if (!landingSentRef.current) {
-      trackEvent("site_landing", landing);
+      trackEvent("site_landing", { ...landing, locale });
       landingSentRef.current = true;
     }
 
@@ -26,10 +28,10 @@ export function RouteAnalytics() {
       utm_medium: storedLanding.utm_medium,
       utm_campaign: storedLanding.utm_campaign,
       utm_content: storedLanding.utm_content,
-      utm_term: storedLanding.utm_term
+      utm_term: storedLanding.utm_term,
+      locale
     });
   }, [location.pathname, location.search, location.hash]);
 
   return null;
 }
-

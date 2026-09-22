@@ -1,0 +1,30 @@
+{
+  "locale": "fr-FR",
+  "translationKey": "landing",
+  "seo": {
+    "title": "Suivi d’allaitement, biberons et tire-lait pour iPhone",
+    "description": "Suivez allaitement, biberons, tirages et alimentation mixte dans une application iPhone simple, avec minuteurs Apple Watch et historique modifiable."
+  },
+  "hero": {
+    "eyebrow": "suivi d’allaitement pour iPhone et Apple Watch",
+    "heading": "Un suivi simple pour l’allaitement, les biberons, le tire-lait et l’alimentation mixte.",
+    "body": "Les premières semaines avec un bébé se ressemblent parfois toutes. Le suivi doit alléger votre charge mentale, pas devenir une tâche de plus.",
+    "primaryCta": "Télécharger dans l’App Store",
+    "secondaryCta": "Voir comment cela fonctionne"
+  },
+  "sections": [
+    {
+      "heading": "Tout au même endroit",
+      "body": "Conservez allaitement, biberons, tirages et repas mixtes dans un seul historique clair. Vous pouvez compléter un oubli lorsque vous en avez le temps."
+    },
+    {
+      "heading": "Privé, sans compte",
+      "body": "Vous pouvez commencer sans créer de compte. L’application organise uniquement les informations que vous saisissez et ne remplace pas un avis médical."
+    }
+  ],
+  "appStore": {
+    "country": "fr",
+    "campaign": "site_fr_tracker_landing",
+    "currency": "EUR"
+  }
+}

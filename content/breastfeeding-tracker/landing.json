@@ -2,8 +2,8 @@
   "published": true,
   "route": "/breastfeeding-tracker",
   "seo": {
-    "title": "Breastfeeding, Bottle & Pumping Tracker for iPhone",
-    "description": "Track breastfeeding, bottles, pumping and combined feeds in one calm iPhone app, with Apple Watch timers, editable history and an expressed-milk balance.",
+    "title": "Breastfeeding Tracker & Timer | Motherhood, beautifully considered",
+    "description": "A beautifully considered feeding tracker for iPhone and Apple Watch. Simple timers, thoughtful details and a little less to remember. Free to download.",
     "keywords": [
       "breastfeeding tracker",
       "combifeeding tracker",
@@ -37,7 +37,7 @@
     "applicationCategory": "MedicalApplication",
     "applicationSubCategory": "Breastfeeding Tracker",
     "operatingSystem": "iOS 26.0 or later; watchOS 26.0 or later",
-    "description": "A one-handed timer for tracking a newborn’s first feeds, with left and right tracking, widgets, Apple Watch controls, editable history, and PDF export.",
+    "description": "Track breastfeeding, bottles, pumping and combined feeds in one place, with one-handed timers, Apple Watch support and editable feeding history. Free to download with an optional one-time Lifetime Unlock.",
     "featureList": [
       "One-handed breastfeeding timer with left and right side tracking",
       "Pump tracking",
@@ -57,117 +57,142 @@
   },
   "hero": {
     "iconAlt": "Breastfeeding Tracker & Timer app icon",
-    "eyebrow": "baby feeding tracker for iphone + apple watch",
-    "heading": "A simple tracker for breast, bottle, pumping and combined feeds.",
-    "body": "In the first few weeks with a newborn, feeds can blur together. Record the kind of feed that works for your family, time breastfeeding or pumping with one hand, and keep a clear history without stopping to fill in forms.",
+    "eyebrow": "Breastfeeding Tracker & Timer",
+    "heading": "Motherhood,",
+    "headingEmphasis": "beautifully considered.",
+    "body": "A beautifully simple feeding tracker. Made for the life you’re living, and the little moments that make it yours.",
     "primaryCta": "Download on the App Store",
-    "secondaryCta": "See how it works",
-    "storeNote": "Free to download, with an optional one-off lifetime unlock.",
-    "imageAlt": "Breastfeeding Tracker home screen with left and right start controls and a pumping toggle"
+    "secondaryCta": "Discover the app",
+    "storeNote": "Free to download. No subscription.",
+    "imageAlt": "Breastfeeding Tracker home screen with the last feed and one-tap left and right controls.",
+    "noteTop": {
+      "label": "The last side?",
+      "value": "Already remembered."
+    },
+    "noteBottom": {
+      "label": "One hand free?",
+      "value": "That’s all you need."
+    },
+    "caption": "Made for motherhood. Designed for you."
   },
   "proof": {
-    "ariaLabel": "Newborn feed tracking benefits",
+    "ariaLabel": "Designed for everyday feeding",
     "items": [
       {
-        "heading": "Made for one hand.",
-        "body": "Track a feed while you’re holding your baby."
+        "heading": "Made for one hand",
+        "body": "Baby in one arm. Timer in the other."
       },
       {
-        "heading": "Visible at a glance.",
-        "body": "See the active timer on the device or screen already in front of you."
+        "heading": "No account to create",
+        "body": "Open the app and get started."
       },
       {
-        "heading": "Update it when you have time.",
-        "body": "Add a missed feed or adjust the timing whenever you get a quiet moment."
+        "heading": "iPhone + Apple Watch",
+        "body": "Keep your timer within reach."
       }
     ]
   },
   "howItWorks": {
-    "eyebrow": "made for busy feeding days",
-    "heading": "Tracking that fits around the feed.",
+    "eyebrow": "A little space for you",
+    "heading": "One less thing\nto remember.",
+    "body": "The last feed. The last side. The little details, quietly taken care of. So you can be here, with them.",
     "steps": [
       {
         "step": "01",
-        "title": "Begin without setup",
-        "body": "Choose what you want to track and start the timer on iPhone or Apple Watch."
+        "title": "Breastfeeding",
+        "body": "Start on the left or right with one tap. Check the last side and see how long you’ve been feeding."
       },
       {
         "step": "02",
-        "title": "Keep it in sight",
-        "body": "Widgets, Live Activities, and Dynamic Island keep the timer where you can see it."
+        "title": "Bottle feeding",
+        "body": "Log expressed milk, formula or a mix of both. Add the amount you recorded, all in the same place."
       },
       {
         "step": "03",
-        "title": "Fill in the gaps",
-        "body": "Move the recorded start time back or add a completed feed from history."
+        "title": "Pumping",
+        "body": "Time a pumping session and add a volume if you have one. Your expressed-milk balance updates from the entries you record."
+      },
+      {
+        "step": "04",
+        "title": "Combined feeds",
+        "body": "A breastfeed followed by a bottle top-up? Save them together as one feed, with both parts easy to find."
       }
     ]
   },
   "careMethodsFeature": {
-    "eyebrow": "breast, bottle, pump, or combine",
-    "heading": "Keep every kind of feed in one clear history.",
+    "eyebrow": "One place for the little details",
+    "heading": "Every kind of feed, together.",
     "paragraphs": [
-      "Track breastfeeding, bottle feeds, pumping, and combined feeds in the same history, so you can see what was recorded without switching between separate logs.",
-      "When you record expressed milk, pumping adds to the on-device balance and expressed bottle feeds subtract from it. Leave volume blank when you did not record it."
+      "Breastfeeding, bottles, pumping and combined feeds share one timeline.",
+      "Your expressed-milk balance is based on the pumping and bottle volumes you record."
     ],
     "link": {
-      "label": "See how breast, bottle and pumping work together",
+      "label": "Explore all four ways to track",
       "url": "/breastfeeding-tracker/support/breastfeeding-bottle-pumping-tracker/"
     },
     "cta": "Download on the App Store",
     "imageAlts": [
-      "Breastfeeding Tracker history showing breastfeeding, bottle, pumping, and combined-feed entries",
-      "Breastfeeding Tracker milk ledger showing expressed milk added and used"
-    ]
+      "Feeding history with breastfeeding, bottle, pumping and combined-feed entries.",
+      "Expressed-milk balance showing recorded milk added and used."
+    ],
+    "imageLabel": "One timeline",
+    "imageCaption": "The whole day, at a glance."
   },
   "historyFeature": {
-    "eyebrow": "when the timer started late",
-    "heading": "Update your log when you have time.",
+    "eyebrow": "Perspective, gently",
+    "heading": "Find your rhythm.\nLeave the pressure.",
     "paragraphs": [
-      "If your baby latched before you remembered the timer, move the start time back. If the feed is already over, add it when you have a moment.",
-      "Review recent history and private, on-device summaries of patterns in what you recorded. You can also export selected feeds as a PDF for a conversation with a midwife or feeding-support professional. The summaries do not assess feeding, and the PDF only reflects what you recorded."
+      "A little distance can make the days feel clearer. See the patterns in the feeds you’ve recorded, with simple timelines and thoughtful summaries.",
+      "There’s no score to chase. Just your feeding story, there when you want to look back."
     ],
-    "cta": "Download on the App Store",
+    "cta": "Explore Lifetime Unlock",
+    "url": "#questions",
     "imageAlts": [
-      "Breastfeeding Tracker active feeding timer with start-time adjustment controls",
-      "Breastfeeding Tracker seven-day informational feeding insight"
+      "A week of recorded feeds in the app’s light appearance, shown as a simple timeline.",
+      "A week of recorded feeds in the app’s dark appearance, shown as a simple timeline."
     ]
   },
   "privacy": {
-    "eyebrow": "private by design",
-    "heading": "Private, without the extra setup.",
-    "body": "Start without creating an account. The app does not collect data or create an advertising profile. Use it for as long as it lightens the mental load, then leave it behind when you no longer need it.",
+    "eyebrow": "A simple start",
+    "heading": "No sign-up.\nNo subscription.",
+    "body": "Start tracking without creating an app account. If you’d like more, an optional one-time Lifetime Unlock adds full history, insights, PDF export, all themes and an ad-free experience.",
     "links": [
       {
-        "label": "View the privacy policy",
+        "label": "Read the privacy policy",
         "url": "/privacy/breast-feeding-tracker/"
-      },
-      {
-        "label": "How private tracking works",
-        "url": "/breastfeeding-tracker/support/private-breastfeeding-tracker/"
       }
     ]
   },
   "supportSection": {
-    "eyebrow": "help when you need it",
-    "heading": "Help & Support",
-    "body": "Straightforward help with recording feeds, correcting your history and using the app across iPhone and Apple Watch.",
-    "browseLabel": "Visit Help & Support"
+    "eyebrow": "A little help goes a long way",
+    "heading": "Finding your feet, together.",
+    "body": "Personal stories and practical reading for the early days, plus straightforward help with the app.",
+    "browseLabel": "Visit Help & Support",
+    "helpText": "Need a hand with the app? Start here."
   },
   "blogSection": {
-    "eyebrow": "from the blog",
-    "heading": "Honest stories about feeding and adapting",
-    "body": "Personal experiences, practical lessons and carefully sourced information for when feeding does not follow the original plan.",
-    "browseLabel": "Read the blog"
+    "eyebrow": "From one parent to another",
+    "heading": "Finding your feet, together.",
+    "body": "Personal stories and practical reading for the early days.",
+    "browseLabel": "Explore the journal",
+    "readLabel": "Read the story",
+    "featuredSlugs": [
+      "breastfeeding-didnt-go-to-plan",
+      "moving-from-breastfeeding-to-combi-feeding",
+      "baby-spit-up-vs-reflux"
+    ]
   },
   "faqSection": {
-    "eyebrow": "frequently asked questions",
-    "heading": "Before you download"
+    "eyebrow": "A few good questions",
+    "heading": "A few good\nquestions.",
+    "body": "Everything else you might like to know."
   },
   "finalCta": {
-    "eyebrow": "want a little less to remember?",
-    "heading": "Try the tracker for free",
-    "label": "Download on the App Store"
+    "eyebrow": "One less thing on your mind",
+    "heading": "Here for your\nnext feed.",
+    "body": "A simple place for the little details, while you get on with the big stuff.",
+    "label": "Download on the App Store",
+    "note": "For iPhone and Apple Watch · Requires iOS 26 or later"
   },
   "supportTemplate": {
     "backLabel": "Back to Help & Support",
@@ -184,28 +209,138 @@
   "ogImage": "/assets/breastfeeding-tracker-og.png",
   "faqs": [
     {
-      "question": "How long can I use the app?",
-      "answer": "It is designed to reduce the mental load of tracking feeds during the early newborn weeks. Keep using it for as long as it remains helpful."
+      "question": "Is Breastfeeding Tracker free?",
+      "answer": "The app is free to download and start using. An optional one-time Lifetime Unlock adds full history, filters, insights, PDF export, all themes and an ad-free experience. There is no subscription."
     },
     {
-      "question": "Can I use Apple Watch when my iPhone isn’t nearby?",
-      "answer": "You can start and stop the timer from your wrist without your iPhone nearby. Completed sessions sync when your devices reconnect."
+      "question": "Can I track breastfeeding, bottles and pumping?",
+      "answer": "Yes. Record breastfeeding, bottle feeds and pumping in the same timeline. Combined feeds keep a breastfeed and a bottle top-up together in one entry. Bottles can include expressed milk, formula or a mix."
     },
     {
-      "question": "Can I add or correct a feed after it happened?",
-      "answer": "Feed history supports adding, editing, and deleting entries. If a feed began before you started the timer, you can move the recorded start time back."
+      "question": "What if I forget to start the timer?",
+      "answer": "Move the recorded start time back while a timer is running, or add a completed feed later. You can also edit or delete entries from your history."
     },
     {
-      "question": "Can I share feed history with a midwife?",
-      "answer": "You can create a PDF from selected feed history and choose where to save or share it. The PDF only reflects what you recorded and is not a clinical report or a substitute for professional care."
+      "question": "Does Apple Watch work without my phone nearby?",
+      "answer": "Yes. Start and stop breastfeeding or pumping timers from your wrist. Completed sessions sync back to your iPhone when your devices reconnect."
     },
     {
-      "question": "Does the app require an account or subscription?",
-      "answer": "No account or subscription is required. The app is free to download, with an optional one-off lifetime unlock."
+      "question": "Do I need to create an account?",
+      "answer": "No app account is required. Open the app and start tracking."
     },
     {
-      "question": "Does the tracker provide medical advice?",
-      "answer": "The tracker records only the details you enter, such as timing, duration, and breast side. Its private on-device summaries are informational and do not assess feeding or replace professional care."
+      "question": "Can I share my feeding history?",
+      "answer": "With Lifetime Unlock, export selected feeds as a PDF and choose where to save or share it. The PDF contains the details you recorded, which can be useful for a conversation with a midwife or feeding-support professional."
+    },
+    {
+      "question": "Does the app tell me if my baby is getting enough milk?",
+      "answer": "No. The app records what you enter and offers informational summaries. It does not measure milk intake from breastfeeding, assess milk supply or provide medical advice. Speak to your midwife, health visitor or feeding-support professional if you have concerns."
     }
-  ]
+  ],
+  "navigation": {
+    "brand": "Breastfeeding Tracker",
+    "ariaLabel": "Breastfeeding Tracker navigation",
+    "skipLabel": "Skip to content",
+    "downloadLabel": "Get the app",
+    "items": [
+      {
+        "label": "The app",
+        "url": "/breastfeeding-tracker/"
+      },
+      {
+        "label": "Help & Support",
+        "url": "/breastfeeding-tracker/support/"
+      },
+      {
+        "label": "Blog",
+        "url": "/breastfeeding-tracker/blog/"
+      }
+    ]
+  },
+  "everyday": {
+    "eyebrow": "Designed around newborn life",
+    "heading": "Beautifully simple.\nEven at 3am.",
+    "body": "One hand free. Half asleep. Phone just out of reach. Thoughtful details for the moments you can’t plan.",
+    "items": [
+      {
+        "title": "A touch. A glance. Back to them.",
+        "body": "Start with one tap. Live Activities and widgets keep feeding details close, without opening the app.",
+        "icon": "glance"
+      },
+      {
+        "title": "Always within reach.",
+        "body": "Start and stop timers from Apple Watch, even offline. Your feeds sync when your devices reconnect.",
+        "icon": "watch"
+      },
+      {
+        "title": "Room for real life.",
+        "body": "Missed the start? Adjust the time or add a feed later. Your record can catch up when you do.",
+        "icon": "timer"
+      }
+    ]
+  },
+  "footer": {
+    "body": "Made by a small independent studio, around real family life.",
+    "studioLabel": "Meet ScruffyHipster",
+    "navigationLabel": "More from Breastfeeding Tracker",
+    "copyright": "Breastfeeding Tracker & Timer. Made with care by ScruffyHipster.",
+    "links": [
+      {
+        "label": "Help & Support",
+        "url": "/breastfeeding-tracker/support/"
+      },
+      {
+        "label": "Blog",
+        "url": "/breastfeeding-tracker/blog/"
+      },
+      {
+        "label": "Privacy",
+        "url": "/privacy/breast-feeding-tracker/"
+      },
+      {
+        "label": "Editorial policy",
+        "url": "/breastfeeding-tracker/blog/editorial-disclosure/"
+      }
+    ]
+  },
+  "editorial": {
+    "image": {
+      "src": "/assets/breastfeeding-editorial/motherhood-1200.webp",
+      "smallSrc": "/assets/breastfeeding-editorial/motherhood-720.webp",
+      "alt": "A mother in a blue shirt holding her newborn in a sunlit home."
+    },
+    "platforms": "For iPhone, iPad & Apple Watch",
+    "benefitNote": "Breastfeeding, bottles, pumping. All part of your story.",
+    "timerAlt": "The active breastfeeding timer in the app’s dark appearance.",
+    "historyAlt": "Recent breastfeeding, bottle and pumping entries in a single feeding history.",
+    "insightsNote": "Insights and full history are included with the one-time Lifetime Unlock. Summaries reflect your records, not a feeding assessment.",
+    "screens": {
+      "eyebrow": "Considered in every detail",
+      "heading": "Feels like you.\nFits your day.",
+      "body": "Soft in the morning. Quiet after dark. Choose your look, then keep the little details close across iPhone, iPad and Apple Watch.",
+      "switcherLabel": "Preview the app’s appearance",
+      "lightLabel": "Light",
+      "darkLabel": "Dark",
+      "phoneCaption": "A little calm in your hand.",
+      "tabletCaption": "A little more room to look back.",
+      "phoneAlt": "Breastfeeding Tracker home screen",
+      "tabletAlt": "Feeding history on iPad",
+      "note": "Light and dark appearances shown. All themes are included with Lifetime Unlock."
+    },
+    "founder": {
+      "eyebrow": "From our family to yours",
+      "heading": "Born in the\nnewborn days.",
+      "body": "We built the app during our own experience of newborn feeding. When our days grew to include bottles and pumping, the app grew with us.",
+      "closing": "Thoughtfully made by a small independent studio, for all the ways feeding can unfold.",
+      "linkLabel": "Read our story",
+      "linkUrl": "/breastfeeding-tracker/blog/breastfeeding-didnt-go-to-plan/"
+    },
+    "finalCta": {
+      "eyebrow": "A small thing, beautifully considered",
+      "heading": "Make it part\nof your every day.",
+      "body": "Your next feed. A little more considered.",
+      "label": "Download on the App Store",
+      "note": "Free to download · No subscription · iOS 26 or later"
+    }
+  }
 }

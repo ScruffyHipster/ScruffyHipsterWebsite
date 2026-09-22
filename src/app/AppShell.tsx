@@ -8,22 +8,34 @@ import {
   appRoutePath,
   BREASTFEEDING_TRACKER_BLOG_BASE_PATH,
   BREASTFEEDING_TRACKER_BLOG_DISCLOSURE_PATH,
-  BREASTFEEDING_TRACKER_BASE_PATH,
   BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH,
   privacyRoutePath
 } from "../content/routes";
 import { canonicalPath } from "../seo/canonical";
+import { BreastfeedingTrackerLayout } from "../components/BreastfeedingTrackerLayout";
+import { isBreastfeedingTrackerRoute } from "../content/trackerLocales";
 
 export function AppShell() {
   const location = useLocation();
   const showFooter = location.pathname !== "/";
-  const normalizedPathname = location.pathname.replace(/\/+$/, "") || "/";
-  const isBreastfeedingTrackerRoute =
-    normalizedPathname === BREASTFEEDING_TRACKER_BASE_PATH ||
-    normalizedPathname.startsWith(`${BREASTFEEDING_TRACKER_BASE_PATH}/`);
+  const isTrackerRoute =
+    isBreastfeedingTrackerRoute(location.pathname) ||
+    location.pathname.replace(/\/+$/, "") === "/privacy/breast-feeding-tracker";
+
+  if (isTrackerRoute) {
+    return (
+      <div className="site-shell">
+        <RouteAnalytics />
+        <ScrollToTop />
+        <BreastfeedingTrackerLayout>
+          <Outlet />
+        </BreastfeedingTrackerLayout>
+      </div>
+    );
+  }
 
   return (
-    <div className={`site-shell${isBreastfeedingTrackerRoute ? " feeding-site-shell" : ""}`}>
+    <div className="site-shell">
       <RouteAnalytics />
       <ScrollToTop />
       <div className="bg-orb bg-orb-a" aria-hidden="true" />
