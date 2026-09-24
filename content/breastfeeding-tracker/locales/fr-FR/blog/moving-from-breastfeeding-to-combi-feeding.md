@@ -8,6 +8,7 @@ publishedAt: "2026-08-04"
 category: "Récits personnels"
 excerpt: "Tirer du lait nous a offert une autre façon de nourrir notre fille sans que l’allaitement s’arrête d’un coup."
 tags: "alimentation mixte, tire lait, allaitement biberon"
+ogImageAlt: "Un parent donne le biberon à son nouveau-né pendant que l’autre se repose à proximité, avec du matériel de tirage sur une petite table."
 ---
 
 # Pas un changement net
@@ -20,4 +21,4 @@ Le lait tiré permettait à l’autre parent de prendre un repas en charge. L’
 
 # Pas une règle générale
 
-Il s’agit d’une expérience personnelle, pas d’une recommandation universelle. Si vous êtes inquiète ou inquiet au sujet de la douleur, de la lactation ou du poids, recherchez un soutien adapté. La version française doit être vérifiée sur les plans linguistique et factuel avant publication.
+Il s’agit d’une expérience personnelle, pas d’une recommandation universelle. Si vous êtes inquiète ou inquiet au sujet de la douleur, de la lactation ou du poids, recherchez un soutien adapté.

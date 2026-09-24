@@ -17,6 +17,7 @@ type LocaleManifest = {
   prefix: string;
   appStoreCountry: string;
   currency: "EUR";
+  sourceContent: (typeof localeManifest.locales)[number]["sourceContent"];
   enabled: boolean;
   routes: {
     landing: string;
@@ -57,6 +58,11 @@ export function appStoreCountryForLocale(locale: SupportedLocale) {
   return locale === "en-GB"
     ? "gb"
     : localizedTrackers.find((candidate) => candidate.locale === locale)?.appStoreCountry ?? "gb";
+}
+
+// Draft translations are reviewable only in the development server.
+export function reviewableTrackerLocales() {
+  return localizedTrackers.filter((locale) => locale.enabled || import.meta.env.DEV);
 }
 
 export function openLocalizedTrackerLocales() {
@@ -144,4 +150,23 @@ function englishTrackerPath(kind: TrackerContentKind, translationKey?: string) {
 
 function normalizePath(pathname: string) {
   return pathname.replace(/\/+$/, "") || "/";
+}
+
+export function trackerContentForPath(pathname: string): { kind: TrackerContentKind; translationKey?: string } | null {
+  const path = normalizePath(pathname);
+  const locale = localeForPath(path);
+  for (const kind of ["landing", "support", "blog", "editorialDisclosure"] as const) {
+    if (path === trackerLocalePath(locale, kind)) return { kind };
+  }
+  const config = localizedTrackers.find((item) => item.locale === locale);
+  for (const kind of ["guide", "blogPost"] as const) {
+    const base = trackerLocalePath(locale, kind === "guide" ? "support" : "blog")!;
+    if (!path.startsWith(`${base}/`)) continue;
+    const slug = path.slice(base.length + 1);
+    if (locale === "en-GB") return { kind, translationKey: slug };
+    const map = kind === "guide" ? config?.routes.guides : config?.routes.blogPosts;
+    const translationKey = Object.entries(map ?? {}).find(([, candidate]) => candidate === slug)?.[0];
+    return translationKey ? { kind, translationKey } : null;
+  }
+  return null;
 }

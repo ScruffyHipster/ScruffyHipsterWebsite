@@ -8,6 +8,7 @@ publishedAt: "2026-09-10"
 category: "Allaitement et alimentation du nourrisson"
 excerpt: "Une tache de lait peut inquiéter. L’important est l’état général de votre bébé, pas seulement ce que vous voyez."
 tags: "regurgitations bebe, reflux bebe, vomissements nourrisson"
+ogImageAlt: "Un parent tient un bébé apaisé à la verticale contre un lange après un repas, tandis que l’autre reste à proximité dans une pièce chaleureuse."
 ---
 
 # La réponse courte
@@ -20,4 +21,4 @@ Regardez l’ensemble : votre bébé semble-t-il plutôt bien entre les repas, m
 
 # Quand demander de l’aide
 
-Demandez rapidement un avis médical si votre bébé vomit de façon répétée ou avec force, vomit vert ou sanglant, boit très peu, semble inhabituellement somnolent ou malade, a nettement moins de couches mouillées, ou si vous êtes inquiète ou inquiet. En cas d’urgence, contactez les secours. Cette version doit être vérifiée selon les recommandations françaises actuelles avant publication.
+Demandez rapidement un avis médical si votre bébé vomit de façon répétée ou avec force, vomit vert ou sanglant, boit très peu, semble inhabituellement somnolent ou malade, a nettement moins de couches mouillées, ou si vous êtes inquiète ou inquiet. En cas d’urgence, contactez les secours.

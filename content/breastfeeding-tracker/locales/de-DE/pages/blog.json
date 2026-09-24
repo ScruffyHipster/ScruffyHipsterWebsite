@@ -1,11 +1,50 @@
 {
-  "locale": "de-DE",
-  "translationKey": "blog",
+  "published": true,
+  "route": "/de/still-tracker/blog",
   "seo": {
-    "title": "Stillen, Abpumpen und Kombifütterung: Blog",
-    "description": "Persönliche Geschichten und sorgfältig eingeordnete Informationen über Stillen, Abpumpen, Fläschchen und die ersten Monate mit Baby."
+    "title": "Blog über Stillen, Abpumpen & Kombifütterung",
+    "description": "Ehrliche persönliche Geschichten, praktische Erfahrungen und sorgfältig belegte Artikel über Stillen, Abpumpen, Kombifütterung und den Alltag mit Baby.",
+    "keywords": [
+      "Stillblog",
+      "Kombifütterung Erfahrungen",
+      "Muttermilch abpumpen",
+      "Baby-Ernährung Apps"
+    ],
+    "ogImage": "/assets/breastfeeding-editorial/motherhood-1200.webp"
   },
-  "heading": "Ehrliche Texte für Füttertage, die anders laufen als geplant.",
-  "intro": "Erfahrungen aus einer Familie, praktische Gedanken und klar als solche gekennzeichnete Hintergrundinformationen – ohne Druck, wie eine Familie füttern sollte.",
-  "labels": { "all": "Alle", "read": "Lesen", "minutes": "Min. Lesezeit" }
+  "collection": {
+    "name": "Still-Tracker-Blog",
+    "description": "Persönliche Geschichten, praktische Erfahrungen und sorgfältig belegte Artikel für die Tage, an denen die Ernährung anders läuft als geplant."
+  },
+  "breadcrumbs": {
+    "tracker": "Still-Tracker",
+    "blog": "Blog"
+  },
+  "hero": {
+    "backLabel": "Zurück zu Still-Tracker",
+    "eyebrow": "Von Eltern für Eltern",
+    "heading": "Gemeinsam hineinwachsen.",
+    "body": "Ehrliche Geschichten, praktische Erfahrungen und sorgfältig recherchierte Artikel für die Tage, an denen nicht alles nach Plan läuft."
+  },
+  "disclosureLabel": "Unsere redaktionellen Grundsätze und Hinweise zu Affiliate-Links lesen",
+  "disclosurePrefix": "Scruffy Hipster entwickelt Breastfeeding Tracker & Timer. Unsere Artikel unterscheiden persönliche Erfahrungen, quellenbasierte Informationen und Produktvergleiche. Manche Beiträge können kommerzielle Links enthalten.",
+  "allFilterLabel": "Alle",
+  "filterAriaLabel": "Blogartikel nach Kategorie filtern",
+  "recentHeading": "Aktuelle Artikel",
+  "metaSeparator": "·",
+  "readingTimeSuffix": "Min. Lesezeit",
+  "readLabel": "Geschichte lesen →",
+  "articleTemplate": {
+    "backLabel": "Zurück zum Blog",
+    "tocHeading": "Auf dieser Seite",
+    "relatedHeading": "Weiterlesen",
+    "updatedLabel": "Aktualisiert am",
+    "aboutEyebrow": "Über den Autor",
+    "authorName": "Tom Murray",
+    "authorDescription": "Aus persönlicher Erfahrung geschrieben und mit den im jeweiligen Artikel verlinkten Quellen abgeglichen.",
+    "disclaimerPrefix": "Dies sind allgemeine Informationen und persönliche Erfahrungen, keine medizinische Beratung. Lies unsere",
+    "disclosureLinkLabel": "redaktionellen Grundsätze und Hinweise zu Affiliate-Links"
+  },
+  "locale": "de-DE",
+  "translationKey": "blog"
 }

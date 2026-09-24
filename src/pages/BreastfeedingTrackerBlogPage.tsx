@@ -2,18 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Reveal } from "../components/Reveal";
 import { Seo } from "../components/Seo";
-import { TrackerLanguageSelector } from "../components/TrackerLanguageSelector";
-import {
-  breastfeedingTrackerBlogCategories,
-  breastfeedingTrackerBlogPosts,
-  formatBreastfeedingArticleDate
-} from "../content/breastfeedingTracker";
-import {
-  BREASTFEEDING_TRACKER_BASE_PATH,
-  BREASTFEEDING_TRACKER_BLOG_BASE_PATH,
-  BREASTFEEDING_TRACKER_BLOG_DISCLOSURE_PATH
-} from "../content/routes";
-import { breastfeedingBlogPageContent } from "../content/pages";
+import { useTrackerResources } from "../content/trackerResources";
 import { breadcrumbJsonLd, organizationJsonLd } from "../seo/jsonld";
 import { canonicalPath, canonicalUrl } from "../seo/canonical";
 import { getSiteUrl } from "../seo/metadata";
@@ -21,7 +10,12 @@ import { siteConfig } from "../content/site";
 import { trackerHreflangAlternates } from "../content/trackerLocales";
 
 export function BreastfeedingTrackerBlogPage() {
+  const {
+    locale, ogLocale, robots, homePath, blogPath, disclosurePath,
+    blogPage: breastfeedingBlogPageContent, posts: breastfeedingTrackerBlogPosts, formatDate: formatBreastfeedingArticleDate
+  } = useTrackerResources();
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const breastfeedingTrackerBlogCategories = [...new Set(breastfeedingTrackerBlogPosts.map((post) => post.category).filter((category): category is string => Boolean(category)))];
   const posts = activeCategory
     ? breastfeedingTrackerBlogPosts.filter((post) => post.category === activeCategory)
     : breastfeedingTrackerBlogPosts;
@@ -30,8 +24,9 @@ export function BreastfeedingTrackerBlogPage() {
   return (
     <>
       <Seo
+        locale={locale} ogLocale={ogLocale}
         path={breastfeedingBlogPageContent.route}
-        meta={breastfeedingBlogPageContent.seo}
+        meta={{ ...breastfeedingBlogPageContent.seo, robots }}
         alternates={trackerHreflangAlternates("blog", siteUrl)}
         jsonLd={[
           organizationJsonLd(),
@@ -40,22 +35,22 @@ export function BreastfeedingTrackerBlogPage() {
             "@type": "CollectionPage",
             name: breastfeedingBlogPageContent.collection.name,
             description: breastfeedingBlogPageContent.collection.description,
-            url: canonicalUrl(BREASTFEEDING_TRACKER_BLOG_BASE_PATH, siteUrl),
+            url: canonicalUrl(blogPath, siteUrl),
             hasPart: breastfeedingTrackerBlogPosts.map((post) => ({
               "@type": "BlogPosting",
               headline: post.title,
-              url: canonicalUrl(`${BREASTFEEDING_TRACKER_BLOG_BASE_PATH}/${post.slug}`, siteUrl)
+              url: canonicalUrl(`${blogPath}/${post.slug}`, siteUrl)
             }))
           },
           breadcrumbJsonLd([
             { name: siteConfig.companyName, url: siteUrl },
             {
               name: breastfeedingBlogPageContent.breadcrumbs.tracker,
-              url: canonicalUrl(BREASTFEEDING_TRACKER_BASE_PATH, siteUrl)
+              url: canonicalUrl(homePath, siteUrl)
             },
             {
               name: breastfeedingBlogPageContent.breadcrumbs.blog,
-              url: canonicalUrl(BREASTFEEDING_TRACKER_BLOG_BASE_PATH, siteUrl)
+              url: canonicalUrl(blogPath, siteUrl)
             }
           ])
         ]}
@@ -64,8 +59,7 @@ export function BreastfeedingTrackerBlogPage() {
       <section className="feeding-resource-hero feeding-blog-hero">
         <div className="container">
           <Reveal>
-            <TrackerLanguageSelector kind="blog" />
-            <Link className="feeding-text-link" to={canonicalPath(BREASTFEEDING_TRACKER_BASE_PATH)}>
+            <Link className="feeding-text-link" to={canonicalPath(homePath)}>
               {breastfeedingBlogPageContent.hero.backLabel}
             </Link>
             <p className="eyebrow">{breastfeedingBlogPageContent.hero.eyebrow}</p>
@@ -73,7 +67,7 @@ export function BreastfeedingTrackerBlogPage() {
             <p className="lead">{breastfeedingBlogPageContent.hero.body}</p>
             <p className="feeding-blog-disclosure-note">
               {breastfeedingBlogPageContent.disclosurePrefix} {" "}
-              <Link to={canonicalPath(BREASTFEEDING_TRACKER_BLOG_DISCLOSURE_PATH)}>
+              <Link to={canonicalPath(disclosurePath)}>
                 {breastfeedingBlogPageContent.disclosureLabel}
               </Link>
               .
@@ -126,7 +120,7 @@ export function BreastfeedingTrackerBlogPage() {
               <Reveal key={post.slug} className={index === 0 ? "bft-featured-story" : undefined}>
                 <Link
                   className={`feeding-blog-card${index === 0 ? " feeding-blog-card-featured" : ""}`}
-                  to={canonicalPath(`${BREASTFEEDING_TRACKER_BLOG_BASE_PATH}/${post.slug}`)}
+                  to={canonicalPath(`${blogPath}/${post.slug}`)}
                 >
                   <img src={post.ogImage} alt={post.ogImageAlt || ""} width="1600" height="1000" loading={index === 0 ? "eager" : "lazy"} decoding="async" />
                   <div>

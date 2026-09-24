@@ -164,3 +164,34 @@
 @media (prefers-reduced-motion: reduce) {
   .bft-premium *, .bft-premium *::before, .bft-premium *::after { transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Keep language selection with the navigation actions, away from the hero copy. */
+.bft-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.bft-nav .tracker-language-dropdown {
+  min-height: 44px;
+  width: 104px;
+  padding: 8px;
+  border: 1px solid var(--bft-line);
+  border-radius: 3px;
+  background: var(--bft-cream);
+  color: var(--bft-ink);
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.bft-nav .tracker-language-dropdown:focus-visible {
+  outline: 2px solid var(--bft-ink);
+  outline-offset: 3px;
+}
+@media (max-width: 850px) {
+  .bft-nav .bft-brand { min-width: 0; flex: 1; }
+  .bft-nav .bft-brand span { overflow-wrap: anywhere; }
+  .bft-nav-actions { gap: 8px; }
+  .bft-nav .tracker-language-dropdown { width: 92px; font-size: 0.75rem; }
+}

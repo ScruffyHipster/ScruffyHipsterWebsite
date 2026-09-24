@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { AppShell } from "./AppShell";
 import { HomePage } from "../pages/HomePage";
@@ -25,6 +26,7 @@ import {
   LEGACY_BREASTFEEDING_TRACKER_PATH,
   legacyRedirects
 } from "../content/routes";
+import { reviewableTrackerLocales } from "../content/trackerLocales";
 import { canonicalPath } from "../seo/canonical";
 
 export function AppRouter() {
@@ -45,6 +47,16 @@ export function AppRoutes() {
         <Route path="rewire" element={<RewireLandingPage />} />
         <Route path="rewire/blog" element={<RewireBlogIndexPage />} />
         <Route path="rewire/blog/:slug" element={<RewireBlogPostPage />} />
+        {reviewableTrackerLocales().map((locale) => (
+          <Fragment key={locale.locale}>
+            <Route path={locale.prefix} element={<BreastfeedingTrackerLandingPage key={locale.locale} />} />
+            <Route path={`${locale.prefix}/${locale.routes.support}`} element={<BreastfeedingTrackerSupportPage key={locale.locale} />} />
+            <Route path={`${locale.prefix}/${locale.routes.support}/:slug`} element={<BreastfeedingTrackerSupportArticlePage key={locale.locale} />} />
+            <Route path={`${locale.prefix}/${locale.routes.blog}`} element={<BreastfeedingTrackerBlogPage key={locale.locale} />} />
+            <Route path={`${locale.prefix}/${locale.routes.editorialDisclosure}`} element={<BreastfeedingTrackerBlogDisclosurePage key={locale.locale} />} />
+            <Route path={`${locale.prefix}/${locale.routes.blog}/:slug`} element={<BreastfeedingTrackerBlogPostPage key={locale.locale} />} />
+          </Fragment>
+        ))}
         <Route
           path={BREASTFEEDING_TRACKER_BASE_PATH}
           element={<BreastfeedingTrackerLandingPage />}

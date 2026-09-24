@@ -8,6 +8,7 @@ publishedAt: "2026-08-24"
 category: "Stillen und Säuglingsernährung"
 excerpt: "Ein einzelnes Zeichen stellt keine Diagnose. Entscheidend ist eine ruhige, persönliche Einschätzung der gesamten Fütterungssituation."
 tags: "zungenband baby, stillprobleme, stillberatung"
+ogImageAlt: "Ein Elternteil kuschelt mit einem schlafenden Neugeborenen, während der andere mit einem Glas Wasser und einem Fläschchen ruhige Unterstützung anbietet."
 ---
 
 # Keine Diagnose aus einer Checkliste

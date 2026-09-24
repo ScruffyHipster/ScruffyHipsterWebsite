@@ -8,6 +8,7 @@ publishedAt: "2026-07-31"
 category: "Persönliche Geschichten"
 excerpt: "Unsere Fütterungsgeschichte änderte sich in wenigen Tagen. Wir mussten den ursprünglichen Plan loslassen."
 tags: "stillen lief anders, kombifütterung, persönliche stillgeschichte"
+ogImageAlt: "Zwei Eltern unterstützen einander bei der Betreuung und Ernährung ihres Neugeborenen."
 ---
 
 # Der Plan vor der Geburt
@@ -20,4 +21,4 @@ Für uns wurden Stillen, abgepumpte Milch, Fläschchen und bei Bedarf Säuglings
 
 # Hilfe darf dazugehören
 
-Schmerzen beim Stillen oder Sorgen um das Trinken verdienen Unterstützung durch eine Hebamme, Stillberatung oder kinderärztliche Praxis. Welche Entscheidung richtig ist, hängt von der jeweiligen Familie ab. Dieser persönliche Text muss vor Veröffentlichung von einer deutschen Muttersprachlerin geprüft werden.
+Schmerzen beim Stillen oder Sorgen um das Trinken verdienen Unterstützung durch eine Hebamme, Stillberatung oder kinderärztliche Praxis. Welche Entscheidung richtig ist, hängt von der jeweiligen Familie ab.

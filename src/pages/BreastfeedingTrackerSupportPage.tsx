@@ -1,39 +1,38 @@
 import { Link } from "react-router-dom";
 import { Reveal } from "../components/Reveal";
 import { Seo } from "../components/Seo";
-import { TrackerLanguageSelector } from "../components/TrackerLanguageSelector";
-import { breastfeedingTrackerGuides } from "../content/breastfeedingTracker";
-import {
-  BREASTFEEDING_TRACKER_BASE_PATH,
-  BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH
-} from "../content/routes";
+import { useTrackerResources } from "../content/trackerResources";
 import { breadcrumbJsonLd, organizationJsonLd } from "../seo/jsonld";
 import { getSiteUrl } from "../seo/metadata";
 import { canonicalPath, canonicalUrl } from "../seo/canonical";
-import { breastfeedingSupportPageContent } from "../content/pages";
 import { siteConfig } from "../content/site";
 import { trackerHreflangAlternates } from "../content/trackerLocales";
 
 export function BreastfeedingTrackerSupportPage() {
+  const {
+    locale, ogLocale, robots, homePath, supportPath,
+    supportPage: breastfeedingSupportPageContent, guides: breastfeedingTrackerGuides, supportEmailSubject
+  } = useTrackerResources();
   const siteUrl = getSiteUrl();
   const collectionJsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: breastfeedingSupportPageContent.collection.name,
     description: breastfeedingSupportPageContent.collection.description,
-    url: canonicalUrl(BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH, siteUrl),
+    url: canonicalUrl(supportPath, siteUrl),
     hasPart: breastfeedingTrackerGuides.map((guide) => ({
       "@type": "Article",
       headline: guide.title,
-      url: canonicalUrl(`${BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH}/${guide.slug}`, siteUrl)
+      url: canonicalUrl(`${supportPath}/${guide.slug}`, siteUrl)
     }))
   };
 
   return (
     <>
       <Seo
+        locale={locale} ogLocale={ogLocale}
         path={breastfeedingSupportPageContent.route}
-        meta={breastfeedingSupportPageContent.seo}
+        meta={{ ...breastfeedingSupportPageContent.seo, robots }}
         alternates={trackerHreflangAlternates("support", siteUrl)}
         jsonLd={[
           organizationJsonLd(),
@@ -42,11 +41,11 @@ export function BreastfeedingTrackerSupportPage() {
             { name: siteConfig.companyName, url: siteUrl },
             {
               name: breastfeedingSupportPageContent.breadcrumbs.tracker,
-              url: canonicalUrl(BREASTFEEDING_TRACKER_BASE_PATH, siteUrl)
+              url: canonicalUrl(homePath, siteUrl)
             },
             {
               name: breastfeedingSupportPageContent.breadcrumbs.support,
-              url: canonicalUrl(BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH, siteUrl)
+              url: canonicalUrl(supportPath, siteUrl)
             }
           ])
         ]}
@@ -55,8 +54,7 @@ export function BreastfeedingTrackerSupportPage() {
       <section className="feeding-resource-hero feeding-resource-hero-centered bft-support-hero">
         <div className="container">
           <Reveal>
-            <TrackerLanguageSelector kind="support" />
-            <Link className="feeding-text-link" to={canonicalPath(BREASTFEEDING_TRACKER_BASE_PATH)}>
+            <Link className="feeding-text-link" to={canonicalPath(homePath)}>
               {breastfeedingSupportPageContent.hero.backLabel}
             </Link>
             <p className="eyebrow">{breastfeedingSupportPageContent.hero.eyebrow}</p>
@@ -76,7 +74,7 @@ export function BreastfeedingTrackerSupportPage() {
               <Reveal key={topic.slug}>
                 <Link
                   className="feeding-support-card"
-                  to={canonicalPath(`${BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH}/${topic.slug}`)}
+                  to={canonicalPath(`${supportPath}/${topic.slug}`)}
                 >
                   <span aria-hidden="true">{breastfeedingSupportPageContent.topicIcon}</span>
                   <h3>{topic.label}</h3>
@@ -99,7 +97,7 @@ export function BreastfeedingTrackerSupportPage() {
               <Reveal key={guide.slug}>
                 <Link
                   className="feeding-guide-row"
-                  to={canonicalPath(`${BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH}/${guide.slug}`)}
+                  to={canonicalPath(`${supportPath}/${guide.slug}`)}
                 >
                   <span>{String(index + 1).padStart(2, "0")}</span>
                   <strong>{guide.title}</strong>
@@ -119,7 +117,7 @@ export function BreastfeedingTrackerSupportPage() {
             <p>{breastfeedingSupportPageContent.contact.body}</p>
             <a
               className="bft-button"
-              href={`mailto:${siteConfig.supportEmail}?subject=Breastfeeding%20Tracker%20support`}
+              href={`mailto:${siteConfig.supportEmail}?subject=${encodeURIComponent(supportEmailSubject)}`}
             >
               {breastfeedingSupportPageContent.contact.label}
             </a>

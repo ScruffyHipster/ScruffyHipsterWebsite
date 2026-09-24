@@ -1,13 +1,7 @@
 import { Link } from "react-router-dom";
 import { Reveal } from "../components/Reveal";
 import { Seo } from "../components/Seo";
-import { TrackerLanguageSelector } from "../components/TrackerLanguageSelector";
-import {
-  BREASTFEEDING_TRACKER_BASE_PATH,
-  BREASTFEEDING_TRACKER_BLOG_BASE_PATH,
-  BREASTFEEDING_TRACKER_BLOG_DISCLOSURE_PATH
-} from "../content/routes";
-import { breastfeedingBlogDisclosurePageContent } from "../content/pages";
+import { useTrackerResources } from "../content/trackerResources";
 import { breadcrumbJsonLd, organizationJsonLd } from "../seo/jsonld";
 import { canonicalPath, canonicalUrl } from "../seo/canonical";
 import { getSiteUrl } from "../seo/metadata";
@@ -15,13 +9,18 @@ import { siteConfig } from "../content/site";
 import { trackerHreflangAlternates } from "../content/trackerLocales";
 
 export function BreastfeedingTrackerBlogDisclosurePage() {
+  const {
+    locale, ogLocale, robots, homePath, blogPath, disclosurePath,
+    disclosurePage: breastfeedingBlogDisclosurePageContent, editorialEmailSubject
+  } = useTrackerResources();
   const siteUrl = getSiteUrl();
 
   return (
     <>
       <Seo
+        locale={locale} ogLocale={ogLocale}
         path={breastfeedingBlogDisclosurePageContent.route}
-        meta={breastfeedingBlogDisclosurePageContent.seo}
+        meta={{ ...breastfeedingBlogDisclosurePageContent.seo, robots }}
         alternates={trackerHreflangAlternates("editorialDisclosure", siteUrl)}
         jsonLd={[
           organizationJsonLd(),
@@ -29,15 +28,15 @@ export function BreastfeedingTrackerBlogDisclosurePage() {
             { name: siteConfig.companyName, url: siteUrl },
             {
               name: breastfeedingBlogDisclosurePageContent.breadcrumbs.tracker,
-              url: canonicalUrl(BREASTFEEDING_TRACKER_BASE_PATH, siteUrl)
+              url: canonicalUrl(homePath, siteUrl)
             },
             {
               name: breastfeedingBlogDisclosurePageContent.breadcrumbs.blog,
-              url: canonicalUrl(BREASTFEEDING_TRACKER_BLOG_BASE_PATH, siteUrl)
+              url: canonicalUrl(blogPath, siteUrl)
             },
             {
               name: breastfeedingBlogDisclosurePageContent.breadcrumbs.disclosure,
-              url: canonicalUrl(BREASTFEEDING_TRACKER_BLOG_DISCLOSURE_PATH, siteUrl)
+              url: canonicalUrl(disclosurePath, siteUrl)
             }
           ])
         ]}
@@ -45,8 +44,7 @@ export function BreastfeedingTrackerBlogDisclosurePage() {
       <section className="feeding-resource-hero feeding-resource-hero-centered">
         <div className="narrow-container">
           <Reveal>
-            <TrackerLanguageSelector kind="editorialDisclosure" />
-            <Link className="feeding-text-link" to={canonicalPath(BREASTFEEDING_TRACKER_BLOG_BASE_PATH)}>
+            <Link className="feeding-text-link" to={canonicalPath(blogPath)}>
               {breastfeedingBlogDisclosurePageContent.hero.backLabel}
             </Link>
             <p className="eyebrow">{breastfeedingBlogDisclosurePageContent.hero.eyebrow}</p>
@@ -72,7 +70,7 @@ export function BreastfeedingTrackerBlogDisclosurePage() {
           <Reveal className="feeding-disclosure-contact">
             <h2>{breastfeedingBlogDisclosurePageContent.contactHeading}</h2>
             <p>{breastfeedingBlogDisclosurePageContent.contactBody}</p>
-            <a href={`mailto:${siteConfig.supportEmail}?subject=Blog%20editorial%20feedback`}>
+            <a href={`mailto:${siteConfig.supportEmail}?subject=${encodeURIComponent(editorialEmailSubject)}`}>
               {breastfeedingBlogDisclosurePageContent.contactLabel}
             </a>
           </Reveal>

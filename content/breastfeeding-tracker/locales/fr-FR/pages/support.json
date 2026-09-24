@@ -1,11 +1,78 @@
 {
+  "published": true,
+  "route": "/fr/suivi-allaitement/aide",
+  "seo": {
+    "title": "Suivi d’allaitement : aide & assistance",
+    "description": "Aide pour utiliser Suivi d’allaitement sur iPhone et Apple Watch : minuteurs, repas oubliés, confidentialité, historique et export PDF.",
+    "keywords": [
+      "aide suivi allaitement",
+      "assistance application allaitement",
+      "minuteur allaitement Apple Watch"
+    ],
+    "ogImage": "/assets/breastfeeding-editorial/motherhood-1200.webp"
+  },
+  "collection": {
+    "name": "Suivi d’allaitement : aide & assistance",
+    "description": "Une aide simple pour enregistrer, corriger, consulter et exporter les repas, sans programme imposé ni conseil médical."
+  },
+  "breadcrumbs": {
+    "tracker": "Suivi d’allaitement",
+    "support": "Aide & assistance"
+  },
+  "hero": {
+    "backLabel": "Retour à Suivi d’allaitement",
+    "eyebrow": "Un peu d’aide fait du bien",
+    "heading": "Comment pouvons-nous vous aider ?",
+    "body": "Du premier minuteur au repas oublié, trouvez l’aide dont vous avez besoin pour utiliser l’application à votre façon."
+  },
+  "topicsHeading": "Commencez par ce dont vous avez besoin",
+  "topicIcon": "↗",
+  "topicLinkLabel": "Lire l’article d’aide →",
+  "topics": [
+    {
+      "label": "Sein, biberons & tire-lait",
+      "body": "Regroupez tétées, biberons, tirages et repas mixtes, avec un bilan du lait maternel exprimé.",
+      "slug": "suivi-allaitement-biberons-tire-lait"
+    },
+    {
+      "label": "Premiers pas",
+      "body": "Lancez un minuteur d’allaitement, notez le côté et retrouvez le dernier repas sans remplir de formulaire.",
+      "slug": "minuteur-allaitement-iphone"
+    },
+    {
+      "label": "Apple Watch",
+      "body": "Lancez et arrêtez le suivi au poignet, même hors ligne, puis synchronisez les repas terminés avec l’iPhone.",
+      "slug": "suivi-allaitement-apple-watch"
+    },
+    {
+      "label": "Historique & corrections",
+      "body": "Corrigez un minuteur démarré trop tard ou ajoutez un repas oublié lorsque la journée est interrompue.",
+      "slug": "ajouter-tetee-ou-biberon-oublie"
+    },
+    {
+      "label": "Confidentialité & exports",
+      "body": "Comprenez la protection de vos données et créez un PDF des repas sélectionnés.",
+      "slug": "suivi-allaitement-prive"
+    }
+  ],
+  "articlesHeading": "Tous les articles d’aide",
+  "contact": {
+    "eyebrow": "Encore une question ?",
+    "heading": "Parlons-en.",
+    "body": "Expliquez-nous ce qui se passe, quel appareil vous utilisez et ce que vous vous attendiez à voir. Nous lisons chaque e-mail d’assistance.",
+    "label": "Contacter l’assistance par e-mail",
+    "subject": "Suivi d’allaitement : assistance"
+  },
   "locale": "fr-FR",
   "translationKey": "support",
-  "seo": {
-    "title": "Aide pour Suivi d’allaitement",
-    "description": "Aide pour utiliser Breastfeeding Tracker sur iPhone et Apple Watch : minuteurs, historique, corrections, confidentialité et export PDF."
-  },
-  "heading": "Comment pouvons-nous vous aider ?",
-  "intro": "Une aide pratique pour enregistrer les repas, corriger l’historique et utiliser l’application sur iPhone et Apple Watch.",
-  "contact": "Contacter l’assistance"
+  "articleTemplate": {
+    "backLabel": "Retour à l’aide & assistance",
+    "eyebrow": "Article d’aide",
+    "defaultCta": {
+      "eyebrow": "Une aide pratique au quotidien",
+      "heading": "Prête pour le prochain repas.",
+      "label": "Télécharger sur l’App Store"
+    },
+    "relatedHeading": "Articles d’aide associés"
+  }
 }

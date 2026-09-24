@@ -1,30 +1,233 @@
 {
-  "locale": "de-DE",
-  "translationKey": "landing",
   "seo": {
-    "title": "Still-, Flaschen- und Pumptracker für iPhone",
-    "description": "Erfasse Stillen, Fläschchen, Abpumpen und Kombifütterung in einer ruhigen iPhone-App mit Apple-Watch-Timern und bearbeitbarem Verlauf."
+    "title": "Still-Tracker & Timer | Mit Liebe fürs Mama-Sein",
+    "description": "Ein liebevoll gestalteter Tracker für Stillen, Fläschchen und Abpumpen auf iPhone und Apple Watch. Einfache Timer, durchdachte Details. Kostenlos laden.",
+    "keywords": [
+      "Stilltracker",
+      "Stilltimer",
+      "Still-App",
+      "Fläschchen erfassen",
+      "Abpumpen erfassen",
+      "Stillen Apple Watch",
+      "Stillprotokoll"
+    ],
+    "ogImage": "/assets/breastfeeding-editorial/motherhood-1200.webp",
+    "ogImageAlt": "Eine Mutter in einem blauen Hemd hält ihr Neugeborenes in einem sonnigen Zuhause."
   },
   "hero": {
-    "eyebrow": "Stilltracker für iPhone und Apple Watch",
-    "heading": "Ein einfacher Tracker für Stillen, Fläschchen, Abpumpen und Kombifütterung.",
-    "body": "Die ersten Wochen mit einem Baby können ineinander verschwimmen. Der Tracker soll dir etwas abnehmen, nicht noch eine Aufgabe hinzufügen.",
+    "eyebrow": "Still-Tracker & Timer",
+    "heading": "Mama sein,",
+    "headingEmphasis": "mit Liebe zum Detail.",
+    "body": "Ein wohltuend einfacher Tracker für eure Mahlzeiten. Für deinen Alltag und die kleinen Momente, die ihn besonders machen.",
     "primaryCta": "Im App Store laden",
-    "secondaryCta": "So funktioniert es"
+    "secondaryCta": "Die App entdecken",
+    "storeNote": "Kostenlos laden. Ohne Abo.",
+    "imageAlt": "Startbildschirm von Breastfeeding Tracker mit der letzten Mahlzeit und Tasten für die linke und rechte Seite.",
+    "caption": "Fürs Mama-Sein gemacht. Für dich gestaltet."
   },
-  "sections": [
+  "howItWorks": {
+    "eyebrow": "Ein bisschen Freiraum für dich",
+    "heading": "Eine Sache weniger,\nan die du denken musst.",
+    "body": "Die letzte Mahlzeit. Die letzte Seite. Kleine Details, um die du dich nicht mehr kümmern musst. Damit du ganz bei deinem Baby sein kannst."
+  },
+  "careMethodsFeature": {
+    "link": {
+      "label": "Alle vier Arten der Erfassung entdecken",
+      "url": "/de/still-tracker/hilfe/stillen-flasche-abpumpen-tracker/"
+    }
+  },
+  "historyFeature": {
+    "eyebrow": "Ein entspannter Blick zurück",
+    "heading": "Findet euren Rhythmus.\nGanz ohne Druck.",
+    "paragraphs": [
+      "Mit etwas Abstand werden die Tage übersichtlicher. Entdecke Muster in deinen erfassten Mahlzeiten – mit klaren Zeitachsen und durchdachten Zusammenfassungen.",
+      "Hier gibt es keine Punktzahl zu erreichen. Nur eure Geschichte, die du dir jederzeit wieder ansehen kannst."
+    ],
+    "cta": "Die dauerhafte Freischaltung entdecken",
+    "url": "#questions",
+    "imageAlts": [
+      "Eine Woche erfasster Mahlzeiten als übersichtliche Zeitachse im hellen Erscheinungsbild.",
+      "Die Übersicht im hellen Erscheinungsbild mit einem typischen Tag und Sieben-Tage-Zusammenfassungen der erfassten Stillmahlzeiten, Fläschchen und Abpumpvorgänge."
+    ]
+  },
+  "faqSection": {
+    "eyebrow": "Gut zu wissen",
+    "heading": "Ein paar gute\nFragen.",
+    "body": "Was du sonst noch wissen möchtest."
+  },
+  "faqs": [
     {
-      "heading": "Alles an einem Ort",
-      "body": "Halte Stillmahlzeiten, Fläschchen, Abpumpen und Kombimahlzeiten in einem übersichtlichen Verlauf fest. Fehlende Einträge kannst du nachtragen, wenn gerade Zeit ist."
+      "question": "Ist Breastfeeding Tracker kostenlos?",
+      "answer": "Du kannst die App kostenlos laden und nutzen. Die optionale dauerhafte Freischaltung per Einmalkauf ergänzt den vollständigen Verlauf, Filter, Auswertungen, PDF-Export, alle Designs und eine werbefreie Nutzung. Es gibt kein Abo."
     },
     {
-      "heading": "Privat und ohne Konto",
-      "body": "Du kannst ohne Konto beginnen. Die App ist für praktische, von dir eingegebene Aufzeichnungen gedacht und ersetzt keine medizinische Einschätzung."
+      "question": "Kann ich Stillen, Fläschchen und Abpumpen erfassen?",
+      "answer": "Ja. Halte Stillmahlzeiten, Fläschchen und Abpumpen in derselben Zeitachse fest. Kombimahlzeiten verbinden eine Stillmahlzeit und ein anschließendes Fläschchen in einem Eintrag. Fläschchen können abgepumpte Milch, Säuglingsnahrung oder beides enthalten."
+    },
+    {
+      "question": "Was passiert, wenn ich den Timer zu spät starte?",
+      "answer": "Während der Timer läuft, kannst du die erfasste Startzeit zurücksetzen. Du kannst eine abgeschlossene Mahlzeit auch nachträglich hinzufügen und Einträge im Verlauf bearbeiten oder löschen."
+    },
+    {
+      "question": "Funktioniert die Apple Watch auch ohne iPhone in der Nähe?",
+      "answer": "Ja. Starte und stoppe Still- oder Abpump-Timer am Handgelenk. Abgeschlossene Sitzungen werden mit deinem iPhone synchronisiert, sobald sich die Geräte wieder verbinden."
+    },
+    {
+      "question": "Muss ich ein Konto erstellen?",
+      "answer": "Du brauchst kein App-Konto. Öffne die App und beginne mit der Erfassung."
+    },
+    {
+      "question": "Kann ich mein Stillprotokoll teilen?",
+      "answer": "Mit der dauerhaften Freischaltung kannst du ausgewählte Mahlzeiten als PDF exportieren und speichern oder teilen. Das PDF enthält deine erfassten Angaben und kann für ein Gespräch mit deiner Hebamme oder Stillberatung hilfreich sein."
+    },
+    {
+      "question": "Zeigt die App, ob mein Baby genug Milch bekommt?",
+      "answer": "Nein. Die App hält deine Eingaben fest und bietet informative Zusammenfassungen. Sie misst weder die beim Stillen aufgenommene Milchmenge noch beurteilt sie deine Milchbildung oder gibt medizinischen Rat. Wende dich bei Fragen an deine Hebamme, Kinderarztpraxis oder Stillberatung."
     }
   ],
+  "navigation": {
+    "brand": "Still-Tracker",
+    "ariaLabel": "Navigation für Still-Tracker",
+    "skipLabel": "Zum Inhalt springen",
+    "downloadLabel": "App laden",
+    "items": [
+      {
+        "label": "Die App",
+        "url": "/de/still-tracker/"
+      },
+      {
+        "label": "Hilfe & Support",
+        "url": "/de/still-tracker/hilfe/"
+      },
+      {
+        "label": "Blog",
+        "url": "/de/still-tracker/blog/"
+      }
+    ]
+  },
+  "everyday": {
+    "eyebrow": "Für den Alltag mit deinem Neugeborenen",
+    "heading": "Wohltuend einfach.\nAuch um drei Uhr nachts.",
+    "body": "Eine Hand frei. Noch halb im Schlaf. Das Handy außer Reichweite. Durchdachte Details für Momente, die sich nicht planen lassen.",
+    "items": [
+      {
+        "title": "Ein Tippen. Ein Blick. Wieder ganz bei euch.",
+        "body": "Starte mit einem Tippen. Live-Aktivitäten und Widgets zeigen dir die wichtigsten Angaben, ohne dass du die App öffnen musst.",
+        "icon": "glance"
+      },
+      {
+        "title": "Immer in Reichweite.",
+        "body": "Starte und stoppe Timer mit der Apple Watch, auch offline. Eure Mahlzeiten werden synchronisiert, sobald sich die Geräte wieder verbinden.",
+        "icon": "watch"
+      },
+      {
+        "title": "Platz fürs echte Leben.",
+        "body": "Den Start verpasst? Passe die Zeit an oder trage die Mahlzeit später ein. Dein Protokoll kann warten, bis du Zeit hast.",
+        "icon": "timer"
+      }
+    ]
+  },
+  "footer": {
+    "body": "Von einem kleinen unabhängigen Studio. Mitten aus dem Familienalltag.",
+    "studioLabel": "ScruffyHipster kennenlernen (Englisch)",
+    "navigationLabel": "Mehr zu Still-Tracker",
+    "copyright": "Breastfeeding Tracker & Timer. Mit Sorgfalt von ScruffyHipster entwickelt.",
+    "links": [
+      {
+        "label": "Hilfe & Support",
+        "url": "/de/still-tracker/hilfe/"
+      },
+      {
+        "label": "Blog",
+        "url": "/de/still-tracker/blog/"
+      },
+      {
+        "label": "Datenschutz (Englisch)",
+        "url": "/privacy/breast-feeding-tracker/"
+      },
+      {
+        "label": "Redaktionelle Grundsätze",
+        "url": "/de/still-tracker/blog/redaktionelle-offenlegung/"
+      }
+    ]
+  },
+  "editorial": {
+    "image": {
+      "src": "/assets/breastfeeding-editorial/motherhood-1200.webp",
+      "smallSrc": "/assets/breastfeeding-editorial/motherhood-720.webp",
+      "alt": "Eine Mutter in einem blauen Hemd hält ihr Neugeborenes in einem sonnigen Zuhause."
+    },
+    "platforms": "Für iPhone, iPad & Apple Watch",
+    "benefitNote": "Stillen, Fläschchen, Abpumpen. Alles gehört zu eurer Geschichte.",
+    "timerAlt": "Der laufende Still-Timer im dunklen Erscheinungsbild der App.",
+    "historyAlt": "Die zuletzt erfassten Stillmahlzeiten, Fläschchen und Abpumpvorgänge in einem gemeinsamen Verlauf.",
+    "insightsNote": "Auswertungen und der vollständige Verlauf sind in der dauerhaften Freischaltung per Einmalkauf enthalten. Die Zusammenfassungen geben deine Aufzeichnungen wieder und sind keine Beurteilung der Ernährung.",
+    "screens": {
+      "eyebrow": "Bis ins Detail durchdacht",
+      "heading": "Passt zu dir.\nUnd zu deinem Tag.",
+      "body": "Sanft am Morgen. Dezent am Abend. Wähle deinen Look und behalte die kleinen Details auf iPhone, iPad und Apple Watch im Blick.",
+      "switcherLabel": "Erscheinungsbild der App ansehen",
+      "lightLabel": "Hell",
+      "darkLabel": "Dunkel",
+      "phoneCaption": "Ein bisschen Ruhe in deiner Hand.",
+      "tabletCaption": "Etwas mehr Raum für den Blick zurück.",
+      "phoneAlt": "Startbildschirm von Breastfeeding Tracker",
+      "tabletAlt": "Mahlzeitenverlauf auf dem iPad",
+      "note": "Gezeigt sind das helle und dunkle Erscheinungsbild. Alle Designs sind in der dauerhaften Freischaltung enthalten."
+    },
+    "founder": {
+      "eyebrow": "Von unserer Familie für deine",
+      "heading": "Entstanden in der\nNeugeborenenzeit.",
+      "body": "Wir haben die App in unserer eigenen ersten Zeit mit Baby entwickelt. Als Fläschchen und Abpumpen dazukamen, ist die App mit uns gewachsen.",
+      "closing": "Mit Sorgfalt von einem kleinen unabhängigen Studio entwickelt – für die vielen Wege, ein Baby zu ernähren.",
+      "linkLabel": "Unsere Geschichte lesen",
+      "linkUrl": "/de/still-tracker/blog/stillen-lief-anders-als-geplant/"
+    },
+    "finalCta": {
+      "eyebrow": "Eine kleine Hilfe, liebevoll durchdacht",
+      "heading": "Ein kleiner Teil\nvon eurem Alltag.",
+      "body": "Die nächste Mahlzeit. Ein bisschen entspannter.",
+      "label": "Im App Store laden",
+      "note": "Kostenlos laden · Ohne Abo · Ab iOS 26"
+    }
+  },
+  "finalCta": {
+    "eyebrow": "Eine Sache weniger im Kopf",
+    "heading": "Bereit für eure\nnächste Mahlzeit.",
+    "body": "Ein einfacher Ort für die kleinen Details. Damit du Zeit fürs Wesentliche hast.",
+    "label": "Im App Store laden",
+    "note": "Für iPhone und Apple Watch · Ab iOS 26"
+  },
+  "softwareApplication": {
+    "name": "Still-Tracker & Timer",
+    "applicationCategory": "MedicalApplication",
+    "applicationSubCategory": "Stilltracker",
+    "operatingSystem": "iOS 26.0 oder neuer; watchOS 26.0 oder neuer",
+    "description": "Erfasse Stillen, Fläschchen, Abpumpen und Kombimahlzeiten an einem Ort, mit einhändig bedienbaren Timern, Apple-Watch-Unterstützung und bearbeitbarem Verlauf. Kostenlos laden, mit optionaler dauerhafter Freischaltung per Einmalkauf.",
+    "featureList": [
+      "Einhändig bedienbarer Still-Timer mit Erfassung der linken und rechten Seite",
+      "Abpumpen erfassen",
+      "Fläschchen erfassen",
+      "Kombimahlzeiten erfassen",
+      "Apple-Watch-App mit Offline-Erfassung und späterer Synchronisierung",
+      "Home-Bildschirm-Widget, Live-Aktivitäten und Dynamic Island",
+      "Startzeit nachträglich anpassen und Mahlzeiten manuell eintragen",
+      "Ausgewählte Mahlzeiten als PDF exportieren",
+      "Private, informative Zusammenfassungen auf dem Gerät",
+      "Kein Konto und kein Abo erforderlich"
+    ],
+    "offer": {
+      "price": "0",
+      "priceCurrency": "EUR"
+    }
+  },
+  "locale": "de-DE",
+  "translationKey": "landing",
   "appStore": {
     "country": "de",
     "campaign": "site_de_tracker_landing",
     "currency": "EUR"
-  }
+  },
+  "languageLabel": "Sprache wählen",
+  "screenshotAssetPath": "/assets/breastfeeding-editorial/de-DE"
 }

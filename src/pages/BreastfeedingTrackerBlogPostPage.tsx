@@ -2,20 +2,8 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { BlogTableOfContents } from "../components/BlogTableOfContents";
 import { Reveal } from "../components/Reveal";
 import { Seo } from "../components/Seo";
-import { TrackerLanguageSelector } from "../components/TrackerLanguageSelector";
+import { useTrackerResources } from "../content/trackerResources";
 import { TrackedMarkdownContent } from "../components/TrackedMarkdownContent";
-import {
-  breastfeedingTrackerBlogPosts,
-  breastfeedingTrackerBlogPostsBySlug,
-  breastfeedingTrackerContent,
-  breastfeedingTrackerOgImage,
-  formatBreastfeedingArticleDate
-} from "../content/breastfeedingTracker";
-import {
-  BREASTFEEDING_TRACKER_BASE_PATH,
-  BREASTFEEDING_TRACKER_BLOG_BASE_PATH
-} from "../content/routes";
-import { breastfeedingBlogPageContent } from "../content/pages";
 import { breadcrumbJsonLd, organizationJsonLd } from "../seo/jsonld";
 import { canonicalPath, canonicalUrl } from "../seo/canonical";
 import { getSiteUrl } from "../seo/metadata";
@@ -23,14 +11,20 @@ import { siteConfig } from "../content/site";
 import { trackerHreflangAlternates } from "../content/trackerLocales";
 
 export function BreastfeedingTrackerBlogPostPage() {
+  const {
+    locale, ogLocale, robots, homePath, blogPath, disclosurePath,
+    content: breastfeedingTrackerContent, blogPage: breastfeedingBlogPageContent,
+    posts: breastfeedingTrackerBlogPosts, formatDate: formatBreastfeedingArticleDate
+  } = useTrackerResources();
+  const breastfeedingTrackerOgImage = breastfeedingTrackerContent.seo.ogImage;
   const params = useParams<{ slug: string }>();
-  const post = params.slug ? breastfeedingTrackerBlogPostsBySlug.get(params.slug) : undefined;
+  const post = params.slug ? breastfeedingTrackerBlogPosts.find((article) => article.slug === params.slug) : undefined;
 
   if (!post) {
-    return <Navigate to={canonicalPath(BREASTFEEDING_TRACKER_BLOG_BASE_PATH)} replace />;
+    return <Navigate to={canonicalPath(blogPath)} replace />;
   }
 
-  const path = `${BREASTFEEDING_TRACKER_BLOG_BASE_PATH}/${post.slug}`;
+  const path = `${blogPath}/${post.slug}`;
   const siteUrl = getSiteUrl();
   const template = breastfeedingBlogPageContent.articleTemplate;
   const relatedPosts = breastfeedingTrackerBlogPosts
@@ -41,15 +35,17 @@ export function BreastfeedingTrackerBlogPostPage() {
   return (
     <>
       <Seo
+        locale={locale} ogLocale={ogLocale}
         path={path}
         meta={{
+          robots,
           title: post.metaTitle || post.title,
           description: post.description,
           keywords: post.tags,
           ogImage: post.ogImage || breastfeedingTrackerOgImage,
           ...(post.ogImageAlt ? { ogImageAlt: post.ogImageAlt } : {})
         }}
-        alternates={trackerHreflangAlternates("blogPost", siteUrl, post.slug)}
+        alternates={trackerHreflangAlternates("blogPost", siteUrl, post.translationKey)}
         jsonLd={[
           organizationJsonLd(),
           {
@@ -73,7 +69,7 @@ export function BreastfeedingTrackerBlogPostPage() {
             about: {
               "@type": "SoftwareApplication",
               name: breastfeedingTrackerContent.softwareApplication.name,
-              url: canonicalUrl(BREASTFEEDING_TRACKER_BASE_PATH, siteUrl)
+              url: canonicalUrl(homePath, siteUrl)
             }
           },
           ...(post.faqItems.length
@@ -93,11 +89,11 @@ export function BreastfeedingTrackerBlogPostPage() {
             { name: siteConfig.companyName, url: siteUrl },
             {
               name: breastfeedingBlogPageContent.breadcrumbs.tracker,
-              url: canonicalUrl(BREASTFEEDING_TRACKER_BASE_PATH, siteUrl)
+              url: canonicalUrl(homePath, siteUrl)
             },
             {
               name: breastfeedingBlogPageContent.breadcrumbs.blog,
-              url: canonicalUrl(BREASTFEEDING_TRACKER_BLOG_BASE_PATH, siteUrl)
+              url: canonicalUrl(blogPath, siteUrl)
             },
             { name: post.title, url: canonicalUrl(path, siteUrl) }
           ])
@@ -107,8 +103,7 @@ export function BreastfeedingTrackerBlogPostPage() {
       <article className="feeding-blog-article">
         <div className="container">
           <Reveal className="feeding-blog-article-header">
-            <TrackerLanguageSelector kind="blogPost" translationKey={post.slug} />
-            <Link className="feeding-text-link" to={canonicalPath(BREASTFEEDING_TRACKER_BLOG_BASE_PATH)}>
+            <Link className="feeding-text-link" to={canonicalPath(blogPath)}>
               {template.backLabel}
             </Link>
             <p className="eyebrow">{post.category}</p>
@@ -149,7 +144,7 @@ export function BreastfeedingTrackerBlogPostPage() {
                 <p>{template.authorDescription}</p>
                 <p>
                   {template.disclaimerPrefix} {" "}
-                  <Link to={canonicalPath(`${BREASTFEEDING_TRACKER_BLOG_BASE_PATH}/editorial-disclosure`)}>
+                  <Link to={canonicalPath(disclosurePath)}>
                     {template.disclosureLinkLabel}
                   </Link>
                   .
@@ -163,7 +158,7 @@ export function BreastfeedingTrackerBlogPostPage() {
               {relatedPosts.map((related) => (
                 <Link
                   key={related.slug}
-                  to={canonicalPath(`${BREASTFEEDING_TRACKER_BLOG_BASE_PATH}/${related.slug}`)}
+                  to={canonicalPath(`${blogPath}/${related.slug}`)}
                 >
                   <span>{related.category}</span>
                   <strong>{related.title}</strong>

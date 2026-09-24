@@ -8,6 +8,7 @@ publishedAt: "2026-08-24"
 category: "Allaitement et alimentation du nourrisson"
 excerpt: "Un seul signe ne permet pas de poser un diagnostic : c’est l’ensemble de la situation d’alimentation qui compte."
 tags: "frein de langue, difficultes allaitement, accompagnement allaitement"
+ogImageAlt: "Un parent câline un nouveau-né endormi tandis que l’autre apporte un soutien discret avec un verre d’eau et un biberon dans une pièce chaleureuse."
 ---
 
 # Pas de diagnostic à partir d’une liste

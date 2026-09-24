@@ -45,14 +45,8 @@ await generateCmsContent({
 async function generateTrackerLocaleManifest() {
   const localesDir = join(rootDir, "content", "breastfeeding-tracker", "locales");
   const expectedLocales = ["de-DE", "fr-FR"];
-  const expectedBlogKeys = [
-    "baby-spit-up-vs-reflux",
-    "best-breastfeeding-apps",
-    "breastfeeding-didnt-go-to-plan",
-    "first-infant-formula-cheaper-brands",
-    "moving-from-breastfeeding-to-combi-feeding",
-    "three-signs-of-potential-tongue-tie"
-  ];
+  const expectedBlogKeys = (await readdir(join(rootDir, "content", "breastfeeding-tracker", "blog")))
+    .filter((file) => file.endsWith(".md")).map((file) => basename(file, ".md")).sort();
   const expectedGuideKeys = [
     "breastfeeding-bottle-pumping-tracker",
     "breastfeeding-timer-iphone",
@@ -113,6 +107,7 @@ async function generateTrackerLocaleManifest() {
     assert(uniquePaths.size === localePaths.length, `${locale} has colliding localized routes.`);
 
     const sourceContent = await readLocaleSourceContent({
+      manifest,
       locale,
       localesDir,
       expectedBlogKeys,
@@ -133,7 +128,7 @@ async function generateTrackerLocaleManifest() {
   return output;
 }
 
-async function readLocaleSourceContent({ locale, localesDir, expectedBlogKeys, expectedGuideKeys }) {
+async function readLocaleSourceContent({ manifest, locale, localesDir, expectedBlogKeys, expectedGuideKeys }) {
   const localeDir = join(localesDir, locale);
   const fixed = Object.fromEntries(
     await Promise.all(
@@ -147,11 +142,63 @@ async function readLocaleSourceContent({ locale, localesDir, expectedBlogKeys, e
       await Promise.all(
         keys.map(async (key) => {
           const { frontmatter, body } = parseFrontmatter(await readFile(join(localeDir, collection, `${key}.md`), "utf8"));
-          return [key, { ...frontmatter, html: renderMarkdown(body) }];
+          const english = parseFrontmatter(await readFile(join(rootDir, "content", "breastfeeding-tracker", collection, `${key}.md`), "utf8")).frontmatter;
+          const slug = (collection === "blog" ? manifest.routes.blogPosts : manifest.routes.guides)[key];
+          const localizedBody = localizeTrackerMarkdown(body, manifest);
+          assert(frontmatter.title && frontmatter.description && frontmatter.publishedAt, `${locale}/${key} needs article metadata.`);
+          return [key, {
+            translationKey: key,
+            slug,
+            title: frontmatter.title,
+            metaTitle: frontmatter.metaTitle || null,
+            description: frontmatter.description,
+            publishedAt: frontmatter.publishedAt,
+            updatedAt: frontmatter.updatedAt || null,
+            excerpt: frontmatter.excerpt || frontmatter.description,
+            tags: parseTags(frontmatter.tags),
+            category: frontmatter.category || null,
+            readingMinutes: Math.max(1, Math.ceil(stripMarkdownFormatting(body).split(/\s+/).length / 220)),
+            tableOfContents: extractTableOfContents(localizedBody),
+            published: true,
+            draft: !Object.values(manifest.release).every(Boolean),
+            ogImage: frontmatter.ogImage || english.ogImage || fixed.landing.seo.ogImage,
+            ogImageAlt: frontmatter.ogImageAlt || null,
+            faqItems: extractFaqItems(localizedBody),
+            showDefaultCta: frontmatter.showDefaultCta === undefined ? true : parseBoolean(frontmatter.showDefaultCta),
+            html: renderMarkdown(localizedBody)
+          }];
         })
       )
     );
   return { fixed, blog: await readArticles("blog", expectedBlogKeys), guides: await readArticles("guides", expectedGuideKeys) };
+}
+
+function localizeTrackerMarkdown(body, manifest) {
+  const paths = new Map([
+    ["/breastfeeding-tracker", manifest.prefix],
+    ["/breastfeeding-tracker/support", `${manifest.prefix}/${manifest.routes.support}`],
+    ["/breastfeeding-tracker/blog", `${manifest.prefix}/${manifest.routes.blog}`],
+    ["/breastfeeding-tracker/blog/editorial-disclosure", `${manifest.prefix}/${manifest.routes.editorialDisclosure}`],
+    ...Object.entries(manifest.routes.guides).map(([key, slug]) => [`/breastfeeding-tracker/support/${key}`, `${manifest.prefix}/${manifest.routes.support}/${slug}`]),
+    ...Object.entries(manifest.routes.blogPosts).map(([key, slug]) => [`/breastfeeding-tracker/blog/${key}`, `${manifest.prefix}/${manifest.routes.blog}/${slug}`])
+  ]);
+  return body.replace(/\]\(([^)]+)\)/g, (match, href) => {
+    if (href.startsWith("/")) {
+      const [path, suffix = ""] = href.split(/(?=[?#])/);
+      const localized = paths.get(path.replace(/\/+$/, ""));
+      return localized ? `](${localized}/${suffix})` : match;
+    }
+    try {
+      const url = new URL(href);
+      if (url.hostname === "apps.apple.com" && /\/id6754637800(?:\/|$)/.test(url.pathname)) {
+        url.pathname = /^\/[a-z]{2}\//.test(url.pathname)
+          ? url.pathname.replace(/^\/[a-z]{2}\//, `/${manifest.appStoreCountry}/`)
+          : `/${manifest.appStoreCountry}${url.pathname}`;
+        return `](${url.toString()})`;
+      }
+    } catch { /* Relative anchors and other non-URL targets stay unchanged. */ }
+    return match;
+  });
 }
 
 function validateLocaleSlugMap(map, expectedKeys, label) {

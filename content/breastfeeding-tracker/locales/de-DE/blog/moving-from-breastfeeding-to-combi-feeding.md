@@ -8,6 +8,7 @@ publishedAt: "2026-08-04"
 category: "Persönliche Geschichten"
 excerpt: "Abpumpen gab uns eine weitere Möglichkeit zu füttern, ohne dass Stillen sofort enden musste."
 tags: "kombifütterung, abpumpen, stillen und flasche"
+ogImageAlt: "Ein Elternteil gibt dem Neugeborenen ein Fläschchen, während der andere sich in der Nähe ausruht. Auf einem Beistelltisch steht Zubehör zum Abpumpen."
 ---
 
 # Kein sauberer Wechsel
@@ -20,4 +21,4 @@ Abgepumpte Milch bedeutete für uns, dass auch der andere Elternteil eine Mahlze
 
 # Keine allgemeine Regel
 
-Das ist eine persönliche Erfahrung, keine Empfehlung für jede Familie. Wenn Sie bei Milchmenge, Schmerzen oder Gewicht Sorgen haben, holen Sie individuelle Unterstützung. Die deutsche Fassung braucht vor Veröffentlichung eine sprachliche und fachliche Prüfung.
+Das ist eine persönliche Erfahrung, keine Empfehlung für jede Familie. Wenn Sie bei Milchmenge, Schmerzen oder Gewicht Sorgen haben, holen Sie individuelle Unterstützung.

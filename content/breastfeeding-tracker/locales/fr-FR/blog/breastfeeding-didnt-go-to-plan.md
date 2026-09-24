@@ -8,6 +8,7 @@ publishedAt: "2026-07-31"
 category: "Récits personnels"
 excerpt: "Notre histoire d’alimentation a changé en quelques jours. Nous avons dû lâcher le scénario imaginé."
 tags: "allaitement difficile, alimentation mixte, histoire allaitement"
+ogImageAlt: "Deux parents se soutiennent en prenant soin de leur nouveau-né et en le nourrissant."
 ---
 
 # Le scénario avant la naissance
@@ -20,4 +21,4 @@ Pour nous, allaitement, lait tiré, biberons et, lorsque nécessaire, lait infan
 
 # Demander de l’aide fait partie du chemin
 
-Une douleur importante pendant l’allaitement ou une inquiétude au sujet des prises alimentaires mérite un accompagnement individualisé. Une sage-femme, une consultante en lactation ou un professionnel de santé peut vous aider. Cette version française doit être relue par une personne native avant publication.
+Une douleur importante pendant l’allaitement ou une inquiétude au sujet des prises alimentaires mérite un accompagnement individualisé. Une sage-femme, une consultante en lactation ou un professionnel de santé peut vous aider.

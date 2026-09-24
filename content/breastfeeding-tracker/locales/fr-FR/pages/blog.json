@@ -1,11 +1,50 @@
 {
-  "locale": "fr-FR",
-  "translationKey": "blog",
+  "published": true,
+  "route": "/fr/suivi-allaitement/blog",
   "seo": {
-    "title": "Blog allaitement, tire-lait et alimentation mixte",
-    "description": "Récits personnels et informations mises en contexte avec soin sur l’allaitement, le tire-lait, les biberons et les premiers mois avec bébé."
+    "title": "Blog allaitement, tire-lait & alimentation mixte",
+    "description": "Des récits personnels, des expériences pratiques et des articles soigneusement sourcés sur l’allaitement, le tire-lait, l’alimentation mixte et les applications de suivi.",
+    "keywords": [
+      "blog allaitement",
+      "témoignage alimentation mixte",
+      "tirer son lait",
+      "applications repas bébé"
+    ],
+    "ogImage": "/assets/breastfeeding-editorial/motherhood-1200.webp"
   },
-  "heading": "Des textes honnêtes pour les journées d’alimentation qui ne suivent pas le scénario prévu.",
-  "intro": "Des expériences vécues, des repères pratiques et des informations clairement identifiées comme telles, sans pression sur la façon dont une famille nourrit son bébé.",
-  "labels": { "all": "Tous", "read": "Lire", "minutes": "min de lecture" }
+  "collection": {
+    "name": "Blog de Suivi d’allaitement",
+    "description": "Des récits personnels, des expériences pratiques et des articles soigneusement sourcés pour les jours où les repas ne se passent pas comme prévu."
+  },
+  "breadcrumbs": {
+    "tracker": "Suivi d’allaitement",
+    "blog": "Blog"
+  },
+  "hero": {
+    "backLabel": "Retour à Suivi d’allaitement",
+    "eyebrow": "D’un parent à l’autre",
+    "heading": "Trouver ses repères, ensemble.",
+    "body": "Des récits sincères, des expériences pratiques et des lectures soigneusement sourcées pour les jours où rien ne se passe comme prévu."
+  },
+  "disclosureLabel": "Lire notre politique éditoriale et nos mentions d’affiliation",
+  "disclosurePrefix": "Scruffy Hipster développe Breastfeeding Tracker & Timer. Nos articles distinguent expériences personnelles, informations sourcées et comparatifs de produits. Certains peuvent contenir des liens commerciaux.",
+  "allFilterLabel": "Tous",
+  "filterAriaLabel": "Filtrer les articles du blog par catégorie",
+  "recentHeading": "Articles récents",
+  "metaSeparator": "·",
+  "readingTimeSuffix": "min de lecture",
+  "readLabel": "Lire l’histoire →",
+  "articleTemplate": {
+    "backLabel": "Retour au blog",
+    "tocHeading": "Sur cette page",
+    "relatedHeading": "Pour continuer la lecture",
+    "updatedLabel": "Mis à jour le",
+    "aboutEyebrow": "À propos de l’auteur",
+    "authorName": "Tom Murray",
+    "authorDescription": "Des textes issus de notre expérience, vérifiés à l’aide des sources citées dans chaque article.",
+    "disclaimerPrefix": "Il s’agit d’informations générales et d’expériences personnelles, et non de conseils médicaux. Consultez notre",
+    "disclosureLinkLabel": "politique éditoriale et nos mentions d’affiliation"
+  },
+  "locale": "fr-FR",
+  "translationKey": "blog"
 }

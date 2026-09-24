@@ -1,30 +1,233 @@
 {
-  "locale": "fr-FR",
-  "translationKey": "landing",
   "seo": {
-    "title": "Suivi d’allaitement, biberons et tire-lait pour iPhone",
-    "description": "Suivez allaitement, biberons, tirages et alimentation mixte dans une application iPhone simple, avec minuteurs Apple Watch et historique modifiable."
+    "title": "Suivi d’allaitement & minuteur | La maternité, pensée avec soin",
+    "description": "Un suivi des repas de bébé pensé avec soin pour iPhone et Apple Watch. Des minuteurs simples et de petites attentions au quotidien. Téléchargement gratuit.",
+    "keywords": [
+      "suivi allaitement",
+      "minuteur allaitement",
+      "application allaitement",
+      "suivi biberons",
+      "suivi tire-lait",
+      "allaitement Apple Watch",
+      "journal des tétées"
+    ],
+    "ogImage": "/assets/breastfeeding-editorial/motherhood-1200.webp",
+    "ogImageAlt": "Une mère en chemise bleue tient son nouveau-né dans une maison baignée de soleil."
   },
   "hero": {
-    "eyebrow": "suivi d’allaitement pour iPhone et Apple Watch",
-    "heading": "Un suivi simple pour l’allaitement, les biberons, le tire-lait et l’alimentation mixte.",
-    "body": "Les premières semaines avec un bébé se ressemblent parfois toutes. Le suivi doit alléger votre charge mentale, pas devenir une tâche de plus.",
-    "primaryCta": "Télécharger dans l’App Store",
-    "secondaryCta": "Voir comment cela fonctionne"
+    "eyebrow": "Suivi d’allaitement & minuteur",
+    "heading": "La maternité,",
+    "headingEmphasis": "pensée avec soin.",
+    "body": "Un suivi des repas tout simplement agréable. Conçu pour votre quotidien et les petits instants qui le rendent unique.",
+    "primaryCta": "Télécharger sur l’App Store",
+    "secondaryCta": "Découvrir l’application",
+    "storeNote": "Téléchargement gratuit. Sans abonnement.",
+    "imageAlt": "Écran d’accueil de Breastfeeding Tracker avec le dernier repas et les boutons gauche et droite accessibles en un geste.",
+    "caption": "Pour votre vie de maman. Pensée pour vous."
   },
-  "sections": [
+  "howItWorks": {
+    "eyebrow": "Un peu de place pour vous",
+    "heading": "Une chose de moins\nà retenir.",
+    "body": "Le dernier repas. Le dernier côté. Ces petits détails sont gardés en mémoire, tout simplement. Pour que vous puissiez être là, avec votre bébé."
+  },
+  "careMethodsFeature": {
+    "link": {
+      "label": "Découvrir les quatre modes de suivi",
+      "url": "/fr/suivi-allaitement/aide/suivi-allaitement-biberons-tire-lait/"
+    }
+  },
+  "historyFeature": {
+    "eyebrow": "Un peu de recul, en douceur",
+    "heading": "Trouvez votre rythme.\nSans la pression.",
+    "paragraphs": [
+      "Prendre un peu de recul aide parfois à y voir plus clair. Retrouvez les habitudes qui se dessinent dans vos repas enregistrés, grâce à des chronologies simples et des résumés soignés.",
+      "Aucun score à atteindre. Simplement votre histoire, à retrouver quand vous en avez envie."
+    ],
+    "cta": "Découvrir le déblocage à vie",
+    "url": "#questions",
+    "imageAlts": [
+      "Une semaine de repas enregistrés dans une chronologie simple, en apparence claire.",
+      "La vue des tendances en apparence claire, avec une journée type et des résumés sur sept jours des tétées, biberons et tirages enregistrés."
+    ]
+  },
+  "faqSection": {
+    "eyebrow": "Quelques bonnes questions",
+    "heading": "Quelques bonnes\nquestions.",
+    "body": "Tout ce que vous aimeriez encore savoir."
+  },
+  "faqs": [
     {
-      "heading": "Tout au même endroit",
-      "body": "Conservez allaitement, biberons, tirages et repas mixtes dans un seul historique clair. Vous pouvez compléter un oubli lorsque vous en avez le temps."
+      "question": "Breastfeeding Tracker est-elle gratuite ?",
+      "answer": "L’application est gratuite à télécharger et à utiliser pour commencer. Un déblocage à vie facultatif, par achat unique, ajoute l’historique complet, les filtres, les tendances, l’export PDF, tous les thèmes et une utilisation sans publicité. Il n’y a pas d’abonnement."
     },
     {
-      "heading": "Privé, sans compte",
-      "body": "Vous pouvez commencer sans créer de compte. L’application organise uniquement les informations que vous saisissez et ne remplace pas un avis médical."
+      "question": "Puis-je suivre les tétées, les biberons et les tirages ?",
+      "answer": "Oui. Enregistrez les tétées, les biberons et les tirages dans la même chronologie. Les repas mixtes regroupent une tétée et un complément au biberon dans une seule entrée. Les biberons peuvent contenir du lait maternel exprimé, du lait infantile ou les deux."
+    },
+    {
+      "question": "Et si j’oublie de lancer le minuteur ?",
+      "answer": "Vous pouvez reculer l’heure de début enregistrée pendant que le minuteur tourne, ou ajouter un repas terminé plus tard. Vous pouvez aussi modifier ou supprimer des entrées dans l’historique."
+    },
+    {
+      "question": "L’Apple Watch fonctionne-t-elle sans mon iPhone à proximité ?",
+      "answer": "Oui. Lancez et arrêtez les minuteurs de tétée ou de tirage depuis votre poignet. Les séances terminées sont synchronisées avec votre iPhone lorsque les appareils se reconnectent."
+    },
+    {
+      "question": "Dois-je créer un compte ?",
+      "answer": "Aucun compte dans l’application n’est nécessaire. Ouvrez-la et commencez le suivi."
+    },
+    {
+      "question": "Puis-je partager mon historique des repas ?",
+      "answer": "Avec le déblocage à vie, exportez les repas sélectionnés au format PDF, puis choisissez où enregistrer ou partager le fichier. Le PDF reprend les informations que vous avez saisies et peut être utile pour un échange avec votre sage-femme ou une professionnelle de l’allaitement."
+    },
+    {
+      "question": "L’application indique-t-elle si mon bébé reçoit assez de lait ?",
+      "answer": "Non. L’application enregistre vos saisies et propose des résumés informatifs. Elle ne mesure pas la quantité de lait prise au sein, n’évalue pas la production de lait et ne donne pas de conseil médical. Si vous avez des inquiétudes, parlez-en à votre sage-femme, à votre médecin ou à une professionnelle de l’allaitement."
     }
   ],
+  "navigation": {
+    "brand": "Suivi d’allaitement",
+    "ariaLabel": "Navigation de Suivi d’allaitement",
+    "skipLabel": "Aller au contenu",
+    "downloadLabel": "Télécharger",
+    "items": [
+      {
+        "label": "L’application",
+        "url": "/fr/suivi-allaitement/"
+      },
+      {
+        "label": "Aide & assistance",
+        "url": "/fr/suivi-allaitement/aide/"
+      },
+      {
+        "label": "Blog",
+        "url": "/fr/suivi-allaitement/blog/"
+      }
+    ]
+  },
+  "everyday": {
+    "eyebrow": "Pensée pour la vie avec un nouveau-né",
+    "heading": "Tout simplement douce.\nMême à trois heures du matin.",
+    "body": "Une main libre. Encore à moitié endormie. Le téléphone un peu trop loin. De petites attentions pour les moments qui ne se prévoient pas.",
+    "items": [
+      {
+        "title": "Un geste. Un regard. Et vous revoilà ensemble.",
+        "body": "Lancez le suivi en un geste. Les activités en direct et les widgets gardent les détails du repas à portée de vue, sans ouvrir l’application.",
+        "icon": "glance"
+      },
+      {
+        "title": "Toujours à portée de main.",
+        "body": "Lancez et arrêtez les minuteurs depuis l’Apple Watch, même hors ligne. Vos repas sont synchronisés lorsque les appareils se reconnectent.",
+        "icon": "watch"
+      },
+      {
+        "title": "De la place pour la vraie vie.",
+        "body": "Vous avez manqué le début ? Ajustez l’heure ou ajoutez le repas plus tard. Votre historique peut attendre que vous ayez un moment.",
+        "icon": "timer"
+      }
+    ]
+  },
+  "footer": {
+    "body": "Créée par un petit studio indépendant, au rythme de la vie de famille.",
+    "studioLabel": "Découvrir ScruffyHipster (en anglais)",
+    "navigationLabel": "En savoir plus sur Suivi d’allaitement",
+    "copyright": "Breastfeeding Tracker & Timer. Développée avec soin par ScruffyHipster.",
+    "links": [
+      {
+        "label": "Aide & assistance",
+        "url": "/fr/suivi-allaitement/aide/"
+      },
+      {
+        "label": "Blog",
+        "url": "/fr/suivi-allaitement/blog/"
+      },
+      {
+        "label": "Confidentialité (en anglais)",
+        "url": "/privacy/breast-feeding-tracker/"
+      },
+      {
+        "label": "Politique éditoriale",
+        "url": "/fr/suivi-allaitement/blog/mentions-editoriales/"
+      }
+    ]
+  },
+  "editorial": {
+    "image": {
+      "src": "/assets/breastfeeding-editorial/motherhood-1200.webp",
+      "smallSrc": "/assets/breastfeeding-editorial/motherhood-720.webp",
+      "alt": "Une mère en chemise bleue tient son nouveau-né dans une maison baignée de soleil."
+    },
+    "platforms": "Pour iPhone, iPad & Apple Watch",
+    "benefitNote": "Tétées, biberons, tirages. Chaque repas fait partie de votre histoire.",
+    "timerAlt": "Le minuteur d’allaitement en cours, dans l’apparence sombre de l’application.",
+    "historyAlt": "Les dernières tétées, les biberons et les tirages réunis dans un même historique.",
+    "insightsNote": "Les tendances et l’historique complet sont inclus dans le déblocage à vie par achat unique. Les résumés reflètent vos saisies et ne constituent pas une évaluation de l’alimentation.",
+    "screens": {
+      "eyebrow": "Chaque détail compte",
+      "heading": "À votre image.\nAu rythme de vos journées.",
+      "body": "Douce le matin. Discrète le soir. Choisissez votre style, puis retrouvez les petits détails sur iPhone, iPad et Apple Watch.",
+      "switcherLabel": "Aperçu de l’apparence de l’application",
+      "lightLabel": "Claire",
+      "darkLabel": "Sombre",
+      "phoneCaption": "Un peu de calme au creux de la main.",
+      "tabletCaption": "Un peu plus de place pour regarder en arrière.",
+      "phoneAlt": "Écran d’accueil de Breastfeeding Tracker",
+      "tabletAlt": "Historique des repas sur iPad",
+      "note": "Aperçus des apparences claire et sombre. Tous les thèmes sont inclus dans le déblocage à vie."
+    },
+    "founder": {
+      "eyebrow": "De notre famille à la vôtre",
+      "heading": "Née dans les\npremiers jours.",
+      "body": "Nous avons créé l’application pendant nos propres premiers mois avec bébé. Lorsque les biberons et les tirages se sont ajoutés à notre quotidien, elle a évolué avec nous.",
+      "closing": "Développée avec soin par un petit studio indépendant, pour toutes les façons dont l’alimentation de bébé peut évoluer.",
+      "linkLabel": "Lire notre histoire",
+      "linkUrl": "/fr/suivi-allaitement/blog/allaitement-ne-sest-pas-passe-comme-prevu/"
+    },
+    "finalCta": {
+      "eyebrow": "Une petite attention, pensée avec soin",
+      "heading": "Une place dans\nvotre quotidien.",
+      "body": "Le prochain repas. Avec un peu plus de sérénité.",
+      "label": "Télécharger sur l’App Store",
+      "note": "Téléchargement gratuit · Sans abonnement · iOS 26 ou version ultérieure"
+    }
+  },
+  "finalCta": {
+    "eyebrow": "Une chose de moins à garder en tête",
+    "heading": "Là pour votre\nprochain repas.",
+    "body": "Un endroit simple pour les petits détails, pendant que vous vivez les grands moments.",
+    "label": "Télécharger sur l’App Store",
+    "note": "Pour iPhone et Apple Watch · iOS 26 ou version ultérieure"
+  },
+  "softwareApplication": {
+    "name": "Suivi d’allaitement & minuteur",
+    "applicationCategory": "MedicalApplication",
+    "applicationSubCategory": "Suivi d’allaitement",
+    "operatingSystem": "iOS 26.0 ou version ultérieure ; watchOS 26.0 ou version ultérieure",
+    "description": "Suivez les tétées, les biberons, les tirages et les repas mixtes au même endroit, avec des minuteurs utilisables d’une main, une app Apple Watch et un historique modifiable. Téléchargement gratuit avec déblocage à vie facultatif par achat unique.",
+    "featureList": [
+      "Minuteur d’allaitement utilisable d’une main avec suivi du côté gauche et droit",
+      "Suivi des tirages",
+      "Suivi des biberons",
+      "Suivi des repas mixtes",
+      "Application Apple Watch avec suivi hors ligne et synchronisation ultérieure",
+      "Widget d’écran d’accueil, activités en direct et Dynamic Island",
+      "Ajustement de l’heure de début et ajout manuel de repas",
+      "Export PDF des repas sélectionnés",
+      "Résumés informatifs et privés sur l’appareil",
+      "Aucun compte ni abonnement nécessaire"
+    ],
+    "offer": {
+      "price": "0",
+      "priceCurrency": "EUR"
+    }
+  },
+  "locale": "fr-FR",
+  "translationKey": "landing",
   "appStore": {
     "country": "fr",
     "campaign": "site_fr_tracker_landing",
     "currency": "EUR"
-  }
+  },
+  "languageLabel": "Choisir la langue",
+  "screenshotAssetPath": "/assets/breastfeeding-editorial/fr-FR"
 }

@@ -1,13 +1,75 @@
 {
+  "published": true,
+  "route": "/fr/suivi-allaitement/blog/mentions-editoriales",
+  "seo": {
+    "title": "Blog : politique éditoriale & mentions d’affiliation",
+    "description": "Comment Scruffy Hipster recherche ses articles, distingue les expériences vécues des informations générales, traite les liens d’affiliation et corrige les erreurs.",
+    "keywords": [
+      "transparence blog allaitement",
+      "politique éditoriale",
+      "mentions affiliation"
+    ],
+    "ogImage": "/assets/breastfeeding-editorial/motherhood-1200.webp"
+  },
+  "breadcrumbs": {
+    "tracker": "Suivi d’allaitement",
+    "blog": "Blog",
+    "disclosure": "Politique éditoriale & mentions d’affiliation"
+  },
+  "hero": {
+    "backLabel": "Retour au blog",
+    "eyebrow": "Le blog",
+    "heading": "En toute transparence sur notre blog.",
+    "body": "Ce que nous écrivons, comment nous faisons nos recherches, la place de notre application et ce que vous pouvez attendre de nous."
+  },
+  "sections": [
+    {
+      "heading": "L’essentiel",
+      "paragraphs": [
+        "Ce blog associe l’expérience d’une famille à des informations soigneusement attribuées à des sources telles que le NHS, le service de santé britannique. Les récits personnels ne sont pas des conseils universels. Les articles de santé ne remplacent pas l’accompagnement d’une personne qui vous connaît, vous et votre bébé.",
+        "Scruffy Hipster développe Breastfeeding Tracker & Timer. Nous le précisons lorsqu’un article compare ou recommande des applications de suivi."
+      ]
+    },
+    {
+      "heading": "Indépendance éditoriale",
+      "paragraphs": [
+        "Aucune marque extérieure ne décide de ce que nous publions. Les comparatifs répondent d’abord à la question du lecteur, y compris en recommandant un autre produit lorsqu’il est mieux adapté.",
+        "Notre application n’obtient pas un meilleur classement simplement parce que nous la développons. Nous vérifions les affirmations sur les produits dans la documentation actuelle des éditeurs et datons les informations susceptibles de changer."
+      ]
+    },
+    {
+      "heading": "Liens d’affiliation",
+      "paragraphs": [
+        "Le blog n’utilise actuellement aucun lien d’affiliation. Si cela change, les articles concernés le préciseront dès le début. Cette page expliquera alors le programme et le fonctionnement des commissions.",
+        "Les revenus d’affiliation ne modifieraient pas nos recommandations. Les placements rémunérés seraient clairement signalés et ne seraient pas présentés comme des articles indépendants."
+      ]
+    },
+    {
+      "heading": "Comment nous recherchons nos articles",
+      "paragraphs": [
+        "Dans la mesure du possible, les informations sur la santé et l’alimentation sont attribuées à une source fiable et actuelle, avec un lien. Nous préférons renvoyer vers les recommandations à jour plutôt que recopier des chiffres susceptibles de changer.",
+        "Les articles ne font pas l’objet d’une relecture médicale formelle. Si les repas sont douloureux, si la production de lait ou le poids vous inquiète, ou si vous avez des préoccupations pour votre bébé, contactez un professionnel de santé ou de l’accompagnement à l’allaitement."
+      ]
+    },
+    {
+      "heading": "Récits personnels",
+      "paragraphs": [
+        "Les articles à la première personne racontent ce qui s’est passé dans notre famille. Ils sont clairement présentés comme des expériences personnelles, et non comme un modèle à suivre pour nourrir un autre bébé.",
+        "Nous conservons les incertitudes et les compromis de ces récits, sans transformer un résultat individuel en règle générale."
+      ]
+    },
+    {
+      "heading": "Corrections et mises à jour",
+      "paragraphs": [
+        "Les recommandations, les produits et les conseils évoluent. Les mises à jour importantes reçoivent une nouvelle date, et les corrections significatives sont expliquées clairement.",
+        "Si quelque chose vous semble erroné ou dépassé, écrivez-nous. Nous vérifierons la source et apporterons une correction si nécessaire."
+      ]
+    }
+  ],
+  "contactHeading": "Une question ou une correction ?",
+  "contactBody": "Vos questions éditoriales et vos remarques sur les faits sont les bienvenues.",
+  "contactLabel": "Écrire à Scruffy Hipster",
   "locale": "fr-FR",
   "translationKey": "editorialDisclosure",
-  "seo": {
-    "title": "Mentions éditoriales et transparence",
-    "description": "Comment Scruffy Hipster recherche ses contenus sur l’allaitement, distingue les expériences vécues et présente ses propres produits."
-  },
-  "heading": "En toute transparence sur le fonctionnement de ce blog.",
-  "sections": [
-    "Ce blog mêle l’expérience d’une famille à des informations dont les sources sont clairement liées. Il ne remplace pas un avis médical et n’est pas relu par un professionnel de santé.",
-    "Scruffy Hipster développe Breastfeeding Tracker & Timer. Nous l’indiquons clairement dans les comparaisons et recommandations. Les produits, tarifs et disponibilités peuvent évoluer et sont vérifiés localement avant publication."
-  ]
+  "contactSubject": "Remarque éditoriale sur le blog"
 }

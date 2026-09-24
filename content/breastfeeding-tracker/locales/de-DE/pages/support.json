@@ -1,11 +1,78 @@
 {
+  "published": true,
+  "route": "/de/still-tracker/hilfe",
+  "seo": {
+    "title": "Still-Tracker: Hilfe & Support",
+    "description": "Hilfe für Still-Tracker auf iPhone und Apple Watch: Timer, vergessene Mahlzeiten, Datenschutz, Verlauf und PDF-Export.",
+    "keywords": [
+      "Stilltracker Hilfe",
+      "Stilltracker Support",
+      "Stilltimer Apple Watch"
+    ],
+    "ogImage": "/assets/breastfeeding-editorial/motherhood-1200.webp"
+  },
+  "collection": {
+    "name": "Still-Tracker: Hilfe & Support",
+    "description": "Praktische Hilfe beim Erfassen, Korrigieren, Nachsehen und Exportieren von Mahlzeiten. Ohne Zeitpläne oder medizinische Empfehlungen."
+  },
+  "breadcrumbs": {
+    "tracker": "Still-Tracker",
+    "support": "Hilfe & Support"
+  },
+  "hero": {
+    "backLabel": "Zurück zu Still-Tracker",
+    "eyebrow": "Ein bisschen Hilfe macht vieles leichter",
+    "heading": "Wie können wir helfen?",
+    "body": "Vom ersten Timer bis zur vergessenen Mahlzeit: Hier findest du die Hilfe, die du für deinen Alltag mit der App brauchst."
+  },
+  "topicsHeading": "Wobei brauchst du Hilfe?",
+  "topicIcon": "↗",
+  "topicLinkLabel": "Hilfeartikel lesen →",
+  "topics": [
+    {
+      "label": "Stillen, Fläschchen & Abpumpen",
+      "body": "Halte Stillen, Fläschchen, Abpumpen und Kombimahlzeiten zusammen fest – einschließlich einer Bilanz der abgepumpten Milch.",
+      "slug": "stillen-flasche-abpumpen-tracker"
+    },
+    {
+      "label": "Erste Schritte",
+      "body": "Starte einen Still-Timer, erfasse die Seite und finde die letzte Mahlzeit, ohne ein Formular auszufüllen.",
+      "slug": "still-timer-iphone"
+    },
+    {
+      "label": "Apple Watch",
+      "body": "Starte und stoppe am Handgelenk, erfasse auch offline und synchronisiere abgeschlossene Mahlzeiten mit dem iPhone.",
+      "slug": "still-tracker-apple-watch"
+    },
+    {
+      "label": "Verlauf & Korrekturen",
+      "body": "Korrigiere einen verspäteten Timer oder trage eine Mahlzeit nach, wenn der Alltag dazwischenkommt.",
+      "slug": "fehlende-mahlzeiten-nachtragen"
+    },
+    {
+      "label": "Datenschutz & Export",
+      "body": "Erfahre mehr über den Datenschutz und erstelle eine PDF-Datei aus ausgewählten Einträgen.",
+      "slug": "privater-still-tracker"
+    }
+  ],
+  "articlesHeading": "Alle Hilfeartikel",
+  "contact": {
+    "eyebrow": "Noch Fragen?",
+    "heading": "Sprich mit uns.",
+    "body": "Schreib uns, was passiert, welches Gerät du nutzt und was du erwartet hast. Wir lesen jede Support-E-Mail.",
+    "label": "Support per E-Mail kontaktieren",
+    "subject": "Still-Tracker: Support"
+  },
   "locale": "de-DE",
   "translationKey": "support",
-  "seo": {
-    "title": "Hilfe für den Stilltracker",
-    "description": "Hilfe zur Nutzung von Breastfeeding Tracker auf iPhone und Apple Watch: Timer, Verlauf, Korrekturen, Datenschutz und PDF-Export."
-  },
-  "heading": "Wobei können wir helfen?",
-  "intro": "Praktische Hilfe zum Erfassen von Mahlzeiten, Korrigieren des Verlaufs und Nutzen der App auf iPhone und Apple Watch.",
-  "contact": "Support kontaktieren"
+  "articleTemplate": {
+    "backLabel": "Zurück zu Hilfe & Support",
+    "eyebrow": "Hilfeartikel",
+    "defaultCta": {
+      "eyebrow": "Praktische Hilfe für jeden Tag",
+      "heading": "Bereit für die nächste Mahlzeit.",
+      "label": "Im App Store laden"
+    },
+    "relatedHeading": "Weitere Hilfe"
+  }
 }

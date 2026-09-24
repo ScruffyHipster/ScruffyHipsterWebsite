@@ -2,16 +2,24 @@
 locale: "fr-FR"
 translationKey: "private-breastfeeding-tracker"
 title: "Un suivi d’allaitement privé, sans compte"
-description: "Utilisez l’application comme aide-mémoire personnelle sans créer un profil publicitaire."
+description: "Commencez sans compte dans l’application et découvrez les points à vérifier avant de partager vos relevés."
 publishedAt: "2026-07-27"
 excerpt: "Commencez sans compte et gardez vos propres relevés à portée de main."
 tags: "suivi allaitement prive confidentialite"
 ---
 
-# Commencer sans compte
+# Commencer sans compte dans l’application
 
-L’application est conçue pour vous permettre de commencer rapidement vos propres relevés. Avant toute publication, consultez la politique de confidentialité localisée définitive : elle seule décrira le traitement des données applicable.
+Vous pouvez ouvrir l’application et commencer le suivi sans créer de compte. Vos entrées vous aident à retrouver les repas et le dernier côté utilisé.
 
-# Votre relevé reste un relevé
+# Partager en connaissance de cause
 
-Le suivi aide à mémoriser les données saisies. Il ne produit pas de diagnostic médical et ne remplace pas l’avis d’un professionnel.
+Avec le déblocage à vie, vous pouvez exporter des entrées sélectionnées au format PDF. Avant de partager le fichier, vérifiez les repas inclus et le destinataire. Une fois le fichier hors de l’application, sa confidentialité dépend du lieu de stockage et des personnes auxquelles vous l’envoyez.
+
+La [politique de confidentialité (en anglais)](/privacy/breast-feeding-tracker/) décrit le traitement des données, notamment les modalités de stockage et de synchronisation.
+
+# Un aide-mémoire
+
+Les relevés et résumés reflètent vos saisies. Ils n’évaluent ni la quantité de lait reçue au sein ni la santé de votre bébé.
+
+[En savoir plus sur l’export PDF](/breastfeeding-tracker/support/export-breastfeeding-log-pdf/).

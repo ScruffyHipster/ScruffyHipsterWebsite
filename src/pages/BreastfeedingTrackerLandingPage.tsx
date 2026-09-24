@@ -1,40 +1,30 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { BreastfeedingTrackerAppStoreLink } from "../components/AppStoreLink";
 import { Seo } from "../components/Seo";
-import { TrackerLanguageSelector } from "../components/TrackerLanguageSelector";
 import {
   breastfeedingTrackerApp as app,
-  breastfeedingTrackerAppStoreUrl,
-  breastfeedingTrackerContent as content,
-  breastfeedingTrackerFaqs
+  breastfeedingTrackerAppStoreUrl
 } from "../content/breastfeedingTracker";
 import { BREASTFEEDING_TRACKER_BASE_PATH } from "../content/routes";
 import { breadcrumbJsonLd, faqPageJsonLd, organizationJsonLd } from "../seo/jsonld";
 import { getSiteUrl } from "../seo/metadata";
 import { canonicalUrl } from "../seo/canonical";
 import { siteConfig } from "../content/site";
-import { trackerHreflangAlternates } from "../content/trackerLocales";
+import { localeForPath, localizedTrackerLocales, trackerLocalePath, trackerHreflangAlternates } from "../content/trackerLocales";
+import { trackerLandingForPath, trackerLandingAssets } from "../content/trackerLanding";
+import { localizedBreastfeedingTrackerAppStoreUrl } from "../analytics/appStoreClick";
 import { TrackerIcon as Icon } from "../components/TrackerIcon";
 
 const siteUrl = getSiteUrl();
-const editorial = content.editorial;
 const appearanceModes = ["light", "dark"] as const;
-const assetPath = "/assets/breastfeeding-editorial";
-const softwareApplicationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  ...content.softwareApplication,
-  offer: undefined,
-  url: canonicalUrl(BREASTFEEDING_TRACKER_BASE_PATH, siteUrl),
-  image: `${siteUrl}${app.icon}`,
-  downloadUrl: breastfeedingTrackerAppStoreUrl,
-  offers: { "@type": "Offer", ...content.softwareApplication.offer }
-};
+type EditorialScreens = ReturnType<typeof trackerLandingForPath>["editorial"]["screens"];
 
 function Phone({ screen, alt, className = "", priority = false, sizes = "(max-width: 600px) 44vw, 260px" }: {
   screen: string; alt: string; className?: string; priority?: boolean; sizes?: string;
 }) {
+  const { pathname } = useLocation();
+  const assetPath = trackerLandingAssets(pathname);
   const priorityAttributes = priority ? { fetchpriority: "high" } : {};
   return (
     <div className={`bft-device ${className}`}>
@@ -46,21 +36,23 @@ function Phone({ screen, alt, className = "", priority = false, sizes = "(max-wi
   );
 }
 
-function AppearancePreview({ device, appearance }: {
-  device: "phone" | "tablet"; appearance: "light" | "dark";
+function AppearancePreview({ device, appearance, screens }: {
+  device: "phone" | "tablet"; appearance: "light" | "dark"; screens: EditorialScreens;
 }) {
+  const { pathname } = useLocation();
+  const assetPath = trackerLandingAssets(pathname);
   const isPhone = device === "phone";
   return (
     <div className={`${isPhone ? "bft-device" : "bft-tablet"} bft-appearance-preview`}>
       {appearanceModes.map((mode) => {
         const screen = `${isPhone ? "home" : "ipad-history"}-${mode}`;
-        const label = mode === "light" ? editorial.screens.lightLabel : editorial.screens.darkLabel;
+        const label = mode === "light" ? screens.lightLabel : screens.darkLabel;
         return (
           <img key={mode} className="bft-appearance-screen" data-mode={mode}
             src={`${assetPath}/${screen}-${isPhone ? "660" : "1000"}.webp`}
             srcSet={isPhone ? `${assetPath}/${screen}-360.webp 360w, ${assetPath}/${screen}-660.webp 660w` : undefined}
             sizes={isPhone ? "(max-width: 760px) 31vw, 236px" : undefined}
-            alt={appearance === mode ? `${isPhone ? editorial.screens.phoneAlt : editorial.screens.tabletAlt} — ${label}` : ""}
+            alt={appearance === mode ? `${isPhone ? screens.phoneAlt : screens.tabletAlt} — ${label}` : ""}
             aria-hidden={appearance !== mode}
             width={isPhone ? 1320 : 2064} height={isPhone ? 2868 : 2752}
             loading="lazy" decoding="async" />
@@ -71,18 +63,38 @@ function AppearancePreview({ device, appearance }: {
 }
 
 export function BreastfeedingTrackerLandingPage() {
+  const { pathname } = useLocation();
+  const content = trackerLandingForPath(pathname);
+  const editorial = content.editorial;
+  const locale = localeForPath(pathname);
+  const localeConfig = localizedTrackerLocales.find((item) => item.locale === locale);
+  const path = trackerLocalePath(locale, "landing") ?? BREASTFEEDING_TRACKER_BASE_PATH;
+  const draft = Boolean(localeConfig && !localeConfig.enabled);
+  const breastfeedingTrackerFaqs = content.faqs;
+  const softwareApplicationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    ...content.softwareApplication,
+    offer: undefined,
+    url: canonicalUrl(path, siteUrl),
+    image: `${siteUrl}${app.icon}`,
+    downloadUrl: locale === "en-GB" ? breastfeedingTrackerAppStoreUrl : localizedBreastfeedingTrackerAppStoreUrl(
+      breastfeedingTrackerAppStoreUrl, locale, `site_${locale.slice(0, 2)}_tracker_landing`
+    ),
+    offers: { "@type": "Offer", ...content.softwareApplication.offer }
+  };
   const [appearance, setAppearance] = useState<"light" | "dark">("light");
   return (
     <>
-      <Seo path={BREASTFEEDING_TRACKER_BASE_PATH} meta={content.seo}
+      <Seo path={path} meta={{ ...content.seo, ...(draft ? { robots: "noindex,nofollow" } : {}) }}
+        locale={locale} ogLocale={localeConfig?.ogLocale ?? "en_GB"}
         alternates={trackerHreflangAlternates("landing", siteUrl)}
         jsonLd={[organizationJsonLd(), softwareApplicationJsonLd, faqPageJsonLd(breastfeedingTrackerFaqs),
-          breadcrumbJsonLd([{ name: siteConfig.companyName, url: siteUrl }, { name: content.softwareApplication.name, url: canonicalUrl(BREASTFEEDING_TRACKER_BASE_PATH, siteUrl) }])]}
+          breadcrumbJsonLd([{ name: siteConfig.companyName, url: siteUrl }, { name: content.softwareApplication.name, url: canonicalUrl(path, siteUrl) }])]}
       />
       <section className="bft-editorial-hero" aria-labelledby="hero-heading">
         <div className="bft-container bft-editorial-hero-grid">
           <div className="bft-editorial-hero-copy">
-            <TrackerLanguageSelector kind="landing" />
             <p className="bft-eyebrow">{content.hero.eyebrow}</p>
             <h1 id="hero-heading">{content.hero.heading}<em>{content.hero.headingEmphasis}</em></h1>
             <p className="bft-lead">{content.hero.body}</p>
@@ -172,11 +184,11 @@ export function BreastfeedingTrackerLandingPage() {
           </div>
           <div className="bft-device-collection" data-appearance={appearance}>
             <figure>
-              <AppearancePreview device="phone" appearance={appearance} />
+              <AppearancePreview device="phone" appearance={appearance} screens={editorial.screens} />
               <figcaption>{editorial.screens.phoneCaption}</figcaption>
             </figure>
             <figure>
-              <AppearancePreview device="tablet" appearance={appearance} />
+              <AppearancePreview device="tablet" appearance={appearance} screens={editorial.screens} />
               <figcaption>{editorial.screens.tabletCaption}</figcaption>
             </figure>
           </div>

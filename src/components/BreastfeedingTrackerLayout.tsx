@@ -2,16 +2,16 @@ import type { PropsWithChildren } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useLocation } from "react-router-dom";
 import { BreastfeedingTrackerAppStoreLink } from "./AppStoreLink";
+import { TrackerLanguageSelector } from "./TrackerLanguageSelector";
 import { TrackerIcon } from "./TrackerIcon";
 import {
-  breastfeedingTrackerApp as app,
-  breastfeedingTrackerContent as content
+  breastfeedingTrackerApp as app
 } from "../content/breastfeedingTracker";
 import {
-  BREASTFEEDING_TRACKER_BASE_PATH,
-  BREASTFEEDING_TRACKER_BLOG_BASE_PATH,
-  BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH
+  BREASTFEEDING_TRACKER_BASE_PATH
 } from "../content/routes";
+import { trackerLandingForPath } from "../content/trackerLanding";
+import { localeForPath, trackerLocalePath, trackerContentForPath } from "../content/trackerLocales";
 import { canonicalPath } from "../seo/canonical";
 import "../pages/BreastfeedingTrackerLandingPage.css";
 import "./BreastfeedingTrackerResources.css";
@@ -19,15 +19,15 @@ import "../pages/BreastfeedingTrackerEditorial.css";
 
 export function BreastfeedingTrackerLayout({ children }: PropsWithChildren) {
   const { pathname } = useLocation();
+  const content = trackerLandingForPath(pathname);
+  const basePath = trackerLocalePath(localeForPath(pathname), "landing") ?? BREASTFEEDING_TRACKER_BASE_PATH;
+  const page = trackerContentForPath(pathname);
   const appStoreId = new URL(app.appStoreUrl).pathname.match(/\/id(\d+)(?:\/|$)/)?.[1];
-  const placement = pathname.startsWith(BREASTFEEDING_TRACKER_BLOG_BASE_PATH)
-    ? "blog"
-    : pathname.startsWith(BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH)
-      ? "guide"
-      : "hero";
-  const homePath = canonicalPath(BREASTFEEDING_TRACKER_BASE_PATH);
+  const placement = page?.kind === "blog" || page?.kind === "blogPost" || page?.kind === "editorialDisclosure"
+    ? "blog" : page?.kind === "support" || page?.kind === "guide" ? "guide" : "hero";
+  const homePath = canonicalPath(basePath);
   const currentPath = pathname.replace(/\/+$/, "");
-  const isLanding = currentPath === BREASTFEEDING_TRACKER_BASE_PATH;
+  const isLanding = currentPath === basePath;
   const finalCta = isLanding ? content.editorial.finalCta : content.finalCta;
   const displayIcon = isLanding ? "/assets/breastfeeding-editorial/app-icon-128.webp" : app.icon;
 
@@ -51,7 +51,7 @@ export function BreastfeedingTrackerLayout({ children }: PropsWithChildren) {
             {content.navigation.items.map((item) => {
               const itemPath = item.url.replace(/\/+$/, "");
               const isCurrent = currentPath === itemPath ||
-                (itemPath !== BREASTFEEDING_TRACKER_BASE_PATH && currentPath.startsWith(`${itemPath}/`));
+                (itemPath !== basePath && currentPath.startsWith(`${itemPath}/`));
               return (
                 <Link key={item.url} to={item.url} aria-current={isCurrent ? "page" : undefined}>
                   {item.label}
@@ -59,13 +59,16 @@ export function BreastfeedingTrackerLayout({ children }: PropsWithChildren) {
               );
             })}
           </nav>
-          <BreastfeedingTrackerAppStoreLink
-            className="bft-button bft-button-small"
-            placement={placement}
-          >
-            {content.navigation.downloadLabel}
-            <TrackerIcon kind="arrow" />
-          </BreastfeedingTrackerAppStoreLink>
+          <div className="bft-nav-actions">
+            <BreastfeedingTrackerAppStoreLink
+              className="bft-button bft-button-small"
+              placement={placement}
+            >
+              {content.navigation.downloadLabel}
+              <TrackerIcon kind="arrow" />
+            </BreastfeedingTrackerAppStoreLink>
+            {page ? <TrackerLanguageSelector kind={page.kind} translationKey={page.translationKey} dropdown /> : null}
+          </div>
         </div>
       </header>
       <main id="feeding-content" tabIndex={-1}>

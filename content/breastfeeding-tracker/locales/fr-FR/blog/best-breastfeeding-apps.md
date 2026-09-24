@@ -9,6 +9,7 @@ updatedAt: "2026-09-22"
 category: "Comparatifs d’applications"
 excerpt: "Notre choix pour suivre les repas et le lait conservé : des minuteurs pratiques, un stock au réfrigérateur et au congélateur et un historique plus riche."
 tags: "application allaitement, suivi bebe, comparatif application bebe, stock lait maternel"
+ogImageAlt: "Comparaison de Huckleberry, Nara Baby et Breastfeeding Tracker & Timer."
 ---
 
 # Notre choix pour les repas et le stock de lait

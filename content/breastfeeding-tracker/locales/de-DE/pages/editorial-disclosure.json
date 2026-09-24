@@ -1,13 +1,75 @@
 {
+  "published": true,
+  "route": "/de/still-tracker/blog/redaktionelle-offenlegung",
+  "seo": {
+    "title": "Blog: Redaktionelle Grundsätze & Affiliate-Hinweise",
+    "description": "Wie Scruffy Hipster recherchiert, persönliche Erfahrungen von allgemeinen Informationen unterscheidet, mit Affiliate-Links umgeht und Fehler korrigiert.",
+    "keywords": [
+      "Stillblog Transparenz",
+      "redaktionelle Grundsätze",
+      "Affiliate-Hinweise"
+    ],
+    "ogImage": "/assets/breastfeeding-editorial/motherhood-1200.webp"
+  },
+  "breadcrumbs": {
+    "tracker": "Still-Tracker",
+    "blog": "Blog",
+    "disclosure": "Redaktionelle Grundsätze & Affiliate-Hinweise"
+  },
+  "hero": {
+    "backLabel": "Zurück zum Blog",
+    "eyebrow": "Der Blog",
+    "heading": "Offen darüber, wie unser Blog entsteht.",
+    "body": "Worüber wir schreiben, wie wir recherchieren, welche Rolle unsere App spielt und was du von uns erwarten kannst."
+  },
+  "sections": [
+    {
+      "heading": "Das Wichtigste in Kürze",
+      "paragraphs": [
+        "Der Blog verbindet die Erfahrungen einer Familie mit sorgfältig gekennzeichneten Informationen aus Quellen wie dem britischen Gesundheitsdienst NHS. Persönliche Geschichten sind keine allgemeingültigen Empfehlungen. Gesundheitsbezogene Artikel ersetzen keine Unterstützung durch jemanden, der dich und dein Baby kennt.",
+        "Scruffy Hipster entwickelt Breastfeeding Tracker & Timer. Darauf weisen wir hin, wenn ein Artikel Apps vergleicht oder empfiehlt."
+      ]
+    },
+    {
+      "heading": "Redaktionelle Unabhängigkeit",
+      "paragraphs": [
+        "Keine externe Marke entscheidet darüber, was wir veröffentlichen. Vergleiche sollen zuerst die Frage der Leserinnen und Leser beantworten. Dazu gehört auch, ein anderes Produkt zu empfehlen, wenn es besser passt.",
+        "Unsere eigene App erhält nicht allein deshalb eine bessere Bewertung, weil wir sie entwickeln. Produktaussagen gleichen wir mit aktuellen Angaben der Anbieter ab und versehen veränderliche Informationen mit einem Datum."
+      ]
+    },
+    {
+      "heading": "Affiliate-Links",
+      "paragraphs": [
+        "Der Blog verwendet derzeit keine Affiliate-Links. Sollte sich das ändern, kennzeichnen wir dies am Anfang des betreffenden Artikels. Auf dieser Seite erklären wir dann das Programm und die Funktionsweise der Provisionen.",
+        "Affiliate-Einnahmen würden unsere Empfehlungen nicht beeinflussen. Bezahlte Platzierungen würden klar gekennzeichnet und nicht als unabhängige redaktionelle Berichterstattung dargestellt."
+      ]
+    },
+    {
+      "heading": "Wie wir recherchieren",
+      "paragraphs": [
+        "Informationen zu Gesundheit und Ernährung ordnen wir nach Möglichkeit einer aktuellen, fachlich verlässlichen Quelle zu und verlinken sie. Wir verweisen lieber auf aktuelle Empfehlungen, als veränderliche Zahlen in einen Artikel zu übernehmen.",
+        "Die Artikel werden nicht formell von medizinischem Fachpersonal geprüft. Bei Schmerzen beim Füttern, Fragen zur Milchbildung oder Gewichtsentwicklung oder Sorgen um dein Baby wende dich an geeignetes medizinisches Fachpersonal oder eine Still- und Ernährungsberatung."
+      ]
+    },
+    {
+      "heading": "Persönliche Geschichten",
+      "paragraphs": [
+        "Beiträge in der Ich-Form beschreiben, was in unserer Familie passiert ist. Sie sind ausdrücklich persönliche Erfahrungen und keine Anleitung dafür, wie andere Familien ihr Baby ernähren sollten.",
+        "Wir lassen Unsicherheiten und Abwägungen in diesen Geschichten stehen, statt aus einem einzelnen Ergebnis eine Regel zu machen."
+      ]
+    },
+    {
+      "heading": "Korrekturen und Aktualisierungen",
+      "paragraphs": [
+        "Empfehlungen, Produkte und Leitlinien ändern sich. Wesentliche Aktualisierungen erhalten ein neues Aktualisierungsdatum; wichtige Korrekturen benennen wir ausdrücklich.",
+        "Wenn dir etwas falsch oder veraltet vorkommt, schreib uns. Wir prüfen die Information anhand der Quelle und korrigieren sie bei Bedarf."
+      ]
+    }
+  ],
+  "contactHeading": "Fragen oder Korrekturen?",
+  "contactBody": "Wir freuen uns über redaktionelle Fragen und Hinweise auf sachliche Fehler.",
+  "contactLabel": "E-Mail an Scruffy Hipster",
   "locale": "de-DE",
   "translationKey": "editorialDisclosure",
-  "seo": {
-    "title": "Redaktionelle Hinweise und Offenlegung",
-    "description": "Wie Scruffy Hipster Inhalte zum Stillen recherchiert, persönliche Erfahrungen einordnet und über eigene Produkte spricht."
-  },
-  "heading": "Offen darüber, wie dieser Blog arbeitet.",
-  "sections": [
-    "Der Blog verbindet persönliche Erfahrungen einer Familie mit nachvollziehbar verlinkten Informationen. Er ersetzt keine medizinische Beratung und wird nicht ärztlich geprüft.",
-    "Scruffy Hipster entwickelt Breastfeeding Tracker & Timer. Das wird bei Vergleichen und Empfehlungen klar benannt. Produktinformationen, Preise und Verfügbarkeit können sich ändern und werden vor Veröffentlichung lokal geprüft."
-  ]
+  "contactSubject": "Redaktionelle Rückmeldung zum Blog"
 }

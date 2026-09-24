@@ -8,6 +8,7 @@ publishedAt: "2026-09-10"
 category: "Stillen und Säuglingsernährung"
 excerpt: "Milch auf dem Spucktuch kann beunruhigend wirken. Entscheidend ist, wie es Ihrem Baby insgesamt geht."
 tags: "baby spuckt, reflux baby, säugling erbrechen"
+ogImageAlt: "Ein Elternteil hält ein zufriedenes Baby nach der Mahlzeit aufrecht an einem Spucktuch, während der andere Elternteil in einem gemütlichen Familienzimmer danebensitzt."
 ---
 
 # Die kurze Antwort
@@ -20,4 +21,4 @@ Hilfreicher als die Frage nach dem Begriff ist das Gesamtbild: Wirkt Ihr Baby zw
 
 # Wann Sie Hilfe holen sollten
 
-Holen Sie zeitnah medizinischen Rat ein, wenn Ihr Baby wiederholt heftig erbricht, grün oder blutig erbricht, kaum trinkt, auffallend schläfrig oder krank wirkt, deutlich weniger nasse Windeln hat oder Sie sich Sorgen machen. Bei akuter Gefahr wenden Sie sich an den örtlichen Notruf. Dieser Entwurf braucht vor Veröffentlichung eine Prüfung gegen aktuelle deutsche Fachinformationen.
+Holen Sie zeitnah medizinischen Rat ein, wenn Ihr Baby wiederholt heftig erbricht, grün oder blutig erbricht, kaum trinkt, auffallend schläfrig oder krank wirkt, deutlich weniger nasse Windeln hat oder Sie sich Sorgen machen. Bei akuter Gefahr wenden Sie sich an den örtlichen Notruf.

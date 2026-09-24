@@ -2,52 +2,49 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { BreastfeedingTrackerAppStoreLink } from "../components/AppStoreLink";
 import { Reveal } from "../components/Reveal";
 import { Seo } from "../components/Seo";
-import { TrackerLanguageSelector } from "../components/TrackerLanguageSelector";
+import { useTrackerResources } from "../content/trackerResources";
 import { TrackedMarkdownContent } from "../components/TrackedMarkdownContent";
-import {
-  breastfeedingTrackerGuides,
-  breastfeedingTrackerGuidesBySlug,
-  breastfeedingTrackerContent,
-  breastfeedingTrackerOgImage
-} from "../content/breastfeedingTracker";
-import {
-  BREASTFEEDING_TRACKER_BASE_PATH,
-  BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH
-} from "../content/routes";
 import { breadcrumbJsonLd, organizationJsonLd } from "../seo/jsonld";
 import { getSiteUrl } from "../seo/metadata";
 import { canonicalPath, canonicalUrl } from "../seo/canonical";
-import { breastfeedingSupportPageContent } from "../content/pages";
 import { siteConfig } from "../content/site";
 import { trackerHreflangAlternates } from "../content/trackerLocales";
 
 export function BreastfeedingTrackerSupportArticlePage() {
+  const {
+    locale, ogLocale, robots, homePath, supportPath,
+    content: breastfeedingTrackerContent, supportPage: breastfeedingSupportPageContent,
+    supportTemplate, guides: breastfeedingTrackerGuides
+  } = useTrackerResources();
+  const breastfeedingTrackerOgImage = breastfeedingTrackerContent.seo.ogImage;
   const params = useParams<{ slug: string }>();
-  const guide = params.slug ? breastfeedingTrackerGuidesBySlug.get(params.slug) : undefined;
+  const guide = params.slug ? breastfeedingTrackerGuides.find((article) => article.slug === params.slug) : undefined;
 
   if (!guide) {
-    return <Navigate to={canonicalPath(BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH)} replace />;
+    return <Navigate to={canonicalPath(supportPath)} replace />;
   }
 
   const siteUrl = getSiteUrl();
-  const path = `${BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH}/${guide.slug}`;
+  const path = `${supportPath}/${guide.slug}`;
   const relatedGuides = breastfeedingTrackerGuides
     .filter((candidate) => candidate.slug !== guide.slug)
     .slice(0, 2);
-  const template = breastfeedingTrackerContent.supportTemplate;
+  const template = supportTemplate;
 
   return (
     <>
       <Seo
+        locale={locale} ogLocale={ogLocale}
         path={path}
         meta={{
+          robots,
           title: guide.metaTitle || guide.title,
           description: guide.description,
           keywords: guide.tags,
           ogImage: guide.ogImage || breastfeedingTrackerOgImage,
           ...(guide.ogImageAlt ? { ogImageAlt: guide.ogImageAlt } : {})
         }}
-        alternates={trackerHreflangAlternates("guide", siteUrl, guide.slug)}
+        alternates={trackerHreflangAlternates("guide", siteUrl, guide.translationKey)}
         jsonLd={[
           organizationJsonLd(),
           {
@@ -67,7 +64,7 @@ export function BreastfeedingTrackerSupportArticlePage() {
             about: {
               "@type": "SoftwareApplication",
               name: breastfeedingTrackerContent.softwareApplication.name,
-              url: canonicalUrl(BREASTFEEDING_TRACKER_BASE_PATH, siteUrl)
+              url: canonicalUrl(homePath, siteUrl)
             }
           },
           ...(guide.faqItems.length
@@ -90,11 +87,11 @@ export function BreastfeedingTrackerSupportArticlePage() {
             { name: siteConfig.companyName, url: siteUrl },
             {
               name: breastfeedingSupportPageContent.breadcrumbs.tracker,
-              url: canonicalUrl(BREASTFEEDING_TRACKER_BASE_PATH, siteUrl)
+              url: canonicalUrl(homePath, siteUrl)
             },
             {
               name: breastfeedingSupportPageContent.breadcrumbs.support,
-              url: canonicalUrl(BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH, siteUrl)
+              url: canonicalUrl(supportPath, siteUrl)
             },
             { name: guide.title, url: canonicalUrl(path, siteUrl) }
           ])
@@ -104,10 +101,9 @@ export function BreastfeedingTrackerSupportArticlePage() {
       <article className="feeding-article bft-help-article">
         <div className="narrow-container">
           <Reveal>
-            <TrackerLanguageSelector kind="guide" translationKey={guide.slug} />
             <Link
               className="feeding-text-link"
-              to={canonicalPath(BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH)}
+              to={canonicalPath(supportPath)}
             >
               {template.backLabel}
             </Link>
@@ -136,7 +132,7 @@ export function BreastfeedingTrackerSupportArticlePage() {
             {relatedGuides.map((related) => (
               <Link
                 key={related.slug}
-                to={canonicalPath(`${BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH}/${related.slug}`)}
+                to={canonicalPath(`${supportPath}/${related.slug}`)}
               >
                 {related.title}
               </Link>
