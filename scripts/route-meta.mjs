@@ -160,18 +160,7 @@ const rewireSoftwareJsonLd = {
   offers: {
     "@type": "Offer",
     ...rewire.softwareApplication.offer
-  },
-  ...(typeof rewireRating.rating === "number"
-    ? {
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: rewireRating.rating,
-          ratingCount: rewireRating.ratingCount || 1,
-          bestRating: 5,
-          worstRating: 1
-        }
-      }
-    : {})
+  }
 };
 
 const breastfeedingSoftwareJsonLd = {
@@ -252,7 +241,11 @@ const routes = [
       ...(post.ogImageAlt ? { ogImageAlt: post.ogImageAlt } : {}),
       jsonLd: [
         organizationJsonLd,
-        blogPostingJsonLd(post, path),
+        { ...blogPostingJsonLd(post, path),
+          author: { "@type": "Organization", name: site.companyName, url: siteUrl },
+          publisher: { "@type": "Organization", name: site.companyName, url: siteUrl },
+          mainEntityOfPage: absoluteRouteUrl(path)
+        },
         breadcrumbJsonLd([
           { name: site.companyName, url: siteUrl },
           {

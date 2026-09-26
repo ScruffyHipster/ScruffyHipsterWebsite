@@ -15,12 +15,18 @@ import { canonicalPath } from "../seo/canonical";
 import { BreastfeedingTrackerLayout } from "../components/BreastfeedingTrackerLayout";
 import { isBreastfeedingTrackerRoute } from "../content/trackerLocales";
 
+import { RewireLayout } from "../components/RewireLayout";
+
 export function AppShell() {
   const location = useLocation();
   const showFooter = location.pathname !== "/";
   const isTrackerRoute =
     isBreastfeedingTrackerRoute(location.pathname) ||
     location.pathname.replace(/\/+$/, "") === "/privacy/breast-feeding-tracker";
+
+  if (/^\/rewire(?:\/|$)/.test(location.pathname)) {
+    return <div className="site-shell"><RouteAnalytics /><ScrollToTop /><RewireLayout><Outlet /></RewireLayout></div>;
+  }
 
   if (isTrackerRoute) {
     return (

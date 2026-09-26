@@ -2,7 +2,7 @@
 title: "Best App Blocker for iPhone"
 description: "Compare iPhone app blockers by privacy, Screen Time integration, strictness, setup speed, and how clearly they interrupt distractions."
 publishedAt: "2026-07-10"
-updatedAt: ""
+updatedAt: "2026-09-26"
 excerpt: "A practical checklist for choosing an iPhone app blocker without getting lost in feature noise."
 tags: "app blocker, iphone, screen time"
 published: true
@@ -13,7 +13,7 @@ The best app blocker for iPhone is the one that blocks the actual apps and websi
 
 For most people, the useful checklist is short.
 
-## what to compare
+# What to compare
 
 - App blocking: can you choose specific distracting apps?
 - Website blocking: can you include distracting sites, not just installed apps?
@@ -24,14 +24,16 @@ For most people, the useful checklist is short.
 
 If a blocker promises complete control over iOS without mentioning Screen Time or Apple's restrictions, read carefully. iPhone blockers operate inside platform rules.
 
-## where rewire fits
+# Where Rewire fits
 
 [Rewire](/rewire/) is built for people who want a focused app and website blocker, not another productivity dashboard. You choose distractions, start a focus session, and let the app add a pause when you try to open something blocked.
 
 Rewire is a good fit when you want intentional friction, simple trends, no account, no ads, and no personal data collection. It may not be the best fit if you want cross-platform desktop blocking, team management, or a heavy coaching system.
 
-## choose for the real trigger
+# Choose for the real trigger
 
 Pick the blocker around the moment you need help. If the problem is opening social media without thinking, choose a tool that interrupts opening social media. If the problem is late-night websites, make sure website blocking is part of the setup.
 
 Related reading: [how to block apps on iPhone](/rewire/blog/how-to-block-apps-on-iphone/), [social media blocker for iPhone](/rewire/blog/social-media-blocker-iphone/), and [app blocker without tracking](/rewire/blog/app-blocker-without-tracking/).
+
+For a product-by-product comparison, read [Rewire vs Opal vs one sec vs Brick](/rewire/blog/rewire-vs-opal-one-sec-brick/). We explain where each approach fits and the trade-offs to consider.

@@ -13,18 +13,20 @@ export type RewireBlogPost = {
   draft: boolean;
   ogImage: string;
   ogImageAlt: string | null;
+  readingMinutes: number;
+  tableOfContents: Array<{ id: string; label: string; level: number }>;
   html: string;
 };
 
 export const rewireBlogPosts = cmsContent.rewireArticles as RewireBlogPost[];
 export const rewireBlogPostsBySlug = new Map(
-  rewireBlogPosts.map((post) => [post.slug, post])
+  rewireBlogPosts.map((post) => [post.slug, post]),
 );
 
 export function formatPostDate(value: string) {
   return new Intl.DateTimeFormat("en-GB", {
     day: "numeric",
     month: "long",
-    year: "numeric"
+    year: "numeric",
   }).format(new Date(value));
 }

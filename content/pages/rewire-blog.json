@@ -2,8 +2,8 @@
   "published": true,
   "route": "/rewire/blog",
   "seo": {
-    "title": "Rewire Blog | Scruffyhipster",
-    "description": "Notes from Rewire about focus, app blocking, intentional friction, Screen Time, and building calmer phone habits.",
+    "title": "App Blocking & Screen Time Guides | Rewire Blog",
+    "description": "Explore iPhone app blocking guides, screen time advice, and a fair comparison of Rewire, Opal, one sec, and Brick. Make room for better phone habits.",
     "keywords": [
       "Rewire blog",
       "focus blog",
@@ -14,9 +14,9 @@
     "ogImage": "/assets/rewire/app-store/rewire-icon.jpg"
   },
   "hero": {
-    "eyebrow": "rewire blog",
-    "heading": "notes on focus, friction, and using your phone with intention.",
-    "body": "Product notes, practical writing, and the thinking behind Rewire."
+    "eyebrow": "THE REWIRE BLOG",
+    "heading": "Less scrolling. More perspective.",
+    "body": "Practical guides to blocking apps on iPhone, choosing a focus tool, and making your phone habits a little more intentional."
   },
   "breadcrumbs": {
     "rewire": "Rewire",

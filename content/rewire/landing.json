@@ -3,7 +3,7 @@
   "route": "/rewire",
   "seo": {
     "title": "Rewire | App Blocker for iPhone",
-    "description": "Rewire is an iPhone app and website blocker for reducing screen time, stopping doomscrolling, and interrupting distracting app opens.",
+    "description": "Block distracting apps and websites on iPhone with Rewire. Intentional pauses, flexible focus sessions, and no extra hardware. Take back your spare moments.",
     "keywords": [
       "Rewire",
       "app blocker",
@@ -46,12 +46,13 @@
   },
   "hero": {
     "iconAlt": "Rewire app icon",
-    "eyebrow": "app blocker for iphone",
-    "heading": "block apps and websites before the scroll starts.",
-    "body": "Rewire uses Apple Screen Time controls to block distracting apps and websites, add a deliberate pause, and help you choose what happens next.",
-    "primaryCta": "download on the app store",
-    "secondaryCta": "see how it works",
-    "screenshotsAriaLabel": "Rewire app screenshots"
+    "eyebrow": "APP & WEBSITE BLOCKER FOR IPHONE",
+    "heading": "Less autopilot.",
+    "body": "A quick check doesn’t have to become a long scroll. Block distracting apps and websites, interrupt the reflex, and give your attention somewhere better to go.",
+    "primaryCta": "Get Rewire for iPhone",
+    "secondaryCta": "See how it works",
+    "screenshotsAriaLabel": "Rewire app screenshots",
+    "headingEmphasis": "More life."
   },
   "download": {
     "eyebrow": "download",
@@ -69,8 +70,8 @@
     "body": "These images are downloaded from the current US App Store listing for Rewire."
   },
   "howItWorks": {
-    "eyebrow": "how it works",
-    "heading": "four steps from reflex to choice."
+    "eyebrow": "A LITTLE SPACE TO CHOOSE",
+    "heading": "Catch the reflex. Change what happens next."
   },
   "proof": {
     "eyebrow": "privacy first",
@@ -89,15 +90,15 @@
     "heading": "practical answers for app blocking, screen time, and focus."
   },
   "faqSection": {
-    "eyebrow": "faq",
-    "heading": "common questions about blocking apps on iphone.",
-    "linkLabel": "learn more"
+    "eyebrow": "GOOD QUESTIONS",
+    "heading": "A clearer picture, before you download.",
+    "linkLabel": "Read the guide"
   },
   "finalCta": {
-    "eyebrow": "rewire",
-    "heading": "download the iphone app blocker built around the moment distraction starts.",
-    "primaryLabel": "download on the app store",
-    "secondaryLabel": "privacy policy"
+    "eyebrow": "YOUR ATTENTION. YOUR CALL.",
+    "heading": "Make room for the life beyond your screen.",
+    "primaryLabel": "Get Rewire for iPhone",
+    "secondaryLabel": "Explore the blog"
   },
   "linkFooter": [
     {
@@ -153,9 +154,9 @@
     ],
     "price": "Free",
     "hasInAppPurchases": true,
-    "version": "1.6.4",
+    "version": "1.6.6",
     "releaseDate": "2026-02-04",
-    "currentVersionReleaseDate": "2026-07-07",
+    "currentVersionReleaseDate": "2026-07-15",
     "rating": 5,
     "ratingCount": 1,
     "minimumOsVersion": "iOS 26.1 or later",
@@ -163,7 +164,7 @@
     "privacyPolicyUrl": "https://scruffyhipster.com/privacy/rewire/",
     "appStorePrivacyPolicyUrl": "https://scruffyhipster.com/pages/privacyPolicies/rewirePrivacyPolicy.html",
     "eulaUrl": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
-    "releaseNotes": "Multiple improvements and bug fixes",
+    "releaseNotes": "Fixes for timed unlocks and the end session sheet.",
     "assetBasePath": "/assets/rewire/app-store"
   },
   "screenshots": [
@@ -311,5 +312,188 @@
       "answer": "The US App Store listing shows Rewire as free with in-app purchases. The App Store is the final source for availability and pricing.",
       "guideSlug": "screen-time-app-blocker"
     }
-  ]
+  ],
+  "editorial": {
+    "navigation": {
+      "brand": "rewire",
+      "label": "Rewire navigation",
+      "skip": "Skip to content",
+      "download": "Get Rewire",
+      "items": [
+        {
+          "label": "How it works",
+          "url": "/rewire/#how-it-works"
+        },
+        {
+          "label": "Blog",
+          "url": "/rewire/blog/"
+        },
+        {
+          "label": "FAQs",
+          "url": "/rewire/#faq"
+        }
+      ]
+    },
+    "availability": "Free download · In-app purchases · iOS 26.1+",
+    "promise": [
+      "No account needed",
+      "No ads",
+      "No extra hardware"
+    ],
+    "demo": {
+      "label": "An interactive illustration of the Rewire pause",
+      "caption": "Illustrative preview · Try opening a distraction",
+      "status": "FOCUS, ON YOUR TERMS",
+      "heading": "Make space for…",
+      "options": [
+        "Deep work",
+        "A good book",
+        "Being present"
+      ],
+      "apps": [
+        "Social feeds",
+        "Video apps",
+        "News feeds"
+      ],
+      "openLabel": "Try opening",
+      "ready": "Your distractions can wait.",
+      "pauseTitle": "Was this a conscious choice?",
+      "pauseBody": "A little pause between the impulse and the scroll.",
+      "breakLabel": "Back to what matters",
+      "resetLabel": "Try the pause again",
+      "doneTitle": "A moment, reclaimed.",
+      "doneBody": "Small choices make room for the things you meant to do.",
+      "paused": "DISTRACTION INTERRUPTED",
+      "done": "BACK TO YOUR INTENTION"
+    },
+    "steps": [
+      {
+        "number": "01",
+        "title": "Choose your distractions.",
+        "body": "Block the apps and websites that pull you in. Or use an allow list to keep the essentials available."
+      },
+      {
+        "number": "02",
+        "title": "Give your focus a window.",
+        "body": "Set a timed session or keep it always on. Start from Rewire, Siri, Shortcuts, or an iPhone Focus mode."
+      },
+      {
+        "number": "03",
+        "title": "Put a pause in the loop.",
+        "body": "When the reflex kicks in, Rewire interrupts access. A moment to notice what you’re doing and choose your next move."
+      }
+    ],
+    "features": {
+      "eyebrow": "LESS FRICTION TO FIND YOUR FOCUS",
+      "heading": "Fits your day. Leaves room for you.",
+      "items": [
+        {
+          "symbol": "◷",
+          "title": "A session for your kind of day.",
+          "body": "A study sprint, an evening offline, or always-on boundaries. Set the focus window you need."
+        },
+        {
+          "symbol": "↗",
+          "title": "At home on your iPhone.",
+          "body": "Connect sessions to Focus modes, Siri, and Shortcuts. Keep your focus close to the routines you already use."
+        },
+        {
+          "symbol": "⌁",
+          "title": "Notice your patterns.",
+          "body": "Review blocked attempts, interruptions, and focus sessions. See when you reach for distractions."
+        }
+      ]
+    },
+    "screens": {
+      "eyebrow": "INSIDE REWIRE",
+      "heading": "Meet the moment you usually miss.",
+      "body": "Block the distraction. Pause before continuing. Look back at your patterns.",
+      "items": [
+        {
+          "src": "/assets/rewire/app-store/screenshot-3.jpg",
+          "alt": "Rewire blocks a distracting app with an Interrupted by Rewire screen.",
+          "label": "01 / Block the distraction"
+        },
+        {
+          "src": "/assets/rewire/app-store/screenshot-2.jpg",
+          "alt": "Rewire pause screen with a Break the Loop button and interruption counts.",
+          "label": "02 / Interrupt the reflex"
+        },
+        {
+          "src": "/assets/rewire/app-store/screenshot-5.jpg",
+          "alt": "Rewire weekly trends showing focus time and interruption patterns.",
+          "label": "03 / Notice the pattern"
+        }
+      ]
+    },
+    "privacy": {
+      "eyebrow": "A QUIETER KIND OF APP",
+      "heading": "Your focus stays personal.",
+      "body": "No account. No advertising. Blocking decisions happen on your device, and Rewire works offline. Limited anonymous usage analytics help improve the app; they aren’t used for advertising or cross-app tracking.",
+      "link": "Read our privacy policy"
+    },
+    "journal": {
+      "eyebrow": "THE REWIRE BLOG",
+      "heading": "A little perspective on your screen time.",
+      "link": "All articles",
+      "featured": "START HERE",
+      "slug": "rewire-vs-opal-one-sec-brick",
+      "title": "Rewire, Opal, one sec, or Brick?",
+      "body": "Four ways to interrupt distraction. An honest look at what each does well, where Rewire fits, and how to choose for your habits.",
+      "cta": "Read the comparison",
+      "artLabel": "Four approaches to focus",
+      "brands": [
+        {
+          "name": "Rewire",
+          "detail": "A pause. A choice."
+        },
+        {
+          "name": "Opal",
+          "detail": "Focus routines & reports"
+        },
+        {
+          "name": "one sec",
+          "detail": "Habit interventions"
+        },
+        {
+          "name": "Brick",
+          "detail": "A physical boundary"
+        }
+      ]
+    },
+    "footer": {
+      "tagline": "Interrupt the reflex. Reclaim the moment.",
+      "studio": "Made by Scruffy Hipster Ltd",
+      "links": [
+        {
+          "label": "Blog",
+          "url": "/rewire/blog/"
+        },
+        {
+          "label": "Privacy",
+          "url": "/privacy/rewire/"
+        },
+        {
+          "label": "Support",
+          "url": "mailto:support@scruffyhipster.com"
+        },
+        {
+          "label": "All our apps",
+          "url": "/apps/"
+        }
+      ]
+    },
+    "blog": {
+      "all": "All articles",
+      "read": "Read article",
+      "byline": "By Scruffy Hipster Ltd · Makers of Rewire",
+      "updated": "Updated",
+      "minutes": "min read",
+      "contents": "In this article",
+      "related": "Keep reading",
+      "disclosure": "Written by the makers of Rewire. Our comparisons explain both the strengths and the trade-offs, with links to official sources.",
+      "ctaTitle": "Put a little space between you and the scroll.",
+      "ctaBody": "Choose your distractions. Start a session. Give yourself a moment to decide."
+    }
+  }
 }

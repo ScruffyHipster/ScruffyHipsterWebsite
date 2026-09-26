@@ -13,7 +13,7 @@ To stop doomscrolling, make the trigger harder to complete. The trigger is usual
 
 Start by naming the places where doomscrolling happens. It might be a social app, news app, video app, forum, or website. Then block those places during the times when you most often lose time.
 
-## practical steps
+# Practical steps
 
 1. Pick the apps and websites that create the loop.
 2. Create a focus window for the part of the day where the loop hurts most.
@@ -22,13 +22,13 @@ Start by naming the places where doomscrolling happens. It might be a social app
 
 The review step matters. If doomscrolling shows up at the same time every day, the timing may be more important than the app.
 
-## where rewire fits
+# Where Rewire fits
 
 [Rewire](/rewire/) is built around the pause before the scroll. It blocks selected apps and websites with Apple's Screen Time controls, then interrupts the habit loop when you try to open them.
 
 That friction gives you a moment to ask whether you meant to be there. Sometimes the answer will still be yes. The useful part is that the choice becomes visible.
 
-## reduce the easy paths
+# Reduce the easy paths
 
 If one app is blocked but the same content is still available through a website, block both. If evenings are the problem, do not start with a full-day system. Start with the evening.
 

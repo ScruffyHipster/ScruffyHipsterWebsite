@@ -13,7 +13,7 @@ If you want an app blocker without tracking, start with the privacy model before
 
 An app blocker should not need to know who you are to block distractions. On iPhone, a blocker can work with Apple's Screen Time and Family Controls APIs so the operating system handles the sensitive app and website restrictions.
 
-## what to check first
+# What to check first
 
 - Does the app require an account before blocking works?
 - Does it show ads or use ad networks?
@@ -23,13 +23,13 @@ An app blocker should not need to know who you are to block distractions. On iPh
 
 If any answer feels vague, treat that as a reason to slow down.
 
-## where rewire fits
+# Where Rewire fits
 
 [Rewire](/rewire/) is designed around a smaller privacy promise: no accounts, no ads, no personal data collection, and anonymous analytics only. The app uses Apple's Screen Time controls to block apps and websites without trying to turn your phone habits into a social profile or coaching feed.
 
 That does not mean you should skip Apple's own App Store privacy information. Use it as the source of truth for the current listing, then compare it with the developer's privacy policy.
 
-## private does not mean weak
+# Private does not mean weak
 
 Privacy-first blocking can still be useful. What matters is whether the blocker adds friction at the right moment. For Rewire, that moment is the app or website open: the reflex before a quick check becomes a long scroll.
 

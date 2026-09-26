@@ -13,19 +13,19 @@ To block websites on iPhone, use Screen Time content restrictions or an app bloc
 
 In iOS settings, Screen Time can restrict web content and limit specific sites. That is a good built-in option when you want broad website rules or parental-style restrictions.
 
-## when website blocking belongs in focus sessions
+# When website blocking belongs in focus sessions
 
 For personal focus, website blocking is often more useful when it belongs to a session. You may want a news site blocked while working, but not blocked all evening. You may want social sites blocked while studying, but not during a planned break.
 
 The goal is not to make the web disappear. The goal is to remove the easy path to the sites that repeatedly pull you away.
 
-## where rewire fits
+# Where Rewire fits
 
 [Rewire](/rewire/) lets you choose apps and websites for focus sessions. That means a distracting service can be blocked in both places: the app icon and the browser path.
 
 Rewire uses Apple's Screen Time controls, so it respects the system rules iOS provides. It adds the focus workflow around those controls: choose distractions, start a session, hit a pause when the habit shows up.
 
-## start with a short list
+# Start with a short list
 
 Add the websites you actually visit when you are avoiding something. For many people, that means social feeds, video sites, news, shopping, sports, or forums. Keep the first list small enough that you trust it.
 

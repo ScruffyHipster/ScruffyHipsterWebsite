@@ -13,7 +13,7 @@ A social media blocker for iPhone should block both the app and the website path
 
 Start with the services that cost you the most time. Do not block every social app just because you can. Block the ones that interrupt work, studying, sleep, or time with people.
 
-## useful social media blocking rules
+# Useful social media blocking rules
 
 - Block the app and the matching website.
 - Use timed sessions for work, study, or evening breaks.
@@ -23,13 +23,13 @@ Start with the services that cost you the most time. Do not block every social a
 
 Small reliable rules usually beat dramatic rules you disable immediately.
 
-## where rewire fits
+# Where Rewire fits
 
 [Rewire](/rewire/) can act as a social media blocker for iPhone because it lets you choose distracting apps and websites for focus sessions. When a blocked app opens, Rewire adds a pause before the loop continues.
 
 That pause is the core idea. Social media often wins because it is fast, familiar, and automatic. Rewire slows that moment down.
 
-## use social media on purpose
+# Use social media on purpose
 
 Blocking does not mean you can never use social media. It means you decide when it belongs in the day. Put a focus window around the times where it tends to take over, then leave intentional time outside that window if you want it.
 
