@@ -148,10 +148,7 @@
     "title": "App Blocker & Focus: Rewire",
     "subtitle": "Interrupt Distractions",
     "developer": "Scruffy Hipster Ltd",
-    "categories": [
-      "Productivity",
-      "Utilities"
-    ],
+    "categories": ["Productivity", "Utilities"],
     "price": "Free",
     "hasInAppPurchases": true,
     "version": "1.6.6",
@@ -335,36 +332,61 @@
       ]
     },
     "availability": "Free download · In-app purchases · iOS 26.1+",
-    "promise": [
-      "No account needed",
-      "No ads",
-      "No extra hardware"
-    ],
+    "promise": ["No account needed", "No ads", "No extra hardware"],
     "demo": {
-      "label": "An interactive illustration of the Rewire pause",
-      "caption": "Illustrative preview · Try opening a distraction",
-      "status": "FOCUS, ON YOUR TERMS",
-      "heading": "Make space for…",
-      "options": [
-        "Deep work",
-        "A good book",
-        "Being present"
+      "label": "Rewire app session preview",
+      "caption": "App UI preview · Example sessions",
+      "runningCaption": "Preview only · Timer paused · No apps are blocked",
+      "scrollHint": "Scroll to explore your sessions",
+      "navigationLabel": "Choose a session to preview",
+      "sessionLabel": "Session",
+      "start": "Start",
+      "cancel": "Cancel",
+      "end": "End",
+      "blocked": "blocked",
+      "allowed": "allowed",
+      "remainingLabel": "Session Time Remaining",
+      "stateLabel": "Session State",
+      "activeLabel": "Active",
+      "sessions": [
+        {
+          "number": "01",
+          "name": "Deep Work",
+          "duration": "45 minutes",
+          "seconds": 2700,
+          "timer": "00:45:00",
+          "count": 8,
+          "mode": "block",
+          "heading": "Make room for your best work.",
+          "body": "Give the task in front of you your full attention. Choose the apps and websites that pull you away, then start a focus window that fits your day.",
+          "detail": "A timed session. Your distractions on pause."
+        },
+        {
+          "number": "02",
+          "name": "A Good Book",
+          "duration": "30 minutes",
+          "seconds": 1800,
+          "timer": "00:30:00",
+          "count": 5,
+          "mode": "block",
+          "heading": "One more chapter. One less scroll.",
+          "body": "Trade a quick check for a few pages. Keep a session ready for the things you want to make more time for, and swipe up to find it when you need it.",
+          "detail": "Your sessions, a swipe away."
+        },
+        {
+          "number": "03",
+          "name": "Being Present",
+          "duration": "Always On",
+          "seconds": 0,
+          "timer": "",
+          "count": 4,
+          "mode": "allow",
+          "heading": "Be here. For the good bits.",
+          "body": "Keep the essentials available with an allow list. An always-on session leaves more space for dinner, a conversation, or an afternoon with nowhere else to be.",
+          "detail": "Always-on focus. Essentials still within reach."
+        }
       ],
-      "apps": [
-        "Social feeds",
-        "Video apps",
-        "News feeds"
-      ],
-      "openLabel": "Try opening",
-      "ready": "Your distractions can wait.",
-      "pauseTitle": "Was this a conscious choice?",
-      "pauseBody": "A little pause between the impulse and the scroll.",
-      "breakLabel": "Back to what matters",
-      "resetLabel": "Try the pause again",
-      "doneTitle": "A moment, reclaimed.",
-      "doneBody": "Small choices make room for the things you meant to do.",
-      "paused": "DISTRACTION INTERRUPTED",
-      "done": "BACK TO YOUR INTENTION"
+      "activeCaption": "Preview only · No apps are blocked"
     },
     "steps": [
       {

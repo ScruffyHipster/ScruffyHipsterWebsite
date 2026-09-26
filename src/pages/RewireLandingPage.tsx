@@ -65,7 +65,7 @@ export function RewireLandingPage() {
           ]),
         ]}
       />
-      <section className="rw-container rw-hero">
+      <RewireFocusDemo>
         <div className="rw-hero-copy">
           <p className="rw-eyebrow">
             <span className="rw-status-dot" />
@@ -88,8 +88,7 @@ export function RewireLandingPage() {
           </div>
           <p className="rw-small">{c.availability}</p>
         </div>
-        <RewireFocusDemo />
-      </section>
+      </RewireFocusDemo>
       <div className="rw-promise">
         <div className="rw-container">
           {c.promise.map((item) => (
@@ -100,21 +99,6 @@ export function RewireLandingPage() {
           ))}
         </div>
       </div>
-      <section id="how-it-works" className="rw-container rw-section">
-        <div className="rw-section-head">
-          <p className="rw-eyebrow">{rewireContent.howItWorks.eyebrow}</p>
-          <h2>{rewireContent.howItWorks.heading}</h2>
-        </div>
-        <div className="rw-steps">
-          {c.steps.map((step) => (
-            <article key={step.number}>
-              <span className="rw-number">{step.number}</span>
-              <h3>{step.title}</h3>
-              <p>{step.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
       <section className="rw-screen-section">
         <div className="rw-container rw-section">
           <div className="rw-section-head">
