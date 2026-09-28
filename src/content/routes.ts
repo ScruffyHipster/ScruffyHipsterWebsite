@@ -27,7 +27,7 @@ export const appRoutePath = (app: AppConfig) =>
   canonicalPath(
     app.slug === "breast-feeding-tracker"
       ? BREASTFEEDING_TRACKER_BASE_PATH
-      : `${APP_BASE_PATH}/${app.slug}`
+      : app.slug === "compact" ? "/compact" : `${APP_BASE_PATH}/${app.slug}`
   );
 export const privacyRoutePath = (policy: PrivacyPolicyConfig) =>
   canonicalPath(`${PRIVACY_BASE_PATH}/${policy.slug}`);

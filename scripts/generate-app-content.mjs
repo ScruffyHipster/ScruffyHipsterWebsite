@@ -438,7 +438,7 @@ function validateCmsContent(content) {
     appIds.add(app.id);
     appSlugs.add(app.slug);
     appOrders.add(app.order);
-    assert(Array.isArray(app.screenshots) && app.screenshots.length > 0, `${app.slug} has no screenshots.`);
+    assert(Array.isArray(app.screenshots) && (app.screenshots.length > 0 || app.releaseStatus === "coming-soon"), `${app.slug} has no screenshots.`);
     validateImages(app.screenshots, `App ${app.slug} screenshots`);
   }
 

@@ -1,0 +1,257 @@
+{
+  "brand": "compact",
+  "studio": "by scruffyhipster",
+  "navLabel": "Compact navigation",
+  "skip": "Skip to content",
+  "nav": [
+    {
+      "label": "The details",
+      "href": "#details"
+    },
+    {
+      "label": "Questions",
+      "href": "#questions"
+    }
+  ],
+  "availability": "Coming soon",
+  "eyebrow": "YOUR EVERYDAY MIRROR. RECONSIDERED.",
+  "headline": [
+    "A little closer.",
+    "A little clearer."
+  ],
+  "intro": "The last look before you leave. The smallest touch-up along the way. Meet Compact, your pocket mirror with a closer view and light you can make your own.",
+  "primaryCta": "Try the mirror",
+  "secondaryCta": "Explore Compact",
+  "platform": "Made for iPhone and iPad",
+  "heroNote": "Small details. A little more confidence.",
+  "demo": {
+    "label": "Interactive Compact app demo",
+    "caption": "App UI recreation · illustrative portrait · Premium features enabled",
+    "hint": "Try the controls. Just like in Compact.",
+    "portraitAlt": "Illustrative portrait used to demonstrate magnification and lighting",
+    "featuresLabel": "Choose a detail to magnify",
+    "features": [
+      {
+        "id": "leftEye",
+        "label": "Left eye"
+      },
+      {
+        "id": "rightEye",
+        "label": "Right eye"
+      },
+      {
+        "id": "bothEyes",
+        "label": "Both eyes"
+      },
+      {
+        "id": "nose",
+        "label": "Nose"
+      },
+      {
+        "id": "lips",
+        "label": "Lips"
+      }
+    ],
+    "zoom": "Magnification",
+    "light": "Light",
+    "warmth": "Warmth",
+    "warmthOptions": [
+      {
+        "id": "cool",
+        "label": "Cool"
+      },
+      {
+        "id": "neutral",
+        "label": "Neutral"
+      },
+      {
+        "id": "warm",
+        "label": "Warm"
+      }
+    ],
+    "on": "On",
+    "off": "Off",
+    "reset": "Reset demo",
+    "preview": "COMPACT PREVIEW",
+    "focus": "A closer view",
+    "full": "Your whole reflection",
+    "zoomSuffix": "×",
+    "statusTime": "9:41",
+    "statusIcons": "▮▮▮ ▰",
+    "help": "Tap the zoom to cycle. Hold it to open the ruler. Use the viewfinder to choose a feature.",
+    "zoomHint": "Tap to cycle zoom. Hold, then drag left to zoom in or right to zoom out. Use the arrow keys to open precise zoom.",
+    "featureLock": "Feature lock",
+    "unlock": "Unlock",
+    "preciseZoom": "Precise magnification",
+    "lightSettings": "Light settings",
+    "lightStyle": "Light style",
+    "brightness": "Brightness",
+    "lightBrightness": "Light brightness",
+    "lightWarmth": "Light warmth",
+    "done": "Done",
+    "close": "Close",
+    "settings": "Settings",
+    "previewLabel": "Full camera preview",
+    "previewHint": "Drag to a corner to move the preview. Use arrow keys when focused.",
+    "modes": [
+      {
+        "id": "halo",
+        "label": "Halo"
+      },
+      {
+        "id": "lightBox",
+        "label": "Light Box"
+      }
+    ],
+    "back": "Back",
+    "camera": "Camera",
+    "cameraQuality": "Camera Quality",
+    "resolution": "Resolution",
+    "premium": "Compact Premium",
+    "premiumUnlocked": "Premium Unlocked",
+    "about": "About",
+    "aboutItems": [
+      "About Compact",
+      "Support",
+      "Privacy Policy",
+      "Rate on the App Store"
+    ],
+    "settingsNote": "Interactive website preview. Camera settings are illustrative; no camera or account is connected.",
+    "resolutions": [
+      {
+        "label": "720p",
+        "detail": "1280 × 720"
+      },
+      {
+        "label": "1080p",
+        "detail": "1920 × 1080"
+      },
+      {
+        "label": "4K",
+        "detail": "3840 × 2160"
+      }
+    ],
+    "resolutionNote": "Higher resolution preserves more detail when you zoom. Available quality depends on your front camera; Compact uses a lower resolution when needed. 4K may use more battery and produce more heat."
+  },
+  "ribbon": [
+    "Up to 5× magnification",
+    "Adjustable screen light",
+    "On-device camera processing"
+  ],
+  "storyEyebrow": "LESS FUSS. MORE FOCUS.",
+  "storyHeading": "Made for the little things.",
+  "storyIntro": "A few thoughtful tools. Right where you need them.",
+  "steps": [
+    {
+      "number": "01",
+      "title": "Start with you.",
+      "body": "Open Compact to your front-camera reflection. No photo to take. No camera roll to scroll through. Just a moment to check in.",
+      "detail": "A full-screen mirror",
+      "feature": "face",
+      "zoom": 1,
+      "light": false
+    },
+    {
+      "number": "02",
+      "title": "Get closer to the detail.",
+      "body": "A stray brow. The edge of your eyeliner. Pinch to magnify up to 5×, or choose a preset for a closer look.",
+      "detail": "From 1× to 5×",
+      "feature": "face",
+      "zoom": 3,
+      "light": false,
+      "panel": "zoom"
+    },
+    {
+      "number": "03",
+      "title": "Keep your focus.",
+      "body": "Select an eye, both eyes, your nose or lips. Feature lock follows the area you choose as you move, so you can concentrate on the touch-up.",
+      "detail": "Your chosen feature, in view",
+      "feature": "lips",
+      "zoom": 2,
+      "light": false
+    },
+    {
+      "number": "04",
+      "title": "Find your light.",
+      "body": "Give your reflection a little light. Adjust the intensity and move between warm, neutral and cool tones to suit the moment.",
+      "detail": "Light that feels right",
+      "feature": "face",
+      "zoom": 1,
+      "light": true,
+      "panel": "lighting"
+    }
+  ],
+  "momentsEyebrow": "A MOMENT, JUST FOR YOU.",
+  "momentsHeading": "Out the door.\nInto your day.",
+  "moments": [
+    {
+      "time": "08:45",
+      "title": "Before the first meeting.",
+      "body": "One last check, without leaving your desk.",
+      "image": {
+        "src": "/assets/compact/moment-meeting-v2.webp",
+        "alt": "Illustration of a woman checking her reflection in Compact at her desk before a meeting."
+      }
+    },
+    {
+      "time": "18:30",
+      "title": "On the way to dinner.",
+      "body": "A little lipstick. A closer look. Ready.",
+      "image": {
+        "src": "/assets/compact/moment-dinner.webp",
+        "alt": "Illustration of a woman using Compact as a mirror to touch up her lipstick before dinner."
+      }
+    },
+    {
+      "time": "22:15",
+      "title": "At the end of the day.",
+      "body": "A familiar face, in a softer light.",
+      "image": {
+        "src": "/assets/compact/moment-evening-v2.webp",
+        "alt": "Illustration of a woman checking her reflection with Compact’s warm screen light at the end of the day."
+      }
+    }
+  ],
+  "privacyEyebrow": "YOUR REFLECTION STAYS YOURS.",
+  "privacyHeading": "A mirror.\nNot a camera roll.",
+  "privacyBody": "Camera images and facial landmarks are processed on your device. Compact does not save or upload them. No account, microphone or photo-library access is needed.",
+  "faqHeading": "A few things to know.",
+  "faqs": [
+    {
+      "question": "What makes Compact different from the Camera app?",
+      "answer": "Compact is designed for looking, rather than taking a photo. It combines a front-camera mirror with up to 5× magnification, adjustable screen lighting and facial-feature lock."
+    },
+    {
+      "question": "Which details can I follow?",
+      "answer": "You can select one eye, both eyes, your nose or your lips. Tracking works best with a clearly visible face, and you can unlock the view at any time."
+    },
+    {
+      "question": "How does the light work?",
+      "answer": "Compact uses the screen to light your face. You can change its intensity and warmth, with warm, neutral and cool options. Each fresh camera session starts with the light off."
+    },
+    {
+      "question": "Does Compact record my face?",
+      "answer": "No. Camera images and facial landmarks are processed on your device and are not saved or uploaded by Compact."
+    },
+    {
+      "question": "When can I download it?",
+      "answer": "Compact is coming soon for iPhone and iPad. This page is a preview; an App Store link will be added when it is available."
+    }
+  ],
+  "closingEyebrow": "A SMALL SPACE FOR YOUR EVERYDAY.",
+  "closingHeading": "Your next little essential.",
+  "closingBody": "Compact is coming soon for iPhone and iPad.",
+  "closingCta": "Try the preview again",
+  "footerLabel": "More from ScruffyHipster",
+  "footerLinks": [
+    {
+      "label": "All apps",
+      "href": "/apps/"
+    },
+    {
+      "label": "About the studio",
+      "href": "/about/"
+    }
+  ],
+  "copyright": "© 2026 Scruffy Hipster Ltd"
+}

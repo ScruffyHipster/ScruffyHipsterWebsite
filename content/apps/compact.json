@@ -1,0 +1,48 @@
+{
+  "id": "compact",
+  "order": 9,
+  "slug": "compact",
+  "published": true,
+  "releaseStatus": "coming-soon",
+  "name": "Compact",
+  "platformLabel": "iPhone and iPad",
+  "operatingSystem": "iOS, iPadOS",
+  "applicationCategory": "LifestyleApplication",
+  "heroTitle": "A little closer. A little clearer.",
+  "tagline": "Your everyday mirror. Reconsidered.",
+  "shortDescription": "A pocket mirror with up to 5× magnification, adjustable light and facial-feature lock. Coming soon for iPhone and iPad.",
+  "longDescription": "Compact turns your front camera into an everyday mirror for makeup, grooming and the little touch-ups in between.",
+  "appStoreUrl": "#",
+  "icon": "/assets/compact/mark.svg",
+  "iconAlt": "Compact website monogram",
+  "screenshots": [],
+  "featureHeading": "Made for the little things",
+  "featureIntro": "A few thoughtful tools, right where you need them.",
+  "features": [
+    {
+      "title": "A closer look",
+      "body": "Magnify your reflection up to 5×."
+    },
+    {
+      "title": "Find your light",
+      "body": "Adjust screen light intensity and warmth."
+    },
+    {
+      "title": "Keep your focus",
+      "body": "Choose an eye, both eyes, your nose or lips to follow."
+    }
+  ],
+  "privacySummary": "Camera images and facial landmarks are processed on your device and are not saved or uploaded.",
+  "yearLabel": "2026",
+  "seo": {
+    "title": "Compact — Pocket Mirror for iPhone & iPad | ScruffyHipster",
+    "description": "Meet Compact: a pocket mirror with up to 5× zoom, adjustable screen light and facial-feature lock. Explore the interactive preview. Coming soon for iPhone and iPad.",
+    "ogImage": "/assets/compact/social.png",
+    "ogImageAlt": "Compact. A little closer. A little clearer. A pocket mirror for iPhone and iPad."
+  },
+  "accent": {
+    "from": "#f2f5fc",
+    "via": "#d7e2fa",
+    "to": "#315be8"
+  }
+}

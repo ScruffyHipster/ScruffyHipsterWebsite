@@ -28,6 +28,7 @@ export type AppConfig = {
   slug: string;
   published: boolean;
   name: string;
+  releaseStatus?: "coming-soon" | "available";
   platformLabel?: string;
   operatingSystem?: string;
   applicationCategory?: string;

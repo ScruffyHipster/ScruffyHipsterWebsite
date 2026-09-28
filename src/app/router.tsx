@@ -7,6 +7,7 @@ import { AboutPage } from "../pages/AboutPage";
 import { AppDetailPage } from "../pages/AppDetailPage";
 import { PrivacyPolicyPage } from "../pages/PrivacyPolicyPage";
 import { NotFoundPage } from "../pages/NotFoundPage";
+import { CompactLandingPage } from "../pages/CompactLandingPage";
 import { RewireLandingPage } from "../pages/RewireLandingPage";
 import { RewireBlogIndexPage } from "../pages/RewireBlogIndexPage";
 import { RewireBlogPostPage } from "../pages/RewireBlogPostPage";
@@ -44,6 +45,8 @@ export function AppRoutes() {
         <Route index element={<HomePage />} />
         <Route path="apps" element={<AppsPage />} />
         <Route path="about" element={<AboutPage />} />
+        <Route path="compact" element={<CompactLandingPage />} />
+        <Route path="apps/compact" element={<Navigate to="/compact/" replace />} />
         <Route path="rewire" element={<RewireLandingPage />} />
         <Route path="rewire/blog" element={<RewireBlogIndexPage />} />
         <Route path="rewire/blog/:slug" element={<RewireBlogPostPage />} />

@@ -430,8 +430,8 @@ const routes = [
   ...apps
     .filter((app) => app.slug !== "breast-feeding-tracker")
     .map((app) => {
-      const path = `/apps/${app.slug}`;
-      const application = softwareApplicationJsonLd(app, path);
+      const path = app.slug === "compact" ? "/compact" : `/apps/${app.slug}`;
+      const application = app.releaseStatus === "coming-soon" ? webPageJsonLd(path, app.seo) : softwareApplicationJsonLd(app, path);
       return {
         path,
         ...app.seo,

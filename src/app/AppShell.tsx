@@ -24,6 +24,10 @@ export function AppShell() {
     isBreastfeedingTrackerRoute(location.pathname) ||
     location.pathname.replace(/\/+$/, "") === "/privacy/breast-feeding-tracker";
 
+  if (location.pathname.replace(/\/+$/, "") === "/compact") {
+    return <div className="site-shell"><RouteAnalytics /><ScrollToTop /><Outlet /></div>;
+  }
+
   if (/^\/rewire(?:\/|$)/.test(location.pathname)) {
     return <div className="site-shell"><RouteAnalytics /><ScrollToTop /><RewireLayout><Outlet /></RewireLayout></div>;
   }
