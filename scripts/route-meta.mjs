@@ -428,7 +428,7 @@ const routes = [
     ]
   },
   ...apps
-    .filter((app) => app.slug !== "breast-feeding-tracker")
+    .filter((app) => !["breast-feeding-tracker", "rewire"].includes(app.slug))
     .map((app) => {
       const path = app.slug === "compact" ? "/compact" : `/apps/${app.slug}`;
       const application = app.releaseStatus === "coming-soon" ? webPageJsonLd(path, app.seo) : softwareApplicationJsonLd(app, path);
@@ -520,6 +520,7 @@ const legacyPrivacyRedirects = [
 ];
 
 export const legacyRedirects = [
+  ["/apps/rewire", "/rewire"],
   ["/apps/breast-feeding-tracker", "/breastfeeding-tracker"],
   ["/breastfeeding-tracker/guides", "/breastfeeding-tracker/support"],
   ...[
@@ -541,7 +542,7 @@ export const legacyRedirects = [
     `/breastfeeding-tracker/guides/${slug}`,
     `/breastfeeding-tracker/blog/${slug}`
   ]),
-  ["/pages/portfolio/rewire.html", "/apps/rewire"],
+  ["/pages/portfolio/rewire.html", "/rewire"],
   ["/pages/portfolio/wren.html", "/apps/wren"],
   ["/pages/portfolio/smartycolours.html", "/apps/smarty-colours"],
   ["/pages/portfolio/groGuardian.html", "/apps/gro-guardian"],

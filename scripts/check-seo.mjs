@@ -24,7 +24,7 @@ const expectedPublishedRouteCount =
   cmsContent.rewireArticles.length +
   cmsContent.breastfeedingGuides.length +
   cmsContent.breastfeedingBlogPosts.length +
-  cmsContent.apps.filter((app) => app.slug !== "breast-feeding-tracker").length +
+  cmsContent.apps.filter((app) => !["breast-feeding-tracker", "rewire"].includes(app.slug)).length +
   cmsContent.privacyPolicies.length +
   cmsContent.standardPages.length;
 
@@ -110,8 +110,8 @@ for (const route of publicRoutes) {
 }
 
 assert(
-  legacyRedirects.length === 37,
-  `Expected 37 legacy redirects, found ${legacyRedirects.length}.`
+  legacyRedirects.length === 38,
+  `Expected 38 legacy redirects, found ${legacyRedirects.length}.`
 );
 const publicPathSet = new Set(publicRoutes.map((route) => canonicalPath(route.path)));
 for (const [from, to] of legacyRedirects) {

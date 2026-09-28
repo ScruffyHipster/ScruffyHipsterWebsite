@@ -148,7 +148,10 @@
     "title": "App Blocker & Focus: Rewire",
     "subtitle": "Interrupt Distractions",
     "developer": "Scruffy Hipster Ltd",
-    "categories": ["Productivity", "Utilities"],
+    "categories": [
+      "Productivity",
+      "Utilities"
+    ],
     "price": "Free",
     "hasInAppPurchases": true,
     "version": "1.6.6",
@@ -249,8 +252,8 @@
     },
     {
       "slug": "best-app-blocker-for-iphone",
-      "title": "Best App Blocker for iPhone",
-      "description": "Compare iPhone app blockers by privacy, Screen Time integration, strictness, setup speed, and how clearly they interrupt distractions.",
+      "title": "Best App Blockers for iPhone: 5 Options Compared",
+      "description": "Compare Rewire, Opal, one sec, Brick and Apple Screen Time by focus style, cost model and practical limitations.",
       "keyword": "best app blocker for iPhone"
     },
     {
@@ -332,7 +335,11 @@
       ]
     },
     "availability": "Free download · In-app purchases · iOS 26.1+",
-    "promise": ["No account needed", "No ads", "No extra hardware"],
+    "promise": [
+      "No account needed",
+      "No ads",
+      "No extra hardware"
+    ],
     "demo": {
       "label": "Rewire app session preview",
       "caption": "App UI preview · Example sessions",
@@ -502,6 +509,10 @@
         {
           "label": "All our apps",
           "url": "/apps/"
+        },
+        {
+          "label": "Press kit",
+          "url": "/assets/press/rewire/rewire-press-kit.zip"
         }
       ]
     },

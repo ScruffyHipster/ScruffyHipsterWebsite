@@ -47,6 +47,8 @@ export function AppRoutes() {
         <Route path="about" element={<AboutPage />} />
         <Route path="compact" element={<CompactLandingPage />} />
         <Route path="apps/compact" element={<Navigate to="/compact/" replace />} />
+        <Route path="apps/rewire" element={<Navigate to="/rewire/" replace />} />
+        <Route path="pages/portfolio/rewire.html" element={<Navigate to="/rewire/" replace />} />
         <Route path="rewire" element={<RewireLandingPage />} />
         <Route path="rewire/blog" element={<RewireBlogIndexPage />} />
         <Route path="rewire/blog/:slug" element={<RewireBlogPostPage />} />

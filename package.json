@@ -14,10 +14,11 @@
     "check:content-ownership": "node scripts/check-content-ownership.mjs",
     "compare:cms": "node scripts/compare-cms-build.mjs",
     "typecheck": "tsc --noEmit",
-    "validate": "npm run typecheck && npm run check:seo && npm run check:content-ownership && npm run check:tracker-locales",
+    "validate": "npm run typecheck && npm run check:seo && npm run check:content-ownership && npm run check:tracker-locales && npm run check:rewire-seo",
     "check": "npm run build && npm run validate",
     "preview": "vite preview",
-    "check:tracker-locales": "node scripts/check-tracker-locales.mjs"
+    "check:tracker-locales": "node scripts/check-tracker-locales.mjs",
+    "check:rewire-seo": "node scripts/check-rewire-seo.mjs"
   },
   "dependencies": {
     "@telemetrydeck/sdk": "^2.0.4",

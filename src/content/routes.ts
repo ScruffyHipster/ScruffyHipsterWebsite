@@ -27,7 +27,7 @@ export const appRoutePath = (app: AppConfig) =>
   canonicalPath(
     app.slug === "breast-feeding-tracker"
       ? BREASTFEEDING_TRACKER_BASE_PATH
-      : app.slug === "compact" ? "/compact" : `${APP_BASE_PATH}/${app.slug}`
+      : app.slug === "rewire" ? REWIRE_BASE_PATH : app.slug === "compact" ? "/compact" : `${APP_BASE_PATH}/${app.slug}`
   );
 export const privacyRoutePath = (policy: PrivacyPolicyConfig) =>
   canonicalPath(`${PRIVACY_BASE_PATH}/${policy.slug}`);
@@ -41,12 +41,13 @@ export const publicRoutePaths = [
   canonicalPath(BREASTFEEDING_TRACKER_BLOG_DISCLOSURE_PATH),
   canonicalPath(APP_BASE_PATH),
   canonicalPath("/about"),
-  ...apps.map(appRoutePath),
+  ...apps.filter((app) => app.slug !== "rewire").map(appRoutePath),
   ...privacyPolicies.map(privacyRoutePath),
   ...standardPages.map((page) => canonicalPath(`/${page.slug}`))
 ];
 
 export const legacyRedirects: Array<{ from: string; to: string }> = [
+  { from: "/apps/rewire", to: REWIRE_BASE_PATH },
   { from: LEGACY_BREASTFEEDING_TRACKER_PATH, to: BREASTFEEDING_TRACKER_BASE_PATH },
   {
     from: LEGACY_BREASTFEEDING_TRACKER_GUIDES_BASE_PATH,
@@ -71,7 +72,7 @@ export const legacyRedirects: Array<{ from: string; to: string }> = [
     from: `${LEGACY_BREASTFEEDING_TRACKER_GUIDES_BASE_PATH}/${slug}`,
     to: `${BREASTFEEDING_TRACKER_BLOG_BASE_PATH}/${slug}`
   })),
-  { from: "/pages/portfolio/rewire.html", to: "/apps/rewire" },
+  { from: "/pages/portfolio/rewire.html", to: REWIRE_BASE_PATH },
   { from: "/pages/portfolio/wren.html", to: "/apps/wren" },
   { from: "/pages/portfolio/smartycolours.html", to: "/apps/smarty-colours" },
   { from: "/pages/portfolio/groGuardian.html", to: "/apps/gro-guardian" },

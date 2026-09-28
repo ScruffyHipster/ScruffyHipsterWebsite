@@ -17,6 +17,8 @@ If you want to block apps on iPhone, you have a more useful decision to make tha
 
 > Disclosure: we’re Scruffy Hipster Ltd, the makers of Rewire. This is our product comparison, based on official product pages and documentation checked on 26 September 2026. It is not an independent review or a hands-on test of all four products. Recommendations are our judgement; feature descriptions link to their sources.
 
+For a shorter shortlist that also includes Apple’s built-in controls, see [the best app blockers for iPhone](/rewire/blog/best-app-blocker-for-iphone/).
+
 # The quick comparison
 
 On a phone, swipe across the table to see all four columns.
