@@ -8,6 +8,7 @@ import { AppDetailPage } from "../pages/AppDetailPage";
 import { PrivacyPolicyPage } from "../pages/PrivacyPolicyPage";
 import { NotFoundPage } from "../pages/NotFoundPage";
 import { CompactLandingPage } from "../pages/CompactLandingPage";
+import { SantaLandingPage } from "../pages/SantaLandingPage";
 import { RewireLandingPage } from "../pages/RewireLandingPage";
 import { RewireBlogIndexPage } from "../pages/RewireBlogIndexPage";
 import { RewireBlogPostPage } from "../pages/RewireBlogPostPage";
@@ -46,6 +47,7 @@ export function AppRoutes() {
         <Route path="apps" element={<AppsPage />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="compact" element={<CompactLandingPage />} />
+        <Route path="apps/chat-with-santa" element={<SantaLandingPage />} />
         <Route path="apps/compact" element={<Navigate to="/compact/" replace />} />
         <Route path="apps/rewire" element={<Navigate to="/rewire/" replace />} />
         <Route path="pages/portfolio/rewire.html" element={<Navigate to="/rewire/" replace />} />

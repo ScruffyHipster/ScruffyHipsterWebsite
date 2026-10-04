@@ -24,7 +24,7 @@ export function AppShell() {
     isBreastfeedingTrackerRoute(location.pathname) ||
     location.pathname.replace(/\/+$/, "") === "/privacy/breast-feeding-tracker";
 
-  if (location.pathname.replace(/\/+$/, "") === "/compact") {
+  if (["/compact", "/apps/chat-with-santa"].includes(location.pathname.replace(/\/+$/, ""))) {
     return <div className="site-shell"><RouteAnalytics /><ScrollToTop /><Outlet /></div>;
   }
 

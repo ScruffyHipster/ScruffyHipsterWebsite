@@ -1,0 +1,148 @@
+.santa-page {
+  --santa-green: #174e40;
+  --santa-red: #ac302d;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background: #fbf8f1;
+  color: var(--santa-green);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.santa-page a { text-decoration: none; }
+.santa-page a:focus-visible { outline: 3px solid var(--santa-red); outline-offset: 6px; }
+.santa-container { width: min(1280px, calc(100% - 96px)); margin-inline: auto; }
+
+.santa-header {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.santa-brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; font-size: 17px; }
+.santa-brand img { border-radius: 12px; }
+.santa-studio { font-size: 12px; color: #61746a; }
+.santa-page .santa-brand:hover, .santa-page .santa-studio:hover { color: var(--santa-green); }
+
+.santa-hero {
+  flex: 1;
+  display: grid;
+  grid-template-columns: .9fr 1.2fr;
+  align-items: center;
+  gap: 44px;
+  padding-block: 24px 28px;
+}
+
+.santa-eyebrow { margin: 0 0 22px; font-size: 11px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+.santa-copy h1 {
+  margin: 0;
+  max-width: 12ch;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(48px, 5.2vw, 72px);
+  line-height: 1.04;
+  font-weight: 400;
+  letter-spacing: -.055em;
+  white-space: pre-line;
+}
+
+.santa-intro { max-width: 390px; margin: 26px 0 30px; color: #52645b; font-size: 16px; line-height: 1.7; }
+.santa-store-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  min-height: 56px;
+  padding: 15px 23px;
+  border-radius: 100px;
+  background: var(--santa-red);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 650;
+  transition: background .2s;
+}
+
+.santa-page .santa-store-link:hover { color: #fff; background: #8d2422; }
+.santa-platform { margin: 14px 0 0; color: #61746a; font-size: 12px; }
+
+.santa-screenshots {
+  display: grid;
+  grid-template-columns: 1fr 1.12fr 1fr;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+  isolation: isolate;
+  padding-block: 12px;
+}
+
+.santa-screenshots::before {
+  content: "";
+  position: absolute;
+  inset: 4% -3%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, #d6e6dc 0, #e9eee2 44%, transparent 71%);
+}
+
+.santa-screen {
+  min-width: 0;
+  margin: 0;
+  border: 4px solid #fff;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 22px 38px -18px #173f3b50, 0 0 0 1px #19473812;
+}
+
+.santa-screen:first-child { transform: translateY(23px) rotate(-5deg); }
+.santa-screen:last-child { transform: translateY(23px) rotate(5deg); }
+.santa-screen img { width: 100%; height: auto; }
+
+.santa-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  min-height: 68px;
+  border-top: 1px solid #174e401c;
+  font-size: 11px;
+  color: #61746a;
+}
+
+.santa-footer a:hover { color: var(--santa-green); text-decoration: underline; }
+
+@media (min-width: 1500px) {
+  .santa-hero { gap: 70px; }
+}
+
+@media (max-width: 1000px) {
+  .santa-container { width: calc(100% - 56px); }
+  .santa-hero { gap: 24px; }
+  .santa-copy h1 { font-size: clamp(42px, 5.4vw, 56px); }
+  .santa-screenshots { gap: 8px; }
+  .santa-screen { border-width: 3px; border-radius: 18px; }
+}
+
+@media (max-width: 760px) {
+  .santa-container { width: calc(100% - 40px); }
+  .santa-header { min-height: 78px; gap: 12px; }
+  .santa-brand { gap: 9px; font-size: 15px; }
+  .santa-brand img { width: 36px; height: 36px; border-radius: 10px; }
+  .santa-studio { font-size: 10px; }
+  .santa-hero { grid-template-columns: 1fr; gap: 12px; padding-block: 34px 40px; }
+  .santa-copy { text-align: center; }
+  .santa-eyebrow { font-size: 9px; margin-bottom: 20px; }
+  .santa-copy h1 { max-width: 16ch; margin-inline: auto; font-size: clamp(39px, 8.5vw, 60px); }
+  .santa-intro { max-width: 400px; margin: 22px auto 24px; font-size: 15px; }
+  .santa-store-link { min-height: 52px; font-size: 13px; }
+  .santa-screenshots { width: min(560px, 100%); margin-inline: auto; padding: 28px 8px 24px; }
+  .santa-screen { border-width: 2px; border-radius: 16px; }
+  .santa-screen:first-child, .santa-screen:last-child { transform: translateY(12px); }
+  .santa-screenshots::before { inset-inline: 0; }
+  .santa-footer { min-height: 64px; font-size: 10px; gap: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .santa-store-link { transition: none; }
+}

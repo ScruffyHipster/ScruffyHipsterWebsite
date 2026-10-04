@@ -4,82 +4,71 @@
   "slug": "chat-with-santa",
   "published": true,
   "name": "Chat with Santa",
-  "heroTitle": "Chat with Santa",
-  "tagline": "A small seasonal chat app for families during the holidays.",
-  "shortDescription": "A seasonal chat app with a child-friendly Santa experience and a simple family-first design.",
-  "longDescription": "Chat with Santa is a seasonal experiment built around a simple idea: a friendly holiday conversation, without turning the experience into a noisy feed or game.",
-  "appStoreUrl": "#",
+  "platformLabel": "For iPhone & iPad",
+  "heroTitle": "Christmas magic.\nOne message away.",
+  "tagline": "Chat with Santa, Elf and Rudolph. Share a little wonder together, then turn Christmas wishes into a keepsake to share.",
+  "shortDescription": "Festive chats with Santa, Elf and Rudolph, and Christmas wish lists to make and share.",
+  "longDescription": "Bring a little North Pole wonder to family time. Message Santa, Elf and Rudolph, gather Christmas wishes from your conversations, and create a festive wish-list card to share.",
+  "appStoreUrl": "https://apps.apple.com/app/id6753209373",
   "icon": "/assets/chatWithSantaLogo.png",
   "iconAlt": "Chat with Santa icon",
   "screenshots": [
     {
-      "src": "/assets/chatWithSantaScreenshots/ChatWithSantaAppStoreScreenShots.001.jpeg",
-      "alt": "Chat with Santa chat screen 1"
+      "src": "/assets/chat-with-santa/characters.jpg",
+      "alt": "Choose Santa, Elf or Rudolph for a new conversation in Chat with Santa"
     },
     {
-      "src": "/assets/chatWithSantaScreenshots/ChatWithSantaAppStoreScreenShots.002.jpeg",
-      "alt": "Chat with Santa chat screen 2"
+      "src": "/assets/chat-with-santa/santa-chat.jpg",
+      "alt": "A conversation with Santa about the North Pole and a red bicycle for Christmas"
     },
     {
-      "src": "/assets/chatWithSantaScreenshots/ChatWithSantaAppStoreScreenShots.003.jpeg",
-      "alt": "Chat with Santa chat screen 3"
-    },
-    {
-      "src": "/assets/chatWithSantaScreenshots/ChatWithSantaAppStoreScreenShots.004.jpeg",
-      "alt": "Chat with Santa chat screen 4"
-    },
-    {
-      "src": "/assets/chatWithSantaScreenshots/ChatWithSantaAppStoreScreenShots.005.jpeg",
-      "alt": "Chat with Santa chat screen 5"
+      "src": "/assets/chat-with-santa/christmas-wishes.jpg",
+      "alt": "A green and gold Christmas wish-list card ready to share with family"
     }
   ],
-  "featureHeading": "A lighter seasonal app",
-  "featureIntro": "A focused holiday chat experience with warm replies and a simple interface.",
+  "featureHeading": "A little wonder from the North Pole",
+  "featureIntro": "Festive conversations and Christmas wishes, together in one app.",
   "features": [
     {
-      "title": "Festive Chat Interface",
-      "body": "A clean seasonal UI with a little personality and not much else in the way."
+      "title": "North Pole friends",
+      "body": "Choose Santa, Elf or Rudolph for a festive conversation."
     },
     {
-      "title": "AI Santa Replies",
-      "body": "Friendly responses written for warm, age-aware holiday conversations."
+      "title": "Christmas wish lists",
+      "body": "Gather Christmas wishes from conversations with your North Pole friends."
     },
     {
-      "title": "Voice and Text Input",
-      "body": "Type or speak messages for a simple hands-free option."
-    },
-    {
-      "title": "Private and Secure",
-      "body": "No advertising or tracking tools. Family trust is part of the design."
+      "title": "A keepsake to share",
+      "body": "Choose a festive card design and share your Christmas wish list with family."
     }
   ],
   "structuredData": {
-    "description": "A seasonal chat app with a child-friendly Santa experience and a simple family-first design.",
+    "description": "Festive chats with Santa, Elf and Rudolph, and Christmas wish lists to make and share.",
     "applicationSubCategory": "Holiday App",
     "featureList": [
-      "Seasonal family chat interface",
-      "Friendly Santa replies",
-      "Voice and text input",
-      "No advertising or tracking tools"
+      "Chats with Santa, Elf and Rudolph",
+      "Christmas wishes gathered from conversations",
+      "Shareable Christmas wish-list cards"
     ]
   },
-  "privacySummary": "Chat with Santa is designed to avoid analytics and advertising tracking, with conversations processed on-device.",
+  "privacySummary": "Read the Chat with Santa privacy policy for details about how the app handles data.",
   "privacySlug": "chat-with-santa",
-  "yearLabel": "2025",
+  "yearLabel": "2026",
   "seo": {
-    "title": "Chat with Santa | Seasonal Holiday App",
-    "description": "Chat with Santa is a simple seasonal holiday chat app for families with friendly Santa conversations.",
+    "title": "Chat with Santa | Christmas Chats & Wish Lists",
+    "description": "Chat with Santa, Elf and Rudolph, gather Christmas wishes and create festive wish-list cards to share. Download Chat with Santa for iPhone and iPad.",
     "keywords": [
       "Chat with Santa app",
-      "holiday app for kids",
+      "Christmas wish list app",
       "Santa AI chat",
       "Christmas chat app"
     ],
-    "ogImage": "/og-default.png"
+    "ogImage": "/assets/chatWithSantaLogo.png",
+    "ogImageAlt": "Chat with Santa app icon"
   },
   "accent": {
-    "from": "#ffd1a6",
-    "via": "#ff8ea0",
-    "to": "#9bb1ff"
+    "from": "#fbf8f1",
+    "via": "#d6e6dc",
+    "to": "#174e40"
   }
 }
