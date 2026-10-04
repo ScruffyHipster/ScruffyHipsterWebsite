@@ -674,6 +674,13 @@
 .rw-article-body p {
   margin: 0 0 23px;
 }
+.rw-article-body .feeding-article-screenshot img {
+  width: 100%;
+  aspect-ratio: 1672 / 941;
+  border: 1px solid var(--rw-line);
+  border-radius: 16px;
+  box-shadow: none;
+}
 .rw-article-body h2,
 .rw-article-body h3 {
   font-size: 29px;

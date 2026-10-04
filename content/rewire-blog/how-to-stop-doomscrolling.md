@@ -13,6 +13,8 @@ To stop doomscrolling, make the trigger harder to complete. The trigger is usual
 
 Start by naming the places where doomscrolling happens. It might be a social app, news app, video app, forum, or website. Then block those places during the times when you most often lose time.
 
+For the definition and a look at what the research supports, read [what doomscrolling means](/rewire/blog/what-is-doomscrolling/).
+
 # Practical steps
 
 1. Pick the apps and websites that create the loop.

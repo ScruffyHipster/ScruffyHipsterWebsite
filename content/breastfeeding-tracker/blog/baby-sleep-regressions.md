@@ -32,6 +32,8 @@ Start with your baby as a whole. Are they feeding as usual? Do they seem comfort
 
 # Why does everyone talk about the four-month regression?
 
+If this is the stage you are in now, our [four-month sleep-regression guide](/breastfeeding-tracker/blog/4-month-sleep-regression/) focuses on night feeds, what is worth recording and the sleep tracking coming soon to our app.
+
 Sleep develops during infancy. The [American Academy of Pediatrics explains that regular sleep cycles begin to emerge around four months](https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/getting-your-baby-to-sleep.aspx). That helps explain why this age comes up so often in conversations about changing sleep.
 
 It does not mean every baby will suddenly start waking on the same week, or that all waking at this age comes from one developmental change.

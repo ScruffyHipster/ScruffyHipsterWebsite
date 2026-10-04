@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-10-04",
+  "method": "Built-in image_gen tool",
+  "note": "Generated editorial illustrations. The Rewire graphic is conceptual, not an app screenshot or a scientific model.",
+  "assets": [
+    {
+      "path": "public/assets/breastfeeding-blog/4-month-sleep-regression.jpg",
+      "width": 1672,
+      "height": 941,
+      "prompt": "Use case: illustration-story. Asset type: 16:9 landscape editorial hero for a breastfeeding support blog article about the four-month sleep regression. Create a warm, richly textured painterly illustration, hand-painted gouache and soft oil brushwork, natural believable faces and hands, muted sage green and denim blue clothing, honey wood and warm cream interiors, gentle amber lamplight against blue predawn window light. A clearly awake mother with brown hair in a loose bun, wearing a blue knitted cardigan, stands in a cosy bedroom holding her alert four-month-old baby securely upright against her chest, one hand supporting upper back and neck, other arm supporting bottom. Baby wears a cream sleepsuit. A supportive father with medium brown skin, short dark curls and a short beard in a sage green jumper stands beside her, quietly looking at the baby. Parents look a little tired but tender, no exaggerated distress or staged grin. A simple empty wooden cot is visible beside them, with firm flat mattress and fitted sheet only, sound rectangular perspective and evenly spaced vertical rails. A small closed notebook on a distant bedside table subtly suggests keeping track. Wide eye-level composition focused on the three family members; atmospheric lived-in room without clutter. Image must read as illustration, not a photograph. No text, numerals, logos, phone, medical devices, clock, cot pillows, toys, bumpers, blankets or hanging items. No sleeping adult holding a baby. Distinct composition from parents leaning over a baby in a cot. Keep heads and baby comfortably within the centre 80 percent for responsive crop."
+    },
+    {
+      "path": "public/assets/rewire/blog/what-is-doomscrolling.jpg",
+      "width": 1672,
+      "height": 941,
+      "prompt": "Use case: stylized-concept. Asset type: 16:9 landscape editorial graphic for Rewire's article 'What is doomscrolling?'. Create a polished tactile paper-cut and matte 3D editorial illustration in an extremely restrained palette: warm off-white #f8f9f4 background, charcoal green #20251f, soft sage and pale lime #d6ef89. In the centre-left, one simple dark smartphone tilted slightly in perspective, with a long continuous ribbon of simplified anonymous news-feed cards flowing from its screen and curling into an elegant circular loop. The cards contain only abstract grey lines and small dark rectangles, absolutely no readable words, logos, real headlines or alarming pictures. At centre-right, the loop meets a bold freestanding pale lime pause symbol (two simple vertical rounded bars), where the ribbon opens into a clear path leading into generous empty space. The concept is interrupting repeated scrolling and making room for a choice, not a medical or neurological diagram. Beautiful soft directional shadows, subtle fine paper texture, sculptural depth, confident simple composition, calm sophisticated magazine art direction that fits a minimal iPhone focus app website. Keep all main objects inside the central 80 percent, wide balanced composition. No title, labels, words, numerals, brains, statistics, charts, neon colours, gradients, fake app UI, logos or watermarks. Opaque background."
+    }
+  ]
+}
