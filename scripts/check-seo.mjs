@@ -274,9 +274,12 @@ const expectedComparisonAlt =
   "Best Breastfeeding Apps 2026: Huckleberry, Nara Baby and Breastfeeding Tracker & Timer.";
 const expectedComparisonAltHtml = expectedComparisonAlt.replace("&", "&amp;");
 const requiredComparisonSources = [
-  "https://apps.apple.com/us/app/huckleberry-baby-tracker/id1169136078",
+  "https://apps.apple.com/gb/app/baby-feed-timer-breastfeeding/id395357581",
+  "https://apps.apple.com/gb/app/baby-tracker-newborn-log/id779656557",
+  "https://apps.apple.com/gb/app/breastfeeding-baby-tracker/id1038554631",
+  "https://apps.apple.com/gb/app/huckleberry-baby-tracker/id1169136078",
   "https://huckleberrycare.com/product/free",
-  "https://apps.apple.com/us/app/nara-baby-pregnancy-tracker/id1444639029",
+  "https://apps.apple.com/gb/app/nara-baby-pregnancy-tracker/id1444639029",
   "https://nara.com/pages/nara-baby-app-faqs",
   trackerArticleAppStoreUrl,
   "https://www.nhs.uk/baby/breastfeeding-and-bottle-feeding/breastfeeding/the-first-few-days/",
@@ -286,7 +289,7 @@ const requiredComparisonSources = [
 
 assert(
   comparisonHtml.includes(
-    "<h1>Best Breastfeeding &amp; Baby Feeding Apps (2026): Which App Is Right for You?</h1>"
+    "<h1>Best Breastfeeding Apps for iPhone in the UK (2026)</h1>"
   ),
   "Comparison guide has the wrong h1."
 );
