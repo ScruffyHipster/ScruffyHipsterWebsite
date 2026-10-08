@@ -13,15 +13,15 @@
       "href": "#questions"
     }
   ],
-  "availability": "Coming soon",
+  "availability": "App Store",
   "eyebrow": "YOUR EVERYDAY MIRROR. RECONSIDERED.",
   "headline": [
     "A little closer.",
     "A little clearer."
   ],
   "intro": "The last look before you leave. The smallest touch-up along the way. Meet Compact, your pocket mirror with a closer view and light you can make your own.",
-  "primaryCta": "Try the mirror",
-  "secondaryCta": "Explore Compact",
+  "primaryCta": "View on the App Store",
+  "secondaryCta": "Try the mirror",
   "platform": "Made for iPhone and iPad",
   "heroNote": "Small details. A little more confidence.",
   "demo": {
@@ -196,10 +196,10 @@
     {
       "time": "18:30",
       "title": "On the way to dinner.",
-      "body": "A little lipstick. A closer look. Ready.",
+      "body": "A quick touch-up. A closer look. Ready.",
       "image": {
-        "src": "/assets/compact/moment-dinner.webp",
-        "alt": "Illustration of a woman using Compact as a mirror to touch up her lipstick before dinner."
+        "src": "/assets/compact/moment-dinner-v11.webp",
+        "alt": "Illustration of a woman applying makeup while using Compact on a phone stand before dinner."
       }
     },
     {
@@ -234,14 +234,14 @@
       "answer": "No. Camera images and facial landmarks are processed on your device and are not saved or uploaded by Compact."
     },
     {
-      "question": "When can I download it?",
-      "answer": "Compact is coming soon for iPhone and iPad. This page is a preview; an App Store link will be added when it is available."
+      "question": "Where can I get Compact?",
+      "answer": "Visit Compact on the App Store for iPhone and iPad. The listing has the latest availability and device compatibility details."
     }
   ],
   "closingEyebrow": "A SMALL SPACE FOR YOUR EVERYDAY.",
   "closingHeading": "Your next little essential.",
-  "closingBody": "Compact is coming soon for iPhone and iPad.",
-  "closingCta": "Try the preview again",
+  "closingBody": "Your everyday mirror for iPhone and iPad.",
+  "closingCta": "View on the App Store",
   "footerLabel": "More from ScruffyHipster",
   "footerLinks": [
     {

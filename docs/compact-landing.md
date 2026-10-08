@@ -2,20 +2,22 @@
 
 Dedicated route: `/compact/`. The app collection and site footer link to it; `/apps/compact/` redirects in the client. The production build prerenders the landing route and includes it in the sitemap. A separate owner-private Sites preview is published at https://compact-mirror-preview.scruffyhipster.chatgpt.site.
 
-The design uses system typography, translucent controls, rounded surfaces, cobalt accents and eased magnification. The app icon was explicitly excluded as a visual reference. Mirrolizer inspired the interactive demonstration and scroll narrative, not the copy or assets.
+The design uses system typography, translucent controls, rounded surfaces, cobalt accents and eased magnification. The original page design was developed independently of the app icon; the current Compact icon now appears beside the wordmark, in the privacy illustration and in the app collection. Mirrolizer inspired the interactive demonstration and scroll narrative, not the copy or assets.
 
 ## Content and availability
 
 - `content/compact/landing.json`: page copy and demo labels.
 - `content/apps/compact.json`: app collection, release status and SEO metadata.
-- Current CTA is Coming soon. No price, trial or public availability is asserted. Replace it with a verified App Store CTA when launch is confirmed.
+- Navigation, hero, platform and closing links use the supplied App Store URL: `https://apps.apple.com/us/app/makeup-mirror-light-compact/id6814126857`. The primary CTA is “View on the App Store”; the interactive mirror remains available through the secondary CTA.
+- On 7 October 2026, Apple's US lookup returned no result and the supplied public page returned HTTP 404. Public copy does not assert availability or price. The internal `releaseStatus` remains `coming-soon` until launch is verified, keeping the generated metadata as a WebPage rather than publishing a SoftwareApplication offer.
 - Product claims follow Compact's current UK metadata draft and implementation. The demo is an illustration, not a recording or proof of tracking performance. It never requests camera access.
 - This page does not add a legal privacy policy; its privacy text describes camera-image handling only.
 
 ## Assets
 
 - `public/assets/compact/portrait.webp`: original generated fictional portrait, optimized to approximately 92 KB.
-- `public/assets/compact/mark.svg`: simple website monogram, not a proposed replacement app icon.
+- `public/assets/compact/app-icon.webp`: current layered app icon, resized to 256 × 256 from `CompactMirror/AppStoreMockups/cpp-en-GB/source/app-icon-current.png`, preserving transparency (approximately 8 KB).
+- `public/assets/compact/mark.svg`: original website monogram, retained as an unused source asset.
 - `public/assets/compact/social.svg` and `social.png`: editable source and raster social-sharing card.
 
 The portrait was made with the built-in image-generation tool. Final prompt:
@@ -40,6 +42,8 @@ The portrait remains an original fictional illustration. This is a web recreatio
 
 ## Scenario photographs (26 September 2026)
 
-The three Out the door cards now use original generated lifestyle photos: `public/assets/compact/moment-meeting-v2.webp`, `moment-dinner.webp`, and `moment-evening-v2.webp`. Each photo sits above the retained sphere and shadow in an isolated CSS stacking context, offset so the sphere remains partly visible behind its top-right corner. The mobile cards retain the same layers above their text.
+The three Out the door cards now use original generated lifestyle photos: `public/assets/compact/moment-meeting-v2.webp`, `moment-dinner-v11.webp`, and `moment-evening-v2.webp`. Each photo sits above the retained sphere and shadow in an isolated CSS stacking context, offset so the sphere remains partly visible behind its top-right corner. The mobile cards retain the same layers above their text.
 
 Images were made with the built-in image-generation tool, then encoded as 720 × 720 WebP assets (approximately 110 KB combined). Lazy loading and intrinsic dimensions limit loading cost and layout shift. These are illustrative app-in-use scenes, not physical device screenshots. The exact prompts and original generation paths are recorded in `docs/compact-moment-images.json`.
+
+On 8 October 2026, a new dinner image was generated with built-in imagegen using a simpler pose: one visible hand applies blush while the phone rests upright on a dressing-table stand. The caption now says “A quick touch-up. A closer look. Ready.” and the alternative text describes the new scene. The asset is saved as `moment-dinner-v11.webp`; earlier versions are retained. The full generation prompt and source are recorded in the image log above.
