@@ -8,7 +8,7 @@ const root = new URL("../", import.meta.url).pathname;
 const manifest = JSON.parse(await readFile(join(root, "src/generated/breastfeeding-tracker-locales.json"), "utf8"));
 const english = JSON.parse(await readFile(join(root, "content/breastfeeding-tracker/landing.json"), "utf8"));
 // Keep the full rendered sections in sync with the English design, including hidden FAQ answers.
-const sections = ["faqSection", "faqs", "navigation", "everyday", "footer", "editorial", "finalCta", "softwareApplication"];
+const sections = ["faqSection", "faqs", "navigation", "everyday", "footer", "editorial", "finalCta", "privacy", "softwareApplication"];
 function assertShape(source, translation, path) {
   assert.equal(typeof translation, typeof source, `${path} is missing or has the wrong type`);
   if (Array.isArray(source)) {
@@ -48,7 +48,9 @@ try {
       const head = [helmet.title, helmet.meta, helmet.link, helmet.script, helmet.priority].map((part) => part?.toString() ?? "").join("");
       assert.ok(html.includes('class="bft-editorial-hero"'), `${config.locale}: redesigned page is not rendered`);
       assert.ok(html.includes(content.hero.heading), `${config.locale}: missing translated heading`);
+      assert.ok(html.includes(content.privacy.heading), `${config.locale}: missing translated Lifetime Unlock heading`);
       assert.ok(!html.includes(english.hero.heading), `${config.locale}: English heading leaked`);
+      assert.ok(!html.includes(english.privacy.heading), `${config.locale}: English Lifetime Unlock heading leaked`);
       assert.ok(!html.includes(english.editorial.screens.switcherLabel), `${config.locale}: English appearance label leaked`);
       assert.equal((html.match(/<details>/g) ?? []).length, english.faqs.length);
       assert.ok(helmet.htmlAttributes.toString().includes(`lang="${config.locale}"`));

@@ -1,7 +1,7 @@
 {
   "seo": {
-    "title": "Still-Tracker & Timer | Mit Liebe fürs Mama-Sein",
-    "description": "Ein liebevoll gestalteter Tracker für Stillen, Fläschchen und Abpumpen auf iPhone und Apple Watch. Einfache Timer, durchdachte Details. Kostenlos laden.",
+    "title": "Baby-Feeding-Tracker | Stillen, Fläschchen und Abpumpen",
+    "description": "Erfasse Stillen, Fläschchen, Abpumpen und Kombimahlzeiten an einem Ort. Einhändige Timer, Apple Watch und bearbeitbarer Verlauf. Kostenlos starten.",
     "keywords": [
       "Stilltracker",
       "Stilltimer",
@@ -16,19 +16,19 @@
   },
   "hero": {
     "eyebrow": "Still-Tracker & Timer",
-    "heading": "Mama sein,",
-    "headingEmphasis": "mit Liebe zum Detail.",
-    "body": "Ein wohltuend einfacher Tracker für eure Mahlzeiten. Für deinen Alltag und die kleinen Momente, die ihn besonders machen.",
+    "heading": "Babys Mahlzeiten,",
+    "headingEmphasis": "mit Sorgfalt erfasst.",
+    "body": "Halte Stillen, Fläschchen, Abpumpen und Kombimahlzeiten an einem Ort fest. Starte den Timer mit einer Hand, sieh die zuletzt genutzte Seite und schau jederzeit im Verlauf nach.",
     "primaryCta": "Im App Store laden",
     "secondaryCta": "Die App entdecken",
-    "storeNote": "Kostenlos laden. Ohne Abo.",
+    "storeNote": "Kostenlos starten. Optionale dauerhafte Freischaltung per Einmalkauf.",
     "imageAlt": "Startbildschirm von Breastfeeding Tracker mit der letzten Mahlzeit und Tasten für die linke und rechte Seite.",
-    "caption": "Fürs Mama-Sein gemacht. Für dich gestaltet."
+    "caption": "Eine Sache weniger, an die du beim nächsten Füttern denken musst."
   },
   "howItWorks": {
-    "eyebrow": "Ein bisschen Freiraum für dich",
-    "heading": "Eine Sache weniger,\nan die du denken musst.",
-    "body": "Die letzte Mahlzeit. Die letzte Seite. Kleine Details, um die du dich nicht mehr kümmern musst. Damit du ganz bei deinem Baby sein kannst."
+    "eyebrow": "Alle Arten, dein Baby zu füttern",
+    "heading": "Alle Mahlzeiten\nan einem Ort.",
+    "body": "Stillen, Fläschchen und Abpumpen stehen zusammen in einer Zeitachse. Folgt auf das Stillen ein Fläschchen, speicherst du beide Teile als eine Kombimahlzeit."
   },
   "careMethodsFeature": {
     "link": {
@@ -38,13 +38,13 @@
   },
   "historyFeature": {
     "eyebrow": "Ein entspannter Blick zurück",
-    "heading": "Findet euren Rhythmus.\nGanz ohne Druck.",
+    "heading": "Sieh, wie eure Tage\nmit Mahlzeiten verlaufen.",
     "paragraphs": [
       "Mit etwas Abstand werden die Tage übersichtlicher. Entdecke Muster in deinen erfassten Mahlzeiten – mit klaren Zeitachsen und durchdachten Zusammenfassungen.",
       "Hier gibt es keine Punktzahl zu erreichen. Nur eure Geschichte, die du dir jederzeit wieder ansehen kannst."
     ],
     "cta": "Die dauerhafte Freischaltung entdecken",
-    "url": "#questions",
+    "url": "#lifetime-unlock",
     "imageAlts": [
       "Eine Woche erfasster Mahlzeiten als übersichtliche Zeitachse im hellen Erscheinungsbild.",
       "Die Übersicht im hellen Erscheinungsbild mit einem typischen Tag und Sieben-Tage-Zusammenfassungen der erfassten Stillmahlzeiten, Fläschchen und Abpumpvorgänge."
@@ -54,6 +54,17 @@
     "eyebrow": "Gut zu wissen",
     "heading": "Ein paar gute\nFragen.",
     "body": "Was du sonst noch wissen möchtest."
+  },
+  "privacy": {
+    "eyebrow": "Dauerhafte Freischaltung per Einmalkauf",
+    "heading": "Behalte den vollständigen\nÜberblick.",
+    "body": "Starte kostenlos, ohne ein App-Konto anzulegen. Die dauerhafte Freischaltung ergänzt den vollständigen Verlauf mit Filtern, Auswertungen, PDF-Export und allen Designs. Sie entfernt außerdem Werbung, mit einem Kauf und ohne Abo.",
+    "links": [
+      {
+        "label": "Datenschutzerklärung lesen (Englisch)",
+        "url": "/privacy/breast-feeding-tracker/"
+      }
+    ]
   },
   "faqs": [
     {
@@ -164,8 +175,8 @@
     "insightsNote": "Auswertungen und der vollständige Verlauf sind in der dauerhaften Freischaltung per Einmalkauf enthalten. Die Zusammenfassungen geben deine Aufzeichnungen wieder und sind keine Beurteilung der Ernährung.",
     "screens": {
       "eyebrow": "Bis ins Detail durchdacht",
-      "heading": "Passt zu dir.\nUnd zu deinem Tag.",
-      "body": "Sanft am Morgen. Dezent am Abend. Wähle deinen Look und behalte die kleinen Details auf iPhone, iPad und Apple Watch im Blick.",
+      "heading": "Klar am Tag.\nAngenehm in der Nacht.",
+      "body": "Wechsle im Tagesverlauf zwischen heller und dunkler Ansicht. Nutze die App auf iPhone, iPad und Apple Watch.",
       "switcherLabel": "Erscheinungsbild der App ansehen",
       "lightLabel": "Hell",
       "darkLabel": "Dunkel",
@@ -185,8 +196,8 @@
     },
     "finalCta": {
       "eyebrow": "Eine kleine Hilfe, liebevoll durchdacht",
-      "heading": "Ein kleiner Teil\nvon eurem Alltag.",
-      "body": "Die nächste Mahlzeit. Ein bisschen entspannter.",
+      "heading": "Behalte die nächste\nMahlzeit im Blick.",
+      "body": "Starte mit einer Hand. Sieh auf iPhone, iPad oder Apple Watch nach, wo du aufgehört hast.",
       "label": "Im App Store laden",
       "note": "Kostenlos laden · Ohne Abo · Ab iOS 26"
     }

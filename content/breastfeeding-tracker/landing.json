@@ -2,8 +2,8 @@
   "published": true,
   "route": "/breastfeeding-tracker",
   "seo": {
-    "title": "Breastfeeding Tracker & Timer | Motherhood, beautifully considered",
-    "description": "A beautifully considered feeding tracker for iPhone and Apple Watch. Simple timers, thoughtful details and a little less to remember. Free to download.",
+    "title": "Baby Feeding Tracker & Timer | Breastfeeding, Bottles & Pumping",
+    "description": "Track breastfeeding, bottles, pumping and combined feeds in one place. One-handed timers, Apple Watch support and editable history. Free to start.",
     "keywords": [
       "breastfeeding tracker",
       "combifeeding tracker",
@@ -58,12 +58,12 @@
   "hero": {
     "iconAlt": "Breastfeeding Tracker & Timer app icon",
     "eyebrow": "Breastfeeding Tracker & Timer",
-    "heading": "Motherhood,",
-    "headingEmphasis": "beautifully considered.",
-    "body": "A beautifully simple feeding tracker. Made for the life you’re living, and the little moments that make it yours.",
+    "heading": "Baby feeding,",
+    "headingEmphasis": "thoughtfully tracked.",
+    "body": "Keep breastfeeding, bottles, pumping and combined feeds together. Start a timer with one hand, check the last side, and return to a clear record whenever you need it.",
     "primaryCta": "Download on the App Store",
     "secondaryCta": "Discover the app",
-    "storeNote": "Free to download. No subscription.",
+    "storeNote": "Free to start. Optional one-time Lifetime Unlock.",
     "imageAlt": "Breastfeeding Tracker home screen with the last feed and one-tap left and right controls.",
     "noteTop": {
       "label": "The last side?",
@@ -73,7 +73,7 @@
       "label": "One hand free?",
       "value": "That’s all you need."
     },
-    "caption": "Made for motherhood. Designed for you."
+    "caption": "One less thing to remember at the next feed."
   },
   "proof": {
     "ariaLabel": "Designed for everyday feeding",
@@ -93,9 +93,9 @@
     ]
   },
   "howItWorks": {
-    "eyebrow": "A little space for you",
-    "heading": "One less thing\nto remember.",
-    "body": "The last feed. The last side. The little details, quietly taken care of. So you can be here, with them.",
+    "eyebrow": "All the ways you feed",
+    "heading": "Every kind of feed,\ntogether.",
+    "body": "Record breastfeeding, bottles and pumping in one timeline. When a breastfeed ends with a bottle top-up, save both parts as one combined feed.",
     "steps": [
       {
         "step": "01",
@@ -140,22 +140,22 @@
   },
   "historyFeature": {
     "eyebrow": "Perspective, gently",
-    "heading": "Find your rhythm.\nLeave the pressure.",
+    "heading": "See how your feeding\ndays unfold.",
     "paragraphs": [
       "A little distance can make the days feel clearer. See the patterns in the feeds you’ve recorded, with simple timelines and thoughtful summaries.",
       "There’s no score to chase. Just your feeding story, there when you want to look back."
     ],
     "cta": "Explore Lifetime Unlock",
-    "url": "#questions",
+    "url": "#lifetime-unlock",
     "imageAlts": [
       "A week of recorded feeds in the app’s light appearance, shown as a simple timeline.",
       "The Insights view in light appearance, showing a typical day and seven-day summaries of recorded breastfeeding, bottles and pumping."
     ]
   },
   "privacy": {
-    "eyebrow": "A simple start",
-    "heading": "No sign-up.\nNo subscription.",
-    "body": "Start tracking without creating an app account. If you’d like more, an optional one-time Lifetime Unlock adds full history, insights, PDF export, all themes and an ad-free experience.",
+    "eyebrow": "One-time Lifetime Unlock",
+    "heading": "Keep the full\nfeeding picture.",
+    "body": "Start tracking for free, without creating an app account. Lifetime Unlock adds full history and filters, feeding insights, PDF export and all themes. It also removes ads, with a single purchase and no subscription.",
     "links": [
       {
         "label": "Read the privacy policy",
@@ -316,8 +316,8 @@
     "insightsNote": "Insights and full history are included with the one-time Lifetime Unlock. Summaries reflect your records, not a feeding assessment.",
     "screens": {
       "eyebrow": "Considered in every detail",
-      "heading": "Feels like you.\nFits your day.",
-      "body": "Soft in the morning. Quiet after dark. Choose your look, then keep the little details close across iPhone, iPad and Apple Watch.",
+      "heading": "Clear by day.\nComfortable after dark.",
+      "body": "Switch between light and dark appearances as your day changes. Use the app across iPhone, iPad and Apple Watch.",
       "switcherLabel": "Preview the app’s appearance",
       "lightLabel": "Light",
       "darkLabel": "Dark",
@@ -337,8 +337,8 @@
     },
     "finalCta": {
       "eyebrow": "A small thing, beautifully considered",
-      "heading": "Make it part\nof your every day.",
-      "body": "Your next feed. A little more considered.",
+      "heading": "Keep your next feed\neasy to remember.",
+      "body": "Start with one hand. Pick up where you left off on iPhone, iPad or Apple Watch.",
       "label": "Download on the App Store",
       "note": "Free to download · No subscription · iOS 26 or later"
     }

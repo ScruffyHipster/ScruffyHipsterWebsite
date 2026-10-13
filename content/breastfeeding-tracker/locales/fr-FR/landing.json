@@ -1,7 +1,7 @@
 {
   "seo": {
-    "title": "Suivi d’allaitement & minuteur | La maternité, pensée avec soin",
-    "description": "Un suivi des repas de bébé pensé avec soin pour iPhone et Apple Watch. Des minuteurs simples et de petites attentions au quotidien. Téléchargement gratuit.",
+    "title": "Suivi des repas de bébé | Allaitement, biberons et tirages",
+    "description": "Suivez les tétées, les biberons, les tirages et les repas mixtes au même endroit. Minuteurs utilisables d’une main, Apple Watch et historique modifiable. Gratuit pour commencer.",
     "keywords": [
       "suivi allaitement",
       "minuteur allaitement",
@@ -16,19 +16,19 @@
   },
   "hero": {
     "eyebrow": "Suivi d’allaitement & minuteur",
-    "heading": "La maternité,",
-    "headingEmphasis": "pensée avec soin.",
-    "body": "Un suivi des repas tout simplement agréable. Conçu pour votre quotidien et les petits instants qui le rendent unique.",
+    "heading": "Les repas de bébé,",
+    "headingEmphasis": "suivis avec soin.",
+    "body": "Rassemblez les tétées, les biberons, les tirages et les repas mixtes. Lancez un minuteur d’une main, retrouvez le dernier côté utilisé et consultez votre historique quand vous en avez besoin.",
     "primaryCta": "Télécharger sur l’App Store",
     "secondaryCta": "Découvrir l’application",
-    "storeNote": "Téléchargement gratuit. Sans abonnement.",
+    "storeNote": "Gratuit pour commencer. Déblocage à vie facultatif par achat unique.",
     "imageAlt": "Écran d’accueil de Breastfeeding Tracker avec le dernier repas et les boutons gauche et droite accessibles en un geste.",
-    "caption": "Pour votre vie de maman. Pensée pour vous."
+    "caption": "Une chose de moins à retenir au prochain repas."
   },
   "howItWorks": {
-    "eyebrow": "Un peu de place pour vous",
-    "heading": "Une chose de moins\nà retenir.",
-    "body": "Le dernier repas. Le dernier côté. Ces petits détails sont gardés en mémoire, tout simplement. Pour que vous puissiez être là, avec votre bébé."
+    "eyebrow": "Toutes vos façons de nourrir bébé",
+    "heading": "Tous les repas,\nau même endroit.",
+    "body": "Retrouvez les tétées, les biberons et les tirages dans une même chronologie. Après une tétée, ajoutez un complément au biberon dans le même repas mixte."
   },
   "careMethodsFeature": {
     "link": {
@@ -38,13 +38,13 @@
   },
   "historyFeature": {
     "eyebrow": "Un peu de recul, en douceur",
-    "heading": "Trouvez votre rythme.\nSans la pression.",
+    "heading": "Voyez comment se déroulent\nvos journées de repas.",
     "paragraphs": [
       "Prendre un peu de recul aide parfois à y voir plus clair. Retrouvez les habitudes qui se dessinent dans vos repas enregistrés, grâce à des chronologies simples et des résumés soignés.",
       "Aucun score à atteindre. Simplement votre histoire, à retrouver quand vous en avez envie."
     ],
     "cta": "Découvrir le déblocage à vie",
-    "url": "#questions",
+    "url": "#lifetime-unlock",
     "imageAlts": [
       "Une semaine de repas enregistrés dans une chronologie simple, en apparence claire.",
       "La vue des tendances en apparence claire, avec une journée type et des résumés sur sept jours des tétées, biberons et tirages enregistrés."
@@ -54,6 +54,17 @@
     "eyebrow": "Quelques bonnes questions",
     "heading": "Quelques bonnes\nquestions.",
     "body": "Tout ce que vous aimeriez encore savoir."
+  },
+  "privacy": {
+    "eyebrow": "Déblocage à vie par achat unique",
+    "heading": "Gardez une vue complète\ndes repas.",
+    "body": "Commencez gratuitement, sans créer de compte dans l’application. Le déblocage à vie ajoute l’historique complet et ses filtres, les tendances, l’export PDF et tous les thèmes. Il supprime aussi les publicités, par achat unique et sans abonnement.",
+    "links": [
+      {
+        "label": "Lire la politique de confidentialité (en anglais)",
+        "url": "/privacy/breast-feeding-tracker/"
+      }
+    ]
   },
   "faqs": [
     {
@@ -164,8 +175,8 @@
     "insightsNote": "Les tendances et l’historique complet sont inclus dans le déblocage à vie par achat unique. Les résumés reflètent vos saisies et ne constituent pas une évaluation de l’alimentation.",
     "screens": {
       "eyebrow": "Chaque détail compte",
-      "heading": "À votre image.\nAu rythme de vos journées.",
-      "body": "Douce le matin. Discrète le soir. Choisissez votre style, puis retrouvez les petits détails sur iPhone, iPad et Apple Watch.",
+      "heading": "Claire le jour.\nAgréable la nuit.",
+      "body": "Passez de l’apparence claire à l’apparence sombre au fil de la journée. Utilisez l’application sur iPhone, iPad et Apple Watch.",
       "switcherLabel": "Aperçu de l’apparence de l’application",
       "lightLabel": "Claire",
       "darkLabel": "Sombre",
@@ -185,8 +196,8 @@
     },
     "finalCta": {
       "eyebrow": "Une petite attention, pensée avec soin",
-      "heading": "Une place dans\nvotre quotidien.",
-      "body": "Le prochain repas. Avec un peu plus de sérénité.",
+      "heading": "Gardez le prochain repas\nen mémoire.",
+      "body": "Commencez d’une main. Retrouvez vos repas sur iPhone, iPad ou Apple Watch.",
       "label": "Télécharger sur l’App Store",
       "note": "Téléchargement gratuit · Sans abonnement · iOS 26 ou version ultérieure"
     }

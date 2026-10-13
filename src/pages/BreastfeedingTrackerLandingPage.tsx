@@ -171,6 +171,16 @@ export function BreastfeedingTrackerLandingPage() {
         </div>
       </section>
 
+      <section className="bft-editorial-section bft-lifetime" id="lifetime-unlock" aria-labelledby="lifetime-heading">
+        <div className="bft-container bft-editorial-split">
+          <div><p className="bft-eyebrow">{content.privacy.eyebrow}</p><h2 id="lifetime-heading">{content.privacy.heading}</h2></div>
+          <div className="bft-editorial-copy">
+            <p>{content.privacy.body}</p>
+            {content.privacy.links.map((link) => <Link className="bft-text-link" key={link.url} to={link.url}>{link.label}<Icon kind="arrow" /></Link>)}
+          </div>
+        </div>
+      </section>
+
       <section className="bft-editorial-section bft-appearance" aria-labelledby="screens-heading">
         <div className="bft-container">
           <div className="bft-editorial-section-intro">
