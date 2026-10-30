@@ -309,6 +309,39 @@ const routes = [
       ])
     ]
   },
+  {
+    path: pages["breastfeeding-timer"].route,
+    ...pages["breastfeeding-timer"].seo,
+    jsonLd: [
+      organizationJsonLd,
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        name: pages["breastfeeding-timer"].webApplication.name,
+        description: pages["breastfeeding-timer"].webApplication.description,
+        url: absoluteRouteUrl(pages["breastfeeding-timer"].route),
+        applicationCategory: "HealthApplication",
+        operatingSystem: "Any",
+        browserRequirements: "Requires JavaScript",
+        isAccessibleForFree: true,
+        featureList: pages["breastfeeding-timer"].webApplication.featureList,
+        offers: { "@type": "Offer", price: "0", priceCurrency: "GBP" },
+        publisher: { "@type": "Organization", name: site.companyName, url: siteUrl }
+      },
+      faqPageJsonLd(pages["breastfeeding-timer"].faqs),
+      breadcrumbJsonLd([
+        { name: site.companyName, url: siteUrl },
+        {
+          name: pages["breastfeeding-timer"].breadcrumbs.tracker,
+          url: absoluteRouteUrl(breastfeedingTracker.route)
+        },
+        {
+          name: pages["breastfeeding-timer"].breadcrumbs.timer,
+          url: absoluteRouteUrl(pages["breastfeeding-timer"].route)
+        }
+      ])
+    ]
+  },
   ...breastfeedingGuides.map((guide) => {
     const path = `${pages["breastfeeding-support"].route}/${guide.slug}`;
     return {

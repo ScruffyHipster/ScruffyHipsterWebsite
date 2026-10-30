@@ -1637,9 +1637,10 @@ img {
     scroll-behavior: auto;
   }
 
-  *,
-  *::before,
-  *::after {
+  /* The timer supplies the design system’s calmer motion instead of disabling it. */
+  *:not(:where(.bfw-page, .bfw-page *)),
+  *:not(:where(.bfw-page, .bfw-page *))::before,
+  *:not(:where(.bfw-page, .bfw-page *))::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;

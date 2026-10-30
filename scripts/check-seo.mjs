@@ -18,9 +18,9 @@ const trackerRoutes = publicRoutes.filter(
   (route) => route.path === trackerBasePath || route.path.startsWith(`${trackerBasePath}/`)
 );
 const expectedTrackerRouteCount =
-  cmsContent.breastfeedingGuides.length + cmsContent.breastfeedingBlogPosts.length + 4;
+  cmsContent.breastfeedingGuides.length + cmsContent.breastfeedingBlogPosts.length + 5;
 const expectedPublishedRouteCount =
-  9 +
+  10 +
   cmsContent.rewireArticles.length +
   cmsContent.breastfeedingGuides.length +
   cmsContent.breastfeedingBlogPosts.length +
@@ -193,6 +193,27 @@ for (const route of trackerRoutes) {
     route.path === `${trackerBasePath}/blog`
   ) {
     assert(html.includes('"@type":"CollectionPage"'), `${route.path} is missing CollectionPage data.`);
+  } else if (route.path === `${trackerBasePath}/breastfeeding-timer`) {
+    const timerAppStoreUrl = cmsContent.pages["breastfeeding-timer"].appStoreUrl;
+    assert(html.includes('"@type":"WebApplication"'), "Breastfeeding timer is missing WebApplication data.");
+    assert(html.includes('"@type":"FAQPage"'), "Breastfeeding timer is missing FAQPage data.");
+    assert(
+      /<div\b(?=[^>]*\bclass="bfw")(?=[^>]*\bdata-ready="false")(?=[^>]*\bdata-mode="idle")[^>]*>/.test(html),
+      "Breastfeeding timer must server-render the idle timer."
+    );
+    assert(
+      html.includes(`<h1 class="bfw-title">${cmsContent.pages["breastfeeding-timer"].timer.heading}</h1>`),
+      "Breastfeeding timer has the wrong h1."
+    );
+    assert(
+      !html.includes('name="apple-itunes-app"'),
+      "Breastfeeding timer must not show the App Store banner before the timer is used."
+    );
+    assert(
+      html.includes(`href="${htmlAttributeUrl(timerAppStoreUrl)}"`) &&
+        new URL(timerAppStoreUrl).searchParams.get("ct") === "web_breastfeeding_timer",
+      "Breastfeeding timer App Store links must use the web_breastfeeding_timer campaign."
+    );
   } else if (route.path === `${trackerBasePath}/blog/editorial-disclosure`) {
     assert(html.includes('class="feeding-disclosure-page"'), "Blog disclosure is missing rendered content.");
     assert(html.includes('"@type":"WebPage"'), "Blog disclosure is missing WebPage data.");

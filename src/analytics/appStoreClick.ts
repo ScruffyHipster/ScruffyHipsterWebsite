@@ -3,7 +3,15 @@ import { appStoreCountryForLocale, localeForPath } from "../content/trackerLocal
 import { readLandingAttribution } from "./landingAttribution";
 import { trackEvent } from "./telemetrydeck";
 
-export type AppStorePlacement = "hero" | "feature" | "guide" | "blog" | "footer";
+export type AppStorePlacement =
+  | "hero"
+  | "feature"
+  | "guide"
+  | "blog"
+  | "footer"
+  | "timer-invite"
+  | "timer-history"
+  | "timer-page";
 
 const breastfeedingTrackerAppId = "6754637800";
 

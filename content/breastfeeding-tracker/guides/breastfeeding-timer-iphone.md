@@ -14,6 +14,8 @@ Breastfeeding Tracker & Timer keeps the main action at the top of the screen. Ch
 
 The layout is intentionally simple for one-handed use. It does not ask you to complete a long form before you can begin, and it keeps recent feed information close to the timer.
 
+Away from your iPhone, or want to try the timer first? The [free online breastfeeding timer](/breastfeeding-tracker/breastfeeding-timer/) works the same way in any browser and keeps your feeds on that device.
+
 # Keep the active timer visible
 
 On a supported iPhone, the current feed can appear as a Live Activity on the Lock Screen and in Dynamic Island. That makes it possible to check the elapsed time and current side without navigating back through the app.

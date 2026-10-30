@@ -339,6 +339,9 @@ content:
               - name: breastfeedingSupportLabel
                 type: string
                 required: true
+              - name: breastfeedingTimerLabel
+                type: string
+                required: true
               - name: editorialDisclosureLabel
                 type: string
                 required: true
@@ -753,6 +756,144 @@ content:
           - name: sections
             type: object
             list: true
+
+      - name: breastfeeding_timer
+        label: Online breastfeeding timer
+        type: file
+        path: content/pages/breastfeeding-timer.json
+        format: json
+        operations: *fixed_operations
+        fields:
+          - name: published
+            type: boolean
+            readonly: true
+          - name: route
+            type: string
+            readonly: true
+          - name: seo
+            component: seo
+          - name: breadcrumbs
+            type: object
+            fields:
+              - name: tracker
+                type: string
+                required: true
+              - name: timer
+                type: string
+                required: true
+          - name: webApplication
+            label: Structured data
+            type: object
+            fields:
+              - name: name
+                type: string
+                required: true
+              - name: description
+                type: text
+                required: true
+              - name: featureList
+                type: string
+                list: true
+          - name: appStoreUrl
+            label: App Store link (keep ct=web_breastfeeding_timer)
+            type: string
+            required: true
+          - name: appIcon
+            type: image
+            options:
+              media: uploads
+          - name: timer
+            label: Timer interface text
+            type: object
+          - name: how
+            type: object
+            fields:
+              - name: heading
+                type: string
+                required: true
+              - name: body
+                type: text
+                required: true
+              - name: steps
+                type: object
+                list: true
+                fields:
+                  - name: title
+                    type: string
+                    required: true
+                  - name: body
+                    type: text
+                    required: true
+          - name: privacy
+            type: object
+            fields:
+              - name: heading
+                type: string
+                required: true
+              - name: body
+                type: text
+                required: true
+          - name: app
+            type: object
+            fields:
+              - name: heading
+                type: string
+                required: true
+              - name: body
+                type: text
+                required: true
+              - name: features
+                type: object
+                list: true
+                fields:
+                  - name: icon
+                    type: select
+                    options:
+                      values: [lock, watch, drop, cloud]
+                  - name: label
+                    type: string
+                    required: true
+              - name: action
+                type: string
+                required: true
+              - name: note
+                type: text
+                required: true
+          - name: faqSection
+            type: object
+            fields:
+              - name: heading
+                type: string
+                required: true
+          - name: faqs
+            type: object
+            list: true
+            fields:
+              - name: question
+                type: string
+                required: true
+              - name: answer
+                type: text
+                required: true
+          - name: footer
+            type: object
+            fields:
+              - name: note
+                type: text
+                required: true
+              - name: navigationLabel
+                type: string
+                required: true
+              - name: links
+                type: object
+                list: true
+                fields:
+                  - name: label
+                    type: string
+                    required: true
+                  - name: url
+                    type: string
+                    required: true
 
   - name: apps
     label: Apps

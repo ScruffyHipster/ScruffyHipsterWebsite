@@ -16,7 +16,7 @@ When you stop, the feed is saved with its start time, duration, and selected sid
 
 # Check the last recorded side
 
-The app highlights the most recently logged side in the main view and its widget. This is a record of your selection, not a recommendation about which side to use next.
+The app highlights the most recently logged side in the main view and its widget. This is a record of your selection, not a recommendation about which side to use next. The [online left and right breastfeeding timer](/breastfeeding-tracker/breastfeeding-timer/) marks it the same way in your browser.
 
 If you switch sides during a feed, use the controls available in the active session so the saved entry reflects what you intended to record.
 

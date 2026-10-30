@@ -1,0 +1,217 @@
+{
+  "published": true,
+  "route": "/breastfeeding-tracker/breastfeeding-timer",
+  "seo": {
+    "title": "Free Online Breastfeeding Timer — Left & Right",
+    "description": "A free breastfeeding timer for the left and right side. Switch sides, pause, fix a late start and see today’s feeds. Private to your browser, no sign-up.",
+    "keywords": [
+      "online breastfeeding timer",
+      "free breastfeeding timer",
+      "left and right breastfeeding timer",
+      "nursing timer"
+    ],
+    "ogImage": "/assets/breastfeeding-tracker-og.png"
+  },
+  "breadcrumbs": {
+    "tracker": "Breastfeeding Tracker",
+    "timer": "Breastfeeding timer"
+  },
+  "webApplication": {
+    "name": "Breastfeeding timer",
+    "description": "A free online breastfeeding timer for the left and right side that saves feeds in your browser.",
+    "featureList": [
+      "Left and right side timer",
+      "Switch sides without stopping",
+      "Pause and resume",
+      "Change the start time",
+      "Add a missed feed",
+      "Today’s feeds and history saved in your browser"
+    ]
+  },
+  "appStoreUrl": "https://apps.apple.com/app/apple-store/id6754637800?pt=120062009&ct=web_breastfeeding_timer&mt=8",
+  "appIcon": "/assets/breastfeeding-editorial/app-icon-128.webp",
+  "timer": {
+    "heading": "Breastfeeding timer",
+    "aboutAppLabel": "About the iPhone app",
+    "howLinkLabel": "How this timer works",
+    "lastFeed": "Last breastfeed",
+    "emptyTitle": "No feeds yet",
+    "emptyBody": "Choose a side and tap Start. Your feeds are saved in this browser.",
+    "idleRegionLabel": "Start a feed",
+    "runningRegionLabel": "Feed in progress",
+    "sidesLabel": "Select feeding side",
+    "left": "Left",
+    "right": "Right",
+    "leftShort": "L",
+    "rightShort": "R",
+    "sideLabel": "{side} side",
+    "lastUsed": "Last used",
+    "start": "Start",
+    "stop": "Stop",
+    "startLabel": "Start {side}",
+    "stopLabel": "Stop breastfeeding",
+    "activeHeading": "Breastfeeding · {side}",
+    "paused": "Paused",
+    "startedAt": "Started at {time}",
+    "changeStartTime": "Change start time, {time}",
+    "switchTo": "Switch to {side}",
+    "pause": "Pause",
+    "resume": "Resume",
+    "elapsedLabel": "Elapsed feeding time, {duration}",
+    "pausedLabel": "Paused activity time, {duration}",
+    "history": "History",
+    "addFeed": "Add a feed",
+    "close": "Close",
+    "cancel": "Cancel",
+    "done": "Done",
+    "save": "Save",
+    "documentTitle": "{time} {side} · Breastfeeding timer",
+    "documentTitlePaused": "{time} {side}, paused · Breastfeeding timer",
+    "durations": {
+      "seconds": "{seconds} sec",
+      "minutes": "{minutes} min",
+      "hours": "{hours} hr",
+      "hoursMinutes": "{hours} hr {minutes} min",
+      "justNow": "Just now",
+      "minutesAgo": "{minutes} min ago",
+      "hoursAgo": "{hours} hr ago",
+      "hoursMinutesAgo": "{hours} hr {minutes} min ago",
+      "dayAgo": "1 day ago",
+      "daysAgo": "{days} days ago",
+      "spokenHour": "{count} hour",
+      "spokenHours": "{count} hours",
+      "spokenMinute": "{count} minute",
+      "spokenMinutes": "{count} minutes",
+      "spokenSecond": "{count} second",
+      "spokenSeconds": "{count} seconds"
+    },
+    "invite": {
+      "title": "Feed saved",
+      "body": "Want the timer on your lock screen and Apple Watch? The iPhone app does both, and keeps your feeds in your private iCloud.",
+      "dismiss": "Not now",
+      "action": "View on the App Store"
+    },
+    "historySheet": {
+      "title": "History",
+      "addLabel": "Add Activity",
+      "summaryTitle": "Today",
+      "summarySubtitle": "Breastfeeding",
+      "feeds": "Feeds",
+      "total": "Total",
+      "average": "Average",
+      "noValue": "—",
+      "today": "Today",
+      "yesterday": "Yesterday",
+      "range": "{start} to {end}",
+      "feedCountOne": "1 feed",
+      "feedCount": "{count} feeds",
+      "activity": "Breastfeeding",
+      "both": "Both",
+      "detail": "{sides} · {duration}",
+      "segment": "{side} {duration}",
+      "rowLabel": "Breastfeeding, started {time}, {detail}. Edit",
+      "emptyTitle": "No feeds yet",
+      "emptyBody": "Feeds you time or add will appear here.",
+      "storageNote": "Feeds are saved in this browser on this device. Clearing your browsing data removes them.",
+      "clearAll": "Clear all feeds",
+      "clearConfirm": "Clear every saved feed?",
+      "clear": "Clear",
+      "appNote": "The iPhone app keeps every feed in your private iCloud.",
+      "appAction": "View on the App Store"
+    },
+    "startTimeSheet": {
+      "title": "Start time",
+      "inputLabel": "Start time",
+      "earlier": "One minute earlier",
+      "later": "One minute later",
+      "feedingFor": "Feeding for {duration}",
+      "chooseBefore": "Choose a time before {time}",
+      "chooseRecent": "Choose a time in the last 12 hours"
+    },
+    "composeSheet": {
+      "addTitle": "Add Activity",
+      "editTitle": "Edit Activity",
+      "section": "Breastfeeding",
+      "started": "Started",
+      "minutes": "{minutes} min",
+      "lessLeft": "One minute less on the left",
+      "moreLeft": "One minute more on the left",
+      "lessRight": "One minute less on the right",
+      "moreRight": "One minute more on the right",
+      "needMinutes": "Add minutes for at least one side.",
+      "futureEnd": "This feed would end in the future. Choose an earlier start.",
+      "summary": "{duration} in total, ending {time}.",
+      "delete": "Delete Activity",
+      "deleteConfirm": "Delete this feed?",
+      "deleteAction": "Delete"
+    }
+  },
+  "how": {
+    "heading": "How this timer works",
+    "body": "A free breastfeeding timer for the left and right side that works in your browser. There’s nothing to install and no account to make.",
+    "steps": [
+      {
+        "title": "Choose a side",
+        "body": "Tap Left or Right. The side you finished on last time is marked Last used."
+      },
+      {
+        "title": "Start, switch and pause",
+        "body": "Switch sides without stopping, and pause for a burp or a nappy change. Lock your phone or close the tab and the timer carries on."
+      },
+      {
+        "title": "Stop to save",
+        "body": "Each feed is saved with the time on each side. Open History to see today’s feeds, or tap + to add one you missed."
+      }
+    ]
+  },
+  "privacy": {
+    "heading": "Private to this device",
+    "body": "Your feeds are saved in this browser on this device. They aren’t uploaded anywhere, and clearing your browsing data deletes them."
+  },
+  "app": {
+    "heading": "Carry on in the iPhone app",
+    "body": "Everything this timer does, with more of what helps when you’re feeding around the clock.",
+    "features": [
+      { "icon": "lock", "label": "Your running feed on the lock screen" },
+      { "icon": "watch", "label": "Start and stop feeds from Apple Watch" },
+      { "icon": "drop", "label": "Bottle feeds, pumping and your milk stash" },
+      { "icon": "cloud", "label": "Your history kept in your private iCloud" }
+    ],
+    "action": "View on the App Store",
+    "note": "Free to download, with an optional one-time Lifetime Unlock. I make the app on my own."
+  },
+  "faqSection": {
+    "heading": "Questions"
+  },
+  "faqs": [
+    {
+      "question": "Is this breastfeeding timer free?",
+      "answer": "Yes. There’s nothing to sign up for and nothing to install."
+    },
+    {
+      "question": "Do I need to keep this page open?",
+      "answer": "No. The timer counts from the moment you tapped Start, so you can lock your phone or close the tab and pick up where you left off in the same browser."
+    },
+    {
+      "question": "Where are my feeds saved?",
+      "answer": "In this browser on this device. Open this page in the same browser to see them again. Private browsing and clearing your browsing data remove them."
+    },
+    {
+      "question": "I forgot to press Start. Can I fix the time?",
+      "answer": "Yes. While the timer runs, tap Started at and set the time the feed really began. For a feed you didn’t time at all, tap + and add it."
+    },
+    {
+      "question": "Does it time pumping or bottle feeds?",
+      "answer": "This page times breastfeeds. The iPhone app also logs bottles and pumping, and keeps track of your milk stash."
+    }
+  ],
+  "footer": {
+    "note": "This timer records what you enter. It isn’t medical advice. If you’re worried about feeding, talk to your midwife, health visitor or GP.",
+    "navigationLabel": "More from the app",
+    "links": [
+      { "label": "About the app", "url": "/breastfeeding-tracker/" },
+      { "label": "Guides", "url": "/breastfeeding-tracker/guides/" },
+      { "label": "Privacy", "url": "/privacy/breast-feeding-tracker/" }
+    ]
+  }
+}

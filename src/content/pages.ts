@@ -10,3 +10,4 @@ export const breastfeedingSupportPageContent = fixedPages["breastfeeding-support
 export const breastfeedingBlogPageContent = fixedPages["breastfeeding-blog"];
 export const breastfeedingBlogDisclosurePageContent =
   fixedPages["breastfeeding-blog-disclosure"];
+export const breastfeedingTimerPageContent = fixedPages["breastfeeding-timer"];

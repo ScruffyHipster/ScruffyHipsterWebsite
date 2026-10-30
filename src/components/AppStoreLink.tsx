@@ -9,6 +9,7 @@ import {
   breastfeedingTrackerAppStoreUrl,
   breastfeedingTrackerArticleAppStoreUrl
 } from "../content/breastfeedingTracker";
+import { breastfeedingTimerPageContent } from "../content/pages";
 
 import { localeForPath } from "../content/trackerLocales";
 
@@ -28,7 +29,9 @@ export function BreastfeedingTrackerAppStoreLink({
   const baseHref =
     placement === "guide" || placement === "blog"
       ? breastfeedingTrackerArticleAppStoreUrl
-      : breastfeedingTrackerAppStoreUrl;
+      : placement.startsWith("timer-")
+        ? breastfeedingTimerPageContent.appStoreUrl
+        : breastfeedingTrackerAppStoreUrl;
 
   const locale = localeForPath(location.pathname);
   const href = locale === "en-GB" ? baseHref : localizedBreastfeedingTrackerAppStoreUrl(

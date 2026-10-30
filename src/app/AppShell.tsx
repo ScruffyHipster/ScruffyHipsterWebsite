@@ -6,6 +6,7 @@ import { RouteAnalytics } from "../analytics/RouteAnalytics";
 import { ScrollToTop } from "./ScrollToTop";
 import {
   appRoutePath,
+  BREASTFEEDING_TIMER_PATH,
   BREASTFEEDING_TRACKER_BLOG_BASE_PATH,
   BREASTFEEDING_TRACKER_BLOG_DISCLOSURE_PATH,
   BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH,
@@ -26,6 +27,11 @@ export function AppShell() {
 
   if (["/compact", "/apps/chat-with-santa"].includes(location.pathname.replace(/\/+$/, ""))) {
     return <div className="site-shell"><RouteAnalytics /><ScrollToTop /><Outlet /></div>;
+  }
+
+  // The online timer opens straight onto the tool, with no app banner or download button before it.
+  if (location.pathname.replace(/\/+$/, "") === BREASTFEEDING_TIMER_PATH) {
+    return <div className="site-shell bfw-shell"><RouteAnalytics /><ScrollToTop /><Outlet /></div>;
   }
 
   if (/^\/rewire(?:\/|$)/.test(location.pathname)) {
@@ -99,6 +105,11 @@ export function AppShell() {
                 <li>
                   <Link to={canonicalPath(BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH)}>
                     {siteConfig.footer.breastfeedingSupportLabel}
+                  </Link>
+                </li>
+                <li>
+                  <Link to={canonicalPath(BREASTFEEDING_TIMER_PATH)}>
+                    {siteConfig.footer.breastfeedingTimerLabel}
                   </Link>
                 </li>
                 <li>

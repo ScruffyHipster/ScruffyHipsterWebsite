@@ -1,0 +1,267 @@
+/* The page around the online breastfeeding timer. Tokens are defined with the timer in BreastfeedingTimer.css. */
+.bfw-page {
+  min-height: 100vh;
+  background: var(--bfw-ground-4);
+  color: var(--bfw-text);
+  font-family: var(--bfw-sans);
+  line-height: 1.4;
+  letter-spacing: 0;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.bfw-page :where(p, h2, h3, ol, ul) {
+  margin: 0;
+}
+
+.bfw-page :focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--bfw-accent) 55%, transparent);
+  outline-offset: 3px;
+}
+
+.bfw-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 56px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.bfw-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  scroll-margin-top: 24px;
+}
+
+.bfw-heading {
+  font: 700 28px/34px var(--bfw-rounded);
+}
+
+.bfw-lead {
+  font: 400 17px/22px var(--bfw-sans);
+  color: var(--bfw-text-2);
+}
+
+.bfw-card {
+  padding: 14px;
+  border-radius: 14px;
+  background: var(--bfw-surface);
+}
+
+.bfw-steps {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.bfw-step {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bfw-step-number {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bfw-accent) 12%, transparent);
+  color: var(--bfw-accent);
+  font: 700 15px/1 var(--bfw-rounded);
+}
+
+.bfw-step h3 {
+  font: 700 17px/22px var(--bfw-rounded);
+}
+
+.bfw-step p,
+.bfw-private p {
+  font: 400 15px/20px var(--bfw-sans);
+  color: var(--bfw-text-2);
+}
+
+.bfw-private {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.bfw-private > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bfw-private h2 {
+  font: 700 20px/25px var(--bfw-rounded);
+}
+
+.bfw-private-icon,
+.bfw-feature-icon {
+  width: 34px;
+  height: 34px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  color: var(--bfw-accent);
+}
+
+.bfw-line-icon {
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bfw-app {
+  padding: 28px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  border-radius: 28px;
+  background: var(--bfw-surface);
+  text-align: center;
+}
+
+.bfw-app > img {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+}
+
+.bfw-app-intro {
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bfw-features {
+  list-style: none;
+  width: 100%;
+  max-width: 560px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 4px 16px;
+  text-align: left;
+}
+
+.bfw-features li {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font: 600 15px/20px var(--bfw-sans);
+}
+
+.bfw-page .bfw-app-action {
+  max-width: 420px;
+}
+
+.bfw-note {
+  max-width: 420px;
+  font: 400 13px/18px var(--bfw-sans);
+  color: var(--bfw-text-2);
+}
+
+.bfw-faq-section {
+  gap: 12px;
+}
+
+.bfw-faqs {
+  padding: 0 16px;
+  border-radius: 24px;
+  background: var(--bfw-surface);
+}
+
+.bfw-faqs details + details {
+  border-top: 0.5px solid var(--bfw-divider);
+}
+
+.bfw-faqs summary {
+  min-height: 56px;
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  list-style: none;
+  cursor: pointer;
+  font: 600 17px/22px var(--bfw-sans);
+}
+
+.bfw-faqs summary::-webkit-details-marker {
+  display: none;
+}
+
+.bfw-faq-chevron {
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  color: var(--bfw-text-2);
+  transition: transform var(--bfw-t-snappy) var(--bfw-ease-snappy);
+}
+
+.bfw-faqs details[open] .bfw-faq-chevron {
+  transform: rotate(90deg);
+}
+
+.bfw-faqs details p {
+  padding-bottom: 16px;
+  font: 400 15px/20px var(--bfw-sans);
+  color: var(--bfw-text-2);
+}
+
+.bfw-footer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 8px 16px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.bfw-footer p {
+  max-width: 460px;
+  margin: 0;
+  font: 400 13px/18px var(--bfw-sans);
+  color: var(--bfw-text-2);
+}
+
+.bfw-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 20px;
+}
+
+.bfw-footer a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  font: 600 15px/20px var(--bfw-sans);
+  color: var(--bfw-accent);
+  text-decoration: none;
+}
+
+.bfw-footer a:hover {
+  text-decoration: underline;
+}
+
+.bfw-page a:hover { color: var(--bfw-text); }
+.bfw-page a.bfw-primary:hover { color: var(--bfw-on-accent); }
+.bfw-page a.bfw-accent-ink:hover { color: var(--bfw-accent); }

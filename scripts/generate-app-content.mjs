@@ -400,7 +400,8 @@ function validateCmsContent(content) {
     "rewire-blog",
     "breastfeeding-support",
     "breastfeeding-blog",
-    "breastfeeding-blog-disclosure"
+    "breastfeeding-blog-disclosure",
+    "breastfeeding-timer"
   ];
 
   for (const pageName of expectedPages) {
@@ -408,6 +409,8 @@ function validateCmsContent(content) {
     validatePublished(pages[pageName], `Fixed page ${pageName}`);
     validateSeo(pages[pageName].seo, `Fixed page ${pageName}`);
   }
+
+  validateBreastfeedingTimerPage(pages["breastfeeding-timer"]);
 
   requireString(site.companyName, "site.companyName");
   requireString(site.legalName, "site.legalName");
@@ -598,6 +601,52 @@ function validateCmsContent(content) {
   validateContentMedia(content);
 }
 
+function validateBreastfeedingTimerPage(page) {
+  const label = "Breastfeeding timer page";
+  assert(
+    page.route === "/breastfeeding-tracker/breastfeeding-timer",
+    `${label} route must stay /breastfeeding-tracker/breastfeeding-timer.`
+  );
+  requireString(page.appStoreUrl, `${label} appStoreUrl`);
+  assert(
+    page.appStoreUrl.startsWith("https://apps.apple.com/"),
+    `${label} appStoreUrl must be an App Store link.`
+  );
+  assertLocalAsset(page.appIcon, `${label} appIcon`);
+  requireString(page.breadcrumbs?.tracker, `${label} breadcrumbs.tracker`);
+  requireString(page.breadcrumbs?.timer, `${label} breadcrumbs.timer`);
+  requireString(page.webApplication?.name, `${label} webApplication.name`);
+  requireString(page.webApplication?.description, `${label} webApplication.description`);
+  requireStringTree(page.timer, `${label} timer`);
+  requireStringTree(page.how, `${label} how`);
+  requireStringTree(page.privacy, `${label} privacy`);
+  requireStringTree(page.app, `${label} app`);
+  assert(
+    ["lock", "watch", "drop", "cloud"].every((icon) =>
+      page.app.features.some((feature) => feature.icon === icon)
+    ) && page.app.features.every((feature) => ["lock", "watch", "drop", "cloud"].includes(feature.icon)),
+    `${label} app features must use the lock, watch, drop and cloud icons.`
+  );
+  assert(Array.isArray(page.faqs) && page.faqs.length > 0, `${label} needs FAQs.`);
+  requireStringTree(page.faqs, `${label} faqs`);
+  requireStringTree(page.footer, `${label} footer`);
+}
+
+function requireStringTree(value, label) {
+  if (Array.isArray(value)) {
+    assert(value.length > 0, `${label} must not be empty.`);
+    value.forEach((item, index) => requireStringTree(item, `${label}[${index}]`));
+    return;
+  }
+  if (value && typeof value === "object") {
+    for (const [key, child] of Object.entries(value)) {
+      requireStringTree(child, `${label}.${key}`);
+    }
+    return;
+  }
+  requireString(value, label);
+}
+
 function validatePublished(record, label) {
   assert(typeof record.published === "boolean", `${label} must include a published boolean.`);
 }
@@ -699,7 +748,8 @@ function validateInternalUrl(url, routeSet, location) {
   assert(url.startsWith("/"), `${location} must be an absolute internal or external URL.`);
   const [path] = url.split(/[?#]/);
   assert(
-    routeSet.has(canonicalRoute(path)),
+    // The timer design links to the established Guides alias, emitted by route-meta.mjs.
+    routeSet.has(canonicalRoute(path === "/breastfeeding-tracker/guides/" ? "/breastfeeding-tracker/support/" : path)),
     `${location} links to unpublished or missing route "${url}".`
   );
   assert(

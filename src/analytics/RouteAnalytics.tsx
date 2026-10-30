@@ -3,6 +3,8 @@ import { useLocation } from "react-router-dom";
 import { ensureLandingAttribution, readLandingAttribution } from "./landingAttribution";
 import { trackEvent } from "./telemetrydeck";
 import { localeForPath } from "../content/trackerLocales";
+import { BREASTFEEDING_TIMER_PATH } from "../content/routes";
+import { breastfeedingTimerPageContent } from "../content/pages";
 
 export function RouteAnalytics() {
   const location = useLocation();
@@ -21,7 +23,10 @@ export function RouteAnalytics() {
     const storedLanding = readLandingAttribution() ?? landing;
     trackEvent("page_view", {
       path: `${location.pathname}${location.search}${location.hash}`,
-      title: document.title,
+      // The timer tab title contains elapsed feeding time and side. Never transmit it.
+      title: location.pathname.replace(/\/+$/, "") === BREASTFEEDING_TIMER_PATH
+        ? breastfeedingTimerPageContent.seo.title
+        : document.title,
       referrer: document.referrer || "",
       landing_path: storedLanding.landing_path,
       utm_source: storedLanding.utm_source,
