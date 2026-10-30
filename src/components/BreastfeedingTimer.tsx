@@ -488,15 +488,6 @@ export function BreastfeedingTimer({
                   </div>
                 </div>
                 <div className="bfw-invite-actions">
-                  <button
-                    type="button"
-                    className="bfw-press bfw-text-button"
-                    onClick={() => {
-                      update((current) => ({ ...current, invite: false, cooldown: model.INVITE_DISMISS_COOLDOWN }));
-                    }}
-                  >
-                    {copy.invite.dismiss}
-                  </button>
                   <BreastfeedingTrackerAppStoreLink
                     className="bfw-press bfw-tinted-button"
                     placement="timer-invite"
@@ -507,6 +498,15 @@ export function BreastfeedingTimer({
                     {copy.invite.action}
                     <Icon name="external" size={14} />
                   </BreastfeedingTrackerAppStoreLink>
+                  <button
+                    type="button"
+                    className="bfw-press bfw-text-button"
+                    onClick={() => {
+                      update((current) => ({ ...current, invite: false, cooldown: model.INVITE_DISMISS_COOLDOWN }));
+                    }}
+                  >
+                    {copy.invite.dismiss}
+                  </button>
                 </div>
               </div>
             ) : null}
