@@ -4,6 +4,7 @@ import { extname, join } from "node:path";
 const rootDir = new URL("../", import.meta.url).pathname;
 await import("./generate-app-content.mjs");
 const { legacyRedirects, publicRoutes, siteUrl } = await import("./route-meta.mjs");
+const { isIndexableRoute } = await import("./generate-sitemap.mjs");
 const cmsContent = JSON.parse(
   await readFile(join(rootDir, "src", "generated", "cms-content.json"), "utf8")
 );
@@ -40,17 +41,19 @@ assert(
 
 const sitemap = await readFile(join(distDir, "sitemap.xml"), "utf8");
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
+const indexableRoutes = publicRoutes.filter(isIndexableRoute);
 assert(
-  sitemapUrls.length === publicRoutes.length,
-  `Expected ${publicRoutes.length} sitemap URLs, found ${sitemapUrls.length}.`
+  sitemapUrls.length === indexableRoutes.length,
+  `Expected ${indexableRoutes.length} indexable sitemap URLs, found ${sitemapUrls.length}.`
 );
+assert(new Set(sitemapUrls).size === sitemapUrls.length, "Sitemap contains duplicate URLs.");
 
 for (const route of publicRoutes) {
   const html = await readFile(routeOutputPath(route.path), "utf8");
   const canonical = canonicalUrl(route.path);
 
   assert(html.includes(`<link rel="canonical" href="${canonical}"`), `${route.path} has the wrong canonical.`);
-  assert(html.includes('<meta name="robots" content="index,follow"'), `${route.path} is not indexable.`);
+  assertExpectedIndexing(route, html, canonical);
   assert(
     /<div id="root"><div class="site-shell(?:\s[^"]*)?">/.test(html),
     `${route.path} is missing server-rendered body HTML.`
@@ -64,7 +67,6 @@ for (const route of publicRoutes) {
     !/<meta\s+name="keywords"/i.test(html),
     `${route.path} still renders a meta keywords tag.`
   );
-  assert(sitemapUrls.includes(canonical), `${route.path} is missing from the sitemap.`);
   if (route.ogImage) {
     await access(join(distDir, route.ogImage.replace(/^\//, "")));
   }
@@ -84,7 +86,7 @@ for (const route of publicRoutes) {
   );
   for (const href of internalLinks) {
     const [path] = href.split(/[?#]/);
-    if (path.startsWith("/assets/")) {
+    if (path.startsWith("/assets/") || path.startsWith("/smarty-colours/")) {
       await access(join(distDir, path.replace(/^\//, "")));
       continue;
     }
@@ -144,14 +146,13 @@ for (const route of trackerRoutes) {
   const canonical = canonicalUrl(route.path);
 
   assert(html.includes(`<link rel="canonical" href="${canonical}"`), `${route.path} has the wrong canonical.`);
-  assert(html.includes('<meta name="robots" content="index,follow"'), `${route.path} is not indexable.`);
+  assertExpectedIndexing(route, html, canonical);
   assert(
     /<div id="root"><div class="site-shell(?:\s[^"]*)?">/.test(html),
     `${route.path} is missing server-rendered body HTML.`
   );
   assert(/<h1[\s>]/.test(html), `${route.path} is missing an initial HTML h1.`);
   assert(html.includes("BreadcrumbList"), `${route.path} is missing breadcrumb structured data.`);
-  assert(sitemap.includes(`<loc>${canonical}</loc>`), `${route.path} is missing from the sitemap.`);
 
   const title = matchContent(
     html,
@@ -483,8 +484,14 @@ assert(
 );
 
 console.log(
-  `SEO and CMS checks passed for ${publicRoutes.length} public routes, ${trackerRoutes.length} tracker routes, ${legacyRedirects.length} legacy redirects, assets, links, and structured data.`
+  `SEO and CMS checks passed for ${publicRoutes.length} public routes, ${indexableRoutes.length} sitemap URLs, ${trackerRoutes.length} tracker routes, ${legacyRedirects.length} legacy redirects, assets, links, and structured data.`
 );
+
+function assertExpectedIndexing(route, html, canonical) {
+  const expectedRobots = route.robots || "index,follow";
+  assert(html.includes(`<meta name="robots" content="${expectedRobots}"`), `${route.path} has the wrong indexing directive.`);
+  assert(isIndexableRoute(route) === sitemapUrls.includes(canonical), `${route.path} sitemap inclusion must match its indexing directive.`);
+}
 
 function routeOutputPath(path) {
   if (path === "/") {

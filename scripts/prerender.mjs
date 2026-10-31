@@ -96,13 +96,17 @@ function injectRouteMeta(html, route) {
 function renderPage(baseHtml, path, render) {
   const helmetContext = {};
   const renderedApp = render(path, helmetContext);
-  const html = injectRenderedApp(baseHtml, renderedApp);
+  let html = injectRenderedApp(baseHtml, renderedApp);
+  const language = helmetContext.helmet?.htmlAttributes.toString().match(/\blang="([^"]+)"/i)?.[1];
+  if (language) html = html.replace(/(<html\b[^>]*\blang=)"[^"]*"/i, `$1"${escapeAttr(language)}"`);
   // Safari needs the banner in the initial head; Helmet owns it after navigation.
   // Other SEO tags are supplied by injectRouteMeta to retain the CMS pipeline.
   const banner = helmetContext.helmet?.meta.toString().match(
     /<meta\b[^>]*\bname="apple-itunes-app"[^>]*>/i
   )?.[0];
-  return banner ? html.replace("</head>", `    ${banner}\n  </head>`) : html;
+  const icons = [...(helmetContext.helmet?.link.toString().matchAll(/<link\b[^>]*\brel="(?:icon|apple-touch-icon)"[^>]*>/gi) || [])].map(match => match[0]);
+  const headExtras = [banner, ...icons].filter(Boolean).join("\n    ");
+  return headExtras ? html.replace("</head>", `    ${headExtras}\n  </head>`) : html;
 }
 
 function injectRenderedApp(html, renderedApp) {

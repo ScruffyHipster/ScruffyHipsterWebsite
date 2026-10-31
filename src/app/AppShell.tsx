@@ -3,6 +3,7 @@ import { apps } from "../content/apps";
 import { privacyPolicies } from "../content/privacyPolicies";
 import { siteConfig } from "../content/site";
 import { RouteAnalytics } from "../analytics/RouteAnalytics";
+import { isSmartyColoursPath } from "../analytics/telemetrydeck";
 import { ScrollToTop } from "./ScrollToTop";
 import {
   appRoutePath,
@@ -25,6 +26,11 @@ export function AppShell() {
   const isTrackerRoute =
     isBreastfeedingTrackerRoute(location.pathname) ||
     location.pathname.replace(/\/+$/, "") === "/privacy/breast-feeding-tracker";
+
+  // The children's site owns its navigation and does not inherit studio analytics.
+  if (isSmartyColoursPath(location.pathname)) {
+    return <div className="site-shell sc-site-shell"><ScrollToTop /><Outlet /></div>;
+  }
 
   if (["/compact", "/apps/chat-with-santa"].includes(location.pathname.replace(/\/+$/, ""))) {
     return <div className="site-shell"><RouteAnalytics /><ScrollToTop /><Outlet /></div>;
