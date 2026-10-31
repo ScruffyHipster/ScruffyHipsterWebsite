@@ -237,6 +237,27 @@
       "answer": "No. The app records what you enter and offers informational summaries. It does not measure milk intake from breastfeeding, assess milk supply or provide medical advice. Speak to your midwife, health visitor or feeding-support professional if you have concerns."
     }
   ],
+  "webApps": {
+    "navigationLabel": "Web apps",
+    "heroCta": "Try the free web apps",
+    "eyebrow": "Free web apps",
+    "heading": "A little help, right in your browser.",
+    "body": "Time a breastfeed or check when expressed milk needs using. No download or account needed.",
+    "tools": [
+      {
+        "title": "Breastfeeding timer",
+        "description": "Time left and right feeds, switch sides and save feeds in this browser.",
+        "cta": "Open the timer",
+        "url": "/breastfeeding-tracker/breastfeeding-timer/"
+      },
+      {
+        "title": "Milk storage calculator",
+        "description": "Check fridge, ice compartment and freezer storage dates using NHS guidance.",
+        "cta": "Open the calculator",
+        "url": "/breastfeeding-tracker/milk-storage-calculator/"
+      }
+    ]
+  },
   "navigation": {
     "brand": "Breastfeeding Tracker",
     "ariaLabel": "Breastfeeding Tracker navigation",

@@ -16,10 +16,12 @@ import { canonicalPath } from "../seo/canonical";
 import "../pages/BreastfeedingTrackerLandingPage.css";
 import "./BreastfeedingTrackerResources.css";
 import "../pages/BreastfeedingTrackerEditorial.css";
+import "./BreastfeedingTrackerWebApps.css";
 
 export function BreastfeedingTrackerLayout({ children }: PropsWithChildren) {
   const { pathname } = useLocation();
   const content = trackerLandingForPath(pathname);
+  const webApps = "webApps" in content ? content.webApps : null;
   const basePath = trackerLocalePath(localeForPath(pathname), "landing") ?? BREASTFEEDING_TRACKER_BASE_PATH;
   const page = trackerContentForPath(pathname);
   const appStoreId = new URL(app.appStoreUrl).pathname.match(/\/id(\d+)(?:\/|$)/)?.[1];
@@ -41,7 +43,7 @@ export function BreastfeedingTrackerLayout({ children }: PropsWithChildren) {
       <a className="bft-skip-link" href="#feeding-content">
         {content.navigation.skipLabel}
       </a>
-      <header className="bft-nav">
+      <header className={`bft-nav${webApps ? " bft-nav-has-web-apps" : ""}`}>
         <div className="bft-container bft-nav-inner">
           <Link className="bft-brand" to={homePath}>
             <img src={displayIcon} alt="" width="42" height="42" />
@@ -58,6 +60,7 @@ export function BreastfeedingTrackerLayout({ children }: PropsWithChildren) {
                 </Link>
               );
             })}
+            {webApps ? <a href={`${homePath}#web-apps`}>{webApps.navigationLabel}</a> : null}
           </nav>
           <div className="bft-nav-actions">
             <BreastfeedingTrackerAppStoreLink
@@ -101,6 +104,7 @@ export function BreastfeedingTrackerLayout({ children }: PropsWithChildren) {
               {content.footer.links.map((link) => (
                 <Link key={link.url} to={link.url}>{link.label}</Link>
               ))}
+              {webApps ? <a href={`${homePath}#web-apps`}>{webApps.navigationLabel}</a> : null}
             </nav>
           </div>
           <div className="bft-footer-bottom">

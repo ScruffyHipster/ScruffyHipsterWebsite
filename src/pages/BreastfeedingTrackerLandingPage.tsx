@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { BreastfeedingTrackerAppStoreLink } from "../components/AppStoreLink";
+import { BreastfeedingTrackerWebApps } from "../components/BreastfeedingTrackerWebApps";
 import { Seo } from "../components/Seo";
 import {
   breastfeedingTrackerApp as app,
@@ -65,6 +66,7 @@ function AppearancePreview({ device, appearance, screens }: {
 export function BreastfeedingTrackerLandingPage() {
   const { pathname } = useLocation();
   const content = trackerLandingForPath(pathname);
+  const webApps = "webApps" in content ? content.webApps : null;
   const editorial = content.editorial;
   const locale = localeForPath(pathname);
   const localeConfig = localizedTrackerLocales.find((item) => item.locale === locale);
@@ -102,6 +104,7 @@ export function BreastfeedingTrackerLandingPage() {
               {content.hero.primaryCta}<Icon kind="arrow" />
             </BreastfeedingTrackerAppStoreLink>
             <p className="bft-store-note">{content.hero.storeNote}</p>
+            {webApps ? <a className="bft-text-link bft-web-apps-hero-link" href="#web-apps">{webApps.heroCta}<Icon kind="arrow" /></a> : null}
             <a className="bft-text-link bft-discover" href="#how-it-works">{content.hero.secondaryCta}<Icon kind="arrow" /></a>
           </div>
           <figure className="bft-editorial-scene">
@@ -116,6 +119,8 @@ export function BreastfeedingTrackerLandingPage() {
           <p>{content.hero.caption}</p><span>{editorial.platforms}</span>
         </div>
       </section>
+
+      {webApps ? <BreastfeedingTrackerWebApps content={webApps} /> : null}
 
       <section className="bft-editorial-section" id="how-it-works" aria-labelledby="benefit-heading">
         <div className="bft-container bft-editorial-split">
