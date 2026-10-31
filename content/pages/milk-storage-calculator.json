@@ -1,0 +1,136 @@
+{
+  "published": true,
+  "route": "/breastfeeding-tracker/milk-storage-calculator",
+  "seo": {
+    "title": "Free Breast Milk Storage Calculator — Fridge & Freezer",
+    "description": "A free calculator for expressed breast milk. It works out a use-by date from NHS storage guidance, with nothing to install and no account to make.",
+    "ogImage": "/assets/breastfeeding-tracker-og.png"
+  },
+  "appIcon": "/assets/breastfeeding-editorial/app-icon-128.webp",
+  "appStoreUrl": "https://apps.apple.com/app/apple-store/id6754637800?pt=120062009&ct=web_milk_storage_calculator&mt=8",
+  "nhsUrl": "https://www.nhs.uk/best-start-in-life/baby/feeding-your-baby/breastfeeding/expressing-your-breast-milk/storing-breast-milk/",
+  "labels": {
+    "aboutTheIphoneApp": "About the iPhone app",
+    "milkStorageCalculator": "Milk storage calculator",
+    "howThisCalculatorWorks": "How this calculator works",
+    "wheresTheMilk": "Where’s the milk?",
+    "whereTheMilkIsStored": "Where the milk is stored",
+    "useByDate": "Use-by date",
+    "useBy": "Use by",
+    "timeLeft": "Time left",
+    "storedFor": "Stored for",
+    "keepTrackOfEveryBag": "Keep track of every bag",
+    "theIphoneAppsMilkStashKeepsYourFridgeAndFreezerMilkInOnePlaceAnd": "The iPhone app’s Milk Stash keeps your fridge and freezer milk in one place and reminds you before it reaches its storage date.",
+    "viewOnTheAppStore": "View on the App Store",
+    "notNow": "Not now",
+    "nhsStorageGuidance": "NHS storage guidance",
+    "fridge": "Fridge",
+    "upTo8DaysAt4COrColderAtTheBackNotTheDoor": "Up to 8 days at 4°C or colder, at the back, not the door",
+    "iceCompartment": "Ice compartment",
+    "upTo2Weeks": "Up to 2 weeks",
+    "freezer": "Freezer",
+    "upTo6MonthsAt18COrColder": "Up to 6 months at −18°C or colder",
+    "defrosted": "Defrosted",
+    "useItStraightAwayNeverRefreezeIt": "Use it straight away. Never refreeze it.",
+    "leftAfterAFeed": "Left after a feed",
+    "throwItAway": "Throw it away",
+    "viewNhsStorageGuidance": "View NHS storage guidance",
+    "storageDatesAreGuidanceNotAGuarantee": "Storage dates are guidance, not a guarantee.",
+    "aFreeCalculatorForExpressedBreastMilkItWorksOutAUseByDateFromNhs": "A free calculator for expressed breast milk. It works out a use-by date from NHS storage guidance, with nothing to install and no account to make.",
+    "step1": "1",
+    "chooseWhereItsStored": "Choose where it’s stored",
+    "fridgeTheFridgesIceCompartmentOrTheFreezer": "Fridge, the fridge’s ice compartment, or the freezer.",
+    "step2": "2",
+    "addTheTime": "Add the time",
+    "whenYouExpressedItForTheFridgeOrWhenItWentInTheIceCompartmentOrF": "When you expressed it for the fridge, or when it went in the ice compartment or freezer.",
+    "step3": "3",
+    "seeTheUseByDate": "See the use-by date",
+    "withTheTimeLeftAndHowLongItsBeenStoredUseSoonAppearsWhenTheDateI": "With the time left and how long it’s been stored. Use soon appears when the date is close.",
+    "privateToThisDevice": "Private to this device",
+    "theCalculatorRemembersYourLastBagInThisBrowserSoItsThereWhenYouC": "The calculator remembers your last bag in this browser so it’s there when you come back. Nothing is uploaded.",
+    "everyBagInTheIphoneApp": "Every bag, in the iPhone app",
+    "milkStashKeepsARunningListOfWhatsInYourFridgeAndFreezerSoYouDont": "Milk Stash keeps a running list of what’s in your fridge and freezer, so you don’t have to work it out bag by bag.",
+    "fridgeAndFreezerTotalsAtAGlance": "Fridge and freezer totals at a glance",
+    "remindersBeforeMilkReachesItsStorageDate": "Reminders before milk reaches its storage date",
+    "useABagInABottleAndTheStashUpdates": "Use a bag in a bottle and the stash updates",
+    "breastfeedingPumpingAndBottleTimers": "Breastfeeding, pumping and bottle timers",
+    "freeToDownloadWithAnOptionalOneTimeLifetimeUnlockIMakeTheAppOnMy": "Free to download, with an optional one-time Lifetime Unlock. I make the app on my own.",
+    "questions": "Questions",
+    "whereDoTheDatesComeFrom": "Where do the dates come from?",
+    "fromTheNhsGuidanceOnStoringBreastMilkUpTo8DaysInAFridgeAt4COrCol": "From the NHS guidance on storing breast milk: up to 8 days in a fridge at 4°C or colder, up to 2 weeks in the fridge’s ice compartment, and up to 6 months in a freezer at −18°C or colder.",
+    "whatIfImNotSureHowColdMyFridgeIs": "What if I’m not sure how cold my fridge is?",
+    "the8DaysAssume4COrColderIfYouCantBeSureAskYourMidwifeHealthVisit": "The 8 days assume 4°C or colder. If you can’t be sure, ask your midwife, health visitor or GP what’s right for you.",
+    "howLongIsDefrostedMilkGoodFor": "How long is defrosted milk good for?",
+    "theNhsSaysToUseDefrostedMilkStraightAwayAndNeverRefreezeItThawin": "The NHS says to use defrosted milk straight away and never refreeze it. Thawing it slowly in the fridge is best, and it should never be thawed in a microwave.",
+    "doesThisWorkForFormula": "Does this work for formula?",
+    "noTheseDatesAreOnlyForExpressedBreastMilkFormulaHasItsOwnGuidanc": "No. These dates are only for expressed breast milk. Formula has its own guidance on the pack and from the NHS.",
+    "isItFree": "Is it free?",
+    "yesTheresNothingToSignUpForAndNothingToInstall": "Yes. There’s nothing to sign up for and nothing to install.",
+    "storageDatesAreGuidanceNotAGuaranteeAndThisCalculatorIsntMedical": "Storage dates are guidance, not a guarantee, and this calculator isn’t medical advice. If your baby is in hospital, premature or unwell, follow their care team’s advice on storing milk.",
+    "moreFromTheApp": "More from the app",
+    "breastfeedingTimer": "Breastfeeding timer",
+    "aboutTheApp": "About the app",
+    "helpSupport": "Help & Support",
+    "privacy": "Privacy"
+  },
+  "futureNote": "Choose a time that’s already passed.",
+  "badges": {
+    "soon": "Use soon",
+    "passed": "Guidance passed"
+  },
+  "durations": {
+    "days": "{count} days",
+    "dayHours": "1 day {count} hr",
+    "day": "1 day",
+    "hours": "{count} hr",
+    "minutes": "{count} min",
+    "justNow": "Just now",
+    "passed": "Passed",
+    "unknown": "—"
+  },
+  "rules": {
+    "fridge": {
+      "name": "Fridge",
+      "label": "Fridge",
+      "anchor": "Expressed",
+      "note": "Count from when you expressed it. NHS guidance is for a fridge at 4°C or colder.",
+      "length": "8 days in the fridge"
+    },
+    "ice": {
+      "name": "Ice box",
+      "label": "Ice compartment of the fridge",
+      "anchor": "Stored",
+      "note": "Count from when it went in the ice compartment.",
+      "length": "2 weeks in the ice compartment"
+    },
+    "freezer": {
+      "name": "Freezer",
+      "label": "Freezer",
+      "anchor": "Frozen",
+      "note": "Count from when it went in the freezer. NHS guidance is for a freezer at −18°C or colder.",
+      "length": "6 months in the freezer"
+    }
+  },
+  "faqs": [
+    {
+      "question": "Where do the dates come from?",
+      "answer": "From the NHS guidance on storing breast milk: up to 8 days in a fridge at 4°C or colder, up to 2 weeks in the fridge’s ice compartment, and up to 6 months in a freezer at −18°C or colder."
+    },
+    {
+      "question": "What if I’m not sure how cold my fridge is?",
+      "answer": "The 8 days assume 4°C or colder. If you can’t be sure, ask your midwife, health visitor or GP what’s right for you."
+    },
+    {
+      "question": "How long is defrosted milk good for?",
+      "answer": "The NHS says to use defrosted milk straight away and never refreeze it. Thawing it slowly in the fridge is best, and it should never be thawed in a microwave."
+    },
+    {
+      "question": "Does this work for formula?",
+      "answer": "No. These dates are only for expressed breast milk. Formula has its own guidance on the pack and from the NHS."
+    },
+    {
+      "question": "Is it free?",
+      "answer": "Yes. There’s nothing to sign up for and nothing to install."
+    }
+  ]
+}

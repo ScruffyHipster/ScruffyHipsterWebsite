@@ -310,6 +310,28 @@ const routes = [
     ]
   },
   {
+    path: pages["milk-storage-calculator"].route,
+    ...pages["milk-storage-calculator"].seo,
+    jsonLd: [
+      organizationJsonLd,
+      {
+        "@context": "https://schema.org", "@type": "WebApplication",
+        name: pages["milk-storage-calculator"].labels.milkStorageCalculator,
+        description: pages["milk-storage-calculator"].seo.description,
+        url: absoluteRouteUrl(pages["milk-storage-calculator"].route),
+        applicationCategory: "HealthApplication", operatingSystem: "Any",
+        browserRequirements: "Requires JavaScript", isAccessibleForFree: true,
+        offers: { "@type": "Offer", price: "0", priceCurrency: "GBP" },
+        isBasedOn: pages["milk-storage-calculator"].nhsUrl
+      },
+      faqPageJsonLd(pages["milk-storage-calculator"].faqs),
+      breadcrumbJsonLd([
+        { name: pages["milk-storage-calculator"].labels.aboutTheApp, url: absoluteRouteUrl(breastfeedingTracker.route) },
+        { name: pages["milk-storage-calculator"].labels.milkStorageCalculator, url: absoluteRouteUrl(pages["milk-storage-calculator"].route) }
+      ])
+    ]
+  },
+  {
     path: pages["breastfeeding-timer"].route,
     ...pages["breastfeeding-timer"].seo,
     jsonLd: [

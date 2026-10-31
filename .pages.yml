@@ -342,6 +342,9 @@ content:
               - name: breastfeedingTimerLabel
                 type: string
                 required: true
+              - name: milkStorageCalculatorLabel
+                type: string
+                required: true
               - name: editorialDisclosureLabel
                 type: string
                 required: true
@@ -894,6 +897,50 @@ content:
                   - name: url
                     type: string
                     required: true
+
+      - name: milk_storage_calculator
+        label: Milk storage calculator
+        type: file
+        path: content/pages/milk-storage-calculator.json
+        format: json
+        operations: *fixed_operations
+        fields:
+          - name: published
+            type: boolean
+            readonly: true
+          - name: route
+            type: string
+            readonly: true
+          - name: seo
+            component: seo
+          - name: appIcon
+            type: image
+            options:
+              media: uploads
+          - name: appStoreUrl
+            type: string
+            required: true
+          - name: nhsUrl
+            type: string
+            required: true
+          - name: labels
+            type: object
+          - name: futureNote
+            type: string
+          - name: badges
+            type: object
+          - name: durations
+            type: object
+          - name: rules
+            type: object
+          - name: faqs
+            type: object
+            list: true
+            fields:
+              - name: question
+                type: string
+              - name: answer
+                type: text
 
   - name: apps
     label: Apps

@@ -1,0 +1,396 @@
+/* Ported from the approved Milk storage calculator artboards; retain their values. */
+
+.milk-page {
+  --app-surface: #faf7f7;
+  --app-text: #2b2b2b;
+  --app-text-secondary: #6d6a6a;
+  --app-primary: #1e2a44;
+  --app-button-primary-foreground: #ffffff;
+  --app-secondary-accent: #c98f98;
+  --app-background: #d7a8af;
+  --app-divider: #d7a8af;
+  --app-success: #8eaa9b;
+  --app-warning: #c07a6b;
+  --app-aura-pink: #ff2d55;
+  --app-aura-orange: #ff9500;
+  --app-aura-blue: #9dc8e4;
+  --activity-breastfeeding: var(--app-primary);
+  --activity-bottle: #b05a00;
+  --activity-pumping: #d51f49;
+  --activity-sleep: #a15d6b;
+  --activity-combined: #1e2a44;
+  --activity-breastfeeding-high-contrast: #101c34;
+  --activity-bottle-high-contrast: #8a4300;
+  --activity-pumping-high-contrast: #a80c33;
+  --activity-sleep-high-contrast: #7e3f4f;
+  --summary-wash-1: rgba(201, 143, 152, 0.16);
+  --summary-wash-2: rgba(255, 45, 85, 0.14);
+  --summary-wash-3: rgba(255, 149, 0, 0.12);
+  --metric-surface: rgba(250, 247, 247, 0.55);
+  --metric-surface-selected: rgba(250, 247, 247, 0.68);
+  --web-glass: rgba(255, 255, 255, 0.42);
+  --clean-slate-background: #f3e4e6;
+  --clean-slate-stop-1: #efdbde;
+  --clean-slate-stop-2: #f7d9db;
+  --clean-slate-stop-3: #f4e0dc;
+  --blush-bloom-step-1: #faf9fa;
+  --blush-bloom-step-2: #f8f7f8;
+  --blush-bloom-step-3: #f4f0f1;
+  --blush-bloom-step-4: #eee5e7;
+  --warm-notes-step-1: #fff9ed;
+  --warm-notes-step-2: #ffefc8;
+  --warm-notes-step-3: #ffdf9e;
+  --warm-notes-step-4: #f5c46a;
+  --warm-notes-control-accent: #a85f3f;
+  --sage-retreat-base: #f4f4ed;
+  --sage-retreat-wash: #eaf1ea;
+  --sage-retreat-highlight: #fff8e9;
+  --sage-retreat-control-accent: #4f705e;
+  --warm-linen-base: #f8f2ea;
+  --warm-linen-wash: #f6eee3;
+  --warm-linen-highlight: #fffcf3;
+  --warm-linen-control-accent: #94624b;
+  --watch-background: #f3e4e6;
+  --watch-button-primary-foreground: #f3e4e6;
+  --watch-divider: #e5d6d8;
+  --watch-secondary-accent: #c98f98;
+  --watch-accent: var(--app-primary);
+  --night-ground: #090706;
+  --night-ink: #e6b06e;
+  --night-control: rgba(230, 176, 110, 0.22);
+  --night-light: #ffd191;
+  --launch-screen-background: #f3e4e6;
+  --shadow-row: 0 3px 12px rgba(0, 0, 0, 0.10);
+  --shadow-summary-card: 0 6px 24px rgba(0, 0, 0, 0.08);
+  --shadow-metric: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-prediction-card: 0 3px 24px rgba(0, 0, 0, 0.04);
+  --shadow-hero: 0 8px 28px rgba(0, 0, 0, 0.08);
+  --shadow-row-icon: 0 1px 2px rgba(0, 0, 0, 0.18);
+  --shadow-accent-glow: 0 0 20px rgba(30, 42, 68, 0.18);
+  --shadow-accent-lift: 0 4px 16px rgba(30, 42, 68, 0.20);
+}
+@media (prefers-color-scheme: dark) { .milk-page {
+  --app-surface: #252126;
+  --app-text: #f2ecec;
+  --app-text-secondary: #b9b1b3;
+  --app-primary: #d8dff2;
+  --app-button-primary-foreground: #19171a;
+  --app-secondary-accent: #d7a8af;
+  --app-background: #19171a;
+  --app-divider: #3a3439;
+  --app-success: #a9c0b3;
+  --app-warning: #d39a8e;
+  --app-aura-pink: #ff375f;
+  --app-aura-orange: #ff9f0a;
+  --app-aura-blue: #224962;
+  --activity-breastfeeding: #d8dff2;
+  --activity-bottle: #ff9f0a;
+  --activity-pumping: #ff375f;
+  --activity-sleep: #d7a8af;
+  --activity-combined: #d8dff2;
+  --activity-breastfeeding-high-contrast: #eef2ff;
+  --activity-bottle-high-contrast: #ffd18a;
+  --activity-pumping-high-contrast: #ff9bb3;
+  --activity-sleep-high-contrast: #f0ccd2;
+  --summary-wash-1: rgba(215, 168, 175, 0.16);
+  --summary-wash-2: rgba(255, 55, 95, 0.14);
+  --summary-wash-3: rgba(255, 159, 10, 0.12);
+  --metric-surface: rgba(37, 33, 38, 0.55);
+  --metric-surface-selected: rgba(37, 33, 38, 0.68);
+  --web-glass: rgba(52, 46, 54, 0.52);
+  --clean-slate-background: #19171a;
+  --clean-slate-stop-1: #292327;
+  --clean-slate-stop-2: #281c1f;
+  --clean-slate-stop-3: #241e1d;
+  --blush-bloom-step-1: #050505;
+  --blush-bloom-step-2: #090909;
+  --blush-bloom-step-3: #111011;
+  --blush-bloom-step-4: #1b171b;
+  --warm-notes-step-1: #1a160e;
+  --warm-notes-step-2: #241d10;
+  --warm-notes-step-3: #2e2413;
+  --warm-notes-step-4: #3a2c16;
+  --warm-notes-control-accent: #f0ae88;
+  --sage-retreat-base: #1b2321;
+  --sage-retreat-wash: #2d4038;
+  --sage-retreat-highlight: #343b32;
+  --sage-retreat-control-accent: #a9c9b6;
+  --warm-linen-base: #27221f;
+  --warm-linen-wash: #42362d;
+  --warm-linen-highlight: #3c3530;
+  --warm-linen-control-accent: #e1b399;
+  --watch-background: #19171a;
+  --watch-button-primary-foreground: #19171a;
+  --watch-divider: #3a3439;
+  --watch-secondary-accent: #d8a8b0;
+  --watch-accent: var(--app-primary);
+  --night-ground: #090706;
+  --night-ink: #e6b06e;
+  --night-control: rgba(230, 176, 110, 0.22);
+  --night-light: #ffd191;
+  --launch-screen-background: #000000;
+  --shadow-accent-glow: 0 0 20px rgba(216, 223, 242, 0.18);
+  --shadow-accent-lift: 0 4px 16px rgba(216, 223, 242, 0.20);
+} }
+.milk-page {
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-14: 14px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-22: 22px;
+  --space-24: 24px;
+  --space-28: 28px;
+  --space-32: 32px;
+  --radius-3: 3px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-14: 14px;
+  --radius-16: 16px;
+  --radius-18: 18px;
+  --radius-20: 20px;
+  --radius-22: 22px;
+  --radius-24: 24px;
+  --radius-28: 28px;
+  --radius-full: 9999px;
+  --size-tap-min: 44px;
+  --size-row-min: 64px;
+  --size-primary-button: 66px;
+  --size-watch-primary-button: 46px;
+  --size-glass-control: 68px;
+  --size-toolbar-icon: 36px;
+  --size-row-icon: 34px;
+  --size-side-picker: 152px;
+  --size-metric-min: 88px;
+  --size-location-metric-min: 104px;
+  --size-decorative-symbol: 54px;
+  --size-pager-dot: 7px;
+  --opacity-metric-surface: 0.55;
+  --opacity-metric-selected: 0.68;
+  --opacity-decorative-symbol: 0.35;
+  --opacity-badge-tint: 0.12;
+  --opacity-accent-glow: 0.18;
+  --opacity-pager-dot-off: 0.3;
+  --opacity-processing: 0.72;
+  --font-rounded: ui-rounded, "SF Pro Rounded", -apple-system, system-ui, sans-serif;
+  --font-sans: -apple-system, "SF Pro Text", "SF Pro", system-ui, sans-serif;
+  --text-timer: 700 128px/1.05 var(--font-rounded);
+  --text-large-title-rounded: 700 34px/41px var(--font-rounded);
+  --text-title-rounded: 700 28px/34px var(--font-rounded);
+  --text-side-glyph: 800 28px/34px var(--font-rounded);
+  --text-title2-rounded: 600 22px/28px var(--font-rounded);
+  --text-title3-rounded-bold: 700 20px/25px var(--font-rounded);
+  --text-title3-rounded-semibold: 600 20px/25px var(--font-rounded);
+  --text-headline-rounded: 700 17px/22px var(--font-rounded);
+  --text-amount: 700 22px/28px var(--font-rounded);
+  --text-headline: 600 17px/22px var(--font-sans);
+  --text-body-semibold: 600 17px/22px var(--font-sans);
+  --text-body: 400 17px/22px var(--font-sans);
+  --text-callout-semibold: 600 16px/21px var(--font-sans);
+  --text-subheadline-semibold: 600 15px/20px var(--font-sans);
+  --text-subheadline: 400 15px/20px var(--font-sans);
+  --text-footnote: 400 13px/18px var(--font-sans);
+  --text-caption: 400 12px/16px var(--font-sans);
+  --text-caption-semibold: 600 12px/16px var(--font-sans);
+  --text-metric-label: 600 11px/13px var(--font-sans);
+}
+.milk-page .timer {
+  font-family: var(--font-rounded);
+  font-size: 128px;
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.milk-page .large-title-rounded {
+  font-family: var(--font-rounded);
+  font-size: 34px;
+  line-height: 41px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.milk-page .title-rounded {
+  font-family: var(--font-rounded);
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.milk-page .side-glyph {
+  font-family: var(--font-rounded);
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+.milk-page .title2-rounded {
+  font-family: var(--font-rounded);
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.milk-page .title3-rounded-bold {
+  font-family: var(--font-rounded);
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.milk-page .title3-rounded-semibold {
+  font-family: var(--font-rounded);
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.milk-page .headline-rounded {
+  font-family: var(--font-rounded);
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.milk-page .amount {
+  font-family: var(--font-rounded);
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.milk-page .headline {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.milk-page .body-semibold {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.milk-page .body {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.milk-page .callout-semibold {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.milk-page .subheadline-semibold {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.milk-page .subheadline {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.milk-page .footnote {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.milk-page .caption {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.milk-page .caption-semibold {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.milk-page .metric-label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  line-height: 13px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+
+
+.mc{--accent:var(--app-primary);--press-scale:.94;
+--ease-press:linear(0,.053,.184,.352,.529,.694,.834,.944,1.023,1.073,1.099,1.107,1.101,1.087,1.069,1.05,1.033,1.018,1.006,.998,.992,.989,.989,.989,.991,.993,.995,.997,1);--t-press:375ms;
+--ease-snappy:linear(0,.036,.121,.231,.349,.464,.569,.662,.741,.806,.859,.901,.932,.956,.974,.986,.995,1,1.004,1.005,1.006,1.006,1.006,1.005,1.005,1.004,1.003,1.002,1);--t-snappy:310ms;
+--ease-smooth:linear(0,.037,.123,.23,.341,.446,.541,.625,.696,.755,.804,.844,.877,.903,.924,.941,.954,.964,.972,.978,.983,.987,.99,.992,.994,.996,.997,.997,1);--t-smooth:485ms;
+font-family:var(--font-sans);color:var(--app-text);-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;color-scheme:light}
+@media (prefers-color-scheme: dark) {.mc{color-scheme:dark}}
+.mc *{box-sizing:border-box}
+.mc button{font:inherit;color:inherit;border:0;background:none;padding:0;margin:0;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.mc input{font:inherit;color:inherit}
+.mc :focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 55%,transparent);outline-offset:3px}
+.mc-ground{background:linear-gradient(to bottom right,var(--clean-slate-stop-1) 0%,var(--clean-slate-stop-2) 48%,var(--clean-slate-stop-3) 78%,var(--clean-slate-background) 100%)}
+.mc-glass{background:var(--web-glass);-webkit-backdrop-filter:blur(18px) saturate(1.5);backdrop-filter:blur(18px) saturate(1.5);box-shadow:inset 0 0 0 .5px rgba(255,255,255,.65),0 1px 1px rgba(40,20,28,.04),0 6px 18px rgba(40,20,28,.07)}
+@media (prefers-color-scheme: dark) {.mc .mc-glass{box-shadow:inset 0 0 0 .5px rgba(255,255,255,.12),0 6px 18px rgba(0,0,0,.3)}}
+.mc-press{transition:transform var(--t-press) var(--ease-press)}
+.mc-press:active:not(:disabled){transform:scale(var(--press-scale))}
+.mc-snappy{transition:transform var(--t-snappy) var(--ease-snappy),background-color var(--t-snappy) var(--ease-snappy),color var(--t-snappy) var(--ease-snappy)}
+.mc-num{font-variant-numeric:tabular-nums}
+.mc-ico{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.mc-icof{fill:currentColor}
+.mc-field{border:0;background:none;text-align:right;min-height:44px;padding:0;color:var(--app-text);min-width:0}
+.mc-field::-webkit-calendar-picker-indicator{opacity:.55}
+@keyframes mc-breathe{from{box-shadow:0 0 20px color-mix(in srgb,var(--accent) 18%,transparent)}to{box-shadow:0 0 36px color-mix(in srgb,var(--accent) 32%,transparent)}}
+@keyframes mc-breathe-calm{from{box-shadow:0 0 20px color-mix(in srgb,var(--accent) 18%,transparent)}to{box-shadow:0 0 26px color-mix(in srgb,var(--accent) 24%,transparent)}}
+.mc-breathe{animation:mc-breathe 1.8s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes mc-rise{from{opacity:0;transform:translateY(8px)}}
+.mc-rise{animation:mc-rise var(--t-smooth) var(--ease-smooth)}
+@property --mc-angle{syntax:'<angle>';inherits:false;initial-value:120deg}
+@keyframes mc-turn{to{--mc-angle:480deg}}
+.mc-invite{border:2px solid transparent;border-radius:18px;background:linear-gradient(to bottom left,color-mix(in srgb,var(--app-aura-pink) 10%,var(--app-surface)),var(--app-surface) 50%,color-mix(in srgb,var(--app-aura-orange) 10%,var(--app-surface))) padding-box,linear-gradient(var(--mc-angle),var(--app-secondary-accent),var(--app-aura-pink),var(--app-aura-orange),var(--app-aura-pink),var(--app-secondary-accent)) border-box;animation:mc-rise var(--t-smooth) var(--ease-smooth),mc-turn 14s linear infinite}
+@media (prefers-reduced-motion:reduce){
+.mc{--press-scale:.97;--ease-press:var(--ease-smooth)}
+.mc-breathe{animation:mc-breathe-calm 3.6s cubic-bezier(.37,0,.63,1) infinite alternate}
+.mc-invite{animation-duration:var(--t-smooth),42s}
+}
+
+
+
+.mp{font-family:var(--font-sans);color:var(--app-text);-webkit-font-smoothing:antialiased;color-scheme:light}
+@media (prefers-color-scheme: dark) {.mp{color-scheme:dark}}
+.mp *{box-sizing:border-box}
+.mp a{color:var(--app-primary)}
+.mp a:hover{color:var(--app-text)}
+.mp :focus-visible{outline:3px solid color-mix(in srgb,var(--app-primary) 55%,transparent);outline-offset:3px}
+.mp summary{list-style:none;cursor:pointer}
+.mp summary::-webkit-details-marker{display:none}
+.mp details[open] .mp-chev{transform:rotate(90deg)}
+.mp-chev{transition:transform 310ms linear(0,.036,.121,.231,.349,.464,.569,.662,.741,.806,.859,.901,.932,.956,.974,.986,.995,1,1.004,1.005,1.006,1.006,1.006,1.005,1.005,1.004,1.003,1.002,1)}
+.mp-ico{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.mp-cta{transition:transform 375ms linear(0,.053,.184,.352,.529,.694,.834,.944,1.023,1.073,1.099,1.107,1.101,1.087,1.069,1.05,1.033,1.018,1.006,.998,.992,.989,.989,.989,.991,.993,.995,.997,1)}
+.mp-cta:active{transform:scale(.94)}
+@media (prefers-reduced-motion:reduce){.mp-cta:active{transform:scale(.97)}}
+
+.milk-page { text-transform: none; letter-spacing: 0; line-height: normal; background: var(--clean-slate-background); color: var(--app-text); }
+.milk-page .mc input:disabled { opacity: 1; }
+.milk-page .mc[data-background="true"] *, .milk-page .mc[data-background="true"] *::before { animation-play-state: paused !important; }
+.milk-page .mc[data-motion="false"] .mc-snappy { transition: none; }
+.milk-page .mc[data-motion="false"] .mc-invite { animation-name: mc-turn; animation-duration: var(--milk-border-duration, 14s); animation-timing-function: linear; animation-iteration-count: infinite; }
+@media (prefers-reduced-motion: reduce) { .milk-page { --milk-border-duration: 42s; } }
+
+@media (prefers-reduced-motion: reduce) { .mc-snappy[data-selected="true"] { transform: scale(.96) !important; } }

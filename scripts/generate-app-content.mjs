@@ -401,7 +401,8 @@ function validateCmsContent(content) {
     "breastfeeding-support",
     "breastfeeding-blog",
     "breastfeeding-blog-disclosure",
-    "breastfeeding-timer"
+    "breastfeeding-timer",
+    "milk-storage-calculator"
   ];
 
   for (const pageName of expectedPages) {
@@ -411,6 +412,12 @@ function validateCmsContent(content) {
   }
 
   validateBreastfeedingTimerPage(pages["breastfeeding-timer"]);
+  const milk = pages["milk-storage-calculator"];
+  assert(milk.route === "/breastfeeding-tracker/milk-storage-calculator", "Milk storage calculator route must stay canonical.");
+  requireStringTree(milk.labels, "Milk storage calculator labels");
+  requireStringTree(milk.rules, "Milk storage calculator rules");
+  requireStringTree(milk.faqs, "Milk storage calculator FAQs");
+  assertLocalAsset(milk.appIcon, "Milk storage calculator app icon");
 
   requireString(site.companyName, "site.companyName");
   requireString(site.legalName, "site.legalName");

@@ -11,7 +11,9 @@ export type AppStorePlacement =
   | "footer"
   | "timer-invite"
   | "timer-history"
-  | "timer-page";
+  | "timer-page"
+  | "milk-invite"
+  | "milk-page";
 
 const breastfeedingTrackerAppId = "6754637800";
 

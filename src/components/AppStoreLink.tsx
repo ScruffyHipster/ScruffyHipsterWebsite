@@ -9,7 +9,7 @@ import {
   breastfeedingTrackerAppStoreUrl,
   breastfeedingTrackerArticleAppStoreUrl
 } from "../content/breastfeedingTracker";
-import { breastfeedingTimerPageContent } from "../content/pages";
+import { breastfeedingTimerPageContent, milkStorageCalculatorPageContent } from "../content/pages";
 
 import { localeForPath } from "../content/trackerLocales";
 
@@ -29,6 +29,8 @@ export function BreastfeedingTrackerAppStoreLink({
   const baseHref =
     placement === "guide" || placement === "blog"
       ? breastfeedingTrackerArticleAppStoreUrl
+      : placement.startsWith("milk-")
+        ? milkStorageCalculatorPageContent.appStoreUrl
       : placement.startsWith("timer-")
         ? breastfeedingTimerPageContent.appStoreUrl
         : breastfeedingTrackerAppStoreUrl;

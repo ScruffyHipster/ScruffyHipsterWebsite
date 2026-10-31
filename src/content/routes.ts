@@ -12,6 +12,7 @@ export const BREASTFEEDING_TRACKER_BASE_PATH = "/breastfeeding-tracker";
 export const BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH = `${BREASTFEEDING_TRACKER_BASE_PATH}/support`;
 export const BREASTFEEDING_TRACKER_BLOG_BASE_PATH = `${BREASTFEEDING_TRACKER_BASE_PATH}/blog`;
 export const BREASTFEEDING_TRACKER_BLOG_DISCLOSURE_PATH = `${BREASTFEEDING_TRACKER_BLOG_BASE_PATH}/editorial-disclosure`;
+export const MILK_STORAGE_CALCULATOR_PATH = `${BREASTFEEDING_TRACKER_BASE_PATH}/milk-storage-calculator`;
 export const BREASTFEEDING_TIMER_PATH = `${BREASTFEEDING_TRACKER_BASE_PATH}/breastfeeding-timer`;
 export const BREASTFEEDING_TRACKER_PRIVACY_SLUG = "breast-feeding-tracker";
 export const LEGACY_BREASTFEEDING_TRACKER_GUIDES_BASE_PATH = `${BREASTFEEDING_TRACKER_BASE_PATH}/guides`;
@@ -41,6 +42,7 @@ export const publicRoutePaths = [
   canonicalPath(BREASTFEEDING_TRACKER_BLOG_BASE_PATH),
   canonicalPath(BREASTFEEDING_TRACKER_BLOG_DISCLOSURE_PATH),
   canonicalPath(BREASTFEEDING_TIMER_PATH),
+  canonicalPath(MILK_STORAGE_CALCULATOR_PATH),
   canonicalPath(APP_BASE_PATH),
   canonicalPath("/about"),
   ...apps.filter((app) => app.slug !== "rewire").map(appRoutePath),

@@ -18,9 +18,9 @@ const trackerRoutes = publicRoutes.filter(
   (route) => route.path === trackerBasePath || route.path.startsWith(`${trackerBasePath}/`)
 );
 const expectedTrackerRouteCount =
-  cmsContent.breastfeedingGuides.length + cmsContent.breastfeedingBlogPosts.length + 5;
+  cmsContent.breastfeedingGuides.length + cmsContent.breastfeedingBlogPosts.length + 6;
 const expectedPublishedRouteCount =
-  10 +
+  11 +
   cmsContent.rewireArticles.length +
   cmsContent.breastfeedingGuides.length +
   cmsContent.breastfeedingBlogPosts.length +
@@ -193,6 +193,13 @@ for (const route of trackerRoutes) {
     route.path === `${trackerBasePath}/blog`
   ) {
     assert(html.includes('"@type":"CollectionPage"'), `${route.path} is missing CollectionPage data.`);
+  } else if (route.path === `${trackerBasePath}/milk-storage-calculator`) {
+    const milk = cmsContent.pages["milk-storage-calculator"];
+    assert(html.includes('"@type":"WebApplication"') && html.includes('"@type":"FAQPage"'), "Milk calculator is missing its application or FAQ schema.");
+    assert(html.includes("Milk storage calculator") && html.includes("NHS storage guidance"), "Milk calculator must prerender the approved tool and guidance.");
+    assert(html.includes("Private to this device") && html.includes("Every bag, in the iPhone app"), "Milk calculator is missing approved supporting content.");
+    assert(html.includes(`href="${htmlAttributeUrl(milk.appStoreUrl)}"`), "Milk calculator App Store attribution is missing.");
+    assert(!html.includes('name="apple-itunes-app"'), "Milk calculator must open directly on the tool.");
   } else if (route.path === `${trackerBasePath}/breastfeeding-timer`) {
     const timerAppStoreUrl = cmsContent.pages["breastfeeding-timer"].appStoreUrl;
     assert(html.includes('"@type":"WebApplication"'), "Breastfeeding timer is missing WebApplication data.");

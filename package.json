@@ -14,12 +14,13 @@
     "check:content-ownership": "node scripts/check-content-ownership.mjs",
     "compare:cms": "node scripts/compare-cms-build.mjs",
     "typecheck": "tsc --noEmit",
-    "validate": "npm run typecheck && npm run check:seo && npm run check:content-ownership && npm run check:tracker-locales && npm run check:rewire-seo && npm run test:breastfeeding-timer",
+    "validate": "npm run typecheck && npm run check:seo && npm run check:content-ownership && npm run check:tracker-locales && npm run check:rewire-seo && npm run test:breastfeeding-timer && npm run test:milk-storage-calculator",
     "check": "npm run build && npm run validate",
     "preview": "vite preview",
     "check:tracker-locales": "node scripts/check-tracker-locales.mjs",
     "check:rewire-seo": "node scripts/check-rewire-seo.mjs",
-    "test:breastfeeding-timer": "node scripts/test-breastfeeding-timer.mjs"
+    "test:breastfeeding-timer": "node scripts/test-breastfeeding-timer.mjs",
+    "test:milk-storage-calculator": "node scripts/test-milk-storage-calculator.mjs"
   },
   "dependencies": {
     "@telemetrydeck/sdk": "^2.0.4",

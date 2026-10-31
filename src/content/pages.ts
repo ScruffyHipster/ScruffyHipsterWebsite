@@ -11,3 +11,5 @@ export const breastfeedingBlogPageContent = fixedPages["breastfeeding-blog"];
 export const breastfeedingBlogDisclosurePageContent =
   fixedPages["breastfeeding-blog-disclosure"];
 export const breastfeedingTimerPageContent = fixedPages["breastfeeding-timer"];
+
+export const milkStorageCalculatorPageContent = fixedPages["milk-storage-calculator"];

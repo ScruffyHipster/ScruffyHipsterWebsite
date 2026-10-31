@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Free Breast Milk Storage Calculator — Fridge &amp; Freezer</title>
+<script src="./support.js"></script>
+<style>
+:root, [data-theme="light"] {
+  --app-surface: #faf7f7;
+  --app-text: #2b2b2b;
+  --app-text-secondary: #6d6a6a;
+  --app-primary: #1e2a44;
+  --app-button-primary-foreground: #ffffff;
+  --app-secondary-accent: #c98f98;
+  --app-background: #d7a8af;
+  --app-divider: #d7a8af;
+  --app-success: #8eaa9b;
+  --app-warning: #c07a6b;
+  --app-aura-pink: #ff2d55;
+  --app-aura-orange: #ff9500;
+  --app-aura-blue: #9dc8e4;
+  --activity-breastfeeding: var(--app-primary);
+  --activity-bottle: #b05a00;
+  --activity-pumping: #d51f49;
+  --activity-sleep: #a15d6b;
+  --activity-combined: #1e2a44;
+  --activity-breastfeeding-high-contrast: #101c34;
+  --activity-bottle-high-contrast: #8a4300;
+  --activity-pumping-high-contrast: #a80c33;
+  --activity-sleep-high-contrast: #7e3f4f;
+  --summary-wash-1: rgba(201, 143, 152, 0.16);
+  --summary-wash-2: rgba(255, 45, 85, 0.14);
+  --summary-wash-3: rgba(255, 149, 0, 0.12);
+  --metric-surface: rgba(250, 247, 247, 0.55);
+  --metric-surface-selected: rgba(250, 247, 247, 0.68);
+  --web-glass: rgba(255, 255, 255, 0.42);
+  --clean-slate-background: #f3e4e6;
+  --clean-slate-stop-1: #efdbde;
+  --clean-slate-stop-2: #f7d9db;
+  --clean-slate-stop-3: #f4e0dc;
+  --blush-bloom-step-1: #faf9fa;
+  --blush-bloom-step-2: #f8f7f8;
+  --blush-bloom-step-3: #f4f0f1;
+  --blush-bloom-step-4: #eee5e7;
+  --warm-notes-step-1: #fff9ed;
+  --warm-notes-step-2: #ffefc8;
+  --warm-notes-step-3: #ffdf9e;
+  --warm-notes-step-4: #f5c46a;
+  --warm-notes-control-accent: #a85f3f;
+  --sage-retreat-base: #f4f4ed;
+  --sage-retreat-wash: #eaf1ea;
+  --sage-retreat-highlight: #fff8e9;
+  --sage-retreat-control-accent: #4f705e;
+  --warm-linen-base: #f8f2ea;
+  --warm-linen-wash: #f6eee3;
+  --warm-linen-highlight: #fffcf3;
+  --warm-linen-control-accent: #94624b;
+  --watch-background: #f3e4e6;
+  --watch-button-primary-foreground: #f3e4e6;
+  --watch-divider: #e5d6d8;
+  --watch-secondary-accent: #c98f98;
+  --watch-accent: var(--app-primary);
+  --night-ground: #090706;
+  --night-ink: #e6b06e;
+  --night-control: rgba(230, 176, 110, 0.22);
+  --night-light: #ffd191;
+  --launch-screen-background: #f3e4e6;
+  --shadow-row: 0 3px 12px rgba(0, 0, 0, 0.10);
+  --shadow-summary-card: 0 6px 24px rgba(0, 0, 0, 0.08);
+  --shadow-metric: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-prediction-card: 0 3px 24px rgba(0, 0, 0, 0.04);
+  --shadow-hero: 0 8px 28px rgba(0, 0, 0, 0.08);
+  --shadow-row-icon: 0 1px 2px rgba(0, 0, 0, 0.18);
+  --shadow-accent-glow: 0 0 20px rgba(30, 42, 68, 0.18);
+  --shadow-accent-lift: 0 4px 16px rgba(30, 42, 68, 0.20);
+}
+[data-theme="dark"] {
+  --app-surface: #252126;
+  --app-text: #f2ecec;
+  --app-text-secondary: #b9b1b3;
+  --app-primary: #d8dff2;
+  --app-button-primary-foreground: #19171a;
+  --app-secondary-accent: #d7a8af;
+  --app-background: #19171a;
+  --app-divider: #3a3439;
+  --app-success: #a9c0b3;
+  --app-warning: #d39a8e;
+  --app-aura-pink: #ff375f;
+  --app-aura-orange: #ff9f0a;
+  --app-aura-blue: #224962;
+  --activity-breastfeeding: #d8dff2;
+  --activity-bottle: #ff9f0a;
+  --activity-pumping: #ff375f;
+  --activity-sleep: #d7a8af;
+  --activity-combined: #d8dff2;
+  --activity-breastfeeding-high-contrast: #eef2ff;
+  --activity-bottle-high-contrast: #ffd18a;
+  --activity-pumping-high-contrast: #ff9bb3;
+  --activity-sleep-high-contrast: #f0ccd2;
+  --summary-wash-1: rgba(215, 168, 175, 0.16);
+  --summary-wash-2: rgba(255, 55, 95, 0.14);
+  --summary-wash-3: rgba(255, 159, 10, 0.12);
+  --metric-surface: rgba(37, 33, 38, 0.55);
+  --metric-surface-selected: rgba(37, 33, 38, 0.68);
+  --web-glass: rgba(52, 46, 54, 0.52);
+  --clean-slate-background: #19171a;
+  --clean-slate-stop-1: #292327;
+  --clean-slate-stop-2: #281c1f;
+  --clean-slate-stop-3: #241e1d;
+  --blush-bloom-step-1: #050505;
+  --blush-bloom-step-2: #090909;
+  --blush-bloom-step-3: #111011;
+  --blush-bloom-step-4: #1b171b;
+  --warm-notes-step-1: #1a160e;
+  --warm-notes-step-2: #241d10;
+  --warm-notes-step-3: #2e2413;
+  --warm-notes-step-4: #3a2c16;
+  --warm-notes-control-accent: #f0ae88;
+  --sage-retreat-base: #1b2321;
+  --sage-retreat-wash: #2d4038;
+  --sage-retreat-highlight: #343b32;
+  --sage-retreat-control-accent: #a9c9b6;
+  --warm-linen-base: #27221f;
+  --warm-linen-wash: #42362d;
+  --warm-linen-highlight: #3c3530;
+  --warm-linen-control-accent: #e1b399;
+  --watch-background: #19171a;
+  --watch-button-primary-foreground: #19171a;
+  --watch-divider: #3a3439;
+  --watch-secondary-accent: #d8a8b0;
+  --watch-accent: var(--app-primary);
+  --night-ground: #090706;
+  --night-ink: #e6b06e;
+  --night-control: rgba(230, 176, 110, 0.22);
+  --night-light: #ffd191;
+  --launch-screen-background: #000000;
+  --shadow-accent-glow: 0 0 20px rgba(216, 223, 242, 0.18);
+  --shadow-accent-lift: 0 4px 16px rgba(216, 223, 242, 0.20);
+}
+:root {
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-14: 14px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-22: 22px;
+  --space-24: 24px;
+  --space-28: 28px;
+  --space-32: 32px;
+  --radius-3: 3px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-14: 14px;
+  --radius-16: 16px;
+  --radius-18: 18px;
+  --radius-20: 20px;
+  --radius-22: 22px;
+  --radius-24: 24px;
+  --radius-28: 28px;
+  --radius-full: 9999px;
+  --size-tap-min: 44px;
+  --size-row-min: 64px;
+  --size-primary-button: 66px;
+  --size-watch-primary-button: 46px;
+  --size-glass-control: 68px;
+  --size-toolbar-icon: 36px;
+  --size-row-icon: 34px;
+  --size-side-picker: 152px;
+  --size-metric-min: 88px;
+  --size-location-metric-min: 104px;
+  --size-decorative-symbol: 54px;
+  --size-pager-dot: 7px;
+  --opacity-metric-surface: 0.55;
+  --opacity-metric-selected: 0.68;
+  --opacity-decorative-symbol: 0.35;
+  --opacity-badge-tint: 0.12;
+  --opacity-accent-glow: 0.18;
+  --opacity-pager-dot-off: 0.3;
+  --opacity-processing: 0.72;
+  --font-rounded: ui-rounded, "SF Pro Rounded", -apple-system, system-ui, sans-serif;
+  --font-sans: -apple-system, "SF Pro Text", "SF Pro", system-ui, sans-serif;
+  --text-timer: 700 128px/1.05 var(--font-rounded);
+  --text-large-title-rounded: 700 34px/41px var(--font-rounded);
+  --text-title-rounded: 700 28px/34px var(--font-rounded);
+  --text-side-glyph: 800 28px/34px var(--font-rounded);
+  --text-title2-rounded: 600 22px/28px var(--font-rounded);
+  --text-title3-rounded-bold: 700 20px/25px var(--font-rounded);
+  --text-title3-rounded-semibold: 600 20px/25px var(--font-rounded);
+  --text-headline-rounded: 700 17px/22px var(--font-rounded);
+  --text-amount: 700 22px/28px var(--font-rounded);
+  --text-headline: 600 17px/22px var(--font-sans);
+  --text-body-semibold: 600 17px/22px var(--font-sans);
+  --text-body: 400 17px/22px var(--font-sans);
+  --text-callout-semibold: 600 16px/21px var(--font-sans);
+  --text-subheadline-semibold: 600 15px/20px var(--font-sans);
+  --text-subheadline: 400 15px/20px var(--font-sans);
+  --text-footnote: 400 13px/18px var(--font-sans);
+  --text-caption: 400 12px/16px var(--font-sans);
+  --text-caption-semibold: 600 12px/16px var(--font-sans);
+  --text-metric-label: 600 11px/13px var(--font-sans);
+}
+.timer {
+  font-family: var(--font-rounded);
+  font-size: 128px;
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.large-title-rounded {
+  font-family: var(--font-rounded);
+  font-size: 34px;
+  line-height: 41px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.title-rounded {
+  font-family: var(--font-rounded);
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.side-glyph {
+  font-family: var(--font-rounded);
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+.title2-rounded {
+  font-family: var(--font-rounded);
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.title3-rounded-bold {
+  font-family: var(--font-rounded);
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.title3-rounded-semibold {
+  font-family: var(--font-rounded);
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.headline-rounded {
+  font-family: var(--font-rounded);
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.amount {
+  font-family: var(--font-rounded);
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.headline {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.body-semibold {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.body {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.callout-semibold {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.subheadline-semibold {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.subheadline {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.footnote {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.caption {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.caption-semibold {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.metric-label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  line-height: 13px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+</style>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.mp{font-family:var(--font-sans);color:var(--app-text);-webkit-font-smoothing:antialiased;color-scheme:light}
+.mp[data-theme="dark"]{color-scheme:dark}
+.mp *{box-sizing:border-box}
+.mp a{color:var(--app-primary)}
+.mp a:hover{color:var(--app-text)}
+.mp :focus-visible{outline:3px solid color-mix(in srgb,var(--app-primary) 55%,transparent);outline-offset:3px}
+.mp summary{list-style:none;cursor:pointer}
+.mp summary::-webkit-details-marker{display:none}
+.mp details[open] .mp-chev{transform:rotate(90deg)}
+.mp-chev{transition:transform 310ms linear(0,.036,.121,.231,.349,.464,.569,.662,.741,.806,.859,.901,.932,.956,.974,.986,.995,1,1.004,1.005,1.006,1.006,1.006,1.005,1.005,1.004,1.003,1.002,1)}
+.mp-ico{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.mp-cta{transition:transform 375ms linear(0,.053,.184,.352,.529,.694,.834,.944,1.023,1.073,1.099,1.107,1.101,1.087,1.069,1.05,1.033,1.018,1.006,.998,.992,.989,.989,.989,.991,.993,.995,.997,1)}
+.mp-cta:active{transform:scale(.94)}
+@media (prefers-reduced-motion:reduce){.mp-cta:active{transform:scale(.97)}}
+</style>
+</helmet>
+<div class="mp" data-theme="{{theme}}" style="min-height: 100vh; background: var(--clean-slate-background)">
+
+<dc-import name="MilkCalc" scenario="{{scenario}}" persist="{{persist}}" appearance="{{appearance}}" hint-size="100%,1240px"></dc-import>
+
+<main style="max-width: 720px; margin: 0 auto; padding: 48px 16px 24px; display: flex; flex-direction: column; gap: 56px">
+
+<section id="how" aria-labelledby="how-title" style="display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 24px">
+<h2 id="how-title" style="margin: 0; font: var(--text-title-rounded)">How this calculator works</h2>
+<p style="margin: 0; font: var(--text-body); color: var(--app-text-secondary)">A free calculator for expressed breast milk. It works out a use-by date from NHS storage guidance, with nothing to install and no account to make.</p>
+<ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px">
+<li style="background: var(--app-surface); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 8px">
+<span aria-hidden="true" style="width: 28px; height: 28px; border-radius: 999px; display: grid; place-items: center; background: color-mix(in srgb, var(--app-primary) 12%, transparent); color: var(--app-primary); font: 700 15px/1 var(--font-rounded)">1</span>
+<h3 style="margin: 0; font: var(--text-headline-rounded)">Choose where it’s stored</h3>
+<p style="margin: 0; font: var(--text-subheadline); color: var(--app-text-secondary)">Fridge, the fridge’s ice compartment, or the freezer.</p>
+</li>
+<li style="background: var(--app-surface); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 8px">
+<span aria-hidden="true" style="width: 28px; height: 28px; border-radius: 999px; display: grid; place-items: center; background: color-mix(in srgb, var(--app-primary) 12%, transparent); color: var(--app-primary); font: 700 15px/1 var(--font-rounded)">2</span>
+<h3 style="margin: 0; font: var(--text-headline-rounded)">Add the time</h3>
+<p style="margin: 0; font: var(--text-subheadline); color: var(--app-text-secondary)">When you expressed it for the fridge, or when it went in the ice compartment or freezer.</p>
+</li>
+<li style="background: var(--app-surface); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 8px">
+<span aria-hidden="true" style="width: 28px; height: 28px; border-radius: 999px; display: grid; place-items: center; background: color-mix(in srgb, var(--app-primary) 12%, transparent); color: var(--app-primary); font: 700 15px/1 var(--font-rounded)">3</span>
+<h3 style="margin: 0; font: var(--text-headline-rounded)">See the use-by date</h3>
+<p style="margin: 0; font: var(--text-subheadline); color: var(--app-text-secondary)">With the time left and how long it’s been stored. Use soon appears when the date is close.</p>
+</li>
+</ol>
+</section>
+
+<section aria-labelledby="private-title" style="display: flex; gap: 12px; align-items: flex-start; background: var(--app-surface); border-radius: 14px; padding: 14px">
+<span aria-hidden="true" style="width: 34px; height: 34px; display: grid; place-items: center; color: var(--app-primary); flex: none">
+<svg width="22" height="22" viewBox="0 0 24 24"><rect class="mp-ico" x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path class="mp-ico" d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg>
+</span>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h2 id="private-title" style="margin: 0; font: var(--text-title3-rounded-bold)">Private to this device</h2>
+<p style="margin: 0; font: var(--text-subheadline); color: var(--app-text-secondary)">The calculator remembers your last bag in this browser so it’s there when you come back. Nothing is uploaded.</p>
+</div>
+</section>
+
+<section aria-labelledby="app-title" style="background: var(--app-surface); border-radius: 28px; padding: 28px 20px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px">
+<img src="/_blob/96d3817e97cbb3a0b9b148a2af9d1c1e" alt="" width="72" height="72" style="width: 72px; height: 72px; display: block">
+<div style="display: flex; flex-direction: column; gap: 8px; max-width: 480px">
+<h2 id="app-title" style="margin: 0; font: var(--text-title-rounded)">Every bag, in the iPhone app</h2>
+<p style="margin: 0; font: var(--text-body); color: var(--app-text-secondary)">Milk Stash keeps a running list of what’s in your fridge and freezer, so you don’t have to work it out bag by bag.</p>
+</div>
+<ul style="list-style: none; margin: 0; padding: 0; width: 100%; max-width: 560px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 4px 16px; text-align: left">
+<li style="display: flex; align-items: center; gap: 12px; min-height: 48px">
+<span aria-hidden="true" style="width: 34px; height: 34px; display: grid; place-items: center; color: var(--app-primary); flex: none"><svg width="22" height="22" viewBox="0 0 24 24"><path class="mp-ico" d="M12 3.5c3 4 5.5 7 5.5 10a5.5 5.5 0 0 1-11 0c0-3 2.5-6 5.5-10z"></path></svg></span>
+<span style="font: var(--text-subheadline-semibold)">Fridge and freezer totals at a glance</span>
+</li>
+<li style="display: flex; align-items: center; gap: 12px; min-height: 48px">
+<span aria-hidden="true" style="width: 34px; height: 34px; display: grid; place-items: center; color: var(--app-primary); flex: none"><svg width="22" height="22" viewBox="0 0 24 24"><path class="mp-ico" d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15zM10 20.5h4"></path></svg></span>
+<span style="font: var(--text-subheadline-semibold)">Reminders before milk reaches its storage date</span>
+</li>
+<li style="display: flex; align-items: center; gap: 12px; min-height: 48px">
+<span aria-hidden="true" style="width: 34px; height: 34px; display: grid; place-items: center; color: var(--app-primary); flex: none"><svg width="22" height="22" viewBox="0 0 24 24"><path class="mp-ico" d="M9.5 3h5M10 3v3l-2 2.5V20a1.5 1.5 0 0 0 1.5 1.5h5A1.5 1.5 0 0 0 16 20V8.5L14 6V3"></path><path class="mp-ico" d="M8 13h8"></path></svg></span>
+<span style="font: var(--text-subheadline-semibold)">Use a bag in a bottle and the stash updates</span>
+</li>
+<li style="display: flex; align-items: center; gap: 12px; min-height: 48px">
+<span aria-hidden="true" style="width: 34px; height: 34px; display: grid; place-items: center; color: var(--app-primary); flex: none"><svg width="22" height="22" viewBox="0 0 24 24"><circle class="mp-ico" cx="12" cy="13" r="8"></circle><path class="mp-ico" d="M9 2.5h6M12 13V9"></path></svg></span>
+<span style="font: var(--text-subheadline-semibold)">Breastfeeding, pumping and bottle timers</span>
+</li>
+</ul>
+<a class="mp-cta" href="https://apps.apple.com/app/id6754637800" target="_blank" rel="noopener" style="width: 100%; max-width: 420px; min-height: 66px; border-radius: 14px; display: flex; align-items: center; justify-content: center; background: var(--app-primary); color: var(--app-button-primary-foreground); box-shadow: 0 0 20px color-mix(in srgb, var(--app-primary) 18%, transparent); font: var(--text-title2-rounded); text-decoration: none">View on the App Store</a>
+<p style="margin: 0; font: var(--text-footnote); color: var(--app-text-secondary); max-width: 420px">Free to download, with an optional one-time Lifetime Unlock. I make the app on my own.</p>
+</section>
+
+<section aria-labelledby="faq-title" style="display: flex; flex-direction: column; gap: 12px">
+<h2 id="faq-title" style="margin: 0; font: var(--text-title-rounded)">Questions</h2>
+<div style="background: var(--app-surface); border-radius: 24px; padding: 0 16px">
+<details>
+<summary style="min-height: 56px; padding: 12px 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; font: var(--text-body-semibold)">Where do the dates come from?<svg class="mp-chev" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--app-text-secondary); flex: none"><path class="mp-ico" style="stroke-width: 3" d="M9 5l7 7-7 7"></path></svg></summary>
+<p style="margin: 0 0 16px; font: var(--text-subheadline); color: var(--app-text-secondary)">From the NHS guidance on storing breast milk: up to 8 days in a fridge at 4°C or colder, up to 2 weeks in the fridge’s ice compartment, and up to 6 months in a freezer at −18°C or colder.</p>
+</details>
+<details style="border-top: .5px solid var(--app-divider)">
+<summary style="min-height: 56px; padding: 12px 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; font: var(--text-body-semibold)">What if I’m not sure how cold my fridge is?<svg class="mp-chev" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--app-text-secondary); flex: none"><path class="mp-ico" style="stroke-width: 3" d="M9 5l7 7-7 7"></path></svg></summary>
+<p style="margin: 0 0 16px; font: var(--text-subheadline); color: var(--app-text-secondary)">The 8 days assume 4°C or colder. If you can’t be sure, ask your midwife, health visitor or GP what’s right for you.</p>
+</details>
+<details style="border-top: .5px solid var(--app-divider)">
+<summary style="min-height: 56px; padding: 12px 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; font: var(--text-body-semibold)">How long is defrosted milk good for?<svg class="mp-chev" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--app-text-secondary); flex: none"><path class="mp-ico" style="stroke-width: 3" d="M9 5l7 7-7 7"></path></svg></summary>
+<p style="margin: 0 0 16px; font: var(--text-subheadline); color: var(--app-text-secondary)">The NHS says to use defrosted milk straight away and never refreeze it. Thawing it slowly in the fridge is best, and it should never be thawed in a microwave.</p>
+</details>
+<details style="border-top: .5px solid var(--app-divider)">
+<summary style="min-height: 56px; padding: 12px 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; font: var(--text-body-semibold)">Does this work for formula?<svg class="mp-chev" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--app-text-secondary); flex: none"><path class="mp-ico" style="stroke-width: 3" d="M9 5l7 7-7 7"></path></svg></summary>
+<p style="margin: 0 0 16px; font: var(--text-subheadline); color: var(--app-text-secondary)">No. These dates are only for expressed breast milk. Formula has its own guidance on the pack and from the NHS.</p>
+</details>
+<details style="border-top: .5px solid var(--app-divider)">
+<summary style="min-height: 56px; padding: 12px 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; font: var(--text-body-semibold)">Is it free?<svg class="mp-chev" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--app-text-secondary); flex: none"><path class="mp-ico" style="stroke-width: 3" d="M9 5l7 7-7 7"></path></svg></summary>
+<p style="margin: 0 0 16px; font: var(--text-subheadline); color: var(--app-text-secondary)">Yes. There’s nothing to sign up for and nothing to install.</p>
+</details>
+</div>
+</section>
+</main>
+
+<footer style="max-width: 720px; margin: 0 auto; padding: 8px 16px 48px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center">
+<p style="margin: 0; font: var(--text-footnote); color: var(--app-text-secondary); max-width: 480px">Storage dates are guidance, not a guarantee, and this calculator isn’t medical advice. If your baby is in hospital, premature or unwell, follow their care team’s advice on storing milk.</p>
+<nav aria-label="More from the app" style="display: flex; justify-content: center; gap: 4px 20px; flex-wrap: wrap; font: var(--text-subheadline-semibold)">
+<a href="/breastfeeding-tracker/breastfeeding-timer/" style="min-height: 44px; display: inline-flex; align-items: center">Breastfeeding timer</a>
+<a href="/breastfeeding-tracker/" style="min-height: 44px; display: inline-flex; align-items: center">About the app</a>
+<a href="/breastfeeding-tracker/support/" style="min-height: 44px; display: inline-flex; align-items: center">Help &amp; Support</a>
+<a href="/privacy/breast-feeding-tracker/" style="min-height: 44px; display: inline-flex; align-items: center">Privacy</a>
+</nav>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"scenario":{"editor":"enum","options":["live","fridge","soon","passed","ice","invite"],"default":"live"},"persist":{"editor":"boolean","default":true},"appearance":{"editor":"enum","options":["auto","light","dark"],"default":"auto"},"$preview":{"width":390,"height":2900}}'>
+class Component extends DCLogic {
+  constructor(...args) {
+    super(...args);
+    var dark = false;
+    try { dark = !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); } catch (e) {}
+    this.state = { sysDark: dark };
+  }
+  componentDidMount() {
+    var self = this;
+    try {
+      this.mq = window.matchMedia('(prefers-color-scheme: dark)');
+      this.onMQ = function () { self.setState({ sysDark: self.mq.matches }); };
+      this.mq.addEventListener('change', this.onMQ);
+    } catch (e) {}
+  }
+  componentWillUnmount() {
+    try { this.mq.removeEventListener('change', this.onMQ); } catch (e) {}
+  }
+  renderVals() {
+    var appearance = this.props.appearance || 'auto';
+    return {
+      scenario: this.props.scenario || 'live',
+      persist: this.props.persist == null ? true : !!this.props.persist,
+      appearance: appearance,
+      theme: appearance === 'dark' || (appearance === 'auto' && this.state.sysDark) ? 'dark' : 'light'
+    };
+  }
+}
+</script>
+</body>
+</html>

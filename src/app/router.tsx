@@ -19,9 +19,11 @@ import { BreastfeedingTrackerBlogPage } from "../pages/BreastfeedingTrackerBlogP
 import { BreastfeedingTrackerBlogPostPage } from "../pages/BreastfeedingTrackerBlogPostPage";
 import { BreastfeedingTrackerBlogDisclosurePage } from "../pages/BreastfeedingTrackerBlogDisclosurePage";
 import { StandardPage } from "../pages/StandardPage";
+import { MilkStorageCalculatorPage } from "../pages/MilkStorageCalculatorPage";
 import { BreastfeedingTimerPage } from "../pages/BreastfeedingTimerPage";
 import {
   BREASTFEEDING_TIMER_PATH,
+  MILK_STORAGE_CALCULATOR_PATH,
   BREASTFEEDING_TRACKER_BASE_PATH,
   BREASTFEEDING_TRACKER_BLOG_BASE_PATH,
   BREASTFEEDING_TRACKER_BLOG_DISCLOSURE_PATH,
@@ -71,6 +73,7 @@ export function AppRoutes() {
           element={<BreastfeedingTrackerLandingPage />}
         />
         <Route path={BREASTFEEDING_TIMER_PATH} element={<BreastfeedingTimerPage />} />
+        <Route path={MILK_STORAGE_CALCULATOR_PATH} element={<MilkStorageCalculatorPage />} />
         <Route
           path={BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH}
           element={<BreastfeedingTrackerSupportPage />}

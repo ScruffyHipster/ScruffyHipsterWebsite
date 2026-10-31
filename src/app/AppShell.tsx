@@ -7,6 +7,7 @@ import { ScrollToTop } from "./ScrollToTop";
 import {
   appRoutePath,
   BREASTFEEDING_TIMER_PATH,
+  MILK_STORAGE_CALCULATOR_PATH,
   BREASTFEEDING_TRACKER_BLOG_BASE_PATH,
   BREASTFEEDING_TRACKER_BLOG_DISCLOSURE_PATH,
   BREASTFEEDING_TRACKER_SUPPORT_BASE_PATH,
@@ -30,7 +31,7 @@ export function AppShell() {
   }
 
   // The online timer opens straight onto the tool, with no app banner or download button before it.
-  if (location.pathname.replace(/\/+$/, "") === BREASTFEEDING_TIMER_PATH) {
+  if ([BREASTFEEDING_TIMER_PATH, MILK_STORAGE_CALCULATOR_PATH].includes(location.pathname.replace(/\/+$/, ""))) {
     return <div className="site-shell bfw-shell"><RouteAnalytics /><ScrollToTop /><Outlet /></div>;
   }
 
@@ -110,6 +111,11 @@ export function AppShell() {
                 <li>
                   <Link to={canonicalPath(BREASTFEEDING_TIMER_PATH)}>
                     {siteConfig.footer.breastfeedingTimerLabel}
+                  </Link>
+                </li>
+                <li>
+                  <Link to={canonicalPath(MILK_STORAGE_CALCULATOR_PATH)}>
+                    {siteConfig.footer.milkStorageCalculatorLabel}
                   </Link>
                 </li>
                 <li>
