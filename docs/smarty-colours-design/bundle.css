@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400&family=Grandstander:wght@600;700;800;900&display=swap");
+
+/* SmartyColours Web — component styles. Every value comes from tokens.css.
+   Prefix: sc-. Kid-facing controls use --tap-kid; grown-up controls --tap-grown. */
+
+body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--font-body); font-size: 18px; line-height: 28px; -webkit-font-smoothing: antialiased; }
+.sc-display { font-family: var(--font-display); }
+
+/* ---------- Logo lockup ---------- */
+.sc-logo { display: inline-flex; align-items: center; gap: var(--space-3); text-decoration: none; color: var(--ink); }
+.sc-logo img { width: 48px; height: 48px; display: block; }
+.sc-logo span { font-family: var(--font-display); font-weight: 900; font-size: 26px; line-height: 1; letter-spacing: -0.01em; }
+.sc-logo span b { font-weight: 900; color: var(--sky-deep); }
+.sc-logo--on-sky { color: var(--on-sky-band); }
+.sc-logo--on-sky span b { color: var(--on-sky-band); }
+.sc-logo--l img { width: 72px; height: 72px; }
+.sc-logo--l span { font-size: 38px; }
+
+/* ---------- Buttons ---------- */
+.sc-btn { --btn-bg: var(--surface); --btn-fg: var(--ink); --btn-edge: var(--outline);
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  min-height: var(--tap-grown); padding: 0 var(--space-5); border-radius: var(--radius-pill);
+  border: var(--stroke-outline) solid var(--btn-edge); background: var(--btn-bg); color: var(--btn-fg);
+  box-shadow: var(--shadow-sticker); font-family: var(--font-body); font-weight: 700; font-size: 18px; line-height: 1;
+  text-decoration: none; cursor: pointer; transition: transform .12s ease, box-shadow .12s ease; margin-bottom: 5px; white-space: nowrap; }
+.sc-btn svg { width: 24px; height: 24px; flex: none; }
+.sc-btn:hover { transform: translateY(-1px); }
+.sc-btn:active, .sc-btn[aria-pressed="true"].sc-btn--latch { transform: translateY(4px); box-shadow: var(--shadow-sticker-pressed); }
+.sc-btn:focus-visible { outline: none; box-shadow: var(--shadow-sticker), var(--focus-ring); }
+.sc-btn--crown { --btn-bg: var(--crown); --btn-fg: var(--on-fill); --btn-edge: var(--on-fill); }
+.sc-btn--sunshine { --btn-bg: var(--sunshine); --btn-fg: var(--on-fill); --btn-edge: var(--on-fill); }
+.sc-btn--sky { --btn-bg: var(--sky); --btn-fg: var(--on-fill); --btn-edge: var(--on-fill); }
+.sc-btn--kid { min-height: var(--tap-kid); padding: 0 var(--space-6); font-family: var(--font-display); font-weight: 800; font-size: 22px; }
+.sc-btn--kid svg { width: 30px; height: 30px; }
+.sc-btn--quiet { box-shadow: none; border-color: transparent; background: transparent; margin-bottom: 0; }
+.sc-btn--quiet:active { transform: none; box-shadow: none; }
+.sc-btn[disabled] { opacity: .45; cursor: not-allowed; transform: none; }
+
+/* ---------- Tags ---------- */
+.sc-tag { display: inline-flex; align-items: center; gap: var(--space-1); height: 28px; padding: 0 var(--space-3); border-radius: var(--radius-pill);
+  font-family: var(--font-body); font-weight: 700; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; line-height: 1;
+  background: var(--sky-pale); color: var(--ink); border: 2px solid transparent; }
+.sc-tag svg { width: 16px; height: 16px; }
+.sc-tag--free { background: var(--sunshine); color: var(--on-fill); border-color: var(--on-fill); }
+.sc-tag--new { background: var(--coral); color: var(--on-fill); border-color: var(--on-fill); }
+.sc-tag--grown { background: transparent; color: var(--ink-muted); border-color: var(--line); }
+.sc-tag--app { background: var(--crown); color: var(--on-fill); border-color: var(--on-fill); }
+
+/* ---------- Section head ---------- */
+.sc-head { display: grid; gap: var(--space-3); max-width: var(--measure); }
+.sc-head h2 { margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 40px; line-height: 1.05; text-wrap: balance; }
+.sc-head p { margin: 0; font-size: 20px; line-height: 30px; color: var(--ink-muted); }
+.sc-head .sc-mark { background: linear-gradient(transparent 58%, var(--sunshine) 58%, var(--sunshine) 92%, transparent 92%); padding: 0 .08em; color: inherit; }
+
+/* ---------- Pack tile (the app's pack grid) ---------- */
+.sc-pack { display: grid; gap: var(--space-3); text-decoration: none; color: var(--ink); justify-items: center; }
+.sc-pack__frame { position: relative; width: 100%; aspect-ratio: 1; border-radius: var(--radius-m); border: var(--stroke-frame) solid var(--grass);
+  background: var(--paper); overflow: hidden; box-shadow: var(--shadow-float); transition: transform .15s ease; }
+.sc-pack__frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.sc-pack__frame .sc-tag { position: absolute; top: var(--space-3); left: var(--space-3); }
+.sc-pack__name { font-family: var(--font-display); font-weight: 800; font-size: 22px; line-height: 1.1; text-align: center; }
+.sc-pack__meta { font-size: 16px; line-height: 24px; color: var(--ink-muted); margin-top: calc(var(--space-2) * -1); text-align: center; }
+.sc-pack:hover .sc-pack__frame { transform: rotate(-1.5deg) translateY(-3px); }
+.sc-pack:focus-visible { outline: none; }
+.sc-pack:focus-visible .sc-pack__frame { box-shadow: var(--focus-ring); }
+.sc-pack--locked .sc-pack__frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 55%, rgba(28,36,48,.55)); }
+
+/* ---------- Page card (one printable page) ---------- */
+.sc-sheet { display: grid; gap: var(--space-3); background: var(--surface); border-radius: var(--radius-l); padding: var(--space-4); border: 2px solid var(--line); }
+.sc-sheet__art { aspect-ratio: 210 / 297; border-radius: var(--radius-s); background: var(--paper); border: 2px solid var(--line); display: grid; place-items: center; overflow: hidden; }
+.sc-sheet__art img { width: 92%; height: auto; display: block; }
+.sc-sheet__title { font-family: var(--font-display); font-weight: 700; font-size: 20px; line-height: 1.15; margin: 0; }
+.sc-sheet__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.sc-sheet__actions .sc-btn { min-height: 44px; padding: 0 var(--space-4); font-size: 16px; flex: 1 1 auto; }
+
+/* ---------- Crayon swatches ---------- */
+.sc-palette { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+.sc-swatch { position: relative; width: var(--tap-kid); height: var(--tap-kid); border: 0; padding: 0; background: transparent; cursor: pointer; display: grid; place-items: center; border-radius: 50%; }
+.sc-swatch::before { content: ""; width: var(--swatch); height: var(--swatch); border-radius: 50%; background: var(--swatch-colour, var(--sky));
+  border: var(--stroke-outline) solid var(--outline); box-shadow: var(--shadow-sticker); transition: transform .12s ease; }
+.sc-swatch[aria-pressed="true"]::before { transform: scale(1.12); }
+.sc-swatch[aria-pressed="true"]::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: var(--stroke-outline) solid var(--outline); }
+.sc-swatch:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.sc-swatch--rainbow::before { background: conic-gradient(var(--strawberry), var(--crown), var(--sunshine), var(--grass), var(--sky), var(--grape), var(--strawberry)); }
+
+/* ---------- Tool button ---------- */
+.sc-tool { display: grid; justify-items: center; align-content: center; gap: 2px; width: var(--tap-kid); height: var(--tap-kid); border-radius: 20px;
+  border: var(--stroke-outline) solid transparent; background: transparent; color: var(--ink); cursor: pointer; font: 700 12px/1 var(--font-body); padding: 0; }
+.sc-tool svg { width: 32px; height: 32px; }
+.sc-tool[aria-pressed="true"] { background: var(--surface); border-color: var(--outline); box-shadow: var(--shadow-sticker); transform: translateY(-3px); }
+.sc-tool:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.sc-tool[disabled] { opacity: .4; cursor: default; }
+
+/* ---------- Colouring toolbar (the app's aqua pill) ---------- */
+.sc-toolbar { display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-4); background: var(--aqua);
+  border: var(--stroke-outline) solid var(--outline); border-radius: var(--radius-pill); box-shadow: var(--shadow-float); color: var(--ink); flex-wrap: wrap; justify-content: center; }
+.sc-toolbar__group { display: flex; align-items: center; gap: var(--space-1); }
+.sc-toolbar__sep { width: 3px; align-self: stretch; margin: var(--space-2) var(--space-2); border-radius: 2px; background: var(--outline); opacity: .25; }
+.sc-toolbar .sc-palette { gap: var(--space-1); }
+
+/* ---------- Canvas (paper sheet in grass frame) ---------- */
+.sc-canvas { background: var(--paper); border: var(--stroke-frame) solid var(--grass); border-radius: var(--radius-l); box-shadow: var(--shadow-float); overflow: hidden; aspect-ratio: 1; position: relative; }
+.sc-canvas img, .sc-canvas canvas { width: 100%; height: 100%; display: block; object-fit: contain; touch-action: none; }
+
+/* ---------- Sky band + clouds ---------- */
+.sc-sky { position: relative; overflow: hidden; color: var(--on-sky-band);
+  background: radial-gradient(circle at 12% 18%, var(--star) 0 1.5px, transparent 2.5px), radial-gradient(circle at 78% 30%, var(--star) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 56% 12%, var(--star) 0 1px, transparent 2px), linear-gradient(180deg, var(--sky-band) 0%, var(--sky-band) 45%, var(--sky-band-low) 100%); }
+.sc-cloud { position: absolute; width: 200px; height: auto; pointer-events: none; }
+.sc-cloud .fill { fill: var(--paper); }
+.sc-cloud .shade { fill: var(--sky-pale); }
+.sc-cloud .edge { fill: none; stroke: var(--line-art); stroke-width: 4; stroke-linejoin: round; }
+@media (prefers-reduced-motion: no-preference) { .sc-cloud--drift { animation: sc-drift 38s ease-in-out infinite alternate; } }
+@keyframes sc-drift { to { transform: translateX(40px); } }
+
+/* ---------- Nav ---------- */
+.sc-nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2) var(--space-4); padding: var(--space-3) var(--space-5);
+  background: var(--surface); border: var(--stroke-outline) solid var(--outline); border-radius: var(--radius-pill); box-shadow: var(--shadow-float); }
+.sc-nav ul { display: flex; gap: var(--space-1); list-style: none; margin: 0; padding: 0; }
+.sc-nav a.sc-nav__link { display: inline-flex; align-items: center; min-height: var(--tap-grown); padding: 0 var(--space-4); border-radius: var(--radius-pill); color: var(--ink); text-decoration: none; font-weight: 700; font-size: 17px; white-space: nowrap; }
+.sc-nav a.sc-nav__link[aria-current="page"] { background: var(--sky-pale); }
+.sc-nav a.sc-nav__link:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.sc-nav .sc-logo img { width: 44px; height: 44px; }
+.sc-nav .sc-logo span { font-size: 24px; }
+@media (max-width: 880px) { .sc-nav { border-radius: var(--radius-l); padding: var(--space-3); }
+  .sc-nav ul { order: 3; width: 100%; border-top: 2px dashed var(--line); padding-top: var(--space-2); }
+  .sc-nav ul li { flex: 1; } .sc-nav a.sc-nav__link { width: 100%; justify-content: center; padding: 0 var(--space-2); font-size: 16px; } }
+@media (max-width: 420px) { .sc-nav .sc-logo span { display: none; } }
+
+/* ---------- Parent gate ---------- */
+.sc-gate { width: min(440px, 100%); background: var(--surface); color: var(--ink); border: var(--stroke-outline) solid var(--outline); border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-float); padding: var(--space-6); display: grid; gap: var(--space-4); box-sizing: border-box; }
+.sc-gate h3 { margin: 0; font-family: var(--font-display); font-size: 28px; line-height: 1.1; font-weight: 800; }
+.sc-gate p { margin: 0; color: var(--ink-muted); font-size: 17px; line-height: 26px; }
+.sc-gate__question { font-size: 20px; line-height: 28px; color: var(--ink); font-weight: 700; }
+.sc-gate__answers { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+.sc-gate__answers .sc-btn { margin: 0 0 5px; padding: 0; font-size: 22px; min-height: 56px; }
+
+/* ---------- App promo ---------- */
+.sc-promo { display: grid; grid-template-columns: auto 1fr; gap: var(--space-6); align-items: center; background: var(--surface); border: var(--stroke-outline) solid var(--outline);
+  border-radius: var(--radius-xl); padding: var(--space-6); box-shadow: var(--shadow-float); }
+.sc-promo__icon { width: 132px; height: 132px; }
+.sc-promo h3 { margin: 0 0 var(--space-2); font-family: var(--font-display); font-weight: 800; font-size: 32px; line-height: 1.08; text-wrap: balance; }
+.sc-promo p { margin: 0 0 var(--space-4); color: var(--ink-muted); }
+.sc-promo__row { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+.sc-badge-link { display: inline-block; border-radius: 10px; line-height: 0; }
+.sc-badge-link img { height: 52px; width: auto; }
+.sc-badge-link:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+@media (max-width: 560px) { .sc-promo { grid-template-columns: 1fr; text-align: left; } .sc-promo__icon { width: 96px; height: 96px; } }
+
+/* ---------- Promise list (safety) ---------- */
+.sc-promise { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-5); list-style: none; margin: 0; padding: 0; }
+.sc-promise li { display: grid; grid-template-columns: 52px 1fr; gap: var(--space-3); align-items: start; }
+.sc-promise__icon { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--sunshine); border: var(--stroke-outline) solid var(--on-fill); color: var(--on-fill); }
+.sc-promise__icon svg { width: 28px; height: 28px; }
+.sc-promise h4 { margin: 2px 0 2px; font-family: var(--font-display); font-weight: 800; font-size: 22px; line-height: 1.15; }
+.sc-promise p { margin: 0; color: var(--ink-muted); font-size: 16px; line-height: 24px; }
+
+/* ---------- FAQ ---------- */
+.sc-faq { display: grid; gap: var(--space-3); }
+.sc-faq details { background: var(--surface); border: 2px solid var(--line); border-radius: var(--radius-l); padding: 0 var(--space-5); }
+.sc-faq summary { list-style: none; cursor: pointer; min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
+  font-family: var(--font-display); font-weight: 700; font-size: 22px; line-height: 1.2; }
+.sc-faq summary::-webkit-details-marker { display: none; }
+.sc-faq summary::after { content: "+"; font-size: 30px; width: 40px; height: 40px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--sky-pale); }
+.sc-faq details[open] summary::after { content: "–"; }
+.sc-faq details p { margin: 0 0 var(--space-5); color: var(--ink-muted); max-width: var(--measure); }
+.sc-faq summary:focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: var(--radius-s); }
+
+/* ---------- Footer ---------- */
+.sc-footer { display: grid; gap: var(--space-5); padding-block: var(--space-7); border-top: 2px dashed var(--line); color: var(--ink-muted); font-size: 16px; line-height: 24px; }
+.sc-footer nav { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); }
+.sc-footer a { color: var(--ink); font-weight: 700; text-decoration: none; min-height: var(--tap-grown); display: inline-flex; align-items: center; }
+.sc-footer a:hover { color: var(--sky-deep); }
+
+/* ---------- Printable sheet (A4 portrait, 210 x 297) ---------- */
+.sc-print { width: 210mm; height: 297mm; box-sizing: border-box; padding: 10mm; background: var(--paper); color: var(--line-art);
+  display: grid; grid-template-rows: auto 1fr auto; gap: 6mm; font-family: var(--font-body); }
+.sc-print__head { display: flex; align-items: center; justify-content: space-between; gap: 6mm; border-bottom: 1.2mm solid var(--line-art); padding-bottom: 4mm; }
+.sc-print__head .sc-logo { color: var(--line-art); }
+.sc-print__head .sc-logo img { width: 16mm; height: 16mm; }
+.sc-print__head .sc-logo span { font-size: 9mm; }
+.sc-print__head .sc-logo span b { color: var(--line-art); }
+.sc-print__name { display: flex; align-items: flex-end; gap: 3mm; font-family: var(--font-display); font-weight: 700; font-size: 6mm; }
+.sc-print__name i { display: inline-block; width: 62mm; border-bottom: .8mm dashed var(--line-art); height: 7mm; }
+.sc-print__art { display: grid; place-items: center; border: 1.2mm solid var(--line-art); border-radius: 8mm; overflow: hidden; }
+.sc-print__art img { width: 100%; height: 100%; object-fit: contain; }
+.sc-print__foot { display: flex; align-items: center; justify-content: space-between; gap: 6mm; font-size: 4.2mm; line-height: 1.35; }
+.sc-print__foot strong { font-family: var(--font-display); font-size: 5.2mm; display: block; }
+.sc-print__dots { display: flex; gap: 2mm; flex: none; }
+.sc-print__dots i { width: 7mm; height: 7mm; border-radius: 50%; border: .7mm solid var(--line-art); display: block; }
+
+/* ---------- Share card (1080 x 1080 export frame) ---------- */
+.sc-share { width: 1080px; height: 1080px; box-sizing: border-box; padding: 56px; display: grid; grid-template-rows: 1fr auto; gap: 36px;
+  background: linear-gradient(180deg, var(--sky-band) 0%, var(--sky-band-low) 100%); border-radius: 0; }
+.sc-share__art { background: var(--paper); border: 14px solid var(--grass); border-radius: 56px; overflow: hidden; }
+.sc-share__art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.sc-share__foot { display: flex; align-items: center; justify-content: space-between; color: var(--on-sky-band); }
+.sc-share__foot .sc-logo img { width: 96px; height: 96px; }
+.sc-share__foot .sc-logo span { font-size: 54px; color: var(--on-sky-band); }
+.sc-share__foot .sc-logo span b { color: var(--on-sky-band); }
+.sc-share__by { font-family: var(--font-display); font-weight: 800; font-size: 40px; text-align: right; line-height: 1.1; }
+
+@media (prefers-reduced-motion: reduce) { .sc-btn, .sc-pack__frame, .sc-swatch::before { transition: none; } }

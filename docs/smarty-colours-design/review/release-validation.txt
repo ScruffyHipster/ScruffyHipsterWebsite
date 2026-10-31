@@ -1,0 +1,10 @@
+Release verification, 31 October 2026
+Production client/SSR build: PASS
+Validation: PASS (SEO/CMS, content ownership, locales, Rewire, timer, milk calculator, Smarty fill/privacy/assets)
+Browser hydrated metadata: four matching schema types; en-GB; correct canonical; pencil favicon/touch icon and 512px logo
+Fonts: self-hosted WOFF2, 381664 bytes, 78.2 percent smaller
+Public copy: online colouring available; PDFs clearly coming soon
+Deployment: not performed; domain question pending
+Indexing: noindex retained until chosen destination
+Temporary build artifacts removed: 745.0 MiB
+Source release checkout retained at /tmp/smarty-colours-release for the pending deployment; original unrelated dirty work preserved

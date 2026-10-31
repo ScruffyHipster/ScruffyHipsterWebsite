@@ -4,6 +4,7 @@ import { publicRoutes, siteUrl } from "./route-meta.mjs";
 
 export async function generateSitemap(distDir) {
   const urls = publicRoutes
+    .filter(isIndexableRoute)
     .map((route) => {
       const loc = canonicalUrl(route.path);
       return `<url><loc>${escapeXml(loc)}</loc></url>`;
@@ -24,6 +25,11 @@ Allow: /
 Sitemap: ${siteUrl}/sitemap.xml
 `;
   await writeFile(join(distDir, "robots.txt"), robots, "utf8");
+}
+
+export function isIndexableRoute(route) {
+  const directives = (route.robots || "").toLowerCase().split(/[\s,]+/);
+  return !directives.some((directive) => directive === "noindex" || directive === "none");
 }
 
 function canonicalUrl(path) {

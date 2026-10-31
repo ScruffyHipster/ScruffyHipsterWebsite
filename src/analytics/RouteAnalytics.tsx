@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { ensureLandingAttribution, readLandingAttribution } from "./landingAttribution";
-import { trackEvent } from "./telemetrydeck";
+import { isSmartyColoursPath, trackEvent } from "./telemetrydeck";
 import { localeForPath } from "../content/trackerLocales";
 import { BREASTFEEDING_TIMER_PATH } from "../content/routes";
 import { breastfeedingTimerPageContent } from "../content/pages";
@@ -11,7 +11,7 @@ export function RouteAnalytics() {
   const landingSentRef = useRef(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined" || isSmartyColoursPath(location.pathname)) return;
 
     const landing = ensureLandingAttribution();
     const locale = localeForPath(location.pathname);

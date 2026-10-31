@@ -6,6 +6,19 @@ let telemetryDeckClient: { signal: (eventName: string, payload?: EventProperties
   null;
 let loadingPromise: Promise<void> | null = null;
 
+export const isSmartyColoursPath = (pathname: string) => {
+  let decodedPath = pathname;
+  try {
+    decodedPath = decodeURIComponent(pathname);
+  } catch {
+    // A malformed URL is still checked as written.
+  }
+  return /^\/apps\/smarty-colours(?:\/|$)/i.test(decodedPath);
+};
+
+const isAnalyticsSuppressed = () =>
+  typeof window !== "undefined" && isSmartyColoursPath(window.location.pathname);
+
 const getAnalyticsEnabled = () => {
   const explicit = import.meta.env.VITE_ANALYTICS_ENABLED as string | undefined;
   if (explicit) {
@@ -30,7 +43,8 @@ const getOrCreateSessionUser = () => {
 };
 
 export async function initTelemetryDeck() {
-  if (initialized || loadingPromise || disabled) return;
+  if (isAnalyticsSuppressed() || initialized || disabled) return;
+  if (loadingPromise) return loadingPromise;
 
   if (!getAnalyticsEnabled()) {
     disabled = true;
@@ -46,6 +60,8 @@ export async function initTelemetryDeck() {
   loadingPromise = (async () => {
     try {
       const sdk = await import("@telemetrydeck/sdk");
+      // Navigation may have entered the children's site while the SDK was loading.
+      if (isAnalyticsSuppressed()) return;
       const userId = getOrCreateSessionUser();
       const maybeClient = new (sdk as unknown as { TelemetryDeck: new (opts: Record<string, unknown>) => { signal: (eventName: string, payload?: EventProperties) => void } }).TelemetryDeck(
         {
@@ -64,15 +80,19 @@ export async function initTelemetryDeck() {
     }
   })();
 
-  await loadingPromise;
+  try {
+    await loadingPromise;
+  } finally {
+    loadingPromise = null;
+  }
 }
 
 export function trackEvent(eventName: string, payload?: EventProperties) {
-  if (!getAnalyticsEnabled()) return;
+  if (isAnalyticsSuppressed() || !getAnalyticsEnabled()) return;
 
   if (!initialized && !loadingPromise && !disabled) {
     void initTelemetryDeck().then(() => {
-      if (telemetryDeckClient) {
+      if (!isAnalyticsSuppressed() && telemetryDeckClient) {
         telemetryDeckClient.signal(eventName, payload);
       }
     });
@@ -81,7 +101,7 @@ export function trackEvent(eventName: string, payload?: EventProperties) {
 
   if (loadingPromise && !initialized) {
     void loadingPromise.then(() => {
-      telemetryDeckClient?.signal(eventName, payload);
+      if (!isAnalyticsSuppressed()) telemetryDeckClient?.signal(eventName, payload);
     });
     return;
   }

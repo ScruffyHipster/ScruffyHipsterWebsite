@@ -3,41 +3,41 @@
   "order": 2,
   "slug": "smarty-colours",
   "published": true,
-  "name": "Smarty Colours",
-  "heroTitle": "Smarty Colours",
-  "tagline": "A calm colouring app for iPad, made for focused creative play.",
-  "shortDescription": "A kids colouring app for iPad with Apple Pencil support, themed packs, and a simple interface.",
-  "longDescription": "Smarty Colours gives children a simple place to draw, colour, and settle into a page. The interface stays clear, the tools are easy to find, and Apple Pencil support keeps the experience feeling natural on iPad.",
+  "name": "SmartyColours",
+  "heroTitle": "Grab a crayon and colour!",
+  "tagline": "Free online colouring for little hands.",
+  "shortDescription": "Free online colouring with original SmartyColours pictures, friendly tools and local picture saving.",
+  "longDescription": "Colour original SmartyColours pictures in your browser and save your finished picture to your device. Free printable packs are being prepared for home and the classroom. More pages are available in the iPad and iPhone app.",
   "appStoreUrl": "https://apps.apple.com/gb/app/smartycolours-colouring-pages/id6749013158",
-  "icon": "/assets/smartycoloursLogo.png",
-  "iconAlt": "Smarty Colours icon",
+  "icon": "/smarty-colours/pencil-app-icon.png",
+  "iconAlt": "SmartyColours rainbow pencil app icon",
   "screenshots": [
     {
       "src": "/assets/smartyColoursScreenshots/iPhone Screenshots 🇬🇧 2.001.png",
-      "alt": "Smarty Colours home screen"
+      "alt": "SmartyColours home screen"
     },
     {
       "src": "/assets/smartyColoursScreenshots/iPhone Screenshots 🇬🇧 2.002.png",
-      "alt": "Smarty Colours colouring screen"
+      "alt": "SmartyColours colouring screen"
     },
     {
       "src": "/assets/smartyColoursScreenshots/iPhone Screenshots 🇬🇧 2.003.png",
-      "alt": "Smarty Colours pack selection screen 1"
+      "alt": "SmartyColours pack selection screen 1"
     },
     {
       "src": "/assets/smartyColoursScreenshots/iPhone Screenshots 🇬🇧 2.004.png",
-      "alt": "Smarty Colours pack selection screen 2"
+      "alt": "SmartyColours pack selection screen 2"
     },
     {
       "src": "/assets/smartyColoursScreenshots/iPhone Screenshots 🇬🇧 2.005.png",
-      "alt": "Smarty Colours pack selection screen 3"
+      "alt": "SmartyColours pack selection screen 3"
     }
   ],
   "featureHeading": "Creative play with fewer distractions",
   "featureIntro": "The app keeps the tools obvious and the page central, so children can spend more time colouring.",
   "features": [
     {
-      "title": "Themed Coloring Packs",
+      "title": "Themed colouring packs",
       "body": "Original illustration packs with familiar subjects like animals, vehicles, robots, and dinosaurs."
     },
     {
@@ -63,23 +63,47 @@
       "Subscription content packs"
     ]
   },
-  "privacySummary": "Smarty Colours collects no personal data and uses no analytics, ads, or tracking tools.",
+  "privacySummary": "Read the app privacy policy for information about SmartyColours on iPad and iPhone.",
   "privacySlug": "smarty-colours",
   "yearLabel": "2026",
   "seo": {
-    "title": "Smarty Colours | Kids Colouring App for iPad",
-    "description": "Smarty Colours is a children's colouring app for iPad with themed packs, Apple Pencil support, and a calm kid-friendly interface.",
+    "title": "Free Online Colouring for Kids | SmartyColours",
+    "description": "Colour original SmartyColours pictures online for free. Big, friendly tools for little hands, with no ads or sign-up. Save finished pictures on your device.",
     "keywords": [
       "kids colouring app",
       "iPad coloring app",
       "Apple Pencil children app",
-      "Smarty Colours"
+      "SmartyColours"
     ],
-    "ogImage": "/og-default.png"
+    "ogImage": "/smarty-colours/farm-yard-cover.jpg",
+    "robots": "noindex,follow",
+    "ogImageAlt": "A smiling orange cow in a sunny meadow, from the SmartyColours Farm Yard pack"
   },
   "accent": {
     "from": "#ffd87a",
     "via": "#ff9bcf",
     "to": "#95c5ff"
-  }
+  },
+  "faqs": [
+    {
+      "question": "Are the printable packs available?",
+      "answer": "Not yet. We are preparing five free pages from every pack. You can colour the example pictures online and save them to your device today."
+    },
+    {
+      "question": "Do we need to sign up?",
+      "answer": "No. There are no accounts and nothing to fill in. Open a picture and start colouring."
+    },
+    {
+      "question": "Does colouring online save anything about my child?",
+      "answer": "No. Colouring stays in this browser tab. Save picture downloads a PNG to your device, and Share asks a grown-up first. There are no names, accounts or artwork uploads."
+    },
+    {
+      "question": "What age is it for?",
+      "answer": "The pictures are drawn for toddlers, preschoolers and young children, with big shapes and thick lines."
+    },
+    {
+      "question": "What do we get in the app?",
+      "answer": "Hundreds of pages across themed packs, pinch-to-zoom, and Apple Pencil support on iPad. It is free to try, with optional in-app purchases for more content."
+    }
+  ]
 }
