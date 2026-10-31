@@ -18,6 +18,7 @@ for (const [, source] of fonts.matchAll(/url\(([^)]+)\)/g)) await access(join(ro
 const html = await readFile(join(root, "dist/apps/smarty-colours/index.html"), "utf8");
 const app = JSON.parse(await readFile(join(root, "content/apps/smarty-colours.json"), "utf8"));
 const robots = app.seo.robots || "index,follow";
+assert.equal(robots, "index,follow", "The approved public landing page must remain indexable.");
 assert(html.includes(`name="robots" content="${robots}"`), "Rendered indexing must match the declared launch state.");
 assert(html.includes('rel="icon"') && html.includes("/smarty-colours/favicon-64.png"), "The original pencil icon must be present in the initial head.");
 assert(html.includes('lang="en-GB"'), "Initial page language must be British English.");

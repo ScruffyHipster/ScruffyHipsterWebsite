@@ -57,3 +57,7 @@ Prepared an online-colouring launch in an isolated checkout of current remote ma
 - Production build, all validation checks and rendered browser metadata pass. No Search Console, field Core Web Vitals or ranking evidence has been obtained.
 
 Domain confirmation is pending. No publication has occurred and `noindex,follow` remains in place until the destination is chosen, as required by the original hand-off. Browser-review screenshot: `smarty-colours-design/review/release-ready.png`.
+
+## Approved launch — 31 October 2026
+
+The user confirmed deployment to https://scruffyhipster.com/apps/smarty-colours/. This is the final canonical location for this release. Indexing is enabled and the landing page is included in the sitemap. The approved scope is online colouring; printable packs remain clearly marked coming soon until their five-page selections and PDFs are complete. Publication will be verified against the resulting deployment revision.

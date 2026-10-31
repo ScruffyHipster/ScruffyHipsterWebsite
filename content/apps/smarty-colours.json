@@ -76,7 +76,7 @@
       "SmartyColours"
     ],
     "ogImage": "/smarty-colours/farm-yard-cover.jpg",
-    "robots": "noindex,follow",
+    "robots": "index,follow",
     "ogImageAlt": "A smiling orange cow in a sunny meadow, from the SmartyColours Farm Yard pack"
   },
   "accent": {
