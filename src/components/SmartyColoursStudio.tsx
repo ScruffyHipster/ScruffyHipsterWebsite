@@ -101,6 +101,16 @@ function StudioIcon({ name }: { name: string }) {
   </svg>;
 }
 
+/** Native Tab visits only the checked radio in a named group. Match that order when wrapping focus. */
+function studioTabStops(scope: HTMLElement | null): HTMLElement[] {
+  const controls = Array.from(scope?.querySelectorAll<HTMLElement>('button:not(:disabled), select:not(:disabled), input:not(:disabled), [href], canvas[tabindex="0"]') ?? [])
+    .filter((element) => element.offsetParent !== null);
+  return controls.filter((element) => {
+    if (!(element instanceof HTMLInputElement) || element.type !== "radio" || !element.name) return true;
+    const group = controls.filter((candidate): candidate is HTMLInputElement => candidate instanceof HTMLInputElement && candidate.type === "radio" && candidate.name === element.name && candidate.form === element.form);
+    return element === (group.find((candidate) => candidate.checked) ?? group[0]);
+  });
+}
 type StudioProps = { initialPictureId?: string; packId?: string; onClose: () => void; onShareRequest: (action: () => void) => void };
 type FinishedPicture = { shareImage: string; printImage: string; picture: SmartyStudioPicture };
 function pngBlob(dataUrl: string): Blob {
@@ -296,7 +306,7 @@ export function SmartyColoursStudio({ initialPictureId, packId, onClose, onShare
     }
     if (event.key !== "Tab") return;
     const scope = (done || confirmReset) ? actionDialogRef.current : rootRef.current;
-    const controls = Array.from(scope?.querySelectorAll<HTMLElement>('button:not(:disabled), select:not(:disabled), input:not(:disabled), [href], canvas[tabindex="0"]') ?? []).filter((element) => element.offsetParent !== null);
+    const controls = studioTabStops(scope);
     if (!controls.length) return;
     const first = controls[0], last = controls[controls.length - 1];
     if (event.shiftKey && (document.activeElement === first || !scope?.contains(document.activeElement))) { event.preventDefault(); last.focus(); }
