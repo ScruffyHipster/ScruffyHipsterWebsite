@@ -40,3 +40,7 @@ python scripts/generate-smarty-colours-pdfs.py --validate-only
 `docs/smarty-colours-pdf-validation.json` records page counts, sizes, hashes and checks. The two printable review images show all 80 sheets and the cover/sheet/end layouts on both paper sizes. Review new outputs visually before accepting changed hashes. Remove the task-owned `/tmp/smarty-colours-pdf-work` after authoring processes finish.
 
 Browser review covers desktop and 390 px phone layouts, Day/Night themes, paper-size persistence, five-picture pack selection, colouring memory and grown-up gate dismissal. Physical printer, iPad and Apple Pencil behaviour is not tested here. Vite retains its existing shared-bundle advisory; network-restricted validation uses the existing Rewire rating fallback.
+
+## Initial release record
+
+The online-colouring release was rebase-merged as PR #7 and deployed by GitHub Pages run `41204847456` at revision `131caa48f42718c6fcb1fe551218bec54537445e` on 31 October 2026. Live HTML, hydrated metadata, sitemap, pencil icon checksum and the colouring studio passed readback. That release retained 3.0 MiB of runtime assets/evidence and removed 1138.7 MiB of task-created release/build files after checking active processes and open files.

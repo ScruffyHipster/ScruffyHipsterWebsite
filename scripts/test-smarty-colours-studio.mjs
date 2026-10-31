@@ -30,6 +30,29 @@ function declaration(source, fileName, name) {
   assert.ok(node, `${name} must exist.`); return node.getText(tree).replace(/^export\s+/, "");
 }
 const studioSource = await readFile(new URL("src/components/SmartyColoursStudio.tsx", root), "utf8");
+// Paper-size radios form one native Tab stop. In particular, Shift+Tab from
+// checked Letter must wrap to Keep colouring instead of escaping the dialog.
+class Radio {
+  constructor(id, name, checked = false, form = null) { this.id = id; this.name = name; this.checked = checked; this.form = form; this.type = "radio"; this.offsetParent = {}; }
+}
+const a4 = new Radio("a4", "paper"), letter = new Radio("letter", "paper", true);
+const save = { id: "save", offsetParent: {} }, keep = { id: "keep", offsetParent: {} };
+const focusScope = { HTMLInputElement: Radio };
+vm.runInNewContext(ts.transpile(`${declaration(studioSource, "Studio.tsx", "studioTabStops")}\nglobalThis.tabStops = studioTabStops;`, { target: ts.ScriptTarget.ES2020 }), focusScope);
+const dialog = { querySelectorAll: () => [a4, letter, save, keep] };
+let stops = focusScope.tabStops(dialog);
+assert.equal(stops.map((control) => control.id).join(","), "letter,save,keep");
+assert.equal(stops[0], letter, "Checked Letter must be the first effective tab stop for backward-focus wrapping.");
+assert.equal(stops.at(-1), keep);
+letter.checked = false;
+stops = focusScope.tabStops(dialog);
+assert.equal(stops.map((control) => control.id).join(","), "a4,save,keep", "An unselected radio group should expose only its first visible member.");
+a4.checked = true;
+letter.checked = true;
+const otherForm = new Radio("other-form", "paper", true, {});
+const unnamed = new Radio("unnamed", "");
+const separateGroups = { querySelectorAll: () => [a4, otherForm, unnamed, save] };
+assert.equal(focusScope.tabStops(separateGroups).map((control) => control.id).join(","), "a4,other-form,unnamed,save", "Independent form groups and unnamed radios must keep their own Tab stops.");
 const memoryScope = {};
 vm.runInNewContext(ts.transpile(`${declaration(studioSource, "Studio.tsx", "parkActivePicture")}\nglobalThis.park = parkActivePicture;`, { target: ts.ScriptTarget.ES2020 }), memoryScope);
 const encoded = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIHWP4z8DwHwAFgAI/ScLbtAAAAABJRU5ErkJggg==";
@@ -67,4 +90,4 @@ for (const size of ["a4", "letter"]) {
   for (const [, destination] of html.matchAll(/(?:src|href)="([^"]+)"/g)) assert.ok(destination.startsWith("/smarty-colours/") || destination === encoded, "Print resources must stay local.");
 }
 assert.throws(() => printScope.documentFor({ title: "Cow", packName: "Farm Yard", alt: "Cow", image: "https://example.com/child-art.png", size: "a4" }), /local PNG/);
-console.log("SmartyColours studio checks passed: 80 deep links across16packs, five pages each, compressed inactive work without raw history, encode-failure preservation, and local escaped A4/Letter PrintSheet documents.");
+console.log("SmartyColours studio checks passed: 80 deep links across16packs, five pages each, compressed inactive work without raw history, encode-failure preservation, radio-group focus wrapping, and local escaped A4/Letter PrintSheet documents.");
