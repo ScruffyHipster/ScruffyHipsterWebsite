@@ -3,7 +3,7 @@ import { extname, join } from "node:path";
 
 const rootDir = new URL("../", import.meta.url).pathname;
 await import("./generate-app-content.mjs");
-const { legacyRedirects, publicRoutes, siteUrl } = await import("./route-meta.mjs");
+const { legacyRedirects, publicRoutes, siteUrl, smartyColourRoutes } = await import("./route-meta.mjs");
 const { isIndexableRoute } = await import("./generate-sitemap.mjs");
 const cmsContent = JSON.parse(
   await readFile(join(rootDir, "src", "generated", "cms-content.json"), "utf8")
@@ -27,7 +27,13 @@ const expectedPublishedRouteCount =
   cmsContent.breastfeedingBlogPosts.length +
   cmsContent.apps.filter((app) => !["breast-feeding-tracker", "rewire"].includes(app.slug)).length +
   cmsContent.privacyPolicies.length +
-  cmsContent.standardPages.length;
+  cmsContent.standardPages.length +
+  smartyColourRoutes.length;
+
+assert(
+  smartyColourRoutes.length === 97,
+  `Expected 97 SmartyColours library, pack and picture routes, found ${smartyColourRoutes.length}.`
+);
 
 assert(
   publicRoutes.length === expectedPublishedRouteCount,

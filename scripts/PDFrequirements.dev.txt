@@ -1,0 +1,12 @@
+# Used only when regenerating the committed PDFs; website CI needs none of these.
+reportlab==4.4.9
+pypdf==6.10.0
+Pillow==12.3.0
+vtracer==0.6.12
+fonttools==4.60.1
+brotli==1.2.1
+svglib==1.5.1
+lxml==6.0.2
+tinycss2==1.4.0
+cssselect2==0.8.0
+webencodings==0.5.1

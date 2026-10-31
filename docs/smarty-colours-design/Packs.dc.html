@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Free colouring packs</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/smartycolours/components/bundle.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400&amp;family=Grandstander:wght@600;700;800;900&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="sc-page" data-theme="{{theme}}" style="font-family: var(--font-body); color: var(--ink);">
+
+<header class="sc-sky page-head">
+  <svg class="sc-cloud" style="right: 6%; top: 120px; width: 240px;" viewBox="0 0 200 110" aria-hidden="true"><path class="fill" d="M40 94C17 94 10 68 28 59C24 37 50 26 65 38C71 14 109 8 121 32C135 20 161 28 159 51C181 53 187 90 161 94Z"></path><path class="shade" d="M24 81C34 90 40 94 40 94H161C171 93 177 86 178 78C152 88 64 90 24 81Z"></path><path class="edge" d="M40 94C17 94 10 68 28 59C24 37 50 26 65 38C71 14 109 8 121 32C135 20 161 28 159 51C181 53 187 90 161 94Z"></path></svg>
+  <svg class="sc-cloud sc-cloud--drift" style="right: 30%; bottom: 36px; width: 150px;" viewBox="0 0 200 110" aria-hidden="true"><path class="fill" d="M40 94C17 94 10 68 28 59C24 37 50 26 65 38C71 14 109 8 121 32C135 20 161 28 159 51C181 53 187 90 161 94Z"></path><path class="shade" d="M24 81C34 90 40 94 40 94H161C171 93 177 86 178 78C152 88 64 90 24 81Z"></path><path class="edge" d="M40 94C17 94 10 68 28 59C24 37 50 26 65 38C71 14 109 8 121 32C135 20 161 28 159 51C181 53 187 90 161 94Z"></path></svg>
+  <div class="wrap" style="position: relative;">
+    <nav class="sc-nav" aria-label="Main">
+      <a class="sc-logo" href="Main.dc.html" aria-label="SmartyColours home"><img src="/_blob/85aa977fc7b6e2b2384bddbdf9a7f39b" alt=""><span>Smarty<b>Colours</b></span></a>
+      <ul>
+        <li><a class="sc-nav__link" href="Studio.dc.html">Colour online</a></li>
+        <li><a class="sc-nav__link" href="Packs.dc.html" aria-current="page">Free packs</a></li>
+        <li><a class="sc-nav__link" href="Main.dc.html#grown-ups">For grown-ups</a></li>
+      </ul>
+      <a class="sc-btn sc-btn--crown" href="ParentGate.dc.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.5"></rect><path d="M11 18h2"></path></svg>Get the app</a>
+    </nav>
+    <div class="page-head__body">
+      <span class="sc-tag sc-tag--free" style="justify-self: start;">Free to print</span>
+      <h1 class="on-sky-title page-head__title">Free colouring packs</h1>
+      <p class="page-head__sub">Every pack has five free pages to print. Every page has big shapes and thick lines that little hands can colour inside.</p>
+      <div class="trust">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>A4 or US Letter</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Black and white, easy on ink</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>No sign-up</span>
+      </div>
+    </div>
+  </div>
+  <div class="sky-edge"></div>
+</header>
+
+<section class="section" aria-labelledby="all-t">
+  <div class="wrap stack">
+    <div class="row-between">
+      <header class="sc-head">
+        <h2 id="all-t">Pick a <mark class="sc-mark">pack</mark></h2>
+        <p>Packs are grouped into shelves. Tap one to see its five free pages, download them all at once, or colour them online.</p>
+      </header>
+      <div class="seg" role="radiogroup" aria-label="Paper size">
+        <label class="{{a4Class}}"><input type="radio" name="paper" value="a4" checked="{{isA4}}" onChange="{{pickA4}}">A4</label>
+        <label class="{{letterClass}}"><input type="radio" name="paper" value="letter" checked="{{isLetter}}" onChange="{{pickLetter}}">US Letter</label>
+      </div>
+    </div>
+    <div class="shelves-web">
+    <section class="shelf-web" aria-labelledby="shelf-0">
+      <h3 class="shelf-web__head" id="shelf-0"><span class="shelf-web__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3.5l1.6 4.4 4.4 1.6-4.4 1.6L10 15.5l-1.6-4.4L4 9.5l4.4-1.6z"></path><path d="M18 14l.8 2.2 2.2.8-2.2.8L18 20l-.8-2.2-2.2-.8 2.2-.8z"></path></svg></span>New and in season</h3>
+      <div class="packs packs--5">
+      <a class="sc-pack" href="PackDetail.dc.html"><span class="sc-pack__frame"><span class="sc-tag sc-tag--new">New</span><span class="pack-ph">[People Who Help Us cover]</span></span><span class="sc-pack__name">People Who Help Us</span><span class="sc-pack__meta">5 free pages · {{paperLabel}}</span></a>
+      <a class="sc-pack" href="PackDetail.dc.html"><span class="sc-pack__frame"><span class="sc-tag sc-tag--free">Free</span><span class="pack-ph">[Halloween cover]</span></span><span class="sc-pack__name">Halloween</span><span class="sc-pack__meta">5 free pages · {{paperLabel}}</span></a>
+      <a class="sc-pack" href="PackDetail.dc.html"><span class="sc-pack__frame"><span class="sc-tag sc-tag--free">Free</span><span class="pack-ph">[Autumn cover]</span></span><span class="sc-pack__name">Autumn</span><span class="sc-pack__meta">5 free pages · {{paperLabel}}</span></a>
+      </div>
+    </section>
+    <section class="shelf-web" aria-labelledby="shelf-1">
+      <h3 class="shelf-web__head" id="shelf-1"><span class="shelf-web__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="10" r="2"></circle><circle cx="10" cy="5.5" r="2"></circle><circle cx="14" cy="5.5" r="2"></circle><circle cx="18" cy="10" r="2"></circle><path d="M12 11c-3 0-5.5 3.5-5.5 6 0 1.8 1.4 2.8 3 2.8 1 0 1.6-.5 2.5-.5s1.5.5 2.5.5c1.6 0 3-1 3-2.8 0-2.5-2.5-6-5.5-6z"></path></svg></span>Animals</h3>
+      <div class="packs packs--5">
+      <a class="sc-pack" href="PackDetail.dc.html"><span class="sc-pack__frame"><span class="sc-tag sc-tag--free">Free</span><img src="/_blob/71192937f3170d64f86ab31caf0137b5" alt=""></span><span class="sc-pack__name">Farm Yard</span><span class="sc-pack__meta">5 free pages · {{paperLabel}}</span></a>
+      <a class="sc-pack" href="PackDetail.dc.html"><span class="sc-pack__frame"><span class="sc-tag sc-tag--free">Free</span><img src="/_blob/2c3ca496179ef2f17fecce0f93e7fff0" alt=""></span><span class="sc-pack__name">Dinosaurs</span><span class="sc-pack__meta">5 free pages · {{paperLabel}}</span></a>
+      <a class="sc-pack" href="PackDetail.dc.html"><span class="sc-pack__frame"><span class="sc-tag sc-tag--free">Free</span><img src="/_blob/78fc329a4b850b10eb309ddc1aaa97b9" alt=""></span><span class="sc-pack__name">Pets</span><span class="sc-pack__meta">5 free pages · {{paperLabel}}</span></a>
+      <a class="sc-pack" href="PackDetail.dc.html"><span class="sc-pack__frame"><span class="sc-tag sc-tag--free">Free</span><img src="/_blob/7cb8b02523b444197b0d98637b16df05" alt=""></span><span class="sc-pack__name">Zoo</span><span class="sc-pack__meta">5 free pages · {{paperLabel}}</span></a>
+      <a class="sc-pack" href="PackDetail.dc.html"><span class="sc-pack__frame"><span class="sc-tag sc-tag--free">Free</span><img src="/_blob/ea2cce92f88a6844a6b2144d65264e6b" alt=""></span><span class="sc-pack__name">Underwater</span><span class="sc-pack__meta">5 free pages · {{paperLabel}}</span></a>
+      </div>
+    </section>
+    <section class="shelf-web" aria-labelledby="shelf-2">
+      <h3 class="shelf-web__head" id="shelf-2"><span class="shelf-web__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20L14.5 9.5"></path><path d="M13 8l3 3"></path><path d="M17 3v3M15.5 4.5h3"></path><path d="M20 9v2M19 10h2"></path><path d="M9.5 3.5v2M8.5 4.5h2"></path></svg></span>Make-believe</h3>
+      <div class="packs packs--5">
+      <a class="sc-pack" href="PackDetail.dc.html"><span class="sc-pack__frame"><span class="sc-tag sc-tag--free">Free</span><img src="/_blob/1301f136c6f6254e4563f7d034eb0b5b" alt=""></span><span class="sc-pack__name">Princesses</span><span class="sc-pack__meta">5 free pages · {{paperLabel}}</span></a>
+      <a class="sc-pack" href="PackDetail.dc.html"><span class="sc-pack__frame"><span class="sc-tag sc-tag--free">Free</span><img src="/_blob/f290a80e4e43145764c90d61d985abc2" alt=""></span><span class="sc-pack__name">Unicorns</span><span class="sc-pack__meta">5 free pages · {{paperLabel}}</span></a>
+      <a class="sc-pack" href="PackDetail.dc.html"><span class="sc-pack__frame"><span class="sc-tag sc-tag--free">Free</span><img src="/_blob/8ee582620411067b9775ce0b5f972b47" alt=""></span><span class="sc-pack__name">Robots</span><span class="sc-pack__meta">5 free pages · {{paperLabel}}</span></a>
+      <a class="sc-pack" href="PackDetail.dc.html"><span class="sc-pack__frame"><span class="sc-tag sc-tag--free">Free</span><img src="/_blob/1d49699d9784dae1a1e78e987eadaaba" alt=""></span><span class="sc-pack__name">Space</span><span class="sc-pack__meta">5 free pages · {{paperLabel}}</span></a>
+      </div>
+    </section>
+    <section class="shelf-web" aria-labelledby="shelf-3">
+      <h3 class="shelf-web__head" id="shelf-3"><span class="shelf-web__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 16.5V12l2.2-4.5h9.6L18 12h2.5v4.5"></path><path d="M3.5 12h17"></path><circle cx="7.5" cy="17" r="2"></circle><circle cx="16.5" cy="17" r="2"></circle></svg></span>Out and about</h3>
+      <div class="packs packs--5">
+      <a class="sc-pack" href="PackDetail.dc.html"><span class="sc-pack__frame"><span class="sc-tag sc-tag--free">Free</span><img src="/_blob/f6caf5c8a082e4476fce6e902961590d" alt=""></span><span class="sc-pack__name">Things That Go</span><span class="sc-pack__meta">5 free pages · {{paperLabel}}</span></a>
+      <a class="sc-pack" href="PackDetail.dc.html"><span class="sc-pack__frame"><span class="sc-tag sc-tag--free">Free</span><img src="/_blob/e1082468ba0c1c2fdb3764df7a347633" alt=""></span><span class="sc-pack__name">In the Garden</span><span class="sc-pack__meta">5 free pages · {{paperLabel}}</span></a>
+      <a class="sc-pack" href="PackDetail.dc.html"><span class="sc-pack__frame"><span class="sc-tag sc-tag--new">New</span><span class="pack-ph">[People Who Help Us cover]</span></span><span class="sc-pack__name">People Who Help Us</span><span class="sc-pack__meta">5 free pages · {{paperLabel}}</span></a>
+      </div>
+    </section>
+    <section class="shelf-web" aria-labelledby="shelf-4">
+      <h3 class="shelf-web__head" id="shelf-4"><span class="shelf-web__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5.5" width="16" height="14.5" rx="2.5"></rect><path d="M4 10h16"></path><path d="M8.5 3.5v4M15.5 3.5v4"></path><circle cx="12" cy="15" r="1.6"></circle></svg></span>Through the year</h3>
+      <div class="packs packs--5">
+      <a class="sc-pack" href="PackDetail.dc.html"><span class="sc-pack__frame"><span class="sc-tag sc-tag--free">Free</span><span class="pack-ph">[Spring cover]</span></span><span class="sc-pack__name">Spring</span><span class="sc-pack__meta">5 free pages · {{paperLabel}}</span></a>
+      <a class="sc-pack" href="PackDetail.dc.html"><span class="sc-pack__frame"><span class="sc-tag sc-tag--free">Free</span><img src="/_blob/2fde6a1c0ad74328511bc425b3d8dd61" alt=""></span><span class="sc-pack__name">Summer Holidays</span><span class="sc-pack__meta">5 free pages · {{paperLabel}}</span></a>
+      <a class="sc-pack" href="PackDetail.dc.html"><span class="sc-pack__frame"><span class="sc-tag sc-tag--free">Free</span><span class="pack-ph">[Christmas cover]</span></span><span class="sc-pack__name">Christmas</span><span class="sc-pack__meta">5 free pages · {{paperLabel}}</span></a>
+      </div>
+    </section>
+    </div>
+  </div>
+</section>
+
+<section class="section band-surface" aria-labelledby="how-t">
+  <div class="wrap stack">
+    <header class="sc-head">
+      <h2 id="how-t">How to print <mark class="sc-mark">a pack</mark></h2>
+      <p>It takes about a minute, and there is nothing to sign up for.</p>
+    </header>
+    <ol class="ways" style="list-style: none; margin: 0; padding: 0;">
+      <li class="way">
+        <span class="way__icon" style="background: var(--sunshine); font: 800 32px/1 var(--font-display);">1</span>
+        <h3>Pick a pack</h3>
+        <p>Choose the one your child loves most. Each pack has its own page of pictures.</p>
+      </li>
+      <li class="way">
+        <span class="way__icon" style="background: var(--crown); font: 800 32px/1 var(--font-display);">2</span>
+        <h3>Download the PDF</h3>
+        <p>Get all five free pages in one file, or one page at a time, sized for A4 or US Letter.</p>
+      </li>
+      <li class="way">
+        <span class="way__icon" style="background: var(--grass); font: 800 32px/1 var(--font-display);">3</span>
+        <h3>Print and colour</h3>
+        <p>Black and white pages print well on any home printer. Pens, crayons or paint all work.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="season-t">
+  <div class="wrap">
+    <aside class="sc-promo" aria-labelledby="season-t">
+      <img class="sc-promo__icon" src="/_blob/85aa977fc7b6e2b2384bddbdf9a7f39b" alt="SmartyColours app icon">
+      <div>
+        <span class="sc-tag sc-tag--grown" style="margin-bottom: 10px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8.5 10.5V8a3.5 3.5 0 017 0v2.5"></path><path d="M12 14.5v2.5"></path></svg>For grown-ups</span>
+        <h3 id="season-t">Every page of every pack is in the app</h3>
+        <p>The rest of each pack lives in the app on iPad and iPhone, along with Glitter, the Magic pen and the full crayon box. Free to try, then unlock one pack or all of them.</p>
+        <div class="sc-promo__row">
+          <a class="sc-badge-link" href="ParentGate.dc.html" aria-label="Download on the App Store"><img src="/_blob/cf5aff94014ab49431b8cce9acc769de" alt="Download on the App Store"></a>
+          <span class="sc-tag">Rated 4+</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer class="sc-footer">
+    <a class="sc-logo" href="Main.dc.html" aria-label="SmartyColours home"><img src="/_blob/85aa977fc7b6e2b2384bddbdf9a7f39b" alt=""><span>Smarty<b>Colours</b></span></a>
+    <nav aria-label="Footer"><a href="Studio.dc.html">Colour online</a><a href="Packs.dc.html">Free packs</a><a href="Main.dc.html#grown-ups">For grown-ups</a><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#contact">Contact</a></nav>
+    <p style="margin: 0;">No ads, no accounts, no tracking cookies. © 2026 Scruffy Hipster Ltd.</p>
+  </footer>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"night":{"editor":"boolean","default":false,"section":"Theme"},"$preview":{"width":1440,"height":3900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { paper: 'a4' };
+  }
+  renderVals() {
+    var self = this, a4 = this.state.paper === 'a4';
+    return {
+      theme: this.props.night ? 'dark' : 'light',
+      isA4: a4, isLetter: !a4,
+      a4Class: a4 ? 'on' : '', letterClass: a4 ? '' : 'on',
+      paperLabel: a4 ? 'A4 PDF' : 'Letter PDF',
+      pickA4: function () { self.setState({ paper: 'a4' }); },
+      pickLetter: function () { self.setState({ paper: 'letter' }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

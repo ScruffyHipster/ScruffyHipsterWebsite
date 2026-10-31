@@ -1,0 +1,1197 @@
+{
+  "domain": "scruffyhipster.com",
+  "packs": 16,
+  "sheets": 80,
+  "pdfs": 192,
+  "totalPages": 384,
+  "totalBytes": 29520277,
+  "lineArtwork": "vector paths traced from native-resolution originals with 2.5pt round black edges",
+  "checks": [
+    "exact page counts",
+    "A4/US Letter media boxes",
+    "brand/domain on every page",
+    "no PDF links or child form fields",
+    "vector line art rather than raster upscaling"
+  ],
+  "files": [
+    {
+      "file": "smartycolours-farm-yard-happy-cow-a4.pdf",
+      "pages": 1,
+      "bytes": 104905,
+      "sha256": "b5267513e345f47accd5464431372f2ecc06ed2dc6fb6e4b67c68f3fe35f3428"
+    },
+    {
+      "file": "smartycolours-farm-yard-curly-sheep-a4.pdf",
+      "pages": 1,
+      "bytes": 107406,
+      "sha256": "13cef957bc230d88b6c13fffaa9106d7f0f116bdba3a862080f06519f0f426ad"
+    },
+    {
+      "file": "smartycolours-farm-yard-pig-in-mud-a4.pdf",
+      "pages": 1,
+      "bytes": 106153,
+      "sha256": "f6b85c5896b460d525bd34d18de77422997f392cfc8769c0bedae76a92ebcf49"
+    },
+    {
+      "file": "smartycolours-farm-yard-cheerful-cockerel-a4.pdf",
+      "pages": 1,
+      "bytes": 100168,
+      "sha256": "b5559f4ff03cefd69d4e91e9e9e363a7c27e05fce07bb5d1f6fbe8908e9b1a73"
+    },
+    {
+      "file": "smartycolours-farm-yard-pony-by-the-fence-a4.pdf",
+      "pages": 1,
+      "bytes": 107485,
+      "sha256": "bf9dc537b9c6f856df4e803b9bf662edf3cde3dd0bddea096a2167dda9f38931"
+    },
+    {
+      "file": "smartycolours-farm-yard-free-pages-a4.pdf",
+      "pages": 7,
+      "bytes": 354000,
+      "sha256": "77aa8a630bdbc74763c87b3d95e3a036681f1f53876b4ffec18207e1d14b2694"
+    },
+    {
+      "file": "smartycolours-farm-yard-happy-cow-letter.pdf",
+      "pages": 1,
+      "bytes": 104894,
+      "sha256": "5281694d391329568b830653db24face4c630fe16d1eab72db599f8c8631a2bc"
+    },
+    {
+      "file": "smartycolours-farm-yard-curly-sheep-letter.pdf",
+      "pages": 1,
+      "bytes": 107378,
+      "sha256": "c4707a122c93a8d5c7cf5e70ca7a85375f4e88355389e4601f2f10213bef851a"
+    },
+    {
+      "file": "smartycolours-farm-yard-pig-in-mud-letter.pdf",
+      "pages": 1,
+      "bytes": 106148,
+      "sha256": "4c5337ed632c6fdf629c7d3bbd3dc46f6c82818d5d76169a5eb3928e5ea392ee"
+    },
+    {
+      "file": "smartycolours-farm-yard-cheerful-cockerel-letter.pdf",
+      "pages": 1,
+      "bytes": 100167,
+      "sha256": "1900e5c9dc3085b042066999a1ca2f21834b07124eb734329a31c9f1bb3a4553"
+    },
+    {
+      "file": "smartycolours-farm-yard-pony-by-the-fence-letter.pdf",
+      "pages": 1,
+      "bytes": 107454,
+      "sha256": "29295c57e5311ce2732395d52f0ca202dd22549cd77f73ac2c331dfbf445efb1"
+    },
+    {
+      "file": "smartycolours-farm-yard-free-pages-letter.pdf",
+      "pages": 7,
+      "bytes": 353906,
+      "sha256": "0e5dc8ce981b97e6104284c5e2a3ffdf99eee4b4224d8439b70da75bace8558f"
+    },
+    {
+      "file": "smartycolours-summer-holidays-sandcastle-day-a4.pdf",
+      "pages": 1,
+      "bytes": 114094,
+      "sha256": "d81d0d3cf8165dbc2b70ebad98469c943987de0598faf6587a3ece2a55d6f7bc"
+    },
+    {
+      "file": "smartycolours-summer-holidays-dragon-kite-a4.pdf",
+      "pages": 1,
+      "bytes": 114881,
+      "sha256": "bc841d6880e455d57d53946d7e7061fc3746f7e283253c473fd81015fdd40562"
+    },
+    {
+      "file": "smartycolours-summer-holidays-picnic-basket-a4.pdf",
+      "pages": 1,
+      "bytes": 128790,
+      "sha256": "6fc913e6de34480d6d2fb868f777d690cae39ad35b7ce1f792b65fff62cfda08"
+    },
+    {
+      "file": "smartycolours-summer-holidays-surfing-penguin-a4.pdf",
+      "pages": 1,
+      "bytes": 103851,
+      "sha256": "b2982477f5718c55a3f5cc9fbbc554781daa5f0ab1ab66cb931b7902c0a67219"
+    },
+    {
+      "file": "smartycolours-summer-holidays-smiling-ice-cream-a4.pdf",
+      "pages": 1,
+      "bytes": 97109,
+      "sha256": "07c9be2dcc00539f2c1335d84a138938d352909a823a9f4ba083b4de5ae2e3b2"
+    },
+    {
+      "file": "smartycolours-summer-holidays-free-pages-a4.pdf",
+      "pages": 7,
+      "bytes": 399984,
+      "sha256": "3ede06853c697b1b0ace9446c44fc30ac3c9c175a27932b16d1008867b1453bf"
+    },
+    {
+      "file": "smartycolours-summer-holidays-sandcastle-day-letter.pdf",
+      "pages": 1,
+      "bytes": 114095,
+      "sha256": "ccb65028625b137cc734c660bc902c78fb8a28d9806a3bb02ff5df66739c6fcd"
+    },
+    {
+      "file": "smartycolours-summer-holidays-dragon-kite-letter.pdf",
+      "pages": 1,
+      "bytes": 114878,
+      "sha256": "859886de9a93a598822f48e6de13435db203d969cd0d56a9beb9856a9f052068"
+    },
+    {
+      "file": "smartycolours-summer-holidays-picnic-basket-letter.pdf",
+      "pages": 1,
+      "bytes": 128790,
+      "sha256": "08a9cd2d03154e7a5f392dc12c1e9ca739ef3ff5bdc6f86bf66c34b0c63f4920"
+    },
+    {
+      "file": "smartycolours-summer-holidays-surfing-penguin-letter.pdf",
+      "pages": 1,
+      "bytes": 103832,
+      "sha256": "6ebe1b358cb76244a618614ba3c9fee7a5dc504bf6d377706c0577894ceee671"
+    },
+    {
+      "file": "smartycolours-summer-holidays-smiling-ice-cream-letter.pdf",
+      "pages": 1,
+      "bytes": 97113,
+      "sha256": "9b9325d09bf47a3376d43894c4eac58c791b796b4e07f96a0143092ec75ef49e"
+    },
+    {
+      "file": "smartycolours-summer-holidays-free-pages-letter.pdf",
+      "pages": 7,
+      "bytes": 399946,
+      "sha256": "79ae01fd7d01a153e79074a2678bc7692afc66ab33418efe5285602048c25924"
+    },
+    {
+      "file": "smartycolours-unicorns-gentle-unicorn-a4.pdf",
+      "pages": 1,
+      "bytes": 86995,
+      "sha256": "2a4d92cc0dc8f3f42f2293117c1ff8d175f2b1e33fb7d2138bd4ff56fa9ac22e"
+    },
+    {
+      "file": "smartycolours-unicorns-sleepy-cloud-unicorn-a4.pdf",
+      "pages": 1,
+      "bytes": 98260,
+      "sha256": "63104c20bd6dccdc4e0d58f363834a6664e50bed6ba4ce3eb44da2402106e347"
+    },
+    {
+      "file": "smartycolours-unicorns-mermaid-unicorn-a4.pdf",
+      "pages": 1,
+      "bytes": 103315,
+      "sha256": "6b3592ec86c2734a8765e5463afc3b6a7fffc37c17462c31b3590b771d62758c"
+    },
+    {
+      "file": "smartycolours-unicorns-robot-unicorn-a4.pdf",
+      "pages": 1,
+      "bytes": 102543,
+      "sha256": "39b88baf2904483680dea7dd921c3242b052ce60395e86e93dac2598f6f9f260"
+    },
+    {
+      "file": "smartycolours-unicorns-space-unicorn-a4.pdf",
+      "pages": 1,
+      "bytes": 117126,
+      "sha256": "8adfd68d7e229c3052532b869bb136ba0ecb7e356ee794e5366b73ddcc8f77d0"
+    },
+    {
+      "file": "smartycolours-unicorns-free-pages-a4.pdf",
+      "pages": 7,
+      "bytes": 326369,
+      "sha256": "6124c2af982784e49e330f3c73e124f08cfba7519d3c09b0edf62b4b55d52c24"
+    },
+    {
+      "file": "smartycolours-unicorns-gentle-unicorn-letter.pdf",
+      "pages": 1,
+      "bytes": 86981,
+      "sha256": "9f2668a7fe5aab97c9e78b460c95bfd2bcfd680a45c3cedd58261ea33ac96801"
+    },
+    {
+      "file": "smartycolours-unicorns-sleepy-cloud-unicorn-letter.pdf",
+      "pages": 1,
+      "bytes": 98255,
+      "sha256": "bc8b5621a8583888f5e2bd24ed70ad0f0c226dca37902c7bb01446c48d958757"
+    },
+    {
+      "file": "smartycolours-unicorns-mermaid-unicorn-letter.pdf",
+      "pages": 1,
+      "bytes": 103302,
+      "sha256": "163428833acccb22a3b4b9cdc3a1e5a66a6dda4e979683965712363397706f86"
+    },
+    {
+      "file": "smartycolours-unicorns-robot-unicorn-letter.pdf",
+      "pages": 1,
+      "bytes": 102530,
+      "sha256": "72bf406b059bcffad3d64fd8f833fa078f12818f30d7cb05877c42cffb9270c7"
+    },
+    {
+      "file": "smartycolours-unicorns-space-unicorn-letter.pdf",
+      "pages": 1,
+      "bytes": 117131,
+      "sha256": "1576d6a3ef9b5bc9fe5540f3764ccab1da8ba15477bed62d03c8c5c9c234dc2f"
+    },
+    {
+      "file": "smartycolours-unicorns-free-pages-letter.pdf",
+      "pages": 7,
+      "bytes": 326306,
+      "sha256": "7117682f31ad5ad0c15edc9fb89fcac1f1d2eeb12e65546b845d679ce0ed8ba3"
+    },
+    {
+      "file": "smartycolours-christmas-christmas-penguin-a4.pdf",
+      "pages": 1,
+      "bytes": 103083,
+      "sha256": "c0ab75370dfc0cfcef9f47d4098d8e3446efeabbe7e43e22ce2a29c1e5864fd6"
+    },
+    {
+      "file": "smartycolours-christmas-bell-collar-reindeer-a4.pdf",
+      "pages": 1,
+      "bytes": 93880,
+      "sha256": "661aa7e6aa6ba00e12085f47d35031cf472a1299c1134cbb83fcddd94bf900ff"
+    },
+    {
+      "file": "smartycolours-christmas-waving-father-christmas-a4.pdf",
+      "pages": 1,
+      "bytes": 98488,
+      "sha256": "6f0729fbf54f33d7d976babf2e2855c4085165c9cd63b1b05651faf07fb26e75"
+    },
+    {
+      "file": "smartycolours-christmas-christmas-tree-a4.pdf",
+      "pages": 1,
+      "bytes": 105072,
+      "sha256": "30547302de4743cd70febe362678224b1dd3dd2a9b636f17e3a2d99bde65d033"
+    },
+    {
+      "file": "smartycolours-christmas-gingerbread-house-a4.pdf",
+      "pages": 1,
+      "bytes": 111860,
+      "sha256": "a035670017db4e2d1e61137f709ae7c4af855fb9d26c61268ba04060e17c3da4"
+    },
+    {
+      "file": "smartycolours-christmas-free-pages-a4.pdf",
+      "pages": 7,
+      "bytes": 324460,
+      "sha256": "658384e414fb74d223164389151058a315483837d5d5541eafbcc3d9c7a70a2c"
+    },
+    {
+      "file": "smartycolours-christmas-christmas-penguin-letter.pdf",
+      "pages": 1,
+      "bytes": 103088,
+      "sha256": "a97232c3312cead71a8a22ad3b56312ba5fafefa1fac2217dc181028923c57f6"
+    },
+    {
+      "file": "smartycolours-christmas-bell-collar-reindeer-letter.pdf",
+      "pages": 1,
+      "bytes": 93864,
+      "sha256": "53c51163dd82daa8224fcd27be4f67ac6ad8ec9f7e669700b36f880891bc2223"
+    },
+    {
+      "file": "smartycolours-christmas-waving-father-christmas-letter.pdf",
+      "pages": 1,
+      "bytes": 98490,
+      "sha256": "3d03ff1c5ab98437d974e23d26b21ddbb10fc1a5769af7866e2e756698b1d07a"
+    },
+    {
+      "file": "smartycolours-christmas-christmas-tree-letter.pdf",
+      "pages": 1,
+      "bytes": 105067,
+      "sha256": "cb5928e16ed8e96e3dc3edff8ed5f4ce9ef8b2f633f64789ee897b7546785f7d"
+    },
+    {
+      "file": "smartycolours-christmas-gingerbread-house-letter.pdf",
+      "pages": 1,
+      "bytes": 111842,
+      "sha256": "b0c66e358e7b9f7408676da6f03e5819339774e8399ca01a8e9c6f49f2a08516"
+    },
+    {
+      "file": "smartycolours-christmas-free-pages-letter.pdf",
+      "pages": 7,
+      "bytes": 324414,
+      "sha256": "94648a3e53cfbca8757bf46284340b206ccac30188224dea198b8868109a4c09"
+    },
+    {
+      "file": "smartycolours-easter-basket-bunny-a4.pdf",
+      "pages": 1,
+      "bytes": 153729,
+      "sha256": "49eb9387a64bf6a2a49f9857f56f9cf13d792ad644dde7165d457269abcca587"
+    },
+    {
+      "file": "smartycolours-easter-spring-butterfly-a4.pdf",
+      "pages": 1,
+      "bytes": 110252,
+      "sha256": "b888c85ba7367ed96ee00212625b9b9a0c3dd16775cb2eb9261a39aaa8592a49"
+    },
+    {
+      "file": "smartycolours-easter-hatching-chick-a4.pdf",
+      "pages": 1,
+      "bytes": 87933,
+      "sha256": "b7c50b121e2a94742c995a3a9671eec6e9f04b65730a7d048f60db78bd4fdfe2"
+    },
+    {
+      "file": "smartycolours-easter-bunny-and-chick-a4.pdf",
+      "pages": 1,
+      "bytes": 128117,
+      "sha256": "9fe66ba0a50396099b9254fa88fc07aa5e3d263a47627c97b1ae8b445928a905"
+    },
+    {
+      "file": "smartycolours-easter-spring-lamb-a4.pdf",
+      "pages": 1,
+      "bytes": 95190,
+      "sha256": "67e7db84e1647bada37dc68ac59517c4cad90ed0ba8dc484dbc92dac907132de"
+    },
+    {
+      "file": "smartycolours-easter-free-pages-a4.pdf",
+      "pages": 7,
+      "bytes": 438743,
+      "sha256": "ec4a2691e57378cd3a22a45a55d35724328eb8534ed1450863e35b67131c29e0"
+    },
+    {
+      "file": "smartycolours-easter-basket-bunny-letter.pdf",
+      "pages": 1,
+      "bytes": 153715,
+      "sha256": "1186712904e083cc801e040fa77ad64708d964727900e4f43387077521d98317"
+    },
+    {
+      "file": "smartycolours-easter-spring-butterfly-letter.pdf",
+      "pages": 1,
+      "bytes": 110242,
+      "sha256": "b02096f4517024ba894fa79897f547a4317958b623855328e342e52472a2bc09"
+    },
+    {
+      "file": "smartycolours-easter-hatching-chick-letter.pdf",
+      "pages": 1,
+      "bytes": 87916,
+      "sha256": "fb3cf4d357c1a79f9c86c4300e3aa096ba1fb796274aa779b1e30ebaccd065b1"
+    },
+    {
+      "file": "smartycolours-easter-bunny-and-chick-letter.pdf",
+      "pages": 1,
+      "bytes": 128106,
+      "sha256": "7495c83cdd470b27f96a20c27714e4aa991c0ed43ab673320994f7af33a04ab1"
+    },
+    {
+      "file": "smartycolours-easter-spring-lamb-letter.pdf",
+      "pages": 1,
+      "bytes": 95171,
+      "sha256": "00293e751a5e872ab72b95dd218e93b5ac8dd101882fa64c987ce32a9500a726"
+    },
+    {
+      "file": "smartycolours-easter-free-pages-letter.pdf",
+      "pages": 7,
+      "bytes": 438656,
+      "sha256": "438da71296de46c455057df37d7037fb37688fdb665598c22f4fa54475ed5196"
+    },
+    {
+      "file": "smartycolours-halloween-witch-hat-pumpkin-a4.pdf",
+      "pages": 1,
+      "bytes": 103247,
+      "sha256": "8bdfaae3fc9e0572c4f1870c8321bc87f398eed2b81026da77aceb1783eab637"
+    },
+    {
+      "file": "smartycolours-halloween-bow-tie-ghost-a4.pdf",
+      "pages": 1,
+      "bytes": 79063,
+      "sha256": "1e33ed1a4ce7db2fa762059628e0e60b74f0ca5cd250265a57812bb47c8861f9"
+    },
+    {
+      "file": "smartycolours-halloween-waving-mummy-a4.pdf",
+      "pages": 1,
+      "bytes": 98264,
+      "sha256": "f115f4ea93968f08512df830fe3d3c98ae7ce398c46942b8ff1458ab4c4afe7b"
+    },
+    {
+      "file": "smartycolours-halloween-cat-on-the-moon-a4.pdf",
+      "pages": 1,
+      "bytes": 92881,
+      "sha256": "8a40bbaee52d98c46aab2e2e348232a2adb94cf4893b40d10cb56a46618cddd1"
+    },
+    {
+      "file": "smartycolours-halloween-smiling-bat-a4.pdf",
+      "pages": 1,
+      "bytes": 91183,
+      "sha256": "af12470575fb4432db5e284b057e030d6a2d8b8d0ead601e8c6d755fc982c360"
+    },
+    {
+      "file": "smartycolours-halloween-free-pages-a4.pdf",
+      "pages": 7,
+      "bytes": 290227,
+      "sha256": "445c137469623b6c418e2419d1d1bd13da163a52b80335e56dfa2cc633bd6834"
+    },
+    {
+      "file": "smartycolours-halloween-witch-hat-pumpkin-letter.pdf",
+      "pages": 1,
+      "bytes": 103245,
+      "sha256": "0d33cfd30534b9298b6ecc6bfe0bfb3a4cb4c3ff9536cf947c396dbf25835513"
+    },
+    {
+      "file": "smartycolours-halloween-bow-tie-ghost-letter.pdf",
+      "pages": 1,
+      "bytes": 79068,
+      "sha256": "d914cfc4668a1e1d50ef8b4fd2ba0f8bbf159d5ab509a2eb9ef569ad59ce6ba1"
+    },
+    {
+      "file": "smartycolours-halloween-waving-mummy-letter.pdf",
+      "pages": 1,
+      "bytes": 98257,
+      "sha256": "a67db4794a740cd155341e40fdb17ad70b574bd84ac6011577827e2dfc9edca2"
+    },
+    {
+      "file": "smartycolours-halloween-cat-on-the-moon-letter.pdf",
+      "pages": 1,
+      "bytes": 92875,
+      "sha256": "480ac84d44e03037c5a70b88f18790b9e15229cf47195aac7ceb351cbd93b5d2"
+    },
+    {
+      "file": "smartycolours-halloween-smiling-bat-letter.pdf",
+      "pages": 1,
+      "bytes": 91180,
+      "sha256": "afecffb1c0126d85780e4cc8b4e9cac8d8f089e4c1b5ad6854cedc0649f713a1"
+    },
+    {
+      "file": "smartycolours-halloween-free-pages-letter.pdf",
+      "pages": 7,
+      "bytes": 290194,
+      "sha256": "3bf97d017d3a27b0bb8fb835967732720ebfa8b4629e2dae61882573a7294e14"
+    },
+    {
+      "file": "smartycolours-autumn-pumpkins-and-leaves-a4.pdf",
+      "pages": 1,
+      "bytes": 176073,
+      "sha256": "232c6790c56e8147b68c54f46f79b840196e663b6c391dada1b5bc65db8e7355"
+    },
+    {
+      "file": "smartycolours-autumn-woodland-friends-a4.pdf",
+      "pages": 1,
+      "bytes": 213612,
+      "sha256": "7e1ca3f7c583751ddaed7ca794c4e54933adf483979c1d6b20480c1d30718abb"
+    },
+    {
+      "file": "smartycolours-autumn-friendly-scarecrow-a4.pdf",
+      "pages": 1,
+      "bytes": 188657,
+      "sha256": "d2443baf0d3f0e03f2eb5b86dc480efe329950c023a6908c1b5f2f228902ba74"
+    },
+    {
+      "file": "smartycolours-autumn-woodland-mushrooms-a4.pdf",
+      "pages": 1,
+      "bytes": 161581,
+      "sha256": "3ed1243b836037d5d944024d06490d47d70df9f629b2b81b72a373291b54a4eb"
+    },
+    {
+      "file": "smartycolours-autumn-autumn-owl-a4.pdf",
+      "pages": 1,
+      "bytes": 180093,
+      "sha256": "a037757eff0195ca5e9b1e688cc0994d8ea26560be9d45aa7df3d3357fd37f6d"
+    },
+    {
+      "file": "smartycolours-autumn-free-pages-a4.pdf",
+      "pages": 7,
+      "bytes": 831717,
+      "sha256": "d98e3c614a5ab8b1d4487e8aa13c3501ab5fc0b8b6c6af81ab99b2c96089bdb3"
+    },
+    {
+      "file": "smartycolours-autumn-pumpkins-and-leaves-letter.pdf",
+      "pages": 1,
+      "bytes": 176030,
+      "sha256": "1bc0c7221c8e1f9bb76adc8ca695c3817b1c3ef91616c90660c5b635b4498694"
+    },
+    {
+      "file": "smartycolours-autumn-woodland-friends-letter.pdf",
+      "pages": 1,
+      "bytes": 213604,
+      "sha256": "ea959164c9f2631e4bc5729ddd32482a6981f59a0c694682e19159d89672cfef"
+    },
+    {
+      "file": "smartycolours-autumn-friendly-scarecrow-letter.pdf",
+      "pages": 1,
+      "bytes": 188672,
+      "sha256": "ef97658e61bb3b2d0f1da571f749904bd07cfac461972a4e970816b8141e773e"
+    },
+    {
+      "file": "smartycolours-autumn-woodland-mushrooms-letter.pdf",
+      "pages": 1,
+      "bytes": 161561,
+      "sha256": "1f5b6bb125ad8f3aa8dcc8f1a3352c1f40caa2b95856964dc15b47fbf719bceb"
+    },
+    {
+      "file": "smartycolours-autumn-autumn-owl-letter.pdf",
+      "pages": 1,
+      "bytes": 180081,
+      "sha256": "35dc373672d2866751dc36757415c7721880ea1612e4eb9d9ee1791587a24661"
+    },
+    {
+      "file": "smartycolours-autumn-free-pages-letter.pdf",
+      "pages": 7,
+      "bytes": 831631,
+      "sha256": "36727c30a46f4daa072c812db3fe493ff0151503714a4259071710ae7d4ae187"
+    },
+    {
+      "file": "smartycolours-princesses-princess-and-castle-a4.pdf",
+      "pages": 1,
+      "bytes": 151237,
+      "sha256": "ef2e8f0e43bde392ec6286c501fe22a7e41a384d6e9d62551aa166dbde585612"
+    },
+    {
+      "file": "smartycolours-princesses-star-wand-princess-a4.pdf",
+      "pages": 1,
+      "bytes": 126254,
+      "sha256": "9151f8993bc74940be759ab573b22dce9e30cc27d44ab1202f567a9e8691297e"
+    },
+    {
+      "file": "smartycolours-princesses-dragon-knight-princess-a4.pdf",
+      "pages": 1,
+      "bytes": 155125,
+      "sha256": "441576c03a43500e4d0fcb333ba0f7ff459b1ac0853f34774897e874d36ded73"
+    },
+    {
+      "file": "smartycolours-princesses-scientist-princess-a4.pdf",
+      "pages": 1,
+      "bytes": 139551,
+      "sha256": "bfcc7550bc3bcfb7a2cd0bf745deea19ea725c36822d9d92f51d53d505392b18"
+    },
+    {
+      "file": "smartycolours-princesses-storytime-princess-a4.pdf",
+      "pages": 1,
+      "bytes": 132878,
+      "sha256": "2abb8c5d8a1f21aae4fc4fd331b8b0d1b881cf05d0a065c035ca3ed1306498d1"
+    },
+    {
+      "file": "smartycolours-princesses-free-pages-a4.pdf",
+      "pages": 7,
+      "bytes": 548774,
+      "sha256": "535091a4b6504f8becf403f9fd4f1a573323161bfb4b54faea29078f111014fd"
+    },
+    {
+      "file": "smartycolours-princesses-princess-and-castle-letter.pdf",
+      "pages": 1,
+      "bytes": 151246,
+      "sha256": "54c52482c921305047babd92e1bf4895a0527b47b005f08e21adaf6dafcc6982"
+    },
+    {
+      "file": "smartycolours-princesses-star-wand-princess-letter.pdf",
+      "pages": 1,
+      "bytes": 126233,
+      "sha256": "66928ffea0017d495f582b1efe455ffd87ddae6adb92341bc32329ea184bb93c"
+    },
+    {
+      "file": "smartycolours-princesses-dragon-knight-princess-letter.pdf",
+      "pages": 1,
+      "bytes": 155125,
+      "sha256": "2d5b94cf9092e6f43e4b2351e82eaa8ee1fbd088e8896b289c83538bb6ee5111"
+    },
+    {
+      "file": "smartycolours-princesses-scientist-princess-letter.pdf",
+      "pages": 1,
+      "bytes": 139564,
+      "sha256": "c7faa805f95e7fa607b9681a45e4af5fd9922ca2b62aafef8f588f63cb9558cc"
+    },
+    {
+      "file": "smartycolours-princesses-storytime-princess-letter.pdf",
+      "pages": 1,
+      "bytes": 132850,
+      "sha256": "3aeead9d479ea8f82413bd91da82a5f6feb13c5506345a86905c93695409c0cd"
+    },
+    {
+      "file": "smartycolours-princesses-free-pages-letter.pdf",
+      "pages": 7,
+      "bytes": 548728,
+      "sha256": "8c56d0f3731cbb5345f7a6905f7015961771c34419905d8e007de0e2a941882b"
+    },
+    {
+      "file": "smartycolours-dinosaurs-friendly-dinosaur-a4.pdf",
+      "pages": 1,
+      "bytes": 88656,
+      "sha256": "ca82fd3f27753ba48a96f59bc06b33b59c04bc9552d2fb7c108128a1a6a84bf3"
+    },
+    {
+      "file": "smartycolours-dinosaurs-balloon-dinosaur-a4.pdf",
+      "pages": 1,
+      "bytes": 84845,
+      "sha256": "119f469267897788ca079109466f8de734fe51d184882c28ac3e17e9ac3cdfde"
+    },
+    {
+      "file": "smartycolours-dinosaurs-sleepy-stegosaurus-a4.pdf",
+      "pages": 1,
+      "bytes": 97643,
+      "sha256": "4031971d48080eace7c96e824e597d0a352cadc0d541d0fae345200ef47ce5eb"
+    },
+    {
+      "file": "smartycolours-dinosaurs-drumming-triceratops-a4.pdf",
+      "pages": 1,
+      "bytes": 97564,
+      "sha256": "d8e4901563166553894995d9ad5317d13d0bffad11805f6d3cc1b6b6ce7f2820"
+    },
+    {
+      "file": "smartycolours-dinosaurs-hatching-dinosaur-a4.pdf",
+      "pages": 1,
+      "bytes": 88798,
+      "sha256": "6e2c1b5f37207158b1bb6b6ebaa339b1151c34d06b2dc3d4dfe5bbf7abeeecf1"
+    },
+    {
+      "file": "smartycolours-dinosaurs-free-pages-a4.pdf",
+      "pages": 7,
+      "bytes": 243889,
+      "sha256": "5e9887250a05879cfb7a98d32acbdb01022fbae943f0345303e755d51784bc09"
+    },
+    {
+      "file": "smartycolours-dinosaurs-friendly-dinosaur-letter.pdf",
+      "pages": 1,
+      "bytes": 88646,
+      "sha256": "2c84f0c8d845e6fa9c9f40f95415e9ccfc5a3fe71e304b633123b4f6c216baac"
+    },
+    {
+      "file": "smartycolours-dinosaurs-balloon-dinosaur-letter.pdf",
+      "pages": 1,
+      "bytes": 84838,
+      "sha256": "e06e4aa4efe885adfa39c7a539f568b026c3b327cc1f882cdad1ac33c08942e0"
+    },
+    {
+      "file": "smartycolours-dinosaurs-sleepy-stegosaurus-letter.pdf",
+      "pages": 1,
+      "bytes": 97618,
+      "sha256": "fc69b9847be900f11e602e49c30afdd9d247c0dfcad0a6b938873a5bbede2c58"
+    },
+    {
+      "file": "smartycolours-dinosaurs-drumming-triceratops-letter.pdf",
+      "pages": 1,
+      "bytes": 97539,
+      "sha256": "000dbb06584165990be6ed8128eb0d71242eff5138fe158351abc9d45c576dac"
+    },
+    {
+      "file": "smartycolours-dinosaurs-hatching-dinosaur-letter.pdf",
+      "pages": 1,
+      "bytes": 88802,
+      "sha256": "625910366caafe8068947c591bb74ecbadbd09f07db09f17e2b964c32b9b743a"
+    },
+    {
+      "file": "smartycolours-dinosaurs-free-pages-letter.pdf",
+      "pages": 7,
+      "bytes": 243808,
+      "sha256": "29b69d5ec257143946aee0de2e3a17153bcf8e0541a743ff403bea68566d63b8"
+    },
+    {
+      "file": "smartycolours-zoo-smiling-lion-a4.pdf",
+      "pages": 1,
+      "bytes": 128382,
+      "sha256": "75874122bbc8e48a4ef3d88de56bd1b6b841c748dc7846ceba335578674055d9"
+    },
+    {
+      "file": "smartycolours-zoo-tall-giraffe-a4.pdf",
+      "pages": 1,
+      "bytes": 115222,
+      "sha256": "3ef2cc6dd1009ae529c289929e53c9c108a64e93186efb232b36f931dacda590"
+    },
+    {
+      "file": "smartycolours-zoo-bamboo-panda-a4.pdf",
+      "pages": 1,
+      "bytes": 112085,
+      "sha256": "3742d65078a2a3e3b97a340026a0e03710c80cb956dfb5b3c0bed98933a8dc53"
+    },
+    {
+      "file": "smartycolours-zoo-splashing-elephant-a4.pdf",
+      "pages": 1,
+      "bytes": 125348,
+      "sha256": "b1df003d9c510cdf11296b5cfaae7720ff22b48b06f883b76044438fb96a069c"
+    },
+    {
+      "file": "smartycolours-zoo-banana-monkey-a4.pdf",
+      "pages": 1,
+      "bytes": 120634,
+      "sha256": "4df8c4b2b958f1ee492c74cbdbeb55666099f90cddc3819609d5ab708841c74b"
+    },
+    {
+      "file": "smartycolours-zoo-free-pages-a4.pdf",
+      "pages": 7,
+      "bytes": 473623,
+      "sha256": "0231d39c30790bcd98b40b850b44fb29df5722762359fba00daa37a67d6693b2"
+    },
+    {
+      "file": "smartycolours-zoo-smiling-lion-letter.pdf",
+      "pages": 1,
+      "bytes": 128394,
+      "sha256": "0f5e3a77e9b5100762869f20ae5ec09e8d313b2171b0b42be72c83a1bea63d2d"
+    },
+    {
+      "file": "smartycolours-zoo-tall-giraffe-letter.pdf",
+      "pages": 1,
+      "bytes": 115212,
+      "sha256": "ecb8fc8136e033c4590da898e3db516a35a7852b1259990e794f4d4d029984ae"
+    },
+    {
+      "file": "smartycolours-zoo-bamboo-panda-letter.pdf",
+      "pages": 1,
+      "bytes": 112072,
+      "sha256": "d7c3ea4283d325e47d4e4aa3ecb3ae40ee80762c86f20f2585d01b5f5a61016b"
+    },
+    {
+      "file": "smartycolours-zoo-splashing-elephant-letter.pdf",
+      "pages": 1,
+      "bytes": 125339,
+      "sha256": "5cd7a3e09bebdd7abc165c8df0b1b399c3683c6c7703157a0d970dfee1944c89"
+    },
+    {
+      "file": "smartycolours-zoo-banana-monkey-letter.pdf",
+      "pages": 1,
+      "bytes": 120619,
+      "sha256": "e9b7b893c6905ca874c0c28b2dbb96bc24a872019d402b7d81329b49ba4015ac"
+    },
+    {
+      "file": "smartycolours-zoo-free-pages-letter.pdf",
+      "pages": 7,
+      "bytes": 473572,
+      "sha256": "1a5b7c6d0499e4d488e6981ba8537f2bd86a5d49298143ec15f37eb2d9ddfc97"
+    },
+    {
+      "file": "smartycolours-space-rocket-launch-a4.pdf",
+      "pages": 1,
+      "bytes": 101030,
+      "sha256": "f533cc907cdb709f4825bb3f392f2eae36f53bd0f774dd722d8a0638232348b3"
+    },
+    {
+      "file": "smartycolours-space-alien-astronaut-a4.pdf",
+      "pages": 1,
+      "bytes": 94940,
+      "sha256": "4891122b581fba578dacede45001ce065e4fe40e27f68222f55e36fa5ae8cdfa"
+    },
+    {
+      "file": "smartycolours-space-smiling-ringed-planet-a4.pdf",
+      "pages": 1,
+      "bytes": 86697,
+      "sha256": "6038cfddee29c46970188783ee748e0f007b2955c86513168e37116f2aeb753c"
+    },
+    {
+      "file": "smartycolours-space-shooting-star-a4.pdf",
+      "pages": 1,
+      "bytes": 84972,
+      "sha256": "1cac7816109129f86fd17eea4b28c0c39274776d806bf84c072615f2df2d5895"
+    },
+    {
+      "file": "smartycolours-space-moon-dancing-aliens-a4.pdf",
+      "pages": 1,
+      "bytes": 96400,
+      "sha256": "f18c9d2505534d1bb1f1f5d2628209b0b199d567ada926f483f9006d2ea41f67"
+    },
+    {
+      "file": "smartycolours-space-free-pages-a4.pdf",
+      "pages": 7,
+      "bytes": 277807,
+      "sha256": "33a5132a723d1abc76601988e0a507801107ded2fea50d01b4fb38b00dea302c"
+    },
+    {
+      "file": "smartycolours-space-rocket-launch-letter.pdf",
+      "pages": 1,
+      "bytes": 101033,
+      "sha256": "839fd6432bbb79f68118de7f3fda2f114888e6b0bec1d91bd1a9ade3255b94ad"
+    },
+    {
+      "file": "smartycolours-space-alien-astronaut-letter.pdf",
+      "pages": 1,
+      "bytes": 94926,
+      "sha256": "a49a6640c5d66b00de40c91926e314dcc7734e13f709fc374578cc2b368584e2"
+    },
+    {
+      "file": "smartycolours-space-smiling-ringed-planet-letter.pdf",
+      "pages": 1,
+      "bytes": 86691,
+      "sha256": "8eee73334c54e8f37bebb698a4c7fdb2f24ca6fce9caa8ce1563985ff032a52a"
+    },
+    {
+      "file": "smartycolours-space-shooting-star-letter.pdf",
+      "pages": 1,
+      "bytes": 84963,
+      "sha256": "6d970c35763a3ee355753a2bedd1fd60aefb832dcc5c1f6430d21f29b15596df"
+    },
+    {
+      "file": "smartycolours-space-moon-dancing-aliens-letter.pdf",
+      "pages": 1,
+      "bytes": 96411,
+      "sha256": "3db8665e6461b79c69f9f29b921f578b7bb25172e03f5d07e1eeedfa2e57d5e2"
+    },
+    {
+      "file": "smartycolours-space-free-pages-letter.pdf",
+      "pages": 7,
+      "bytes": 277777,
+      "sha256": "5c1b48504580e447586a14e5b99741aae83365961a96db0417e75576b9571a12"
+    },
+    {
+      "file": "smartycolours-under-the-sea-happy-fish-a4.pdf",
+      "pages": 1,
+      "bytes": 97082,
+      "sha256": "82ad204f95d8cee204e4876f2d5b9a307fcd223909a43d45463978cbcd7ee63e"
+    },
+    {
+      "file": "smartycolours-under-the-sea-smiling-octopus-a4.pdf",
+      "pages": 1,
+      "bytes": 94612,
+      "sha256": "8f21151247cbfc5e0bc99d50878b89fd82a4c5450ef3d6dc28e56f1cbc3cf755"
+    },
+    {
+      "file": "smartycolours-under-the-sea-swimming-turtle-a4.pdf",
+      "pages": 1,
+      "bytes": 98352,
+      "sha256": "3e8a4a3cdbd97e46b092e131daf13b2f55559cc5bab6819b4b62b165faafc061"
+    },
+    {
+      "file": "smartycolours-under-the-sea-gentle-jellyfish-a4.pdf",
+      "pages": 1,
+      "bytes": 82260,
+      "sha256": "a578e2620b09a25782ab01f3f83db45c6376b42a6f075ec928fb55f78111736f"
+    },
+    {
+      "file": "smartycolours-under-the-sea-leaping-dolphin-a4.pdf",
+      "pages": 1,
+      "bytes": 87537,
+      "sha256": "c50f01c9a8902b822fbc698ceb3ad8abe28c91270ce77ab220896a546b97a597"
+    },
+    {
+      "file": "smartycolours-under-the-sea-free-pages-a4.pdf",
+      "pages": 7,
+      "bytes": 259632,
+      "sha256": "f47c2d60718bd58aa84f5ae65905a198959faf4a3543f8614e0b0e9deaf7e1ee"
+    },
+    {
+      "file": "smartycolours-under-the-sea-happy-fish-letter.pdf",
+      "pages": 1,
+      "bytes": 97096,
+      "sha256": "6f5458b30828deb122574c58cab43018cd0c07bc29545f018027f3616b89a2b6"
+    },
+    {
+      "file": "smartycolours-under-the-sea-smiling-octopus-letter.pdf",
+      "pages": 1,
+      "bytes": 94607,
+      "sha256": "1ce5c48aab788813997793668f1c4b841c79d59685b994302df95b56bc44f51f"
+    },
+    {
+      "file": "smartycolours-under-the-sea-swimming-turtle-letter.pdf",
+      "pages": 1,
+      "bytes": 98354,
+      "sha256": "85b072deaa089afa03273cdfd1357e59bf68e648260c5663b9b5767df791bd89"
+    },
+    {
+      "file": "smartycolours-under-the-sea-gentle-jellyfish-letter.pdf",
+      "pages": 1,
+      "bytes": 82255,
+      "sha256": "01fc8bae7780777d05128221b5a307b5e086a23fca1f562a224c3ad32c1a8a97"
+    },
+    {
+      "file": "smartycolours-under-the-sea-leaping-dolphin-letter.pdf",
+      "pages": 1,
+      "bytes": 87534,
+      "sha256": "8a95386fce44e9cbfdb036c9141a468c7f2a1ded202efea166b4355aec20f935"
+    },
+    {
+      "file": "smartycolours-under-the-sea-free-pages-letter.pdf",
+      "pages": 7,
+      "bytes": 259599,
+      "sha256": "9e9fda10a88ba9ce1bc2346a28bf4cd29882d0747975f6ec7c072bbb1bb56202"
+    },
+    {
+      "file": "smartycolours-robots-robot-astronaut-a4.pdf",
+      "pages": 1,
+      "bytes": 102522,
+      "sha256": "1a7d016b90958265817ee3e39de6a6f900e29e0b874edf99343724a51053ceda"
+    },
+    {
+      "file": "smartycolours-robots-jungle-explorer-a4.pdf",
+      "pages": 1,
+      "bytes": 118700,
+      "sha256": "3174dc9261e200bc411a4207b359af7bb96d6411161a43b9fe7767c51cc4d470"
+    },
+    {
+      "file": "smartycolours-robots-robot-artist-a4.pdf",
+      "pages": 1,
+      "bytes": 122957,
+      "sha256": "fb08e59f74e740da24280dcfc9e01ee7e8a1383fa2f8e115760c85203592bb85"
+    },
+    {
+      "file": "smartycolours-robots-robot-chef-a4.pdf",
+      "pages": 1,
+      "bytes": 112145,
+      "sha256": "a918b83d5bd1f510f8b0db25eb2960dd2d5822de2b505feecbae8d8521de1c09"
+    },
+    {
+      "file": "smartycolours-robots-robot-gardener-a4.pdf",
+      "pages": 1,
+      "bytes": 104181,
+      "sha256": "7604256ec5b784756c1c5a3bac9e0d11236ea83d82af8521a258bff6be8e1a2c"
+    },
+    {
+      "file": "smartycolours-robots-free-pages-a4.pdf",
+      "pages": 7,
+      "bytes": 392488,
+      "sha256": "b74972c767ad7d9331a510fb500a1b6a041551790c8174f63e27c1517b6d44cc"
+    },
+    {
+      "file": "smartycolours-robots-robot-astronaut-letter.pdf",
+      "pages": 1,
+      "bytes": 102530,
+      "sha256": "85b453ed4bbd5d3af92751ca00be0eefa3621da7ca284e57c3708e25bec0b043"
+    },
+    {
+      "file": "smartycolours-robots-jungle-explorer-letter.pdf",
+      "pages": 1,
+      "bytes": 118690,
+      "sha256": "26d0919b2baed69b9d665b53d07f75cd573ee563766058c4d842f66c04604957"
+    },
+    {
+      "file": "smartycolours-robots-robot-artist-letter.pdf",
+      "pages": 1,
+      "bytes": 122954,
+      "sha256": "7f81f0e1215c396492febf100b9ea8fe1d5833fdb48ba25ef3649e18353ab0de"
+    },
+    {
+      "file": "smartycolours-robots-robot-chef-letter.pdf",
+      "pages": 1,
+      "bytes": 112170,
+      "sha256": "65d9f9f1c01486e2e0c28cc1a59b9157c2dbe6e43cb931b7448d6de8b5bd34f9"
+    },
+    {
+      "file": "smartycolours-robots-robot-gardener-letter.pdf",
+      "pages": 1,
+      "bytes": 104182,
+      "sha256": "d93470520330f11c2b93068d280532eb2001dd06e8bc427f061876171b06b672"
+    },
+    {
+      "file": "smartycolours-robots-free-pages-letter.pdf",
+      "pages": 7,
+      "bytes": 392486,
+      "sha256": "c919b4eececb3974d2fdfee289a6a39384adab2806a096edbaabf570b79a9922"
+    },
+    {
+      "file": "smartycolours-pets-butterfly-kitten-a4.pdf",
+      "pages": 1,
+      "bytes": 102683,
+      "sha256": "31d6e1f6c2976c51e11b848218d3478f0f377c9dbdda9ea0d112be237f4f8e59"
+    },
+    {
+      "file": "smartycolours-pets-racing-hamster-a4.pdf",
+      "pages": 1,
+      "bytes": 92508,
+      "sha256": "cea1bb257e4de233869ebb6b525d9c4392f69c2a8329879fc26327abcc649678"
+    },
+    {
+      "file": "smartycolours-pets-carrot-bunny-a4.pdf",
+      "pages": 1,
+      "bytes": 99483,
+      "sha256": "2b80593c3f30cc8feb756f44ad393c1464b56e60291ce9ebf1abc897da0b40ee"
+    },
+    {
+      "file": "smartycolours-pets-puppy-tea-party-a4.pdf",
+      "pages": 1,
+      "bytes": 101392,
+      "sha256": "062cae12a1dc14ca18e6897ef21a62767d85f595314d4f44f06c78de04cba491"
+    },
+    {
+      "file": "smartycolours-pets-parrot-on-a-perch-a4.pdf",
+      "pages": 1,
+      "bytes": 86489,
+      "sha256": "1151abaf52270d4326f0e057367f7e7f72d693e58f60fc485d5de6ba005b069d"
+    },
+    {
+      "file": "smartycolours-pets-free-pages-a4.pdf",
+      "pages": 7,
+      "bytes": 264193,
+      "sha256": "d8da5374ee1b7f19dd3abecb1163c2518b7b497006c96ab91c0e8f12c6a14153"
+    },
+    {
+      "file": "smartycolours-pets-butterfly-kitten-letter.pdf",
+      "pages": 1,
+      "bytes": 102682,
+      "sha256": "2dbba82f3e873f52374e78992adc36ff576643b01cd59e9b17a9594904ef8c38"
+    },
+    {
+      "file": "smartycolours-pets-racing-hamster-letter.pdf",
+      "pages": 1,
+      "bytes": 92518,
+      "sha256": "44bd1345ac541797fa28fa30c2505cb8455db8ed9990bbdcb7e87f302ad5a64c"
+    },
+    {
+      "file": "smartycolours-pets-carrot-bunny-letter.pdf",
+      "pages": 1,
+      "bytes": 99489,
+      "sha256": "5d54ed3965b47410750731ff9066f2bce567320c0ac685b3d3c06052f6fd78ea"
+    },
+    {
+      "file": "smartycolours-pets-puppy-tea-party-letter.pdf",
+      "pages": 1,
+      "bytes": 101413,
+      "sha256": "1f7814c1e06e197f1f87cf290ed57c8798b28fdb3122306a2719158f2564bb81"
+    },
+    {
+      "file": "smartycolours-pets-parrot-on-a-perch-letter.pdf",
+      "pages": 1,
+      "bytes": 86483,
+      "sha256": "5d20546ba88ffb7b2c83efbb48eeaabca122b08b38c713817199adbea7e84ed1"
+    },
+    {
+      "file": "smartycolours-pets-free-pages-letter.pdf",
+      "pages": 7,
+      "bytes": 264205,
+      "sha256": "58c5d93adeb5dac947745cb6f08792c4f8b6ecbfe5c2cfa9f0c0edda70d0b88c"
+    },
+    {
+      "file": "smartycolours-automotive-smiling-bulldozer-a4.pdf",
+      "pages": 1,
+      "bytes": 96686,
+      "sha256": "34250d7b880109c9dc2c1a2db46acd756ca4b7a89fd07491606a206860ca4e05"
+    },
+    {
+      "file": "smartycolours-automotive-racing-car-a4.pdf",
+      "pages": 1,
+      "bytes": 99322,
+      "sha256": "1d55836b6b7b337268e56ec0285ff8a0f00774ec751c44e2b2812da0129929e6"
+    },
+    {
+      "file": "smartycolours-automotive-helpful-digger-a4.pdf",
+      "pages": 1,
+      "bytes": 107075,
+      "sha256": "6ae4d3490507b72df08a63c0edba5f7ed7edc2a6fecffec19f2dbfec303c8cca"
+    },
+    {
+      "file": "smartycolours-automotive-fire-engine-a4.pdf",
+      "pages": 1,
+      "bytes": 98840,
+      "sha256": "3ce3bb1a3a3b7009f7c80ee7aa1a084b930a76ae25043dcb73c7a83748c5f1ea"
+    },
+    {
+      "file": "smartycolours-automotive-ice-cream-van-a4.pdf",
+      "pages": 1,
+      "bytes": 112850,
+      "sha256": "02b9f29af4b7d672aa1a7104e72601ba10821ded883cfd6cc8aa761769e2217e"
+    },
+    {
+      "file": "smartycolours-automotive-free-pages-a4.pdf",
+      "pages": 7,
+      "bytes": 328439,
+      "sha256": "732b4f35c7d38550b0df9baaf1e3016cea6e0f746e5012bd40e5cab4ef5e917f"
+    },
+    {
+      "file": "smartycolours-automotive-smiling-bulldozer-letter.pdf",
+      "pages": 1,
+      "bytes": 96696,
+      "sha256": "1b78668b315becd73e6da1887424a7ba9456062dbb9a0f281694d4369341390c"
+    },
+    {
+      "file": "smartycolours-automotive-racing-car-letter.pdf",
+      "pages": 1,
+      "bytes": 99317,
+      "sha256": "e1439edfc98f76d8e82d6284b1d329ad31ee1db9bc973e331a5aff8368a1e3dc"
+    },
+    {
+      "file": "smartycolours-automotive-helpful-digger-letter.pdf",
+      "pages": 1,
+      "bytes": 107046,
+      "sha256": "5e44250bb9d7d2af4784cdc66b07404519b9cb27afe85b121d00530c22a02efa"
+    },
+    {
+      "file": "smartycolours-automotive-fire-engine-letter.pdf",
+      "pages": 1,
+      "bytes": 98846,
+      "sha256": "ad03e6bf20481af55c3857bd644754950bc894f8b5e6285e8bacb0c3d60f5634"
+    },
+    {
+      "file": "smartycolours-automotive-ice-cream-van-letter.pdf",
+      "pages": 1,
+      "bytes": 112863,
+      "sha256": "56567f65b536133b27b6148d00e6b478fd95cc5b1ac22396c31e69aea4bf500d"
+    },
+    {
+      "file": "smartycolours-automotive-free-pages-letter.pdf",
+      "pages": 7,
+      "bytes": 328413,
+      "sha256": "346572dcbf35c09c385a851a6cdeffb5ad4705243787974940f59410c7e82963"
+    },
+    {
+      "file": "smartycolours-flowers-potted-tulips-a4.pdf",
+      "pages": 1,
+      "bytes": 89993,
+      "sha256": "a5f859c02570ba4c36906d165a5ec30150fec44c2011c810c86ba07094ec2645"
+    },
+    {
+      "file": "smartycolours-flowers-garden-rose-a4.pdf",
+      "pages": 1,
+      "bytes": 83671,
+      "sha256": "32be393cab5d600764b6b269ff2f209804a86c522f269924b48d88f25445bf7f"
+    },
+    {
+      "file": "smartycolours-flowers-simple-flower-a4.pdf",
+      "pages": 1,
+      "bytes": 86007,
+      "sha256": "179612e35c8b7c1ee1fca324f491f99376426759bebd1720086f418798cb9a2b"
+    },
+    {
+      "file": "smartycolours-flowers-smiling-sunflower-a4.pdf",
+      "pages": 1,
+      "bytes": 87972,
+      "sha256": "a984e1269210a6ac7178e06d7b4eef52391fba4c9fe45717515e2742e43b865f"
+    },
+    {
+      "file": "smartycolours-flowers-swirling-star-flower-a4.pdf",
+      "pages": 1,
+      "bytes": 90060,
+      "sha256": "444e8931a8a202941a6198db0081eeb2d405faa11a53be4328d97542e39496e2"
+    },
+    {
+      "file": "smartycolours-flowers-free-pages-a4.pdf",
+      "pages": 7,
+      "bytes": 257422,
+      "sha256": "2004838c700fe44997335f95c38cf6f08961527b6efe8672b61c40e5e17e0d48"
+    },
+    {
+      "file": "smartycolours-flowers-potted-tulips-letter.pdf",
+      "pages": 1,
+      "bytes": 89978,
+      "sha256": "bab81c6ea8b1891c86504634bdf1a47c428af193589b548945e379cb4aea371b"
+    },
+    {
+      "file": "smartycolours-flowers-garden-rose-letter.pdf",
+      "pages": 1,
+      "bytes": 83661,
+      "sha256": "16d86ee7683a361212fa54effd877350b2b174694f67c61afb440b41fe0d75f6"
+    },
+    {
+      "file": "smartycolours-flowers-simple-flower-letter.pdf",
+      "pages": 1,
+      "bytes": 86004,
+      "sha256": "c907c0e252c3deb824f3c9a8eabb3dd2c0da37245c4e50a63413819b74b3ee1a"
+    },
+    {
+      "file": "smartycolours-flowers-smiling-sunflower-letter.pdf",
+      "pages": 1,
+      "bytes": 87971,
+      "sha256": "4008e2c40d0678f937310cc940f3a28a63359c2cbb8fc0fc3f44e39e00fd18c2"
+    },
+    {
+      "file": "smartycolours-flowers-swirling-star-flower-letter.pdf",
+      "pages": 1,
+      "bytes": 90045,
+      "sha256": "f7d042de1086d29fdb28a0ce05a825a4cd6dba06bc407a0837f24959979f95fd"
+    },
+    {
+      "file": "smartycolours-flowers-free-pages-letter.pdf",
+      "pages": 7,
+      "bytes": 257363,
+      "sha256": "fe7b999ebc7ecb8da2349e030ce7c1bdc2f8ac9a59ff6608fd356ffdaac920f6"
+    }
+  ],
+  "authoringBatches": [
+    {
+      "packOffset": 0,
+      "packCount": 8,
+      "pdfs": 96
+    },
+    {
+      "packOffset": 8,
+      "packCount": 8,
+      "pdfs": 96
+    }
+  ],
+  "determinism": {
+    "verified": "Farm Yard: all12 A4/Letter singles and bundles byte-identical after regeneration",
+    "pdfsCompared": 12
+  },
+  "visualReview": {
+    "all80Sheets": "docs/smarty-colours-all-printable-review.jpg",
+    "A4AndLetterCoverSheetAndEnd": "docs/smarty-colours-print-layout-review.jpg",
+    "result": "No clipped or overlapping text, missing main shapes, unbranded pages or placeholder text observed."
+  },
+  "storage": {
+    "pdfBytesRetained": 29520277,
+    "selectedReviewImageBytes": 1455224,
+    "taskTemporaryBytesRemoved": 51607847,
+    "temporaryContents": "Task-only tracing packages, vector intermediates, converted fonts and rendered page PNGs."
+  }
+}

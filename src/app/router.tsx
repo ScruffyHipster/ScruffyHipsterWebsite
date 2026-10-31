@@ -10,6 +10,11 @@ import { NotFoundPage } from "../pages/NotFoundPage";
 import { CompactLandingPage } from "../pages/CompactLandingPage";
 import { SantaLandingPage } from "../pages/SantaLandingPage";
 import { SmartyColoursLandingPage } from "../pages/SmartyColoursLandingPage";
+import {
+  SmartyColoursLibraryPage,
+  SmartyColoursPackPage,
+  SmartyColoursPicturePage
+} from "../pages/SmartyColoursPacks";
 import { RewireLandingPage } from "../pages/RewireLandingPage";
 import { RewireBlogIndexPage } from "../pages/RewireBlogIndexPage";
 import { RewireBlogPostPage } from "../pages/RewireBlogPostPage";
@@ -54,6 +59,9 @@ export function AppRoutes() {
         <Route path="compact" element={<CompactLandingPage />} />
         <Route path="apps/chat-with-santa" element={<SantaLandingPage />} />
         <Route path="apps/smarty-colours" element={<SmartyColoursLandingPage />} />
+        <Route path="apps/smarty-colours/colouring-pages" element={<SmartyColoursLibraryPage />} />
+        <Route path="apps/smarty-colours/colouring-pages/:packId" element={<SmartyColoursPackPage />} />
+        <Route path="apps/smarty-colours/colouring-pages/:packId/:pageSlug" element={<SmartyColoursPicturePage />} />
         <Route path="apps/compact" element={<Navigate to="/compact/" replace />} />
         <Route path="apps/rewire" element={<Navigate to="/rewire/" replace />} />
         <Route path="pages/portfolio/rewire.html" element={<Navigate to="/rewire/" replace />} />

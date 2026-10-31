@@ -1,63 +1,42 @@
-# SmartyColours landing page — local review, 30 October 2026
+# SmartyColours website
 
-Implementation route: `/apps/smarty-colours/`. This existing route is a local integration location, not a decision about the final domain.
+Canonical home: https://scruffyhipster.com/apps/smarty-colours/ (approved by the user on 31 October 2026). The free library lives at `/apps/smarty-colours/colouring-pages/`.
 
-## Sources and scope
+## Design and artwork sources
 
-- [SmartyColours Web](https://claude.ai/artifact/JVBBtGbRSdPvpqvrL4hqvz): README read first; supplied component CSS and Day/Night tokens retained under `docs/smarty-colours-design/`.
-- [SmartyColours Site Designs](https://claude.ai/artifact/YZBgVxnyFiDDWmcB2Pn6YY): Home desktop/phone artboards and `project/site.css` adapted faithfully. Original reference HTML is retained for comparison.
-- Landing HTML lives in `src/content/smartyColoursHome.html`; component/page CSS is scoped to `.sc-page`. UI strings and pack metadata are in `src/content/smartyColours.ts`. App metadata and visible FAQs remain in `content/apps/smarty-colours.json`.
-- Eight full-resolution original pack covers replace screenshot crops. Six original drawings replace the home strip's traced placeholders, with accurate names. Eight original drawings power the studio. `assets.json` records source paths and derivatives. These are preview examples, not the final five-page selections.
-- Fonts and Apple’s [official badge](https://developer.apple.com/app-store/marketing/guidelines/) are served locally. Font licences are retained beside their files. App showcase derivatives remove old marketing headers and preserve actual app UI.
+- [SmartyColours Web](https://claude.ai/artifact/JVBBtGbRSdPvpqvrL4hqvz): README, components, Day/Night tokens, Grandstander/Andika fonts, kid-safe rules and printable specifications.
+- [SmartyColours Site Designs](https://claude.ai/artifact/YZBgVxnyFiDDWmcB2Pn6YY): Home, Packs, PackDetail and Printable artboards. Reference files are retained in `docs/smarty-colours-design/`.
+- The catalogue in `content/smarty-colours/catalogue.json` selects five original drawings from each of the app's 15 active packs, plus Flowers from the supplied design. All 16 packs are free on the web. `pack-selection.json` records source paths, hashes and native dimensions; contact sheets show the accepted selections.
+- Original app covers replace screenshot crops. Studio drawings use the same 80 original pages as the PDFs. The configured rainbow pencil icon is recorded in `icon-source.json`. Apple's official App Store badge and licensed fonts are self-hosted.
 
-The current hand-off supersedes the older `SmartyColors/docs/website-seo-aso-plan.md`: every pack is to offer five free web pages; Farm Yard is not the only web-colourable pack.
+## Implementation
 
-## What works
+The Home keeps its eight-pack teaser and six-picture strip. Its pack links now lead to the real library and pack pages. The library groups all 16 packs into four shelves. Each pack has a five-picture grid and a sixth grown-up app card. Each picture also has its own descriptive URL, A4/Letter download and direct colouring link.
 
-- Responsive Home with Day/Night theme, clouds, orange primary action, original hero, six-picture strip, eight-pack grid, three ways, grown-up promises, app showcase and accessible native FAQ disclosures.
-- Start colouring and picture links open a lazy-loaded studio. Fill is the default; Crayon, Paint, Rubber, nine colours, eight-step undo/redo, keyboard crosshair, reset confirmation and per-picture tab memory work. Phone/tablet tools stay fixed at the bottom.
-- All done composes a branded 1080 × 1080 PNG. Save downloads it locally; Share first opens a rotating, shuffled grown-up question. App Store and email actions use the same gate. Internal navigation does not.
-- The pack browser contains nine covers and a grown-up app card; pack previews expose A4/US Letter selection. Downloads are visibly unavailable until the launch decisions below are resolved.
-- Website analytics initialization, events, pending callbacks and landing attribution are suppressed on SmartyColours routes, including navigation from other pages. Drawings are not uploaded or placed in persistent browser storage.
+The 192 committed PDFs contain 160 individual sheets and 32 pack bundles. A bundle has seven physical pages: cover, five free drawings, and a final grown-up app information page. Both A4 and US Letter masters use 10 mm margins, a paper-only blank Name line, rounded artwork frame, five planning circles and `scruffyhipster.com` in the footer. Original lines are vector paths traced at native resolution and reinforced to a minimum 2.5 pt; they are not raster upscales. PDFs contain no forms, outbound links or QR codes.
 
-## Launch decisions still required
+The lazy-loaded studio offers each pack's five pictures, Fill/Crayon/Paint/Rubber, nine colours and eight undo steps. Inactive paintings are compressed PNGs held only in tab memory; raw undo pixels stay limited to the active picture. Save composes a branded 1080 × 1080 PNG locally. Print uses a temporary same-origin A4/Letter PrintSheet. Share, App Store and email actions require the grown-up gate. Internal navigation and PDF downloads do not.
 
-1. Choose the domain before publication. Set final canonicals/social previews, website policy destinations and printable footers/last pages together. Existing studio-site canonical infrastructure remains only for this unpublished integration.
-2. Choose five original pages per pack. Build pack and individual SEO pages with final descriptive slugs; generate cover + five pages + final app page PDFs in A4 and US Letter, using the supplied PrintSheet master. This landing-page change does not generate those PDFs or the full printable library.
-3. Finalise the website terms and privacy destinations. The preview provides a factual website privacy explanation and clearly identifies the terms as pending; the App Store has its own app policy.
+There are no accounts, data-collecting fields, advertisements, external fonts, artwork uploads or SmartyColours analytics. Privacy and terms open within the site. App selling copy is labelled for grown-ups and does not appear inside the colouring studio.
 
-No site, printable, store metadata, source commit or deployment was published. The draft page is `noindex,follow` and excluded from the sitemap. Existing non-Smarty routes retain their declared robots behaviour.
+## Search
 
-## Verification
+The library, 16 packs and 80 individual sheets have 97 prerendered, indexable pages. They have unique titles/descriptions, self-referencing canonicals, descriptive image alt text, social previews, breadcrumbs and appropriate CollectionPage/WebPage/ImageObject structured data. Image and PDF destinations are self-hosted. The XML sitemap includes all 97 URLs and their images; Home retains FAQPage markup matching its visible answers. Colouring query URLs canonicalise to Home.
 
-`npm run check` passes: production client/SSR build, SEO/CMS checks (52 routes; 51 indexable sitemap URLs), content ownership, locale/legacy checks, existing timer checks, and the added SmartyColours tests.
+These checks establish technical readiness. Search Console indexing, field Core Web Vitals and rankings have not been measured.
 
-`npm run test:smarty-colours` checks original-asset links, absence of prototype bindings, self-hosted fonts, gated destinations, draft indexing, FAQ markup; tests one-pixel fill boundaries, exactly three-pixel underlap, no adjacent-region bleed and outline no-ops; and exercises analytics suppression across direct entry, aliases, pending imports/events, client navigation and adult-route recovery.
+## Validation and maintenance
 
-Browser review covers desktop, 390 × 844 phone and tablet layouts; Day/Night themes; fill/undo/redo; picture memory; reset confirmation; All done; 1080 PNG generation/download; parent-gate dismissal and repeated questions; pack browser and disabled downloads. No physical iPad/Apple Pencil or printer test has been performed.
+`npm run check` builds the client and server, prerenders 150 public routes, and runs the existing site validation plus SmartyColours fill, privacy, studio and pack checks. Pack checks verify the 16 × 5 catalogue, original image hashes, all 192 reviewed PDF hashes and paper sizes, all 97 generated routes, download links, six-card layouts and image sitemap coverage.
 
-Vite reports a shared-bundle size advisory; the studio itself is loaded separately. Network-restricted builds use the existing Rewire rating fallback; that unrelated integration is unchanged.
+The development-only PDF dependencies are pinned in `scripts/PDFrequirements.dev.txt`. Website CI serves committed PDFs and needs no Python dependencies. When artwork changes, regenerate in bounded batches, then independently validate and render the saved outputs:
 
-## Review locally
+```sh
+python scripts/generate-smarty-colours-pdfs.py --pack-offset 0 --pack-count 8
+python scripts/generate-smarty-colours-pdfs.py --pack-offset 8 --pack-count 8 --validate-all
+python scripts/generate-smarty-colours-pdfs.py --validate-only
+```
 
-Run `npm run dev -- --open /apps/smarty-colours/` in the website repository. Publication remains blocked by the decisions above.
+`docs/smarty-colours-pdf-validation.json` records page counts, sizes, hashes and checks. The two printable review images show all 80 sheets and the cover/sheet/end layouts on both paper sizes. Review new outputs visually before accepting changed hashes. Remove the task-owned `/tmp/smarty-colours-pdf-work` after authoring processes finish.
 
-## Storage
-
-Retained approximately 5.1 MiB of new source, fonts, artwork, original design references and selected review evidence. Removed 341.1 MiB of task-created validation/build files and the temporary site copy after checking running processes and open files. No pre-existing build caches or simulators were removed. The test PNG download was moved into the review evidence.
-
-## Release preparation — 31 October 2026
-
-Prepared an online-colouring launch in an isolated checkout of current remote main. The original checkout's unrelated Compact and Breastfeeding changes are excluded from the release.
-
-- Confirmed the configured pencil icon against Apple's live v1.3.7 listing. Updated the app registry/schema, header/footer/promo, local PNG export, favicon and Apple touch icon to derivatives of that source. Icon provenance is in `smarty-colours-design/icon-source.json`.
-- Added route icons and British-English language to initial prerendered HTML. The four schema entities now survive hydration consistently. Added social-image alt text and an accurate online-colouring title/156-character description.
-- Replaced TTF fonts with equivalent official self-hosted WOFF2s: 1,753,712 to 381,664 bytes (78.2% smaller), with the same font metrics and retained licences.
-- Changed unavailable PDF claims to clearly labelled coming-soon copy. Printable-pack SEO URLs/downloads remain unfinished; this release's search footprint is the landing page.
-- Production build, all validation checks and rendered browser metadata pass. No Search Console, field Core Web Vitals or ranking evidence has been obtained.
-
-Domain confirmation is pending. No publication has occurred and `noindex,follow` remains in place until the destination is chosen, as required by the original hand-off. Browser-review screenshot: `smarty-colours-design/review/release-ready.png`.
-
-## Approved launch — 31 October 2026
-
-The user confirmed deployment to https://scruffyhipster.com/apps/smarty-colours/. This is the final canonical location for this release. Indexing is enabled and the landing page is included in the sitemap. The approved scope is online colouring; printable packs remain clearly marked coming soon until their five-page selections and PDFs are complete. Publication will be verified against the resulting deployment revision.
+Browser review covers desktop and 390 px phone layouts, Day/Night themes, paper-size persistence, five-picture pack selection, colouring memory and grown-up gate dismissal. Physical printer, iPad and Apple Pencil behaviour is not tested here. Vite retains its existing shared-bundle advisory; network-restricted validation uses the existing Rewire rating fallback.

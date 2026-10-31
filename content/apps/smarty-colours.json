@@ -5,9 +5,9 @@
   "published": true,
   "name": "SmartyColours",
   "heroTitle": "Grab a crayon and colour!",
-  "tagline": "Free online colouring for little hands.",
-  "shortDescription": "Free online colouring with original SmartyColours pictures, friendly tools and local picture saving.",
-  "longDescription": "Colour original SmartyColours pictures in your browser and save your finished picture to your device. Free printable packs are being prepared for home and the classroom. More pages are available in the iPad and iPhone app.",
+  "tagline": "Free colouring pages for little hands.",
+  "shortDescription": "Print free original colouring pages or colour online, with friendly tools and local picture saving.",
+  "longDescription": "Print five free original pages from every SmartyColours pack in A4 or US Letter. Colour any of the 80 pictures online and save your finished picture to your device. More pages are available in the iPad and iPhone app.",
   "appStoreUrl": "https://apps.apple.com/gb/app/smartycolours-colouring-pages/id6749013158",
   "icon": "/smarty-colours/pencil-app-icon.png",
   "iconAlt": "SmartyColours rainbow pencil app icon",
@@ -67,12 +67,13 @@
   "privacySlug": "smarty-colours",
   "yearLabel": "2026",
   "seo": {
-    "title": "Free Online Colouring for Kids | SmartyColours",
-    "description": "Colour original SmartyColours pictures online for free. Big, friendly tools for little hands, with no ads or sign-up. Save finished pictures on your device.",
+    "title": "Free Colouring Pages & Online Colouring | SmartyColours",
+    "description": "Print 80 free colouring pages in A4 or US Letter, or colour online with friendly tools for little hands. Original pictures, no ads and no sign-up.",
     "keywords": [
-      "kids colouring app",
-      "iPad coloring app",
-      "Apple Pencil children app",
+      "free colouring pages",
+      "printable colouring pages",
+      "online colouring for kids",
+      "A4 colouring sheets",
       "SmartyColours"
     ],
     "ogImage": "/smarty-colours/farm-yard-cover.jpg",
@@ -87,7 +88,7 @@
   "faqs": [
     {
       "question": "Are the printable packs available?",
-      "answer": "Not yet. We are preparing five free pages from every pack. You can colour the example pictures online and save them to your device today."
+      "answer": "Yes. Every pack has five free pages. Download the whole pack or a single sheet as an A4 or US Letter PDF, or colour any page online."
     },
     {
       "question": "Do we need to sign up?",

@@ -1,5 +1,6 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
+import { makeSmartyColourRoutes } from "../src/content/smartyColourRouteData.js";
 
 const rootDir = new URL("../", import.meta.url).pathname;
 const cms = readGeneratedJson("cms-content.json");
@@ -19,6 +20,11 @@ const {
 
 export const siteUrl =
   process.env.VITE_SITE_URL?.replace(/\/$/, "") || site.domain.replace(/\/$/, "");
+
+const smartyColourCatalogue = JSON.parse(
+  readFileSync(join(rootDir, "content", "smarty-colours", "catalogue.json"), "utf8")
+);
+export const smartyColourRoutes = makeSmartyColourRoutes(smartyColourCatalogue, siteUrl);
 
 const absoluteRouteUrl = (path) => {
   const canonicalPath = path === "/" ? "" : `${path.replace(/\/+$/, "")}/`;
@@ -509,6 +515,7 @@ const routes = [
           : application
       };
     }),
+  ...smartyColourRoutes,
   ...privacyPolicies.map((policy) => {
     const path = `/privacy/${policy.slug}`;
     return {

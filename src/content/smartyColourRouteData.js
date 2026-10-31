@@ -1,0 +1,17 @@
+// Shared by browser metadata and static route generation; all source content comes from the catalogue.
+export function makeSmartyColourRoutes(catalogue, siteUrl) {
+  const home = "/apps/smarty-colours/", library = `${home}colouring-pages/`;
+  const absolute = path => `${siteUrl.replace(/\/$/, "")}${path}`;
+  const crumbs = items => ({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: items.map((item, index) => ({ "@type": "ListItem", position: index + 1, name: item.name, item: absolute(item.path) })) });
+  const rootCrumbs = [{ name: "SmartyColours", path: home }, { name: "Free packs", path: library }];
+  const routes = [{ path: library.replace(/\/$/, ""), title: "Free Printable Colouring Packs | SmartyColours", description: "Print five free pages from every SmartyColours pack. Download A4 or US Letter PDFs, or colour each picture online. No accounts, adverts or sign-up.", ogImage: catalogue.packs[0].cover, ogImageAlt: catalogue.packs[0].coverAlt, robots: "index,follow", images: catalogue.packs.map(pack => absolute(pack.cover)), jsonLd: [{ "@context": "https://schema.org", "@type": "CollectionPage", name: "Free colouring packs", description: "Five free printable pages from every SmartyColours pack.", url: absolute(library), isAccessibleForFree: true, hasPart: catalogue.packs.map(pack => ({ "@type": "CollectionPage", name: `${pack.name} colouring pack`, url: absolute(`${library}${pack.id}/`) })) }, crumbs(rootCrumbs)] }];
+  for (const pack of catalogue.packs) {
+    const path = `${library}${pack.id}/`, packCrumbs = [...rootCrumbs, { name: pack.name, path }];
+    routes.push({ path: path.replace(/\/$/, ""), title: `${pack.name} Colouring Pages | Free PDF Pack | SmartyColours`, description: `${pack.description} Print five free ${pack.name} colouring pages as A4 or US Letter PDFs, or colour each picture online.`, ogImage: pack.cover, ogImageAlt: pack.coverAlt, robots: "index,follow", images: [absolute(pack.cover), ...pack.pages.map(page => absolute(page.image))], jsonLd: [{ "@context": "https://schema.org", "@type": "CollectionPage", name: `${pack.name} colouring pack`, description: pack.description, url: absolute(path), isAccessibleForFree: true, hasPart: pack.pages.map(page => ({ "@type": "ImageObject", name: page.title, description: page.alt, contentUrl: absolute(page.image), url: absolute(`${path}${page.slug}/`) })) }, crumbs(packCrumbs)] });
+    for (const page of pack.pages) {
+      const pageUrl = `${path}${page.slug}/`;
+      routes.push({ path: pageUrl.replace(/\/$/, ""), title: `${page.title} Colouring Page | Free PDF | SmartyColours`, description: `${page.description.replace(/ Colour it online or print the free page on A4 or US Letter paper\.$/, "")} Free A4 and US Letter PDF to print or colour online.`, ogImage: page.image, ogImageAlt: page.alt, robots: "index,follow", images: [absolute(page.image)], jsonLd: [{ "@context": "https://schema.org", "@type": "WebPage", name: `${page.title} colouring page`, description: page.description, url: absolute(pageUrl), isAccessibleForFree: true, mainEntity: { "@type": "ImageObject", name: page.title, description: page.alt, contentUrl: absolute(page.image), encoding: ["a4", "letter"].map(size => ({ "@type": "MediaObject", encodingFormat: "application/pdf", contentUrl: absolute(`/smarty-colours/pdfs/smartycolours-${pack.id}-${page.slug}-${size}.pdf`) })) } }, crumbs([...packCrumbs, { name: page.title, path: pageUrl }])] });
+    }
+  }
+  return routes;
+}
