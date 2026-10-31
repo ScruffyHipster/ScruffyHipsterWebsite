@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Farm Yard colouring pack</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/smartycolours/components/bundle.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400&amp;family=Grandstander:wght@600;700;800;900&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="sc-page" data-theme="{{theme}}" style="font-family: var(--font-body); color: var(--ink);">
+
+<header class="sc-sky page-head">
+  <svg class="sc-cloud" style="left: -40px; top: 150px; width: 210px;" viewBox="0 0 200 110" aria-hidden="true"><path class="fill" d="M40 94C17 94 10 68 28 59C24 37 50 26 65 38C71 14 109 8 121 32C135 20 161 28 159 51C181 53 187 90 161 94Z"></path><path class="shade" d="M24 81C34 90 40 94 40 94H161C171 93 177 86 178 78C152 88 64 90 24 81Z"></path><path class="edge" d="M40 94C17 94 10 68 28 59C24 37 50 26 65 38C71 14 109 8 121 32C135 20 161 28 159 51C181 53 187 90 161 94Z"></path></svg>
+  <svg class="sc-cloud" style="right: -30px; top: 210px; width: 250px;" viewBox="0 0 200 110" aria-hidden="true"><path class="fill" d="M40 94C17 94 10 68 28 59C24 37 50 26 65 38C71 14 109 8 121 32C135 20 161 28 159 51C181 53 187 90 161 94Z"></path><path class="shade" d="M24 81C34 90 40 94 40 94H161C171 93 177 86 178 78C152 88 64 90 24 81Z"></path><path class="edge" d="M40 94C17 94 10 68 28 59C24 37 50 26 65 38C71 14 109 8 121 32C135 20 161 28 159 51C181 53 187 90 161 94Z"></path></svg>
+  <div class="wrap" style="position: relative;">
+    <nav class="sc-nav" aria-label="Main">
+      <a class="sc-logo" href="Main.dc.html" aria-label="SmartyColours home"><img src="/_blob/85aa977fc7b6e2b2384bddbdf9a7f39b" alt=""><span>Smarty<b>Colours</b></span></a>
+      <ul>
+        <li><a class="sc-nav__link" href="Studio.dc.html">Colour online</a></li>
+        <li><a class="sc-nav__link" href="Packs.dc.html" aria-current="page">Free packs</a></li>
+        <li><a class="sc-nav__link" href="Main.dc.html#grown-ups">For grown-ups</a></li>
+      </ul>
+      <a class="sc-btn sc-btn--crown" href="ParentGate.dc.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.5"></rect><path d="M11 18h2"></path></svg>Get the app</a>
+    </nav>
+
+    <div class="crumbs" style="margin-top: 40px;">
+      <a href="Packs.dc.html">Free packs</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+      <span aria-current="page">Farm Yard</span>
+    </div>
+
+    <div class="pack-hero">
+      <span class="sc-pack__frame" style="display: block;"><img src="/_blob/71192937f3170d64f86ab31caf0137b5" alt="Farm Yard pack cover: a smiling cow in a meadow"></span>
+      <div class="dl-card">
+        <span class="sc-tag sc-tag--free" style="justify-self: start;">Free · 5 pages</span>
+        <h1 style="margin: 0; font: 800 46px/1.02 var(--font-display); text-wrap: balance;">Farm Yard colouring pack</h1>
+        <p>Cows, sheep and sunny meadows. Print all five free pages, pick single pages below, or colour them online. The rest of the Farm Yard pack is in the app.</p>
+        <div class="dl-card__row">
+          <span style="font-weight: 700; font-size: 16px;">Paper size</span>
+          <div class="seg" role="radiogroup" aria-label="Paper size">
+            <label class="{{a4Class}}"><input type="radio" name="paper" value="a4" checked="{{isA4}}" onChange="{{pickA4}}">A4</label>
+            <label class="{{letterClass}}"><input type="radio" name="paper" value="letter" checked="{{isLetter}}" onChange="{{pickLetter}}">US Letter</label>
+          </div>
+        </div>
+        <div class="dl-card__row">
+          <button class="sc-btn sc-btn--crown sc-btn--kid" type="button" onClick="{{download}}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"></path><path d="M7.5 10.5L12 15l4.5-4.5"></path><path d="M5 19.5h14"></path></svg>Download all 5 pages</button>
+          <a class="sc-btn" href="Studio.dc.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19l1.4-4.6L15.6 5.2a2.1 2.1 0 013 3L9.4 17.4z"></path><path d="M13.6 7.2l3 3"></path><path d="M6.4 14.4l3 3"></path></svg>Colour online</a>
+        </div>
+        <p class="body-s" style="font-size: 16px; line-height: 24px;">{{fileLine}}</p>
+        <sc-if value="{{done}}" hint-placeholder-val="{{false}}"><p role="status" style="color: var(--grass-deep); font-weight: 700;">Your Farm Yard pack is downloading.</p></sc-if>
+      </div>
+    </div>
+  </div>
+  <div class="sky-edge"></div>
+</header>
+
+<section class="section" aria-labelledby="pages-t">
+  <div class="wrap stack">
+    <header class="sc-head">
+      <h2 id="pages-t">Free pages in <mark class="sc-mark">this pack</mark></h2>
+      <p>Five pages to print one at a time, or tap Colour it to colour on screen. The rest of the pack is in the app.</p>
+    </header>
+    <div class="pages">
+      <article class="sc-sheet">
+        <div class="sc-sheet__art"><img src="/_blob/684bb0d721eee05a5558efaa0bb75dca" alt="Line drawing of a curly sheep with a bell, in a meadow with two clouds"></div>
+        <h3 class="sc-sheet__title">Curly sheep</h3>
+        <div class="sc-sheet__actions">
+          <a class="sc-btn sc-btn--crown" href="Studio.dc.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19l1.4-4.6L15.6 5.2a2.1 2.1 0 013 3L9.4 17.4z"></path><path d="M13.6 7.2l3 3"></path><path d="M6.4 14.4l3 3"></path></svg>Colour it</a>
+          <button class="sc-btn" type="button" onClick="{{download}}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"></path><path d="M7.5 10.5L12 15l4.5-4.5"></path><path d="M5 19.5h14"></path></svg>PDF</button>
+        </div>
+      </article>
+      <article class="sc-sheet">
+        <div class="sc-sheet__art"><img src="/_blob/439d3da9acada63e9e43a95316f75f9e" alt="Line drawing of a happy cow with a flower and a bell, standing in grass"></div>
+        <h3 class="sc-sheet__title">Happy cow</h3>
+        <div class="sc-sheet__actions">
+          <a class="sc-btn sc-btn--crown" href="Studio.dc.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19l1.4-4.6L15.6 5.2a2.1 2.1 0 013 3L9.4 17.4z"></path><path d="M13.6 7.2l3 3"></path><path d="M6.4 14.4l3 3"></path></svg>Colour it</a>
+          <button class="sc-btn" type="button" onClick="{{download}}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"></path><path d="M7.5 10.5L12 15l4.5-4.5"></path><path d="M5 19.5h14"></path></svg>PDF</button>
+        </div>
+      </article>
+      <article class="sc-sheet sc-sheet--soon">
+        <div class="sc-sheet__art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7.5" y="3.5" width="11.5" height="15" rx="2"></rect><path d="M5 7v12a1.5 1.5 0 001.5 1.5H15"></path></svg><span>[Farm Yard page 3 artwork]</span></div>
+        <h3 class="sc-sheet__title">[Page 3 name]</h3>
+        <div class="sc-sheet__actions">
+          <a class="sc-btn sc-btn--crown" href="Studio.dc.html">Colour it</a>
+          <button class="sc-btn" type="button" onClick="{{download}}">PDF</button>
+        </div>
+      </article>
+      <article class="sc-sheet sc-sheet--soon">
+        <div class="sc-sheet__art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7.5" y="3.5" width="11.5" height="15" rx="2"></rect><path d="M5 7v12a1.5 1.5 0 001.5 1.5H15"></path></svg><span>[Farm Yard page 4 artwork]</span></div>
+        <h3 class="sc-sheet__title">[Page 4 name]</h3>
+        <div class="sc-sheet__actions">
+          <a class="sc-btn sc-btn--crown" href="Studio.dc.html">Colour it</a>
+          <button class="sc-btn" type="button" onClick="{{download}}">PDF</button>
+        </div>
+      </article>
+      <article class="sc-sheet sc-sheet--soon">
+        <div class="sc-sheet__art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7.5" y="3.5" width="11.5" height="15" rx="2"></rect><path d="M5 7v12a1.5 1.5 0 001.5 1.5H15"></path></svg><span>[Farm Yard page 5 artwork]</span></div>
+        <h3 class="sc-sheet__title">[Page 5 name]</h3>
+        <div class="sc-sheet__actions">
+          <a class="sc-btn sc-btn--crown" href="Studio.dc.html">Colour it</a>
+          <button class="sc-btn" type="button" onClick="{{download}}">PDF</button>
+        </div>
+      </article>
+      <article class="sc-sheet">
+        <div class="sc-sheet__art" style="background: var(--sky-pale); border: 3px dashed var(--outline); align-content: center; gap: 14px; text-align: center; padding: 20px;">
+          <img src="/_blob/85aa977fc7b6e2b2384bddbdf9a7f39b" alt="" style="width: 42%; height: auto;">
+          <span style="font-family: var(--font-display); font-weight: 800; font-size: 22px; line-height: 1.15; color: var(--ink);">More Farm Yard pages in the app</span>
+          <span style="font-size: 16px; line-height: 22px; color: var(--ink-muted);">Colour the rest of the pack on iPad and iPhone.</span>
+        </div>
+        <h3 class="sc-sheet__title">In the app</h3>
+        <div class="sc-sheet__actions">
+          <a class="sc-btn" href="ParentGate.dc.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8.5 10.5V8a3.5 3.5 0 017 0v2.5"></path><path d="M12 14.5v2.5"></path></svg>For grown-ups</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="farm-app-t">
+  <div class="wrap">
+    <aside class="sc-promo">
+      <img class="sc-promo__icon" src="/_blob/85aa977fc7b6e2b2384bddbdf9a7f39b" alt="SmartyColours app icon">
+      <div>
+        <span class="sc-tag sc-tag--grown" style="margin-bottom: 10px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8.5 10.5V8a3.5 3.5 0 017 0v2.5"></path><path d="M12 14.5v2.5"></path></svg>For grown-ups</span>
+        <h3 id="farm-app-t">More Farm Yard pages in the app</h3>
+        <p>The full Farm Yard pack, every other pack, pinch-to-zoom and Apple Pencil on iPad. No ads, and free to try.</p>
+        <div class="sc-promo__row">
+          <a class="sc-badge-link" href="ParentGate.dc.html" aria-label="Download on the App Store"><img src="/_blob/cf5aff94014ab49431b8cce9acc769de" alt="Download on the App Store"></a>
+          <span class="sc-tag">Rated 4+</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="more-t">
+  <div class="wrap stack">
+    <div class="row-between">
+      <header class="sc-head"><h2 id="more-t">More packs to <mark class="sc-mark">print</mark></h2></header>
+      <a class="sc-btn" href="Packs.dc.html">See all packs</a>
+    </div>
+    <div class="more-row">
+      <a class="sc-pack" href="PackDetail.dc.html"><span class="sc-pack__frame"><span class="sc-tag sc-tag--free">Free</span><img src="/_blob/78fc329a4b850b10eb309ddc1aaa97b9" alt=""></span><span class="sc-pack__name">Pets</span><span class="sc-pack__meta">5 free pages · PDF</span></a>
+      <a class="sc-pack" href="PackDetail.dc.html"><span class="sc-pack__frame"><span class="sc-tag sc-tag--free">Free</span><img src="/_blob/2c3ca496179ef2f17fecce0f93e7fff0" alt=""></span><span class="sc-pack__name">Dinosaurs</span><span class="sc-pack__meta">5 free pages · PDF</span></a>
+      <a class="sc-pack" href="PackDetail.dc.html"><span class="sc-pack__frame"><span class="sc-tag sc-tag--free">Free</span><img src="/_blob/e1082468ba0c1c2fdb3764df7a347633" alt=""></span><span class="sc-pack__name">In the Garden</span><span class="sc-pack__meta">5 free pages · PDF</span></a>
+      <a class="sc-pack" href="PackDetail.dc.html"><span class="sc-pack__frame"><span class="sc-tag sc-tag--free">Free</span><img src="/_blob/2fde6a1c0ad74328511bc425b3d8dd61" alt=""></span><span class="sc-pack__name">Summer Holidays</span><span class="sc-pack__meta">5 free pages · PDF</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer class="sc-footer">
+    <a class="sc-logo" href="Main.dc.html" aria-label="SmartyColours home"><img src="/_blob/85aa977fc7b6e2b2384bddbdf9a7f39b" alt=""><span>Smarty<b>Colours</b></span></a>
+    <nav aria-label="Footer"><a href="Studio.dc.html">Colour online</a><a href="Packs.dc.html">Free packs</a><a href="Main.dc.html#grown-ups">For grown-ups</a><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#contact">Contact</a></nav>
+    <p style="margin: 0;">No ads, no accounts, no tracking cookies. © 2026 Scruffy Hipster Ltd.</p>
+  </footer>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"night":{"editor":"boolean","default":false,"section":"Theme"},"$preview":{"width":1440,"height":2900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { paper: 'a4', done: false };
+  }
+  renderVals() {
+    var self = this, a4 = this.state.paper === 'a4';
+    return {
+      theme: this.props.night ? 'dark' : 'light',
+      isA4: a4, isLetter: !a4,
+      a4Class: a4 ? 'on' : '', letterClass: a4 ? '' : 'on',
+      fileLine: a4 ? 'smartycolours-farm-yard-pack-a4.pdf · black and white' : 'smartycolours-farm-yard-pack-letter.pdf · black and white',
+      pickA4: function () { self.setState({ paper: 'a4', done: false }); },
+      pickLetter: function () { self.setState({ paper: 'letter', done: false }); },
+      download: function () { self.setState({ done: true }); },
+      done: this.state.done
+    };
+  }
+}
+</script>
+</body>
+</html>

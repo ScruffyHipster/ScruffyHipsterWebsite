@@ -20,7 +20,7 @@
     "check:tracker-locales": "node scripts/check-tracker-locales.mjs",
     "check:rewire-seo": "node scripts/check-rewire-seo.mjs",
     "test:breastfeeding-timer": "node scripts/test-breastfeeding-timer.mjs",
-    "test:smarty-colours": "node scripts/test-smarty-colours-fill.mjs && node --experimental-vm-modules scripts/test-smarty-colours-privacy.mjs && node scripts/check-smarty-colours.mjs",
+    "test:smarty-colours": "node scripts/test-smarty-colours-fill.mjs && node --experimental-vm-modules scripts/test-smarty-colours-privacy.mjs && node scripts/check-smarty-colours.mjs && node scripts/test-smarty-colours-studio.mjs && node scripts/check-smarty-colours-packs.mjs",
     "test:milk-storage-calculator": "node scripts/test-milk-storage-calculator.mjs"
   },
   "dependencies": {

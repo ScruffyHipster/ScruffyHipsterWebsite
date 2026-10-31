@@ -11,7 +11,7 @@ for (const [, source] of home.matchAll(/<img[^>]+src="([^"]+)"/g)) {
   assert(source.startsWith("/smarty-colours/"), `Home image must be self-hosted: ${source}`);
   await access(join(root, "public", source));
 }
-for (const [, href] of home.matchAll(/href="([^"]+)"/g)) assert(href.startsWith("#") || href === "/apps/smarty-colours/", `Outbound destination escaped the gate: ${href}`);
+for (const [, href] of home.matchAll(/href="([^"]+)"/g)) assert(href.startsWith("#") || /^\/apps\/smarty-colours\/(?:colouring-pages\/(?:[a-z-]+\/)?)?$/.test(href), `Outbound destination escaped the gate: ${href}`);
 const fonts = await readFile(join(root, "src/content/smartyColoursFonts.css"), "utf8");
 assert(!/https?:/.test(fonts), "Fonts must be self-hosted.");
 for (const [, source] of fonts.matchAll(/url\(([^)]+)\)/g)) await access(join(root, "public", source));

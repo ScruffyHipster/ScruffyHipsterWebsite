@@ -1,0 +1,967 @@
+{
+  "version": 1,
+  "basePath": "/apps/smarty-colours",
+  "domain": "scruffyhipster.com",
+  "packs": [
+    {
+      "id": "farm-yard",
+      "name": "Farm Yard",
+      "description": "Meet five friendly farm animals, from a curly sheep to a pony by the fence.",
+      "cover": "/smarty-colours/farm-yard-cover.jpg",
+      "coverAlt": "A smiling orange cow in a grassy field",
+      "sourceCoverRelative": "Farmyard/farmyardThumbnail.jpg",
+      "pages": [
+        {
+          "id": "happy-cow",
+          "slug": "happy-cow",
+          "title": "Happy cow",
+          "alt": "A smiling cow with a flower beside its ear, standing in a field",
+          "description": "A smiling cow with a flower beside its ear, standing in a field. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Farmyard/Assets/farmyard1.png",
+          "image": "/smarty-colours/artwork/happy-cow.png",
+          "sourceSha256": "4e283638448abbbc0708e5c179275adbab22d73d819d5306d271664825739826"
+        },
+        {
+          "id": "curly-sheep",
+          "slug": "curly-sheep",
+          "title": "Curly sheep",
+          "alt": "A smiling sheep with curly wool and a bell in a grassy field",
+          "description": "A smiling sheep with curly wool and a bell in a grassy field. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Farmyard/Assets/farmyard2.png",
+          "image": "/smarty-colours/artwork/curly-sheep.png",
+          "sourceSha256": "789ad1a420d9acb72ddd26d3940c31f14135f025d27d0395cfe2b366fb96b594"
+        },
+        {
+          "id": "pig-in-mud",
+          "slug": "pig-in-mud",
+          "title": "Pig in mud",
+          "alt": "A happy pig splashing in a muddy puddle beside a barn",
+          "description": "A happy pig splashing in a muddy puddle beside a barn. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Farmyard/Assets/farmyard3.png",
+          "image": "/smarty-colours/artwork/pig-in-mud.png",
+          "sourceSha256": "0b817c9ad6ee8e6a298146d08f10381c8b81616ded279b4d1e68dc8188372994"
+        },
+        {
+          "id": "farm-yard-cheerful-cockerel",
+          "slug": "cheerful-cockerel",
+          "title": "Cheerful cockerel",
+          "alt": "A cockerel standing on a fence post under two clouds",
+          "description": "A cockerel standing on a fence post under two clouds. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Farmyard/Assets/farmyard4.png",
+          "image": "/smarty-colours/artwork/farm-yard-cheerful-cockerel.png",
+          "sourceSha256": "c6291841faa44508fa2d8bbfd46862af1127211d820e1c468afffb3f5a1372e6"
+        },
+        {
+          "id": "farm-yard-pony-by-the-fence",
+          "slug": "pony-by-the-fence",
+          "title": "Pony by the fence",
+          "alt": "A friendly pony with flowers in its mane beside a wooden fence",
+          "description": "A friendly pony with flowers in its mane beside a wooden fence. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Farmyard/Assets/farmyard5.png",
+          "image": "/smarty-colours/artwork/farm-yard-pony-by-the-fence.png",
+          "sourceSha256": "6ee1789b1dafc7214b1682f9521ad6f112144124cb00e7ccf872b24203932b6d"
+        }
+      ]
+    },
+    {
+      "id": "summer-holidays",
+      "name": "Summer Holidays",
+      "description": "Bring summer to the page with sandcastles, a picnic, a kite and seaside treats.",
+      "cover": "/smarty-colours/summer-holidays-cover.jpg",
+      "coverAlt": "A child building a sandcastle by the sea",
+      "sourceCoverRelative": "Summerholidays/summerHolidaysThumbnail.jpg",
+      "pages": [
+        {
+          "id": "sandcastle-day",
+          "slug": "sandcastle-day",
+          "title": "Sandcastle day",
+          "alt": "A child building a sandcastle beside a bucket, a crab and a beach ball",
+          "description": "A child building a sandcastle beside a bucket, a crab and a beach ball. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Summerholidays/summerholiday1.png",
+          "image": "/smarty-colours/artwork/sandcastle-day.png",
+          "sourceSha256": "190f833ffeef00b188633ce49a8e8c324eda64f16816c6f019e1a0aa5e64754a"
+        },
+        {
+          "id": "summer-holidays-dragon-kite",
+          "slug": "dragon-kite",
+          "title": "Dragon kite",
+          "alt": "A smiling child flying a dragon-shaped kite above flowers",
+          "description": "A smiling child flying a dragon-shaped kite above flowers. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Summerholidays/summerholiday6.png",
+          "image": "/smarty-colours/artwork/summer-holidays-dragon-kite.png",
+          "sourceSha256": "2583b834ee9bfa01c20eedb2f971e631e874671f49b5cbe4ad9c13725160c7ac"
+        },
+        {
+          "id": "summer-holidays-picnic-basket",
+          "slug": "picnic-basket",
+          "title": "Picnic basket",
+          "alt": "A picnic basket, sandwiches and watermelon on a blanket with bees and flowers",
+          "description": "A picnic basket, sandwiches and watermelon on a blanket with bees and flowers. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Summerholidays/summerholiday12.png",
+          "image": "/smarty-colours/artwork/summer-holidays-picnic-basket.png",
+          "sourceSha256": "db0cea8cc9750524d7afd19bbb026019c700eee10cf69b1b1fffed1ceb5be1d2"
+        },
+        {
+          "id": "summer-holidays-surfing-penguin",
+          "slug": "surfing-penguin",
+          "title": "Surfing penguin",
+          "alt": "A penguin wearing sunglasses and a flowered shirt riding a surfboard",
+          "description": "A penguin wearing sunglasses and a flowered shirt riding a surfboard. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Summerholidays/summerholiday14.png",
+          "image": "/smarty-colours/artwork/summer-holidays-surfing-penguin.png",
+          "sourceSha256": "6126e775cdcb95c55b9804d347d1cab0c61a74789a20bc7e563f9a9389701124"
+        },
+        {
+          "id": "summer-holidays-smiling-ice-cream",
+          "slug": "smiling-ice-cream",
+          "title": "Smiling ice cream",
+          "alt": "A smiling ice cream cone with sprinkles, flowers and a cherry",
+          "description": "A smiling ice cream cone with sprinkles, flowers and a cherry. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Summerholidays/summerholiday15.png",
+          "image": "/smarty-colours/artwork/summer-holidays-smiling-ice-cream.png",
+          "sourceSha256": "b32f489f288faa7a78032e444b46cb1a65f8afe3d01c78543a1553b85b4bddb7"
+        }
+      ]
+    },
+    {
+      "id": "unicorns",
+      "name": "Unicorns",
+      "description": "Find a gentle unicorn, a sleepy cloud and three magical adventures.",
+      "cover": "/smarty-colours/unicorns-cover.jpg",
+      "coverAlt": "A pink mermaid unicorn wearing a crown",
+      "sourceCoverRelative": "Unicorns/unicornThumbnail.jpg",
+      "pages": [
+        {
+          "id": "unicorns-gentle-unicorn",
+          "slug": "gentle-unicorn",
+          "title": "Gentle unicorn",
+          "alt": "A gentle unicorn with a flowing mane and tail",
+          "description": "A gentle unicorn with a flowing mane and tail. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Unicorns/unicorn1.png",
+          "image": "/smarty-colours/artwork/unicorns-gentle-unicorn.png",
+          "sourceSha256": "31c07b5a57c895adef215c5eb2c6f22dd9dffeebcf0c0ae90c7d9a6031a59fda"
+        },
+        {
+          "id": "unicorns-sleepy-cloud-unicorn",
+          "slug": "sleepy-cloud-unicorn",
+          "title": "Sleepy cloud unicorn",
+          "alt": "A unicorn sleeping on a cloud beneath a crescent moon and stars",
+          "description": "A unicorn sleeping on a cloud beneath a crescent moon and stars. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Unicorns/unicorn4.png",
+          "image": "/smarty-colours/artwork/unicorns-sleepy-cloud-unicorn.png",
+          "sourceSha256": "b2dd05b68ee4516aa60e02e095338fd50f1369d142a69cf0c03e39058a5111d9"
+        },
+        {
+          "id": "unicorns-mermaid-unicorn",
+          "slug": "mermaid-unicorn",
+          "title": "Mermaid unicorn",
+          "alt": "A smiling unicorn with a mermaid tail swimming among bubbles",
+          "description": "A smiling unicorn with a mermaid tail swimming among bubbles. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Unicorns/unicorn6.png",
+          "image": "/smarty-colours/artwork/unicorns-mermaid-unicorn.png",
+          "sourceSha256": "b1e6bbf23b6d54fb2857b7633114cc61b119f31806f0a0ee3dd0707277c9f0e1"
+        },
+        {
+          "id": "unicorns-robot-unicorn",
+          "slug": "robot-unicorn",
+          "title": "Robot unicorn",
+          "alt": "A mechanical unicorn with jointed legs and a gear on its side",
+          "description": "A mechanical unicorn with jointed legs and a gear on its side. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Unicorns/unicorn10.png",
+          "image": "/smarty-colours/artwork/unicorns-robot-unicorn.png",
+          "sourceSha256": "96e113b73a81586354270e565a66fca2cf1072ee4d938e804b43f2367d96d69a"
+        },
+        {
+          "id": "unicorns-space-unicorn",
+          "slug": "space-unicorn",
+          "title": "Space unicorn",
+          "alt": "A unicorn astronaut floating beside a rocket, stars and a ringed planet",
+          "description": "A unicorn astronaut floating beside a rocket, stars and a ringed planet. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Unicorns/unicorn12.png",
+          "image": "/smarty-colours/artwork/unicorns-space-unicorn.png",
+          "sourceSha256": "b0061886906abcfa3e1e184572d9882dddb751971e77e5340c491d03fd50f754"
+        }
+      ]
+    },
+    {
+      "id": "christmas",
+      "name": "Christmas",
+      "description": "Colour Father Christmas, a penguin, a reindeer, a tree and a gingerbread house.",
+      "cover": "/smarty-colours/christmas-cover.jpg",
+      "coverAlt": "Father Christmas waving in a red suit",
+      "sourceCoverRelative": "Christmas/christmasThumbnail.jpg",
+      "pages": [
+        {
+          "id": "christmas-christmas-penguin",
+          "slug": "christmas-penguin",
+          "title": "Christmas penguin",
+          "alt": "A penguin wearing a Father Christmas hat and a patterned jumper",
+          "description": "A penguin wearing a Father Christmas hat and a patterned jumper. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Christmas/christmas1.png",
+          "image": "/smarty-colours/artwork/christmas-christmas-penguin.png",
+          "sourceSha256": "c14d707a585e57127395f48d2accae5400c258f333c2347ba66a20053f969337"
+        },
+        {
+          "id": "christmas-bell-collar-reindeer",
+          "slug": "bell-collar-reindeer",
+          "title": "Bell-collar reindeer",
+          "alt": "A smiling reindeer with antlers and a collar of bells",
+          "description": "A smiling reindeer with antlers and a collar of bells. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Christmas/christmas2.png",
+          "image": "/smarty-colours/artwork/christmas-bell-collar-reindeer.png",
+          "sourceSha256": "7cf974fdc5b231c82342fe919d80dcd6ce2791eb417232f94931b62fa88f2f1d"
+        },
+        {
+          "id": "christmas-waving-father-christmas",
+          "slug": "waving-father-christmas",
+          "title": "Waving Father Christmas",
+          "alt": "Father Christmas waving with one hand and carrying a sack over his shoulder",
+          "description": "Father Christmas waving with one hand and carrying a sack over his shoulder. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Christmas/christmas7.png",
+          "image": "/smarty-colours/artwork/christmas-waving-father-christmas.png",
+          "sourceSha256": "88036f1efb31b5a39f585adc2e2f5580386aff1314779cfa91625d89a97b5e10"
+        },
+        {
+          "id": "christmas-christmas-tree",
+          "slug": "christmas-tree",
+          "title": "Christmas tree",
+          "alt": "A Christmas tree decorated with baubles, candy canes and a star",
+          "description": "A Christmas tree decorated with baubles, candy canes and a star. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Christmas/christmas8.png",
+          "image": "/smarty-colours/artwork/christmas-christmas-tree.png",
+          "sourceSha256": "228cef900dc72630cea40a024a2e906d2bc8d07493420a974cb56192f58fed8b"
+        },
+        {
+          "id": "christmas-gingerbread-house",
+          "slug": "gingerbread-house",
+          "title": "Gingerbread house",
+          "alt": "A smiling gingerbread house decorated with sweets and candy canes",
+          "description": "A smiling gingerbread house decorated with sweets and candy canes. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Christmas/christmas9.png",
+          "image": "/smarty-colours/artwork/christmas-gingerbread-house.png",
+          "sourceSha256": "f12ee489c351ee68cbcd3e02b984bd510bfb6da7680511e638cb0c9434804a89"
+        }
+      ]
+    },
+    {
+      "id": "easter",
+      "name": "Easter",
+      "description": "Meet springtime bunnies, a butterfly, a hatching chick and a little lamb.",
+      "cover": "/smarty-colours/easter-cover.jpg",
+      "coverAlt": "A bunny and a chick standing among spring flowers",
+      "sourceCoverRelative": "Easter/easterThumbnail.png",
+      "pages": [
+        {
+          "id": "easter-basket-bunny",
+          "slug": "basket-bunny",
+          "title": "Basket bunny",
+          "alt": "A bunny carrying a basket of spring flowers through a meadow",
+          "description": "A bunny carrying a basket of spring flowers through a meadow. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Easter/Assets/easter1.png",
+          "image": "/smarty-colours/artwork/easter-basket-bunny.png",
+          "sourceSha256": "c66c73c3f0dc043c96fae3ef3f46af16eb35413669a943caacbdcd51402bbd99"
+        },
+        {
+          "id": "easter-spring-butterfly",
+          "slug": "spring-butterfly",
+          "title": "Spring butterfly",
+          "alt": "A patterned butterfly hovering above three spring flowers",
+          "description": "A patterned butterfly hovering above three spring flowers. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Easter/Assets/easter2.png",
+          "image": "/smarty-colours/artwork/easter-spring-butterfly.png",
+          "sourceSha256": "d993699f0aa458d06cf2467c50db47f2b7e4182cf354bed92e5636d1bb252484"
+        },
+        {
+          "id": "easter-hatching-chick",
+          "slug": "hatching-chick",
+          "title": "Hatching chick",
+          "alt": "A wide-eyed chick emerging from a cracked egg",
+          "description": "A wide-eyed chick emerging from a cracked egg. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Easter/Assets/easter6.png",
+          "image": "/smarty-colours/artwork/easter-hatching-chick.png",
+          "sourceSha256": "e5db359ac6cd01285ed5764fa26aacf247a6c8ec13c937cf5babfff7263c6692"
+        },
+        {
+          "id": "easter-bunny-and-chick",
+          "slug": "bunny-and-chick",
+          "title": "Bunny and chick",
+          "alt": "A bunny and a chick standing together among flowers and grass",
+          "description": "A bunny and a chick standing together among flowers and grass. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Easter/Assets/easter8.png",
+          "image": "/smarty-colours/artwork/easter-bunny-and-chick.png",
+          "sourceSha256": "a48f80e2a70779eaa3769608dd23e8fa5edd51c655859a2ca285686483f82913"
+        },
+        {
+          "id": "easter-spring-lamb",
+          "slug": "spring-lamb",
+          "title": "Spring lamb",
+          "alt": "A smiling lamb with fluffy wool standing on grass",
+          "description": "A smiling lamb with fluffy wool standing on grass. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Easter/Assets/easter10.png",
+          "image": "/smarty-colours/artwork/easter-spring-lamb.png",
+          "sourceSha256": "234928e31f5548a7cffd822d28aada902fac82e9990cd8af73507ae9e6c7aa1d"
+        }
+      ]
+    },
+    {
+      "id": "halloween",
+      "name": "Halloween",
+      "description": "Choose a smiling pumpkin, a bow-tie ghost and three friendly Halloween characters.",
+      "cover": "/smarty-colours/halloween-cover.jpg",
+      "coverAlt": "A smiling pumpkin in a purple witch hat with autumn leaves",
+      "sourceCoverRelative": "Halloween/halloweenThumbnail.jpg",
+      "pages": [
+        {
+          "id": "halloween-witch-hat-pumpkin",
+          "slug": "witch-hat-pumpkin",
+          "title": "Witch-hat pumpkin",
+          "alt": "A smiling pumpkin wearing a witch hat and surrounded by autumn leaves",
+          "description": "A smiling pumpkin wearing a witch hat and surrounded by autumn leaves. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Halloween/halloween1.png",
+          "image": "/smarty-colours/artwork/halloween-witch-hat-pumpkin.png",
+          "sourceSha256": "38d1103701512134eeef1a598da15350daec30ddcf5dfd1603afb574fb545b31"
+        },
+        {
+          "id": "halloween-bow-tie-ghost",
+          "slug": "bow-tie-ghost",
+          "title": "Bow-tie ghost",
+          "alt": "A smiling ghost wearing a bow tie and waving beside stars",
+          "description": "A smiling ghost wearing a bow tie and waving beside stars. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Halloween/halloween2.png",
+          "image": "/smarty-colours/artwork/halloween-bow-tie-ghost.png",
+          "sourceSha256": "15971b478d91d082758634c09f900f8f72587dcfa3e37259e42aa388fd7702de"
+        },
+        {
+          "id": "halloween-waving-mummy",
+          "slug": "waving-mummy",
+          "title": "Waving mummy",
+          "alt": "A smiling bandaged mummy waving and holding a pumpkin bucket",
+          "description": "A smiling bandaged mummy waving and holding a pumpkin bucket. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Halloween/halloween4.png",
+          "image": "/smarty-colours/artwork/halloween-waving-mummy.png",
+          "sourceSha256": "6af92286882737876f0bd2783b315137fda2666681354d953874c0f03d0ab6c2"
+        },
+        {
+          "id": "halloween-cat-on-the-moon",
+          "slug": "cat-on-the-moon",
+          "title": "Cat on the moon",
+          "alt": "A wide-eyed cat sitting on a crescent moon among stars",
+          "description": "A wide-eyed cat sitting on a crescent moon among stars. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Halloween/halloween5.png",
+          "image": "/smarty-colours/artwork/halloween-cat-on-the-moon.png",
+          "sourceSha256": "76d00d8b8b626fd13d0c0c2d636dd23fa7c76689f7ada56c48dc3bdf7db843e7"
+        },
+        {
+          "id": "halloween-smiling-bat",
+          "slug": "smiling-bat",
+          "title": "Smiling bat",
+          "alt": "A smiling bat spreading its wings with sweets around it",
+          "description": "A smiling bat spreading its wings with sweets around it. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Halloween/halloween6.png",
+          "image": "/smarty-colours/artwork/halloween-smiling-bat.png",
+          "sourceSha256": "a15dde4fdd7c0f6d96219a30a342e9f848f821878040cb40bdd3a2b573e9db87"
+        }
+      ]
+    },
+    {
+      "id": "autumn",
+      "name": "Autumn",
+      "description": "Explore pumpkins, woodland friends, mushrooms and falling leaves.",
+      "cover": "/smarty-colours/autumn-cover.jpg",
+      "coverAlt": "Orange pumpkins surrounded by golden autumn leaves",
+      "sourceCoverRelative": "Autumn/autumnThumbnail.jpg",
+      "pages": [
+        {
+          "id": "autumn-pumpkins-and-leaves",
+          "slug": "pumpkins-and-leaves",
+          "title": "Pumpkins and leaves",
+          "alt": "A group of pumpkins surrounded by falling autumn leaves",
+          "description": "A group of pumpkins surrounded by falling autumn leaves. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Autumn/autumn1.png",
+          "image": "/smarty-colours/artwork/autumn-pumpkins-and-leaves.png",
+          "sourceSha256": "d91c6a7de67f49500f37a1e316ceb057d6d4d931c927797533935ed85c9eecb1"
+        },
+        {
+          "id": "autumn-woodland-friends",
+          "slug": "woodland-friends",
+          "title": "Woodland friends",
+          "alt": "A fox, a squirrel and a hedgehog among trees, acorns and autumn leaves",
+          "description": "A fox, a squirrel and a hedgehog among trees, acorns and autumn leaves. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Autumn/autumn3.png",
+          "image": "/smarty-colours/artwork/autumn-woodland-friends.png",
+          "sourceSha256": "a6a301ff41ae1de74f57dd4928d2db9b75df0e3a3672386640bedf95c4505947"
+        },
+        {
+          "id": "autumn-friendly-scarecrow",
+          "slug": "friendly-scarecrow",
+          "title": "Friendly scarecrow",
+          "alt": "A smiling scarecrow in a hat standing among tall corn plants",
+          "description": "A smiling scarecrow in a hat standing among tall corn plants. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Autumn/autumn4.png",
+          "image": "/smarty-colours/artwork/autumn-friendly-scarecrow.png",
+          "sourceSha256": "18ae4b94b57dd39a5792a69dd53851a1abf2f02ab5c08206823785e74a7935a3"
+        },
+        {
+          "id": "autumn-woodland-mushrooms",
+          "slug": "woodland-mushrooms",
+          "title": "Woodland mushrooms",
+          "alt": "Two spotted mushrooms growing among grass and fallen leaves",
+          "description": "Two spotted mushrooms growing among grass and fallen leaves. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Autumn/autumn10.png",
+          "image": "/smarty-colours/artwork/autumn-woodland-mushrooms.png",
+          "sourceSha256": "90418f5472ae6ce4c345b984c2193ddf0d796c187ad4d1129f5c17103a79e329"
+        },
+        {
+          "id": "autumn-autumn-owl",
+          "slug": "autumn-owl",
+          "title": "Autumn owl",
+          "alt": "An owl sitting on a branch surrounded by autumn leaves",
+          "description": "An owl sitting on a branch surrounded by autumn leaves. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Autumn/autumn14.png",
+          "image": "/smarty-colours/artwork/autumn-autumn-owl.png",
+          "sourceSha256": "9773ed5095f60e6c48142c528cf2682c891e2bc1bc2e1c3bc35b4baa2b42ebce"
+        }
+      ]
+    },
+    {
+      "id": "princesses",
+      "name": "Princesses",
+      "description": "Join a princess at her castle, with a dragon, in a laboratory and at story time.",
+      "cover": "/smarty-colours/princesses-cover.jpg",
+      "coverAlt": "A fairy princess with a crown, wings and a star wand",
+      "sourceCoverRelative": "Princesses/princessThumbnail.jpg",
+      "pages": [
+        {
+          "id": "princess-and-castle",
+          "slug": "princess-and-castle",
+          "title": "Princess and castle",
+          "alt": "A princess waving on a terrace beside a fairy-tale castle",
+          "description": "A princess waving on a terrace beside a fairy-tale castle. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Princesses/princess1.png",
+          "image": "/smarty-colours/artwork/princess-and-castle.png",
+          "sourceSha256": "fd726a40b98b967e4732aa139235f811d2cc8f298239f4ec935d5133157043b2"
+        },
+        {
+          "id": "princesses-star-wand-princess",
+          "slug": "star-wand-princess",
+          "title": "Star-wand princess",
+          "alt": "A smiling princess holding a star wand among sparkling stars",
+          "description": "A smiling princess holding a star wand among sparkling stars. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Princesses/princess5.png",
+          "image": "/smarty-colours/artwork/princesses-star-wand-princess.png",
+          "sourceSha256": "06e5a256161497328a502500496fda7c0c46cac20d9b286f94ad68a210f2be6a"
+        },
+        {
+          "id": "princesses-dragon-knight-princess",
+          "slug": "dragon-knight-princess",
+          "title": "Dragon-knight princess",
+          "alt": "A princess wearing armour and carrying a shield beside a friendly dragon",
+          "description": "A princess wearing armour and carrying a shield beside a friendly dragon. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Princesses/princess6.png",
+          "image": "/smarty-colours/artwork/princesses-dragon-knight-princess.png",
+          "sourceSha256": "5e485bea8186ac19cf08de8761d4af6c78cc275ca8e16705d6be818c5639f114"
+        },
+        {
+          "id": "princesses-scientist-princess",
+          "slug": "scientist-princess",
+          "title": "Scientist princess",
+          "alt": "A princess wearing glasses and a laboratory coat beside science equipment and books",
+          "description": "A princess wearing glasses and a laboratory coat beside science equipment and books. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Princesses/princess11.png",
+          "image": "/smarty-colours/artwork/princesses-scientist-princess.png",
+          "sourceSha256": "b9e1ff824943bb5dfe52abbb740b70bd0c86c958fa120bdd1032b23e30ce0f1a"
+        },
+        {
+          "id": "princesses-storytime-princess",
+          "slug": "storytime-princess",
+          "title": "Storytime princess",
+          "alt": "A princess reading a book beside a sleeping cat and a bookshelf",
+          "description": "A princess reading a book beside a sleeping cat and a bookshelf. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Princesses/princess13.png",
+          "image": "/smarty-colours/artwork/princesses-storytime-princess.png",
+          "sourceSha256": "907bf1bd877a936234f813e6b49c51981fc5419ac0f333d5a9b34397bb25e748"
+        }
+      ]
+    },
+    {
+      "id": "dinosaurs",
+      "name": "Dinosaurs",
+      "description": "Meet a friendly long-neck dinosaur, a hatchling, a drummer and more.",
+      "cover": "/smarty-colours/dinosaurs-cover.jpg",
+      "coverAlt": "A green baby dinosaur hatching from a yellow egg",
+      "sourceCoverRelative": "Dinosaurs/dinosaurThumbnail.jpg",
+      "pages": [
+        {
+          "id": "friendly-dinosaur",
+          "slug": "friendly-dinosaur",
+          "title": "Friendly dinosaur",
+          "alt": "A smiling long-neck dinosaur with spots and rounded spikes",
+          "description": "A smiling long-neck dinosaur with spots and rounded spikes. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Dinosaurs/dinosaur1.png",
+          "image": "/smarty-colours/artwork/friendly-dinosaur.png",
+          "sourceSha256": "bf511c705f249ed17f5976351784ef3dc0f05b154160ebc7082d4780bfbea6c5"
+        },
+        {
+          "id": "dinosaurs-balloon-dinosaur",
+          "slug": "balloon-dinosaur",
+          "title": "Balloon dinosaur",
+          "alt": "A smiling dinosaur holding a round balloon",
+          "description": "A smiling dinosaur holding a round balloon. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Dinosaurs/dinosaur2.png",
+          "image": "/smarty-colours/artwork/dinosaurs-balloon-dinosaur.png",
+          "sourceSha256": "4b0727e075268d813467dff28406fc9599683fdddfcb45bcecf41e89c1370ccb"
+        },
+        {
+          "id": "dinosaurs-sleepy-stegosaurus",
+          "slug": "sleepy-stegosaurus",
+          "title": "Sleepy stegosaurus",
+          "alt": "A stegosaurus sleeping beneath a palm tree",
+          "description": "A stegosaurus sleeping beneath a palm tree. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Dinosaurs/dinosaur3.png",
+          "image": "/smarty-colours/artwork/dinosaurs-sleepy-stegosaurus.png",
+          "sourceSha256": "7b41ffe84353290ddcceedabadca8b734e4db34a018666e59eb595a53045aa94"
+        },
+        {
+          "id": "dinosaurs-drumming-triceratops",
+          "slug": "drumming-triceratops",
+          "title": "Drumming triceratops",
+          "alt": "A triceratops playing a drum with two drumsticks",
+          "description": "A triceratops playing a drum with two drumsticks. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Dinosaurs/dinosaur5.png",
+          "image": "/smarty-colours/artwork/dinosaurs-drumming-triceratops.png",
+          "sourceSha256": "d03e3177bcd4509b0da0a51ba5d326c3a010624cae58ebedb36da03d1f296019"
+        },
+        {
+          "id": "dinosaurs-hatching-dinosaur",
+          "slug": "hatching-dinosaur",
+          "title": "Hatching dinosaur",
+          "alt": "A smiling baby dinosaur waving from a cracked spotted egg",
+          "description": "A smiling baby dinosaur waving from a cracked spotted egg. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Dinosaurs/dinosaur8.png",
+          "image": "/smarty-colours/artwork/dinosaurs-hatching-dinosaur.png",
+          "sourceSha256": "77c3f54ff0bc219784e39b655f78fab38e78044ab5b41e6ddf5599baa17c5ebd"
+        }
+      ]
+    },
+    {
+      "id": "zoo",
+      "name": "Zoo Animals",
+      "description": "Colour a lion, a giraffe, a panda, an elephant and a playful monkey.",
+      "cover": "/smarty-colours/zoo-cover.jpg",
+      "coverAlt": "A smiling monkey holding a banana on a tree branch",
+      "sourceCoverRelative": "ZooAnimals/zooThumbnail.jpg",
+      "pages": [
+        {
+          "id": "zoo-smiling-lion",
+          "slug": "smiling-lion",
+          "title": "Smiling lion",
+          "alt": "A smiling lion sitting among leafy plants beneath clouds",
+          "description": "A smiling lion sitting among leafy plants beneath clouds. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "ZooAnimals/zoo1.png",
+          "image": "/smarty-colours/artwork/zoo-smiling-lion.png",
+          "sourceSha256": "f5898e6b592bee23a8bdc62d576d926d80ddd9dadfe40bbd3228f8407cf8cf27"
+        },
+        {
+          "id": "zoo-tall-giraffe",
+          "slug": "tall-giraffe",
+          "title": "Tall giraffe",
+          "alt": "A spotted giraffe standing beside a tree and flowers in the sunshine",
+          "description": "A spotted giraffe standing beside a tree and flowers in the sunshine. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "ZooAnimals/zoo2.png",
+          "image": "/smarty-colours/artwork/zoo-tall-giraffe.png",
+          "sourceSha256": "a5d7dcae4e90bcd8e6b2dd6dff0fcebd47143cfbbb5313b40990000d13faeb27"
+        },
+        {
+          "id": "zoo-bamboo-panda",
+          "slug": "bamboo-panda",
+          "title": "Bamboo panda",
+          "alt": "A panda holding bamboo while sitting among bamboo stems",
+          "description": "A panda holding bamboo while sitting among bamboo stems. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "ZooAnimals/zoo3.png",
+          "image": "/smarty-colours/artwork/zoo-bamboo-panda.png",
+          "sourceSha256": "65d0551c52da373e521380b6eb76f9ec8d3ad72716264e0b3ca092387a08447e"
+        },
+        {
+          "id": "zoo-splashing-elephant",
+          "slug": "splashing-elephant",
+          "title": "Splashing elephant",
+          "alt": "A smiling elephant spraying water from its trunk beside a puddle",
+          "description": "A smiling elephant spraying water from its trunk beside a puddle. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "ZooAnimals/zoo6.png",
+          "image": "/smarty-colours/artwork/zoo-splashing-elephant.png",
+          "sourceSha256": "248c81df49529bd0d65e9cbca72ba63b7c97887f6c535da8e42cd789af418372"
+        },
+        {
+          "id": "zoo-banana-monkey",
+          "slug": "banana-monkey",
+          "title": "Banana monkey",
+          "alt": "A smiling monkey holding a banana while sitting on a leafy branch",
+          "description": "A smiling monkey holding a banana while sitting on a leafy branch. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "ZooAnimals/zoo5.png",
+          "image": "/smarty-colours/artwork/zoo-banana-monkey.png",
+          "sourceSha256": "12561c54aea05551aa9cd5e41cfd8e1a33c773618dab6661e11d25fa4502f9bd"
+        }
+      ]
+    },
+    {
+      "id": "space",
+      "name": "Space",
+      "description": "Launch a rocket, meet an alien astronaut and explore a sky full of stars.",
+      "cover": "/smarty-colours/space-cover.jpg",
+      "coverAlt": "Three smiling green aliens jumping on a moon beneath a starry sky",
+      "sourceCoverRelative": "Space/spaceThumbnail.jpg",
+      "pages": [
+        {
+          "id": "space-rocket-launch",
+          "slug": "rocket-launch",
+          "title": "Rocket launch",
+          "alt": "A rocket launching among stars and planets",
+          "description": "A rocket launching among stars and planets. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Space/space1.png",
+          "image": "/smarty-colours/artwork/space-rocket-launch.png",
+          "sourceSha256": "28559759b43d6660c63adbf9028eb9c3c852da26f4cd8a7c11dce555020fc079"
+        },
+        {
+          "id": "space-alien-astronaut",
+          "slug": "alien-astronaut",
+          "title": "Alien astronaut",
+          "alt": "A friendly alien in a space suit waving among stars and planets",
+          "description": "A friendly alien in a space suit waving among stars and planets. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Space/space4.png",
+          "image": "/smarty-colours/artwork/space-alien-astronaut.png",
+          "sourceSha256": "274a6206c4a5bcff87bfcca55c2672b16226c5146e2d66f68f4232b856cfe433"
+        },
+        {
+          "id": "space-smiling-ringed-planet",
+          "slug": "smiling-ringed-planet",
+          "title": "Smiling ringed planet",
+          "alt": "A smiling ringed planet surrounded by stars",
+          "description": "A smiling ringed planet surrounded by stars. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Space/space5.png",
+          "image": "/smarty-colours/artwork/space-smiling-ringed-planet.png",
+          "sourceSha256": "b1382939d51b4a6179d5d51eebfb9dc705cf12f6799ff8f7d41ca8ef3ecb7c64"
+        },
+        {
+          "id": "space-shooting-star",
+          "slug": "shooting-star",
+          "title": "Shooting star",
+          "alt": "A large shooting star with a long trail and smaller stars",
+          "description": "A large shooting star with a long trail and smaller stars. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Space/space11.png",
+          "image": "/smarty-colours/artwork/space-shooting-star.png",
+          "sourceSha256": "75996cd858576170ea4c2d6d752759229c7213b89881fe823e98d96fc8475ee0"
+        },
+        {
+          "id": "space-moon-dancing-aliens",
+          "slug": "moon-dancing-aliens",
+          "title": "Moon-dancing aliens",
+          "alt": "Three smiling aliens jumping on a cratered moon beneath a smiling moon",
+          "description": "Three smiling aliens jumping on a cratered moon beneath a smiling moon. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Space/space14.png",
+          "image": "/smarty-colours/artwork/space-moon-dancing-aliens.png",
+          "sourceSha256": "49f260d217b7f1b2384a76346e2f26a77af202458aafa261fc9bc8efa6ae27eb"
+        }
+      ]
+    },
+    {
+      "id": "under-the-sea",
+      "name": "Under the Sea",
+      "description": "Meet five sea creatures: a fish, an octopus, a turtle, a jellyfish and a dolphin.",
+      "cover": "/smarty-colours/under-the-sea-cover.jpg",
+      "coverAlt": "A blue dolphin leaping out of the sea beneath a smiling sun",
+      "sourceCoverRelative": "Underthesea/undertheseaThumbnail.jpg",
+      "pages": [
+        {
+          "id": "under-the-sea-happy-fish",
+          "slug": "happy-fish",
+          "title": "Happy fish",
+          "alt": "A friendly fish swimming above seaweed and pebbles",
+          "description": "A friendly fish swimming above seaweed and pebbles. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Underthesea/underthesea1.png",
+          "image": "/smarty-colours/artwork/under-the-sea-happy-fish.png",
+          "sourceSha256": "36a2eae845d3e82c1eedc59b47367c5e5dcf3215e118b821b73d15956e442fea"
+        },
+        {
+          "id": "under-the-sea-smiling-octopus",
+          "slug": "smiling-octopus",
+          "title": "Smiling octopus",
+          "alt": "A smiling octopus resting among shells and coral",
+          "description": "A smiling octopus resting among shells and coral. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Underthesea/underthesea2.png",
+          "image": "/smarty-colours/artwork/under-the-sea-smiling-octopus.png",
+          "sourceSha256": "b1c28bc1716bfa73b607a7206aa4b92501d46d97a0e41ad10bf8501f10f805bc"
+        },
+        {
+          "id": "under-the-sea-swimming-turtle",
+          "slug": "swimming-turtle",
+          "title": "Swimming turtle",
+          "alt": "A sea turtle swimming with little fish above coral",
+          "description": "A sea turtle swimming with little fish above coral. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Underthesea/underthesea3.png",
+          "image": "/smarty-colours/artwork/under-the-sea-swimming-turtle.png",
+          "sourceSha256": "4ca6df350479d651916bb0b23587d5833b5203391eb6786713447f69137c1852"
+        },
+        {
+          "id": "under-the-sea-gentle-jellyfish",
+          "slug": "gentle-jellyfish",
+          "title": "Gentle jellyfish",
+          "alt": "A smiling jellyfish floating beneath bubbles with long trailing tentacles",
+          "description": "A smiling jellyfish floating beneath bubbles with long trailing tentacles. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Underthesea/underthesea12.png",
+          "image": "/smarty-colours/artwork/under-the-sea-gentle-jellyfish.png",
+          "sourceSha256": "acddb0152f8de6b5a1e18cfde18583f6dcae23c1db34dc55e67c6c955313b73c"
+        },
+        {
+          "id": "under-the-sea-leaping-dolphin",
+          "slug": "leaping-dolphin",
+          "title": "Leaping dolphin",
+          "alt": "A dolphin leaping out of the sea beside small fish and clouds",
+          "description": "A dolphin leaping out of the sea beside small fish and clouds. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Underthesea/underthesea15.png",
+          "image": "/smarty-colours/artwork/under-the-sea-leaping-dolphin.png",
+          "sourceSha256": "b0d316cf06f40d418a2ad57c8d96419392506fb46d20c3358dd0f6c97cd96cab"
+        }
+      ]
+    },
+    {
+      "id": "robots",
+      "name": "Robots",
+      "description": "Send a robot into space, explore a jungle, paint a picture, cook and garden.",
+      "cover": "/smarty-colours/robots-cover.jpg",
+      "coverAlt": "A yellow and blue robot watering a flower",
+      "sourceCoverRelative": "Robots/robotsThumbnail.jpg",
+      "pages": [
+        {
+          "id": "robot-astronaut",
+          "slug": "robot-astronaut",
+          "title": "Robot astronaut",
+          "alt": "A friendly robot astronaut floating among stars and a moon",
+          "description": "A friendly robot astronaut floating among stars and a moon. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Robots/robot1.png",
+          "image": "/smarty-colours/artwork/robot-astronaut.png",
+          "sourceSha256": "804742d1cebf7d17ba3e540d1bda8726b6441a6327fb26f254ff1f5cb3f74e10"
+        },
+        {
+          "id": "robots-jungle-explorer",
+          "slug": "jungle-explorer",
+          "title": "Jungle explorer",
+          "alt": "A robot wearing an explorer hat and holding a map beside jungle plants",
+          "description": "A robot wearing an explorer hat and holding a map beside jungle plants. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Robots/robot3.png",
+          "image": "/smarty-colours/artwork/robots-jungle-explorer.png",
+          "sourceSha256": "2aca82a87e75fc241c7e7278182801d8a1cec5afae12cd16125649844e36fbf9"
+        },
+        {
+          "id": "robots-robot-artist",
+          "slug": "robot-artist",
+          "title": "Robot artist",
+          "alt": "A robot wearing a beret and holding a brush beside an easel",
+          "description": "A robot wearing a beret and holding a brush beside an easel. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Robots/robot7.png",
+          "image": "/smarty-colours/artwork/robots-robot-artist.png",
+          "sourceSha256": "74fb2b3ec87494e07c1469e6c2b3ee2aca45ddf8844d734315b9e1ad6ad2b97f"
+        },
+        {
+          "id": "robots-robot-chef",
+          "slug": "robot-chef",
+          "title": "Robot chef",
+          "alt": "A robot wearing a chef hat and holding a frying pan and spatula in a kitchen",
+          "description": "A robot wearing a chef hat and holding a frying pan and spatula in a kitchen. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Robots/robot11.png",
+          "image": "/smarty-colours/artwork/robots-robot-chef.png",
+          "sourceSha256": "3e2a4945e1454a735fcd760d8c27b0650324a6eaa999a8ddd4353ebccbcfcf1b"
+        },
+        {
+          "id": "robots-robot-gardener",
+          "slug": "robot-gardener",
+          "title": "Robot gardener",
+          "alt": "A robot watering a flower beside fallen leaves and a trowel",
+          "description": "A robot watering a flower beside fallen leaves and a trowel. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Robots/robot12.png",
+          "image": "/smarty-colours/artwork/robots-robot-gardener.png",
+          "sourceSha256": "b19105c0fee0c8ca9b12ce2eb13d55b78a64f4b269435cbb950df97d4e052801"
+        }
+      ]
+    },
+    {
+      "id": "pets",
+      "name": "Pets",
+      "description": "Meet a playful kitten, a racing hamster, a bunny, a puppy and a parrot.",
+      "cover": "/smarty-colours/pets-cover.jpg",
+      "coverAlt": "A fluffy black dog beside a table with a pink teapot and cup",
+      "sourceCoverRelative": "Pets/petsThumbnail.jpg",
+      "pages": [
+        {
+          "id": "pets-butterfly-kitten",
+          "slug": "butterfly-kitten",
+          "title": "Butterfly kitten",
+          "alt": "A kitten reaching towards a butterfly beside flowers and grass",
+          "description": "A kitten reaching towards a butterfly beside flowers and grass. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Pets/pets2.png",
+          "image": "/smarty-colours/artwork/pets-butterfly-kitten.png",
+          "sourceSha256": "f618364d6304c9e619058462d154d278bc85e70c5922ef4ca2c73d4375149b12"
+        },
+        {
+          "id": "pets-racing-hamster",
+          "slug": "racing-hamster",
+          "title": "Racing hamster",
+          "alt": "A hamster driving a small racing car marked with the number one",
+          "description": "A hamster driving a small racing car marked with the number one. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Pets/pets6.png",
+          "image": "/smarty-colours/artwork/pets-racing-hamster.png",
+          "sourceSha256": "099fbec926d2da08d7d7519297aa95d4bea52ff97fdd75a2be8b01c0906e5ce8"
+        },
+        {
+          "id": "pets-carrot-bunny",
+          "slug": "carrot-bunny",
+          "title": "Carrot bunny",
+          "alt": "A bunny sitting beside two large carrots and leafy plants",
+          "description": "A bunny sitting beside two large carrots and leafy plants. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Pets/pets7.png",
+          "image": "/smarty-colours/artwork/pets-carrot-bunny.png",
+          "sourceSha256": "deeb6e7441b09fd0515219ec68ece0d42368fa9cab3d322241e570648863a3af"
+        },
+        {
+          "id": "pets-puppy-tea-party",
+          "slug": "puppy-tea-party",
+          "title": "Puppy tea party",
+          "alt": "A fluffy puppy sitting beside a little table with a teapot and cup",
+          "description": "A fluffy puppy sitting beside a little table with a teapot and cup. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Pets/pets8.png",
+          "image": "/smarty-colours/artwork/pets-puppy-tea-party.png",
+          "sourceSha256": "f0f9f05f20a5e56e9b93662a65d05047e5499c8567010a519d95e238a5c8de47"
+        },
+        {
+          "id": "pets-parrot-on-a-perch",
+          "slug": "parrot-on-a-perch",
+          "title": "Parrot on a perch",
+          "alt": "A friendly parrot sitting on a perch in a rounded cage",
+          "description": "A friendly parrot sitting on a perch in a rounded cage. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Pets/pets9.png",
+          "image": "/smarty-colours/artwork/pets-parrot-on-a-perch.png",
+          "sourceSha256": "7c9dc4e18c2782b564a474ca8e967a31d331b4e66e87c269ba6cb61cf77a7848"
+        }
+      ]
+    },
+    {
+      "id": "automotive",
+      "name": "Automotive",
+      "description": "Choose a bulldozer, a racing car, a digger, a fire engine or an ice cream van.",
+      "cover": "/smarty-colours/automotive-cover.jpg",
+      "coverAlt": "A yellow ice cream van with a giant pink ice cream on top",
+      "sourceCoverRelative": "Automotive/automotiveThumbnail.jpg",
+      "pages": [
+        {
+          "id": "smiling-bulldozer",
+          "slug": "smiling-bulldozer",
+          "title": "Smiling bulldozer",
+          "alt": "A smiling bulldozer beside a pile of rocks",
+          "description": "A smiling bulldozer beside a pile of rocks. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Automotive/automotive1.png",
+          "image": "/smarty-colours/artwork/smiling-bulldozer.png",
+          "sourceSha256": "2c824e72477e8cfa5d548f24918b68d7feb21f25bf7879c6abf0f7826d3d9216"
+        },
+        {
+          "id": "automotive-racing-car",
+          "slug": "racing-car",
+          "title": "Racing car",
+          "alt": "A racing car with a rear wing and the number seven on its side",
+          "description": "A racing car with a rear wing and the number seven on its side. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Automotive/automotive3.png",
+          "image": "/smarty-colours/artwork/automotive-racing-car.png",
+          "sourceSha256": "a194110785ffb9f682351496cd324bb20a2641ef8bea7a645bbf2227f580a976"
+        },
+        {
+          "id": "automotive-helpful-digger",
+          "slug": "helpful-digger",
+          "title": "Helpful digger",
+          "alt": "A smiling wheeled digger with its bucket raised",
+          "description": "A smiling wheeled digger with its bucket raised. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Automotive/automotive5.png",
+          "image": "/smarty-colours/artwork/automotive-helpful-digger.png",
+          "sourceSha256": "0f20a7b70ae1bbfd30f6fa22c76d610874c1c4bd7492ded75adc22e6d011fb1e"
+        },
+        {
+          "id": "automotive-fire-engine",
+          "slug": "fire-engine",
+          "title": "Fire engine",
+          "alt": "A smiling fire engine carrying a ladder and a coiled hose",
+          "description": "A smiling fire engine carrying a ladder and a coiled hose. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Automotive/automotive9.png",
+          "image": "/smarty-colours/artwork/automotive-fire-engine.png",
+          "sourceSha256": "5c93395c83da805a9b958156d62ffaf8c2147d458182542b76aac1585390ac6d"
+        },
+        {
+          "id": "automotive-ice-cream-van",
+          "slug": "ice-cream-van",
+          "title": "Ice cream van",
+          "alt": "A cheerful ice cream van with a giant ice cream cone and musical notes",
+          "description": "A cheerful ice cream van with a giant ice cream cone and musical notes. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Automotive/automotive11.png",
+          "image": "/smarty-colours/artwork/automotive-ice-cream-van.png",
+          "sourceSha256": "38c3c66beda09eef856d367e4346d6cc40737fbbbbd8c7041b42957ef3c9b0ff"
+        }
+      ]
+    },
+    {
+      "id": "flowers",
+      "name": "Flowers",
+      "description": "Colour tulips, a rose, two cheerful flowers and a swirling star flower.",
+      "cover": "/smarty-colours/flowers-cover.jpg",
+      "coverAlt": "A smiling yellow sunflower with green leaves",
+      "sourceCoverRelative": "Flowers/flowersThumbnail.jpg",
+      "pages": [
+        {
+          "id": "flowers-potted-tulips",
+          "slug": "potted-tulips",
+          "title": "Potted tulips",
+          "alt": "Three tulips growing from a large flowerpot",
+          "description": "Three tulips growing from a large flowerpot. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Flowers/flower1.png",
+          "image": "/smarty-colours/artwork/flowers-potted-tulips.png",
+          "sourceSha256": "37b8b3227632980272ec290095271c3f5bec734a6cb297c8a3131c712fa92e2d"
+        },
+        {
+          "id": "flowers-garden-rose",
+          "slug": "garden-rose",
+          "title": "Garden rose",
+          "alt": "A rose with a curled bloom, two leaves and a thorny stem",
+          "description": "A rose with a curled bloom, two leaves and a thorny stem. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Flowers/flower2.png",
+          "image": "/smarty-colours/artwork/flowers-garden-rose.png",
+          "sourceSha256": "64b2277dafc572ec35eddf957808886d84d87db2ff3f42714a9086c35417fc6a"
+        },
+        {
+          "id": "flowers-simple-flower",
+          "slug": "simple-flower",
+          "title": "Simple flower",
+          "alt": "A simple rounded flower with a spotted centre and two leaves",
+          "description": "A simple rounded flower with a spotted centre and two leaves. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Flowers/flower11.png",
+          "image": "/smarty-colours/artwork/flowers-simple-flower.png",
+          "sourceSha256": "ee4733a780474df4d818948f8af456f5da64fb2bd65ecc5f69c6d126ffc91e5f"
+        },
+        {
+          "id": "flowers-smiling-sunflower",
+          "slug": "smiling-sunflower",
+          "title": "Smiling sunflower",
+          "alt": "A smiling sunflower with pointed petals and two large leaves",
+          "description": "A smiling sunflower with pointed petals and two large leaves. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Flowers/flower12.png",
+          "image": "/smarty-colours/artwork/flowers-smiling-sunflower.png",
+          "sourceSha256": "b5326ef4d74a3c12793820aa5aeb8cba1c02eb52b8d714869dd0f45f615cfb98"
+        },
+        {
+          "id": "flowers-swirling-star-flower",
+          "slug": "swirling-star-flower",
+          "title": "Swirling star flower",
+          "alt": "A whimsical flower with swirling petals and stars above two leaves",
+          "description": "A whimsical flower with swirling petals and stars above two leaves. Colour it online or print the free page on A4 or US Letter paper.",
+          "sourceRelative": "Flowers/flower15.png",
+          "image": "/smarty-colours/artwork/flowers-swirling-star-flower.png",
+          "sourceSha256": "7b606b812934b9aea29451a1ec9ba82ade13fc87a75dff3e441cbd7a308bd228"
+        }
+      ]
+    }
+  ]
+}

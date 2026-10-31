@@ -1,0 +1,25 @@
+/* Shared PrintSheet master. No names or other child information are collected. */
+@font-face{font-family:Grandstander;src:url('/smarty-colours/fonts/grandstander-latin.woff2') format('woff2');font-style:normal;font-weight:600 900;font-display:block}
+@font-face{font-family:Andika;src:url('/smarty-colours/fonts/andika-regular-latin.woff2') format('woff2');font-style:normal;font-weight:400;font-display:block}
+@page{size:A4;margin:0}
+@page sc-a4{size:A4;margin:0}
+@page sc-letter{size:Letter;margin:0}
+html,body{margin:0;padding:0;background:#fff;color:#000;font-family:Andika,Verdana,sans-serif}
+.sc-print-sheet{page:sc-a4;box-sizing:border-box;width:210mm;height:297mm;padding:10mm;display:grid;grid-template-rows:20mm minmax(0,1fr) 29mm;gap:6mm;background:#fff;color:#000;break-after:page;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+body[data-size='letter'] .sc-print-sheet{page:sc-letter;width:215.9mm;height:279.4mm}
+.sc-print-head{box-sizing:border-box;display:flex;align-items:flex-start;justify-content:space-between;gap:6mm;padding-bottom:4mm;border-bottom:1.2mm solid #000}
+.sc-print-brand{display:flex;align-items:center;gap:3mm;white-space:nowrap}
+.sc-print-brand img{display:block;width:16mm;height:16mm;object-fit:contain}
+.sc-print-brand strong{font:900 25pt/1 Grandstander,'Trebuchet MS',sans-serif;letter-spacing:-.01em}
+.sc-print-name{display:flex;align-items:center;gap:3mm;padding-top:5mm;font:800 15pt/1 Grandstander,'Trebuchet MS',sans-serif;white-space:nowrap}
+.sc-print-name span{display:block;width:43mm;height:7mm;border-bottom:.8mm dashed #000}
+.sc-print-art{box-sizing:border-box;display:grid;place-items:center;min-height:0;border:1.2mm solid #000;border-radius:8mm;overflow:hidden;padding:4mm}
+.sc-print-art img{display:block;width:100%;height:100%;min-height:0;object-fit:contain}
+.sc-print-footer{display:flex;justify-content:space-between;align-items:flex-start;gap:6mm;padding-top:1mm}
+.sc-print-copy{flex:1;min-width:0}
+.sc-print-copy strong{display:block;margin:0 0 2mm;font:800 13.5pt/1.15 Grandstander,'Trebuchet MS',sans-serif}
+.sc-print-copy p{margin:0;font:400 9.5pt/12pt Andika,Verdana,sans-serif}
+.sc-print-dots{display:flex;gap:2mm;flex:none;margin-top:7.5mm}
+.sc-print-dots i{box-sizing:border-box;display:block;width:7mm;height:7mm;border:.7mm solid #000;border-radius:50%}
+@media screen{body{background:#e9edf2}.sc-print-sheet{margin:8mm auto;box-shadow:0 2mm 8mm #0002}}
+@media print{.sc-print-sheet{margin:0;box-shadow:none}.sc-print-sheet:last-child{break-after:auto}}

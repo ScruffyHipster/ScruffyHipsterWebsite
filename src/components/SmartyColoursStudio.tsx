@@ -3,17 +3,30 @@ import "./SmartyColoursStudio.css";
 
 const SIZE = 1000;
 const HISTORY_LIMIT = 8;
-import { smartyStudioPictures, smartyStudioColours as colours, smartyStudioTools, smartyStudioCopy as copy } from "../content/smartyColoursStudio";
+import { smartyStudioPictures, smartyStudioPacks, resolveStudioPicture, smartyStudioColours as colours, smartyStudioTools, smartyStudioCopy as copy, type SmartyStudioPicture } from "../content/smartyColoursStudio";
+import { printSmartyPicture, type SmartyPaperSize } from "./smartyColoursPrint";
 export { smartyStudioPictures } from "../content/smartyColoursStudio";
 type Tool = "Fill" | "Crayon" | "Paint" | "Rubber";
 type Point = { x: number; y: number };
-type PictureMemory = { pixels: ImageData | null; undo: ImageData[]; redo: ImageData[] };
-// In-memory only. A refresh clears the pictures; nothing is uploaded or written to browser storage.
-const picturesInThisTab = new Map<string, PictureMemory>();
-function memoryFor(id: string) {
-  let memory = picturesInThisTab.get(id);
-  if (!memory) { memory = { pixels: null, undo: [], redo: [] }; picturesInThisTab.set(id, memory); }
-  return memory;
+type ActivePicture = { id: string; canvas: HTMLCanvasElement | null; ready: boolean; dirty: boolean; undo: ImageData[]; redo: ImageData[] };
+// Inactive colouring is compressed PNG in tab memory. Only the active picture has raw undo pixels.
+// Refreshing clears it all; nothing is uploaded or written to browser storage.
+const picturesInThisTab = new Map<string, string>();
+function newActivePicture(id: string): ActivePicture {
+  return { id, canvas: null, ready: false, dirty: false, undo: [], redo: [] };
+}
+/** Drop raw history when a picture leaves the canvas, keeping only its compressed colours. */
+function parkActivePicture(active: ActivePicture, cache: Map<string, string>): boolean {
+  if (!active.ready || !active.canvas) return true;
+  try {
+    if (active.dirty) {
+      const png = active.canvas.toDataURL("image/png");
+      if (!png.startsWith("data:image/png;base64,")) return false;
+      cache.set(active.id, png);
+    }
+  } catch { return false; }
+  active.undo = []; active.redo = []; active.ready = false; active.dirty = false; active.canvas = null;
+  return true;
 }
 function loadImage(src: string): Promise<HTMLImageElement> {
   return new Promise((resolve, reject) => {
@@ -21,7 +34,7 @@ function loadImage(src: string): Promise<HTMLImageElement> {
   });
 }
 function snapshot(canvas: HTMLCanvasElement) { return canvas.getContext("2d", { willReadFrequently: true })!.getImageData(0, 0, SIZE, SIZE); }
-function capHistory(memory: PictureMemory) {
+function capHistory(memory: ActivePicture) {
   while (memory.undo.length + memory.redo.length > HISTORY_LIMIT) memory.undo.shift();
 }
 function roundedRect(context: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, radius: number) {
@@ -88,61 +101,126 @@ function StudioIcon({ name }: { name: string }) {
   </svg>;
 }
 
-type StudioProps = { initialPictureId?: string; onClose: () => void; onShareRequest: (action: () => void) => void };
-export function SmartyColoursStudio({ initialPictureId, onClose, onShareRequest }: StudioProps) {
-  const initial = smartyStudioPictures.some((p) => p.id === initialPictureId) ? initialPictureId! : smartyStudioPictures[0].id;
-  const [pictureId, setPictureId] = useState(initial), [tool, setTool] = useState<Tool>("Fill"), [colour, setColour] = useState("#fed130");
-  const [ready, setReady] = useState(false), [status, setStatus] = useState("Loading your picture…"), [revision, setRevision] = useState(0);
-  const [done, setDone] = useState<string | null>(null), [confirmReset, setConfirmReset] = useState<string | null>(null);
+type StudioProps = { initialPictureId?: string; packId?: string; onClose: () => void; onShareRequest: (action: () => void) => void };
+type FinishedPicture = { shareImage: string; printImage: string; picture: SmartyStudioPicture };
+function pngBlob(dataUrl: string): Blob {
+  const encoded = dataUrl.split(",")[1];
+  const bytes = atob(encoded), values = new Uint8Array(bytes.length);
+  for (let index = 0; index < bytes.length; index++) values[index] = bytes.charCodeAt(index);
+  return new Blob([values], { type: "image/png" });
+}
+export function SmartyColoursStudio({ initialPictureId, packId, onClose, onShareRequest }: StudioProps) {
+  const initial = resolveStudioPicture(initialPictureId, packId);
+  const [pictureId, setPictureId] = useState(initial.id), [tool, setTool] = useState<Tool>("Fill"), [colour, setColour] = useState("#fed130");
+  const [exporting, setExporting] = useState(false);
+  const exportingRef = useRef(false);
+  const [ready, setReady] = useState(false), [status, setStatus] = useState("Loading your picture…"), [, setRevision] = useState(0);
+  const [done, setDone] = useState<FinishedPicture | null>(null), [confirmReset, setConfirmReset] = useState<string | null>(null);
+  const [paper, setPaper] = useState<SmartyPaperSize>(() => typeof navigator !== "undefined" && /^en-US\b/i.test(navigator.language) ? "letter" : "a4");
   const [keyboardPoint, setKeyboardPoint] = useState<Point | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null), rootRef = useRef<HTMLDivElement>(null), closeRef = useRef<HTMLButtonElement>(null);
-  const boundaryRef = useRef<Uint8Array | null>(null), originalRef = useRef<HTMLImageElement | null>(null);
-  const drawingRef = useRef<{ pointer: number; point: Point; before: ImageData; changed: boolean } | null>(null);
+  const boundaryRef = useRef<Uint8Array | null>(null), originalRef = useRef<HTMLCanvasElement | null>(null);
+  const activeRef = useRef<ActivePicture>(newActivePicture(initial.id));
+  const drawingRef = useRef<{ id: string; pointer: number; point: Point; before: ImageData } | null>(null);
   const actionDialogRef = useRef<HTMLDivElement>(null), cursorRef = useRef<Point>({ x: 500, y: 500 });
-  const memory = memoryFor(pictureId), picture = smartyStudioPictures.find((p) => p.id === pictureId)!;
+  const hadOverlay = useRef(false);
+  const mountedRef = useRef(false), exportRequest = useRef(0), requestedProps = useRef(`${packId ?? ""}:${initialPictureId ?? ""}`);
+  const printCleanup = useRef<(() => void) | null>(null), downloadUrls = useRef(new Set<string>());
+  const picture = smartyStudioPictures.find((item) => item.id === pictureId) ?? initial;
+  const pack = smartyStudioPacks.find((item) => item.id === picture.packId)!;
+  const memory = activeRef.current;
   const refreshHistory = () => setRevision((value) => value + 1);
-  void revision;
 
+  function rememberChange(before: ImageData, notify = true) {
+    const active = activeRef.current;
+    if (!active.ready) return;
+    active.undo.push(before); active.redo = []; active.dirty = true; capHistory(active);
+    if (notify) refreshHistory();
+  }
+  function commitStroke(notify = true) {
+    const drawing = drawingRef.current; drawingRef.current = null;
+    if (drawing && drawing.id === activeRef.current.id) rememberChange(drawing.before, notify);
+  }
+  function persistActive(): boolean {
+    const active = activeRef.current;
+    if (!active.ready || !active.canvas) return true;
+    commitStroke(false);
+    return parkActivePicture(active, picturesInThisTab);
+  }
+  function selectPicture(id: string) {
+    const next = smartyStudioPictures.find((item) => item.id === id);
+    if (!next || next.id === activeRef.current.id) return;
+    if (!persistActive()) { setStatus("Your colours could not be kept yet. Save your picture before choosing another one."); return; }
+    exportRequest.current++; printCleanup.current?.(); printCleanup.current = null;
+    activeRef.current = newActivePicture(next.id); boundaryRef.current = null; originalRef.current = null;
+    setReady(false); setDone(null); setConfirmReset(null); setKeyboardPoint(null); setStatus("Loading your picture…");
+    const context = canvasRef.current?.getContext("2d");
+    if (context) { context.fillStyle = "white"; context.fillRect(0, 0, SIZE, SIZE); }
+    setPictureId(next.id);
+  }
   useEffect(() => {
     const previousFocus = document.activeElement as HTMLElement | null;
     const previousOverflow = document.body.style.overflow; document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
-    return () => { document.body.style.overflow = previousOverflow; previousFocus?.focus(); };
+    mountedRef.current = true; closeRef.current?.focus();
+    return () => {
+      mountedRef.current = false; exportRequest.current++; persistActive();
+      printCleanup.current?.(); printCleanup.current = null;
+      for (const url of downloadUrls.current) URL.revokeObjectURL(url);
+      downloadUrls.current.clear(); boundaryRef.current = null; originalRef.current = null;
+      document.body.style.overflow = previousOverflow;
+      if (previousFocus?.isConnected) previousFocus.focus();
+    };
   }, []);
   useEffect(() => {
-    let cancelled = false; setReady(false); boundaryRef.current = null; originalRef.current = null; setStatus("Loading your picture…");
-    drawingRef.current = null;
-    loadImage(`/smarty-colours/${pictureId}.png`).then((image) => {
-      if (cancelled || !canvasRef.current) return;
-      const scratch = document.createElement("canvas"); scratch.width = SIZE; scratch.height = SIZE;
-      const context = scratch.getContext("2d", { willReadFrequently: true })!;
-      context.fillStyle = "white"; context.fillRect(0, 0, SIZE, SIZE); context.drawImage(image, 0, 0, SIZE, SIZE);
+    let cancelled = false;
+    const active = activeRef.current;
+    active.canvas = canvasRef.current; active.ready = false;
+    setReady(false); boundaryRef.current = null; originalRef.current = null; setStatus("Loading your picture…");
+    const remembered = picturesInThisTab.get(pictureId);
+    Promise.all([
+      loadImage(picture.image),
+      remembered ? loadImage(remembered).catch(() => { picturesInThisTab.delete(pictureId); return null; }) : Promise.resolve(null)
+    ]).then(([image, saved]) => {
+      if (cancelled || !mountedRef.current || activeRef.current !== active || !active.canvas) return;
+      // Contain portrait originals too: the boundary mask, overlay and exported art use identical coordinates.
+      const lineArt = document.createElement("canvas"); lineArt.width = SIZE; lineArt.height = SIZE;
+      const context = lineArt.getContext("2d", { willReadFrequently: true })!;
+      context.fillStyle = "white"; context.fillRect(0, 0, SIZE, SIZE);
+      const scale = Math.min(SIZE / image.naturalWidth, SIZE / image.naturalHeight);
+      const width = image.naturalWidth * scale, height = image.naturalHeight * scale;
+      context.drawImage(image, (SIZE - width) / 2, (SIZE - height) / 2, width, height);
       const data = context.getImageData(0, 0, SIZE, SIZE).data, boundary = new Uint8Array(SIZE * SIZE);
       for (let p = 0; p < boundary.length; p++) { const offset = p * 4; boundary[p] = 0.2126 * data[offset] + 0.7152 * data[offset + 1] + 0.0722 * data[offset + 2] < 150 ? 1 : 0; }
-      boundaryRef.current = boundary; originalRef.current = image;
-      const colourContext = canvasRef.current.getContext("2d", { willReadFrequently: true })!;
-      const remembered = memoryFor(pictureId).pixels;
-      if (remembered) colourContext.putImageData(remembered, 0, 0);
-      else { colourContext.fillStyle = "white"; colourContext.fillRect(0, 0, SIZE, SIZE); }
-      setReady(true); setStatus("Tap a shape to fill it."); refreshHistory();
-    }).catch(() => { if (!cancelled) setStatus("This picture could not load. Pick another picture to carry on."); });
+      const colourContext = active.canvas.getContext("2d", { willReadFrequently: true })!;
+      colourContext.fillStyle = "white"; colourContext.fillRect(0, 0, SIZE, SIZE);
+      if (saved) colourContext.drawImage(saved, 0, 0, SIZE, SIZE);
+      boundaryRef.current = boundary; originalRef.current = lineArt; active.ready = true;
+      setReady(true); setStatus(saved ? "Your colours are back. Keep colouring." : copy.fillHint); refreshHistory();
+    }).catch(() => { if (!cancelled && mountedRef.current && activeRef.current === active) setStatus("This picture could not load. Pick another picture to carry on."); });
     return () => { cancelled = true; };
-  }, [pictureId]);
+  }, [pictureId, picture.image]);
   useEffect(() => {
-    if (!done && !confirmReset) return;
-    actionDialogRef.current?.querySelector<HTMLButtonElement>("button")?.focus();
+    const signature = `${packId ?? ""}:${initialPictureId ?? ""}`;
+    if (requestedProps.current === signature) return;
+    requestedProps.current = signature; selectPicture(resolveStudioPicture(initialPictureId, packId).id);
+  }, [initialPictureId, packId]);
+  useEffect(() => {
+    const overlay = Boolean(done || confirmReset);
+    const background = Array.from(rootRef.current?.querySelectorAll<HTMLElement>(".sc-studio__top, .sc-studio__body") ?? []);
+    for (const element of background) (element as HTMLElement & { inert: boolean }).inert = overlay;
+    if (overlay) actionDialogRef.current?.querySelector<HTMLButtonElement>("button")?.focus();
+    else if (hadOverlay.current) closeRef.current?.focus();
+    hadOverlay.current = overlay;
+    return () => { for (const element of background) (element as HTMLElement & { inert: boolean }).inert = false; };
   }, [done, confirmReset]);
 
-  function rememberChange(before: ImageData) {
-    if (!canvasRef.current) return;
-    memory.undo.push(before); memory.redo = []; capHistory(memory); memory.pixels = snapshot(canvasRef.current); refreshHistory();
-  }
   function history(direction: "undo" | "redo") {
-    if (!ready || !canvasRef.current || drawingRef.current) return;
-    const source = memory[direction], target = memory[direction === "undo" ? "redo" : "undo"];
+    const active = activeRef.current;
+    if (!active.ready || !active.canvas || drawingRef.current) return;
+    const source = active[direction], target = active[direction === "undo" ? "redo" : "undo"];
     const next = source.pop(); if (!next) return;
-    target.push(snapshot(canvasRef.current)); canvasRef.current.getContext("2d")!.putImageData(next, 0, 0);
-    memory.pixels = next; refreshHistory(); setStatus(direction === "undo" ? "Last mark undone." : "Mark put back.");
+    target.push(snapshot(active.canvas)); active.canvas.getContext("2d")!.putImageData(next, 0, 0);
+    active.dirty = true; refreshHistory(); setStatus(direction === "undo" ? "Last mark undone." : "Mark put back.");
   }
   function pointerPoint(event: PointerEvent<HTMLCanvasElement>): Point {
     const rect = event.currentTarget.getBoundingClientRect();
@@ -166,7 +244,7 @@ export function SmartyColoursStudio({ initialPictureId, onClose, onShareRequest 
     context.restore();
   }
   function pointerDown(event: PointerEvent<HTMLCanvasElement>) {
-    if (!ready || !canvasRef.current || drawingRef.current || event.button !== 0 || !event.isPrimary) return;
+    if (exportingRef.current || !activeRef.current.ready || !canvasRef.current || drawingRef.current || event.button !== 0 || !event.isPrimary) return;
     event.preventDefault(); event.currentTarget.focus(); setKeyboardPoint(null);
     const point = pointerPoint(event), before = snapshot(canvasRef.current);
     if (tool === "Fill") {
@@ -174,16 +252,16 @@ export function SmartyColoursStudio({ initialPictureId, onClose, onShareRequest 
       return;
     }
     event.currentTarget.setPointerCapture(event.pointerId); stroke(point, point);
-    drawingRef.current = { pointer: event.pointerId, point, before, changed: true };
+    drawingRef.current = { id: activeRef.current.id, pointer: event.pointerId, point, before };
   }
   function pointerMove(event: PointerEvent<HTMLCanvasElement>) {
     const drawing = drawingRef.current;
-    if (!drawing || drawing.pointer !== event.pointerId || !ready) return;
+    if (!drawing || drawing.pointer !== event.pointerId || drawing.id !== activeRef.current.id || !activeRef.current.ready) return;
     const point = pointerPoint(event); stroke(drawing.point, point); drawing.point = point;
   }
   function finishStroke(event: PointerEvent<HTMLCanvasElement>) {
-    const drawing = drawingRef.current; if (!drawing || drawing.pointer !== event.pointerId) return;
-    drawingRef.current = null; if (drawing.changed) rememberChange(drawing.before);
+    if (drawingRef.current?.pointer !== event.pointerId) return;
+    commitStroke();
     if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
   }
   function canvasKey(event: KeyboardEvent<HTMLCanvasElement>) {
@@ -195,99 +273,126 @@ export function SmartyColoursStudio({ initialPictureId, onClose, onShareRequest 
       setKeyboardPoint({ ...cursorRef.current }); return;
     }
     if (event.key === " " || event.key === "Enter") {
-      event.preventDefault(); if (!ready || !canvasRef.current) return;
+      event.preventDefault(); if (exportingRef.current || !activeRef.current.ready || !canvasRef.current) return;
       const before = snapshot(canvasRef.current), point = cursorRef.current;
       if (tool === "Fill") { if (boundaryRef.current && fillRegion(canvasRef.current, boundaryRef.current, point, colour)) rememberChange(before); }
       else { stroke(point, point); rememberChange(before); }
       setKeyboardPoint({ ...point }); setStatus("Colour added at the crosshair.");
     }
   }
+  function keepColouring() {
+    printCleanup.current?.(); printCleanup.current = null;
+    setDone(null); setConfirmReset(null); setStatus(tool === "Fill" ? copy.fillHint : copy.toolHint(tool));
+  }
   function closeStudio() {
-    const drawing = drawingRef.current; drawingRef.current = null;
-    if (drawing?.changed && canvasRef.current) rememberChange(drawing.before);
+    if (!persistActive()) { setStatus("Your colours could not be kept yet. Save your picture before going home."); return; }
     onClose();
   }
   function trapFocus(event: KeyboardEvent<HTMLDivElement>) {
     if (document.querySelector('[data-sc-parent-gate="true"]')) return;
     if (event.key === "Escape") {
-      event.preventDefault(); if (done) { setDone(null); closeRef.current?.focus(); } else if (confirmReset) { setConfirmReset(null); closeRef.current?.focus(); } else closeStudio(); return;
+      if (event.target instanceof HTMLSelectElement) return;
+      event.preventDefault(); if (done || confirmReset) keepColouring(); else closeStudio(); return;
     }
     if (event.key !== "Tab") return;
     const scope = (done || confirmReset) ? actionDialogRef.current : rootRef.current;
-    const controls = Array.from(scope?.querySelectorAll<HTMLElement>('button:not(:disabled), [href], canvas[tabindex="0"]') ?? []).filter((element) => element.offsetParent !== null);
+    const controls = Array.from(scope?.querySelectorAll<HTMLElement>('button:not(:disabled), select:not(:disabled), input:not(:disabled), [href], canvas[tabindex="0"]') ?? []).filter((element) => element.offsetParent !== null);
     if (!controls.length) return;
     const first = controls[0], last = controls[controls.length - 1];
     if (event.shiftKey && (document.activeElement === first || !scope?.contains(document.activeElement))) { event.preventDefault(); last.focus(); }
     else if (!event.shiftKey && (document.activeElement === last || !scope?.contains(document.activeElement))) { event.preventDefault(); first.focus(); }
   }
-  async function shareCard(): Promise<HTMLCanvasElement> {
-    if (!canvasRef.current || !originalRef.current || !ready) throw new Error("The picture is still loading.");
+  function compositeArtwork(): HTMLCanvasElement {
+    if (!activeRef.current.ready || !activeRef.current.canvas || !originalRef.current) throw new Error("The picture is still loading.");
+    const art = document.createElement("canvas"); art.width = SIZE; art.height = SIZE;
+    const context = art.getContext("2d")!; context.fillStyle = "white"; context.fillRect(0, 0, SIZE, SIZE);
+    context.drawImage(activeRef.current.canvas, 0, 0); context.globalCompositeOperation = "multiply"; context.drawImage(originalRef.current, 0, 0);
+    return art;
+  }
+  async function shareCard(requested: number): Promise<FinishedPicture | null> {
+    const art = compositeArtwork(), selected = picture;
+    const printImage = art.toDataURL("image/png");
+    // Release the temporary raw bitmap before waiting on fonts or another decode.
+    art.width = 0; art.height = 0;
     await document.fonts.ready;
+    if (!mountedRef.current || requested !== exportRequest.current) return null;
+    const frozenArtwork = await loadImage(printImage);
+    if (!mountedRef.current || requested !== exportRequest.current) return null;
     const card = document.createElement("canvas"); card.width = 1080; card.height = 1080;
     const context = card.getContext("2d")!;
     const gradient = context.createLinearGradient(0, 0, 0, 1080); gradient.addColorStop(0, "#0088fe"); gradient.addColorStop(1, "#01a4cd"); context.fillStyle = gradient; context.fillRect(0, 0, 1080, 1080);
     roundedRect(context, 98, 42, 884, 884, 48); context.fillStyle = "#34c759"; context.fill();
-    context.save(); roundedRect(context, 112, 56, 856, 856, 36); context.clip(); context.fillStyle = "white"; context.fillRect(112, 56, 856, 856);
-    context.drawImage(canvasRef.current, 112, 56, 856, 856); context.globalCompositeOperation = "multiply"; context.drawImage(originalRef.current, 112, 56, 856, 856); context.restore();
-    try { const icon = await loadImage("/smarty-colours/pencil-app-icon.png"); context.drawImage(icon, 48, 959, 70, 70); } catch { /* Text lockup remains readable if the decorative icon fails. */ }
+    context.save(); roundedRect(context, 112, 56, 856, 856, 36); context.clip(); context.drawImage(frozenArtwork, 112, 56, 856, 856); context.restore();
+    try { const icon = await loadImage("/smarty-colours/pencil-app-icon.png"); context.drawImage(icon, 48, 959, 70, 70); } catch { /* The text lockup remains readable if the decorative icon fails. */ }
     context.fillStyle = "white"; context.font = '900 43px "Grandstander", sans-serif'; context.fillText("SmartyColours", 130, 1006);
     context.textAlign = "right"; context.font = '800 29px "Grandstander", sans-serif'; context.fillText("Coloured by a", 1032, 987); context.fillText("little artist", 1032, 1023);
-    return card;
+    return { shareImage: card.toDataURL("image/png"), printImage, picture: selected };
   }
   async function showDone() {
-    if (!ready || drawingRef.current) return;
-    try { const card = await shareCard(); setDone(card.toDataURL("image/png")); setStatus(""); }
-    catch { setStatus("Your picture is still here. Try Save picture again when it has finished loading."); }
-  }
-  async function downloadPicture() {
+    if (!activeRef.current.ready || exportingRef.current) return;
+    commitStroke(); exportingRef.current = true; setExporting(true); setStatus(copy.preparingPicture);
+    const requested = ++exportRequest.current, id = activeRef.current.id;
     try {
-      const card = await shareCard(); const blob = await new Promise<Blob | null>((resolve) => card.toBlob(resolve, "image/png"));
-      if (!blob) throw new Error("Could not create image");
-      const url = URL.createObjectURL(blob), link = document.createElement("a"); link.href = url; link.download = `smartycolours-${pictureId}.png`; document.body.append(link); link.click(); link.remove();
-      window.setTimeout(() => URL.revokeObjectURL(url), 1000); setStatus("Your picture has been saved to this device.");
+      const finished = await shareCard(requested);
+      if (finished && mountedRef.current && requested === exportRequest.current && activeRef.current.id === id) { setDone(finished); setStatus(""); }
+    } catch { if (mountedRef.current && requested === exportRequest.current) setStatus("Your picture is still here. Try All done again when it has finished loading."); }
+    finally { exportingRef.current = false; if (mountedRef.current) setExporting(false); }
+  }
+  function downloadPicture() {
+    if (!done) return;
+    try {
+      const url = URL.createObjectURL(pngBlob(done.shareImage)), link = document.createElement("a");
+      downloadUrls.current.add(url); link.href = url; link.download = `smartycolours-${done.picture.id}.png`; document.body.append(link); link.click(); link.remove();
+      window.setTimeout(() => { URL.revokeObjectURL(url); downloadUrls.current.delete(url); }, 1000); setStatus("Your picture download has started.");
     } catch { setStatus("The picture could not be saved. Your colouring is still here; try again."); }
   }
   function requestShare() {
-    // Build the image before opening the gate, so its answer supplies the user activation for Web Share.
-    shareCard().then((card) => card.toBlob((blob) => {
-      if (!blob) { setStatus("Your picture could not be prepared. Try Save picture."); return; }
-      const file = new File([blob], `smartycolours-${pictureId}.png`, { type: "image/png" });
+    if (!done) return;
+    try {
+      const file = new File([pngBlob(done.shareImage)], `smartycolours-${done.picture.id}.png`, { type: "image/png" });
       onShareRequest(() => {
         if (navigator.share && navigator.canShare?.({ files: [file] })) {
           void navigator.share({ files: [file], title: "My SmartyColours picture" }).catch((error: unknown) => {
-            if (!(error instanceof DOMException && error.name === "AbortError")) void downloadPicture();
+            if (!(error instanceof DOMException && error.name === "AbortError")) downloadPicture();
           });
-        } else void downloadPicture();
+        } else downloadPicture();
       });
-    }, "image/png")).catch(() => setStatus("Your picture could not be prepared. Try Save picture."));
+    } catch { setStatus("Your picture could not be prepared. Try Save picture."); }
+  }
+  function requestPrint() {
+    if (!done) return;
+    printCleanup.current?.();
+    printCleanup.current = printSmartyPicture({ title: done.picture.title, packName: done.picture.packName, alt: done.picture.alt, image: done.printImage, size: paper }, (message) => { if (mountedRef.current) setStatus(message); });
   }
   function requestReset() {
-    if (!ready || !canvasRef.current) return;
-    const image = document.createElement("canvas"); image.width = SIZE; image.height = SIZE;
-    const context = image.getContext("2d")!; context.drawImage(canvasRef.current, 0, 0); context.globalCompositeOperation = "multiply";
-    if (originalRef.current) context.drawImage(originalRef.current, 0, 0, SIZE, SIZE);
-    setConfirmReset(image.toDataURL("image/png"));
+    if (!activeRef.current.ready) return;
+    commitStroke(); setConfirmReset(compositeArtwork().toDataURL("image/png"));
   }
   function reset() {
-    if (!canvasRef.current) return; const before = snapshot(canvasRef.current), context = canvasRef.current.getContext("2d")!;
+    const active = activeRef.current;
+    if (!active.ready || !active.canvas) return;
+    const before = snapshot(active.canvas), context = active.canvas.getContext("2d")!;
     context.fillStyle = "white"; context.fillRect(0, 0, SIZE, SIZE); rememberChange(before); setConfirmReset(null); setStatus("A fresh page, ready to colour."); closeRef.current?.focus();
   }
-
+  const overlayOpen = Boolean(done || confirmReset);
   return <div className="sc-studio sc-sky" role="dialog" aria-modal="true" aria-labelledby="sc-studio-title" ref={rootRef} onKeyDown={trapFocus}>
-    <header className="sc-studio__top">
+    <header className="sc-studio__top" aria-hidden={overlayOpen || undefined}>
       <button className="sc-btn sc-btn--kid" onClick={closeStudio} ref={closeRef} aria-label={copy.home}><StudioIcon name="Home" /><span>{copy.home}</span></button>
       <h1 id="sc-studio-title">{picture.title}</h1>
-      <div className="sc-studio__top-actions"><button className="sc-btn sc-btn--kid" onClick={requestReset} disabled={!ready}>{copy.startAgain}</button><button className="sc-btn sc-btn--kid sc-btn--sunshine" onClick={() => void showDone()} disabled={!ready}><StudioIcon name="Done" />{copy.allDone}</button></div>
+      <div className="sc-studio__top-actions"><button className="sc-btn sc-btn--kid" onClick={requestReset} disabled={!ready}>{copy.startAgain}</button><button className="sc-btn sc-btn--kid sc-btn--sunshine" onClick={() => void showDone()} disabled={!ready || exporting} aria-busy={exporting}><StudioIcon name="Done" />{copy.allDone}</button></div>
     </header>
-    <div className="sc-studio__body" aria-hidden={done || confirmReset ? true : undefined}>
-      <nav className="sc-studio__pictures" aria-label={copy.pick}>
-        <h2>{copy.pick}</h2>
-        {smartyStudioPictures.map((item) => <button className="sc-studio__picture" aria-label={item.title} aria-pressed={item.id === pictureId} key={item.id} onClick={() => { if (!drawingRef.current) { setPictureId(item.id); setKeyboardPoint(null); } }}><img src={`/smarty-colours/${item.id}.png`} alt="" width="1024" height="1024" loading="lazy" /><span>{item.title}</span></button>)}
-      </nav>
+    <div className="sc-studio__body" aria-hidden={overlayOpen || undefined}>
+      <aside className="sc-studio__picture-panel">
+        <label className="sc-studio__pack-picker"><span>{copy.pickPack}</span><select value={picture.packId} onChange={(event) => { const selected = smartyStudioPacks.find((item) => item.id === event.target.value); if (selected) selectPicture(selected.pages[0].id); }}>{smartyStudioPacks.map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}</select></label>
+        <nav className="sc-studio__pictures" aria-label={copy.pick}>
+          <h2>{copy.pick}</h2>
+          {pack.pages.map((item) => <button className="sc-studio__picture" aria-label={item.title} aria-pressed={item.id === pictureId} key={item.id} onClick={() => selectPicture(item.id)}><img src={item.image} alt="" width="1024" height="1024" loading="lazy" /><span>{item.title}</span></button>)}
+        </nav>
+      </aside>
       <div className="sc-studio__stage">
         <div className="sc-studio__canvas">
           <canvas width={SIZE} height={SIZE} ref={canvasRef} tabIndex={0} aria-label={copy.canvasLabel(picture.title)} aria-describedby="sc-studio-keyboard-help" onKeyDown={canvasKey} onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={finishStroke} onPointerCancel={finishStroke} onLostPointerCapture={finishStroke} onFocus={() => setKeyboardPoint({ ...cursorRef.current })} onBlur={() => setKeyboardPoint(null)} />
-          <img src={`/smarty-colours/${pictureId}.png`} alt={picture.alt} width="1000" height="1000" draggable={false} />
+          <img src={picture.image} alt={picture.alt} width="1000" height="1000" draggable={false} />
           {keyboardPoint && <span className="sc-studio__crosshair" style={{ left: `${keyboardPoint.x / 10}%`, top: `${keyboardPoint.y / 10}%` }} aria-hidden="true" />}
         </div>
         <p className="sc-studio__status" role="status" aria-live="polite">{status || (tool === smartyStudioTools[0] ? copy.fillHint : copy.toolHint(tool))}</p>
@@ -295,14 +400,14 @@ export function SmartyColoursStudio({ initialPictureId, onClose, onShareRequest 
       </div>
       <div className="sc-studio__tools"><div className="sc-toolbar" role="toolbar" aria-label={copy.toolbar}>
         <div className="sc-studio__tools-row"><div className="sc-studio__history"><button className="sc-tool" onClick={() => history("undo")} disabled={!ready || !memory.undo.length}><StudioIcon name="Undo" /><span>{copy.undo}</span></button><button className="sc-tool" onClick={() => history("redo")} disabled={!ready || !memory.redo.length}><StudioIcon name="Redo" /><span>{copy.redo}</span></button></div>
-        <div className="sc-studio__tool-group" role="group" aria-label={copy.tools}>{smartyStudioTools.map((item) => <button className="sc-tool" key={item} aria-pressed={tool === item} onClick={() => { setTool(item); setStatus(item === "Fill" ? "Tap a shape to fill it." : `Make a mark with ${item.toLowerCase()}.`); }}><StudioIcon name={item} /><span>{item}</span></button>)}</div>
+        <div className="sc-studio__tool-group" role="group" aria-label={copy.tools}>{smartyStudioTools.map((item) => <button className="sc-tool" key={item} aria-pressed={tool === item} onClick={() => { setTool(item); setStatus(item === "Fill" ? copy.fillHint : copy.toolHint(item)); }}><StudioIcon name={item} /><span>{item}</span></button>)}</div>
         </div><div className="sc-palette" role="group" aria-label={copy.colours}>{colours.map(([name, value]) => <button className="sc-swatch" key={name} aria-label={name} aria-pressed={colour === value} style={{ "--swatch-colour": value } as CSSProperties} onClick={() => { setColour(value); setStatus(`${name} picked.`); }} />)}</div>
       </div></div>
     </div>
     {(done || confirmReset) && <div className="sc-studio__overlay"><div className="sc-studio__action-dialog" role="dialog" aria-modal="true" aria-labelledby="sc-studio-dialog-title" ref={actionDialogRef}>
       <h2 id="sc-studio-dialog-title">{done ? copy.doneTitle : copy.resetTitle}</h2>
-      <img className="sc-studio__finished-art" src={done || confirmReset!} alt={done ? copy.finishedAlt(picture.title) : copy.currentAlt} />
-      {done ? <><p>{copy.doneHelp}</p><div className="sc-studio__done-actions"><button className="sc-btn sc-btn--kid sc-btn--crown" onClick={() => void downloadPicture()}><StudioIcon name="Save" />{copy.save}</button><button className="sc-btn sc-btn--kid" onClick={requestShare}><StudioIcon name="Share" />{copy.share}</button><button className="sc-btn sc-btn--kid" disabled aria-describedby="sc-studio-print-note"><StudioIcon name="Print" />{copy.print}</button></div><p id="sc-studio-print-note">{copy.printNote}</p><p role="status" aria-live="polite">{status}</p><button className="sc-btn sc-btn--kid" onClick={() => { setDone(null); closeRef.current?.focus(); }}>{copy.keepColouring}</button></> : <><p>{copy.resetHelp}</p><button className="sc-btn sc-btn--kid sc-btn--sunshine" onClick={() => { setConfirmReset(null); closeRef.current?.focus(); }}>{copy.keepColouring}</button><button className="sc-btn sc-btn--kid" onClick={reset}>{copy.startAgain}</button></>}
+      <img className="sc-studio__finished-art" src={done?.shareImage ?? confirmReset!} alt={done ? copy.finishedAlt(done.picture.title) : copy.currentAlt} />
+      {done ? <><p>{copy.doneHelp}</p><fieldset className="sc-studio__paper"><legend>{copy.paperSize}</legend><label><input type="radio" name="sc-studio-paper" checked={paper === "a4"} onChange={() => setPaper("a4")} />{copy.a4}</label><label><input type="radio" name="sc-studio-paper" checked={paper === "letter"} onChange={() => setPaper("letter")} />{copy.letter}</label></fieldset><div className="sc-studio__done-actions"><button className="sc-btn sc-btn--kid sc-btn--crown" onClick={downloadPicture}><StudioIcon name="Save" />{copy.save}</button><button className="sc-btn sc-btn--kid" onClick={requestShare}><StudioIcon name="Share" />{copy.share}</button><button className="sc-btn sc-btn--kid" onClick={requestPrint} aria-describedby="sc-studio-print-note"><StudioIcon name="Print" />{copy.print}</button></div><p id="sc-studio-print-note">{copy.printNote}</p><p role="status" aria-live="polite">{status}</p><button className="sc-btn sc-btn--kid" onClick={keepColouring}>{copy.keepColouring}</button></> : <><p>{copy.resetHelp}</p><button className="sc-btn sc-btn--kid sc-btn--sunshine" onClick={keepColouring}>{copy.keepColouring}</button><button className="sc-btn sc-btn--kid" onClick={reset}>{copy.startAgain}</button></>}
     </div></div>}
   </div>;
 }

@@ -7,12 +7,15 @@ export async function generateSitemap(distDir) {
     .filter(isIndexableRoute)
     .map((route) => {
       const loc = canonicalUrl(route.path);
-      return `<url><loc>${escapeXml(loc)}</loc></url>`;
+      const images = [...new Set(route.images || [])]
+        .map((image) => `<image:image><image:loc>${escapeXml(image)}</image:loc></image:image>`)
+        .join("");
+      return `<url><loc>${escapeXml(loc)}</loc>${images}</url>`;
     })
     .join("");
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls}</urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">${urls}</urlset>
 `;
 
   const sitemapPath = join(distDir, "sitemap.xml");

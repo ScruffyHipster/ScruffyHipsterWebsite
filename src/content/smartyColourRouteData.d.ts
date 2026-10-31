@@ -1,0 +1,2 @@
+export type SmartyRoute = { path: string; title: string; description: string; ogImage: string; ogImageAlt: string; robots: string; images: string[]; jsonLd: object[] };
+export function makeSmartyColourRoutes(catalogue: { packs: Array<{ id: string; name: string; description: string; cover: string; coverAlt: string; pages: Array<{ id: string; slug: string; title: string; description: string; alt: string; image: string }> }> }, siteUrl: string): SmartyRoute[];
