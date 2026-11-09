@@ -1,5 +1,5 @@
 import { mkdir, writeFile } from "node:fs/promises";
-import { dirname, extname, join } from "node:path";
+import { dirname, join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { legacyRedirects, siteUrl } from "./route-meta.mjs";
 import { prerenderRoutes } from "./prerender.mjs";
@@ -17,12 +17,13 @@ await writeFile(join(distDir, ".nojekyll"), "", "utf8");
 async function generateLegacyRedirects(rootDir) {
   for (const [from, to] of legacyRedirects) {
     const relativePath = from.replace(/^\//, "");
-    const filePath = extname(relativePath)
+    const filePath = relativePath.endsWith(".html")
       ? join(rootDir, relativePath)
       : join(rootDir, relativePath, "index.html");
     const targetPath = canonicalPath(to);
     await mkdir(dirname(filePath), { recursive: true });
-    await writeFile(filePath, redirectHtml(`${siteUrl}${targetPath}`, targetPath), "utf8");
+    const targetUrl = targetPath === "/" ? siteUrl : `${siteUrl}${targetPath}`;
+    await writeFile(filePath, redirectHtml(targetUrl, targetPath), "utf8");
   }
 }
 

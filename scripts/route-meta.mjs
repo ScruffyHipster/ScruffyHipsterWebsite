@@ -582,6 +582,7 @@ const legacyPrivacyRedirects = [
 ];
 
 export const legacyRedirects = [
+  ["/www.scruffyhipster.com", "/"],
   ["/apps/rewire", "/rewire"],
   ["/apps/breast-feeding-tracker", "/breastfeeding-tracker"],
   ["/breastfeeding-tracker/guides", "/breastfeeding-tracker/support"],

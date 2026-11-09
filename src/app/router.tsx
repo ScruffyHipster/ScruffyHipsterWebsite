@@ -116,6 +116,7 @@ export function AppRoutes() {
         <Route path="apps/:slug" element={<AppDetailPage />} />
         <Route path="privacy/:slug" element={<PrivacyPolicyPage />} />
         <Route path="index.html" element={<Navigate to="/" replace />} />
+        <Route path="www.scruffyhipster.com" element={<Navigate to="/" replace />} />
         <Route path=":slug" element={<StandardPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>

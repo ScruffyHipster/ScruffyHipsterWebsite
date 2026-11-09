@@ -23,7 +23,29 @@ function PackContent({ pack, paper, onPaper }: { pack: FreePack; paper: "a4" | "
   const store = useSmartyStore();
   return <><PackSeo path={packPath(pack)} /><header className="sc-sky page-head"><SmartyClouds /><div className="wrap sc-pack-relative"><SmartyPackNav /><Crumbs pack={pack} /><div className="pack-hero"><span className="sc-pack__frame"><img src={pack.cover} alt={pack.coverAlt} width={768} height={768} /></span><div className="dl-card"><span className="sc-tag sc-tag--free">{copy.freeFive}</span><h1 className="sc-pack-heading">{pack.name}{copy.pagesSuffix}</h1><p>{pack.description}</p><p>{copy.personal}</p><SmartyPaperSize paper={paper} onChange={onPaper} /><div className="dl-card__row"><a className="sc-btn sc-btn--crown sc-btn--kid" href={packPdf(pack, paper)} download>{copy.downloadAll}</a><Link className="sc-btn" to={colourPath(pack)}>{copy.colourOnline}</Link></div><p className="sc-bundle-note">{copy.bundleNote}</p><noscript><a href={packPdf(pack, "letter")}>{copy.letter}</a></noscript></div></div></div><div className="sky-edge" /></header><section className="section"><div className="wrap stack"><header className="sc-head"><h2>{copy.pagesIn} <mark className="sc-mark">{copy.thisPack}</mark></h2><p>{copy.pagesIntro}</p></header><div className="pages">{pack.pages.map(page => <article className="sc-sheet" key={page.id}><Link className="sc-sheet__art" to={pagePath(pack, page)}><img src={page.image} alt={page.alt} width={1024} height={1024} loading="lazy" /></Link><h3 className="sc-sheet__title"><Link to={pagePath(pack, page)}>{page.title}</Link></h3><div className="sc-sheet__actions"><Link className="sc-btn sc-btn--crown" to={colourPath(pack, page)}>{copy.colourIt}</Link><a className="sc-btn" href={pagePdf(pack, page, paper)} download>{copy.pdf}</a></div></article>)}<article className="sc-sheet sc-pack-more"><span className="sc-tag sc-tag--grown">{copy.grown}</span><div className="sc-sheet__art"><img src="/smarty-colours/pencil-app-icon.png" alt={copy.appIcon} width={128} height={128} /><h3>{copy.moreApp(pack.name)}</h3><p>{copy.moreAppBody}</p></div><button type="button" className="sc-btn" onClick={store}>{copy.grown}</button></article></div></div></section><section className="section"><div className="wrap"><AppPromo pack={pack} /></div></section><MorePacks current={pack.id} /></>;
 }
+function RelatedPictures({ pack, current }: { pack: FreePack; current: FreePage }) {
+  return (
+    <section className="section band-surface" aria-labelledby="related-pictures">
+      <div className="wrap stack">
+        <header className="sc-head">
+          <h2 id="related-pictures">{copy.morePictures}</h2>
+        </header>
+        <div className="more-row">
+          {pack.pages.filter(picture => picture.id !== current.id).map(picture => (
+            <Link className="sc-pack" key={picture.id} to={pagePath(pack, picture)}>
+              <span className="sc-pack__frame">
+                <img src={picture.image} alt="" width={1024} height={1024} loading="lazy" />
+              </span>
+              <span className="sc-pack__name">{picture.title}</span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function SmartyColoursPicturePage() {
   const { packId, pageSlug } = useParams<{ packId: string; pageSlug: string }>(); const pack = freePacks.find(item => item.id === packId); const page = pack?.pages.find(item => item.slug === pageSlug); const { paper, choose } = useSmartyPaperSize();
-  return pack && page ? <SmartyPackLayout><PackSeo path={pagePath(pack, page)} /><header className="sc-sky page-head"><SmartyClouds /><div className="wrap sc-pack-relative"><SmartyPackNav /><Crumbs pack={pack} page={page} /><div className="sc-single-grid"><figure className="sc-single-art"><img src={page.image} alt={page.alt} width={1024} height={1024} /></figure><div className="dl-card"><span className="sc-tag sc-tag--free">{copy.freeToPrint}</span><h1 className="sc-pack-heading">{page.title}{copy.pageSuffix}</h1><p>{page.description}</p><SmartyPaperSize paper={paper} onChange={choose} /><div className="dl-card__row"><a className="sc-btn sc-btn--kid sc-btn--crown" href={pagePdf(pack, page, paper)} download>{copy.downloadPage}</a><Link className="sc-btn sc-btn--kid" to={colourPath(pack, page)}>{copy.colourIt}</Link></div><Link className="sc-btn sc-btn--quiet" to={packPath(pack)}>{copy.backPack}</Link><p>{copy.personal}</p><noscript><a href={pagePdf(pack, page, "letter")}>{copy.letter}</a></noscript></div></div></div><div className="sky-edge" /></header><section className="section"><div className="wrap"><AppPromo pack={pack} /></div></section><MorePacks current={pack.id} /></SmartyPackLayout> : <MissingPicture />;
+  return pack && page ? <SmartyPackLayout><PackSeo path={pagePath(pack, page)} /><header className="sc-sky page-head"><SmartyClouds /><div className="wrap sc-pack-relative"><SmartyPackNav /><Crumbs pack={pack} page={page} /><div className="sc-single-grid"><figure className="sc-single-art"><img src={page.image} alt={page.alt} width={1024} height={1024} /></figure><div className="dl-card"><span className="sc-tag sc-tag--free">{copy.freeToPrint}</span><h1 className="sc-pack-heading">{page.title}{copy.pageSuffix}</h1><p>{page.description}</p><SmartyPaperSize paper={paper} onChange={choose} /><div className="dl-card__row"><a className="sc-btn sc-btn--kid sc-btn--crown" href={pagePdf(pack, page, paper)} download>{copy.downloadPage}</a><Link className="sc-btn sc-btn--kid" to={colourPath(pack, page)}>{copy.colourIt}</Link></div><Link className="sc-btn sc-btn--quiet" to={packPath(pack)}>{copy.backPack}</Link><p>{copy.personal}</p><noscript><a href={pagePdf(pack, page, "letter")}>{copy.letter}</a></noscript></div></div></div><div className="sky-edge" /></header><RelatedPictures pack={pack} current={page} /><section className="section"><div className="wrap"><AppPromo pack={pack} /></div></section><MorePacks current={pack.id} /></SmartyPackLayout> : <MissingPicture />;
 }

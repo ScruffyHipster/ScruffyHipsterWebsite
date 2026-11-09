@@ -1,5 +1,5 @@
 import { access, readFile, readdir } from "node:fs/promises";
-import { extname, join } from "node:path";
+import { join } from "node:path";
 
 const rootDir = new URL("../", import.meta.url).pathname;
 await import("./generate-app-content.mjs");
@@ -48,6 +48,10 @@ assert(
 const sitemap = await readFile(join(distDir, "sitemap.xml"), "utf8");
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
 const indexableRoutes = publicRoutes.filter(isIndexableRoute);
+const homepage = await readFile(join(distDir, "index.html"), "utf8");
+assert(homepage.includes('rel="icon" type="image/x-icon" sizes="48x48" href="/favicon.ico"'), "The homepage is missing its favicon.");
+const favicon = await readFile(join(distDir, "favicon.ico"));
+assert(favicon.readUInt32LE(0) === 0x00010000 && favicon[6] === 48 && favicon[7] === 48, "The favicon is not a 48×48 ICO.");
 assert(
   sitemapUrls.length === indexableRoutes.length,
   `Expected ${indexableRoutes.length} indexable sitemap URLs, found ${sitemapUrls.length}.`
@@ -92,7 +96,7 @@ for (const route of publicRoutes) {
   );
   for (const href of internalLinks) {
     const [path] = href.split(/[?#]/);
-    if (path.startsWith("/assets/") || path.startsWith("/smarty-colours/")) {
+    if (path === "/favicon.ico" || path.startsWith("/assets/") || path.startsWith("/smarty-colours/")) {
       await access(join(distDir, path.replace(/^\//, "")));
       continue;
     }
@@ -118,8 +122,8 @@ for (const route of publicRoutes) {
 }
 
 assert(
-  legacyRedirects.length === 38,
-  `Expected 38 legacy redirects, found ${legacyRedirects.length}.`
+  legacyRedirects.length === 39,
+  `Expected 39 legacy redirects, found ${legacyRedirects.length}.`
 );
 const publicPathSet = new Set(publicRoutes.map((route) => canonicalPath(route.path)));
 for (const [from, to] of legacyRedirects) {
@@ -134,7 +138,7 @@ for (const [from, to] of legacyRedirects) {
     `Legacy redirect ${from} is missing noindex.`
   );
   assert(
-    redirectHtml.includes(`<link rel="canonical" href="${siteUrl}${canonicalTarget}"`),
+    redirectHtml.includes(`<link rel="canonical" href="${canonicalUrl(to)}"`),
     `Legacy redirect ${from} has the wrong canonical target.`
   );
   assert(
@@ -504,7 +508,7 @@ function routeOutputPath(path) {
     return join(distDir, "index.html");
   }
   const relativePath = path.replace(/^\//, "");
-  return extname(relativePath)
+  return relativePath.endsWith(".html")
     ? join(distDir, relativePath)
     : join(distDir, relativePath, "index.html");
 }
