@@ -168,6 +168,9 @@ for (const pack of catalogue.packs) {
     const pageHtml = built.get(canonical(pagePath(pack, page)));
     assert(hasLink(pageHtml, pdfPath(pack, page, "a4")) && hasLink(pageHtml, pdfPath(pack, page, "letter")), `${page.title} must offer both PDF sizes without JavaScript.`);
     assert(hasLink(pageHtml, packPath(pack)), `${page.title} has lost its parent pack navigation.`);
+    for (const sibling of pack.pages.filter(picture => picture.id !== page.id)) {
+      assert(hasLink(pageHtml, pagePath(pack, sibling)), `${page.title} must link to ${sibling.title} in its initial HTML.`);
+    }
     const pictureLinks = tags(pageHtml, "a").filter(item => item.href).map(item => new URL(item.href, origin));
     assert(pictureLinks.some(link => link.searchParams.get("picture") === page.id && link.searchParams.get("pack") === pack.id), `${page.title}'s Colour it link opens the wrong picture.`);
     assert(tags(pageHtml, "img").some(item => item.src === page.image && item.alt === page.alt), `${page.title} shows the wrong picture or alt text.`);
