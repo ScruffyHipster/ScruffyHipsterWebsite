@@ -1,39 +1,41 @@
 /* Editorial treatment is limited to the product landing page. */
 .bft-premium {
-  --bft-cream: #f9f9f6;
-  --bft-ink: #202b3c;
-  --bft-muted: #606872;
-  --bft-sage: #e2e8ed;
-  --bft-line: #d9dde0;
+  --bft-cream: #faf7f7;
+  --bft-ink: #1e2a44;
+  --bft-muted: #625e5f;
+  --bft-sage: #f3e4e6;
+  --bft-line: #ead8db;
+  --bft-rose: #8f4f5d;
+  /* The app's Clean Slate theme ground, so screenshots sit on their own colour. */
+  --bft-clean-slate: linear-gradient(135deg, #efdbde 0%, #f7d9db 48%, #f4e0dc 78%, #f3e4e6 100%);
 }
 .bft-premium .bft-container { width: min(1280px, calc(100% - 112px)); }
 .bft-premium .bft-nav-inner { min-height: 90px; }
 .bft-premium .bft-brand { letter-spacing: -0.025em; }
 .bft-premium .bft-button { border-radius: 3px; min-height: 54px; }
-.bft-premium .bft-button:hover { background: #3e516a; }
+.bft-premium .bft-button:hover { background: #2e3d5e; }
 .bft-premium .bft-button-small { min-height: 44px; }
 .bft-premium .bft-store-note { margin-top: 12px; }
 .bft-premium h1, .bft-premium h2 { letter-spacing: -0.055em; }
 .bft-premium h2 { font-size: clamp(2.7rem, 4.5vw, 4.2rem); line-height: 1.08; }
 .bft-premium .bft-eyebrow { font-size: 0.66rem; letter-spacing: 0.17em; }
-.bft-premium :focus-visible { outline-color: #697ba0; }
-.bft-editorial-hero { padding-top: 40px; }
-.bft-editorial-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5%; align-items: center; }
-.bft-editorial-hero-copy { padding-block: 38px 48px; }
+.bft-premium :focus-visible { outline-color: var(--bft-rose); }
+.bft-editorial-hero { padding-block: 40px; }
+.bft-editorial-hero-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-areas: "copy product" "actions product"; column-gap: 5%; align-items: center; }
+.bft-editorial-hero-copy { grid-area: copy; align-self: end; padding-top: 38px; }
+.bft-editorial-hero-actions { grid-area: actions; align-self: start; padding-block: 30px 48px; }
 .bft-editorial-hero h1 { font-size: clamp(3.1rem, 5.7vw, 5.7rem); line-height: 1.015; margin: 0 0 30px; }
-.bft-editorial-hero h1 em { display: block; font-weight: inherit; color: #52657d; }
-.bft-editorial-hero .bft-lead { max-width: 370px; font-size: 1rem; line-height: 1.8; margin-bottom: 30px; }
+.bft-editorial-hero h1 em { display: block; font-weight: inherit; color: var(--bft-rose); }
+.bft-editorial-hero .bft-lead { max-width: 425px; font-size: 1rem; line-height: 1.8; margin-bottom: 20px; }
+.bft-hero-story { max-width: 370px; color: var(--bft-muted); font-size: 0.87rem; line-height: 1.7; margin: 0; }
 .bft-discover { display: flex; width: fit-content; margin-top: 30px; text-decoration: none; }
 .bft-discover svg { transform: rotate(90deg); }
-.bft-editorial-scene { position: relative; margin: 0 0 28px 0; min-width: 0; }
+.bft-editorial-product { grid-area: product; display: grid; justify-items: center; gap: 24px; margin: 0; padding: 38px; background: var(--bft-clean-slate); border-radius: 28px; min-width: 0; }
+.bft-editorial-product figcaption { color: var(--bft-muted); font-size: 0.73rem; text-align: center; }
 .bft-premium .bft-lifestyle-photo { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
 .bft-device { flex: none; width: 246px; padding: 5px; border: 1px solid #70777d; border-radius: 36px; background: #17191c; box-shadow: 0 24px 44px -25px #16233066, inset 0 0 0 2px #33383d; }
 .bft-device img { width: 100%; height: auto; border-radius: 30px; }
-.bft-scene-phone { position: absolute; width: 34%; left: -7%; bottom: -28px; padding: 4px; border-radius: 28px; transform: rotate(-5deg); }
-.bft-scene-phone img { border-radius: 23px; }
-.bft-editorial-signoff { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-block: 38px; border-bottom: 1px solid var(--bft-line); }
-.bft-editorial-signoff p { font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.15rem, 2vw, 1.5rem); letter-spacing: -0.025em; margin: 0; }
-.bft-editorial-signoff span { color: var(--bft-muted); font-size: 0.73rem; }
+.bft-hero-product-phone { width: 260px; max-width: 100%; }
 .bft-editorial-section { padding-block: 120px; }
 .bft-editorial-split { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 10%; }
 .bft-editorial-copy > p:not(.bft-eyebrow) { max-width: 425px; color: var(--bft-muted); font-size: 0.98rem; line-height: 1.85; margin-bottom: 22px; }
@@ -45,7 +47,7 @@
 .bft-editorial-section-intro { display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: end; gap: 10%; margin-bottom: 60px; }
 .bft-editorial-section-intro h2 { margin-bottom: 0; }
 .bft-editorial-section-intro > p, .bft-editorial-section-intro > div > p:not(.bft-eyebrow) { font-size: 0.96rem; line-height: 1.8; color: var(--bft-muted); max-width: 380px; margin-bottom: 0; }
-.bft-night { --bft-muted: #b9c2cf; --bft-line: #465363; background: #202b3c; color: #f9f9f6; }
+.bft-night { --bft-muted: #b9b1b3; --bft-line: #3a3439; background: #252126; color: #f2ecec; }
 .bft-night .bft-editorial-section-intro { grid-template-columns: 1fr 1fr; }
 .bft-night .bft-editorial-section-intro > p { justify-self: center; text-align: center; }
 .bft-night-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 10%; }
@@ -53,15 +55,22 @@
 .bft-night-product .bft-device { width: 248px; box-shadow: 0 28px 55px -25px #0009; }
 .bft-editorial-details article { display: grid; grid-template-columns: 30px 1fr; gap: 23px; padding-block: 27px; border-top: 1px solid var(--bft-line); }
 .bft-editorial-details article:last-child { border-bottom: 1px solid var(--bft-line); }
-.bft-editorial-details svg { width: 24px; height: 24px; color: #b9c2cf; stroke-width: 1.25; }
+.bft-editorial-details svg { width: 24px; height: 24px; color: #d7a8af; stroke-width: 1.25; }
 .bft-editorial-details h3 { font-size: 1.14rem; margin-bottom: 10px; }
 .bft-editorial-details p { color: var(--bft-muted); font-size: 0.87rem; line-height: 1.8; margin: 0; max-width: 365px; }
+.bft-beyond { border-top: 1px solid var(--bft-line); }
+.bft-beyond-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+.bft-beyond-grid article { display: grid; align-content: start; min-width: 0; }
+.bft-beyond-product { display: flex; justify-content: center; margin-bottom: 30px; padding: 40px 24px; background: var(--bft-clean-slate); border-radius: 28px; }
+.bft-beyond-product .bft-device { width: 100%; max-width: 230px; }
+.bft-beyond-grid h3 { font-size: 1.14rem; margin-bottom: 10px; }
+.bft-beyond-grid p { max-width: 360px; color: var(--bft-muted); font-size: 0.9rem; line-height: 1.8; margin: 0; }
 .bft-insights-editorial { grid-template-columns: 1.25fr 1fr; gap: 6%; }
-.bft-insights-products { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; justify-items: center; gap: 18px; min-width: 0; background: #eef0ee; padding: 44px 22px; }
+.bft-insights-products { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; justify-items: center; gap: 18px; min-width: 0; background: var(--bft-clean-slate); border-radius: 28px; padding: 44px 22px; }
 .bft-insights-products .bft-device { width: 100%; max-width: 237px; min-width: 0; }
 .bft-insights-products .bft-device:last-child { margin-top: 64px; }
-.bft-appearance { background: #e6ebef; }
-.bft-appearance-switch { display: inline-flex; gap: 3px; border: 1px solid #aeb8c2; padding: 3px; border-radius: 3px; margin-top: 24px; }
+.bft-appearance { background: var(--bft-sage); }
+.bft-appearance-switch { display: inline-flex; gap: 3px; border: 1px solid #d7a8af; padding: 3px; border-radius: 3px; margin-top: 24px; }
 .bft-appearance-switch button { font: inherit; font-size: 0.8rem; border: 0; border-radius: 2px; background: transparent; color: var(--bft-ink); min-width: 86px; min-height: 44px; cursor: pointer; padding: 8px 18px; transition: background-color 250ms ease, color 250ms ease; }
 .bft-appearance-switch button[aria-pressed="true"] { color: #fff; background: var(--bft-ink); }
 .bft-appearance-switch button:hover { box-shadow: inset 0 0 0 1px var(--bft-ink); }
@@ -77,16 +86,15 @@
 .bft-device-collection[data-appearance="dark"] .bft-appearance-screen[data-mode="dark"] { opacity: 1; }
 .bft-device-collection figcaption { font-size: 0.77rem; text-align: center; color: var(--bft-muted); margin-top: 28px; }
 .bft-appearance-note { text-align: center; margin: 35px 0 0; }
-.bft-founder { border-bottom: 1px solid var(--bft-line); }
-.bft-founder h2 { margin-bottom: 0; }
-.bft-founder .bft-editorial-copy > p:first-child { font-size: 1.15rem; color: var(--bft-ink); }
+.bft-founder { border-block: 1px solid var(--bft-line); }
+.bft-founder-photo { margin: 0; }
+.bft-founder h2 { margin-bottom: 30px; }
+.bft-founder .bft-editorial-copy > h2 + p { font-size: 1.15rem; color: var(--bft-ink); }
 .bft-premium .bft-faq-section { background: var(--bft-cream); padding-block: 88px; }
 .bft-premium .bft-faq-list details { border-color: var(--bft-line); }
-.bft-premium .bft-final { background: #202b3c; color: #f9f9f6; padding-block: 110px; }
-.bft-premium .bft-final .bft-eyebrow, .bft-premium .bft-final .bft-store-note, .bft-premium .bft-final p:not(.bft-eyebrow, .bft-store-note) { color: #c1cad6; }
+.bft-premium .bft-final { background: var(--bft-clean-slate); color: var(--bft-ink); padding-block: 110px; }
+.bft-premium .bft-final .bft-eyebrow, .bft-premium .bft-final .bft-store-note, .bft-premium .bft-final p:not(.bft-eyebrow, .bft-store-note) { color: var(--bft-muted); }
 .bft-premium .bft-final h2 { font-size: clamp(3rem, 5.6vw, 5rem); }
-.bft-premium .bft-final .bft-button { background: #f9f9f6; color: #202b3c !important; border-color: #f9f9f6; }
-.bft-premium .bft-final .bft-button:hover { background: #dce4ed; }
 @media (min-width: 1500px) {
   .bft-editorial-hero { padding-top: 50px; }
 }
@@ -99,10 +107,10 @@
   .bft-insights-editorial .bft-editorial-copy { grid-row: 1; }
   .bft-insights-editorial .bft-editorial-copy > p:not(.bft-eyebrow) { max-width: 640px; }
   .bft-insights-products { width: 100%; max-width: 620px; justify-self: center; }
+  .bft-beyond-grid { gap: 24px; }
+  .bft-beyond-product { padding: 28px 16px; }
   .bft-device { border-radius: 31px; }
   .bft-device img { border-radius: 25px; }
-  .bft-scene-phone { border-radius: 22px; }
-  .bft-scene-phone img { border-radius: 17px; }
 }
 @media (max-width: 760px) {
   .bft-premium .bft-container { width: calc(100% - 40px); }
@@ -110,16 +118,16 @@
   .bft-premium .bft-brand { font-size: 0.84rem; gap: 9px; }
   .bft-premium .bft-brand img { width: 32px; height: 32px; }
   .bft-premium .bft-button-small { padding: 10px 13px; font-size: 0.72rem; }
-  .bft-editorial-hero { padding-top: 0; }
-  .bft-editorial-hero-grid { grid-template-columns: 1fr; gap: 0; }
-  .bft-editorial-hero-copy { padding-block: 36px 32px; }
-  .bft-editorial-hero h1 { font-size: clamp(3.45rem, 10vw, 5rem); max-width: 580px; }
-  .bft-editorial-hero .bft-lead { max-width: 360px; font-size: 0.96rem; }
+  .bft-editorial-hero { padding-block: 0 32px; }
+  .bft-editorial-hero-grid { grid-template-columns: 1fr; grid-template-areas: "copy" "product" "actions"; gap: 0; }
+  .bft-editorial-hero-copy { padding-block: 24px; }
+  .bft-editorial-hero-actions { padding-block: 24px 0; }
+  .bft-editorial-hero h1 { font-size: clamp(2.65rem, 8vw, 3.45rem); max-width: 580px; margin-bottom: 20px; }
+  .bft-editorial-hero .bft-lead { max-width: 100%; font-size: 0.96rem; margin-bottom: 16px; }
   .bft-discover { margin-top: 12px; }
-  .bft-editorial-scene { margin: 0 0 24px 16px; }
+  .bft-editorial-product { padding: 24px; gap: 20px; }
+  .bft-hero-product-phone { width: 210px; }
   .bft-premium .bft-lifestyle-photo { aspect-ratio: 1; object-position: 50% 40%; }
-  .bft-scene-phone { width: 31%; max-width: 190px; left: -16px; bottom: -24px; }
-  .bft-editorial-signoff { align-items: start; flex-direction: column; gap: 8px; padding-block: 34px; }
   .bft-editorial-section { padding-block: 72px; }
   .bft-editorial-split, .bft-night-grid, .bft-editorial-section-intro, .bft-night .bft-editorial-section-intro { grid-template-columns: 1fr; gap: 36px; }
   .bft-editorial-section-intro, .bft-night .bft-editorial-section-intro { margin-bottom: 36px; gap: 20px; }
@@ -133,6 +141,10 @@
   .bft-editorial-details p { max-width: 100%; }
   .bft-insights-editorial .bft-editorial-copy { grid-row: 1; }
   .bft-insights-products { padding: 32px 18px; }
+  .bft-beyond-grid { grid-template-columns: 1fr; gap: 48px; }
+  .bft-beyond-product { margin-bottom: 24px; }
+  .bft-beyond-product .bft-device { max-width: 220px; }
+  .bft-beyond-grid p { max-width: 100%; }
   .bft-device-collection { gap: 20px; }
   .bft-device-collection figure:first-child { width: 31%; }
   .bft-device-collection figure:last-child { width: 63%; }
@@ -144,6 +156,7 @@
   .bft-device-collection figcaption { font-size: 0.68rem; margin-top: 18px; }
   .bft-appearance-note { margin-top: 25px; }
   .bft-founder .bft-editorial-split { gap: 25px; }
+  .bft-founder .bft-editorial-copy { grid-row: 1; }
   .bft-premium .bft-faq-section { padding-block: 65px; }
   .bft-premium .bft-final { padding-block: 80px; }
 }
@@ -154,11 +167,8 @@
 }
 @media (max-width: 390px) {
   .bft-premium .bft-nav .bft-brand span { max-width: 115px; }
-  .bft-editorial-hero h1 { font-size: 3.12rem; }
   .bft-device { border-radius: 26px; }
   .bft-device img { border-radius: 20px; }
-  .bft-scene-phone { border-radius: 19px; padding: 3px; }
-  .bft-scene-phone img { border-radius: 15px; }
   .bft-device-collection { gap: 14px; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -195,3 +205,143 @@
   .bft-nav-actions { gap: 8px; }
   .bft-nav .tracker-language-dropdown { width: 92px; font-size: 0.75rem; }
 }
+
+/* Storybook layer: Futura caps labels, centred symmetry, framed stages, stamps and placards. */
+.bft-site {
+  --bft-futura: Futura, "Futura PT", "Century Gothic", "Avenir Next", Avenir, sans-serif;
+  --bft-frame: rgb(143 79 93 / 38%);
+}
+.bft-site .bft-eyebrow { font-family: var(--bft-futura); font-weight: 500; letter-spacing: 0.26em; }
+.bft-site .bft-brand span { font-family: var(--bft-futura); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; }
+.bft-site .bft-nav-links a { font-family: var(--bft-futura); font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.bft-site .bft-nav-inner { border-bottom: 3px double var(--bft-line); }
+.bft-site .bft-button {
+  font-family: var(--bft-futura); font-size: 0.76rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+  border-radius: 2px; outline: 1px solid rgb(250 247 247 / 50%); outline-offset: -6px;
+}
+.bft-site .bft-button:focus-visible { outline: 3px solid var(--bft-rose, #8f4f5d); outline-offset: 5px; }
+.bft-site .bft-text-link { font-family: var(--bft-futura); font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.bft-premium h1, .bft-premium h2 { letter-spacing: -0.025em; }
+
+/* Centred eyebrows carry a short rule on each side, like a title card. */
+.bft-premium :is(.bft-editorial-hero-copy, .bft-editorial-section-intro, .bft-final, #how-it-works .bft-editorial-copy, .bft-lifetime) .bft-eyebrow {
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+}
+.bft-premium :is(.bft-editorial-hero-copy, .bft-editorial-section-intro, .bft-final, #how-it-works .bft-editorial-copy, .bft-lifetime) .bft-eyebrow::before,
+.bft-premium :is(.bft-editorial-hero-copy, .bft-editorial-section-intro, .bft-final, #how-it-works .bft-editorial-copy, .bft-lifetime) .bft-eyebrow::after {
+  content: ""; width: 28px; height: 1px; background: currentColor; opacity: 0.55;
+}
+
+/* Hero: one centred composition, the phone on a framed stage between two placards. */
+.bft-premium .bft-editorial-hero-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "copy" "actions" "product"; justify-items: center; text-align: center; }
+.bft-premium .bft-editorial-hero-copy { max-width: 900px; padding-top: 56px; }
+.bft-premium .bft-editorial-hero .bft-lead, .bft-premium .bft-hero-story { margin-inline: auto; }
+.bft-premium .bft-editorial-hero-actions { display: grid; justify-items: center; padding-block: 6px 56px; }
+.bft-premium .bft-editorial-product {
+  width: 100%; grid-template-columns: 1fr auto 1fr; grid-template-areas: "start phone end" "caption caption caption";
+  align-items: center; column-gap: 56px; padding: 64px 48px 40px; border-radius: 0; outline: 1px solid var(--bft-frame); outline-offset: -14px;
+}
+.bft-premium .bft-hero-product-phone { grid-area: phone; }
+.bft-premium .bft-editorial-product figcaption { grid-area: caption; font-family: var(--bft-futura); letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.64rem; }
+.bft-hero-placard { width: min(100%, 220px); margin: 0; padding: 22px 18px; background: var(--bft-cream); border: 1px solid var(--bft-frame); outline: 1px solid var(--bft-frame); outline-offset: -6px; text-align: center; }
+.bft-hero-placard-0 { grid-area: start; justify-self: end; }
+.bft-hero-placard-1 { grid-area: end; justify-self: start; }
+.bft-hero-placard span { display: block; margin-bottom: 8px; color: var(--bft-muted); font-family: var(--bft-futura); font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; }
+.bft-hero-placard strong { display: block; font-family: Georgia, "Times New Roman", serif; font-size: 1.2rem; font-style: italic; font-weight: 400; color: var(--bft-ink); }
+
+/* Section introductions sit on the centre line. */
+.bft-premium .bft-editorial-section-intro, .bft-premium .bft-night .bft-editorial-section-intro {
+  grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 22px; text-align: center;
+}
+.bft-premium .bft-editorial-section-intro > p, .bft-premium .bft-editorial-section-intro > div > p:not(.bft-eyebrow) { max-width: 520px; margin-inline: auto; }
+
+/* Feeds: copy over a level pair of phones on a framed stage. */
+.bft-premium #how-it-works .bft-editorial-split { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 56px; text-align: center; }
+.bft-premium #how-it-works .bft-editorial-copy > p:not(.bft-eyebrow) { margin-inline: auto; }
+.bft-premium #how-it-works .bft-editorial-copy .bft-text-link { justify-content: center; }
+.bft-premium .bft-editorial-duo { width: 100%; justify-content: center; gap: 48px; padding: 64px 32px; background: var(--bft-clean-slate); outline: 1px solid var(--bft-frame); outline-offset: -14px; }
+.bft-premium .bft-editorial-duo .bft-device:last-child { margin-top: 0; }
+
+/* Founder photo in a mount, like a framed portrait. */
+.bft-premium .bft-founder { border-block: 3px double var(--bft-line); }
+.bft-premium .bft-founder-photo { padding: 18px; background: var(--bft-sage); outline: 1px solid var(--bft-frame); outline-offset: -9px; }
+
+/* Sleep, milk and reminders: three perforated stamps, numbered I to III. */
+.bft-premium .bft-beyond { border-top: 3px double var(--bft-line); }
+.bft-premium .bft-beyond-grid { counter-reset: bft-stamp; text-align: center; }
+.bft-premium .bft-beyond-grid article { counter-increment: bft-stamp; justify-items: center; }
+.bft-premium .bft-beyond-product {
+  width: 100%; border: 10px solid transparent; border-radius: 0; background-clip: border-box;
+  -webkit-mask: radial-gradient(circle, #0000 4.5px, #000 5px) -10px -10px / 20px 20px round, linear-gradient(#000 0 0) padding-box;
+  mask: radial-gradient(circle, #0000 4.5px, #000 5px) -10px -10px / 20px 20px round, linear-gradient(#000 0 0) padding-box;
+  box-shadow: inset 0 0 0 1px var(--bft-frame);
+}
+.bft-premium .bft-beyond-grid h3::before {
+  content: counter(bft-stamp, upper-roman) / "";
+  display: block; width: 96px; margin: 0 auto 12px; color: var(--bft-rose); font-family: var(--bft-futura); font-size: 0.78rem; letter-spacing: 0.2em;
+  background: linear-gradient(currentColor 0 0) left center / 26px 1px no-repeat, linear-gradient(currentColor 0 0) right center / 26px 1px no-repeat;
+}
+.bft-premium .bft-beyond-grid p { margin-inline: auto; }
+
+/* Night section and Insights keep their phones level and framed. */
+.bft-premium .bft-insights-products { border-radius: 0; outline: 1px solid var(--bft-frame); outline-offset: -14px; }
+.bft-premium .bft-insights-products .bft-device:last-child { margin-top: 0; }
+.bft-premium .bft-night .bft-editorial-details h3 { font-family: var(--bft-futura); font-size: 0.86rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; }
+
+/* Lifetime Unlock as a framed ticket. */
+.bft-premium .bft-lifetime { background: var(--bft-sage); }
+.bft-premium .bft-lifetime .bft-editorial-split {
+  max-width: 760px; grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 8px; text-align: center;
+  padding: 64px 56px; background: var(--bft-cream); border: 1px solid var(--bft-frame); outline: 1px solid var(--bft-frame); outline-offset: -10px;
+}
+.bft-premium .bft-lifetime h2 { margin-bottom: 24px; }
+.bft-premium .bft-lifetime .bft-editorial-copy > p:not(.bft-eyebrow) { margin-inline: auto; }
+
+/* Final invitation in a double frame. */
+.bft-premium .bft-final > .bft-container { max-width: 900px; padding: 72px 40px; outline: 1px solid var(--bft-frame); outline-offset: -10px; border: 1px solid var(--bft-frame); }
+
+@media (max-width: 760px) {
+  .bft-premium .bft-editorial-hero-grid { grid-template-areas: "copy" "product" "actions"; }
+  .bft-premium .bft-editorial-hero-copy { padding-top: 32px; }
+  .bft-premium .bft-editorial-hero-actions { padding-block: 28px 0; }
+  .bft-premium .bft-editorial-product { grid-template-columns: 1fr 1fr; grid-template-areas: "phone phone" "start end" "caption caption"; gap: 20px 12px; padding: 40px 22px 28px; justify-items: center; }
+  .bft-hero-placard { padding: 16px 10px; }
+  .bft-hero-placard-0, .bft-hero-placard-1 { justify-self: stretch; width: auto; }
+  .bft-hero-placard strong { font-size: 1rem; }
+  .bft-premium .bft-editorial-duo { gap: 16px; padding: 40px 18px; }
+  .bft-premium .bft-lifetime .bft-editorial-split { padding: 48px 26px; }
+  .bft-premium .bft-final > .bft-container { padding: 56px 22px; }
+}
+.bft-premium .bft-appearance { background: var(--bft-cream); border-top: 3px double var(--bft-line); }
+.bft-premium .bft-appearance-switch { border-color: var(--bft-frame); border-radius: 2px; }
+.bft-premium .bft-appearance-switch button { font-family: var(--bft-futura); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; }
+.bft-premium .bft-device-collection figcaption, .bft-premium .bft-appearance-note { font-family: var(--bft-futura); letter-spacing: 0.08em; }
+.bft-site .bft-footer-top nav a, .bft-site .bft-footer-bottom a { font-family: var(--bft-futura); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.bft-site .bft-footer-top { border-bottom-style: double; }
+@media (max-width: 850px) {
+  .bft-site .bft-nav .bft-brand span { font-size: 0.64rem; letter-spacing: 0.06em; overflow-wrap: normal; }
+}
+@media (max-width: 520px) {
+  .bft-site .bft-eyebrow { letter-spacing: 0.18em; }
+  .bft-premium :is(.bft-editorial-hero-copy, .bft-editorial-section-intro, .bft-final, #how-it-works .bft-editorial-copy, .bft-lifetime) .bft-eyebrow { gap: 10px; }
+  .bft-premium :is(.bft-editorial-hero-copy, .bft-editorial-section-intro, .bft-final, #how-it-works .bft-editorial-copy, .bft-lifetime) .bft-eyebrow::before,
+  .bft-premium :is(.bft-editorial-hero-copy, .bft-editorial-section-intro, .bft-final, #how-it-works .bft-editorial-copy, .bft-lifetime) .bft-eyebrow::after { width: 16px; flex: none; }
+}
+@media (max-width: 520px) {
+  .bft-site .bft-nav .bft-brand span { font-size: 0.6rem; letter-spacing: 0.04em; max-width: none; }
+  .bft-site .bft-nav .bft-button-small { padding-inline: 12px; letter-spacing: 0.08em; font-size: 0.68rem; }
+}
+/* Width-capped blocks on the centre line need auto margins as well as centred text. */
+.bft-premium .bft-editorial-hero h1 { margin-inline: auto; }
+.bft-premium :is(.bft-editorial-section-intro, #how-it-works .bft-editorial-copy, .bft-lifetime, .bft-final) h2 { margin-inline: auto; }
+.bft-premium .bft-editorial-hero .bft-lead { max-width: 560px; }
+/* While a screenshot loads, its frame shows the app's own ground instead of a black screen. */
+.bft-site :is(.bft-device, .bft-tablet) img { background: linear-gradient(135deg, #efdbde 0%, #f7d9db 48%, #f4e0dc 78%, #f3e4e6 100%); }
+.bft-site :is(.bft-device, .bft-tablet) img[src*="-dark-"] { background: linear-gradient(180deg, #292327 0%, #19171a 100%); }
+/* Free web apps: centred intro and framed cards to match the storybook layer. */
+.bft-premium .bft-web-apps { border-block: 3px double var(--bft-line); }
+.bft-premium .bft-web-apps-intro { margin-inline: auto; text-align: center; }
+.bft-premium .bft-web-apps-intro .bft-eyebrow { display: flex; align-items: center; justify-content: center; gap: 14px; }
+.bft-premium .bft-web-apps-intro .bft-eyebrow::before, .bft-premium .bft-web-apps-intro .bft-eyebrow::after { content: ""; width: 28px; height: 1px; background: currentColor; opacity: 0.55; flex: none; }
+.bft-premium .bft-web-app { align-items: center; text-align: center; border-color: var(--bft-frame); border-radius: 0; outline: 1px solid var(--bft-frame); outline-offset: -8px; }
+.bft-premium .bft-web-app:hover { border-color: var(--bft-ink); }

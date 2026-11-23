@@ -3,7 +3,7 @@
   "route": "/breastfeeding-tracker",
   "seo": {
     "title": "Baby Feeding Tracker & Timer | Breastfeeding, Bottles & Pumping",
-    "description": "Track breastfeeding, bottles, pumping and combined feeds in one place. One-handed timers, Apple Watch support and editable history. Free to start.",
+    "description": "Track breastfeeding, bottles, pumping, sleep and your milk stash in one place. One-handed timers, reminders, Apple Watch support and editable history. Free to start.",
     "keywords": [
       "breastfeeding tracker",
       "combifeeding tracker",
@@ -37,16 +37,16 @@
     "applicationCategory": "MedicalApplication",
     "applicationSubCategory": "Breastfeeding Tracker",
     "operatingSystem": "iOS 26.0 or later; watchOS 26.0 or later",
-    "description": "Track breastfeeding, bottles, pumping and combined feeds in one place, with one-handed timers, Apple Watch support and editable feeding history. Free to download with an optional one-time Lifetime Unlock.",
+    "description": "Track breastfeeding, bottles, pumping, combined feeds and sleep in one place, with one-handed timers, a Milk Stash for the fridge and freezer, reminders, Apple Watch support and editable history. Free to download with an optional one-time Lifetime Unlock.",
     "featureList": [
       "One-handed breastfeeding timer with left and right side tracking",
-      "Pump tracking",
-      "Bottle feeding tracking",
-      "Combination feeding tracking",
+      "Pump tracking with a Milk Stash for the fridge and freezer",
+      "Bottle and combination feeding tracking",
+      "Sleep tracking with timers on iPhone and Apple Watch",
       "Apple Watch companion app with offline tracking and later sync",
       "Home Screen widget, Live Activities, and Dynamic Island",
-      "Late-start adjustment and manual feed entry",
-      "PDF export from selected feed history",
+      "Feeding, pumping and sleep reminders",
+      "Late-start adjustment, manual entry and PDF export from selected history",
       "Private, informational on-device summaries",
       "No account or subscription required"
     ],
@@ -58,9 +58,9 @@
   "hero": {
     "iconAlt": "Breastfeeding Tracker & Timer app icon",
     "eyebrow": "Breastfeeding Tracker & Timer",
-    "heading": "Baby feeding,",
-    "headingEmphasis": "thoughtfully tracked.",
-    "body": "Keep breastfeeding, bottles, pumping and combined feeds together. Start a timer with one hand, check the last side, and return to a clear record whenever you need it.",
+    "heading": "One less thing",
+    "headingEmphasis": "to remember at the next feed.",
+    "body": "Track breastfeeding, bottles, pumping and sleep in one place. Start a timer with one hand and check the last feed at a glance.",
     "primaryCta": "Download on the App Store",
     "secondaryCta": "Discover the app",
     "storeNote": "Free to start. Optional one-time Lifetime Unlock.",
@@ -73,7 +73,7 @@
       "label": "One hand free?",
       "value": "That’s all you need."
     },
-    "caption": "One less thing to remember at the next feed."
+    "caption": "I made this app alongside my wife during our own newborn days."
   },
   "proof": {
     "ariaLabel": "Designed for everyday feeding",
@@ -110,7 +110,7 @@
       {
         "step": "03",
         "title": "Pumping",
-        "body": "Time a pumping session and add a volume if you have one. Your expressed-milk balance updates from the entries you record."
+        "body": "Time a pumping session and add a volume if you have one. Pumped milk goes into your Milk Stash, ready to use in a bottle later."
       },
       {
         "step": "04",
@@ -124,7 +124,7 @@
     "heading": "Every kind of feed, together.",
     "paragraphs": [
       "Breastfeeding, bottles, pumping and combined feeds share one timeline.",
-      "Your expressed-milk balance is based on the pumping and bottle volumes you record."
+      "Your Milk Stash updates from the pumping and bottle volumes you record."
     ],
     "link": {
       "label": "Explore all four ways to track",
@@ -133,7 +133,7 @@
     "cta": "Download on the App Store",
     "imageAlts": [
       "Feeding history with breastfeeding, bottle, pumping and combined-feed entries.",
-      "Expressed-milk balance showing recorded milk added and used."
+      "Milk Stash showing milk in the fridge and freezer, with milk pumped, added and used."
     ],
     "imageLabel": "One timeline",
     "imageCaption": "The whole day, at a glance."
@@ -142,7 +142,7 @@
     "eyebrow": "Perspective, gently",
     "heading": "See how your feeding\ndays unfold.",
     "paragraphs": [
-      "A little distance can make the days feel clearer. See the patterns in the feeds you’ve recorded, with simple timelines and thoughtful summaries.",
+      "A little distance can make the days feel clearer. See the patterns in the feeds and sleep you’ve recorded, with simple timelines and thoughtful summaries.",
       "There’s no score to chase. Just your feeding story, there when you want to look back."
     ],
     "cta": "Explore Lifetime Unlock",
@@ -155,7 +155,7 @@
   "privacy": {
     "eyebrow": "One-time Lifetime Unlock",
     "heading": "Keep the full\nfeeding picture.",
-    "body": "Start tracking for free, without creating an app account. Lifetime Unlock adds full history and filters, feeding insights, PDF export and all themes. It also removes ads, with a single purchase and no subscription.",
+    "body": "Start tracking for free, without creating an app account. Lifetime Unlock adds full history and filters, feeding and sleep insights, Smart reminders, widget controls, PDF export and all themes. It also removes ads, with a single purchase and no subscription.",
     "links": [
       {
         "label": "Read the privacy policy",
@@ -210,11 +210,11 @@
   "faqs": [
     {
       "question": "Is Breastfeeding Tracker free?",
-      "answer": "The app is free to download and start using. An optional one-time Lifetime Unlock adds full history, filters, insights, PDF export, all themes and an ad-free experience. There is no subscription."
+      "answer": "The app is free to download and start using, including sleep tracking, the Milk Stash and reminders at a set interval. An optional one-time Lifetime Unlock adds full history, filters, insights, Smart reminders, PDF export, all themes and an ad-free experience. There is no subscription."
     },
     {
       "question": "Can I track breastfeeding, bottles and pumping?",
-      "answer": "Yes. Record breastfeeding, bottle feeds and pumping in the same timeline. Combined feeds keep a breastfeed and a bottle top-up together in one entry. Bottles can include expressed milk, formula or a mix."
+      "answer": "Yes. Record breastfeeding, bottle feeds and pumping in the same timeline. Combined feeds keep a breastfeed and a bottle top-up together in one entry. Bottles can include expressed milk, formula or a mix. Sleep has its own timer and log, and pumped milk can go straight into your Milk Stash."
     },
     {
       "question": "What if I forget to start the timer?",
@@ -300,6 +300,31 @@
       }
     ]
   },
+  "beyondFeeds": {
+    "eyebrow": "Beyond the feed",
+    "heading": "Sleep, milk and\nreminders, too.",
+    "body": "The rest of the day sits alongside your feeds, so there’s one place to check when you’re half awake.",
+    "items": [
+      {
+        "title": "Sleep, without the guesswork.",
+        "body": "Start a sleep timer on your iPhone or Apple Watch, or add a nap afterwards. Each sleep shows when it started, when it ended and how long it lasted.",
+        "screen": "sleep-light",
+        "imageAlt": "The Sleep tab showing a sleep in progress, today’s total sleep and naps, and recent sleeps."
+      },
+      {
+        "title": "Your Milk Stash, sorted.",
+        "body": "Add pumped milk to the fridge or freezer, then use a portion in a bottle or move it to the freezer. Portions that need attention are easy to spot.",
+        "screen": "milk-light",
+        "imageAlt": "The Milk Stash showing milk in the fridge and freezer, with a log of milk pumped, added and used in bottles."
+      },
+      {
+        "title": "A nudge, when you want one.",
+        "body": "Set feeding, pumping and sleep reminders at an interval you choose, for free. Smart reminders, included with Lifetime Unlock, follow your own recorded routine.",
+        "screen": "reminders-light",
+        "imageAlt": "Reminder setup with feeding, pumping and sleep reminders, plus milk storage reminders."
+      }
+    ]
+  },
   "footer": {
     "body": "Made by a small independent studio, around real family life.",
     "studioLabel": "Meet ScruffyHipster",
@@ -334,7 +359,7 @@
     "benefitNote": "Breastfeeding, bottles, pumping. All part of your story.",
     "timerAlt": "The active breastfeeding timer in the app’s dark appearance.",
     "historyAlt": "Recent breastfeeding, bottle and pumping entries in a single feeding history.",
-    "insightsNote": "Insights and full history are included with the one-time Lifetime Unlock. Summaries reflect your records, not a feeding assessment.",
+    "insightsNote": "Insights and full history are included with the one-time Lifetime Unlock. Summaries reflect your records, not a feeding or sleep assessment.",
     "screens": {
       "eyebrow": "Considered in every detail",
       "heading": "Clear by day.\nComfortable after dark.",
@@ -351,8 +376,8 @@
     "founder": {
       "eyebrow": "From our family to yours",
       "heading": "Born in the\nnewborn days.",
-      "body": "We built the app during our own experience of newborn feeding. When our days grew to include bottles and pumping, the app grew with us.",
-      "closing": "Thoughtfully made by a small independent studio, for all the ways feeding can unfold.",
+      "body": "I made this app alongside my wife while she was breastfeeding. As our feeding days grew to include bottles and pumping, the app grew with us.",
+      "closing": "I keep improving the app to make everyday tracking easier when you have your hands full.",
       "linkLabel": "Read our story",
       "linkUrl": "/breastfeeding-tracker/blog/breastfeeding-didnt-go-to-plan/"
     },

@@ -4,10 +4,10 @@
   --feeding-ink: var(--bft-ink);
   --feeding-navy: var(--bft-ink);
   --feeding-plum: var(--bft-ink);
-  --feeding-rose-deep: #4b6552;
+  --feeding-rose-deep: #8f4f5d;
   --feeding-rose: var(--bft-apricot);
   --feeding-blush: var(--bft-sage);
-  --feeding-lavender: #f0eee5;
+  --feeding-lavender: #f6eced;
   --feeding-line: var(--bft-line);
 }
 
@@ -16,7 +16,7 @@
 .bft-site .narrow-container { width: min(760px, calc(100% - 96px)); }
 .bft-site .bft-nav-links a[aria-current="page"] {
   text-decoration: underline;
-  text-decoration-color: #83967d;
+  text-decoration-color: #c98f98;
   text-decoration-thickness: 2px;
   text-underline-offset: 7px;
 }
@@ -44,7 +44,7 @@
   text-decoration: underline;
   text-underline-offset: 5px;
 }
-.bft-site .feeding-text-link:hover { color: #4b6552; }
+.bft-site .feeding-text-link:hover { color: #8f4f5d; }
 .bft-site .feeding-text-link::after { display: none; }
 .bft-site .feeding-section { padding-block: 80px; background: var(--bft-cream); }
 .bft-site .feeding-section-heading { max-width: 760px; margin-bottom: 36px; }
@@ -92,14 +92,14 @@
   padding: 30px;
   border: 1px solid var(--bft-line);
   border-radius: 14px;
-  background: #f0eee5;
+  background: #f6eced;
   box-shadow: none;
 }
 .bft-site .feeding-support-grid > :first-child .feeding-support-card { background: var(--bft-sage); }
 .bft-site .feeding-support-card > span {
   width: 40px;
   height: 40px;
-  border: 1px solid #b7c4b2;
+  border: 1px solid #dcc3c8;
   border-radius: 50%;
   background: transparent;
   color: var(--bft-ink);
@@ -114,8 +114,8 @@
 }
 .bft-site .feeding-support-card p { max-width: 500px; margin-bottom: 24px; color: var(--bft-muted); font-size: 1rem; }
 .bft-site .feeding-support-card strong { margin-top: auto; color: var(--bft-ink); font-size: 0.9rem; font-weight: 500; }
-.bft-site .feeding-support-card:hover { border-color: #83967d; }
-.bft-site .feeding-support-articles { background: #f0eee5; }
+.bft-site .feeding-support-card:hover { border-color: #c98f98; }
+.bft-site .feeding-support-articles { background: #f6eced; }
 .bft-site .feeding-guide-list { margin-bottom: 0; border-color: var(--bft-line); }
 .bft-site .feeding-guide-row {
   grid-template-columns: 36px minmax(0, 0.95fr) minmax(0, 1fr);
@@ -148,7 +148,7 @@
   min-height: 44px;
   padding: 10px 18px;
   color: var(--bft-ink);
-  border-color: #b7c4b2;
+  border-color: #dcc3c8;
   font-size: 0.9rem;
 }
 .bft-site .feeding-blog-filters button:hover { background: var(--bft-sage); }
@@ -191,7 +191,7 @@
 .bft-site .feeding-blog-card-featured h3 { font-size: clamp(2rem, 3.5vw, 3rem); }
 .bft-site .feeding-blog-meta, .bft-site .feeding-blog-byline { color: var(--bft-muted); font-size: 0.85rem; line-height: 1.8; }
 .bft-site .feeding-blog-meta { margin-bottom: 0; }
-.bft-site .feeding-blog-meta span { display: block; margin: 0 0 5px; color: #4b6552; font-weight: 600; font-size: 0.75rem; }
+.bft-site .feeding-blog-meta span { display: block; margin: 0 0 5px; color: #8f4f5d; font-weight: 600; font-size: 0.75rem; }
 
 /* Reading pages use the same palette with more generous body text. */
 .bft-site .feeding-article, .bft-site .feeding-blog-article { padding-block: 56px 80px; background: var(--bft-cream); }
@@ -241,29 +241,29 @@
 .bft-site .feeding-article-body h3 { margin: 2rem 0 0.9rem; font-size: 1.3rem; font-weight: 600; line-height: 1.4; }
 .bft-site .feeding-article-body p, .bft-site .feeding-article-body li,
 .bft-site .policy-content p, .bft-site .policy-content li {
-  color: #43564a;
+  color: #4a4647;
   font-size: 1.0625rem;
   line-height: 1.85;
   overflow-wrap: anywhere;
 }
 .bft-site .feeding-article-body p { margin-bottom: 1.2rem; }
 .bft-site .feeding-article-body li + li { margin-top: 0.4rem; }
-.bft-site .feeding-article-body a, .bft-site .policy-content a { color: #385d43; text-decoration-thickness: 1px; text-underline-offset: 4px; }
-.bft-site .feeding-article-body blockquote { margin: 2rem 0; padding: 20px 26px; border-left: 3px solid #83967d; background: #f0eee5; }
+.bft-site .feeding-article-body a, .bft-site .policy-content a { color: #8f4f5d; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.bft-site .feeding-article-body blockquote { margin: 2rem 0; padding: 20px 26px; border-left: 3px solid #c98f98; background: #f6eced; }
 .bft-site .feeding-article-body blockquote p:last-child { margin-bottom: 0; }
 .bft-site .feeding-article-body img { height: auto; }
 .bft-site .feeding-article-body .feeding-product-heading { border-color: var(--bft-line); }
 .bft-site .feeding-article-body .feeding-product-heading a { color: var(--bft-ink); }
-.bft-site .feeding-table-scroll { min-width: 0; background: #fffdf7; border-color: var(--bft-line); }
+.bft-site .feeding-table-scroll { min-width: 0; background: #fffcfc; border-color: var(--bft-line); }
 .bft-site .feeding-table-scroll th { background: var(--bft-sage); }
-.bft-site .feeding-table-scroll :is(th, td) { color: #43564a; border-color: var(--bft-line); line-height: 1.6; }
+.bft-site .feeding-table-scroll :is(th, td) { color: #4a4647; border-color: var(--bft-line); line-height: 1.6; }
 .bft-site .feeding-blog-toc { top: 2rem; padding-top: 20px; border-color: var(--bft-line); }
 .bft-site .feeding-blog-toc > strong { font-size: 0.85rem; font-weight: 600; }
 .bft-site .feeding-blog-toc ol { gap: 5px; }
 .bft-site .feeding-blog-toc a { display: flex; align-items: center; min-height: 44px; color: var(--bft-muted); font-size: 0.875rem; line-height: 1.55; }
 .bft-site .feeding-blog-toc li.is-active a { color: var(--bft-ink); }
-.bft-site .feeding-blog-toc-marker { background: #83967d; }
-.bft-site .feeding-blog-author-box { padding: 30px; background: #f0eee5; border-color: var(--bft-line); border-radius: 14px; }
+.bft-site .feeding-blog-toc-marker { background: #c98f98; }
+.bft-site .feeding-blog-author-box { padding: 30px; background: #f6eced; border-color: var(--bft-line); border-radius: 14px; }
 .bft-site .feeding-blog-author-box h2 { font-size: 2rem; }
 .bft-site .feeding-blog-author-box p:not(.eyebrow) { color: var(--bft-muted); font-size: 0.95rem; line-height: 1.75; }
 .bft-site .feeding-blog-author-box a { color: var(--bft-ink); }
@@ -276,16 +276,16 @@
 .bft-site .feeding-blog-related { max-width: none; border-color: var(--bft-line); }
 .bft-site .feeding-blog-related > h2 { font-size: 2.5rem; }
 .bft-site .feeding-blog-related > div { gap: 24px; }
-.bft-site .feeding-blog-related a { padding: 28px; background: #f0eee5; border-color: var(--bft-line); border-radius: 14px; }
-.bft-site .feeding-blog-related a:hover { border-color: #83967d; }
+.bft-site .feeding-blog-related a { padding: 28px; background: #f6eced; border-color: var(--bft-line); border-radius: 14px; }
+.bft-site .feeding-blog-related a:hover { border-color: #c98f98; }
 .bft-site .feeding-blog-related strong { font-family: Georgia, "Times New Roman", serif; font-size: 1.65rem; font-weight: 400; line-height: 1.25; }
-.bft-site .feeding-blog-related span { color: #4b6552; font-size: 0.75rem; }
+.bft-site .feeding-blog-related span { color: #8f4f5d; font-size: 0.75rem; }
 .bft-site .feeding-blog-related small { color: var(--bft-muted); font-size: 0.95rem; line-height: 1.65; }
 
 /* Linked editorial and privacy pages retain their content in the shared frame. */
 .bft-site .feeding-disclosure-page { background: var(--bft-cream); }
-.bft-site .feeding-disclosure-page p { color: #43564a; font-size: 1.0625rem; line-height: 1.85; }
-.bft-site .feeding-disclosure-summary, .bft-site .feeding-disclosure-contact { background: #f0eee5; border-radius: 14px; }
+.bft-site .feeding-disclosure-page p { color: #4a4647; font-size: 1.0625rem; line-height: 1.85; }
+.bft-site .feeding-disclosure-summary, .bft-site .feeding-disclosure-contact { background: #f6eced; border-radius: 14px; }
 .bft-site .feeding-disclosure-page a { color: var(--bft-ink); }
 .bft-site .section-block { margin: 0; background: var(--bft-cream); }
 .bft-site .section-pad { padding-block: 64px 80px; }
@@ -310,7 +310,7 @@
   .bft-site .feeding-support-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .bft-site .feeding-support-grid > :first-child { grid-column: span 2; }
   .bft-site .feeding-blog-article-layout { grid-template-columns: minmax(0, 1fr); gap: 32px; }
-  .bft-site .feeding-blog-toc { position: relative; top: auto; padding: 22px; background: #f0eee5; border: 1px solid var(--bft-line); border-radius: 14px; }
+  .bft-site .feeding-blog-toc { position: relative; top: auto; padding: 22px; background: #f6eced; border: 1px solid var(--bft-line); border-radius: 14px; }
   .bft-site .feeding-blog-toc ol { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 22px; margin-bottom: 0; }
   .bft-site .feeding-blog-toc li { padding-left: 0; }
   .bft-site .feeding-blog-toc-marker { display: none; }

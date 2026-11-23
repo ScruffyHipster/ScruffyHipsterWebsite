@@ -85,6 +85,10 @@ export function BreastfeedingTrackerLandingPage() {
     ),
     offers: { "@type": "Offer", ...content.softwareApplication.offer }
   };
+  // Only the English page has this section until DE/FR translations and screenshots exist.
+  const beyondFeeds = "beyondFeeds" in content ? content.beyondFeeds : undefined;
+  const heroPlacards = "noteTop" in content.hero && "noteBottom" in content.hero
+    ? [content.hero.noteTop, content.hero.noteBottom] : [];
   const [appearance, setAppearance] = useState<"light" | "dark">("light");
   return (
     <>
@@ -98,8 +102,21 @@ export function BreastfeedingTrackerLandingPage() {
         <div className="bft-container bft-editorial-hero-grid">
           <div className="bft-editorial-hero-copy">
             <p className="bft-eyebrow">{content.hero.eyebrow}</p>
-            <h1 id="hero-heading">{content.hero.heading}<em>{content.hero.headingEmphasis}</em></h1>
+            <h1 id="hero-heading">{content.hero.heading}{" "}<em>{content.hero.headingEmphasis}</em></h1>
             <p className="bft-lead">{content.hero.body}</p>
+            <p className="bft-hero-story">{content.hero.caption}</p>
+          </div>
+          <figure className="bft-editorial-product">
+            {heroPlacards.map((note, index) => (
+              <p key={note.label} className={`bft-hero-placard bft-hero-placard-${index}`}>
+                <span>{note.label}</span><strong>{note.value}</strong>
+              </p>
+            ))}
+            <Phone screen="home-light" alt={content.hero.imageAlt} className="bft-hero-product-phone" priority
+              sizes="(max-width: 760px) 210px, 260px" />
+            <figcaption>{editorial.platforms}</figcaption>
+          </figure>
+          <div className="bft-editorial-hero-actions">
             <BreastfeedingTrackerAppStoreLink className="bft-button" placement="hero">
               {content.hero.primaryCta}<Icon kind="arrow" />
             </BreastfeedingTrackerAppStoreLink>
@@ -107,16 +124,23 @@ export function BreastfeedingTrackerLandingPage() {
             {webApps ? <a className="bft-text-link bft-web-apps-hero-link" href="#web-apps">{webApps.heroCta}<Icon kind="arrow" /></a> : null}
             <a className="bft-text-link bft-discover" href="#how-it-works">{content.hero.secondaryCta}<Icon kind="arrow" /></a>
           </div>
-          <figure className="bft-editorial-scene">
+        </div>
+      </section>
+
+      <section className="bft-editorial-section bft-founder" aria-labelledby="founder-heading">
+        <div className="bft-container bft-editorial-split">
+          <figure className="bft-founder-photo">
             <img className="bft-lifestyle-photo" src={editorial.image.src}
               srcSet={`${editorial.image.smallSrc} 720w, ${editorial.image.src} 1200w`}
               sizes="(max-width: 760px) 94vw, 48vw" alt={editorial.image.alt}
-              width="1200" height="1500" decoding="async" {...{ fetchpriority: "high" }} />
-            <Phone screen="home-light" alt={content.hero.imageAlt} className="bft-scene-phone" priority />
+              width="1200" height="1500" loading="lazy" decoding="async" />
           </figure>
-        </div>
-        <div className="bft-container bft-editorial-signoff">
-          <p>{content.hero.caption}</p><span>{editorial.platforms}</span>
+          <div className="bft-editorial-copy">
+            <p className="bft-eyebrow">{editorial.founder.eyebrow}</p>
+            <h2 id="founder-heading">{editorial.founder.heading}</h2>
+            <p>{editorial.founder.body}</p><p>{editorial.founder.closing}</p>
+            <Link className="bft-text-link" to={editorial.founder.linkUrl}>{editorial.founder.linkLabel}<Icon kind="arrow" /></Link>
+          </div>
         </div>
       </section>
 
@@ -137,6 +161,28 @@ export function BreastfeedingTrackerLandingPage() {
           </div>
         </div>
       </section>
+
+      {beyondFeeds ? (
+        <section className="bft-editorial-section bft-beyond" aria-labelledby="beyond-heading">
+          <div className="bft-container">
+            <div className="bft-editorial-section-intro">
+              <div><p className="bft-eyebrow">{beyondFeeds.eyebrow}</p><h2 id="beyond-heading">{beyondFeeds.heading}</h2></div>
+              <p>{beyondFeeds.body}</p>
+            </div>
+            <div className="bft-beyond-grid">
+              {beyondFeeds.items.map((item) => (
+                <article key={item.title}>
+                  <div className="bft-beyond-product">
+                    <Phone screen={item.screen} alt={item.imageAlt} sizes="(max-width: 760px) 220px, (max-width: 1100px) 28vw, 230px" />
+                  </div>
+                  <h3>{item.title}</h3>
+                  <p>{item.body}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="bft-editorial-section bft-night" aria-labelledby="everyday-heading">
         <div className="bft-container">
@@ -208,15 +254,6 @@ export function BreastfeedingTrackerLandingPage() {
             </figure>
           </div>
           <p className="bft-detail-note bft-appearance-note">{editorial.screens.note}</p>
-        </div>
-      </section>
-
-      <section className="bft-editorial-section bft-founder" aria-labelledby="founder-heading">
-        <div className="bft-container bft-editorial-split">
-          <div><p className="bft-eyebrow">{editorial.founder.eyebrow}</p><h2 id="founder-heading">{editorial.founder.heading}</h2></div>
-          <div className="bft-editorial-copy"><p>{editorial.founder.body}</p><p>{editorial.founder.closing}</p>
-            <Link className="bft-text-link" to={editorial.founder.linkUrl}>{editorial.founder.linkLabel}<Icon kind="arrow" /></Link>
-          </div>
         </div>
       </section>
 
