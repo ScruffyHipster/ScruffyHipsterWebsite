@@ -16,17 +16,17 @@ const pixels = new Uint8Array(width * height * 4);
 
 paintBackground();
 drawCircle(1030, 190, 315, [255, 255, 255, 68]);
-drawCircle(122, 92, 54, [23, 25, 28, 255]);
-drawCircle(122, 92, 34, [255, 70, 80, 255]);
+drawCircle(122, 92, 54, [30, 42, 68, 255]);
+drawCircle(122, 92, 34, [201, 143, 152, 255]);
 drawRoundedRect(812, -55, 350, 725, 50, [23, 25, 28, 255]);
 drawScaledImage(screenshot, 830, -35, 314, 680, 34);
-drawRoundedRect(776, 474, 330, 84, 42, [255, 70, 80, 255]);
+drawRoundedRect(776, 474, 330, 84, 42, [30, 42, 68, 255]);
 
-drawText("A NEWBORN", 74, 238, 9, [23, 25, 28, 255]);
-drawText("FEED TIMER.", 74, 329, 9, [23, 25, 28, 255]);
-drawText("IPHONE + APPLE WATCH", 78, 492, 4, [50, 73, 82, 255]);
-drawText("BUILT FOR THE FIRST WEEKS.", 78, 536, 4, [50, 73, 82, 255]);
-drawText("ONE TAP TO START", 798, 505, 3, [23, 25, 28, 255]);
+drawText("A NEWBORN", 74, 238, 9, [30, 42, 68, 255]);
+drawText("FEED TIMER.", 74, 329, 9, [30, 42, 68, 255]);
+drawText("IPHONE + APPLE WATCH", 78, 492, 4, [98, 94, 95, 255]);
+drawText("BUILT FOR THE FIRST WEEKS.", 78, 536, 4, [98, 94, 95, 255]);
+drawText("ONE TAP TO START", 798, 505, 3, [250, 247, 247, 255]);
 
 const outputPath = join(assetsDir, "breastfeeding-tracker-og.png");
 await writeFile(outputPath, encodePng(width, height, pixels));
@@ -35,9 +35,10 @@ console.log(`Generated ${outputPath}`);
 function paintBackground() {
   for (let y = 0; y < height; y += 1) {
     const t = y / (height - 1);
-    const red = Math.round(184 + (229 - 184) * t);
-    const green = Math.round(222 + (246 - 222) * t);
-    const blue = Math.round(237 + (250 - 237) * t);
+    // The app's Clean Slate pink, lightening towards the bottom.
+    const red = Math.round(239 + (250 - 239) * t);
+    const green = Math.round(219 + (243 - 219) * t);
+    const blue = Math.round(222 + (243 - 222) * t);
     for (let x = 0; x < width; x += 1) {
       setPixel(x, y, [red, green, blue, 255]);
     }

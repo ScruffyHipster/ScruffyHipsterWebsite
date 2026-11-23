@@ -1879,6 +1879,42 @@ content:
                           label: Apple Watch
                         - name: glance
                           label: At a glance
+          - name: beyondFeeds
+            label: Sleep, milk and reminders
+            type: object
+            fields:
+              - name: eyebrow
+                type: string
+                required: true
+              - name: heading
+                type: text
+                required: true
+              - name: body
+                type: text
+                required: true
+              - name: items
+                type: object
+                list:
+                  min: 1
+                  collapsible:
+                    collapsed: true
+                    summary: "{title}"
+                fields:
+                  - name: title
+                    type: string
+                    required: true
+                  - name: body
+                    type: text
+                    required: true
+                  - name: screen
+                    label: Screenshot name
+                    description: File prefix in /assets/breastfeeding-editorial/, without the -360/-660.webp size suffix.
+                    type: string
+                    required: true
+                  - name: imageAlt
+                    label: Screenshot description
+                    type: string
+                    required: true
           - name: editorial
             type: object
             fields:
