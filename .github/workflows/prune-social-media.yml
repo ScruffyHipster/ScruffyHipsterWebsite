@@ -1,0 +1,60 @@
+name: Prune published social media
+
+on:
+  schedule:
+    # Daily, after the 08:00 UK posting slot.
+    - cron: "30 9 * * *"
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: "Delete media and redeploy (leave unticked for a dry run)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: prune-social-media
+  cancel-in-progress: false
+
+jobs:
+  prune:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Full history (without old file contents) shows when each folder was added.
+          fetch-depth: 0
+          filter: blob:none
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Remove media Buffer no longer needs
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_ORGANIZATION_ID: ${{ vars.BUFFER_ORGANIZATION_ID }}
+        run: node scripts/prune-social-media.mjs ${{ (github.event_name == 'schedule' || inputs.apply) && '--apply' || '' }}
+
+      - name: Commit and redeploy
+        if: github.event_name == 'schedule' || inputs.apply
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- public/media/tiktok; then
+            echo "Nothing to remove."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A public/media/tiktok
+          git commit -m "Remove published TikTok media"
+          git pull --rebase origin main
+          git push origin HEAD:main
+          # Pushes made with the workflow token do not start other workflows, so deploy explicitly.
+          gh workflow run deploy.yml --ref main
