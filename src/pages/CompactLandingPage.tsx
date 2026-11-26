@@ -66,8 +66,7 @@ export function CompactLandingPage() {
       <main id="compact-main">
         <section className="cm-hero cm-container">
           <div className="cm-hero-copy">
-            <p className="cm-eyebrow"><span className="cm-live-dot" />{content.eyebrow}</p>
-            <h1>{content.headline[0]}<br /><span>{content.headline[1]}</span></h1>
+            <h1><span className="cm-eyebrow cm-hero-eyebrow"><span className="cm-live-dot" />{content.eyebrow}</span>{" "}{content.headline[0]}<br /><span>{content.headline[1]}</span></h1>
             <p className="cm-intro">{content.intro}</p>
             <div className="cm-actions"><a className="cm-button" href={app.appStoreUrl}>{content.primaryCta}<span aria-hidden="true">{decoration.arrow}</span></a><a className="cm-text-link" href="#mirror-demo">{content.secondaryCta}<span aria-hidden="true">{decoration.down}</span></a></div>
             <p className="cm-platform"><span aria-hidden="true">{decoration.device}</span>{content.platform}<a className="cm-store-link" href={app.appStoreUrl}>{content.availability}</a></p>

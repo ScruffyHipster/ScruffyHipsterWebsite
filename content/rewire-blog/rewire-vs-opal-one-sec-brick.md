@@ -1,11 +1,11 @@
 ---
 title: "Rewire vs Opal vs one sec vs Brick: which iPhone app blocker fits you?"
-metaTitle: "Rewire vs Opal vs one sec vs Brick | iPhone App Blockers"
-description: "Compare four approaches to blocking apps on iPhone: Rewire’s intentional pauses, Opal’s focus tools, one sec’s interventions, and Brick’s physical device."
+metaTitle: "Opal vs Brick vs one sec vs Rewire: iPhone Blockers (2026)"
+description: "Opal vs Brick, plus one sec and Rewire: compare focus routines, a physical unlock key, habit interventions and intentional pauses for blocking apps on iPhone."
 publishedAt: "2026-09-26"
-updatedAt: "2026-09-26"
+updatedAt: "2026-11-26"
 excerpt: "Four approaches to distraction. Where Rewire shines, what the alternatives do well, and how to choose for your habits."
-tags: "app blocker for iPhone, Rewire vs Opal, Rewire vs one sec, Rewire vs Brick, best app blockers"
+tags: "Opal vs Brick, Brick vs Opal, app blocker for iPhone, Rewire vs Opal, Rewire vs one sec, Rewire vs Brick, best app blockers"
 published: true
 ogImage: "/assets/rewire/app-store/rewire-icon.jpg"
 ogImageAlt: "Rewire app icon"
@@ -57,6 +57,12 @@ one sec is especially interesting if you want to customise the interruption itse
 Brick’s distinctive feature is the physical device. You choose the apps to block and use the device as the key to normal unblocking. Its FAQ says you can start a session from the app without the device, but still need the device to unbrick. It also describes five Emergency Unbricks, so “you can never unlock without it” would be inaccurate. See [Brick’s official FAQ](https://getbrick.com/pages/faq).
 
 **Choose Rewire** if you want to start using a blocker without ordering hardware, or need your setup to travel with your phone. **Consider Brick** if leaving the physical key elsewhere is exactly the boundary you want. That extra step is Brick’s purpose, and can be a compelling reason to choose it.
+
+# Opal vs Brick: software routines or a physical key?
+
+If you are choosing between Opal and Brick, the difference is where the boundary lives. Opal keeps everything in software: recurring sessions, time and open limits, and reports, with some stricter controls in Pro. Brick moves the unlock step onto a physical device you can leave in another room, while still offering a small number of Emergency Unbricks.
+
+**Choose Opal** if you want schedules and data about your focus. **Choose Brick** if the main problem is that you can always talk yourself out of a software limit. **Choose Rewire** if you want a quick iPhone session with a pause before the impulsive tap and no hardware to buy.
 
 # What about price and privacy?
 

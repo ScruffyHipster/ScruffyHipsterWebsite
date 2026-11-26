@@ -1423,3 +1423,16 @@
     scroll-margin-top: 145px;
   }
 }
+
+/* The hero label sits inside the h1 for search; these keep its original spacing. */
+.rw-hero h1 {
+  margin-top: 0;
+}
+.rw-hero h1 > .rw-eyebrow {
+  margin-bottom: 25px;
+}
+@media (max-width: 760px) {
+  .rw-hero h1 > .rw-eyebrow {
+    margin-bottom: 24px;
+  }
+}

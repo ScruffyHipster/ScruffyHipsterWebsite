@@ -67,11 +67,11 @@ export function RewireLandingPage() {
       />
       <RewireFocusDemo>
         <div className="rw-hero-copy">
-          <p className="rw-eyebrow">
-            <span className="rw-status-dot" />
-            {rewireContent.hero.eyebrow}
-          </p>
           <h1>
+            <span className="rw-eyebrow">
+              <span className="rw-status-dot" />
+              {rewireContent.hero.eyebrow}
+            </span>{" "}
             {rewireContent.hero.heading}
             <em>{rewireContent.hero.headingEmphasis}</em>
           </h1>

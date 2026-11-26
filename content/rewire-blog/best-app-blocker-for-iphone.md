@@ -104,6 +104,10 @@ Apple Screen Time is the built-in starting point without an additional purchase.
 
 Start with the study task and what needs to remain accessible. We would consider Rewire for an iPhone focus session, then compare alternatives if recurring reports, different interventions, or a physical key matter more. See our [study focus guide](/rewire/blog/focus-app-for-studying/) for a practical starting point.
 
+## Is there a Cold Turkey app for iPhone?
+
+Cold Turkey Blocker is made for Windows and Mac and has no official iPhone app. Some App Store apps use “Cold Turkey” in their names, but they come from other developers. On iPhone, the closest equivalents are Screen Time with a passcode you don’t know, or one of the blockers above.
+
 ## Can these apps guarantee I will stop scrolling?
 
 No outcome like that is established by this comparison. Blocking controls, your settings and the way you use the tool all matter. We have not ranked bypass resistance, carried out a security audit, or measured time saved across these products.
