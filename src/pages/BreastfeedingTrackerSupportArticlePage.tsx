@@ -9,6 +9,7 @@ import { getSiteUrl } from "../seo/metadata";
 import { canonicalPath, canonicalUrl } from "../seo/canonical";
 import { siteConfig } from "../content/site";
 import { trackerHreflangAlternates } from "../content/trackerLocales";
+import { withKitBrand } from "../content/kitTitle.js";
 
 export function BreastfeedingTrackerSupportArticlePage() {
   const {
@@ -38,7 +39,7 @@ export function BreastfeedingTrackerSupportArticlePage() {
         path={path}
         meta={{
           robots,
-          title: guide.metaTitle || guide.title,
+          title: withKitBrand(guide.metaTitle || guide.title),
           description: guide.description,
           keywords: guide.tags,
           ogImage: guide.ogImage || breastfeedingTrackerOgImage,

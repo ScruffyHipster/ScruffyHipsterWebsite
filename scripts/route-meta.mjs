@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { makeSmartyColourRoutes } from "../src/content/smartyColourRouteData.js";
+import { withKitBrand } from "../src/content/kitTitle.js";
 
 const rootDir = new URL("../", import.meta.url).pathname;
 const cms = readGeneratedJson("cms-content.json");
@@ -173,6 +174,9 @@ const breastfeedingSoftwareJsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: breastfeedingTracker.softwareApplication.name,
+  ...(breastfeedingTracker.softwareApplication.alternateName
+    ? { alternateName: breastfeedingTracker.softwareApplication.alternateName }
+    : {}),
   applicationCategory: breastfeedingTracker.softwareApplication.applicationCategory,
   applicationSubCategory:
     breastfeedingTracker.softwareApplication.applicationSubCategory,
@@ -374,7 +378,7 @@ const routes = [
     const path = `${pages["breastfeeding-support"].route}/${guide.slug}`;
     return {
       path,
-      title: guide.metaTitle || guide.title,
+      title: withKitBrand(guide.metaTitle || guide.title),
       description: guide.description,
       ogImage: guide.ogImage,
       ...(guide.ogImageAlt ? { ogImageAlt: guide.ogImageAlt } : {}),
@@ -431,7 +435,7 @@ const routes = [
     const path = `${pages["breastfeeding-blog"].route}/${post.slug}`;
     return {
       path,
-      title: post.metaTitle || post.title,
+      title: withKitBrand(post.metaTitle || post.title),
       description: post.description,
       ogImage: post.ogImage,
       ...(post.ogImageAlt ? { ogImageAlt: post.ogImageAlt } : {}),

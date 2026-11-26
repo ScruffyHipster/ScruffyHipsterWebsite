@@ -211,6 +211,7 @@
   },
   "softwareApplication": {
     "name": "Still-Tracker & Timer",
+    "alternateName": "Kit",
     "applicationCategory": "MedicalApplication",
     "applicationSubCategory": "Stilltracker",
     "operatingSystem": "iOS 26.0 oder neuer; watchOS 26.0 oder neuer",

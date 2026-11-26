@@ -211,6 +211,7 @@
   },
   "softwareApplication": {
     "name": "Suivi d’allaitement & minuteur",
+    "alternateName": "Kit",
     "applicationCategory": "MedicalApplication",
     "applicationSubCategory": "Suivi d’allaitement",
     "operatingSystem": "iOS 26.0 ou version ultérieure ; watchOS 26.0 ou version ultérieure",

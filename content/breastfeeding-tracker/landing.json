@@ -2,7 +2,7 @@
   "published": true,
   "route": "/breastfeeding-tracker",
   "seo": {
-    "title": "Breastfeeding Tracker App & Timer | Bottles, Pumping, Sleep",
+    "title": "Breastfeeding Tracker App & Timer | Kit",
     "description": "A free breastfeeding tracker app for iPhone and Apple Watch. Time left and right feeds one-handed, log bottles, pumping and sleep, and track your milk stash.",
     "keywords": [
       "breastfeeding tracker",
@@ -37,6 +37,7 @@
   },
   "softwareApplication": {
     "name": "Breastfeeding Tracker & Timer",
+    "alternateName": "Kit",
     "applicationCategory": "MedicalApplication",
     "applicationSubCategory": "Breastfeeding Tracker",
     "operatingSystem": "iOS 26.0 or later; watchOS 26.0 or later",
@@ -60,7 +61,7 @@
   },
   "hero": {
     "iconAlt": "Breastfeeding Tracker & Timer app icon",
-    "eyebrow": "Breastfeeding Tracker & Timer",
+    "eyebrow": "Kit · Breastfeeding Tracker & Timer",
     "heading": "One less thing",
     "headingEmphasis": "to remember at the next feed.",
     "body": "Track breastfeeding, bottles, pumping and sleep in one place. Start a timer with one hand and check the last feed at a glance.",
@@ -262,8 +263,8 @@
     ]
   },
   "navigation": {
-    "brand": "Breastfeeding Tracker",
-    "ariaLabel": "Breastfeeding Tracker navigation",
+    "brand": "Kit",
+    "ariaLabel": "Kit navigation",
     "skipLabel": "Skip to content",
     "downloadLabel": "Get the app",
     "items": [
@@ -331,8 +332,8 @@
   "footer": {
     "body": "Made by a small independent studio, around real family life.",
     "studioLabel": "Meet ScruffyHipster",
-    "navigationLabel": "More from Breastfeeding Tracker",
-    "copyright": "Breastfeeding Tracker & Timer. Made with care by ScruffyHipster.",
+    "navigationLabel": "More from Kit",
+    "copyright": "Kit · Breastfeeding Tracker & Timer. Made with care by ScruffyHipster.",
     "links": [
       {
         "label": "Help & Support",
