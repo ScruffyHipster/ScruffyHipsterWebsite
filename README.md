@@ -42,6 +42,16 @@ To compare a CMS-backed build with a saved pre-migration build:
 npm run compare:cms -- /path/to/baseline/dist dist
 ```
 
+## Social media hosting
+
+`public/media/tiktok/APP/POST/SHA/slide-N.jpg` holds images for scheduled social
+posts. Buffer fetches them from this site when each post goes out and serves its
+own copy afterwards. The daily `Prune published social media` workflow
+(`scripts/prune-social-media.mjs`) removes every folder that no unpublished
+Buffer post points at and that was added more than 48 hours ago, then redeploys.
+It needs the `BUFFER_API_KEY` secret and the `BUFFER_ORGANIZATION_ID` variable.
+Run it by hand without ticking "apply" for a dry run.
+
 ## Pages CMS setup
 
 1. Sign in at [Pages CMS](https://app.pagescms.org/) with GitHub and install its
