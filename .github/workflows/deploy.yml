@@ -52,6 +52,10 @@ jobs:
         with:
           path: ./dist
 
+      - name: Wait for the Pages artifact to finalise
+        # The large media upload is not always visible to deploy-pages straight away.
+        run: sleep 60
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
