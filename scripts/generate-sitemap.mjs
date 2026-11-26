@@ -10,7 +10,9 @@ export async function generateSitemap(distDir) {
       const images = [...new Set(route.images || [])]
         .map((image) => `<image:image><image:loc>${escapeXml(image)}</image:loc></image:image>`)
         .join("");
-      return `<url><loc>${escapeXml(loc)}</loc>${images}</url>`;
+      const lastmod = routeLastModified(route);
+      const lastmodTag = lastmod ? `<lastmod>${lastmod}</lastmod>` : "";
+      return `<url><loc>${escapeXml(loc)}</loc>${lastmodTag}${images}</url>`;
     })
     .join("");
 
@@ -33,6 +35,18 @@ Sitemap: ${siteUrl}/sitemap.xml
 export function isIndexableRoute(route) {
   const directives = (route.robots || "").toLowerCase().split(/[\s,]+/);
   return !directives.some((directive) => directive === "noindex" || directive === "none");
+}
+
+// Articles carry their published and updated dates in JSON-LD; other routes have no
+// reliable date, so they are listed without one rather than with a guessed date.
+function routeLastModified(route) {
+  for (const entry of [route.jsonLd ?? []].flat()) {
+    const date = entry?.dateModified || entry?.datePublished;
+    if (typeof date === "string" && /^\d{4}-\d{2}-\d{2}/.test(date)) {
+      return date.slice(0, 10);
+    }
+  }
+  return undefined;
 }
 
 function canonicalUrl(path) {
