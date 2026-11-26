@@ -1,11 +1,11 @@
 ---
-title: "Best App Blockers for iPhone: 5 Options Compared"
-metaTitle: "Best App Blockers for iPhone: Rewire, Opal & More"
-description: "Compare Rewire, Opal, one sec, Brick and Apple Screen Time. Choose an iPhone app blocker by focus style, hardware, cost model and practical limitations."
+title: "Best App Blocker for iPhone (2026): 5 Free and Paid Options Compared"
+metaTitle: "Best App Blocker for iPhone (2026): Free & Paid Picks"
+description: "Looking for an app blocker for iPhone? Compare Rewire, Opal, one sec, Brick and Screen Time, including free options and how apps block other apps on iOS."
 publishedAt: "2026-07-10"
-updatedAt: "2026-09-26"
+updatedAt: "2026-11-26"
 excerpt: "Five ways to block distractions on iPhone, with a clear recommendation for each kind of focus routine."
-tags: "best app blockers, best app blocker for iPhone, app blocker iPhone, screen time"
+tags: "best app blockers, best app blocker for iPhone, app blocker iPhone, iOS app blocker, free app blocker iPhone, apps that block apps on iPhone, screen time"
 published: true
 ogImage: "/assets/rewire/app-store/rewire-icon.jpg"
 ogImageAlt: "Rewire app icon"
@@ -63,6 +63,23 @@ Apple includes App Limits, Downtime and Always Allowed settings on iPhone. Its [
 
 Our judgement: try these first if your requirement is simply a daily allowance or a regular period away from selected apps. There is no separate blocker to buy. Review the passcode and blocking settings instead of assuming that creating a time limit makes it impossible to extend. A dedicated app becomes useful when its particular session or interruption workflow solves something your current setup leaves unresolved.
 
+# How do apps block other apps on iPhone?
+
+iOS does not let one app close or delete another. Instead, Apple’s Screen Time permission lets an approved app shield the apps and websites you choose. When a shielded app is opened, you see a block screen rather than the app.
+
+That is why every iPhone app blocker asks for Screen Time access during setup, and why a blocked app stays installed with its data intact. Rewire uses this permission for its focus sessions. Apple’s own Screen Time limits work in the same place, without a separate download.
+
+Because the same system sits underneath, the practical differences between blockers are in the workflow: how quickly you can start a session, what stays available, how a session ends, and what you pay for.
+
+# Free app blockers for iPhone
+
+If you want an app blocker for iPhone without paying, you have two routes:
+
+- **Apple Screen Time** is free and already on your iPhone. App Limits and Downtime can block selected apps on a schedule or after a daily allowance.
+- **Free downloads with paid options**, including Rewire, Opal and one sec, let you start without paying. Each keeps some features for paying users, so check that the control you need is in the free version before relying on it.
+
+Brick is the exception on this shortlist: the physical device is a purchase.
+
 # How to choose without installing everything
 
 Write down one situation you want to change, then use that situation to compare options. “I want fewer distractions” is hard to evaluate. “I want to read for 30 minutes without opening social feeds” gives you a concrete task.
@@ -81,7 +98,7 @@ This is a checklist for your own trial, not a claim that we completed those test
 
 ## What is the best free app blocker for iPhone?
 
-Apple Screen Time is the built-in starting point without an additional purchase. A free app download can still include paid features. Check the actual limits and controls available before treating Rewire, Opal or one sec as a completely free replacement.
+Apple Screen Time is the built-in starting point without an additional purchase. It has been built into iOS since iOS 12. A free app download can still include paid features. Check the actual limits and controls available before treating Rewire, Opal or one sec as a completely free replacement.
 
 ## Which should I choose for studying?
 

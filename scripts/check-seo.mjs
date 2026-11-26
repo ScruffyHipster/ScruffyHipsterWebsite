@@ -328,7 +328,7 @@ const requiredComparisonSources = [
 
 assert(
   comparisonHtml.includes(
-    "<h1>Best Breastfeeding Apps for iPhone in the UK (2026)</h1>"
+    "<h1>Best Breastfeeding Apps and Tracker Apps for iPhone in the UK (2026)</h1>"
   ),
   "Comparison guide has the wrong h1."
 );
