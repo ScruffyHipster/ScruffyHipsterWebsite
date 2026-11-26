@@ -101,8 +101,10 @@ export function BreastfeedingTrackerLandingPage() {
       <section className="bft-editorial-hero" aria-labelledby="hero-heading">
         <div className="bft-container bft-editorial-hero-grid">
           <div className="bft-editorial-hero-copy">
-            <p className="bft-eyebrow">{content.hero.eyebrow}</p>
-            <h1 id="hero-heading">{content.hero.heading}{" "}<em>{content.hero.headingEmphasis}</em></h1>
+            <h1 id="hero-heading">
+              <span className="bft-eyebrow">{content.hero.eyebrow}</span>{" "}
+              {content.hero.heading}{" "}<em>{content.hero.headingEmphasis}</em>
+            </h1>
             <p className="bft-lead">{content.hero.body}</p>
             <p className="bft-hero-story">{content.hero.caption}</p>
           </div>

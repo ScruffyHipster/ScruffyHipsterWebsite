@@ -26,6 +26,8 @@
 .bft-editorial-hero-actions { grid-area: actions; align-self: start; padding-block: 30px 48px; }
 .bft-editorial-hero h1 { font-size: clamp(3.1rem, 5.7vw, 5.7rem); line-height: 1.015; margin: 0 0 30px; }
 .bft-editorial-hero h1 em { display: block; font-weight: inherit; color: var(--bft-rose); }
+/* The product name sits inside the hero h1 for search; its own eyebrow rules keep the label look. */
+.bft-editorial-hero h1 .bft-eyebrow { text-wrap: wrap; }
 .bft-editorial-hero .bft-lead { max-width: 425px; font-size: 1rem; line-height: 1.8; margin-bottom: 20px; }
 .bft-hero-story { max-width: 370px; color: var(--bft-muted); font-size: 0.87rem; line-height: 1.7; margin: 0; }
 .bft-discover { display: flex; width: fit-content; margin-top: 30px; text-decoration: none; }
